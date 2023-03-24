@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("PushKit")
@@ -48,7 +49,7 @@ public interface PKPushRegistryDelegate {
     @Generated
     @IsOptional
     @Selector("pushRegistry:didInvalidatePushTokenForType:")
-    default void pushRegistryDidInvalidatePushTokenForType(PKPushRegistry registry, String type) {
+    default void pushRegistryDidInvalidatePushTokenForType(@NotNull PKPushRegistry registry, @NotNull String type) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -71,8 +72,8 @@ public interface PKPushRegistryDelegate {
     @IsOptional
     @Generated
     @Selector("pushRegistry:didReceiveIncomingPushWithPayload:forType:")
-    default void pushRegistryDidReceiveIncomingPushWithPayloadForType(PKPushRegistry registry, PKPushPayload payload,
-            String type) {
+    default void pushRegistryDidReceiveIncomingPushWithPayloadForType(@NotNull PKPushRegistry registry,
+            @NotNull PKPushPayload payload, @NotNull String type) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -92,8 +93,8 @@ public interface PKPushRegistryDelegate {
      */
     @Generated
     @Selector("pushRegistry:didUpdatePushCredentials:forType:")
-    void pushRegistryDidUpdatePushCredentialsForType(PKPushRegistry registry, PKPushCredentials pushCredentials,
-            String type);
+    void pushRegistryDidUpdatePushCredentialsForType(@NotNull PKPushRegistry registry,
+            @NotNull PKPushCredentials pushCredentials, @NotNull String type);
 
     /**
      * pushRegistry:didReceiveIncomingPushWithPayload:forType:withCompletionHandler:
@@ -114,9 +115,9 @@ public interface PKPushRegistryDelegate {
     @Generated
     @IsOptional
     @Selector("pushRegistry:didReceiveIncomingPushWithPayload:forType:withCompletionHandler:")
-    default void pushRegistryDidReceiveIncomingPushWithPayloadForTypeWithCompletionHandler(PKPushRegistry registry,
-            PKPushPayload payload, String type,
-            @ObjCBlock(name = "call_pushRegistryDidReceiveIncomingPushWithPayloadForTypeWithCompletionHandler") Block_pushRegistryDidReceiveIncomingPushWithPayloadForTypeWithCompletionHandler completion) {
+    default void pushRegistryDidReceiveIncomingPushWithPayloadForTypeWithCompletionHandler(
+            @NotNull PKPushRegistry registry, @NotNull PKPushPayload payload, @NotNull String type,
+            @NotNull @ObjCBlock(name = "call_pushRegistryDidReceiveIncomingPushWithPayloadForTypeWithCompletionHandler") Block_pushRegistryDidReceiveIncomingPushWithPayloadForTypeWithCompletionHandler completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 

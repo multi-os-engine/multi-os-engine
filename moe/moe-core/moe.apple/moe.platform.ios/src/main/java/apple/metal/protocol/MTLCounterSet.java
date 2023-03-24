@@ -7,6 +7,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] MTLCounterSet
@@ -32,6 +33,7 @@ public interface MTLCounterSet {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("counters")
     NSArray<?> counters();
@@ -41,6 +43,7 @@ public interface MTLCounterSet {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("name")
     String name();

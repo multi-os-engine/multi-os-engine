@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * UILargeContentViewerInteraction enables a gesture to present and dismiss the large content viewer on a device with
@@ -62,22 +64,25 @@ public class UILargeContentViewerInteraction extends NSObject implements UIInter
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -86,6 +91,7 @@ public class UILargeContentViewerInteraction extends NSObject implements UIInter
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -97,12 +103,13 @@ public class UILargeContentViewerInteraction extends NSObject implements UIInter
 
     @Generated
     @Selector("didMoveToView:")
-    public native void didMoveToView(UIView view);
+    public native void didMoveToView(@Nullable UIView view);
 
     /**
      * Returns a gesture recognizer that can be used to set up simultaneous recognition or failure relationships with
      * other gesture recognizers.
      */
+    @NotNull
     @Generated
     @Selector("gestureRecognizerForExclusionRelationship")
     public native UIGestureRecognizer gestureRecognizerForExclusionRelationship();
@@ -119,7 +126,7 @@ public class UILargeContentViewerInteraction extends NSObject implements UIInter
     @Generated
     @Selector("initWithDelegate:")
     public native UILargeContentViewerInteraction initWithDelegate(
-            @Mapped(ObjCObjectMapper.class) UILargeContentViewerInteractionDelegate delegate);
+            @Nullable @Mapped(ObjCObjectMapper.class) UILargeContentViewerInteractionDelegate delegate);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -149,9 +156,10 @@ public class UILargeContentViewerInteraction extends NSObject implements UIInter
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -179,11 +187,12 @@ public class UILargeContentViewerInteraction extends NSObject implements UIInter
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("view")
     public native UIView view();
 
     @Generated
     @Selector("willMoveToView:")
-    public native void willMoveToView(UIView view);
+    public native void willMoveToView(@Nullable UIView view);
 }

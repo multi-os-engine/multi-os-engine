@@ -23,6 +23,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -57,31 +59,35 @@ public class UIMenu extends UIMenuElement {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * The menu's sub-elements and sub-menus. On iOS 14.0, elements of your own menus are mutable, -copying a menu will
      * produce mutable elements, and UIKit will take immutable copies of menus it receives. Prior to iOS 14.0, menus are
      * always fully immutable.
      */
+    @NotNull
     @Generated
     @Selector("children")
     public native NSArray<? extends UIMenuElement> children();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,6 +108,7 @@ public class UIMenu extends UIMenuElement {
     /**
      * Unique identifier.
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -112,7 +119,7 @@ public class UIMenu extends UIMenuElement {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIMenu initWithCoder(NSCoder coder);
+    public native UIMenu initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -131,9 +138,10 @@ public class UIMenu extends UIMenuElement {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Copies this menu and replaces its children.
@@ -142,9 +150,10 @@ public class UIMenu extends UIMenuElement {
      * 
      * @return A copy of this menu with updated children.
      */
+    @NotNull
     @Generated
     @Selector("menuByReplacingChildren:")
-    public native UIMenu menuByReplacingChildren(NSArray<? extends UIMenuElement> newChildren);
+    public native UIMenu menuByReplacingChildren(@NotNull NSArray<? extends UIMenuElement> newChildren);
 
     /**
      * Creates a UIMenu with the given arguments.
@@ -154,9 +163,11 @@ public class UIMenu extends UIMenuElement {
      * 
      * @return A new UIMenu.
      */
+    @NotNull
     @Generated
     @Selector("menuWithTitle:children:")
-    public static native UIMenu menuWithTitleChildren(String title, NSArray<? extends UIMenuElement> children);
+    public static native UIMenu menuWithTitleChildren(@NotNull String title,
+            @NotNull NSArray<? extends UIMenuElement> children);
 
     /**
      * Creates a UIMenu with the given arguments.
@@ -169,10 +180,12 @@ public class UIMenu extends UIMenuElement {
      * 
      * @return A new UIMenu.
      */
+    @NotNull
     @Generated
     @Selector("menuWithTitle:image:identifier:options:children:")
-    public static native UIMenu menuWithTitleImageIdentifierOptionsChildren(String title, UIImage image,
-            String identifier, @NUInt long options, NSArray<? extends UIMenuElement> children);
+    public static native UIMenu menuWithTitleImageIdentifierOptionsChildren(@NotNull String title,
+            @Nullable UIImage image, @Nullable String identifier, @NUInt long options,
+            @NotNull NSArray<? extends UIMenuElement> children);
 
     @Generated
     @Owned
@@ -227,15 +240,17 @@ public class UIMenu extends UIMenuElement {
      * 
      *         API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("menuWithChildren:")
-    public static native UIMenu menuWithChildren(NSArray<? extends UIMenuElement> children);
+    public static native UIMenu menuWithChildren(@NotNull NSArray<? extends UIMenuElement> children);
 
     /**
      * The element(s) in the menu and sub-menus that have an "on" menu item state.
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("selectedElements")
     public native NSArray<? extends UIMenuElement> selectedElements();

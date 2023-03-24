@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.coremedia.struct.CMVideoDimensions;
 import org.moe.natj.general.ann.ByValue;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCapturePhotoSettings
@@ -89,22 +91,25 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -139,9 +144,10 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -179,7 +185,8 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("photoSettingsFromPhotoSettings:")
-    public static native AVCapturePhotoSettings photoSettingsFromPhotoSettings(AVCapturePhotoSettings photoSettings);
+    public static native AVCapturePhotoSettings photoSettingsFromPhotoSettings(
+            @NotNull AVCapturePhotoSettings photoSettings);
 
     /**
      * photoSettingsWithFormat:
@@ -202,7 +209,7 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("photoSettingsWithFormat:")
-    public static native AVCapturePhotoSettings photoSettingsWithFormat(NSDictionary<String, ?> format);
+    public static native AVCapturePhotoSettings photoSettingsWithFormat(@Nullable NSDictionary<String, ?> format);
 
     /**
      * photoSettingsWithRawPixelFormatType:
@@ -250,7 +257,7 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
     @Generated
     @Selector("photoSettingsWithRawPixelFormatType:processedFormat:")
     public static native AVCapturePhotoSettings photoSettingsWithRawPixelFormatTypeProcessedFormat(
-            int rawPixelFormatType, NSDictionary<String, ?> processedFormat);
+            int rawPixelFormatType, @Nullable NSDictionary<String, ?> processedFormat);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -280,15 +287,17 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      * 
      * The array is sorted such that the preview format requiring the fewest conversions is presented first.
      */
+    @NotNull
     @Generated
     @Selector("availablePreviewPhotoPixelFormatTypes")
     public native NSArray<? extends NSNumber> availablePreviewPhotoPixelFormatTypes();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] flashMode
@@ -319,6 +328,7 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      * 
      * The format dictionary you passed to one of the creation methods. May be nil if you've specified RAW-only capture.
      */
+    @Nullable
     @Generated
     @Selector("format")
     public native NSDictionary<String, ?> format();
@@ -483,6 +493,7 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      * AVCapturePhotoCaptureDelegate object must implement
      * -captureOutput:didFinishProcessingLivePhotoToMovieFileAtURL:duration:photoDisplayTime:resolvedSettings:error:.
      */
+    @Nullable
     @Generated
     @Selector("livePhotoMovieFileURL")
     public native NSURL livePhotoMovieFileURL();
@@ -517,6 +528,7 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      * differs from the RAW or processed photo, the larger of the two dimensions is honored and aspect ratio of the RAW
      * or processed photo is always preserved.
      */
+    @Nullable
     @Generated
     @Selector("previewPhotoFormat")
     public native NSDictionary<String, ?> previewPhotoFormat();
@@ -568,7 +580,7 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setLivePhotoMovieFileURL:")
-    public native void setLivePhotoMovieFileURL(NSURL value);
+    public native void setLivePhotoMovieFileURL(@Nullable NSURL value);
 
     /**
      * [@property] livePhotoMovieMetadata
@@ -602,7 +614,7 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setPreviewPhotoFormat:")
-    public native void setPreviewPhotoFormat(NSDictionary<String, ?> value);
+    public native void setPreviewPhotoFormat(@Nullable NSDictionary<String, ?> value);
 
     /**
      * [@property] uniqueID
@@ -625,6 +637,7 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("availableEmbeddedThumbnailPhotoCodecTypes")
     public native NSArray<String> availableEmbeddedThumbnailPhotoCodecTypes();
@@ -648,6 +661,7 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("embeddedThumbnailPhotoFormat")
     public native NSDictionary<String, ?> embeddedThumbnailPhotoFormat();
@@ -752,6 +766,7 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("livePhotoVideoCodecType")
     public native String livePhotoVideoCodecType();
@@ -770,6 +785,7 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("metadata")
     public native NSDictionary<String, ?> metadata();
@@ -816,8 +832,8 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
     @Generated
     @Selector("photoSettingsWithRawPixelFormatType:rawFileType:processedFormat:processedFileType:")
     public static native AVCapturePhotoSettings photoSettingsWithRawPixelFormatTypeRawFileTypeProcessedFormatProcessedFileType(
-            int rawPixelFormatType, String rawFileType, NSDictionary<String, ?> processedFormat,
-            String processedFileType);
+            int rawPixelFormatType, @Nullable String rawFileType, @Nullable NSDictionary<String, ?> processedFormat,
+            @Nullable String processedFileType);
 
     /**
      * [@property] processedFileType
@@ -835,6 +851,7 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("processedFileType")
     public native String processedFileType();
@@ -850,6 +867,7 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("rawFileType")
     public native String rawFileType();
@@ -949,7 +967,7 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setEmbeddedThumbnailPhotoFormat:")
-    public native void setEmbeddedThumbnailPhotoFormat(NSDictionary<String, ?> value);
+    public native void setEmbeddedThumbnailPhotoFormat(@Nullable NSDictionary<String, ?> value);
 
     /**
      * [@property] embedsDepthDataInPhoto
@@ -979,7 +997,7 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setLivePhotoVideoCodecType:")
-    public native void setLivePhotoVideoCodecType(String value);
+    public native void setLivePhotoVideoCodecType(@NotNull String value);
 
     /**
      * [@property] metadata
@@ -997,7 +1015,7 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setMetadata:")
-    public native void setMetadata(NSDictionary<String, ?> value);
+    public native void setMetadata(@NotNull NSDictionary<String, ?> value);
 
     /**
      * [@property] availableRawEmbeddedThumbnailPhotoCodecTypes
@@ -1008,6 +1026,7 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Selector("availableRawEmbeddedThumbnailPhotoCodecTypes")
     public native NSArray<String> availableRawEmbeddedThumbnailPhotoCodecTypes();
@@ -1064,6 +1083,7 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("enabledSemanticSegmentationMatteTypes")
     public native NSArray<String> enabledSemanticSegmentationMatteTypes();
@@ -1170,6 +1190,7 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      * 
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("rawEmbeddedThumbnailPhotoFormat")
     public native NSDictionary<String, ?> rawEmbeddedThumbnailPhotoFormat();
@@ -1264,7 +1285,7 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setEnabledSemanticSegmentationMatteTypes:")
-    public native void setEnabledSemanticSegmentationMatteTypes(NSArray<String> value);
+    public native void setEnabledSemanticSegmentationMatteTypes(@NotNull NSArray<String> value);
 
     /**
      * [@property] photoQualityPrioritization
@@ -1333,7 +1354,7 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setRawEmbeddedThumbnailPhotoFormat:")
-    public native void setRawEmbeddedThumbnailPhotoFormat(NSDictionary<String, ?> value);
+    public native void setRawEmbeddedThumbnailPhotoFormat(@Nullable NSDictionary<String, ?> value);
 
     /**
      * [@property] virtualDeviceConstituentPhotoDeliveryEnabledDevices
@@ -1351,7 +1372,8 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setVirtualDeviceConstituentPhotoDeliveryEnabledDevices:")
-    public native void setVirtualDeviceConstituentPhotoDeliveryEnabledDevices(NSArray<? extends AVCaptureDevice> value);
+    public native void setVirtualDeviceConstituentPhotoDeliveryEnabledDevices(
+            @NotNull NSArray<? extends AVCaptureDevice> value);
 
     /**
      * [@property] virtualDeviceConstituentPhotoDeliveryEnabledDevices
@@ -1367,6 +1389,7 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("virtualDeviceConstituentPhotoDeliveryEnabledDevices")
     public native NSArray<? extends AVCaptureDevice> virtualDeviceConstituentPhotoDeliveryEnabledDevices();

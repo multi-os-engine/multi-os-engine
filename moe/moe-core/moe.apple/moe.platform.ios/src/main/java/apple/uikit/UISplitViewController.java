@@ -42,6 +42,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.2
@@ -81,29 +83,32 @@ public class UISplitViewController extends UIViewController {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -135,9 +140,10 @@ public class UISplitViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,6 +171,7 @@ public class UISplitViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -191,6 +198,7 @@ public class UISplitViewController extends UIViewController {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("displayModeButtonItem")
     public native UIBarButtonItem displayModeButtonItem();
@@ -201,11 +209,12 @@ public class UISplitViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UISplitViewController initWithCoder(NSCoder coder);
+    public native UISplitViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native UISplitViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native UISplitViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * Specifies whether the split view controller has collapsed its primary and secondary view controllers together
@@ -279,10 +288,11 @@ public class UISplitViewController extends UIViewController {
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UISplitViewControllerDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) UISplitViewControllerDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UISplitViewControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UISplitViewControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -345,7 +355,7 @@ public class UISplitViewController extends UIViewController {
      */
     @Generated
     @Selector("setViewControllers:")
-    public native void setViewControllers(NSArray<? extends UIViewController> value);
+    public native void setViewControllers(@NotNull NSArray<? extends UIViewController> value);
 
     /**
      * In a horizontally-regular environment this will set the detail view controller unless it provided an
@@ -358,8 +368,8 @@ public class UISplitViewController extends UIViewController {
      */
     @Generated
     @Selector("showDetailViewController:sender:")
-    public native void showDetailViewControllerSender(UIViewController vc,
-            @Mapped(ObjCObjectMapper.class) Object sender);
+    public native void showDetailViewControllerSender(@NotNull UIViewController vc,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object sender);
 
     /**
      * In a horizontally-regular environment this will set either the master or detail view controller depending on the
@@ -370,11 +380,13 @@ public class UISplitViewController extends UIViewController {
      */
     @Generated
     @Selector("showViewController:sender:")
-    public native void showViewControllerSender(UIViewController vc, @Mapped(ObjCObjectMapper.class) Object sender);
+    public native void showViewControllerSender(@NotNull UIViewController vc,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object sender);
 
     /**
      * -setViewController:forColumn:/-viewControllerForColumn: recommended for column-style UISplitViewController
      */
+    @NotNull
     @Generated
     @Selector("viewControllers")
     public native NSArray<? extends UIViewController> viewControllers();
@@ -573,7 +585,7 @@ public class UISplitViewController extends UIViewController {
      */
     @Generated
     @Selector("setViewController:forColumn:")
-    public native void setViewControllerForColumn(UIViewController vc, @NInt long column);
+    public native void setViewControllerForColumn(@Nullable UIViewController vc, @NInt long column);
 
     /**
      * API-Since: 14.0
@@ -620,6 +632,7 @@ public class UISplitViewController extends UIViewController {
     /**
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("viewControllerForColumn:")
     public native UIViewController viewControllerForColumn(@NInt long column);

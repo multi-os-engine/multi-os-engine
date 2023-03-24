@@ -47,6 +47,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.0
@@ -81,26 +83,29 @@ public class AVMutableComposition extends AVComposition {
 
     @Generated
     @Selector("assetWithURL:")
-    public static native AVMutableComposition assetWithURL(NSURL URL);
+    public static native AVMutableComposition assetWithURL(@NotNull NSURL URL);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -137,7 +142,7 @@ public class AVMutableComposition extends AVComposition {
     @Generated
     @Selector("compositionWithURLAssetInitializationOptions:")
     public static native AVMutableComposition compositionWithURLAssetInitializationOptions(
-            NSDictionary<String, ?> URLAssetInitializationOptions);
+            @Nullable NSDictionary<String, ?> URLAssetInitializationOptions);
 
     @Generated
     @Selector("debugDescription")
@@ -169,9 +174,10 @@ public class AVMutableComposition extends AVComposition {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -217,9 +223,10 @@ public class AVMutableComposition extends AVComposition {
      * @return An instance of AVMutableCompositionTrack representing the new track. Its actual trackID is available via
      *         its @"trackID" key.
      */
+    @Nullable
     @Generated
     @Selector("addMutableTrackWithMediaType:preferredTrackID:")
-    public native AVMutableCompositionTrack addMutableTrackWithMediaTypePreferredTrackID(String mediaType,
+    public native AVMutableCompositionTrack addMutableTrackWithMediaTypePreferredTrackID(@NotNull String mediaType,
             int preferredTrackID);
 
     @Generated
@@ -275,8 +282,8 @@ public class AVMutableComposition extends AVComposition {
     @Deprecated
     @Generated
     @Selector("insertTimeRange:ofAsset:atTime:error:")
-    public native boolean insertTimeRangeOfAssetAtTimeError(@ByValue CMTimeRange timeRange, AVAsset asset,
-            @ByValue CMTime startTime, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean insertTimeRangeOfAssetAtTimeError(@ByValue CMTimeRange timeRange, @NotNull AVAsset asset,
+            @ByValue CMTime startTime, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * mutableTrackCompatibleWithTrack:
@@ -299,9 +306,10 @@ public class AVMutableComposition extends AVComposition {
      *              A reference to the AVAssetTrack from which a timeRange may be inserted.
      * @return An AVMutableCompositionTrack that can accommodate the insertion, or, if no such track is available, nil.
      */
+    @Nullable
     @Generated
     @Selector("mutableTrackCompatibleWithTrack:")
-    public native AVMutableCompositionTrack mutableTrackCompatibleWithTrack(AVAssetTrack track);
+    public native AVMutableCompositionTrack mutableTrackCompatibleWithTrack(@NotNull AVAssetTrack track);
 
     /**
      * [@property] naturalSize
@@ -347,7 +355,7 @@ public class AVMutableComposition extends AVComposition {
      */
     @Generated
     @Selector("removeTrack:")
-    public native void removeTrack(AVCompositionTrack track);
+    public native void removeTrack(@NotNull AVCompositionTrack track);
 
     /**
      * scaleTimeRange:toDuration:
@@ -389,6 +397,7 @@ public class AVMutableComposition extends AVComposition {
      *                The trackID of the requested AVMutableCompositionTrack.
      * @return An instance of AVMutableCompositionTrack; may be nil if no track of the specified trackID is available.
      */
+    @Nullable
     @Generated
     @Selector("trackWithTrackID:")
     public native AVMutableCompositionTrack trackWithTrackID(int trackID);
@@ -398,6 +407,7 @@ public class AVMutableComposition extends AVComposition {
      * 
      * Provides the array of AVMutableCompositionTracks contained by the composition.
      */
+    @NotNull
     @Generated
     @Selector("tracks")
     public native NSArray<? extends AVMutableCompositionTrack> tracks();
@@ -416,10 +426,11 @@ public class AVMutableComposition extends AVComposition {
      * @return An NSArray of AVMutableCompositionTracks; may be empty if no tracks with the specified characteristic are
      *         available.
      */
+    @NotNull
     @Generated
     @Selector("tracksWithMediaCharacteristic:")
     public native NSArray<? extends AVMutableCompositionTrack> tracksWithMediaCharacteristic(
-            String mediaCharacteristic);
+            @NotNull String mediaCharacteristic);
 
     /**
      * tracksWithMediaType:
@@ -434,9 +445,10 @@ public class AVMutableComposition extends AVComposition {
      * @return An NSArray of AVMutableCompositionTracks; may be empty if no tracks of the specified media type are
      *         available.
      */
+    @NotNull
     @Generated
     @Selector("tracksWithMediaType:")
-    public native NSArray<? extends AVMutableCompositionTrack> tracksWithMediaType(String mediaType);
+    public native NSArray<? extends AVMutableCompositionTrack> tracksWithMediaType(@NotNull String mediaType);
 
     /**
      * loadTrackWithTrackID:completionHandler:
@@ -454,13 +466,14 @@ public class AVMutableComposition extends AVComposition {
     @Generated
     @Selector("loadTrackWithTrackID:completionHandler:")
     public native void loadTrackWithTrackIDCompletionHandler(int trackID,
-            @ObjCBlock(name = "call_loadTrackWithTrackIDCompletionHandler") Block_loadTrackWithTrackIDCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_loadTrackWithTrackIDCompletionHandler") Block_loadTrackWithTrackIDCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadTrackWithTrackIDCompletionHandler {
         @Generated
-        void call_loadTrackWithTrackIDCompletionHandler(AVMutableCompositionTrack arg0, NSError arg1);
+        void call_loadTrackWithTrackIDCompletionHandler(@Nullable AVMutableCompositionTrack arg0,
+                @Nullable NSError arg1);
     }
 
     /**
@@ -480,15 +493,15 @@ public class AVMutableComposition extends AVComposition {
      */
     @Generated
     @Selector("loadTracksWithMediaCharacteristic:completionHandler:")
-    public native void loadTracksWithMediaCharacteristicCompletionHandler(String mediaCharacteristic,
-            @ObjCBlock(name = "call_loadTracksWithMediaCharacteristicCompletionHandler") Block_loadTracksWithMediaCharacteristicCompletionHandler completionHandler);
+    public native void loadTracksWithMediaCharacteristicCompletionHandler(@NotNull String mediaCharacteristic,
+            @NotNull @ObjCBlock(name = "call_loadTracksWithMediaCharacteristicCompletionHandler") Block_loadTracksWithMediaCharacteristicCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadTracksWithMediaCharacteristicCompletionHandler {
         @Generated
-        void call_loadTracksWithMediaCharacteristicCompletionHandler(NSArray<? extends AVMutableCompositionTrack> arg0,
-                NSError arg1);
+        void call_loadTracksWithMediaCharacteristicCompletionHandler(
+                @Nullable NSArray<? extends AVMutableCompositionTrack> arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -507,15 +520,15 @@ public class AVMutableComposition extends AVComposition {
      */
     @Generated
     @Selector("loadTracksWithMediaType:completionHandler:")
-    public native void loadTracksWithMediaTypeCompletionHandler(String mediaType,
-            @ObjCBlock(name = "call_loadTracksWithMediaTypeCompletionHandler") Block_loadTracksWithMediaTypeCompletionHandler completionHandler);
+    public native void loadTracksWithMediaTypeCompletionHandler(@NotNull String mediaType,
+            @NotNull @ObjCBlock(name = "call_loadTracksWithMediaTypeCompletionHandler") Block_loadTracksWithMediaTypeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadTracksWithMediaTypeCompletionHandler {
         @Generated
-        void call_loadTracksWithMediaTypeCompletionHandler(NSArray<? extends AVMutableCompositionTrack> arg0,
-                NSError arg1);
+        void call_loadTracksWithMediaTypeCompletionHandler(@Nullable NSArray<? extends AVMutableCompositionTrack> arg0,
+                @Nullable NSError arg1);
     }
 
     /**
@@ -548,14 +561,14 @@ public class AVMutableComposition extends AVComposition {
      */
     @Generated
     @Selector("insertTimeRange:ofAsset:atTime:completionHandler:")
-    public native void insertTimeRangeOfAssetAtTimeCompletionHandler(@ByValue CMTimeRange timeRange, AVAsset asset,
-            @ByValue CMTime startTime,
-            @ObjCBlock(name = "call_insertTimeRangeOfAssetAtTimeCompletionHandler") Block_insertTimeRangeOfAssetAtTimeCompletionHandler completionHandler);
+    public native void insertTimeRangeOfAssetAtTimeCompletionHandler(@ByValue CMTimeRange timeRange,
+            @NotNull AVAsset asset, @ByValue CMTime startTime,
+            @NotNull @ObjCBlock(name = "call_insertTimeRangeOfAssetAtTimeCompletionHandler") Block_insertTimeRangeOfAssetAtTimeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_insertTimeRangeOfAssetAtTimeCompletionHandler {
         @Generated
-        void call_insertTimeRangeOfAssetAtTimeCompletionHandler(NSError error);
+        void call_insertTimeRangeOfAssetAtTimeCompletionHandler(@Nullable NSError error);
     }
 }

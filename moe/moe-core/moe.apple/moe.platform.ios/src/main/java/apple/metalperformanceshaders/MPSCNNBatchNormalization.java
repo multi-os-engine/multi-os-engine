@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNBatchNormalization
@@ -74,22 +76,25 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -97,6 +102,7 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
     /**
      * The data source the batch normalization was initialized with
      */
+    @NotNull
     @Generated
     @Selector("dataSource")
     @MappedReturn(ObjCObjectMapper.class)
@@ -125,8 +131,8 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:batchNormalizationState:destinationImage:")
     public native void encodeToCommandBufferSourceImageBatchNormalizationStateDestinationImage(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
-            MPSCNNBatchNormalizationState batchNormalizationState, MPSImage destinationImage);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceImage,
+            @NotNull MPSCNNBatchNormalizationState batchNormalizationState, @NotNull MPSImage destinationImage);
 
     /**
      * [@property] epsilon
@@ -149,7 +155,7 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNBatchNormalization initWithCoder(NSCoder aDecoder);
+    public native MPSCNNBatchNormalization initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
@@ -168,12 +174,12 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNBatchNormalization initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNBatchNormalization initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNBatchNormalization initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNBatchNormalization initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initializes a batch normalization kernel using a data source.
@@ -187,8 +193,9 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
      */
     @Generated
     @Selector("initWithDevice:dataSource:")
-    public native MPSCNNBatchNormalization initWithDeviceDataSource(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @Mapped(ObjCObjectMapper.class) MPSCNNBatchNormalizationDataSource dataSource);
+    public native MPSCNNBatchNormalization initWithDeviceDataSource(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNBatchNormalizationDataSource dataSource);
 
     /**
      * Initializes a batch normalization kernel using a data source and a neuron descriptor.
@@ -207,9 +214,9 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
     @Generated
     @Selector("initWithDevice:dataSource:fusedNeuronDescriptor:")
     public native MPSCNNBatchNormalization initWithDeviceDataSourceFusedNeuronDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @Mapped(ObjCObjectMapper.class) MPSCNNBatchNormalizationDataSource dataSource,
-            MPSNNNeuronDescriptor fusedNeuronDescriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNBatchNormalizationDataSource dataSource,
+            @Nullable MPSNNNeuronDescriptor fusedNeuronDescriptor);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -228,9 +235,10 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -259,7 +267,8 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
     @Deprecated
     @Generated
     @Selector("reloadDataSource:")
-    public native void reloadDataSource(@Mapped(ObjCObjectMapper.class) MPSCNNBatchNormalizationDataSource dataSource);
+    public native void reloadDataSource(
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNBatchNormalizationDataSource dataSource);
 
     /**
      * Reinitialize the filter's gamma and beta values using the data source provided at kernel initialization.
@@ -282,8 +291,8 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
     @Generated
     @Selector("reloadGammaAndBetaWithCommandBuffer:gammaAndBetaState:")
     public native void reloadGammaAndBetaWithCommandBufferGammaAndBetaState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNNormalizationGammaAndBetaState gammaAndBetaState);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNNormalizationGammaAndBetaState gammaAndBetaState);
 
     /**
      * Reinitialize the filter's mean and variance values using the data source provided at kernel initialization.
@@ -308,8 +317,8 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
     @Generated
     @Selector("reloadMeanAndVarianceWithCommandBuffer:meanAndVarianceState:")
     public native void reloadMeanAndVarianceWithCommandBufferMeanAndVarianceState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNNormalizationMeanAndVarianceState meanAndVarianceState);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNNormalizationMeanAndVarianceState meanAndVarianceState);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -322,10 +331,12 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
     /**
      * Return an MPSCNNBatchNormalizationState object which may be used with a MPSCNNBatchNormalization filter.
      */
+    @Nullable
     @Generated
     @Selector("resultStateForSourceImage:sourceStates:destinationImage:")
     public native MPSCNNBatchNormalizationState resultStateForSourceImageSourceStatesDestinationImage(
-            MPSImage sourceImage, NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
+            @NotNull MPSImage sourceImage, @Nullable NSArray<? extends MPSState> sourceStates,
+            @NotNull MPSImage destinationImage);
 
     /**
      * [@property] epsilon
@@ -359,11 +370,12 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
      * Return a temporary MPSCNNBatchNormalizationState object which may be used with
      * a MPSCNNBatchNormalization filter.
      */
+    @Nullable
     @Generated
     @Selector("temporaryResultStateForCommandBuffer:sourceImage:sourceStates:destinationImage:")
     public native MPSCNNBatchNormalizationState temporaryResultStateForCommandBufferSourceImageSourceStatesDestinationImage(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
-            NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceImage,
+            @Nullable NSArray<? extends MPSState> sourceStates, @NotNull MPSImage destinationImage);
 
     @Generated
     @Selector("version")

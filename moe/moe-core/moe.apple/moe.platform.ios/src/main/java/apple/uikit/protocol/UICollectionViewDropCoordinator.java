@@ -16,6 +16,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -29,6 +31,7 @@ public interface UICollectionViewDropCoordinator {
      * The last hit-tested index path known during the drop session.
      * If this is nil, the proposal's intent will be .unspecified
      */
+    @Nullable
     @Generated
     @Selector("destinationIndexPath")
     NSIndexPath destinationIndexPath();
@@ -39,10 +42,12 @@ public interface UICollectionViewDropCoordinator {
      * The item will be animated with an aspect fit scale transform to fit inside the rect. Use a rect with zero size to
      * shrink the item to a single point.
      */
+    @NotNull
     @Generated
     @Selector("dropItem:intoItemAtIndexPath:rect:")
     @MappedReturn(ObjCObjectMapper.class)
-    UIDragAnimating dropItemIntoItemAtIndexPathRect(UIDragItem dragItem, NSIndexPath indexPath, @ByValue CGRect rect);
+    UIDragAnimating dropItemIntoItemAtIndexPathRect(@NotNull UIDragItem dragItem, @NotNull NSIndexPath indexPath,
+            @ByValue CGRect rect);
 
     /**
      * Animate the dragItem to a newly inserted item at the specified index path.
@@ -52,10 +57,11 @@ public interface UICollectionViewDropCoordinator {
      * To tweak the appearance of the preview being dropping (e.g. supply a clipping path), see
      * -collectionView:dropPreviewParametersForItemAtIndexPath:
      */
+    @NotNull
     @Generated
     @Selector("dropItem:toItemAtIndexPath:")
     @MappedReturn(ObjCObjectMapper.class)
-    UIDragAnimating dropItemToItemAtIndexPath(UIDragItem dragItem, NSIndexPath indexPath);
+    UIDragAnimating dropItemToItemAtIndexPath(@NotNull UIDragItem dragItem, @NotNull NSIndexPath indexPath);
 
     /**
      * Animate the dragItem to an automatically inserted placeholder item.
@@ -73,23 +79,26 @@ public interface UICollectionViewDropCoordinator {
      * UICollectionViewDropPlaceholderContext also conforms to UIDragAnimating to allow adding alongside animations and
      * completion handlers.
      */
+    @NotNull
     @Generated
     @Selector("dropItem:toPlaceholder:")
     @MappedReturn(ObjCObjectMapper.class)
-    UICollectionViewDropPlaceholderContext dropItemToPlaceholder(UIDragItem dragItem,
-            UICollectionViewDropPlaceholder placeholder);
+    UICollectionViewDropPlaceholderContext dropItemToPlaceholder(@NotNull UIDragItem dragItem,
+            @NotNull UICollectionViewDropPlaceholder placeholder);
 
     /**
      * Animate the dragItem to a location specified by the UIDragPreviewTarget.
      */
+    @NotNull
     @Generated
     @Selector("dropItem:toTarget:")
     @MappedReturn(ObjCObjectMapper.class)
-    UIDragAnimating dropItemToTarget(UIDragItem dragItem, UIDragPreviewTarget target);
+    UIDragAnimating dropItemToTarget(@NotNull UIDragItem dragItem, @NotNull UIDragPreviewTarget target);
 
     /**
      * Ordered list of items available for this drop.
      */
+    @NotNull
     @Generated
     @Selector("items")
     NSArray<?> items();
@@ -97,10 +106,12 @@ public interface UICollectionViewDropCoordinator {
     /**
      * The current drop proposal at the time of the drop.
      */
+    @NotNull
     @Generated
     @Selector("proposal")
     UICollectionViewDropProposal proposal();
 
+    @NotNull
     @Generated
     @Selector("session")
     @MappedReturn(ObjCObjectMapper.class)

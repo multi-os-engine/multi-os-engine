@@ -26,6 +26,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import apple.uikit.UITouch;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 9.1
@@ -41,7 +42,8 @@ public interface PHLivePhotoViewDelegate {
     @Generated
     @IsOptional
     @Selector("livePhotoView:didEndPlaybackWithStyle:")
-    default void livePhotoViewDidEndPlaybackWithStyle(PHLivePhotoView livePhotoView, @NInt long playbackStyle) {
+    default void livePhotoViewDidEndPlaybackWithStyle(@NotNull PHLivePhotoView livePhotoView,
+            @NInt long playbackStyle) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -51,7 +53,8 @@ public interface PHLivePhotoViewDelegate {
     @Generated
     @IsOptional
     @Selector("livePhotoView:willBeginPlaybackWithStyle:")
-    default void livePhotoViewWillBeginPlaybackWithStyle(PHLivePhotoView livePhotoView, @NInt long playbackStyle) {
+    default void livePhotoViewWillBeginPlaybackWithStyle(@NotNull PHLivePhotoView livePhotoView,
+            @NInt long playbackStyle) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -61,7 +64,8 @@ public interface PHLivePhotoViewDelegate {
     @Generated
     @IsOptional
     @Selector("livePhotoView:canBeginPlaybackWithStyle:")
-    default boolean livePhotoViewCanBeginPlaybackWithStyle(PHLivePhotoView livePhotoView, @NInt long playbackStyle) {
+    default boolean livePhotoViewCanBeginPlaybackWithStyle(@NotNull PHLivePhotoView livePhotoView,
+            @NInt long playbackStyle) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -74,8 +78,8 @@ public interface PHLivePhotoViewDelegate {
     @Generated
     @IsOptional
     @Selector("livePhotoView:extraMinimumTouchDurationForTouch:withStyle:")
-    default double livePhotoViewExtraMinimumTouchDurationForTouchWithStyle(PHLivePhotoView livePhotoView, UITouch touch,
-            @NInt long playbackStyle) {
+    default double livePhotoViewExtraMinimumTouchDurationForTouchWithStyle(@NotNull PHLivePhotoView livePhotoView,
+            @NotNull UITouch touch, @NInt long playbackStyle) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -27,6 +27,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Protocol to which the principal view controller of the extension must conform.
@@ -45,7 +47,7 @@ public interface PHContentEditingController {
      */
     @Generated
     @Selector("canHandleAdjustmentData:")
-    boolean canHandleAdjustmentData(PHAdjustmentData adjustmentData);
+    boolean canHandleAdjustmentData(@NotNull PHAdjustmentData adjustmentData);
 
     /**
      * Called if the user cancels the editing session. (Can be called while the receiver is producing the editing
@@ -68,7 +70,7 @@ public interface PHContentEditingController {
     @Generated
     @Selector("finishContentEditingWithCompletionHandler:")
     void finishContentEditingWithCompletionHandler(
-            @ObjCBlock(name = "call_finishContentEditingWithCompletionHandler") Block_finishContentEditingWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_finishContentEditingWithCompletionHandler") Block_finishContentEditingWithCompletionHandler completionHandler);
 
     /**
      * Returns whether the user should be prompted when canceling the editing session.
@@ -84,13 +86,13 @@ public interface PHContentEditingController {
      */
     @Generated
     @Selector("startContentEditingWithInput:placeholderImage:")
-    void startContentEditingWithInputPlaceholderImage(PHContentEditingInput contentEditingInput,
-            UIImage placeholderImage);
+    void startContentEditingWithInputPlaceholderImage(@NotNull PHContentEditingInput contentEditingInput,
+            @NotNull UIImage placeholderImage);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_finishContentEditingWithCompletionHandler {
         @Generated
-        void call_finishContentEditingWithCompletionHandler(PHContentEditingOutput arg0);
+        void call_finishContentEditingWithCompletionHandler(@Nullable PHContentEditingOutput arg0);
     }
 }

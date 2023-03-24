@@ -7,6 +7,8 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The \c GCPhysicalInputElement protocol is a base protocol for specific types
@@ -23,6 +25,7 @@ public interface GCPhysicalInputElement {
      * The set of aliases that can be used to access this element with keyed subscript
      * notation.
      */
+    @NotNull
     @Generated
     @Selector("aliases")
     NSSet<String> aliases();
@@ -30,6 +33,7 @@ public interface GCPhysicalInputElement {
     /**
      * The element's localized name.
      */
+    @Nullable
     @Generated
     @Selector("localizedName")
     String localizedName();
@@ -37,6 +41,7 @@ public interface GCPhysicalInputElement {
     /**
      * The element's SF Symbols name.
      */
+    @Nullable
     @Generated
     @Selector("sfSymbolsName")
     String sfSymbolsName();

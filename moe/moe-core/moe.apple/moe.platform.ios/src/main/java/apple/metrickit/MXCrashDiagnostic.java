@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MXCrashDiagnostic
@@ -64,7 +66,7 @@ public class MXCrashDiagnostic extends MXDiagnostic {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] callStackTree
@@ -73,24 +75,28 @@ public class MXCrashDiagnostic extends MXDiagnostic {
      * 
      * This call stack tree includes those stack frames present at the time of the crash.
      */
+    @NotNull
     @Generated
     @Selector("callStackTree")
     public native MXCallStackTree callStackTree();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -110,6 +116,7 @@ public class MXCrashDiagnostic extends MXDiagnostic {
      * 
      * @see sys/exception_types.h
      */
+    @Nullable
     @Generated
     @Selector("exceptionCode")
     public native NSNumber exceptionCode();
@@ -121,6 +128,7 @@ public class MXCrashDiagnostic extends MXDiagnostic {
      * 
      * @see sys/exception_types.h
      */
+    @Nullable
     @Generated
     @Selector("exceptionType")
     public native NSNumber exceptionType();
@@ -136,7 +144,7 @@ public class MXCrashDiagnostic extends MXDiagnostic {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MXCrashDiagnostic initWithCoder(NSCoder coder);
+    public native MXCrashDiagnostic initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -155,9 +163,10 @@ public class MXCrashDiagnostic extends MXDiagnostic {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -183,6 +192,7 @@ public class MXCrashDiagnostic extends MXDiagnostic {
      * 
      * @see sys/signal.h
      */
+    @Nullable
     @Generated
     @Selector("signal")
     public native NSNumber signal();
@@ -210,6 +220,7 @@ public class MXCrashDiagnostic extends MXDiagnostic {
      * a process, will terminate the process upon encountering a fatal error (e.g. a bad code signature, a missing
      * dependent library, or accessing privacy sensitive information without the proper entitlement).
      */
+    @Nullable
     @Generated
     @Selector("terminationReason")
     public native String terminationReason();
@@ -227,6 +238,7 @@ public class MXCrashDiagnostic extends MXDiagnostic {
      * 
      * This property is set when a bad memory access crash occurs.
      */
+    @Nullable
     @Generated
     @Selector("virtualMemoryRegionInfo")
     public native String virtualMemoryRegionInfo();

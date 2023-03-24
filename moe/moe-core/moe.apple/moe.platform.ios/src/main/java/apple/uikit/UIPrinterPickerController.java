@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -77,22 +79,25 @@ public class UIPrinterPickerController extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +132,10 @@ public class UIPrinterPickerController extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -144,10 +150,11 @@ public class UIPrinterPickerController extends NSObject {
      * UIPrintInteractionController's printWithoutUIToPrinter: method.
      * If no printer should be preselected, use a value of nil for the parameter.
      */
+    @NotNull
     @Generated
     @Selector("printerPickerControllerWithInitiallySelectedPrinter:")
     public static native UIPrinterPickerController printerPickerControllerWithInitiallySelectedPrinter(
-            UIPrinter printer);
+            @Nullable UIPrinter printer);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -170,6 +177,7 @@ public class UIPrinterPickerController extends NSObject {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -189,39 +197,42 @@ public class UIPrinterPickerController extends NSObject {
     @Generated
     @Selector("presentAnimated:completionHandler:")
     public native boolean presentAnimatedCompletionHandler(boolean animated,
-            @ObjCBlock(name = "call_presentAnimatedCompletionHandler") Block_presentAnimatedCompletionHandler completion);
+            @Nullable @ObjCBlock(name = "call_presentAnimatedCompletionHandler") Block_presentAnimatedCompletionHandler completion);
 
     /**
      * iPad
      */
     @Generated
     @Selector("presentFromBarButtonItem:animated:completionHandler:")
-    public native boolean presentFromBarButtonItemAnimatedCompletionHandler(UIBarButtonItem item, boolean animated,
-            @ObjCBlock(name = "call_presentFromBarButtonItemAnimatedCompletionHandler") Block_presentFromBarButtonItemAnimatedCompletionHandler completion);
+    public native boolean presentFromBarButtonItemAnimatedCompletionHandler(@NotNull UIBarButtonItem item,
+            boolean animated,
+            @Nullable @ObjCBlock(name = "call_presentFromBarButtonItemAnimatedCompletionHandler") Block_presentFromBarButtonItemAnimatedCompletionHandler completion);
 
     /**
      * iPad
      */
     @Generated
     @Selector("presentFromRect:inView:animated:completionHandler:")
-    public native boolean presentFromRectInViewAnimatedCompletionHandler(@ByValue CGRect rect, UIView view,
+    public native boolean presentFromRectInViewAnimatedCompletionHandler(@ByValue CGRect rect, @NotNull UIView view,
             boolean animated,
-            @ObjCBlock(name = "call_presentFromRectInViewAnimatedCompletionHandler") Block_presentFromRectInViewAnimatedCompletionHandler completion);
+            @Nullable @ObjCBlock(name = "call_presentFromRectInViewAnimatedCompletionHandler") Block_presentFromRectInViewAnimatedCompletionHandler completion);
 
     /**
      * The selected printer. Set this before presenting the UI to show the currently
      * selected printer. Use this to determine which printer the user selected.
      */
+    @Nullable
     @Generated
     @Selector("selectedPrinter")
     public native UIPrinter selectedPrinter();
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIPrinterPickerControllerDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) UIPrinterPickerControllerDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UIPrinterPickerControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIPrinterPickerControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -236,23 +247,25 @@ public class UIPrinterPickerController extends NSObject {
     @Generated
     public interface Block_presentAnimatedCompletionHandler {
         @Generated
-        void call_presentAnimatedCompletionHandler(UIPrinterPickerController printerPickerController,
-                boolean userDidSelect, NSError error);
+        void call_presentAnimatedCompletionHandler(@NotNull UIPrinterPickerController printerPickerController,
+                boolean userDidSelect, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_presentFromBarButtonItemAnimatedCompletionHandler {
         @Generated
-        void call_presentFromBarButtonItemAnimatedCompletionHandler(UIPrinterPickerController printerPickerController,
-                boolean userDidSelect, NSError error);
+        void call_presentFromBarButtonItemAnimatedCompletionHandler(
+                @NotNull UIPrinterPickerController printerPickerController, boolean userDidSelect,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_presentFromRectInViewAnimatedCompletionHandler {
         @Generated
-        void call_presentFromRectInViewAnimatedCompletionHandler(UIPrinterPickerController printerPickerController,
-                boolean userDidSelect, NSError error);
+        void call_presentFromRectInViewAnimatedCompletionHandler(
+                @NotNull UIPrinterPickerController printerPickerController, boolean userDidSelect,
+                @Nullable NSError error);
     }
 }

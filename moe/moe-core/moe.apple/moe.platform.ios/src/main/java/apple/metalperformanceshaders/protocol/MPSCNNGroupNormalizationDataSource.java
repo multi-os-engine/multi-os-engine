@@ -17,6 +17,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MPSCNNGroupNormalizationDataSource
@@ -37,6 +39,7 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
      * 
      * Must have numberOfFeatureChannels values since scaling is done per feature channel.
      */
+    @Nullable
     @Generated
     @Selector("beta")
     FloatPtr beta();
@@ -49,12 +52,13 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
      * 
      * @return A pointer to a copy of this data source.
      */
+    @NotNull
     @Generated
     @Owned
     @IsOptional
     @Selector("copyWithZone:device:")
-    default MPSCNNGroupNormalizationDataSource copyWithZoneDevice(VoidPtr zone,
-            @Mapped(ObjCObjectMapper.class) MTLDevice device) {
+    default MPSCNNGroupNormalizationDataSource copyWithZoneDevice(@Nullable VoidPtr zone,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLDevice device) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -64,7 +68,7 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
     @Generated
     @IsOptional
     @Selector("encodeWithCoder:")
-    default void encodeWithCoder(NSCoder aCoder) {
+    default void encodeWithCoder(@NotNull NSCoder aCoder) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -86,6 +90,7 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
      * 
      * Must have numberOfFeatureChannels values since scaling is done per feature channel.
      */
+    @Nullable
     @Generated
     @Selector("gamma")
     FloatPtr gamma();
@@ -93,10 +98,11 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
     /**
      * NS_DESIGNATED_INITIALIZER
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("initWithCoder:")
-    default MPSCNNGroupNormalizationDataSource initWithCoder(NSCoder aDecoder) {
+    default MPSCNNGroupNormalizationDataSource initWithCoder(@NotNull NSCoder aDecoder) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -105,6 +111,7 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
      * 
      * Overridden by a MPSCNNGroupNormalizationNode.label if it is non-nil.
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();

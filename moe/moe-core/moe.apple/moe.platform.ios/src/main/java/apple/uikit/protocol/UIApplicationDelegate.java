@@ -51,6 +51,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -71,9 +73,9 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:continueUserActivity:restorationHandler:")
-    default boolean applicationContinueUserActivityRestorationHandler(UIApplication application,
-            NSUserActivity userActivity,
-            @ObjCBlock(name = "call_applicationContinueUserActivityRestorationHandler") Block_applicationContinueUserActivityRestorationHandler restorationHandler) {
+    default boolean applicationContinueUserActivityRestorationHandler(@NotNull UIApplication application,
+            @NotNull NSUserActivity userActivity,
+            @NotNull @ObjCBlock(name = "call_applicationContinueUserActivityRestorationHandler") Block_applicationContinueUserActivityRestorationHandler restorationHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -86,7 +88,8 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:didChangeStatusBarFrame:")
-    default void applicationDidChangeStatusBarFrame(UIApplication application, @ByValue CGRect oldStatusBarFrame) {
+    default void applicationDidChangeStatusBarFrame(@NotNull UIApplication application,
+            @ByValue CGRect oldStatusBarFrame) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -99,7 +102,7 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:didChangeStatusBarOrientation:")
-    default void applicationDidChangeStatusBarOrientation(UIApplication application,
+    default void applicationDidChangeStatusBarOrientation(@NotNull UIApplication application,
             @NInt long oldStatusBarOrientation) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -110,7 +113,8 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:didDecodeRestorableStateWithCoder:")
-    default void applicationDidDecodeRestorableStateWithCoder(UIApplication application, NSCoder coder) {
+    default void applicationDidDecodeRestorableStateWithCoder(@NotNull UIApplication application,
+            @NotNull NSCoder coder) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -123,8 +127,8 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:didFailToContinueUserActivityWithType:error:")
-    default void applicationDidFailToContinueUserActivityWithTypeError(UIApplication application,
-            String userActivityType, NSError error) {
+    default void applicationDidFailToContinueUserActivityWithTypeError(@NotNull UIApplication application,
+            @NotNull String userActivityType, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -134,7 +138,8 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:didFailToRegisterForRemoteNotificationsWithError:")
-    default void applicationDidFailToRegisterForRemoteNotificationsWithError(UIApplication application, NSError error) {
+    default void applicationDidFailToRegisterForRemoteNotificationsWithError(@NotNull UIApplication application,
+            @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -144,8 +149,8 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:didFinishLaunchingWithOptions:")
-    default boolean applicationDidFinishLaunchingWithOptions(UIApplication application,
-            NSDictionary<String, ?> launchOptions) {
+    default boolean applicationDidFinishLaunchingWithOptions(@NotNull UIApplication application,
+            @Nullable NSDictionary<String, ?> launchOptions) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -160,7 +165,8 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:didReceiveLocalNotification:")
-    default void applicationDidReceiveLocalNotification(UIApplication application, UILocalNotification notification) {
+    default void applicationDidReceiveLocalNotification(@NotNull UIApplication application,
+            @NotNull UILocalNotification notification) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -176,7 +182,8 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:didReceiveRemoteNotification:")
-    default void applicationDidReceiveRemoteNotification(UIApplication application, NSDictionary<?, ?> userInfo) {
+    default void applicationDidReceiveRemoteNotification(@NotNull UIApplication application,
+            @NotNull NSDictionary<?, ?> userInfo) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -196,9 +203,9 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:didReceiveRemoteNotification:fetchCompletionHandler:")
-    default void applicationDidReceiveRemoteNotificationFetchCompletionHandler(UIApplication application,
-            NSDictionary<?, ?> userInfo,
-            @ObjCBlock(name = "call_applicationDidReceiveRemoteNotificationFetchCompletionHandler") Block_applicationDidReceiveRemoteNotificationFetchCompletionHandler completionHandler) {
+    default void applicationDidReceiveRemoteNotificationFetchCompletionHandler(@NotNull UIApplication application,
+            @NotNull NSDictionary<?, ?> userInfo,
+            @NotNull @ObjCBlock(name = "call_applicationDidReceiveRemoteNotificationFetchCompletionHandler") Block_applicationDidReceiveRemoteNotificationFetchCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -208,8 +215,8 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:didRegisterForRemoteNotificationsWithDeviceToken:")
-    default void applicationDidRegisterForRemoteNotificationsWithDeviceToken(UIApplication application,
-            NSData deviceToken) {
+    default void applicationDidRegisterForRemoteNotificationsWithDeviceToken(@NotNull UIApplication application,
+            @NotNull NSData deviceToken) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -226,8 +233,8 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:didRegisterUserNotificationSettings:")
-    default void applicationDidRegisterUserNotificationSettings(UIApplication application,
-            UIUserNotificationSettings notificationSettings) {
+    default void applicationDidRegisterUserNotificationSettings(@NotNull UIApplication application,
+            @NotNull UIUserNotificationSettings notificationSettings) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -240,7 +247,8 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:didUpdateUserActivity:")
-    default void applicationDidUpdateUserActivity(UIApplication application, NSUserActivity userActivity) {
+    default void applicationDidUpdateUserActivity(@NotNull UIApplication application,
+            @NotNull NSUserActivity userActivity) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -258,9 +266,9 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:handleActionWithIdentifier:forLocalNotification:completionHandler:")
-    default void applicationHandleActionWithIdentifierForLocalNotificationCompletionHandler(UIApplication application,
-            String identifier, UILocalNotification notification,
-            @ObjCBlock(name = "call_applicationHandleActionWithIdentifierForLocalNotificationCompletionHandler") Block_applicationHandleActionWithIdentifierForLocalNotificationCompletionHandler completionHandler) {
+    default void applicationHandleActionWithIdentifierForLocalNotificationCompletionHandler(
+            @NotNull UIApplication application, @Nullable String identifier, @NotNull UILocalNotification notification,
+            @NotNull @ObjCBlock(name = "call_applicationHandleActionWithIdentifierForLocalNotificationCompletionHandler") Block_applicationHandleActionWithIdentifierForLocalNotificationCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -275,9 +283,9 @@ public interface UIApplicationDelegate {
     @IsOptional
     @Selector("application:handleActionWithIdentifier:forLocalNotification:withResponseInfo:completionHandler:")
     default void applicationHandleActionWithIdentifierForLocalNotificationWithResponseInfoCompletionHandler(
-            UIApplication application, String identifier, UILocalNotification notification,
-            NSDictionary<?, ?> responseInfo,
-            @ObjCBlock(name = "call_applicationHandleActionWithIdentifierForLocalNotificationWithResponseInfoCompletionHandler") Block_applicationHandleActionWithIdentifierForLocalNotificationWithResponseInfoCompletionHandler completionHandler) {
+            @NotNull UIApplication application, @Nullable String identifier, @NotNull UILocalNotification notification,
+            @NotNull NSDictionary<?, ?> responseInfo,
+            @NotNull @ObjCBlock(name = "call_applicationHandleActionWithIdentifierForLocalNotificationWithResponseInfoCompletionHandler") Block_applicationHandleActionWithIdentifierForLocalNotificationWithResponseInfoCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -295,9 +303,9 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:handleActionWithIdentifier:forRemoteNotification:completionHandler:")
-    default void applicationHandleActionWithIdentifierForRemoteNotificationCompletionHandler(UIApplication application,
-            String identifier, NSDictionary<?, ?> userInfo,
-            @ObjCBlock(name = "call_applicationHandleActionWithIdentifierForRemoteNotificationCompletionHandler") Block_applicationHandleActionWithIdentifierForRemoteNotificationCompletionHandler completionHandler) {
+    default void applicationHandleActionWithIdentifierForRemoteNotificationCompletionHandler(
+            @NotNull UIApplication application, @Nullable String identifier, @NotNull NSDictionary<?, ?> userInfo,
+            @NotNull @ObjCBlock(name = "call_applicationHandleActionWithIdentifierForRemoteNotificationCompletionHandler") Block_applicationHandleActionWithIdentifierForRemoteNotificationCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -312,8 +320,9 @@ public interface UIApplicationDelegate {
     @IsOptional
     @Selector("application:handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:")
     default void applicationHandleActionWithIdentifierForRemoteNotificationWithResponseInfoCompletionHandler(
-            UIApplication application, String identifier, NSDictionary<?, ?> userInfo, NSDictionary<?, ?> responseInfo,
-            @ObjCBlock(name = "call_applicationHandleActionWithIdentifierForRemoteNotificationWithResponseInfoCompletionHandler") Block_applicationHandleActionWithIdentifierForRemoteNotificationWithResponseInfoCompletionHandler completionHandler) {
+            @NotNull UIApplication application, @Nullable String identifier, @NotNull NSDictionary<?, ?> userInfo,
+            @NotNull NSDictionary<?, ?> responseInfo,
+            @NotNull @ObjCBlock(name = "call_applicationHandleActionWithIdentifierForRemoteNotificationWithResponseInfoCompletionHandler") Block_applicationHandleActionWithIdentifierForRemoteNotificationWithResponseInfoCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -334,9 +343,9 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:handleEventsForBackgroundURLSession:completionHandler:")
-    default void applicationHandleEventsForBackgroundURLSessionCompletionHandler(UIApplication application,
-            String identifier,
-            @ObjCBlock(name = "call_applicationHandleEventsForBackgroundURLSessionCompletionHandler") Block_applicationHandleEventsForBackgroundURLSessionCompletionHandler completionHandler) {
+    default void applicationHandleEventsForBackgroundURLSessionCompletionHandler(@NotNull UIApplication application,
+            @NotNull String identifier,
+            @NotNull @ObjCBlock(name = "call_applicationHandleEventsForBackgroundURLSessionCompletionHandler") Block_applicationHandleEventsForBackgroundURLSessionCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -348,7 +357,7 @@ public interface UIApplicationDelegate {
     @IsOptional
     @Deprecated
     @Selector("application:handleOpenURL:")
-    default boolean applicationHandleOpenURL(UIApplication application, NSURL url) {
+    default boolean applicationHandleOpenURL(@NotNull UIApplication application, @NotNull NSURL url) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -358,8 +367,9 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:handleWatchKitExtensionRequest:reply:")
-    default void applicationHandleWatchKitExtensionRequestReply(UIApplication application, NSDictionary<?, ?> userInfo,
-            @ObjCBlock(name = "call_applicationHandleWatchKitExtensionRequestReply") Block_applicationHandleWatchKitExtensionRequestReply reply) {
+    default void applicationHandleWatchKitExtensionRequestReply(@NotNull UIApplication application,
+            @Nullable NSDictionary<?, ?> userInfo,
+            @NotNull @ObjCBlock(name = "call_applicationHandleWatchKitExtensionRequestReply") Block_applicationHandleWatchKitExtensionRequestReply reply) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -371,7 +381,8 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:openURL:options:")
-    default boolean applicationOpenURLOptions(UIApplication app, NSURL url, NSDictionary<String, ?> options) {
+    default boolean applicationOpenURLOptions(@NotNull UIApplication app, @NotNull NSURL url,
+            @NotNull NSDictionary<String, ?> options) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -383,8 +394,9 @@ public interface UIApplicationDelegate {
     @IsOptional
     @Deprecated
     @Selector("application:openURL:sourceApplication:annotation:")
-    default boolean applicationOpenURLSourceApplicationAnnotation(UIApplication application, NSURL url,
-            String sourceApplication, @Mapped(ObjCObjectMapper.class) Object annotation) {
+    default boolean applicationOpenURLSourceApplicationAnnotation(@NotNull UIApplication application,
+            @NotNull NSURL url, @Nullable String sourceApplication,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object annotation) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -398,9 +410,9 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:performActionForShortcutItem:completionHandler:")
-    default void applicationPerformActionForShortcutItemCompletionHandler(UIApplication application,
-            UIApplicationShortcutItem shortcutItem,
-            @ObjCBlock(name = "call_applicationPerformActionForShortcutItemCompletionHandler") Block_applicationPerformActionForShortcutItemCompletionHandler completionHandler) {
+    default void applicationPerformActionForShortcutItemCompletionHandler(@NotNull UIApplication application,
+            @NotNull UIApplicationShortcutItem shortcutItem,
+            @NotNull @ObjCBlock(name = "call_applicationPerformActionForShortcutItemCompletionHandler") Block_applicationPerformActionForShortcutItemCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -418,8 +430,8 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:performFetchWithCompletionHandler:")
-    default void applicationPerformFetchWithCompletionHandler(UIApplication application,
-            @ObjCBlock(name = "call_applicationPerformFetchWithCompletionHandler") Block_applicationPerformFetchWithCompletionHandler completionHandler) {
+    default void applicationPerformFetchWithCompletionHandler(@NotNull UIApplication application,
+            @NotNull @ObjCBlock(name = "call_applicationPerformFetchWithCompletionHandler") Block_applicationPerformFetchWithCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -433,8 +445,8 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:shouldAllowExtensionPointIdentifier:")
-    default boolean applicationShouldAllowExtensionPointIdentifier(UIApplication application,
-            String extensionPointIdentifier) {
+    default boolean applicationShouldAllowExtensionPointIdentifier(@NotNull UIApplication application,
+            @NotNull String extensionPointIdentifier) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -447,7 +459,8 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:shouldRestoreApplicationState:")
-    default boolean applicationShouldRestoreApplicationState(UIApplication application, NSCoder coder) {
+    default boolean applicationShouldRestoreApplicationState(@NotNull UIApplication application,
+            @NotNull NSCoder coder) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -462,7 +475,7 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:shouldSaveApplicationState:")
-    default boolean applicationShouldSaveApplicationState(UIApplication application, NSCoder coder) {
+    default boolean applicationShouldSaveApplicationState(@NotNull UIApplication application, @NotNull NSCoder coder) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -473,7 +486,8 @@ public interface UIApplicationDelegate {
     @IsOptional
     @Selector("application:supportedInterfaceOrientationsForWindow:")
     @NUInt
-    default long applicationSupportedInterfaceOrientationsForWindow(UIApplication application, UIWindow window) {
+    default long applicationSupportedInterfaceOrientationsForWindow(@NotNull UIApplication application,
+            @Nullable UIWindow window) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -490,19 +504,20 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:userDidAcceptCloudKitShareWithMetadata:")
-    default void applicationUserDidAcceptCloudKitShareWithMetadata(UIApplication application,
-            CKShareMetadata cloudKitShareMetadata) {
+    default void applicationUserDidAcceptCloudKitShareWithMetadata(@NotNull UIApplication application,
+            @NotNull CKShareMetadata cloudKitShareMetadata) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("application:viewControllerWithRestorationIdentifierPath:coder:")
-    default UIViewController applicationViewControllerWithRestorationIdentifierPathCoder(UIApplication application,
-            NSArray<String> identifierComponents, NSCoder coder) {
+    default UIViewController applicationViewControllerWithRestorationIdentifierPathCoder(
+            @NotNull UIApplication application, @NotNull NSArray<String> identifierComponents, @NotNull NSCoder coder) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -517,7 +532,8 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:willChangeStatusBarFrame:")
-    default void applicationWillChangeStatusBarFrame(UIApplication application, @ByValue CGRect newStatusBarFrame) {
+    default void applicationWillChangeStatusBarFrame(@NotNull UIApplication application,
+            @ByValue CGRect newStatusBarFrame) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -530,7 +546,7 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:willChangeStatusBarOrientation:duration:")
-    default void applicationWillChangeStatusBarOrientationDuration(UIApplication application,
+    default void applicationWillChangeStatusBarOrientationDuration(@NotNull UIApplication application,
             @NInt long newStatusBarOrientation, double duration) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -548,7 +564,8 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:willContinueUserActivityWithType:")
-    default boolean applicationWillContinueUserActivityWithType(UIApplication application, String userActivityType) {
+    default boolean applicationWillContinueUserActivityWithType(@NotNull UIApplication application,
+            @NotNull String userActivityType) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -558,7 +575,8 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:willEncodeRestorableStateWithCoder:")
-    default void applicationWillEncodeRestorableStateWithCoder(UIApplication application, NSCoder coder) {
+    default void applicationWillEncodeRestorableStateWithCoder(@NotNull UIApplication application,
+            @NotNull NSCoder coder) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -568,15 +586,15 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:willFinishLaunchingWithOptions:")
-    default boolean applicationWillFinishLaunchingWithOptions(UIApplication application,
-            NSDictionary<String, ?> launchOptions) {
+    default boolean applicationWillFinishLaunchingWithOptions(@NotNull UIApplication application,
+            @Nullable NSDictionary<String, ?> launchOptions) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("applicationDidBecomeActive:")
-    default void applicationDidBecomeActive(UIApplication application) {
+    default void applicationDidBecomeActive(@NotNull UIApplication application) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -586,14 +604,14 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("applicationDidEnterBackground:")
-    default void applicationDidEnterBackground(UIApplication application) {
+    default void applicationDidEnterBackground(@NotNull UIApplication application) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("applicationDidFinishLaunching:")
-    default void applicationDidFinishLaunching(UIApplication application) {
+    default void applicationDidFinishLaunching(@NotNull UIApplication application) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -603,7 +621,7 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("applicationDidReceiveMemoryWarning:")
-    default void applicationDidReceiveMemoryWarning(UIApplication application) {
+    default void applicationDidReceiveMemoryWarning(@NotNull UIApplication application) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -613,7 +631,7 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("applicationProtectedDataDidBecomeAvailable:")
-    default void applicationProtectedDataDidBecomeAvailable(UIApplication application) {
+    default void applicationProtectedDataDidBecomeAvailable(@NotNull UIApplication application) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -623,7 +641,7 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("applicationProtectedDataWillBecomeUnavailable:")
-    default void applicationProtectedDataWillBecomeUnavailable(UIApplication application) {
+    default void applicationProtectedDataWillBecomeUnavailable(@NotNull UIApplication application) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -633,7 +651,7 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("applicationShouldRequestHealthAuthorization:")
-    default void applicationShouldRequestHealthAuthorization(UIApplication application) {
+    default void applicationShouldRequestHealthAuthorization(@NotNull UIApplication application) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -643,7 +661,7 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("applicationSignificantTimeChange:")
-    default void applicationSignificantTimeChange(UIApplication application) {
+    default void applicationSignificantTimeChange(@NotNull UIApplication application) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -653,21 +671,21 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("applicationWillEnterForeground:")
-    default void applicationWillEnterForeground(UIApplication application) {
+    default void applicationWillEnterForeground(@NotNull UIApplication application) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("applicationWillResignActive:")
-    default void applicationWillResignActive(UIApplication application) {
+    default void applicationWillResignActive(@NotNull UIApplication application) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("applicationWillTerminate:")
-    default void applicationWillTerminate(UIApplication application) {
+    default void applicationWillTerminate(@NotNull UIApplication application) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -677,13 +695,14 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("setWindow:")
-    default void setWindow(UIWindow value) {
+    default void setWindow(@Nullable UIWindow value) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("window")
@@ -695,7 +714,7 @@ public interface UIApplicationDelegate {
     @Generated
     public interface Block_applicationContinueUserActivityRestorationHandler {
         @Generated
-        void call_applicationContinueUserActivityRestorationHandler(NSArray<?> restorableObjects);
+        void call_applicationContinueUserActivityRestorationHandler(@Nullable NSArray<?> restorableObjects);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -744,7 +763,7 @@ public interface UIApplicationDelegate {
     @Generated
     public interface Block_applicationHandleWatchKitExtensionRequestReply {
         @Generated
-        void call_applicationHandleWatchKitExtensionRequestReply(NSDictionary<?, ?> replyInfo);
+        void call_applicationHandleWatchKitExtensionRequestReply(@Nullable NSDictionary<?, ?> replyInfo);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -770,8 +789,8 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:handleIntent:completionHandler:")
-    default void applicationHandleIntentCompletionHandler(UIApplication application, INIntent intent,
-            @ObjCBlock(name = "call_applicationHandleIntentCompletionHandler") Block_applicationHandleIntentCompletionHandler completionHandler) {
+    default void applicationHandleIntentCompletionHandler(@NotNull UIApplication application, @NotNull INIntent intent,
+            @NotNull @ObjCBlock(name = "call_applicationHandleIntentCompletionHandler") Block_applicationHandleIntentCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -779,7 +798,7 @@ public interface UIApplicationDelegate {
     @Generated
     public interface Block_applicationHandleIntentCompletionHandler {
         @Generated
-        void call_applicationHandleIntentCompletionHandler(INIntentResponse intentResponse);
+        void call_applicationHandleIntentCompletionHandler(@NotNull INIntentResponse intentResponse);
     }
 
     /**
@@ -790,11 +809,13 @@ public interface UIApplicationDelegate {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("application:configurationForConnectingSceneSession:options:")
-    default UISceneConfiguration applicationConfigurationForConnectingSceneSessionOptions(UIApplication application,
-            UISceneSession connectingSceneSession, UISceneConnectionOptions options) {
+    default UISceneConfiguration applicationConfigurationForConnectingSceneSessionOptions(
+            @NotNull UIApplication application, @NotNull UISceneSession connectingSceneSession,
+            @NotNull UISceneConnectionOptions options) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -809,8 +830,8 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:didDiscardSceneSessions:")
-    default void applicationDidDiscardSceneSessions(UIApplication application,
-            NSSet<? extends UISceneSession> sceneSessions) {
+    default void applicationDidDiscardSceneSessions(@NotNull UIApplication application,
+            @NotNull NSSet<? extends UISceneSession> sceneSessions) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -820,7 +841,8 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:shouldRestoreSecureApplicationState:")
-    default boolean applicationShouldRestoreSecureApplicationState(UIApplication application, NSCoder coder) {
+    default boolean applicationShouldRestoreSecureApplicationState(@NotNull UIApplication application,
+            @NotNull NSCoder coder) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -830,18 +852,20 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:shouldSaveSecureApplicationState:")
-    default boolean applicationShouldSaveSecureApplicationState(UIApplication application, NSCoder coder) {
+    default boolean applicationShouldSaveSecureApplicationState(@NotNull UIApplication application,
+            @NotNull NSCoder coder) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("application:handlerForIntent:")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object applicationHandlerForIntent(UIApplication application, INIntent intent) {
+    default Object applicationHandlerForIntent(@NotNull UIApplication application, @NotNull INIntent intent) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -856,7 +880,7 @@ public interface UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("applicationShouldAutomaticallyLocalizeKeyCommands:")
-    default boolean applicationShouldAutomaticallyLocalizeKeyCommands(UIApplication application) {
+    default boolean applicationShouldAutomaticallyLocalizeKeyCommands(@NotNull UIApplication application) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

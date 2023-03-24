@@ -31,6 +31,8 @@ import apple.foundation.NSDictionary;
 import apple.corefoundation.struct.CGAffineTransform;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An object encapsulating the state of everything being tracked for a given moment in time.
@@ -70,38 +72,42 @@ public class ARFrame extends NSObject implements NSCopying {
     /**
      * A list of anchors in the scene.
      */
+    @NotNull
     @Generated
     @Selector("anchors")
     public native NSArray<? extends ARAnchor> anchors();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * The camera used to capture the frame’s image.
      * 
      * The camera provides the device’s position and orientation as well as camera parameters.
      */
+    @NotNull
     @Generated
     @Selector("camera")
     public native ARCamera camera();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * The frame’s captured depth data.
      * 
      * Depth data is only provided with face tracking on frames where depth data was captured.
      */
+    @Nullable
     @Generated
     @Selector("capturedDepthData")
     public native AVDepthData capturedDepthData();
@@ -116,23 +122,27 @@ public class ARFrame extends NSObject implements NSCopying {
     /**
      * The frame’s captured image.
      */
+    @NotNull
     @Generated
     @Selector("capturedImage")
     public native CVBufferRef capturedImage();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -180,6 +190,7 @@ public class ARFrame extends NSObject implements NSCopying {
      *         Deprecated-Since: 14.0
      *         Deprecated-Message: Use [ARSession raycast:]
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("hitTest:types:")
@@ -206,15 +217,17 @@ public class ARFrame extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * A light estimate representing the light in the scene.
      * 
      * Returns nil if there is no light estimation.
      */
+    @Nullable
     @Generated
     @Selector("lightEstimate")
     public native ARLightEstimate lightEstimate();
@@ -229,6 +242,7 @@ public class ARFrame extends NSObject implements NSCopying {
      * 
      * The feature points are only provided for configurations using world tracking.
      */
+    @Nullable
     @Generated
     @Selector("rawFeaturePoints")
     public native ARPointCloud rawFeaturePoints();
@@ -286,6 +300,7 @@ public class ARFrame extends NSObject implements NSCopying {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("cameraGrainTexture")
     @MappedReturn(ObjCObjectMapper.class)
@@ -298,6 +313,7 @@ public class ARFrame extends NSObject implements NSCopying {
      * 
      *      API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("detectedBody")
     public native ARBody2D detectedBody();
@@ -313,6 +329,7 @@ public class ARFrame extends NSObject implements NSCopying {
      * 
      *      API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("estimatedDepthData")
     public native CVBufferRef estimatedDepthData();
@@ -331,6 +348,7 @@ public class ARFrame extends NSObject implements NSCopying {
      * 
      *                  API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("raycastQueryFromPoint:allowingTarget:alignment:")
     public native ARRaycastQuery raycastQueryFromPointAllowingTargetAlignment(@ByValue CGPoint point, @NInt long target,
@@ -348,6 +366,7 @@ public class ARFrame extends NSObject implements NSCopying {
      * 
      *      API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("segmentationBuffer")
     public native CVBufferRef segmentationBuffer();
@@ -370,6 +389,7 @@ public class ARFrame extends NSObject implements NSCopying {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("geoTrackingStatus")
     public native ARGeoTrackingStatus geoTrackingStatus();
@@ -382,6 +402,7 @@ public class ARFrame extends NSObject implements NSCopying {
      * 
      *      API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("sceneDepth")
     public native ARDepthData sceneDepth();
@@ -394,6 +415,7 @@ public class ARFrame extends NSObject implements NSCopying {
      * 
      *      API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("smoothedSceneDepth")
     public native ARDepthData smoothedSceneDepth();
@@ -403,6 +425,7 @@ public class ARFrame extends NSObject implements NSCopying {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("exifData")
     public native NSDictionary<String, ?> exifData();

@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A node representing a MPSCNNNeuronPower kernel
@@ -62,22 +64,25 @@ public class MPSCNNNeuronPowerNode extends MPSCNNNeuronNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -104,7 +109,7 @@ public class MPSCNNNeuronPowerNode extends MPSCNNNeuronNode {
      */
     @Generated
     @Selector("initWithSource:")
-    public native MPSCNNNeuronPowerNode initWithSource(MPSNNImageNode sourceNode);
+    public native MPSCNNNeuronPowerNode initWithSource(@NotNull MPSNNImageNode sourceNode);
 
     /**
      * Init a node representing a MPSCNNNeuronPower kernel
@@ -122,7 +127,8 @@ public class MPSCNNNeuronPowerNode extends MPSCNNNeuronNode {
      */
     @Generated
     @Selector("initWithSource:a:b:c:")
-    public native MPSCNNNeuronPowerNode initWithSourceABC(MPSNNImageNode sourceNode, float a, float b, float c);
+    public native MPSCNNNeuronPowerNode initWithSourceABC(@NotNull MPSNNImageNode sourceNode, float a, float b,
+            float c);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -141,9 +147,10 @@ public class MPSCNNNeuronPowerNode extends MPSCNNNeuronNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -155,16 +162,17 @@ public class MPSCNNNeuronPowerNode extends MPSCNNNeuronNode {
      */
     @Generated
     @Selector("nodeWithSource:")
-    public static native MPSCNNNeuronPowerNode nodeWithSource(MPSNNImageNode sourceNode);
+    public static native MPSCNNNeuronPowerNode nodeWithSource(@NotNull MPSNNImageNode sourceNode);
 
     @Generated
     @Selector("nodeWithSource:a:b:c:")
-    public static native MPSCNNNeuronPowerNode nodeWithSourceABC(MPSNNImageNode sourceNode, float a, float b, float c);
+    public static native MPSCNNNeuronPowerNode nodeWithSourceABC(@NotNull MPSNNImageNode sourceNode, float a, float b,
+            float c);
 
     @Generated
     @Selector("nodeWithSource:descriptor:")
-    public static native MPSCNNNeuronPowerNode nodeWithSourceDescriptor(MPSNNImageNode sourceNode,
-            MPSNNNeuronDescriptor descriptor);
+    public static native MPSCNNNeuronPowerNode nodeWithSourceDescriptor(@NotNull MPSNNImageNode sourceNode,
+            @NotNull MPSNNNeuronDescriptor descriptor);
 
     @Generated
     @Selector("resolveClassMethod:")

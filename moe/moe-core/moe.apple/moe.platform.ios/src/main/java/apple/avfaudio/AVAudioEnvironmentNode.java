@@ -27,6 +27,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioEnvironmentNode
@@ -94,28 +96,32 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
      * This information should be retrieved after a successful connection to the destination node
      * via the engine's connect method.
      */
+    @NotNull
     @Generated
     @Selector("applicableRenderingAlgorithms")
     public native NSArray<? extends NSNumber> applicableRenderingAlgorithms();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,15 +134,17 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
     @Selector("description")
     public static native String description_static();
 
+    @Nullable
     @Generated
     @Selector("destinationForMixer:bus:")
-    public native AVAudioMixingDestination destinationForMixerBus(AVAudioNode mixer, @NUInt long bus);
+    public native AVAudioMixingDestination destinationForMixerBus(@NotNull AVAudioNode mixer, @NUInt long bus);
 
     /**
      * [@property] distanceAttenuationParameters
      * 
      * The distance attenuation parameters for the environment
      */
+    @NotNull
     @Generated
     @Selector("distanceAttenuationParameters")
     public native AVAudioEnvironmentDistanceAttenuationParameters distanceAttenuationParameters();
@@ -167,9 +175,10 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] listenerAngularOrientation
@@ -320,6 +329,7 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
      * 
      * The reverb parameters for the environment
      */
+    @NotNull
     @Generated
     @Selector("reverbParameters")
     public native AVAudioEnvironmentReverbParameters reverbParameters();

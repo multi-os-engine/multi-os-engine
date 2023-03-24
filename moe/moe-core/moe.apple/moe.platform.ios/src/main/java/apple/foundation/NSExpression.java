@@ -41,6 +41,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.0
@@ -75,22 +77,25 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -108,13 +113,15 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("expressionForAggregate:")
-    public static native NSExpression expressionForAggregate(NSArray<? extends NSExpression> subexpressions);
+    public static native NSExpression expressionForAggregate(@NotNull NSArray<? extends NSExpression> subexpressions);
 
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("expressionForAnyKey")
     public static native NSExpression expressionForAnyKey();
@@ -125,32 +132,37 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Selector("expressionForBlock:arguments:")
     public static native NSExpression expressionForBlockArguments(
-            @ObjCBlock(name = "call_expressionForBlockArguments") Block_expressionForBlockArguments block,
-            NSArray<? extends NSExpression> arguments);
+            @NotNull @ObjCBlock(name = "call_expressionForBlockArguments") Block_expressionForBlockArguments block,
+            @Nullable NSArray<? extends NSExpression> arguments);
 
     /**
      * Expression that will return the result of trueExpression or falseExpression depending on the value of predicate
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("expressionForConditional:trueExpression:falseExpression:")
-    public static native NSExpression expressionForConditionalTrueExpressionFalseExpression(NSPredicate predicate,
-            NSExpression trueExpression, NSExpression falseExpression);
+    public static native NSExpression expressionForConditionalTrueExpressionFalseExpression(
+            @NotNull NSPredicate predicate, @NotNull NSExpression trueExpression,
+            @NotNull NSExpression falseExpression);
 
     /**
      * Expression that returns a constant value
      */
+    @NotNull
     @Generated
     @Selector("expressionForConstantValue:")
-    public static native NSExpression expressionForConstantValue(@Mapped(ObjCObjectMapper.class) Object obj);
+    public static native NSExpression expressionForConstantValue(@Nullable @Mapped(ObjCObjectMapper.class) Object obj);
 
     /**
      * Expression that returns the object being evaluated
      */
+    @NotNull
     @Generated
     @Selector("expressionForEvaluatedObject")
     public static native NSExpression expressionForEvaluatedObject();
@@ -159,9 +171,11 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
      * Expression that invokes one of the predefined functions. Will throw immediately if the selector is bad; will
      * throw at runtime if the parameters are incorrect.
      */
+    @NotNull
     @Generated
     @Selector("expressionForFunction:arguments:")
-    public static native NSExpression expressionForFunctionArguments(String name, NSArray<?> parameters);
+    public static native NSExpression expressionForFunctionArguments(@NotNull String name,
+            @NotNull NSArray<?> parameters);
 
     /**
      * Expression that invokes the selector on target with parameters. Will throw at runtime if target does not
@@ -169,35 +183,41 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("expressionForFunction:selectorName:arguments:")
-    public static native NSExpression expressionForFunctionSelectorNameArguments(NSExpression target, String name,
-            NSArray<?> parameters);
+    public static native NSExpression expressionForFunctionSelectorNameArguments(@NotNull NSExpression target,
+            @NotNull String name, @Nullable NSArray<?> parameters);
 
     /**
      * return an expression that will return the intersection of the collections expressed by left and right
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("expressionForIntersectSet:with:")
-    public static native NSExpression expressionForIntersectSetWith(NSExpression left, NSExpression right);
+    public static native NSExpression expressionForIntersectSetWith(@NotNull NSExpression left,
+            @NotNull NSExpression right);
 
     /**
      * Expression that invokes valueForKeyPath with keyPath
      */
+    @NotNull
     @Generated
     @Selector("expressionForKeyPath:")
-    public static native NSExpression expressionForKeyPath(String keyPath);
+    public static native NSExpression expressionForKeyPath(@NotNull String keyPath);
 
     /**
      * return an expression that will return the disjunction of the collections expressed by left and right
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("expressionForMinusSet:with:")
-    public static native NSExpression expressionForMinusSetWith(NSExpression left, NSExpression right);
+    public static native NSExpression expressionForMinusSetWith(@NotNull NSExpression left,
+            @NotNull NSExpression right);
 
     /**
      * Expression that filters a collection by storing elements in the collection in the variable variable and keeping
@@ -207,48 +227,56 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("expressionForSubquery:usingIteratorVariable:predicate:")
-    public static native NSExpression expressionForSubqueryUsingIteratorVariablePredicate(NSExpression expression,
-            String variable, NSPredicate predicate);
+    public static native NSExpression expressionForSubqueryUsingIteratorVariablePredicate(
+            @NotNull NSExpression expression, @NotNull String variable, @NotNull NSPredicate predicate);
 
     /**
      * return an expression that will return the union of the collections expressed by left and right
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("expressionForUnionSet:with:")
-    public static native NSExpression expressionForUnionSetWith(NSExpression left, NSExpression right);
+    public static native NSExpression expressionForUnionSetWith(@NotNull NSExpression left,
+            @NotNull NSExpression right);
 
     /**
      * Expression that pulls a value from the variable bindings dictionary
      */
+    @NotNull
     @Generated
     @Selector("expressionForVariable:")
-    public static native NSExpression expressionForVariable(String string);
+    public static native NSExpression expressionForVariable(@NotNull String string);
 
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Variadic()
     @Selector("expressionWithFormat:")
-    public static native NSExpression expressionWithFormat(String expressionFormat, Object... varargs);
+    public static native NSExpression expressionWithFormat(@NotNull String expressionFormat, Object... varargs);
 
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Selector("expressionWithFormat:argumentArray:")
-    public static native NSExpression expressionWithFormatArgumentArray(String expressionFormat, NSArray<?> arguments);
+    public static native NSExpression expressionWithFormatArgumentArray(@NotNull String expressionFormat,
+            @NotNull NSArray<?> arguments);
 
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Selector("expressionWithFormat:arguments:")
-    public static native NSExpression expressionWithFormatArguments(String expressionFormat, BytePtr argList);
+    public static native NSExpression expressionWithFormatArguments(@NotNull String expressionFormat, BytePtr argList);
 
     @Generated
     @Selector("hash")
@@ -272,9 +300,10 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -319,6 +348,7 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
      * array of expressions which will be passed as parameters during invocation of the selector on the operand of a
      * function expression
      */
+    @Nullable
     @Generated
     @Selector("arguments")
     public native NSArray<? extends NSExpression> arguments();
@@ -326,29 +356,33 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("collection")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object collection();
 
+    @Nullable
     @Generated
     @Selector("constantValue")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object constantValue();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Selector("expressionBlock")
     @ObjCBlock(name = "call_expressionBlock_ret")
@@ -366,21 +400,24 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
      * evaluate the expression using the object and bindings- note that context is mutable here and can be used by
      * expressions to store temporary state for one predicate evaluation
      */
+    @Nullable
     @Generated
     @Selector("expressionValueWithObject:context:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object expressionValueWithObjectContext(@Mapped(ObjCObjectMapper.class) Object object,
-            NSMutableDictionary<?, ?> context);
+    public native Object expressionValueWithObjectContext(@Nullable @Mapped(ObjCObjectMapper.class) Object object,
+            @Nullable NSMutableDictionary<?, ?> context);
 
     /**
      * expression which will be evaluated if a conditional expression's predicate evaluates to false
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("falseExpression")
     public native NSExpression falseExpression();
 
+    @NotNull
     @Generated
     @Selector("function")
     public native String function();
@@ -391,12 +428,13 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSExpression initWithCoder(NSCoder coder);
+    public native NSExpression initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithExpressionType:")
     public native NSExpression initWithExpressionType(@NUInt long type);
 
+    @NotNull
     @Generated
     @Selector("keyPath")
     public native String keyPath();
@@ -406,6 +444,7 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("leftExpression")
     public native NSExpression leftExpression();
@@ -414,6 +453,7 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
      * the object on which the selector will be invoked (the result of evaluating a key path or one of the defined
      * functions)
      */
+    @NotNull
     @Generated
     @Selector("operand")
     public native NSExpression operand();
@@ -421,6 +461,7 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();
@@ -430,6 +471,7 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("rightExpression")
     public native NSExpression rightExpression();
@@ -445,10 +487,12 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("trueExpression")
     public native NSExpression trueExpression();
 
+    @NotNull
     @Generated
     @Selector("variable")
     public native String variable();
@@ -456,18 +500,20 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_expressionBlock_ret {
+        @NotNull
         @Generated
         @MappedReturn(ObjCObjectMapper.class)
-        Object call_expressionBlock_ret(@Mapped(ObjCObjectMapper.class) Object arg0,
-                NSArray<? extends NSExpression> arg1, NSMutableDictionary<?, ?> arg2);
+        Object call_expressionBlock_ret(@Nullable @Mapped(ObjCObjectMapper.class) Object arg0,
+                @NotNull NSArray<? extends NSExpression> arg1, @Nullable NSMutableDictionary<?, ?> arg2);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_expressionForBlockArguments {
+        @NotNull
         @Generated
         @MappedReturn(ObjCObjectMapper.class)
-        Object call_expressionForBlockArguments(@Mapped(ObjCObjectMapper.class) Object evaluatedObject,
-                NSArray<? extends NSExpression> expressions, NSMutableDictionary<?, ?> context);
+        Object call_expressionForBlockArguments(@Nullable @Mapped(ObjCObjectMapper.class) Object evaluatedObject,
+                @NotNull NSArray<? extends NSExpression> expressions, @Nullable NSMutableDictionary<?, ?> context);
     }
 }

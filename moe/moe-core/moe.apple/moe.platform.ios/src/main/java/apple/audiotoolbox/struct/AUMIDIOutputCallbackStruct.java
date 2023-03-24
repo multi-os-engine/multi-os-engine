@@ -13,6 +13,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -35,13 +37,14 @@ public final class AUMIDIOutputCallbackStruct extends StructObject {
 
     @Generated
     public AUMIDIOutputCallbackStruct(
-            @FunctionPtr(name = "call_midiOutputCallback") Function_midiOutputCallback midiOutputCallback,
-            VoidPtr userData) {
+            @FunctionPtr(name = "call_midiOutputCallback") @NotNull Function_midiOutputCallback midiOutputCallback,
+            @Nullable VoidPtr userData) {
         super(AUMIDIOutputCallbackStruct.class);
         setMidiOutputCallback(midiOutputCallback);
         setUserData(userData);
     }
 
+    @NotNull
     @Generated
     @StructureField(order = 0, isGetter = true)
     @FunctionPtr(name = "call_midiOutputCallback")
@@ -51,21 +54,23 @@ public final class AUMIDIOutputCallbackStruct extends StructObject {
     @Generated
     public interface Function_midiOutputCallback {
         @Generated
-        int call_midiOutputCallback(VoidPtr arg0,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg1, int arg2,
-                @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList arg3);
+        int call_midiOutputCallback(@Nullable VoidPtr arg0,
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg1,
+                int arg2,
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList arg3);
     }
 
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setMidiOutputCallback(
-            @FunctionPtr(name = "call_midiOutputCallback") Function_midiOutputCallback value);
+            @NotNull @FunctionPtr(name = "call_midiOutputCallback") Function_midiOutputCallback value);
 
+    @Nullable
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native VoidPtr userData();
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setUserData(VoidPtr value);
+    public native void setUserData(@Nullable VoidPtr value);
 }

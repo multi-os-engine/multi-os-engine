@@ -25,6 +25,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -61,17 +63,19 @@ public class PDFAppearanceCharacteristics extends NSObject implements NSCopying 
      * List all appearance characteristics properties as key-value pairs; returns a deep copy of all pairs.
      * Helpful for debugging.
      */
+    @NotNull
     @Generated
     @Selector("appearanceCharacteristicsKeyValues")
     public native NSDictionary<?, ?> appearanceCharacteristicsKeyValues();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * The background color of the widget annotation.
      */
+    @Nullable
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
@@ -79,31 +83,36 @@ public class PDFAppearanceCharacteristics extends NSObject implements NSCopying 
     /**
      * The border color of the widget annotation.
      */
+    @Nullable
     @Generated
     @Selector("borderColor")
     public native UIColor borderColor();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * The widget annotation’s normal caption, displayed when it is not interacting with the user.
      */
+    @Nullable
     @Generated
     @Selector("caption")
     public native String caption();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -118,11 +127,12 @@ public class PDFAppearanceCharacteristics extends NSObject implements NSCopying 
     @NInt
     public native long controlType();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -136,6 +146,7 @@ public class PDFAppearanceCharacteristics extends NSObject implements NSCopying 
      * The widget's caption displayed when the user holds the mouse button while over the annotation.
      * Applies only to kPDFWidgetPushButtonControl.
      */
+    @Nullable
     @Generated
     @Selector("downCaption")
     public native String downCaption();
@@ -166,9 +177,10 @@ public class PDFAppearanceCharacteristics extends NSObject implements NSCopying 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -187,6 +199,7 @@ public class PDFAppearanceCharacteristics extends NSObject implements NSCopying 
      * The widget's caption displayed when the user moves the mouse over the annotation.
      * Applies only to kPDFWidgetPushButtonControl.
      */
+    @Nullable
     @Generated
     @Selector("rolloverCaption")
     public native String rolloverCaption();
@@ -205,21 +218,21 @@ public class PDFAppearanceCharacteristics extends NSObject implements NSCopying 
      */
     @Generated
     @Selector("setBackgroundColor:")
-    public native void setBackgroundColor(UIColor value);
+    public native void setBackgroundColor(@Nullable UIColor value);
 
     /**
      * The border color of the widget annotation.
      */
     @Generated
     @Selector("setBorderColor:")
-    public native void setBorderColor(UIColor value);
+    public native void setBorderColor(@Nullable UIColor value);
 
     /**
      * The widget annotation’s normal caption, displayed when it is not interacting with the user.
      */
     @Generated
     @Selector("setCaption:")
-    public native void setCaption(String value);
+    public native void setCaption(@Nullable String value);
 
     /**
      * For button widget annotations, need to specify the control type for PDFAppearanceCharacteristics
@@ -236,7 +249,7 @@ public class PDFAppearanceCharacteristics extends NSObject implements NSCopying 
      */
     @Generated
     @Selector("setDownCaption:")
-    public native void setDownCaption(String value);
+    public native void setDownCaption(@Nullable String value);
 
     /**
      * The widget's caption displayed when the user moves the mouse over the annotation.
@@ -244,7 +257,7 @@ public class PDFAppearanceCharacteristics extends NSObject implements NSCopying 
      */
     @Generated
     @Selector("setRolloverCaption:")
-    public native void setRolloverCaption(String value);
+    public native void setRolloverCaption(@Nullable String value);
 
     /**
      * The number of *degrees* by which the widget annotation is rotated counterclockwise relative to the page.

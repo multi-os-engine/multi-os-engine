@@ -34,6 +34,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 6.0
@@ -68,22 +70,25 @@ public class NSByteCountFormatter extends NSFormatter {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -118,9 +123,10 @@ public class NSByteCountFormatter extends NSFormatter {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -143,6 +149,7 @@ public class NSByteCountFormatter extends NSFormatter {
      * Shortcut for converting a byte count into a string without creating an NSByteCountFormatter and an NSNumber. If
      * you need to specify options other than countStyle, create an instance of NSByteCountFormatter first.
      */
+    @NotNull
     @Generated
     @Selector("stringFromByteCount:countStyle:")
     public static native String stringFromByteCountCountStyle(long byteCount, @NInt long countStyle);
@@ -227,7 +234,7 @@ public class NSByteCountFormatter extends NSFormatter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSByteCountFormatter initWithCoder(NSCoder coder);
+    public native NSByteCountFormatter initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Choose the display style. The "adaptive" algorithm is platform specific and uses a different number of fraction
@@ -324,6 +331,7 @@ public class NSByteCountFormatter extends NSFormatter {
     /**
      * Convenience method on stringForObjectValue:. Convert a byte count into a string without creating an NSNumber.
      */
+    @NotNull
     @Generated
     @Selector("stringFromByteCount:")
     public native String stringFromByteCount(long byteCount);
@@ -346,9 +354,10 @@ public class NSByteCountFormatter extends NSFormatter {
      * Throws an exception if `obj` is an `NSMeasurement` whose unit does not belong to the `NSUnitInformationStorage`
      * dimension.
      */
+    @Nullable
     @Generated
     @Selector("stringForObjectValue:")
-    public native String stringForObjectValue(@Mapped(ObjCObjectMapper.class) Object obj);
+    public native String stringForObjectValue(@Nullable @Mapped(ObjCObjectMapper.class) Object obj);
 
     /**
      * Formats the value of the given measurement using the receiver's `countStyle`.
@@ -361,9 +370,10 @@ public class NSByteCountFormatter extends NSFormatter {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("stringFromMeasurement:")
-    public native String stringFromMeasurement(NSMeasurement<NSUnitInformationStorage> measurement);
+    public native String stringFromMeasurement(@NotNull NSMeasurement<NSUnitInformationStorage> measurement);
 
     /**
      * Formats the value of the given measurement using the given `countStyle`.
@@ -372,8 +382,9 @@ public class NSByteCountFormatter extends NSFormatter {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("stringFromMeasurement:countStyle:")
-    public static native String stringFromMeasurementCountStyle(NSMeasurement<NSUnitInformationStorage> measurement,
-            @NInt long countStyle);
+    public static native String stringFromMeasurementCountStyle(
+            @NotNull NSMeasurement<NSUnitInformationStorage> measurement, @NInt long countStyle);
 }

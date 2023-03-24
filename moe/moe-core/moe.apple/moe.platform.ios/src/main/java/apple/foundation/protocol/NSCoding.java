@@ -23,6 +23,8 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -31,12 +33,13 @@ import org.moe.natj.objc.ann.Selector;
 public interface NSCoding {
     @Generated
     @Selector("encodeWithCoder:")
-    void encodeWithCoder(NSCoder coder);
+    void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * NS_DESIGNATED_INITIALIZER
      */
+    @Nullable
     @Generated
     @Selector("initWithCoder:")
-    NSCoding initWithCoder(NSCoder coder);
+    NSCoding initWithCoder(@NotNull NSCoder coder);
 }

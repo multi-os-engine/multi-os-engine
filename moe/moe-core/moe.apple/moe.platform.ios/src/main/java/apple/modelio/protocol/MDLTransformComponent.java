@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * MDLTransformComponent
@@ -43,6 +44,7 @@ public interface MDLTransformComponent extends MDLComponent {
      * An array of sample times for which a key has been stored
      * If no animation data is present, the array will contain a single value of zero
      */
+    @NotNull
     @Generated
     @Selector("keyTimes")
     NSArray<? extends NSNumber> keyTimes();

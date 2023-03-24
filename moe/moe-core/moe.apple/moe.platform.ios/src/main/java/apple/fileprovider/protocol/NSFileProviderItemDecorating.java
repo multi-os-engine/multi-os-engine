@@ -7,6 +7,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Decorations are defined in the extension's Info.plist by adding a
@@ -74,6 +75,7 @@ public interface NSFileProviderItemDecorating extends NSFileProviderItem {
      * identifiers
      * from your Info.plist.
      */
+    @Nullable
     @Generated
     @Selector("decorations")
     NSArray<String> decorations();

@@ -8,6 +8,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("ImageCaptureCore")
@@ -28,6 +29,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -40,6 +42,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -52,6 +55,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -64,6 +68,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -78,6 +83,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -93,6 +99,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -101,6 +108,7 @@ public final class ImageCaptureCore {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -167,6 +175,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -175,6 +184,7 @@ public final class ImageCaptureCore {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -190,6 +200,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -204,6 +215,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -219,6 +231,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -234,6 +247,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -249,6 +263,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -264,6 +279,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -279,6 +295,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -292,6 +309,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -305,6 +323,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -317,6 +336,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -329,6 +349,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -341,6 +362,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -353,6 +375,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -365,6 +388,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -377,6 +401,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -389,6 +414,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -401,6 +427,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -413,6 +440,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -425,6 +453,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -437,6 +466,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -449,6 +479,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -465,6 +496,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -478,6 +510,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -486,6 +519,7 @@ public final class ImageCaptureCore {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -494,6 +528,7 @@ public final class ImageCaptureCore {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -502,6 +537,7 @@ public final class ImageCaptureCore {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -510,6 +546,7 @@ public final class ImageCaptureCore {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -524,6 +561,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -536,6 +574,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -548,6 +587,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -561,6 +601,7 @@ public final class ImageCaptureCore {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 7.0
@@ -76,22 +78,25 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +131,10 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -201,8 +207,8 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
      */
     @Generated
     @Selector("invalidateDecorationElementsOfKind:atIndexPaths:")
-    public native void invalidateDecorationElementsOfKindAtIndexPaths(String elementKind,
-            NSArray<? extends NSIndexPath> indexPaths);
+    public native void invalidateDecorationElementsOfKindAtIndexPaths(@NotNull String elementKind,
+            @NotNull NSArray<? extends NSIndexPath> indexPaths);
 
     /**
      * set to YES when invalidation occurs because the collection view is sent -reloadData
@@ -216,21 +222,22 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
      */
     @Generated
     @Selector("invalidateItemsAtIndexPaths:")
-    public native void invalidateItemsAtIndexPaths(NSArray<? extends NSIndexPath> indexPaths);
+    public native void invalidateItemsAtIndexPaths(@NotNull NSArray<? extends NSIndexPath> indexPaths);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @Selector("invalidateSupplementaryElementsOfKind:atIndexPaths:")
-    public native void invalidateSupplementaryElementsOfKindAtIndexPaths(String elementKind,
-            NSArray<? extends NSIndexPath> indexPaths);
+    public native void invalidateSupplementaryElementsOfKindAtIndexPaths(@NotNull String elementKind,
+            @NotNull NSArray<? extends NSIndexPath> indexPaths);
 
     /**
      * keys are element kind strings - values are NSArrays of NSIndexPaths
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("invalidatedDecorationIndexPaths")
     public native NSDictionary<String, ? extends NSArray<? extends NSIndexPath>> invalidatedDecorationIndexPaths();
@@ -238,6 +245,7 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
     /**
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("invalidatedItemIndexPaths")
     public native NSArray<? extends NSIndexPath> invalidatedItemIndexPaths();
@@ -247,6 +255,7 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("invalidatedSupplementaryIndexPaths")
     public native NSDictionary<String, ? extends NSArray<? extends NSIndexPath>> invalidatedSupplementaryIndexPaths();
@@ -256,6 +265,7 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("previousIndexPathsForInteractivelyMovingItems")
     public native NSArray<? extends NSIndexPath> previousIndexPathsForInteractivelyMovingItems();
@@ -283,6 +293,7 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("targetIndexPathsForInteractivelyMovingItems")
     public native NSArray<? extends NSIndexPath> targetIndexPathsForInteractivelyMovingItems();

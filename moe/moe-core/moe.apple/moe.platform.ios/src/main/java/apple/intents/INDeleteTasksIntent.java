@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -49,6 +51,7 @@ public class INDeleteTasksIntent extends INIntent {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    @Nullable
     @Generated
     @Selector("all")
     public native NSNumber all();
@@ -65,22 +68,25 @@ public class INDeleteTasksIntent extends INIntent {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -104,12 +110,12 @@ public class INDeleteTasksIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INDeleteTasksIntent initWithCoder(NSCoder coder);
+    public native INDeleteTasksIntent initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithTaskList:tasks:all:")
-    public native INDeleteTasksIntent initWithTaskListTasksAll(INTaskList taskList, NSArray<? extends INTask> tasks,
-            NSNumber all);
+    public native INDeleteTasksIntent initWithTaskListTasksAll(@Nullable INTaskList taskList,
+            @Nullable NSArray<? extends INTask> tasks, @Nullable NSNumber all);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -128,9 +134,10 @@ public class INDeleteTasksIntent extends INIntent {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,10 +170,12 @@ public class INDeleteTasksIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    @Nullable
     @Generated
     @Selector("taskList")
     public native INTaskList taskList();
 
+    @Nullable
     @Generated
     @Selector("tasks")
     public native NSArray<? extends INTask> tasks();

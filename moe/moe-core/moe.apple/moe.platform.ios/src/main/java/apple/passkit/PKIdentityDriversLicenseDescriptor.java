@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Used to request information from a user's driver's license (or equivalent document).
@@ -48,8 +50,8 @@ public class PKIdentityDriversLicenseDescriptor extends NSObject implements PKId
 
     @Generated
     @Selector("addElements:withIntentToStore:")
-    public native void addElementsWithIntentToStore(NSArray<? extends PKIdentityElement> elements,
-            PKIdentityIntentToStore intentToStore);
+    public native void addElementsWithIntentToStore(@NotNull NSArray<? extends PKIdentityElement> elements,
+            @NotNull PKIdentityIntentToStore intentToStore);
 
     @Generated
     @Owned
@@ -63,22 +65,25 @@ public class PKIdentityDriversLicenseDescriptor extends NSObject implements PKId
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -91,6 +96,7 @@ public class PKIdentityDriversLicenseDescriptor extends NSObject implements PKId
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("elements")
     public native NSArray<? extends PKIdentityElement> elements();
@@ -117,17 +123,19 @@ public class PKIdentityDriversLicenseDescriptor extends NSObject implements PKId
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    @Nullable
     @Generated
     @Selector("intentToStoreForElement:")
-    public native PKIdentityIntentToStore intentToStoreForElement(PKIdentityElement element);
+    public native PKIdentityIntentToStore intentToStoreForElement(@NotNull PKIdentityElement element);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

@@ -13,6 +13,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -41,8 +43,8 @@ public interface UIDropInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("dropInteraction:canHandleSession:")
-    default boolean dropInteractionCanHandleSession(UIDropInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default boolean dropInteractionCanHandleSession(@NotNull UIDropInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -56,8 +58,8 @@ public interface UIDropInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("dropInteraction:concludeDrop:")
-    default void dropInteractionConcludeDrop(UIDropInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default void dropInteractionConcludeDrop(@NotNull UIDropInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -69,8 +71,8 @@ public interface UIDropInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("dropInteraction:item:willAnimateDropWithAnimator:")
-    default void dropInteractionItemWillAnimateDropWithAnimator(UIDropInteraction interaction, UIDragItem item,
-            @Mapped(ObjCObjectMapper.class) UIDragAnimating animator) {
+    default void dropInteractionItemWillAnimateDropWithAnimator(@NotNull UIDropInteraction interaction,
+            @NotNull UIDragItem item, @NotNull @Mapped(ObjCObjectMapper.class) UIDragAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -83,8 +85,8 @@ public interface UIDropInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("dropInteraction:performDrop:")
-    default void dropInteractionPerformDrop(UIDropInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default void dropInteractionPerformDrop(@NotNull UIDropInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -98,11 +100,13 @@ public interface UIDropInteractionDelegate {
      * - [defaultPreview retargetedPreviewWithTarget:] to move the preview to a different target
      * - a UITargetedDragPreview that you create however you like
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("dropInteraction:previewForDroppingItem:withDefault:")
-    default UITargetedDragPreview dropInteractionPreviewForDroppingItemWithDefault(UIDropInteraction interaction,
-            UIDragItem item, UITargetedDragPreview defaultPreview) {
+    default UITargetedDragPreview dropInteractionPreviewForDroppingItemWithDefault(
+            @NotNull UIDropInteraction interaction, @NotNull UIDragItem item,
+            @NotNull UITargetedDragPreview defaultPreview) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -116,8 +120,8 @@ public interface UIDropInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("dropInteraction:sessionDidEnd:")
-    default void dropInteractionSessionDidEnd(UIDropInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default void dropInteractionSessionDidEnd(@NotNull UIDropInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -127,8 +131,8 @@ public interface UIDropInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("dropInteraction:sessionDidEnter:")
-    default void dropInteractionSessionDidEnter(UIDropInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default void dropInteractionSessionDidEnter(@NotNull UIDropInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -138,8 +142,8 @@ public interface UIDropInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("dropInteraction:sessionDidExit:")
-    default void dropInteractionSessionDidExit(UIDropInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default void dropInteractionSessionDidExit(@NotNull UIDropInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -157,11 +161,12 @@ public interface UIDropInteractionDelegate {
      * 
      * Use the session's `-locationInView:` to get a point to use for hit testing.
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("dropInteraction:sessionDidUpdate:")
-    default UIDropProposal dropInteractionSessionDidUpdate(UIDropInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default UIDropProposal dropInteractionSessionDidUpdate(@NotNull UIDropInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

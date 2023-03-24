@@ -90,6 +90,8 @@ import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
 import apple.corefoundation.struct.CGVector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("CoreGraphics")
@@ -363,9 +365,9 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     public static native void CGRectDivide(@ByValue CGRect rect,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGRect slice,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGRect remainder, @NFloat double amount,
-            int edge);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") CGRect slice,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") CGRect remainder,
+            @NFloat double amount, int edge);
 
     /**
      * Return true if `point' is contained in `rect', false otherwise.
@@ -403,6 +405,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CFDictionaryRef CGPointCreateDictionaryRepresentation(@ByValue CGPoint point);
@@ -416,14 +419,15 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPointMakeWithDictionaryRepresentation(CFDictionaryRef dict,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGPoint point);
+    public static native boolean CGPointMakeWithDictionaryRepresentation(@Nullable CFDictionaryRef dict,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGPoint point);
 
     /**
      * Return a dictionary representation of `size'.
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CFDictionaryRef CGSizeCreateDictionaryRepresentation(@ByValue CGSize size);
@@ -437,14 +441,15 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGSizeMakeWithDictionaryRepresentation(CFDictionaryRef dict,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGSize size);
+    public static native boolean CGSizeMakeWithDictionaryRepresentation(@Nullable CFDictionaryRef dict,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGSize size);
 
     /**
      * Return a dictionary representation of `rect'.
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CFDictionaryRef CGRectCreateDictionaryRepresentation(@ByValue CGRect arg1);
@@ -458,8 +463,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGRectMakeWithDictionaryRepresentation(CFDictionaryRef dict,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGRect rect);
+    public static native boolean CGRectMakeWithDictionaryRepresentation(@Nullable CFDictionaryRef dict,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGRect rect);
 
     @Generated
     @Inline
@@ -669,10 +674,11 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGDataProviderRef CGDataProviderCreateSequential(VoidPtr info,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGDataProviderSequentialCallbacks callbacks);
+    public static native CGDataProviderRef CGDataProviderCreateSequential(@Nullable VoidPtr info,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGDataProviderSequentialCallbacks callbacks);
 
     /**
      * Create a direct-access data provider using `callbacks' to supply `size'
@@ -681,10 +687,11 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGDataProviderRef CGDataProviderCreateDirect(VoidPtr info, long size,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGDataProviderDirectCallbacks callbacks);
+    public static native CGDataProviderRef CGDataProviderCreateDirect(@Nullable VoidPtr info, long size,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGDataProviderDirectCallbacks callbacks);
 
     /**
      * Create a direct-access data provider using `data', an array of `size'
@@ -693,39 +700,43 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGDataProviderRef CGDataProviderCreateWithData(VoidPtr info, ConstVoidPtr data,
-            @NUInt long size,
-            @FunctionPtr(name = "call_CGDataProviderCreateWithData") Function_CGDataProviderCreateWithData releaseData);
+    public static native CGDataProviderRef CGDataProviderCreateWithData(@Nullable VoidPtr info,
+            @Nullable ConstVoidPtr data, @NUInt long size,
+            @Nullable @FunctionPtr(name = "call_CGDataProviderCreateWithData") Function_CGDataProviderCreateWithData releaseData);
 
     /**
      * Create a direct-access data provider which reads from `data'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGDataProviderRef CGDataProviderCreateWithCFData(CFDataRef data);
+    public static native CGDataProviderRef CGDataProviderCreateWithCFData(@Nullable CFDataRef data);
 
     /**
      * Create a data provider reading from `url'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGDataProviderRef CGDataProviderCreateWithURL(CFURLRef url);
+    public static native CGDataProviderRef CGDataProviderCreateWithURL(@Nullable CFURLRef url);
 
     /**
      * Create a data provider reading from `filename'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native CGDataProviderRef CGDataProviderCreateWithFilename(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String filename);
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String filename);
 
     /**
      * Equivalent to `CFRetain(provider)', but doesn't crash (as CFRetain does)
@@ -733,9 +744,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGDataProviderRef CGDataProviderRetain(CGDataProviderRef provider);
+    public static native CGDataProviderRef CGDataProviderRetain(@Nullable CGDataProviderRef provider);
 
     /**
      * Equivalent to `CFRelease(provider)', but doesn't crash (as CFRelease
@@ -745,7 +757,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGDataProviderRelease(CGDataProviderRef provider);
+    public static native void CGDataProviderRelease(@Nullable CGDataProviderRef provider);
 
     /**
      * Return a copy of the data specified by provider. Returns NULL if a
@@ -754,15 +766,17 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDataRef CGDataProviderCopyData(CGDataProviderRef provider);
+    public static native CFDataRef CGDataProviderCopyData(@Nullable CGDataProviderRef provider);
 
     /**
      * Create a DeviceGray color space.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native CGColorSpaceRef CGColorSpaceCreateDeviceGray();
@@ -772,6 +786,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native CGColorSpaceRef CGColorSpaceCreateDeviceRGB();
@@ -781,6 +796,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native CGColorSpaceRef CGColorSpaceCreateDeviceCMYK();
@@ -792,10 +808,11 @@ public final class CoreGraphics {
      * Deprecated-Since: 11.0
      * Deprecated-Message: No longer supported
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native CGColorSpaceRef CGColorSpaceCreateWithICCProfile(CFDataRef data);
+    public static native CGColorSpaceRef CGColorSpaceCreateWithICCProfile(@Nullable CFDataRef data);
 
     /**
      * Create an ICC-based color space. `nComponents' specifies the number of
@@ -813,10 +830,11 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorSpaceRef CGColorSpaceCreateICCBased(@NUInt long nComponents, ConstNFloatPtr range,
-            CGDataProviderRef profile, CGColorSpaceRef alternate);
+    public static native CGColorSpaceRef CGColorSpaceCreateICCBased(@NUInt long nComponents,
+            @Nullable ConstNFloatPtr range, @Nullable CGDataProviderRef profile, @Nullable CGColorSpaceRef alternate);
 
     /**
      * Create an indexed color space. A sample value in an indexed color space
@@ -831,10 +849,12 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorSpaceRef CGColorSpaceCreateIndexed(CGColorSpaceRef baseSpace, @NUInt long lastIndex,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String colorTable);
+    public static native CGColorSpaceRef CGColorSpaceCreateIndexed(@Nullable CGColorSpaceRef baseSpace,
+            @NUInt long lastIndex,
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String colorTable);
 
     /**
      * Create a pattern color space. `baseSpace' is the underlying color space
@@ -844,9 +864,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorSpaceRef CGColorSpaceCreatePattern(CGColorSpaceRef baseSpace);
+    public static native CGColorSpaceRef CGColorSpaceCreatePattern(@Nullable CGColorSpaceRef baseSpace);
 
     /**
      * Please use `CGColorSpaceCreateWithColorSyncProfile'
@@ -855,10 +876,11 @@ public final class CoreGraphics {
      * Deprecated-Since: 15.0
      * Deprecated-Message: No longer supported
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native CGColorSpaceRef CGColorSpaceCreateWithPlatformColorSpace(ConstVoidPtr ref);
+    public static native CGColorSpaceRef CGColorSpaceCreateWithPlatformColorSpace(@Nullable ConstVoidPtr ref);
 
     /**
      * Create a color space using `name' as the identifier for the color
@@ -866,9 +888,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorSpaceRef CGColorSpaceCreateWithName(CFStringRef name);
+    public static native CGColorSpaceRef CGColorSpaceCreateWithName(@Nullable CFStringRef name);
 
     /**
      * Equivalent to `CFRetain(space)', except it doesn't crash (as CFRetain
@@ -876,9 +899,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorSpaceRef CGColorSpaceRetain(CGColorSpaceRef space);
+    public static native CGColorSpaceRef CGColorSpaceRetain(@Nullable CGColorSpaceRef space);
 
     /**
      * Equivalent to `CFRelease(space)', except it doesn't crash (as CFRelease
@@ -888,16 +912,17 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGColorSpaceRelease(CGColorSpaceRef space);
+    public static native void CGColorSpaceRelease(@Nullable CGColorSpaceRef space);
 
     /**
      * Same as `CGColorSpaceGetName' but with ownership released to the caller.
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFStringRef CGColorSpaceCopyName(CGColorSpaceRef space);
+    public static native CFStringRef CGColorSpaceCopyName(@Nullable CGColorSpaceRef space);
 
     /**
      * Return the CFTypeID for CGColorSpaces.
@@ -917,7 +942,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @NUInt
-    public static native long CGColorSpaceGetNumberOfComponents(CGColorSpaceRef space);
+    public static native long CGColorSpaceGetNumberOfComponents(@Nullable CGColorSpaceRef space);
 
     /**
      * Return the color space model of `space'.
@@ -926,7 +951,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native int CGColorSpaceGetModel(CGColorSpaceRef space);
+    public static native int CGColorSpaceGetModel(@Nullable CGColorSpaceRef space);
 
     /**
      * Return the base color space of `space' if `space' is a pattern or indexed
@@ -935,9 +960,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorSpaceRef CGColorSpaceGetBaseColorSpace(CGColorSpaceRef space);
+    public static native CGColorSpaceRef CGColorSpaceGetBaseColorSpace(@Nullable CGColorSpaceRef space);
 
     /**
      * Return the number of entries in the color table of `space' if `space' is
@@ -949,7 +975,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @NUInt
-    public static native long CGColorSpaceGetColorTableCount(CGColorSpaceRef space);
+    public static native long CGColorSpaceGetColorTableCount(@Nullable CGColorSpaceRef space);
 
     /**
      * Copy the entries in the color table of `space' to `table' if `space' is
@@ -963,7 +989,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGColorSpaceGetColorTable(CGColorSpaceRef space, BytePtr table);
+    public static native void CGColorSpaceGetColorTable(@Nullable CGColorSpaceRef space, @Nullable BytePtr table);
 
     /**
      * Please use `CGColorSpaceCopyICCData'
@@ -972,10 +998,11 @@ public final class CoreGraphics {
      * Deprecated-Since: 11.0
      * Deprecated-Message: No longer supported
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native CFDataRef CGColorSpaceCopyICCProfile(CGColorSpaceRef space);
+    public static native CFDataRef CGColorSpaceCopyICCProfile(@Nullable CGColorSpaceRef space);
 
     /**
      * Return a copy of the ICC profile data of `space', or NULL if the color space
@@ -983,9 +1010,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDataRef CGColorSpaceCopyICCData(CGColorSpaceRef space);
+    public static native CFDataRef CGColorSpaceCopyICCData(@Nullable CGColorSpaceRef space);
 
     /**
      * Return true if gamut of the RGB color space is greater than 85% of NTSC gamut
@@ -994,7 +1022,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGColorSpaceIsWideGamutRGB(CGColorSpaceRef arg1);
+    public static native boolean CGColorSpaceIsWideGamutRGB(@NotNull CGColorSpaceRef arg1);
 
     /**
      * Return true if `space' can be used as a destination color space; false
@@ -1004,7 +1032,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGColorSpaceSupportsOutput(CGColorSpaceRef space);
+    public static native boolean CGColorSpaceSupportsOutput(@NotNull CGColorSpaceRef space);
 
     /**
      * Return the CFTypeID for CGPatternRefs.
@@ -1021,12 +1049,13 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPatternRef CGPatternCreate(VoidPtr info, @ByValue CGRect bounds,
+    public static native CGPatternRef CGPatternCreate(@Nullable VoidPtr info, @ByValue CGRect bounds,
             @ByValue CGAffineTransform matrix, @NFloat double xStep, @NFloat double yStep, int tiling,
             boolean isColored,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGPatternCallbacks callbacks);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGPatternCallbacks callbacks);
 
     /**
      * Equivalent to `CFRetain(pattern)', except it doesn't crash (as CF does)
@@ -1034,9 +1063,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPatternRef CGPatternRetain(CGPatternRef pattern);
+    public static native CGPatternRef CGPatternRetain(@Nullable CGPatternRef pattern);
 
     /**
      * Equivalent to `CFRelease(pattern)', except it doesn't crash (as CF does)
@@ -1046,7 +1076,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPatternRelease(CGPatternRef pattern);
+    public static native void CGPatternRelease(@Nullable CGPatternRef pattern);
 
     /**
      * Create a color in the color space `space' with color components
@@ -1055,9 +1085,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorRef CGColorCreate(CGColorSpaceRef space, ConstNFloatPtr components);
+    public static native CGColorRef CGColorCreate(@Nullable CGColorSpaceRef space, @Nullable ConstNFloatPtr components);
 
     /**
      * Create a color in color space `space' with pattern `pattern' and
@@ -1065,38 +1096,42 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorRef CGColorCreateWithPattern(CGColorSpaceRef space, CGPatternRef pattern,
-            ConstNFloatPtr components);
+    public static native CGColorRef CGColorCreateWithPattern(@Nullable CGColorSpaceRef space,
+            @Nullable CGPatternRef pattern, @Nullable ConstNFloatPtr components);
 
     /**
      * Create a copy of `color'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorRef CGColorCreateCopy(CGColorRef color);
+    public static native CGColorRef CGColorCreateCopy(@Nullable CGColorRef color);
 
     /**
      * Create a copy of `color' with alpha set to `alpha'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorRef CGColorCreateCopyWithAlpha(CGColorRef color, @NFloat double alpha);
+    public static native CGColorRef CGColorCreateCopyWithAlpha(@Nullable CGColorRef color, @NFloat double alpha);
 
     /**
      * Create a copy of `color' by matching existing color to destination color space.
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorRef CGColorCreateCopyByMatchingToColorSpace(CGColorSpaceRef arg1, int intent,
-            CGColorRef color, CFDictionaryRef options);
+    public static native CGColorRef CGColorCreateCopyByMatchingToColorSpace(@Nullable CGColorSpaceRef arg1, int intent,
+            @Nullable CGColorRef color, @Nullable CFDictionaryRef options);
 
     /**
      * Equivalent to `CFRetain(color)', except it doesn't crash (as CFRetain
@@ -1104,9 +1139,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorRef CGColorRetain(CGColorRef color);
+    public static native CGColorRef CGColorRetain(@Nullable CGColorRef color);
 
     /**
      * Equivalent to `CFRelease(color)', except it doesn't crash (as CFRelease
@@ -1116,7 +1152,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGColorRelease(CGColorRef color);
+    public static native void CGColorRelease(@Nullable CGColorRef color);
 
     /**
      * Return true if `color1' is equal to `color2'; false otherwise.
@@ -1125,7 +1161,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGColorEqualToColor(CGColorRef color1, CGColorRef color2);
+    public static native boolean CGColorEqualToColor(@Nullable CGColorRef color1, @Nullable CGColorRef color2);
 
     /**
      * Return the number of color components (including alpha) associated with
@@ -1136,16 +1172,17 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @NUInt
-    public static native long CGColorGetNumberOfComponents(CGColorRef color);
+    public static native long CGColorGetNumberOfComponents(@Nullable CGColorRef color);
 
     /**
      * Return the color components (including alpha) associated with `color'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native ConstNFloatPtr CGColorGetComponents(CGColorRef color);
+    public static native ConstNFloatPtr CGColorGetComponents(@Nullable CGColorRef color);
 
     /**
      * Return the alpha component associated with `color'.
@@ -1155,16 +1192,17 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @NFloat
-    public static native double CGColorGetAlpha(CGColorRef color);
+    public static native double CGColorGetAlpha(@Nullable CGColorRef color);
 
     /**
      * Return the color space associated with `color'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorSpaceRef CGColorGetColorSpace(CGColorRef color);
+    public static native CGColorSpaceRef CGColorGetColorSpace(@Nullable CGColorRef color);
 
     /**
      * Return the pattern associated with `color', if it's a color in a pattern
@@ -1172,9 +1210,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPatternRef CGColorGetPattern(CGColorRef color);
+    public static native CGPatternRef CGColorGetPattern(@Nullable CGColorRef color);
 
     /**
      * Return the CFTypeID for CGColors.
@@ -1202,9 +1241,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGFontRef CGFontCreateWithDataProvider(CGDataProviderRef provider);
+    public static native CGFontRef CGFontCreateWithDataProvider(@Nullable CGDataProviderRef provider);
 
     /**
      * Return the font identified by `name', corresponding to the font's
@@ -1213,9 +1253,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGFontRef CGFontCreateWithFontName(CFStringRef name);
+    public static native CGFontRef CGFontCreateWithFontName(@Nullable CFStringRef name);
 
     /**
      * Return a font based on `font' with the variation specification dictionary
@@ -1228,9 +1269,11 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGFontRef CGFontCreateCopyWithVariations(CGFontRef font, CFDictionaryRef variations);
+    public static native CGFontRef CGFontCreateCopyWithVariations(@Nullable CGFontRef font,
+            @Nullable CFDictionaryRef variations);
 
     /**
      * Equivalent to `CFRetain(font)', except it doesn't crash (as CFRetain
@@ -1238,9 +1281,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGFontRef CGFontRetain(CGFontRef font);
+    public static native CGFontRef CGFontRetain(@Nullable CGFontRef font);
 
     /**
      * Equivalent to `CFRelease(font)', except it doesn't crash (as CFRelease
@@ -1250,7 +1294,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGFontRelease(CGFontRef font);
+    public static native void CGFontRelease(@Nullable CGFontRef font);
 
     /**
      * Return the number of glyphs in `font'.
@@ -1260,7 +1304,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @NUInt
-    public static native long CGFontGetNumberOfGlyphs(CGFontRef font);
+    public static native long CGFontGetNumberOfGlyphs(@Nullable CGFontRef font);
 
     /**
      * Return the glyph space units/em for `font'.
@@ -1269,25 +1313,27 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native int CGFontGetUnitsPerEm(CGFontRef font);
+    public static native int CGFontGetUnitsPerEm(@Nullable CGFontRef font);
 
     /**
      * Return the PostScript name of `font'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFStringRef CGFontCopyPostScriptName(CGFontRef font);
+    public static native CFStringRef CGFontCopyPostScriptName(@Nullable CGFontRef font);
 
     /**
      * Return the "full name" of `font'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFStringRef CGFontCopyFullName(CGFontRef font);
+    public static native CFStringRef CGFontCopyFullName(@Nullable CGFontRef font);
 
     /**
      * Return the ascent of `font'. The ascent is the maximum distance above the
@@ -1298,7 +1344,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native int CGFontGetAscent(CGFontRef font);
+    public static native int CGFontGetAscent(@Nullable CGFontRef font);
 
     /**
      * Return the descent of `font'. The descent is the maximum distance below
@@ -1309,7 +1355,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native int CGFontGetDescent(CGFontRef font);
+    public static native int CGFontGetDescent(@Nullable CGFontRef font);
 
     /**
      * Return the leading of `font'. The leading is the spacing between
@@ -1320,7 +1366,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native int CGFontGetLeading(CGFontRef font);
+    public static native int CGFontGetLeading(@Nullable CGFontRef font);
 
     /**
      * Return the cap height of `font'. The cap height is the distance above the
@@ -1331,7 +1377,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native int CGFontGetCapHeight(CGFontRef font);
+    public static native int CGFontGetCapHeight(@Nullable CGFontRef font);
 
     /**
      * Return the x-height of `font'. The x-height is the distance above the
@@ -1342,7 +1388,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native int CGFontGetXHeight(CGFontRef font);
+    public static native int CGFontGetXHeight(@Nullable CGFontRef font);
 
     /**
      * Return the font bounding box of `font'. The font bounding box is the
@@ -1354,7 +1400,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @ByValue
-    public static native CGRect CGFontGetFontBBox(CGFontRef font);
+    public static native CGRect CGFontGetFontBBox(@Nullable CGFontRef font);
 
     /**
      * Return the italic angle of `font', measured in degrees counter-clockwise
@@ -1365,7 +1411,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @NFloat
-    public static native double CGFontGetItalicAngle(CGFontRef font);
+    public static native double CGFontGetItalicAngle(@Nullable CGFontRef font);
 
     /**
      * Return the thickness of the dominant vertical stems of glyphs in `font'.
@@ -1376,7 +1422,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @NFloat
-    public static native double CGFontGetStemV(CGFontRef font);
+    public static native double CGFontGetStemV(@Nullable CGFontRef font);
 
     /**
      * Return an array of the variation axis dictionaries for `font'. Each
@@ -1386,9 +1432,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFArrayRef CGFontCopyVariationAxes(CGFontRef font);
+    public static native CFArrayRef CGFontCopyVariationAxes(@Nullable CGFontRef font);
 
     /**
      * Return the variation specification dictionary from `font'. This
@@ -1400,9 +1447,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDictionaryRef CGFontCopyVariations(CGFontRef font);
+    public static native CFDictionaryRef CGFontCopyVariations(@Nullable CGFontRef font);
 
     /**
      * Get the advance of each glyph in `glyphs', an array of `count' glyphs,
@@ -1414,8 +1462,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGFontGetGlyphAdvances(CGFontRef font, ConstCharPtr glyphs, @NUInt long count,
-            IntPtr advances);
+    public static native boolean CGFontGetGlyphAdvances(@Nullable CGFontRef font, @NotNull ConstCharPtr glyphs,
+            @NUInt long count, @NotNull IntPtr advances);
 
     /**
      * Get the bounding box of each glyph in `glyphs', an array of `count'
@@ -1428,8 +1476,9 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGFontGetGlyphBBoxes(CGFontRef font, ConstCharPtr glyphs, @NUInt long count,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGRect bboxes);
+    public static native boolean CGFontGetGlyphBBoxes(@Nullable CGFontRef font, @NotNull ConstCharPtr glyphs,
+            @NUInt long count,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") CGRect bboxes);
 
     /**
      * Return the glyph associated with `name' in `font'. If `name' isn't found
@@ -1439,7 +1488,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native char CGFontGetGlyphWithGlyphName(CGFontRef font, CFStringRef name);
+    public static native char CGFontGetGlyphWithGlyphName(@Nullable CGFontRef font, @Nullable CFStringRef name);
 
     /**
      * Return the glyph name of `glyph' in `font', or NULL if `glyph' does not
@@ -1447,9 +1496,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFStringRef CGFontCopyGlyphNameForGlyph(CGFontRef font, char glyph);
+    public static native CFStringRef CGFontCopyGlyphNameForGlyph(@Nullable CGFontRef font, char glyph);
 
     /**
      * Return true if a subset in the PostScript format `format' can be created
@@ -1459,7 +1509,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGFontCanCreatePostScriptSubset(CGFontRef font, int format);
+    public static native boolean CGFontCanCreatePostScriptSubset(@Nullable CGFontRef font, int format);
 
     /**
      * Return an array of font table tags in `font'. Each entry in the array is
@@ -1468,9 +1518,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFArrayRef CGFontCopyTableTags(CGFontRef font);
+    public static native CFArrayRef CGFontCopyTableTags(@Nullable CGFontRef font);
 
     /**
      * Return the table in `font' corresponding to `tag', or NULL if no such
@@ -1478,9 +1529,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDataRef CGFontCopyTableForTag(CGFontRef font, int tag);
+    public static native CFDataRef CGFontCopyTableForTag(@Nullable CGFontRef font, int tag);
 
     /**
      * Return the CFTypeID for CGGradients.
@@ -1508,10 +1560,11 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGGradientRef CGGradientCreateWithColorComponents(CGColorSpaceRef space,
-            ConstNFloatPtr components, ConstNFloatPtr locations, @NUInt long count);
+    public static native CGGradientRef CGGradientCreateWithColorComponents(@Nullable CGColorSpaceRef space,
+            @Nullable ConstNFloatPtr components, @Nullable ConstNFloatPtr locations, @NUInt long count);
 
     /**
      * Creates a gradient by pairing the colors provided in `colors' with the
@@ -1532,10 +1585,11 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGGradientRef CGGradientCreateWithColors(CGColorSpaceRef space, CFArrayRef colors,
-            ConstNFloatPtr locations);
+    public static native CGGradientRef CGGradientCreateWithColors(@Nullable CGColorSpaceRef space,
+            @Nullable CFArrayRef colors, @Nullable ConstNFloatPtr locations);
 
     /**
      * Equivalent to `CFRetain' except that it doesn't crash (as `CFRetain'
@@ -1543,9 +1597,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGGradientRef CGGradientRetain(CGGradientRef gradient);
+    public static native CGGradientRef CGGradientRetain(@Nullable CGGradientRef gradient);
 
     /**
      * Equivalent to `CFRelease' except that it doesn't crash (as `CFRelease'
@@ -1555,7 +1610,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGGradientRelease(CGGradientRef gradient);
+    public static native void CGGradientRelease(@Nullable CGGradientRef gradient);
 
     /**
      * Return the CFTypeID for CGImageRefs.
@@ -1572,11 +1627,13 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native CGImageRef CGImageCreate(@NUInt long width, @NUInt long height, @NUInt long bitsPerComponent,
-            @NUInt long bitsPerPixel, @NUInt long bytesPerRow, CGColorSpaceRef space, int bitmapInfo,
-            CGDataProviderRef provider, ConstNFloatPtr decode, boolean shouldInterpolate, int intent);
+            @NUInt long bitsPerPixel, @NUInt long bytesPerRow, @Nullable CGColorSpaceRef space, int bitmapInfo,
+            @Nullable CGDataProviderRef provider, @Nullable ConstNFloatPtr decode, boolean shouldInterpolate,
+            int intent);
 
     /**
      * Create an image mask. Legal values for bits per component are 1, 2, 4 and 8.
@@ -1585,11 +1642,12 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native CGImageRef CGImageMaskCreate(@NUInt long width, @NUInt long height,
-            @NUInt long bitsPerComponent, @NUInt long bitsPerPixel, @NUInt long bytesPerRow, CGDataProviderRef provider,
-            ConstNFloatPtr decode, boolean shouldInterpolate);
+            @NUInt long bitsPerComponent, @NUInt long bitsPerPixel, @NUInt long bytesPerRow,
+            @Nullable CGDataProviderRef provider, @Nullable ConstNFloatPtr decode, boolean shouldInterpolate);
 
     /**
      * Return a copy of `image'. Only the image structure itself is copied; the
@@ -1597,29 +1655,32 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGImageRef CGImageCreateCopy(CGImageRef image);
+    public static native CGImageRef CGImageCreateCopy(@Nullable CGImageRef image);
 
     /**
      * Create an image from `source', a data provider of JPEG-encoded data.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGImageRef CGImageCreateWithJPEGDataProvider(CGDataProviderRef source, ConstNFloatPtr decode,
-            boolean shouldInterpolate, int intent);
+    public static native CGImageRef CGImageCreateWithJPEGDataProvider(@Nullable CGDataProviderRef source,
+            @Nullable ConstNFloatPtr decode, boolean shouldInterpolate, int intent);
 
     /**
      * Create an image using `source', a data provider for PNG-encoded data.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGImageRef CGImageCreateWithPNGDataProvider(CGDataProviderRef source, ConstNFloatPtr decode,
-            boolean shouldInterpolate, int intent);
+    public static native CGImageRef CGImageCreateWithPNGDataProvider(@Nullable CGDataProviderRef source,
+            @Nullable ConstNFloatPtr decode, boolean shouldInterpolate, int intent);
 
     /**
      * Create an image using the data contained within the subrectangle `rect'
@@ -1645,9 +1706,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGImageRef CGImageCreateWithImageInRect(CGImageRef image, @ByValue CGRect rect);
+    public static native CGImageRef CGImageCreateWithImageInRect(@Nullable CGImageRef image, @ByValue CGRect rect);
 
     /**
      * Create a new image from `image' masked by `mask', which may be an image
@@ -1678,9 +1740,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGImageRef CGImageCreateWithMask(CGImageRef image, CGImageRef mask);
+    public static native CGImageRef CGImageCreateWithMask(@Nullable CGImageRef image, @Nullable CGImageRef mask);
 
     /**
      * Create a new image from `image' masked by `components', an array of 2N
@@ -1701,9 +1764,11 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGImageRef CGImageCreateWithMaskingColors(CGImageRef image, ConstNFloatPtr components);
+    public static native CGImageRef CGImageCreateWithMaskingColors(@Nullable CGImageRef image,
+            @Nullable ConstNFloatPtr components);
 
     /**
      * Create a copy of `image', replacing the image's color space with `space'.
@@ -1713,18 +1778,21 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGImageRef CGImageCreateCopyWithColorSpace(CGImageRef image, CGColorSpaceRef space);
+    public static native CGImageRef CGImageCreateCopyWithColorSpace(@Nullable CGImageRef image,
+            @Nullable CGColorSpaceRef space);
 
     /**
      * Equivalent to `CFRetain(image)'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGImageRef CGImageRetain(CGImageRef image);
+    public static native CGImageRef CGImageRetain(@Nullable CGImageRef image);
 
     /**
      * Equivalent to `CFRelease(image)'.
@@ -1733,7 +1801,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGImageRelease(CGImageRef image);
+    public static native void CGImageRelease(@Nullable CGImageRef image);
 
     /**
      * Return true if `image' is an image mask, false otherwise.
@@ -1742,7 +1810,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGImageIsMask(CGImageRef image);
+    public static native boolean CGImageIsMask(@Nullable CGImageRef image);
 
     /**
      * Return the width of `image'.
@@ -1752,7 +1820,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @NUInt
-    public static native long CGImageGetWidth(CGImageRef image);
+    public static native long CGImageGetWidth(@Nullable CGImageRef image);
 
     /**
      * Return the height of `image'.
@@ -1762,7 +1830,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @NUInt
-    public static native long CGImageGetHeight(CGImageRef image);
+    public static native long CGImageGetHeight(@Nullable CGImageRef image);
 
     /**
      * Return the number of bits/component of `image'.
@@ -1772,7 +1840,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @NUInt
-    public static native long CGImageGetBitsPerComponent(CGImageRef image);
+    public static native long CGImageGetBitsPerComponent(@Nullable CGImageRef image);
 
     /**
      * Return the number of bits/pixel of `image'.
@@ -1782,7 +1850,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @NUInt
-    public static native long CGImageGetBitsPerPixel(CGImageRef image);
+    public static native long CGImageGetBitsPerPixel(@Nullable CGImageRef image);
 
     /**
      * Return the number of bytes/row of `image'.
@@ -1792,7 +1860,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @NUInt
-    public static native long CGImageGetBytesPerRow(CGImageRef image);
+    public static native long CGImageGetBytesPerRow(@Nullable CGImageRef image);
 
     /**
      * Return the color space of `image', or NULL if `image' is an image
@@ -1800,9 +1868,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorSpaceRef CGImageGetColorSpace(CGImageRef image);
+    public static native CGColorSpaceRef CGImageGetColorSpace(@Nullable CGImageRef image);
 
     /**
      * Return the alpha info of `image'.
@@ -1811,25 +1880,27 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native int CGImageGetAlphaInfo(CGImageRef image);
+    public static native int CGImageGetAlphaInfo(@Nullable CGImageRef image);
 
     /**
      * Return the data provider of `image'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGDataProviderRef CGImageGetDataProvider(CGImageRef image);
+    public static native CGDataProviderRef CGImageGetDataProvider(@Nullable CGImageRef image);
 
     /**
      * Return the decode array of `image'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native ConstNFloatPtr CGImageGetDecode(CGImageRef image);
+    public static native ConstNFloatPtr CGImageGetDecode(@Nullable CGImageRef image);
 
     /**
      * Return the interpolation parameter of `image'.
@@ -1838,7 +1909,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGImageGetShouldInterpolate(CGImageRef image);
+    public static native boolean CGImageGetShouldInterpolate(@Nullable CGImageRef image);
 
     /**
      * Return the rendering intent of `image'.
@@ -1847,7 +1918,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native int CGImageGetRenderingIntent(CGImageRef image);
+    public static native int CGImageGetRenderingIntent(@Nullable CGImageRef image);
 
     /**
      * Return the bitmap info of `image'.
@@ -1856,16 +1927,17 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native int CGImageGetBitmapInfo(CGImageRef image);
+    public static native int CGImageGetBitmapInfo(@Nullable CGImageRef image);
 
     /**
      * Return the UTType of `image'.
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFStringRef CGImageGetUTType(CGImageRef image);
+    public static native CFStringRef CGImageGetUTType(@Nullable CGImageRef image);
 
     /**
      * Return the CFTypeID for CGPathRefs.
@@ -1882,6 +1954,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CGMutablePathRef CGPathCreateMutable();
@@ -1891,38 +1964,42 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPathRef CGPathCreateCopy(CGPathRef path);
+    public static native CGPathRef CGPathCreateCopy(@Nullable CGPathRef path);
 
     /**
      * Create a copy of `path' transformed by `transform'.
      * 
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPathRef CGPathCreateCopyByTransformingPath(CGPathRef path,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform transform);
+    public static native CGPathRef CGPathCreateCopyByTransformingPath(@Nullable CGPathRef path,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform transform);
 
     /**
      * Create a mutable copy of `path'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGMutablePathRef CGPathCreateMutableCopy(CGPathRef path);
+    public static native CGMutablePathRef CGPathCreateMutableCopy(@Nullable CGPathRef path);
 
     /**
      * Create a mutable copy of `path' transformed by `transform'.
      * 
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGMutablePathRef CGPathCreateMutableCopyByTransformingPath(CGPathRef path,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform transform);
+    public static native CGMutablePathRef CGPathCreateMutableCopyByTransformingPath(@Nullable CGPathRef path,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform transform);
 
     /**
      * Return a path representing a rectangle bounded by `rect'. The rectangle
@@ -1934,10 +2011,11 @@ public final class CoreGraphics {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CGPathRef CGPathCreateWithRect(@ByValue CGRect rect,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform transform);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform transform);
 
     /**
      * Return a path representing an ellipse bounded by `rect'. The ellipse is
@@ -1954,10 +2032,11 @@ public final class CoreGraphics {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CGPathRef CGPathCreateWithEllipseInRect(@ByValue CGRect rect,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform transform);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform transform);
 
     /**
      * Return a path representing a rounded rectangle. The rounded rectangle
@@ -1971,11 +2050,12 @@ public final class CoreGraphics {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CGPathRef CGPathCreateWithRoundedRect(@ByValue CGRect rect, @NFloat double cornerWidth,
             @NFloat double cornerHeight,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform transform);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform transform);
 
     /**
      * Add a rounded rectangle to `path'. The rounded rectangle coincides with
@@ -1991,8 +2071,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPathAddRoundedRect(CGMutablePathRef path,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform transform,
+    public static native void CGPathAddRoundedRect(@Nullable CGMutablePathRef path,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform transform,
             @ByValue CGRect rect, @NFloat double cornerWidth, @NFloat double cornerHeight);
 
     /**
@@ -2004,11 +2084,12 @@ public final class CoreGraphics {
      * 
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPathRef CGPathCreateCopyByDashingPath(CGPathRef path,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform transform,
-            @NFloat double phase, ConstNFloatPtr lengths, @NUInt long count);
+    public static native CGPathRef CGPathCreateCopyByDashingPath(@Nullable CGPathRef path,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform transform,
+            @NFloat double phase, @Nullable ConstNFloatPtr lengths, @NUInt long count);
 
     /**
      * Create a stroked path from `path'. The parameters `lineWidth', `lineCap',
@@ -2019,10 +2100,11 @@ public final class CoreGraphics {
      * 
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPathRef CGPathCreateCopyByStrokingPath(CGPathRef path,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform transform,
+    public static native CGPathRef CGPathCreateCopyByStrokingPath(@Nullable CGPathRef path,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform transform,
             @NFloat double lineWidth, int lineCap, int lineJoin, @NFloat double miterLimit);
 
     /**
@@ -2031,9 +2113,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPathRef CGPathRetain(CGPathRef path);
+    public static native CGPathRef CGPathRetain(@Nullable CGPathRef path);
 
     /**
      * Equivalent to `CFRelease(path)', except it doesn't crash (as CFRelease
@@ -2043,7 +2126,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPathRelease(CGPathRef path);
+    public static native void CGPathRelease(@Nullable CGPathRef path);
 
     /**
      * Return true if `path1' is equal to `path2'; false otherwise.
@@ -2052,7 +2135,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPathEqualToPath(CGPathRef path1, CGPathRef path2);
+    public static native boolean CGPathEqualToPath(@Nullable CGPathRef path1, @Nullable CGPathRef path2);
 
     /**
      * Move the current point to `(x, y)' in `path' and begin a new subpath. If
@@ -2062,9 +2145,9 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPathMoveToPoint(CGMutablePathRef path,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform m, @NFloat double x,
-            @NFloat double y);
+    public static native void CGPathMoveToPoint(@Nullable CGMutablePathRef path,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform m,
+            @NFloat double x, @NFloat double y);
 
     /**
      * Append a straight line segment from the current point to `(x, y)' in
@@ -2075,9 +2158,9 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPathAddLineToPoint(CGMutablePathRef path,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform m, @NFloat double x,
-            @NFloat double y);
+    public static native void CGPathAddLineToPoint(@Nullable CGMutablePathRef path,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform m,
+            @NFloat double x, @NFloat double y);
 
     /**
      * Append a quadratic curve from the current point to `(x, y)' with control
@@ -2088,9 +2171,9 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPathAddQuadCurveToPoint(CGMutablePathRef path,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform m, @NFloat double cpx,
-            @NFloat double cpy, @NFloat double x, @NFloat double y);
+    public static native void CGPathAddQuadCurveToPoint(@Nullable CGMutablePathRef path,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform m,
+            @NFloat double cpx, @NFloat double cpy, @NFloat double x, @NFloat double y);
 
     /**
      * Append a cubic Bézier curve from the current point to `(x,y)' with
@@ -2102,8 +2185,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPathAddCurveToPoint(CGMutablePathRef path,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform m,
+    public static native void CGPathAddCurveToPoint(@Nullable CGMutablePathRef path,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform m,
             @NFloat double cp1x, @NFloat double cp1y, @NFloat double cp2x, @NFloat double cp2y, @NFloat double x,
             @NFloat double y);
 
@@ -2115,7 +2198,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPathCloseSubpath(CGMutablePathRef path);
+    public static native void CGPathCloseSubpath(@Nullable CGMutablePathRef path);
 
     /**
      * Add `rect' to `path'. If `m' is non-NULL, then first transform `rect' by
@@ -2125,8 +2208,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPathAddRect(CGMutablePathRef path,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform m,
+    public static native void CGPathAddRect(@Nullable CGMutablePathRef path,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform m,
             @ByValue CGRect rect);
 
     /**
@@ -2138,9 +2221,10 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPathAddRects(CGMutablePathRef path,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform m,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGRect rects, @NUInt long count);
+    public static native void CGPathAddRects(@Nullable CGMutablePathRef path,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform m,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGRect rects,
+            @NUInt long count);
 
     /**
      * Move to the first element of `points', an array of `count' CGPoints, and
@@ -2151,9 +2235,10 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPathAddLines(CGMutablePathRef path,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform m,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGPoint points, @NUInt long count);
+    public static native void CGPathAddLines(@Nullable CGMutablePathRef path,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform m,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGPoint points,
+            @NUInt long count);
 
     /**
      * Add an ellipse (an oval) inside `rect' to `path'. The ellipse is
@@ -2171,8 +2256,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPathAddEllipseInRect(CGMutablePathRef path,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform m,
+    public static native void CGPathAddEllipseInRect(@Nullable CGMutablePathRef path,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform m,
             @ByValue CGRect rect);
 
     /**
@@ -2191,8 +2276,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPathAddRelativeArc(CGMutablePathRef path,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform matrix,
+    public static native void CGPathAddRelativeArc(@Nullable CGMutablePathRef path,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform matrix,
             @NFloat double x, @NFloat double y, @NFloat double radius, @NFloat double startAngle, @NFloat double delta);
 
     /**
@@ -2222,10 +2307,10 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPathAddArc(CGMutablePathRef path,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform m, @NFloat double x,
-            @NFloat double y, @NFloat double radius, @NFloat double startAngle, @NFloat double endAngle,
-            boolean clockwise);
+    public static native void CGPathAddArc(@Nullable CGMutablePathRef path,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform m,
+            @NFloat double x, @NFloat double y, @NFloat double radius, @NFloat double startAngle,
+            @NFloat double endAngle, boolean clockwise);
 
     /**
      * Add an arc of a circle to `path', possibly preceded by a straight line
@@ -2240,9 +2325,9 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPathAddArcToPoint(CGMutablePathRef path,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform m, @NFloat double x1,
-            @NFloat double y1, @NFloat double x2, @NFloat double y2, @NFloat double radius);
+    public static native void CGPathAddArcToPoint(@Nullable CGMutablePathRef path,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform m,
+            @NFloat double x1, @NFloat double y1, @NFloat double x2, @NFloat double y2, @NFloat double radius);
 
     /**
      * Add `path2' to `path1'. If `m' is non-NULL, then the points in `path2'
@@ -2252,8 +2337,9 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPathAddPath(CGMutablePathRef path1,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform m, CGPathRef path2);
+    public static native void CGPathAddPath(@Nullable CGMutablePathRef path1,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform m,
+            @Nullable CGPathRef path2);
 
     /**
      * Return true if `path' contains no elements, false otherwise.
@@ -2262,7 +2348,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPathIsEmpty(CGPathRef path);
+    public static native boolean CGPathIsEmpty(@Nullable CGPathRef path);
 
     /**
      * Return true if `path' represents a rectangle, false otherwise.
@@ -2271,8 +2357,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPathIsRect(CGPathRef path,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGRect rect);
+    public static native boolean CGPathIsRect(@Nullable CGPathRef path,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGRect rect);
 
     /**
      * Return the current point of the current subpath of `path'. If there is no
@@ -2283,7 +2369,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @ByValue
-    public static native CGPoint CGPathGetCurrentPoint(CGPathRef path);
+    public static native CGPoint CGPathGetCurrentPoint(@Nullable CGPathRef path);
 
     /**
      * Return the bounding box of `path'. The bounding box is the smallest
@@ -2296,7 +2382,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @ByValue
-    public static native CGRect CGPathGetBoundingBox(CGPathRef path);
+    public static native CGRect CGPathGetBoundingBox(@Nullable CGPathRef path);
 
     /**
      * Return the path bounding box of `path'. The path bounding box is the
@@ -2309,7 +2395,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @ByValue
-    public static native CGRect CGPathGetPathBoundingBox(CGPathRef path);
+    public static native CGRect CGPathGetPathBoundingBox(@Nullable CGPathRef path);
 
     /**
      * Return true if `point' is contained in `path'; false otherwise. A point
@@ -2323,8 +2409,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPathContainsPoint(CGPathRef path,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform m,
+    public static native boolean CGPathContainsPoint(@Nullable CGPathRef path,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform m,
             @ByValue CGPoint point, boolean eoFill);
 
     /**
@@ -2335,8 +2421,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPathApply(CGPathRef path, VoidPtr info,
-            @FunctionPtr(name = "call_CGPathApply") Function_CGPathApply function);
+    public static native void CGPathApply(@Nullable CGPathRef path, @Nullable VoidPtr info,
+            @Nullable @FunctionPtr(name = "call_CGPathApply") Function_CGPathApply function);
 
     /**
      * Return the type of `object'.
@@ -2345,7 +2431,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native int CGPDFObjectGetType(CGPDFObjectRef object);
+    public static native int CGPDFObjectGetType(@Nullable CGPDFObjectRef object);
 
     /**
      * Get the value of `object'. If the type of `object' is equal to `type',
@@ -2359,25 +2445,28 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFObjectGetValue(CGPDFObjectRef object, int type, VoidPtr value);
+    public static native boolean CGPDFObjectGetValue(@Nullable CGPDFObjectRef object, int type,
+            @Nullable VoidPtr value);
 
     /**
      * Return the dictionary of `stream'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPDFDictionaryRef CGPDFStreamGetDictionary(CGPDFStreamRef stream);
+    public static native CGPDFDictionaryRef CGPDFStreamGetDictionary(@Nullable CGPDFStreamRef stream);
 
     /**
      * Return the data of `stream'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDataRef CGPDFStreamCopyData(CGPDFStreamRef stream, IntPtr format);
+    public static native CFDataRef CGPDFStreamCopyData(@Nullable CGPDFStreamRef stream, @Nullable IntPtr format);
 
     /**
      * Return the length of `string'.
@@ -2387,17 +2476,18 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @NUInt
-    public static native long CGPDFStringGetLength(CGPDFStringRef string);
+    public static native long CGPDFStringGetLength(@Nullable CGPDFStringRef string);
 
     /**
      * Return a pointer to the bytes of `string'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    public static native String CGPDFStringGetBytePtr(CGPDFStringRef string);
+    public static native String CGPDFStringGetBytePtr(@Nullable CGPDFStringRef string);
 
     /**
      * Return a CFString representing `string' as a "text string". See Section
@@ -2406,9 +2496,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFStringRef CGPDFStringCopyTextString(CGPDFStringRef string);
+    public static native CFStringRef CGPDFStringCopyTextString(@Nullable CGPDFStringRef string);
 
     /**
      * Convert `string' to a CFDate. See Section 3.8.3 "Dates", PDF Reference:
@@ -2416,9 +2507,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDateRef CGPDFStringCopyDate(CGPDFStringRef string);
+    public static native CFDateRef CGPDFStringCopyDate(@Nullable CGPDFStringRef string);
 
     /**
      * API-Since: 2.0
@@ -2426,7 +2518,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @NUInt
-    public static native long CGPDFArrayGetCount(CGPDFArrayRef array);
+    public static native long CGPDFArrayGetCount(@Nullable CGPDFArrayRef array);
 
     /**
      * Look up the object at `index' in `array' and return the result in
@@ -2436,7 +2528,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFArrayGetObject(CGPDFArrayRef array, @NUInt long index, Ptr<CGPDFObjectRef> value);
+    public static native boolean CGPDFArrayGetObject(@Nullable CGPDFArrayRef array, @NUInt long index,
+            @Nullable Ptr<CGPDFObjectRef> value);
 
     /**
      * Look up the object at `index' in `array' and, if it's a null, return
@@ -2446,7 +2539,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFArrayGetNull(CGPDFArrayRef array, @NUInt long index);
+    public static native boolean CGPDFArrayGetNull(@Nullable CGPDFArrayRef array, @NUInt long index);
 
     /**
      * Look up the object at `index' in `array' and, if it's a boolean, return
@@ -2456,7 +2549,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFArrayGetBoolean(CGPDFArrayRef array, @NUInt long index, BytePtr value);
+    public static native boolean CGPDFArrayGetBoolean(@Nullable CGPDFArrayRef array, @NUInt long index,
+            @Nullable BytePtr value);
 
     /**
      * Look up the object at `index' in `array' and, if it's an integer, return
@@ -2466,7 +2560,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFArrayGetInteger(CGPDFArrayRef array, @NUInt long index, NIntPtr value);
+    public static native boolean CGPDFArrayGetInteger(@Nullable CGPDFArrayRef array, @NUInt long index,
+            @Nullable NIntPtr value);
 
     /**
      * Look up the object at `index' in `array' and, if it's a number (real or
@@ -2477,7 +2572,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFArrayGetNumber(CGPDFArrayRef array, @NUInt long index, NFloatPtr value);
+    public static native boolean CGPDFArrayGetNumber(@Nullable CGPDFArrayRef array, @NUInt long index,
+            @Nullable NFloatPtr value);
 
     /**
      * Look up the object at `index' in `array' and, if it's a name, return the
@@ -2487,8 +2583,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFArrayGetName(CGPDFArrayRef array, @NUInt long index,
-            @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) String[] value);
+    public static native boolean CGPDFArrayGetName(@Nullable CGPDFArrayRef array, @NUInt long index,
+            @Nullable @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) String[] value);
 
     /**
      * Look up the object at `index' in `array' and, if it's a string, return
@@ -2498,7 +2594,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFArrayGetString(CGPDFArrayRef array, @NUInt long index, Ptr<CGPDFStringRef> value);
+    public static native boolean CGPDFArrayGetString(@Nullable CGPDFArrayRef array, @NUInt long index,
+            @Nullable Ptr<CGPDFStringRef> value);
 
     /**
      * Look up the object at `index' in `array' and, if it's an array, return it
@@ -2508,7 +2605,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFArrayGetArray(CGPDFArrayRef array, @NUInt long index, Ptr<CGPDFArrayRef> value);
+    public static native boolean CGPDFArrayGetArray(@Nullable CGPDFArrayRef array, @NUInt long index,
+            @Nullable Ptr<CGPDFArrayRef> value);
 
     /**
      * Look up the object at `index' in `array' and, if it's a dictionary,
@@ -2518,8 +2616,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFArrayGetDictionary(CGPDFArrayRef array, @NUInt long index,
-            Ptr<CGPDFDictionaryRef> value);
+    public static native boolean CGPDFArrayGetDictionary(@Nullable CGPDFArrayRef array, @NUInt long index,
+            @Nullable Ptr<CGPDFDictionaryRef> value);
 
     /**
      * Look up the object at `index' in `array' and, if it's a stream, return it
@@ -2529,7 +2627,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFArrayGetStream(CGPDFArrayRef array, @NUInt long index, Ptr<CGPDFStreamRef> value);
+    public static native boolean CGPDFArrayGetStream(@Nullable CGPDFArrayRef array, @NUInt long index,
+            @Nullable Ptr<CGPDFStreamRef> value);
 
     /**
      * Return the number of entries in `dictionary'.
@@ -2539,7 +2638,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @NUInt
-    public static native long CGPDFDictionaryGetCount(CGPDFDictionaryRef dict);
+    public static native long CGPDFDictionaryGetCount(@Nullable CGPDFDictionaryRef dict);
 
     /**
      * Look up the object associated with `key' in `dict' and return the result
@@ -2549,9 +2648,9 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFDictionaryGetObject(CGPDFDictionaryRef dict,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
-            Ptr<CGPDFObjectRef> value);
+    public static native boolean CGPDFDictionaryGetObject(@Nullable CGPDFDictionaryRef dict,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
+            @Nullable Ptr<CGPDFObjectRef> value);
 
     /**
      * Look up the object associated with `key' in `dict' and, if it's a
@@ -2562,9 +2661,9 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFDictionaryGetBoolean(CGPDFDictionaryRef dict,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
-            BytePtr value);
+    public static native boolean CGPDFDictionaryGetBoolean(@Nullable CGPDFDictionaryRef dict,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
+            @Nullable BytePtr value);
 
     /**
      * Look up the object associated with `key' in `dict' and, if it's an
@@ -2575,9 +2674,9 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFDictionaryGetInteger(CGPDFDictionaryRef dict,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
-            NIntPtr value);
+    public static native boolean CGPDFDictionaryGetInteger(@Nullable CGPDFDictionaryRef dict,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
+            @Nullable NIntPtr value);
 
     /**
      * Look up the object associated with `key' in `dict' and, if it's a number
@@ -2588,9 +2687,9 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFDictionaryGetNumber(CGPDFDictionaryRef dict,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
-            NFloatPtr value);
+    public static native boolean CGPDFDictionaryGetNumber(@Nullable CGPDFDictionaryRef dict,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
+            @Nullable NFloatPtr value);
 
     /**
      * Look up the object associated with `key' in `dict' and, if it's a name,
@@ -2600,9 +2699,9 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFDictionaryGetName(CGPDFDictionaryRef dict,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
-            @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) String[] value);
+    public static native boolean CGPDFDictionaryGetName(@Nullable CGPDFDictionaryRef dict,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
+            @Nullable @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) String[] value);
 
     /**
      * Look up the object associated with `key' in `dict' and, if it's a string,
@@ -2612,9 +2711,9 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFDictionaryGetString(CGPDFDictionaryRef dict,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
-            Ptr<CGPDFStringRef> value);
+    public static native boolean CGPDFDictionaryGetString(@Nullable CGPDFDictionaryRef dict,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
+            @Nullable Ptr<CGPDFStringRef> value);
 
     /**
      * Look up the object associated with `key' in `dict' and, if it's an array,
@@ -2624,9 +2723,9 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFDictionaryGetArray(CGPDFDictionaryRef dict,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
-            Ptr<CGPDFArrayRef> value);
+    public static native boolean CGPDFDictionaryGetArray(@Nullable CGPDFDictionaryRef dict,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
+            @Nullable Ptr<CGPDFArrayRef> value);
 
     /**
      * Look up the object associated with `key' in `dict' and, if it's a
@@ -2637,9 +2736,9 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFDictionaryGetDictionary(CGPDFDictionaryRef dict,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
-            Ptr<CGPDFDictionaryRef> value);
+    public static native boolean CGPDFDictionaryGetDictionary(@Nullable CGPDFDictionaryRef dict,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
+            @Nullable Ptr<CGPDFDictionaryRef> value);
 
     /**
      * Look up the object associated with `key' in `dict' and, if it's a stream,
@@ -2649,9 +2748,9 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFDictionaryGetStream(CGPDFDictionaryRef dict,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
-            Ptr<CGPDFStreamRef> value);
+    public static native boolean CGPDFDictionaryGetStream(@Nullable CGPDFDictionaryRef dict,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
+            @Nullable Ptr<CGPDFStreamRef> value);
 
     /**
      * Enumerate all of the keys in `dict', calling `function' once for each
@@ -2662,9 +2761,9 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPDFDictionaryApplyFunction(CGPDFDictionaryRef dict,
-            @FunctionPtr(name = "call_CGPDFDictionaryApplyFunction") Function_CGPDFDictionaryApplyFunction function,
-            VoidPtr info);
+    public static native void CGPDFDictionaryApplyFunction(@Nullable CGPDFDictionaryRef dict,
+            @Nullable @FunctionPtr(name = "call_CGPDFDictionaryApplyFunction") Function_CGPDFDictionaryApplyFunction function,
+            @Nullable VoidPtr info);
 
     /**
      * Equivalent to `CFRetain(page)', except it doesn't crash (as CFRetain
@@ -2672,9 +2771,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPDFPageRef CGPDFPageRetain(CGPDFPageRef page);
+    public static native CGPDFPageRef CGPDFPageRetain(@Nullable CGPDFPageRef page);
 
     /**
      * Equivalent to `CFRelease(page)', except it doesn't crash (as CFRelease
@@ -2684,16 +2784,17 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPDFPageRelease(CGPDFPageRef page);
+    public static native void CGPDFPageRelease(@Nullable CGPDFPageRef page);
 
     /**
      * Return the document of `page'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPDFDocumentRef CGPDFPageGetDocument(CGPDFPageRef page);
+    public static native CGPDFDocumentRef CGPDFPageGetDocument(@Nullable CGPDFPageRef page);
 
     /**
      * Return the page number of `page'.
@@ -2703,7 +2804,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @NUInt
-    public static native long CGPDFPageGetPageNumber(CGPDFPageRef page);
+    public static native long CGPDFPageGetPageNumber(@Nullable CGPDFPageRef page);
 
     /**
      * Return the rectangle associated with `box' in `page'. This is the value
@@ -2716,7 +2817,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @ByValue
-    public static native CGRect CGPDFPageGetBoxRect(CGPDFPageRef page, int box);
+    public static native CGRect CGPDFPageGetBoxRect(@Nullable CGPDFPageRef page, int box);
 
     /**
      * Return the rotation angle (in degrees) of `page'. This is the value of
@@ -2727,7 +2828,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native int CGPDFPageGetRotationAngle(CGPDFPageRef page);
+    public static native int CGPDFPageGetRotationAngle(@Nullable CGPDFPageRef page);
 
     /**
      * Return a transform mapping the box specified by `box' to `rect' as
@@ -2748,7 +2849,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @ByValue
-    public static native CGAffineTransform CGPDFPageGetDrawingTransform(CGPDFPageRef page, int box,
+    public static native CGAffineTransform CGPDFPageGetDrawingTransform(@Nullable CGPDFPageRef page, int box,
             @ByValue CGRect rect, int rotate, boolean preserveAspectRatio);
 
     /**
@@ -2756,9 +2857,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPDFDictionaryRef CGPDFPageGetDictionary(CGPDFPageRef page);
+    public static native CGPDFDictionaryRef CGPDFPageGetDictionary(@Nullable CGPDFPageRef page);
 
     /**
      * Return the CFTypeID for CGPDFPageRefs.
@@ -2775,18 +2877,20 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPDFDocumentRef CGPDFDocumentCreateWithProvider(CGDataProviderRef provider);
+    public static native CGPDFDocumentRef CGPDFDocumentCreateWithProvider(@Nullable CGDataProviderRef provider);
 
     /**
      * Create a PDF document from `url'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPDFDocumentRef CGPDFDocumentCreateWithURL(CFURLRef url);
+    public static native CGPDFDocumentRef CGPDFDocumentCreateWithURL(@Nullable CFURLRef url);
 
     /**
      * Equivalent to `CFRetain(document)', except it doesn't crash (as CFRetain
@@ -2794,9 +2898,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPDFDocumentRef CGPDFDocumentRetain(CGPDFDocumentRef document);
+    public static native CGPDFDocumentRef CGPDFDocumentRetain(@Nullable CGPDFDocumentRef document);
 
     /**
      * Equivalent to `CFRelease(document)', except it doesn't crash (as
@@ -2806,7 +2911,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPDFDocumentRelease(CGPDFDocumentRef document);
+    public static native void CGPDFDocumentRelease(@Nullable CGPDFDocumentRef document);
 
     /**
      * Return the major and minor version numbers of `document'.
@@ -2815,8 +2920,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPDFDocumentGetVersion(CGPDFDocumentRef document, IntPtr majorVersion,
-            IntPtr minorVersion);
+    public static native void CGPDFDocumentGetVersion(@Nullable CGPDFDocumentRef document, @NotNull IntPtr majorVersion,
+            @NotNull IntPtr minorVersion);
 
     /**
      * Return true if the PDF file associated with `document' is encrypted;
@@ -2828,7 +2933,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFDocumentIsEncrypted(CGPDFDocumentRef document);
+    public static native boolean CGPDFDocumentIsEncrypted(@Nullable CGPDFDocumentRef document);
 
     /**
      * Use `password' to decrypt `document' and grant permission for certain
@@ -2839,8 +2944,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFDocumentUnlockWithPassword(CGPDFDocumentRef document,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String password);
+    public static native boolean CGPDFDocumentUnlockWithPassword(@Nullable CGPDFDocumentRef document,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String password);
 
     /**
      * Return true if `document' is unlocked; false otherwise. A document is
@@ -2851,7 +2956,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFDocumentIsUnlocked(CGPDFDocumentRef document);
+    public static native boolean CGPDFDocumentIsUnlocked(@Nullable CGPDFDocumentRef document);
 
     /**
      * Return true if `document' allows printing; false otherwise. Typically,
@@ -2863,7 +2968,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFDocumentAllowsPrinting(CGPDFDocumentRef document);
+    public static native boolean CGPDFDocumentAllowsPrinting(@Nullable CGPDFDocumentRef document);
 
     /**
      * Return true if `document' allows copying; false otherwise. Typically,
@@ -2875,7 +2980,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFDocumentAllowsCopying(CGPDFDocumentRef document);
+    public static native boolean CGPDFDocumentAllowsCopying(@Nullable CGPDFDocumentRef document);
 
     /**
      * Return the number of pages in `document'.
@@ -2885,7 +2990,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @NUInt
-    public static native long CGPDFDocumentGetNumberOfPages(CGPDFDocumentRef document);
+    public static native long CGPDFDocumentGetNumberOfPages(@Nullable CGPDFDocumentRef document);
 
     /**
      * Return the page corresponding to `pageNumber', or NULL if no such page
@@ -2893,36 +2998,40 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPDFPageRef CGPDFDocumentGetPage(CGPDFDocumentRef document, @NUInt long pageNumber);
+    public static native CGPDFPageRef CGPDFDocumentGetPage(@Nullable CGPDFDocumentRef document, @NUInt long pageNumber);
 
     /**
      * Return the document catalog of `document'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPDFDictionaryRef CGPDFDocumentGetCatalog(CGPDFDocumentRef document);
+    public static native CGPDFDictionaryRef CGPDFDocumentGetCatalog(@Nullable CGPDFDocumentRef document);
 
     /**
      * Return the info dictionary of `document'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPDFDictionaryRef CGPDFDocumentGetInfo(CGPDFDocumentRef document);
+    public static native CGPDFDictionaryRef CGPDFDocumentGetInfo(@Nullable CGPDFDocumentRef document);
 
     /**
      * Return the "file identifier" array of `document'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPDFArrayRef CGPDFDocumentGetID(CGPDFDocumentRef document);
+    public static native CGPDFArrayRef CGPDFDocumentGetID(@Nullable CGPDFDocumentRef document);
 
     /**
      * Return the CFTypeID for CGPDFDocumentRefs.
@@ -2973,11 +3082,12 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGFunctionRef CGFunctionCreate(VoidPtr info, @NUInt long domainDimension,
-            ConstNFloatPtr domain, @NUInt long rangeDimension, ConstNFloatPtr range,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGFunctionCallbacks callbacks);
+    public static native CGFunctionRef CGFunctionCreate(@Nullable VoidPtr info, @NUInt long domainDimension,
+            @Nullable ConstNFloatPtr domain, @NUInt long rangeDimension, @Nullable ConstNFloatPtr range,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGFunctionCallbacks callbacks);
 
     /**
      * Equivalent to `CFRetain(function)', except it doesn't crash (as CFRetain
@@ -2985,9 +3095,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGFunctionRef CGFunctionRetain(CGFunctionRef function);
+    public static native CGFunctionRef CGFunctionRetain(@Nullable CGFunctionRef function);
 
     /**
      * Equivalent to `CFRelease(function)', except it doesn't crash (as
@@ -2997,7 +3108,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGFunctionRelease(CGFunctionRef function);
+    public static native void CGFunctionRelease(@Nullable CGFunctionRef function);
 
     /**
      * Return the CFTypeID for CGShadingRefs.
@@ -3027,10 +3138,11 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGShadingRef CGShadingCreateAxial(CGColorSpaceRef space, @ByValue CGPoint start,
-            @ByValue CGPoint end, CGFunctionRef function, boolean extendStart, boolean extendEnd);
+    public static native CGShadingRef CGShadingCreateAxial(@Nullable CGColorSpaceRef space, @ByValue CGPoint start,
+            @ByValue CGPoint end, @Nullable CGFunctionRef function, boolean extendStart, boolean extendEnd);
 
     /**
      * Create a shading defining a color blend which varies between two circles.
@@ -3050,11 +3162,12 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGShadingRef CGShadingCreateRadial(CGColorSpaceRef space, @ByValue CGPoint start,
-            @NFloat double startRadius, @ByValue CGPoint end, @NFloat double endRadius, CGFunctionRef function,
-            boolean extendStart, boolean extendEnd);
+    public static native CGShadingRef CGShadingCreateRadial(@Nullable CGColorSpaceRef space, @ByValue CGPoint start,
+            @NFloat double startRadius, @ByValue CGPoint end, @NFloat double endRadius,
+            @Nullable CGFunctionRef function, boolean extendStart, boolean extendEnd);
 
     /**
      * Equivalent to `CFRetain(shading)', except it doesn't crash (as CFRetain
@@ -3062,9 +3175,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGShadingRef CGShadingRetain(CGShadingRef shading);
+    public static native CGShadingRef CGShadingRetain(@Nullable CGShadingRef shading);
 
     /**
      * Equivalent to `CFRelease(shading)', except it doesn't crash (as CFRelease
@@ -3074,7 +3188,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGShadingRelease(CGShadingRef shading);
+    public static native void CGShadingRelease(@Nullable CGShadingRef shading);
 
     /**
      * Return the CFTypeID for CGContextRefs.
@@ -3095,7 +3209,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSaveGState(CGContextRef c);
+    public static native void CGContextSaveGState(@Nullable CGContextRef c);
 
     /**
      * Restore the current graphics state from the one on the top of the
@@ -3105,7 +3219,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextRestoreGState(CGContextRef c);
+    public static native void CGContextRestoreGState(@Nullable CGContextRef c);
 
     /**
      * Scale the current graphics state's transformation matrix (the CTM) by
@@ -3115,7 +3229,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextScaleCTM(CGContextRef c, @NFloat double sx, @NFloat double sy);
+    public static native void CGContextScaleCTM(@Nullable CGContextRef c, @NFloat double sx, @NFloat double sy);
 
     /**
      * Translate the current graphics state's transformation matrix (the CTM) by
@@ -3125,7 +3239,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextTranslateCTM(CGContextRef c, @NFloat double tx, @NFloat double ty);
+    public static native void CGContextTranslateCTM(@Nullable CGContextRef c, @NFloat double tx, @NFloat double ty);
 
     /**
      * Rotate the current graphics state's transformation matrix (the CTM) by
@@ -3135,7 +3249,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextRotateCTM(CGContextRef c, @NFloat double angle);
+    public static native void CGContextRotateCTM(@Nullable CGContextRef c, @NFloat double angle);
 
     /**
      * Concatenate the current graphics state's transformation matrix (the CTM)
@@ -3145,7 +3259,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextConcatCTM(CGContextRef c, @ByValue CGAffineTransform transform);
+    public static native void CGContextConcatCTM(@Nullable CGContextRef c, @ByValue CGAffineTransform transform);
 
     /**
      * Return the current graphics state's transformation matrix. Returns
@@ -3156,7 +3270,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @ByValue
-    public static native CGAffineTransform CGContextGetCTM(CGContextRef c);
+    public static native CGAffineTransform CGContextGetCTM(@Nullable CGContextRef c);
 
     /**
      * Set the line width in the current graphics state to `width'.
@@ -3165,7 +3279,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetLineWidth(CGContextRef c, @NFloat double width);
+    public static native void CGContextSetLineWidth(@Nullable CGContextRef c, @NFloat double width);
 
     /**
      * Set the line cap in the current graphics state to `cap'.
@@ -3174,7 +3288,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetLineCap(CGContextRef c, int cap);
+    public static native void CGContextSetLineCap(@Nullable CGContextRef c, int cap);
 
     /**
      * Set the line join in the current graphics state to `join'.
@@ -3183,7 +3297,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetLineJoin(CGContextRef c, int join);
+    public static native void CGContextSetLineJoin(@Nullable CGContextRef c, int join);
 
     /**
      * Set the miter limit in the current graphics state to `limit'.
@@ -3192,7 +3306,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetMiterLimit(CGContextRef c, @NFloat double limit);
+    public static native void CGContextSetMiterLimit(@Nullable CGContextRef c, @NFloat double limit);
 
     /**
      * Set the line dash patttern in the current graphics state of `c'.
@@ -3201,8 +3315,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetLineDash(CGContextRef c, @NFloat double phase, ConstNFloatPtr lengths,
-            @NUInt long count);
+    public static native void CGContextSetLineDash(@Nullable CGContextRef c, @NFloat double phase,
+            @Nullable ConstNFloatPtr lengths, @NUInt long count);
 
     /**
      * Set the path flatness parameter in the current graphics state of `c' to
@@ -3212,7 +3326,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetFlatness(CGContextRef c, @NFloat double flatness);
+    public static native void CGContextSetFlatness(@Nullable CGContextRef c, @NFloat double flatness);
 
     /**
      * Set the alpha value in the current graphics state of `c' to `alpha'.
@@ -3221,7 +3335,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetAlpha(CGContextRef c, @NFloat double alpha);
+    public static native void CGContextSetAlpha(@Nullable CGContextRef c, @NFloat double alpha);
 
     /**
      * Set the blend mode of `context' to `mode'.
@@ -3230,7 +3344,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetBlendMode(CGContextRef c, int mode);
+    public static native void CGContextSetBlendMode(@Nullable CGContextRef c, int mode);
 
     /**
      * Begin a new path. The old path is discarded.
@@ -3239,7 +3353,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextBeginPath(CGContextRef c);
+    public static native void CGContextBeginPath(@Nullable CGContextRef c);
 
     /**
      * Start a new subpath at point `(x, y)' in the context's path.
@@ -3248,7 +3362,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextMoveToPoint(CGContextRef c, @NFloat double x, @NFloat double y);
+    public static native void CGContextMoveToPoint(@Nullable CGContextRef c, @NFloat double x, @NFloat double y);
 
     /**
      * Append a straight line segment from the current point to `(x, y)'.
@@ -3257,7 +3371,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextAddLineToPoint(CGContextRef c, @NFloat double x, @NFloat double y);
+    public static native void CGContextAddLineToPoint(@Nullable CGContextRef c, @NFloat double x, @NFloat double y);
 
     /**
      * Append a cubic Bezier curve from the current point to `(x,y)', with
@@ -3267,8 +3381,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextAddCurveToPoint(CGContextRef c, @NFloat double cp1x, @NFloat double cp1y,
-            @NFloat double cp2x, @NFloat double cp2y, @NFloat double x, @NFloat double y);
+    public static native void CGContextAddCurveToPoint(@Nullable CGContextRef c, @NFloat double cp1x,
+            @NFloat double cp1y, @NFloat double cp2x, @NFloat double cp2y, @NFloat double x, @NFloat double y);
 
     /**
      * Append a quadratic curve from the current point to `(x, y)', with control
@@ -3278,8 +3392,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextAddQuadCurveToPoint(CGContextRef c, @NFloat double cpx, @NFloat double cpy,
-            @NFloat double x, @NFloat double y);
+    public static native void CGContextAddQuadCurveToPoint(@Nullable CGContextRef c, @NFloat double cpx,
+            @NFloat double cpy, @NFloat double x, @NFloat double y);
 
     /**
      * Close the current subpath of the context's path.
@@ -3288,7 +3402,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextClosePath(CGContextRef c);
+    public static native void CGContextClosePath(@Nullable CGContextRef c);
 
     /**
      * Add a single rect to the context's path.
@@ -3297,7 +3411,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextAddRect(CGContextRef c, @ByValue CGRect rect);
+    public static native void CGContextAddRect(@Nullable CGContextRef c, @ByValue CGRect rect);
 
     /**
      * Add a set of rects to the context's path.
@@ -3306,8 +3420,9 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextAddRects(CGContextRef c,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGRect rects, @NUInt long count);
+    public static native void CGContextAddRects(@Nullable CGContextRef c,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGRect rects,
+            @NUInt long count);
 
     /**
      * Add a set of lines to the context's path.
@@ -3316,8 +3431,9 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextAddLines(CGContextRef c,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGPoint points, @NUInt long count);
+    public static native void CGContextAddLines(@Nullable CGContextRef c,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGPoint points,
+            @NUInt long count);
 
     /**
      * Add an ellipse inside `rect' to the current path of `context'. See the
@@ -3328,7 +3444,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextAddEllipseInRect(CGContextRef c, @ByValue CGRect rect);
+    public static native void CGContextAddEllipseInRect(@Nullable CGContextRef c, @ByValue CGRect rect);
 
     /**
      * Add an arc of a circle to the context's path, possibly preceded by a
@@ -3342,8 +3458,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextAddArc(CGContextRef c, @NFloat double x, @NFloat double y, @NFloat double radius,
-            @NFloat double startAngle, @NFloat double endAngle, int clockwise);
+    public static native void CGContextAddArc(@Nullable CGContextRef c, @NFloat double x, @NFloat double y,
+            @NFloat double radius, @NFloat double startAngle, @NFloat double endAngle, int clockwise);
 
     /**
      * Add an arc of a circle to the context's path, possibly preceded by a
@@ -3355,7 +3471,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextAddArcToPoint(CGContextRef c, @NFloat double x1, @NFloat double y1,
+    public static native void CGContextAddArcToPoint(@Nullable CGContextRef c, @NFloat double x1, @NFloat double y1,
             @NFloat double x2, @NFloat double y2, @NFloat double radius);
 
     /**
@@ -3366,7 +3482,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextAddPath(CGContextRef c, CGPathRef path);
+    public static native void CGContextAddPath(@Nullable CGContextRef c, @Nullable CGPathRef path);
 
     /**
      * Replace the path in `context' with the stroked version of the path, using
@@ -3381,7 +3497,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextReplacePathWithStrokedPath(CGContextRef c);
+    public static native void CGContextReplacePathWithStrokedPath(@Nullable CGContextRef c);
 
     /**
      * Return true if the path of `context' contains no elements, false
@@ -3391,7 +3507,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGContextIsPathEmpty(CGContextRef c);
+    public static native boolean CGContextIsPathEmpty(@Nullable CGContextRef c);
 
     /**
      * Return the current point of the current subpath of the path of
@@ -3402,7 +3518,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @ByValue
-    public static native CGPoint CGContextGetPathCurrentPoint(CGContextRef c);
+    public static native CGPoint CGContextGetPathCurrentPoint(@Nullable CGContextRef c);
 
     /**
      * Return the bounding box of the path of `context'. The bounding box is the
@@ -3414,7 +3530,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @ByValue
-    public static native CGRect CGContextGetPathBoundingBox(CGContextRef c);
+    public static native CGRect CGContextGetPathBoundingBox(@Nullable CGContextRef c);
 
     /**
      * Return a copy of the path of `context'. The returned path is specified in
@@ -3422,9 +3538,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPathRef CGContextCopyPath(CGContextRef c);
+    public static native CGPathRef CGContextCopyPath(@Nullable CGContextRef c);
 
     /**
      * Return true if `point' is contained in the current path of `context'. A
@@ -3436,7 +3553,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGContextPathContainsPoint(CGContextRef c, @ByValue CGPoint point, int mode);
+    public static native boolean CGContextPathContainsPoint(@Nullable CGContextRef c, @ByValue CGPoint point, int mode);
 
     /**
      * Draw the context's path using drawing mode `mode'.
@@ -3445,7 +3562,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextDrawPath(CGContextRef c, int mode);
+    public static native void CGContextDrawPath(@Nullable CGContextRef c, int mode);
 
     /**
      * Fill the context's path using the winding-number fill rule. Any open
@@ -3455,7 +3572,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextFillPath(CGContextRef c);
+    public static native void CGContextFillPath(@Nullable CGContextRef c);
 
     /**
      * Fill the context's path using the even-odd fill rule. Any open subpath of
@@ -3465,7 +3582,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextEOFillPath(CGContextRef c);
+    public static native void CGContextEOFillPath(@Nullable CGContextRef c);
 
     /**
      * Stroke the context's path.
@@ -3474,7 +3591,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextStrokePath(CGContextRef c);
+    public static native void CGContextStrokePath(@Nullable CGContextRef c);
 
     /**
      * Fill `rect' with the current fill color.
@@ -3483,7 +3600,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextFillRect(CGContextRef c, @ByValue CGRect rect);
+    public static native void CGContextFillRect(@Nullable CGContextRef c, @ByValue CGRect rect);
 
     /**
      * Fill `rects', an array of `count' CGRects, with the current fill
@@ -3493,8 +3610,9 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextFillRects(CGContextRef c,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGRect rects, @NUInt long count);
+    public static native void CGContextFillRects(@Nullable CGContextRef c,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGRect rects,
+            @NUInt long count);
 
     /**
      * Stroke `rect' with the current stroke color and the current linewidth.
@@ -3503,7 +3621,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextStrokeRect(CGContextRef c, @ByValue CGRect rect);
+    public static native void CGContextStrokeRect(@Nullable CGContextRef c, @ByValue CGRect rect);
 
     /**
      * Stroke `rect' with the current stroke color, using `width' as the the
@@ -3513,7 +3631,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextStrokeRectWithWidth(CGContextRef c, @ByValue CGRect rect, @NFloat double width);
+    public static native void CGContextStrokeRectWithWidth(@Nullable CGContextRef c, @ByValue CGRect rect,
+            @NFloat double width);
 
     /**
      * Clear `rect' (that is, set the region within the rect to transparent).
@@ -3522,7 +3641,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextClearRect(CGContextRef c, @ByValue CGRect rect);
+    public static native void CGContextClearRect(@Nullable CGContextRef c, @ByValue CGRect rect);
 
     /**
      * Fill an ellipse (an oval) inside `rect'.
@@ -3531,7 +3650,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextFillEllipseInRect(CGContextRef c, @ByValue CGRect rect);
+    public static native void CGContextFillEllipseInRect(@Nullable CGContextRef c, @ByValue CGRect rect);
 
     /**
      * Stroke an ellipse (an oval) inside `rect'.
@@ -3540,7 +3659,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextStrokeEllipseInRect(CGContextRef c, @ByValue CGRect rect);
+    public static native void CGContextStrokeEllipseInRect(@Nullable CGContextRef c, @ByValue CGRect rect);
 
     /**
      * Stroke a sequence of line segments one after another in `context'. The
@@ -3558,8 +3677,9 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextStrokeLineSegments(CGContextRef c,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGPoint points, @NUInt long count);
+    public static native void CGContextStrokeLineSegments(@Nullable CGContextRef c,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGPoint points,
+            @NUInt long count);
 
     /**
      * Intersect the context's path with the current clip path and use the
@@ -3570,7 +3690,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextClip(CGContextRef c);
+    public static native void CGContextClip(@Nullable CGContextRef c);
 
     /**
      * Intersect the context's path with the current clip path and use the
@@ -3581,7 +3701,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextEOClip(CGContextRef c);
+    public static native void CGContextEOClip(@Nullable CGContextRef c);
 
     /**
      * Add `mask' transformed to `rect' to the clipping area of `context'. The
@@ -3615,7 +3735,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextClipToMask(CGContextRef c, @ByValue CGRect rect, CGImageRef mask);
+    public static native void CGContextClipToMask(@Nullable CGContextRef c, @ByValue CGRect rect,
+            @Nullable CGImageRef mask);
 
     /**
      * Return the bounding box of the clip path of `c' in user space. The
@@ -3627,7 +3748,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @ByValue
-    public static native CGRect CGContextGetClipBoundingBox(CGContextRef c);
+    public static native CGRect CGContextGetClipBoundingBox(@Nullable CGContextRef c);
 
     /**
      * Intersect the current clipping path with `rect'. Note that this function
@@ -3637,7 +3758,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextClipToRect(CGContextRef c, @ByValue CGRect rect);
+    public static native void CGContextClipToRect(@Nullable CGContextRef c, @ByValue CGRect rect);
 
     /**
      * Intersect the current clipping path with the clipping region formed by
@@ -3648,8 +3769,9 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextClipToRects(CGContextRef c,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGRect rects, @NUInt long count);
+    public static native void CGContextClipToRects(@Nullable CGContextRef c,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") CGRect rects,
+            @NUInt long count);
 
     /**
      * Set the current fill color in the context `c' to `color'.
@@ -3658,7 +3780,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetFillColorWithColor(CGContextRef c, CGColorRef color);
+    public static native void CGContextSetFillColorWithColor(@Nullable CGContextRef c, @Nullable CGColorRef color);
 
     /**
      * Set the current stroke color in the context `c' to `color'.
@@ -3667,7 +3789,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetStrokeColorWithColor(CGContextRef c, CGColorRef color);
+    public static native void CGContextSetStrokeColorWithColor(@Nullable CGContextRef c, @Nullable CGColorRef color);
 
     /**
      * Set the current fill color space in `context' to `space'. As a
@@ -3678,7 +3800,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetFillColorSpace(CGContextRef c, CGColorSpaceRef space);
+    public static native void CGContextSetFillColorSpace(@Nullable CGContextRef c, @Nullable CGColorSpaceRef space);
 
     /**
      * Set the current stroke color space in `context' to `space'. As a
@@ -3689,7 +3811,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetStrokeColorSpace(CGContextRef c, CGColorSpaceRef space);
+    public static native void CGContextSetStrokeColorSpace(@Nullable CGContextRef c, @Nullable CGColorSpaceRef space);
 
     /**
      * Set the components of the current fill color in `context' to the values
@@ -3702,7 +3824,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetFillColor(CGContextRef c, ConstNFloatPtr components);
+    public static native void CGContextSetFillColor(@Nullable CGContextRef c, @Nullable ConstNFloatPtr components);
 
     /**
      * Set the components of the current stroke color in `context' to the values
@@ -3715,7 +3837,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetStrokeColor(CGContextRef c, ConstNFloatPtr components);
+    public static native void CGContextSetStrokeColor(@Nullable CGContextRef c, @Nullable ConstNFloatPtr components);
 
     /**
      * Set the components of the current fill color in `context' to the values
@@ -3729,7 +3851,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetFillPattern(CGContextRef c, CGPatternRef pattern, ConstNFloatPtr components);
+    public static native void CGContextSetFillPattern(@Nullable CGContextRef c, @Nullable CGPatternRef pattern,
+            @Nullable ConstNFloatPtr components);
 
     /**
      * Set the components of the current stroke color in `context' to the values
@@ -3743,8 +3866,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetStrokePattern(CGContextRef c, CGPatternRef pattern,
-            ConstNFloatPtr components);
+    public static native void CGContextSetStrokePattern(@Nullable CGContextRef c, @Nullable CGPatternRef pattern,
+            @Nullable ConstNFloatPtr components);
 
     /**
      * Set the pattern phase in the current graphics state of `context' to
@@ -3754,7 +3877,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetPatternPhase(CGContextRef c, @ByValue CGSize phase);
+    public static native void CGContextSetPatternPhase(@Nullable CGContextRef c, @ByValue CGSize phase);
 
     /**
      * Set the current fill color space in `context' to `DeviceGray' and set the
@@ -3764,7 +3887,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetGrayFillColor(CGContextRef c, @NFloat double gray, @NFloat double alpha);
+    public static native void CGContextSetGrayFillColor(@Nullable CGContextRef c, @NFloat double gray,
+            @NFloat double alpha);
 
     /**
      * Set the current stroke color space in `context' to `DeviceGray' and set
@@ -3774,7 +3898,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetGrayStrokeColor(CGContextRef c, @NFloat double gray, @NFloat double alpha);
+    public static native void CGContextSetGrayStrokeColor(@Nullable CGContextRef c, @NFloat double gray,
+            @NFloat double alpha);
 
     /**
      * Set the current fill color space in `context' to `DeviceRGB' and set the
@@ -3784,8 +3909,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetRGBFillColor(CGContextRef c, @NFloat double red, @NFloat double green,
-            @NFloat double blue, @NFloat double alpha);
+    public static native void CGContextSetRGBFillColor(@Nullable CGContextRef c, @NFloat double red,
+            @NFloat double green, @NFloat double blue, @NFloat double alpha);
 
     /**
      * Set the current stroke color space in `context' to `DeviceRGB' and set
@@ -3796,8 +3921,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetRGBStrokeColor(CGContextRef c, @NFloat double red, @NFloat double green,
-            @NFloat double blue, @NFloat double alpha);
+    public static native void CGContextSetRGBStrokeColor(@Nullable CGContextRef c, @NFloat double red,
+            @NFloat double green, @NFloat double blue, @NFloat double alpha);
 
     /**
      * Set the current fill color space in `context' to `DeviceCMYK' and set the
@@ -3808,8 +3933,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetCMYKFillColor(CGContextRef c, @NFloat double cyan, @NFloat double magenta,
-            @NFloat double yellow, @NFloat double black, @NFloat double alpha);
+    public static native void CGContextSetCMYKFillColor(@Nullable CGContextRef c, @NFloat double cyan,
+            @NFloat double magenta, @NFloat double yellow, @NFloat double black, @NFloat double alpha);
 
     /**
      * Set the current stroke color space in `context' to `DeviceCMYK' and set
@@ -3820,8 +3945,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetCMYKStrokeColor(CGContextRef c, @NFloat double cyan, @NFloat double magenta,
-            @NFloat double yellow, @NFloat double black, @NFloat double alpha);
+    public static native void CGContextSetCMYKStrokeColor(@Nullable CGContextRef c, @NFloat double cyan,
+            @NFloat double magenta, @NFloat double yellow, @NFloat double black, @NFloat double alpha);
 
     /**
      * Set the rendering intent in the current graphics state of `context' to
@@ -3831,7 +3956,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetRenderingIntent(CGContextRef c, int intent);
+    public static native void CGContextSetRenderingIntent(@Nullable CGContextRef c, int intent);
 
     /**
      * Draw `image' in the rectangular area specified by `rect' in the context
@@ -3841,7 +3966,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextDrawImage(CGContextRef c, @ByValue CGRect rect, CGImageRef image);
+    public static native void CGContextDrawImage(@Nullable CGContextRef c, @ByValue CGRect rect,
+            @Nullable CGImageRef image);
 
     /**
      * Draw `image' tiled in the context `c'. The image is scaled to the size
@@ -3855,7 +3981,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextDrawTiledImage(CGContextRef c, @ByValue CGRect rect, CGImageRef image);
+    public static native void CGContextDrawTiledImage(@Nullable CGContextRef c, @ByValue CGRect rect,
+            @Nullable CGImageRef image);
 
     /**
      * Return the interpolation quality for image rendering of `context'. The
@@ -3868,7 +3995,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native int CGContextGetInterpolationQuality(CGContextRef c);
+    public static native int CGContextGetInterpolationQuality(@Nullable CGContextRef c);
 
     /**
      * Set the interpolation quality of `context' to `quality'.
@@ -3877,7 +4004,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetInterpolationQuality(CGContextRef c, int quality);
+    public static native void CGContextSetInterpolationQuality(@Nullable CGContextRef c, int quality);
 
     /**
      * Set the shadow parameters in `context'. `offset' specifies a translation
@@ -3893,8 +4020,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetShadowWithColor(CGContextRef c, @ByValue CGSize offset, @NFloat double blur,
-            CGColorRef color);
+    public static native void CGContextSetShadowWithColor(@Nullable CGContextRef c, @ByValue CGSize offset,
+            @NFloat double blur, @Nullable CGColorRef color);
 
     /**
      * Equivalent to calling
@@ -3906,7 +4033,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetShadow(CGContextRef c, @ByValue CGSize offset, @NFloat double blur);
+    public static native void CGContextSetShadow(@Nullable CGContextRef c, @ByValue CGSize offset, @NFloat double blur);
 
     /**
      * Fill the current clipping region of `context' with a linear gradient from
@@ -3920,7 +4047,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextDrawLinearGradient(CGContextRef c, CGGradientRef gradient,
+    public static native void CGContextDrawLinearGradient(@Nullable CGContextRef c, @Nullable CGGradientRef gradient,
             @ByValue CGPoint startPoint, @ByValue CGPoint endPoint, int options);
 
     /**
@@ -3937,7 +4064,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextDrawRadialGradient(CGContextRef c, CGGradientRef gradient,
+    public static native void CGContextDrawRadialGradient(@Nullable CGContextRef c, @Nullable CGGradientRef gradient,
             @ByValue CGPoint startCenter, @NFloat double startRadius, @ByValue CGPoint endCenter,
             @NFloat double endRadius, int options);
 
@@ -3948,7 +4075,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextDrawShading(CGContextRef c, CGShadingRef shading);
+    public static native void CGContextDrawShading(@Nullable CGContextRef c, @Nullable CGShadingRef shading);
 
     /**
      * Set the current character spacing in `context' to `spacing'. The
@@ -3959,7 +4086,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetCharacterSpacing(CGContextRef c, @NFloat double spacing);
+    public static native void CGContextSetCharacterSpacing(@Nullable CGContextRef c, @NFloat double spacing);
 
     /**
      * Set the user-space point at which text will be drawn in the context `c'
@@ -3969,7 +4096,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetTextPosition(CGContextRef c, @NFloat double x, @NFloat double y);
+    public static native void CGContextSetTextPosition(@Nullable CGContextRef c, @NFloat double x, @NFloat double y);
 
     /**
      * Return the user-space point at which text will be drawn in `context'.
@@ -3979,7 +4106,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @ByValue
-    public static native CGPoint CGContextGetTextPosition(CGContextRef c);
+    public static native CGPoint CGContextGetTextPosition(@Nullable CGContextRef c);
 
     /**
      * Set the text matrix in the context `c' to `t'.
@@ -3988,7 +4115,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetTextMatrix(CGContextRef c, @ByValue CGAffineTransform t);
+    public static native void CGContextSetTextMatrix(@Nullable CGContextRef c, @ByValue CGAffineTransform t);
 
     /**
      * Return the text matrix in the context `c'. Returns CGAffineTransformIdentity
@@ -3999,7 +4126,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @ByValue
-    public static native CGAffineTransform CGContextGetTextMatrix(CGContextRef c);
+    public static native CGAffineTransform CGContextGetTextMatrix(@Nullable CGContextRef c);
 
     /**
      * Set the text drawing mode in the current graphics state of the context
@@ -4009,7 +4136,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetTextDrawingMode(CGContextRef c, int mode);
+    public static native void CGContextSetTextDrawingMode(@Nullable CGContextRef c, int mode);
 
     /**
      * Set the font in the current graphics state of the context `c' to
@@ -4019,7 +4146,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetFont(CGContextRef c, CGFontRef font);
+    public static native void CGContextSetFont(@Nullable CGContextRef c, @Nullable CGFontRef font);
 
     /**
      * Set the font size in the current graphics state of the context `c' to
@@ -4029,7 +4156,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetFontSize(CGContextRef c, @NFloat double size);
+    public static native void CGContextSetFontSize(@Nullable CGContextRef c, @NFloat double size);
 
     /**
      * Draw `glyphs', an array of `count' CGGlyphs, at the points specified by
@@ -4040,8 +4167,9 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextShowGlyphsAtPositions(CGContextRef c, ConstCharPtr glyphs,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGPoint Lpositions, @NUInt long count);
+    public static native void CGContextShowGlyphsAtPositions(@Nullable CGContextRef c, @Nullable ConstCharPtr glyphs,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGPoint Lpositions,
+            @NUInt long count);
 
     /**
      * Draw `page' in the current user space of the context `c'.
@@ -4050,7 +4178,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextDrawPDFPage(CGContextRef c, CGPDFPageRef page);
+    public static native void CGContextDrawPDFPage(@Nullable CGContextRef c, @Nullable CGPDFPageRef page);
 
     /**
      * Begin a new page.
@@ -4059,8 +4187,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextBeginPage(CGContextRef c,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGRect mediaBox);
+    public static native void CGContextBeginPage(@Nullable CGContextRef c,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGRect mediaBox);
 
     /**
      * End the current page.
@@ -4069,16 +4197,17 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextEndPage(CGContextRef c);
+    public static native void CGContextEndPage(@Nullable CGContextRef c);
 
     /**
      * Equivalent to `CFRetain(c)'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGContextRef CGContextRetain(CGContextRef c);
+    public static native CGContextRef CGContextRetain(@Nullable CGContextRef c);
 
     /**
      * Equivalent to `CFRelease(c)'.
@@ -4087,7 +4216,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextRelease(CGContextRef c);
+    public static native void CGContextRelease(@Nullable CGContextRef c);
 
     /**
      * Flush all drawing to the destination.
@@ -4096,7 +4225,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextFlush(CGContextRef c);
+    public static native void CGContextFlush(@Nullable CGContextRef c);
 
     /**
      * Synchronized drawing.
@@ -4105,7 +4234,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSynchronize(CGContextRef c);
+    public static native void CGContextSynchronize(@Nullable CGContextRef c);
 
     /**
      * Turn on antialiasing if `shouldAntialias' is true; turn it off otherwise.
@@ -4115,7 +4244,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetShouldAntialias(CGContextRef c, boolean shouldAntialias);
+    public static native void CGContextSetShouldAntialias(@Nullable CGContextRef c, boolean shouldAntialias);
 
     /**
      * Allow antialiasing in `context' if `allowsAntialiasing' is true; don't
@@ -4127,7 +4256,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetAllowsAntialiasing(CGContextRef c, boolean allowsAntialiasing);
+    public static native void CGContextSetAllowsAntialiasing(@Nullable CGContextRef c, boolean allowsAntialiasing);
 
     /**
      * Turn on font smoothing if `shouldSmoothFonts' is true; turn it off
@@ -4139,7 +4268,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetShouldSmoothFonts(CGContextRef c, boolean shouldSmoothFonts);
+    public static native void CGContextSetShouldSmoothFonts(@Nullable CGContextRef c, boolean shouldSmoothFonts);
 
     /**
      * If `allowsFontSmoothing' is true, then allow font smoothing when
@@ -4152,7 +4281,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetAllowsFontSmoothing(CGContextRef c, boolean allowsFontSmoothing);
+    public static native void CGContextSetAllowsFontSmoothing(@Nullable CGContextRef c, boolean allowsFontSmoothing);
 
     /**
      * If `shouldSubpixelPositionFonts' is true, then glyphs may be placed at
@@ -4164,7 +4293,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetShouldSubpixelPositionFonts(CGContextRef c,
+    public static native void CGContextSetShouldSubpixelPositionFonts(@Nullable CGContextRef c,
             boolean shouldSubpixelPositionFonts);
 
     /**
@@ -4179,7 +4308,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetAllowsFontSubpixelPositioning(CGContextRef c,
+    public static native void CGContextSetAllowsFontSubpixelPositioning(@Nullable CGContextRef c,
             boolean allowsFontSubpixelPositioning);
 
     /**
@@ -4192,7 +4321,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetShouldSubpixelQuantizeFonts(CGContextRef c,
+    public static native void CGContextSetShouldSubpixelQuantizeFonts(@Nullable CGContextRef c,
             boolean shouldSubpixelQuantizeFonts);
 
     /**
@@ -4207,7 +4336,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextSetAllowsFontSubpixelQuantization(CGContextRef c,
+    public static native void CGContextSetAllowsFontSubpixelQuantization(@Nullable CGContextRef c,
             boolean allowsFontSubpixelQuantization);
 
     /**
@@ -4231,7 +4360,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextBeginTransparencyLayer(CGContextRef c, CFDictionaryRef auxiliaryInfo);
+    public static native void CGContextBeginTransparencyLayer(@Nullable CGContextRef c,
+            @Nullable CFDictionaryRef auxiliaryInfo);
 
     /**
      * Begin a transparency layer in `context'. This function is identical to
@@ -4242,8 +4372,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextBeginTransparencyLayerWithRect(CGContextRef c, @ByValue CGRect rect,
-            CFDictionaryRef auxInfo);
+    public static native void CGContextBeginTransparencyLayerWithRect(@Nullable CGContextRef c, @ByValue CGRect rect,
+            @Nullable CFDictionaryRef auxInfo);
 
     /**
      * End a tranparency layer.
@@ -4252,7 +4382,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextEndTransparencyLayer(CGContextRef c);
+    public static native void CGContextEndTransparencyLayer(@Nullable CGContextRef c);
 
     /**
      * Return the affine transform mapping the user space (abstract coordinates)
@@ -4263,7 +4393,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @ByValue
-    public static native CGAffineTransform CGContextGetUserSpaceToDeviceSpaceTransform(CGContextRef c);
+    public static native CGAffineTransform CGContextGetUserSpaceToDeviceSpaceTransform(@Nullable CGContextRef c);
 
     /**
      * Transform `point' from the user space of `context' to device space.
@@ -4273,7 +4403,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @ByValue
-    public static native CGPoint CGContextConvertPointToDeviceSpace(CGContextRef c, @ByValue CGPoint point);
+    public static native CGPoint CGContextConvertPointToDeviceSpace(@Nullable CGContextRef c, @ByValue CGPoint point);
 
     /**
      * Transform `point' from device space to the user space of `context'.
@@ -4283,7 +4413,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @ByValue
-    public static native CGPoint CGContextConvertPointToUserSpace(CGContextRef c, @ByValue CGPoint point);
+    public static native CGPoint CGContextConvertPointToUserSpace(@Nullable CGContextRef c, @ByValue CGPoint point);
 
     /**
      * Transform `size' from the user space of `context' to device space.
@@ -4293,7 +4423,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @ByValue
-    public static native CGSize CGContextConvertSizeToDeviceSpace(CGContextRef c, @ByValue CGSize size);
+    public static native CGSize CGContextConvertSizeToDeviceSpace(@Nullable CGContextRef c, @ByValue CGSize size);
 
     /**
      * Transform `size' from device space to the user space of `context'.
@@ -4303,7 +4433,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @ByValue
-    public static native CGSize CGContextConvertSizeToUserSpace(CGContextRef c, @ByValue CGSize size);
+    public static native CGSize CGContextConvertSizeToUserSpace(@Nullable CGContextRef c, @ByValue CGSize size);
 
     /**
      * Transform `rect' from the user space of `context' to device space. Since
@@ -4316,7 +4446,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @ByValue
-    public static native CGRect CGContextConvertRectToDeviceSpace(CGContextRef c, @ByValue CGRect rect);
+    public static native CGRect CGContextConvertRectToDeviceSpace(@Nullable CGContextRef c, @ByValue CGRect rect);
 
     /**
      * Transform `rect' from device space to the user space of `context'. Since
@@ -4329,7 +4459,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @ByValue
-    public static native CGRect CGContextConvertRectToUserSpace(CGContextRef c, @ByValue CGRect rect);
+    public static native CGRect CGContextConvertRectToUserSpace(@Nullable CGContextRef c, @ByValue CGRect rect);
 
     /**
      * DEPRECATED; use the CoreText API instead.
@@ -4341,8 +4471,8 @@ public final class CoreGraphics {
     @Generated
     @Deprecated
     @CFunction
-    public static native void CGContextSelectFont(CGContextRef c,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+    public static native void CGContextSelectFont(@Nullable CGContextRef c,
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
             @NFloat double size, int textEncoding);
 
     /**
@@ -4355,8 +4485,8 @@ public final class CoreGraphics {
     @Generated
     @Deprecated
     @CFunction
-    public static native void CGContextShowText(CGContextRef c,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String string,
+    public static native void CGContextShowText(@Nullable CGContextRef c,
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String string,
             @NUInt long length);
 
     /**
@@ -4369,8 +4499,8 @@ public final class CoreGraphics {
     @Generated
     @Deprecated
     @CFunction
-    public static native void CGContextShowTextAtPoint(CGContextRef c, @NFloat double x, @NFloat double y,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String string,
+    public static native void CGContextShowTextAtPoint(@Nullable CGContextRef c, @NFloat double x, @NFloat double y,
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String string,
             @NUInt long length);
 
     /**
@@ -4383,7 +4513,8 @@ public final class CoreGraphics {
     @Generated
     @Deprecated
     @CFunction
-    public static native void CGContextShowGlyphs(CGContextRef c, ConstCharPtr g, @NUInt long count);
+    public static native void CGContextShowGlyphs(@Nullable CGContextRef c, @Nullable ConstCharPtr g,
+            @NUInt long count);
 
     /**
      * DEPRECATED; use the CoreText API instead.
@@ -4395,8 +4526,8 @@ public final class CoreGraphics {
     @Generated
     @Deprecated
     @CFunction
-    public static native void CGContextShowGlyphsAtPoint(CGContextRef c, @NFloat double x, @NFloat double y,
-            ConstCharPtr glyphs, @NUInt long count);
+    public static native void CGContextShowGlyphsAtPoint(@Nullable CGContextRef c, @NFloat double x, @NFloat double y,
+            @Nullable ConstCharPtr glyphs, @NUInt long count);
 
     /**
      * DEPRECATED; use the CoreText API instead.
@@ -4408,8 +4539,9 @@ public final class CoreGraphics {
     @Generated
     @Deprecated
     @CFunction
-    public static native void CGContextShowGlyphsWithAdvances(CGContextRef c, ConstCharPtr glyphs,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGSize advances, @NUInt long count);
+    public static native void CGContextShowGlyphsWithAdvances(@Nullable CGContextRef c, @Nullable ConstCharPtr glyphs,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGSize advances,
+            @NUInt long count);
 
     /**
      * Create a bitmap context. The context draws into a bitmap which is `width'
@@ -4432,12 +4564,14 @@ public final class CoreGraphics {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGContextRef CGBitmapContextCreateWithData(VoidPtr data, @NUInt long width, @NUInt long height,
-            @NUInt long bitsPerComponent, @NUInt long bytesPerRow, CGColorSpaceRef space, int bitmapInfo,
-            @FunctionPtr(name = "call_CGBitmapContextCreateWithData") Function_CGBitmapContextCreateWithData releaseCallback,
-            VoidPtr releaseInfo);
+    public static native CGContextRef CGBitmapContextCreateWithData(@Nullable VoidPtr data, @NUInt long width,
+            @NUInt long height, @NUInt long bitsPerComponent, @NUInt long bytesPerRow, @Nullable CGColorSpaceRef space,
+            int bitmapInfo,
+            @Nullable @FunctionPtr(name = "call_CGBitmapContextCreateWithData") Function_CGBitmapContextCreateWithData releaseCallback,
+            @Nullable VoidPtr releaseInfo);
 
     /**
      * Create a bitmap context. The context draws into a bitmap which is `width'
@@ -4458,10 +4592,12 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGContextRef CGBitmapContextCreate(VoidPtr data, @NUInt long width, @NUInt long height,
-            @NUInt long bitsPerComponent, @NUInt long bytesPerRow, CGColorSpaceRef space, int bitmapInfo);
+    public static native CGContextRef CGBitmapContextCreate(@Nullable VoidPtr data, @NUInt long width,
+            @NUInt long height, @NUInt long bitsPerComponent, @NUInt long bytesPerRow, @Nullable CGColorSpaceRef space,
+            int bitmapInfo);
 
     /**
      * Return the data associated with the bitmap context `context', or NULL if
@@ -4469,9 +4605,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native VoidPtr CGBitmapContextGetData(CGContextRef context);
+    public static native VoidPtr CGBitmapContextGetData(@Nullable CGContextRef context);
 
     /**
      * Return the width of the bitmap context `context', or 0 if `context' is
@@ -4482,7 +4619,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @NUInt
-    public static native long CGBitmapContextGetWidth(CGContextRef context);
+    public static native long CGBitmapContextGetWidth(@Nullable CGContextRef context);
 
     /**
      * Return the height of the bitmap context `context', or 0 if `context' is
@@ -4493,7 +4630,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @NUInt
-    public static native long CGBitmapContextGetHeight(CGContextRef context);
+    public static native long CGBitmapContextGetHeight(@Nullable CGContextRef context);
 
     /**
      * Return the bits per component of the bitmap context `context', or 0 if
@@ -4504,7 +4641,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @NUInt
-    public static native long CGBitmapContextGetBitsPerComponent(CGContextRef context);
+    public static native long CGBitmapContextGetBitsPerComponent(@Nullable CGContextRef context);
 
     /**
      * Return the bits per pixel of the bitmap context `context', or 0 if
@@ -4515,7 +4652,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @NUInt
-    public static native long CGBitmapContextGetBitsPerPixel(CGContextRef context);
+    public static native long CGBitmapContextGetBitsPerPixel(@Nullable CGContextRef context);
 
     /**
      * Return the bytes per row of the bitmap context `context', or 0 if
@@ -4526,7 +4663,7 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @NUInt
-    public static native long CGBitmapContextGetBytesPerRow(CGContextRef context);
+    public static native long CGBitmapContextGetBytesPerRow(@Nullable CGContextRef context);
 
     /**
      * Return the color space of the bitmap context `context', or NULL if
@@ -4534,9 +4671,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorSpaceRef CGBitmapContextGetColorSpace(CGContextRef context);
+    public static native CGColorSpaceRef CGBitmapContextGetColorSpace(@Nullable CGContextRef context);
 
     /**
      * Return the alpha info of the bitmap context `context', or
@@ -4546,7 +4684,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native int CGBitmapContextGetAlphaInfo(CGContextRef context);
+    public static native int CGBitmapContextGetAlphaInfo(@Nullable CGContextRef context);
 
     /**
      * Return the bitmap info of the bitmap context `context', or 0 if `context'
@@ -4556,7 +4694,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native int CGBitmapContextGetBitmapInfo(CGContextRef context);
+    public static native int CGBitmapContextGetBitmapInfo(@Nullable CGContextRef context);
 
     /**
      * Return an image containing a snapshot of the bitmap context `context'. If
@@ -4574,9 +4712,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGImageRef CGBitmapContextCreateImage(CGContextRef context);
+    public static native CGImageRef CGBitmapContextCreateImage(@Nullable CGContextRef context);
 
     @Generated
     @CFunction
@@ -4590,9 +4729,11 @@ public final class CoreGraphics {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorConversionInfoRef CGColorConversionInfoCreate(CGColorSpaceRef src, CGColorSpaceRef dst);
+    public static native CGColorConversionInfoRef CGColorConversionInfoCreate(@Nullable CGColorSpaceRef src,
+            @Nullable CGColorSpaceRef dst);
 
     /**
      * Create CGColorConversionInfoRef from a list of CG color spaces, transform types and rendering intents.
@@ -4602,11 +4743,12 @@ public final class CoreGraphics {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Variadic()
     @CFunction
-    public static native CGColorConversionInfoRef CGColorConversionInfoCreateFromList(CFDictionaryRef options,
-            CGColorSpaceRef arg2, int arg3, int arg4, Object... varargs);
+    public static native CGColorConversionInfoRef CGColorConversionInfoCreateFromList(@Nullable CFDictionaryRef options,
+            @Nullable CGColorSpaceRef arg2, int arg3, int arg4, Object... varargs);
 
     /**
      * Return the CFTypeID for CGDataConsumerRefs.
@@ -4624,37 +4766,41 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGDataConsumerRef CGDataConsumerCreate(VoidPtr info,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGDataConsumerCallbacks cbks);
+    public static native CGDataConsumerRef CGDataConsumerCreate(@Nullable VoidPtr info,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGDataConsumerCallbacks cbks);
 
     /**
      * Create a data consumer which writes data to `url'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGDataConsumerRef CGDataConsumerCreateWithURL(CFURLRef url);
+    public static native CGDataConsumerRef CGDataConsumerCreateWithURL(@Nullable CFURLRef url);
 
     /**
      * Create a data consumer which writes to `data'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGDataConsumerRef CGDataConsumerCreateWithCFData(CFMutableDataRef data);
+    public static native CGDataConsumerRef CGDataConsumerCreateWithCFData(@Nullable CFMutableDataRef data);
 
     /**
      * Equivalent to `CFRetain(consumer)'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGDataConsumerRef CGDataConsumerRetain(CGDataConsumerRef consumer);
+    public static native CGDataConsumerRef CGDataConsumerRetain(@Nullable CGDataConsumerRef consumer);
 
     /**
      * Equivalent to `CFRelease(consumer)'.
@@ -4663,7 +4809,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGDataConsumerRelease(CGDataConsumerRef consumer);
+    public static native void CGDataConsumerRelease(@Nullable CGDataConsumerRef consumer);
 
     /**
      * Create a layer of size `size' relative to the context `context'. The
@@ -4673,10 +4819,11 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGLayerRef CGLayerCreateWithContext(CGContextRef context, @ByValue CGSize size,
-            CFDictionaryRef auxiliaryInfo);
+    public static native CGLayerRef CGLayerCreateWithContext(@Nullable CGContextRef context, @ByValue CGSize size,
+            @Nullable CFDictionaryRef auxiliaryInfo);
 
     /**
      * Equivalent to `CFRetain(layer)', except it doesn't crash (as CFRetain
@@ -4684,9 +4831,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGLayerRef CGLayerRetain(CGLayerRef layer);
+    public static native CGLayerRef CGLayerRetain(@Nullable CGLayerRef layer);
 
     /**
      * Equivalent to `CFRelease(layer)', except it doesn't crash (as CFRelease
@@ -4696,7 +4844,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGLayerRelease(CGLayerRef layer);
+    public static native void CGLayerRelease(@Nullable CGLayerRef layer);
 
     /**
      * Return the size of the layer `layer'. CGSizeZero if invalid `layer'.
@@ -4706,16 +4854,17 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @ByValue
-    public static native CGSize CGLayerGetSize(CGLayerRef layer);
+    public static native CGSize CGLayerGetSize(@Nullable CGLayerRef layer);
 
     /**
      * Return the context of `layer'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGContextRef CGLayerGetContext(CGLayerRef layer);
+    public static native CGContextRef CGLayerGetContext(@Nullable CGLayerRef layer);
 
     /**
      * Draw the contents of `layer' into `rect' of `context'. The contents are
@@ -4726,7 +4875,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextDrawLayerInRect(CGContextRef context, @ByValue CGRect rect, CGLayerRef layer);
+    public static native void CGContextDrawLayerInRect(@Nullable CGContextRef context, @ByValue CGRect rect,
+            @Nullable CGLayerRef layer);
 
     /**
      * Draw the contents of `layer' at `point' in `context'. This is equivalent
@@ -4737,7 +4887,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGContextDrawLayerAtPoint(CGContextRef context, @ByValue CGPoint point, CGLayerRef layer);
+    public static native void CGContextDrawLayerAtPoint(@Nullable CGContextRef context, @ByValue CGPoint point,
+            @Nullable CGLayerRef layer);
 
     /**
      * Return the CFTypeID for CGLayerRefs.
@@ -4754,28 +4905,31 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CGPDFContentStreamRef CGPDFContentStreamCreateWithPage(CGPDFPageRef page);
+    public static native CGPDFContentStreamRef CGPDFContentStreamCreateWithPage(@NotNull CGPDFPageRef page);
 
     /**
      * Create a content stream from `stream'.
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CGPDFContentStreamRef CGPDFContentStreamCreateWithStream(CGPDFStreamRef stream,
-            CGPDFDictionaryRef streamResources, CGPDFContentStreamRef parent);
+    public static native CGPDFContentStreamRef CGPDFContentStreamCreateWithStream(@NotNull CGPDFStreamRef stream,
+            @NotNull CGPDFDictionaryRef streamResources, @Nullable CGPDFContentStreamRef parent);
 
     /**
      * Increment the retain count of `cs'.
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CGPDFContentStreamRef CGPDFContentStreamRetain(CGPDFContentStreamRef cs);
+    public static native CGPDFContentStreamRef CGPDFContentStreamRetain(@NotNull CGPDFContentStreamRef cs);
 
     /**
      * Decrement the retain count of `cs'.
@@ -4784,7 +4938,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPDFContentStreamRelease(CGPDFContentStreamRef cs);
+    public static native void CGPDFContentStreamRelease(@NotNull CGPDFContentStreamRef cs);
 
     /**
      * Return the array of CGPDFStreamRefs comprising the entire content stream
@@ -4792,9 +4946,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFArrayRef CGPDFContentStreamGetStreams(CGPDFContentStreamRef cs);
+    public static native CFArrayRef CGPDFContentStreamGetStreams(@NotNull CGPDFContentStreamRef cs);
 
     /**
      * Return the resource named `name' in category `category' of the resource
@@ -4802,11 +4957,12 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPDFObjectRef CGPDFContentStreamGetResource(CGPDFContentStreamRef cs,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String category,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name);
+    public static native CGPDFObjectRef CGPDFContentStreamGetResource(@NotNull CGPDFContentStreamRef cs,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String category,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name);
 
     /**
      * Create a PDF context, using `consumer' for output. `mediaBox' is the
@@ -4819,11 +4975,12 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGContextRef CGPDFContextCreate(CGDataConsumerRef consumer,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGRect mediaBox,
-            CFDictionaryRef auxiliaryInfo);
+    public static native CGContextRef CGPDFContextCreate(@Nullable CGDataConsumerRef consumer,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGRect mediaBox,
+            @Nullable CFDictionaryRef auxiliaryInfo);
 
     /**
      * Create a PDF context for writing to `url'. This function behaves in the
@@ -4832,11 +4989,12 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGContextRef CGPDFContextCreateWithURL(CFURLRef url,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGRect mediaBox,
-            CFDictionaryRef auxiliaryInfo);
+    public static native CGContextRef CGPDFContextCreateWithURL(@Nullable CFURLRef url,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGRect mediaBox,
+            @Nullable CFDictionaryRef auxiliaryInfo);
 
     /**
      * Close a PDF context. After closing the context, all pending data is
@@ -4848,7 +5006,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPDFContextClose(CGContextRef context);
+    public static native void CGPDFContextClose(@Nullable CGContextRef context);
 
     /**
      * Begin a new page in the PDF context `context'.
@@ -4857,7 +5015,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPDFContextBeginPage(CGContextRef context, CFDictionaryRef pageInfo);
+    public static native void CGPDFContextBeginPage(@Nullable CGContextRef context, @Nullable CFDictionaryRef pageInfo);
 
     /**
      * End the current page in the PDF context `context'.
@@ -4866,7 +5024,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPDFContextEndPage(CGContextRef context);
+    public static native void CGPDFContextEndPage(@Nullable CGContextRef context);
 
     /**
      * Add the metadata stream specified by `metadata' to the document catalog
@@ -4880,7 +5038,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPDFContextAddDocumentMetadata(CGContextRef context, CFDataRef metadata);
+    public static native void CGPDFContextAddDocumentMetadata(@Nullable CGContextRef context,
+            @Nullable CFDataRef metadata);
 
     /**
      * Set the URL associated with `rect' to `url' in the PDF context
@@ -4890,7 +5049,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPDFContextSetURLForRect(CGContextRef context, CFURLRef url, @ByValue CGRect rect);
+    public static native void CGPDFContextSetURLForRect(@Nullable CGContextRef context, @NotNull CFURLRef url,
+            @ByValue CGRect rect);
 
     /**
      * Create a PDF destination named `name' at `point' in the current page of
@@ -4900,8 +5060,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPDFContextAddDestinationAtPoint(CGContextRef context, CFStringRef name,
-            @ByValue CGPoint point);
+    public static native void CGPDFContextAddDestinationAtPoint(@Nullable CGContextRef context,
+            @NotNull CFStringRef name, @ByValue CGPoint point);
 
     /**
      * Specify a destination named `name' to jump to when clicking in `rect' of
@@ -4911,27 +5071,29 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPDFContextSetDestinationForRect(CGContextRef context, CFStringRef name,
-            @ByValue CGRect rect);
+    public static native void CGPDFContextSetDestinationForRect(@Nullable CGContextRef context,
+            @NotNull CFStringRef name, @ByValue CGRect rect);
 
     /**
      * Create a scanner.
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CGPDFScannerRef CGPDFScannerCreate(CGPDFContentStreamRef cs, CGPDFOperatorTableRef table,
-            VoidPtr info);
+    public static native CGPDFScannerRef CGPDFScannerCreate(@NotNull CGPDFContentStreamRef cs,
+            @Nullable CGPDFOperatorTableRef table, @Nullable VoidPtr info);
 
     /**
      * Retain `scanner'.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPDFScannerRef CGPDFScannerRetain(CGPDFScannerRef scanner);
+    public static native CGPDFScannerRef CGPDFScannerRetain(@Nullable CGPDFScannerRef scanner);
 
     /**
      * Release `scanner'.
@@ -4940,7 +5102,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPDFScannerRelease(CGPDFScannerRef scanner);
+    public static native void CGPDFScannerRelease(@Nullable CGPDFScannerRef scanner);
 
     /**
      * Scan the content stream of `scanner'. Returns true if the entire stream
@@ -4951,16 +5113,17 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFScannerScan(CGPDFScannerRef scanner);
+    public static native boolean CGPDFScannerScan(@Nullable CGPDFScannerRef scanner);
 
     /**
      * Return the content stream associated with `scanner'.
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CGPDFContentStreamRef CGPDFScannerGetContentStream(CGPDFScannerRef scanner);
+    public static native CGPDFContentStreamRef CGPDFScannerGetContentStream(@NotNull CGPDFScannerRef scanner);
 
     /**
      * Pop an object from the stack of `scanner' and return it in `value'.
@@ -4969,7 +5132,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFScannerPopObject(CGPDFScannerRef scanner, Ptr<CGPDFObjectRef> value);
+    public static native boolean CGPDFScannerPopObject(@NotNull CGPDFScannerRef scanner,
+            @Nullable Ptr<CGPDFObjectRef> value);
 
     /**
      * Pop an object from the stack of `scanner' and, if it's a boolean, return
@@ -4979,7 +5143,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFScannerPopBoolean(CGPDFScannerRef scanner, BytePtr value);
+    public static native boolean CGPDFScannerPopBoolean(@NotNull CGPDFScannerRef scanner, @Nullable BytePtr value);
 
     /**
      * Pop an object from the stack of `scanner' and, if it's an integer, return
@@ -4989,7 +5153,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFScannerPopInteger(CGPDFScannerRef scanner, NIntPtr value);
+    public static native boolean CGPDFScannerPopInteger(@NotNull CGPDFScannerRef scanner, @Nullable NIntPtr value);
 
     /**
      * Pop an object from the stack of `scanner' and, if it's a number, return
@@ -4999,7 +5163,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFScannerPopNumber(CGPDFScannerRef scanner, NFloatPtr value);
+    public static native boolean CGPDFScannerPopNumber(@NotNull CGPDFScannerRef scanner, @Nullable NFloatPtr value);
 
     /**
      * Pop an object from the stack of `scanner' and, if it's a name, return it
@@ -5009,8 +5173,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFScannerPopName(CGPDFScannerRef scanner,
-            @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) String[] value);
+    public static native boolean CGPDFScannerPopName(@NotNull CGPDFScannerRef scanner,
+            @Nullable @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) String[] value);
 
     /**
      * Pop an object from the stack of `scanner' and, if it's a string, return
@@ -5020,7 +5184,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFScannerPopString(CGPDFScannerRef scanner, Ptr<CGPDFStringRef> value);
+    public static native boolean CGPDFScannerPopString(@NotNull CGPDFScannerRef scanner,
+            @Nullable Ptr<CGPDFStringRef> value);
 
     /**
      * Pop an object from the stack of `scanner' and, if it's an array, return
@@ -5030,7 +5195,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFScannerPopArray(CGPDFScannerRef scanner, Ptr<CGPDFArrayRef> value);
+    public static native boolean CGPDFScannerPopArray(@NotNull CGPDFScannerRef scanner,
+            @Nullable Ptr<CGPDFArrayRef> value);
 
     /**
      * Pop an object from the stack of `scanner' and, if it's a dictionary,
@@ -5041,7 +5207,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFScannerPopDictionary(CGPDFScannerRef scanner, Ptr<CGPDFDictionaryRef> value);
+    public static native boolean CGPDFScannerPopDictionary(@NotNull CGPDFScannerRef scanner,
+            @Nullable Ptr<CGPDFDictionaryRef> value);
 
     /**
      * Pop an object from the stack of `scanner' and, if it's a stream, return
@@ -5051,13 +5218,15 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPDFScannerPopStream(CGPDFScannerRef scanner, Ptr<CGPDFStreamRef> value);
+    public static native boolean CGPDFScannerPopStream(@NotNull CGPDFScannerRef scanner,
+            @Nullable Ptr<CGPDFStreamRef> value);
 
     /**
      * Return an empty operator table.
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native CGPDFOperatorTableRef CGPDFOperatorTableCreate();
@@ -5067,9 +5236,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPDFOperatorTableRef CGPDFOperatorTableRetain(CGPDFOperatorTableRef table);
+    public static native CGPDFOperatorTableRef CGPDFOperatorTableRetain(@Nullable CGPDFOperatorTableRef table);
 
     /**
      * Decrement the retain count of `table'.
@@ -5078,7 +5248,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPDFOperatorTableRelease(CGPDFOperatorTableRef table);
+    public static native void CGPDFOperatorTableRelease(@Nullable CGPDFOperatorTableRef table);
 
     /**
      * Set the callback for the operator named `name' to `callback'
@@ -5087,9 +5257,9 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPDFOperatorTableSetCallback(CGPDFOperatorTableRef table,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
-            @FunctionPtr(name = "call_CGPDFOperatorTableSetCallback") Function_CGPDFOperatorTableSetCallback callback);
+    public static native void CGPDFOperatorTableSetCallback(@Nullable CGPDFOperatorTableRef table,
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+            @Nullable @FunctionPtr(name = "call_CGPDFOperatorTableSetCallback") Function_CGPDFOperatorTableSetCallback callback);
 
     /**
      * The "zero" point -- equivalent to CGPointMake(0, 0).
@@ -5163,6 +5333,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceGenericGray();
@@ -5176,6 +5347,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceGenericRGB();
@@ -5185,6 +5357,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceGenericCMYK();
@@ -5192,6 +5365,7 @@ public final class CoreGraphics {
     /**
      * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceDisplayP3();
@@ -5202,6 +5376,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceGenericRGBLinear();
@@ -5213,6 +5388,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceAdobeRGB1998();
@@ -5226,6 +5402,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceSRGB();
@@ -5235,6 +5412,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceGenericGrayGamma2_2();
@@ -5242,6 +5420,7 @@ public final class CoreGraphics {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceGenericXYZ();
@@ -5249,6 +5428,7 @@ public final class CoreGraphics {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceACESCGLinear();
@@ -5256,6 +5436,7 @@ public final class CoreGraphics {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceITUR_709();
@@ -5263,6 +5444,7 @@ public final class CoreGraphics {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceITUR_2020();
@@ -5270,6 +5452,7 @@ public final class CoreGraphics {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceROMMRGB();
@@ -5277,6 +5460,7 @@ public final class CoreGraphics {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceDCIP3();
@@ -5291,6 +5475,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceExtendedSRGB();
@@ -5300,6 +5485,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceLinearSRGB();
@@ -5309,6 +5495,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceExtendedLinearSRGB();
@@ -5320,6 +5507,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceExtendedGray();
@@ -5329,6 +5517,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceLinearGray();
@@ -5338,6 +5527,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceExtendedLinearGray();
@@ -5349,6 +5539,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGFontVariationAxisName();
@@ -5360,6 +5551,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGFontVariationAxisMinValue();
@@ -5371,6 +5563,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGFontVariationAxisMaxValue();
@@ -5382,6 +5575,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGFontVariationAxisDefaultValue();
@@ -5392,6 +5586,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorConversionBlackPointCompensation();
@@ -5403,6 +5598,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFContextMediaBox();
@@ -5414,6 +5610,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFContextCropBox();
@@ -5425,6 +5622,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFContextBleedBox();
@@ -5436,6 +5634,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFContextTrimBox();
@@ -5447,6 +5646,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFContextArtBox();
@@ -5457,6 +5657,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFContextTitle();
@@ -5467,6 +5668,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFContextAuthor();
@@ -5477,6 +5679,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFContextSubject();
@@ -5494,6 +5697,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFContextKeywords();
@@ -5505,6 +5709,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFContextCreator();
@@ -5522,6 +5727,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFContextOwnerPassword();
@@ -5538,6 +5744,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFContextUserPassword();
@@ -5552,6 +5759,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFContextEncryptionKeyLength();
@@ -5563,6 +5771,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFContextAllowsPrinting();
@@ -5574,6 +5783,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFContextAllowsCopying();
@@ -5582,15 +5792,15 @@ public final class CoreGraphics {
     @Generated
     public interface Function_CGDataProviderCreateWithData {
         @Generated
-        void call_CGDataProviderCreateWithData(VoidPtr arg0, ConstVoidPtr arg1, @NUInt long arg2);
+        void call_CGDataProviderCreateWithData(@Nullable VoidPtr arg0, @NotNull ConstVoidPtr arg1, @NUInt long arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CGPathApply {
         @Generated
-        void call_CGPathApply(VoidPtr arg0,
-                @UncertainArgument("Options: reference, array Fallback: reference") CGPathElement arg1);
+        void call_CGPathApply(@Nullable VoidPtr arg0,
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") CGPathElement arg1);
     }
 
     @Runtime(CRuntime.class)
@@ -5598,30 +5808,31 @@ public final class CoreGraphics {
     public interface Function_CGPDFDictionaryApplyFunction {
         @Generated
         void call_CGPDFDictionaryApplyFunction(
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg0,
-                CGPDFObjectRef arg1, VoidPtr arg2);
+                @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg0,
+                @NotNull CGPDFObjectRef arg1, @Nullable VoidPtr arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CGBitmapContextCreateWithData {
         @Generated
-        void call_CGBitmapContextCreateWithData(VoidPtr arg0, VoidPtr arg1);
+        void call_CGBitmapContextCreateWithData(@Nullable VoidPtr arg0, @Nullable VoidPtr arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CGPDFOperatorTableSetCallback {
         @Generated
-        void call_CGPDFOperatorTableSetCallback(CGPDFScannerRef arg0, VoidPtr arg1);
+        void call_CGPDFOperatorTableSetCallback(@NotNull CGPDFScannerRef arg0, @Nullable VoidPtr arg1);
     }
 
     /**
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native VoidPtr CGDataProviderGetInfo(CGDataProviderRef provider);
+    public static native VoidPtr CGDataProviderGetInfo(@Nullable CGDataProviderRef provider);
 
     /**
      * Create an ICC-based color space using the ICC profile raw data specified by
@@ -5629,9 +5840,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorSpaceRef CGColorSpaceCreateWithICCData(ConstVoidPtr data);
+    public static native CGColorSpaceRef CGColorSpaceCreateWithICCData(@Nullable ConstVoidPtr data);
 
     /**
      * Return the system name of the color space. This applies to all color spaces
@@ -5649,24 +5861,25 @@ public final class CoreGraphics {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFStringRef CGColorSpaceGetName(CGColorSpaceRef space);
+    public static native CFStringRef CGColorSpaceGetName(@Nullable CGColorSpaceRef space);
 
     /**
      * API-Since: 11.0
      */
     @Generated
     @CFunction
-    public static native void CGPathApplyWithBlock(CGPathRef path,
-            @ObjCBlock(name = "call_CGPathApplyWithBlock") Block_CGPathApplyWithBlock block);
+    public static native void CGPathApplyWithBlock(@NotNull CGPathRef path,
+            @NotNull @ObjCBlock(name = "call_CGPathApplyWithBlock") Block_CGPathApplyWithBlock block);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_CGPathApplyWithBlock {
         @Generated
         void call_CGPathApplyWithBlock(
-                @UncertainArgument("Options: reference, array Fallback: reference") CGPathElement element);
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") CGPathElement element);
     }
 
     /**
@@ -5674,9 +5887,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDictionaryRef CGPDFDocumentGetOutline(CGPDFDocumentRef document);
+    public static native CFDictionaryRef CGPDFDocumentGetOutline(@NotNull CGPDFDocumentRef document);
 
     /**
      * Return the document access permissions.
@@ -5685,22 +5899,23 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native int CGPDFDocumentGetAccessPermissions(CGPDFDocumentRef document);
+    public static native int CGPDFDocumentGetAccessPermissions(@NotNull CGPDFDocumentRef document);
 
     /**
      * Reset the current clip of `c' to the default value.
      */
     @Generated
     @CFunction
-    public static native void CGContextResetClip(CGContextRef c);
+    public static native void CGContextResetClip(@NotNull CGContextRef c);
 
     /**
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native CGColorConversionInfoRef CGColorConversionInfoCreateFromListWithArguments(
-            CFDictionaryRef options, CGColorSpaceRef arg2, int arg3, int arg4, BytePtr arg5);
+            @Nullable CFDictionaryRef options, @Nullable CGColorSpaceRef arg2, int arg3, int arg4, BytePtr arg5);
 
     /**
      * Set the outline in the PDF created by a CGPDFContext (no effect in other types of CGContexts).
@@ -5709,7 +5924,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPDFContextSetOutline(CGContextRef context, CFDictionaryRef outline);
+    public static native void CGPDFContextSetOutline(@NotNull CGContextRef context, @Nullable CFDictionaryRef outline);
 
     /**
      * The name of the "Generic" L*a*b* color space. This is the same as
@@ -5719,6 +5934,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceGenericLab();
@@ -5729,6 +5945,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFOutlineTitle();
@@ -5739,6 +5956,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFOutlineChildren();
@@ -5749,6 +5967,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFOutlineDestination();
@@ -5759,6 +5978,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFOutlineDestinationRect();
@@ -5766,6 +5986,7 @@ public final class CoreGraphics {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorConversionTRCSize();
@@ -5776,6 +5997,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFContextAccessPermissions();
@@ -5791,27 +6013,30 @@ public final class CoreGraphics {
     @Deprecated
     @Generated
     @CFunction
-    public static native boolean CGColorSpaceIsHDR(CGColorSpaceRef arg1);
+    public static native boolean CGColorSpaceIsHDR(@NotNull CGColorSpaceRef arg1);
 
     /**
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native ConstVoidPtr CGColorSpaceCopyPropertyList(CGColorSpaceRef space);
+    public static native ConstVoidPtr CGColorSpaceCopyPropertyList(@NotNull CGColorSpaceRef space);
 
     /**
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorSpaceRef CGColorSpaceCreateWithPropertyList(ConstVoidPtr plist);
+    public static native CGColorSpaceRef CGColorSpaceCreateWithPropertyList(@NotNull ConstVoidPtr plist);
 
     /**
      * Create a color in the "Generic Gray Gamma 2.2 color space.
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CGColorRef CGColorCreateGenericGrayGamma2_2(@NFloat double gray, @NFloat double alpha);
@@ -5821,6 +6046,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CGColorRef CGColorCreateSRGB(@NFloat double red, @NFloat double green, @NFloat double blue,
@@ -5833,7 +6059,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native int CGImageGetByteOrderInfo(CGImageRef image);
+    public static native int CGImageGetByteOrderInfo(@Nullable CGImageRef image);
 
     /**
      * Return the pixel format of `image'.
@@ -5842,7 +6068,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native int CGImageGetPixelFormatInfo(CGImageRef image);
+    public static native int CGImageGetPixelFormatInfo(@Nullable CGImageRef image);
 
     /**
      * Enumerate all of the objects in `array', calling the block-function `block' once
@@ -5855,14 +6081,15 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPDFArrayApplyBlock(CGPDFArrayRef array,
-            @ObjCBlock(name = "call_CGPDFArrayApplyBlock") Block_CGPDFArrayApplyBlock block, VoidPtr info);
+    public static native void CGPDFArrayApplyBlock(@Nullable CGPDFArrayRef array,
+            @Nullable @ObjCBlock(name = "call_CGPDFArrayApplyBlock") Block_CGPDFArrayApplyBlock block,
+            @Nullable VoidPtr info);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_CGPDFArrayApplyBlock {
         @Generated
-        boolean call_CGPDFArrayApplyBlock(@NUInt long index, CGPDFObjectRef value, VoidPtr info);
+        boolean call_CGPDFArrayApplyBlock(@NUInt long index, @NotNull CGPDFObjectRef value, @Nullable VoidPtr info);
     }
 
     /**
@@ -5876,25 +6103,27 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPDFDictionaryApplyBlock(CGPDFDictionaryRef dict,
-            @ObjCBlock(name = "call_CGPDFDictionaryApplyBlock") Block_CGPDFDictionaryApplyBlock block, VoidPtr info);
+    public static native void CGPDFDictionaryApplyBlock(@Nullable CGPDFDictionaryRef dict,
+            @Nullable @ObjCBlock(name = "call_CGPDFDictionaryApplyBlock") Block_CGPDFDictionaryApplyBlock block,
+            @Nullable VoidPtr info);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_CGPDFDictionaryApplyBlock {
         @Generated
         boolean call_CGPDFDictionaryApplyBlock(
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String key,
-                CGPDFObjectRef value, VoidPtr info);
+                @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String key,
+                @NotNull CGPDFObjectRef value, @Nullable VoidPtr info);
     }
 
     /**
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorConversionInfoRef CGColorConversionInfoCreateWithOptions(CGColorSpaceRef src,
-            CGColorSpaceRef dst, CFDictionaryRef options);
+    public static native CGColorConversionInfoRef CGColorConversionInfoCreateWithOptions(@NotNull CGColorSpaceRef src,
+            @NotNull CGColorSpaceRef dst, @Nullable CFDictionaryRef options);
 
     /**
      * For a given CGPDFTagType, return a C-string that matches the names defined in section 10.7.3: Standard Structure
@@ -5903,6 +6132,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
@@ -5929,7 +6159,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPDFContextBeginTag(CGContextRef context, int tagType, CFDictionaryRef tagProperties);
+    public static native void CGPDFContextBeginTag(@NotNull CGContextRef context, int tagType,
+            @Nullable CFDictionaryRef tagProperties);
 
     /**
      * Pop the current tag. Sets the current tag to the previous tag on the tag-stack. If there was no previous tag,
@@ -5940,11 +6171,12 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPDFContextEndTag(CGContextRef context);
+    public static native void CGPDFContextEndTag(@NotNull CGContextRef context);
 
     /**
      * API-Since: 12.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceExtendedLinearITUR_2020();
@@ -5952,6 +6184,7 @@ public final class CoreGraphics {
     /**
      * API-Since: 12.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceExtendedLinearDisplayP3();
@@ -5961,6 +6194,7 @@ public final class CoreGraphics {
      * Deprecated-Since: 13.4
      * Deprecated-Message: No longer supported
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -5971,6 +6205,7 @@ public final class CoreGraphics {
      * Deprecated-Since: 13.4
      * Deprecated-Message: No longer supported
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -5979,6 +6214,7 @@ public final class CoreGraphics {
     /**
      * API-Since: 12.6
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceDisplayP3_HLG();
@@ -5988,6 +6224,7 @@ public final class CoreGraphics {
      * Deprecated-Since: 14.0
      * Deprecated-Message: No longer supported
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -6002,6 +6239,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFTagPropertyActualText();
@@ -6013,6 +6251,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFTagPropertyAlternativeText();
@@ -6024,6 +6263,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFTagPropertyTitleText();
@@ -6036,6 +6276,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFTagPropertyLanguageText();
@@ -6045,6 +6286,7 @@ public final class CoreGraphics {
      * Deprecated-Since: 14.0
      * Deprecated-Message: No longer supported
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -6053,6 +6295,7 @@ public final class CoreGraphics {
     /**
      * API-Since: 13.4
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceDisplayP3_PQ();
@@ -6065,13 +6308,14 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGColorSpaceUsesExtendedRange(CGColorSpaceRef space);
+    public static native boolean CGColorSpaceUsesExtendedRange(@NotNull CGColorSpaceRef space);
 
     /**
      * Create a color in the "Generic" gray color space.
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CGColorRef CGColorCreateGenericGray(@NFloat double gray, @NFloat double alpha);
@@ -6081,6 +6325,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CGColorRef CGColorCreateGenericRGB(@NFloat double red, @NFloat double green,
@@ -6091,6 +6336,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CGColorRef CGColorCreateGenericCMYK(@NFloat double cyan, @NFloat double magenta,
@@ -6106,13 +6352,15 @@ public final class CoreGraphics {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorRef CGColorGetConstantColor(CFStringRef colorName);
+    public static native CGColorRef CGColorGetConstantColor(@Nullable CFStringRef colorName);
 
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceITUR_2100_PQ();
@@ -6120,6 +6368,7 @@ public final class CoreGraphics {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceITUR_2100_HLG();
@@ -6129,6 +6378,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorWhite();
@@ -6136,6 +6386,7 @@ public final class CoreGraphics {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorBlack();
@@ -6143,6 +6394,7 @@ public final class CoreGraphics {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorClear();
@@ -6157,6 +6409,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFContextOutputIntent();
@@ -6170,6 +6423,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFXOutputIntentSubtype();
@@ -6183,6 +6437,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFXOutputConditionIdentifier();
@@ -6195,6 +6450,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFXOutputCondition();
@@ -6208,6 +6464,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFXRegistryName();
@@ -6221,6 +6478,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFXInfo();
@@ -6235,6 +6493,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFXDestinationOutputProfile();
@@ -6252,6 +6511,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFContextOutputIntents();
@@ -6261,6 +6521,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFContextCreateLinearizedPDF();
@@ -6271,6 +6532,7 @@ public final class CoreGraphics {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFContextCreatePDFA();
@@ -6282,7 +6544,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGColorSpaceUsesITUR_2100TF(CGColorSpaceRef arg1);
+    public static native boolean CGColorSpaceUsesITUR_2100TF(@NotNull CGColorSpaceRef arg1);
 
     /**
      * Create a linearized copy of the color space if the color space is matrix based.
@@ -6290,9 +6552,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorSpaceRef CGColorSpaceCreateLinearized(CGColorSpaceRef space);
+    public static native CGColorSpaceRef CGColorSpaceCreateLinearized(@NotNull CGColorSpaceRef space);
 
     /**
      * Create a copy of the color space which uses extended range [-Inf, +Inf] if the color space is
@@ -6300,9 +6563,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorSpaceRef CGColorSpaceCreateExtended(CGColorSpaceRef space);
+    public static native CGColorSpaceRef CGColorSpaceCreateExtended(@NotNull CGColorSpaceRef space);
 
     /**
      * Create a linearized copy of the color space which uses extended range [-Inf, +Inf]
@@ -6310,13 +6574,15 @@ public final class CoreGraphics {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorSpaceRef CGColorSpaceCreateExtendedLinearized(CGColorSpaceRef space);
+    public static native CGColorSpaceRef CGColorSpaceCreateExtendedLinearized(@NotNull CGColorSpaceRef space);
 
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceExtendedITUR_2020();
@@ -6324,6 +6590,7 @@ public final class CoreGraphics {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceExtendedDisplayP3();
@@ -6335,24 +6602,25 @@ public final class CoreGraphics {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorSpaceRef CGColorSpaceCreateWithColorSyncProfile(ColorSyncProfileRef arg1,
-            CFDictionaryRef options);
+    public static native CGColorSpaceRef CGColorSpaceCreateWithColorSyncProfile(@Nullable ColorSyncProfileRef arg1,
+            @Nullable CFDictionaryRef options);
 
     /**
      * API-Since: 15.0
      */
     @Generated
     @CFunction
-    public static native boolean CGColorSpaceIsPQBased(CGColorSpaceRef s);
+    public static native boolean CGColorSpaceIsPQBased(@NotNull CGColorSpaceRef s);
 
     /**
      * API-Since: 15.0
      */
     @Generated
     @CFunction
-    public static native boolean CGColorSpaceIsHLGBased(CGColorSpaceRef s);
+    public static native boolean CGColorSpaceIsHLGBased(@NotNull CGColorSpaceRef s);
 
     @Generated
     @CFunction
@@ -6380,6 +6648,7 @@ public final class CoreGraphics {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceLinearITUR_2020();
@@ -6387,10 +6656,12 @@ public final class CoreGraphics {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceLinearDisplayP3();
 
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceExtendedRange();
@@ -6398,6 +6669,7 @@ public final class CoreGraphics {
     /**
      * API-Since: 15.1
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceITUR_709_PQ();
@@ -6405,6 +6677,7 @@ public final class CoreGraphics {
     /**
      * API-Since: 15.1
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceITUR_2020_sRGBGamma();
@@ -6451,9 +6724,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CGColorSpaceRef CGColorSpaceCreateCopyWithStandardRange(CGColorSpaceRef s);
+    public static native CGColorSpaceRef CGColorSpaceCreateCopyWithStandardRange(@NotNull CGColorSpaceRef s);
 
     /**
      * Returns a new weakly-simple path without self-intersections and with a normalized orientation. Filling the
@@ -6461,9 +6735,10 @@ public final class CoreGraphics {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPathRef CGPathCreateCopyByNormalizing(CGPathRef path, boolean evenOddFillRule);
+    public static native CGPathRef CGPathCreateCopyByNormalizing(@Nullable CGPathRef path, boolean evenOddFillRule);
 
     /**
      * Returns a new path created by unioning `path` and `maskPath`. Any unclosed subpaths in either path are assumed to
@@ -6471,10 +6746,11 @@ public final class CoreGraphics {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPathRef CGPathCreateCopyByUnioningPath(CGPathRef path, CGPathRef maskPath,
-            boolean evenOddFillRule);
+    public static native CGPathRef CGPathCreateCopyByUnioningPath(@Nullable CGPathRef path,
+            @Nullable CGPathRef maskPath, boolean evenOddFillRule);
 
     /**
      * Returns a new path created by intersecting `path` and `maskPath`. Any unclosed subpaths in either path are
@@ -6482,10 +6758,11 @@ public final class CoreGraphics {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPathRef CGPathCreateCopyByIntersectingPath(CGPathRef path, CGPathRef maskPath,
-            boolean evenOddFillRule);
+    public static native CGPathRef CGPathCreateCopyByIntersectingPath(@Nullable CGPathRef path,
+            @Nullable CGPathRef maskPath, boolean evenOddFillRule);
 
     /**
      * Returns a new path created by subtracting `maskPath` from `path`. Any unclosed subpaths in either path are
@@ -6493,10 +6770,11 @@ public final class CoreGraphics {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPathRef CGPathCreateCopyBySubtractingPath(CGPathRef path, CGPathRef maskPath,
-            boolean evenOddFillRule);
+    public static native CGPathRef CGPathCreateCopyBySubtractingPath(@Nullable CGPathRef path,
+            @Nullable CGPathRef maskPath, boolean evenOddFillRule);
 
     /**
      * Returns a new path created by exclusive or-ing `path` and `maskPath`. Any unclosed subpaths in either path are
@@ -6504,10 +6782,11 @@ public final class CoreGraphics {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPathRef CGPathCreateCopyBySymmetricDifferenceOfPath(CGPathRef path, CGPathRef maskPath,
-            boolean evenOddFillRule);
+    public static native CGPathRef CGPathCreateCopyBySymmetricDifferenceOfPath(@Nullable CGPathRef path,
+            @Nullable CGPathRef maskPath, boolean evenOddFillRule);
 
     /**
      * Returns a new path created by subtracting the `maskPath` from the line of `path` with the fill of `maskPath`.
@@ -6515,10 +6794,11 @@ public final class CoreGraphics {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPathRef CGPathCreateCopyOfLineBySubtractingPath(CGPathRef path, CGPathRef maskPath,
-            boolean evenOddFillRule);
+    public static native CGPathRef CGPathCreateCopyOfLineBySubtractingPath(@Nullable CGPathRef path,
+            @Nullable CGPathRef maskPath, boolean evenOddFillRule);
 
     /**
      * Returns a new path created by intersecting the line of `path` and the fill of `maskPath`. This returns a
@@ -6526,19 +6806,21 @@ public final class CoreGraphics {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPathRef CGPathCreateCopyOfLineByIntersectingPath(CGPathRef path, CGPathRef maskPath,
-            boolean evenOddFillRule);
+    public static native CGPathRef CGPathCreateCopyOfLineByIntersectingPath(@Nullable CGPathRef path,
+            @Nullable CGPathRef maskPath, boolean evenOddFillRule);
 
     /**
      * Return an array of the visually separated components of a path.
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFArrayRef CGPathCreateSeparateComponents(CGPathRef path, boolean evenOddFillRule);
+    public static native CFArrayRef CGPathCreateSeparateComponents(@Nullable CGPathRef path, boolean evenOddFillRule);
 
     /**
      * Returns a new path that is flattened, converting all curved line segments into straight line approximations. The
@@ -6547,9 +6829,11 @@ public final class CoreGraphics {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPathRef CGPathCreateCopyByFlattening(CGPathRef path, @NFloat double flatteningThreshold);
+    public static native CGPathRef CGPathCreateCopyByFlattening(@Nullable CGPathRef path,
+            @NFloat double flatteningThreshold);
 
     /**
      * Returns true if path1 and path2 overlap.
@@ -6558,7 +6842,8 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGPathIntersectsPath(CGPathRef path1, CGPathRef path2, boolean evenOddFillRule);
+    public static native boolean CGPathIntersectsPath(@Nullable CGPathRef path1, @Nullable CGPathRef path2,
+            boolean evenOddFillRule);
 
     /**
      * Cleanly stop the scanner on the current operator, releasing any
@@ -6566,11 +6851,12 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native void CGPDFScannerStop(CGPDFScannerRef s);
+    public static native void CGPDFScannerStop(@NotNull CGPDFScannerRef s);
 
     /**
      * API-Since: 15.1
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceITUR_709_HLG();

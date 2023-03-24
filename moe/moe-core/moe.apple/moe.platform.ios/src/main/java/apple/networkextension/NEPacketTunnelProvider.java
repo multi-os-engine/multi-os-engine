@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEPacketTunnelProvider
@@ -81,22 +83,25 @@ public class NEPacketTunnelProvider extends NETunnelProvider {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +136,10 @@ public class NEPacketTunnelProvider extends NETunnelProvider {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -174,7 +180,7 @@ public class NEPacketTunnelProvider extends NETunnelProvider {
      */
     @Generated
     @Selector("cancelTunnelWithError:")
-    public native void cancelTunnelWithError(NSError error);
+    public native void cancelTunnelWithError(@Nullable NSError error);
 
     /**
      * createTCPConnectionThroughTunnelToEndpoint:enableTLS:TLSParameters:delegate:
@@ -192,11 +198,12 @@ public class NEPacketTunnelProvider extends NETunnelProvider {
      * 
      *         API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("createTCPConnectionThroughTunnelToEndpoint:enableTLS:TLSParameters:delegate:")
     public native NWTCPConnection createTCPConnectionThroughTunnelToEndpointEnableTLSTLSParametersDelegate(
-            NWEndpoint remoteEndpoint, boolean enableTLS, NWTLSParameters TLSParameters,
-            @Mapped(ObjCObjectMapper.class) Object delegate);
+            @NotNull NWEndpoint remoteEndpoint, boolean enableTLS, @Nullable NWTLSParameters TLSParameters,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object delegate);
 
     /**
      * createUDPSessionThroughTunnelToEndpoint:fromEndpoint:
@@ -213,10 +220,11 @@ public class NEPacketTunnelProvider extends NETunnelProvider {
      * 
      *         API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("createUDPSessionThroughTunnelToEndpoint:fromEndpoint:")
-    public native NWUDPSession createUDPSessionThroughTunnelToEndpointFromEndpoint(NWEndpoint remoteEndpoint,
-            NWHostEndpoint localEndpoint);
+    public native NWUDPSession createUDPSessionThroughTunnelToEndpointFromEndpoint(@NotNull NWEndpoint remoteEndpoint,
+            @Nullable NWHostEndpoint localEndpoint);
 
     @Generated
     @Selector("init")
@@ -231,6 +239,7 @@ public class NEPacketTunnelProvider extends NETunnelProvider {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("packetFlow")
     public native NEPacketTunnelFlow packetFlow();
@@ -252,8 +261,9 @@ public class NEPacketTunnelProvider extends NETunnelProvider {
      */
     @Generated
     @Selector("startTunnelWithOptions:completionHandler:")
-    public native void startTunnelWithOptionsCompletionHandler(NSDictionary<String, ? extends NSObject> options,
-            @ObjCBlock(name = "call_startTunnelWithOptionsCompletionHandler") Block_startTunnelWithOptionsCompletionHandler completionHandler);
+    public native void startTunnelWithOptionsCompletionHandler(
+            @Nullable NSDictionary<String, ? extends NSObject> options,
+            @NotNull @ObjCBlock(name = "call_startTunnelWithOptionsCompletionHandler") Block_startTunnelWithOptionsCompletionHandler completionHandler);
 
     /**
      * stopTunnelWithReason:completionHandler:
@@ -269,13 +279,13 @@ public class NEPacketTunnelProvider extends NETunnelProvider {
     @Generated
     @Selector("stopTunnelWithReason:completionHandler:")
     public native void stopTunnelWithReasonCompletionHandler(@NInt long reason,
-            @ObjCBlock(name = "call_stopTunnelWithReasonCompletionHandler") Block_stopTunnelWithReasonCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_stopTunnelWithReasonCompletionHandler") Block_stopTunnelWithReasonCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startTunnelWithOptionsCompletionHandler {
         @Generated
-        void call_startTunnelWithOptionsCompletionHandler(NSError error);
+        void call_startTunnelWithOptionsCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)

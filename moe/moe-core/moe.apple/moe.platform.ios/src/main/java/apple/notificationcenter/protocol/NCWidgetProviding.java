@@ -29,6 +29,7 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * 'NCWidgetProviding' is an optional protocol for further customizing aspects of the provided content.
@@ -97,7 +98,7 @@ public interface NCWidgetProviding {
     @IsOptional
     @Selector("widgetPerformUpdateWithCompletionHandler:")
     default void widgetPerformUpdateWithCompletionHandler(
-            @ObjCBlock(name = "call_widgetPerformUpdateWithCompletionHandler") Block_widgetPerformUpdateWithCompletionHandler completionHandler) {
+            @NotNull @ObjCBlock(name = "call_widgetPerformUpdateWithCompletionHandler") Block_widgetPerformUpdateWithCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 

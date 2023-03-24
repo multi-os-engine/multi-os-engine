@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * see documentation for GKTurnBasedEventListener for the equivalent methods
@@ -47,7 +48,7 @@ public interface GKTurnBasedEventHandlerDelegate {
     @Generated
     @Deprecated
     @Selector("handleInviteFromGameCenter:")
-    void handleInviteFromGameCenter(NSArray<String> playersToInvite);
+    void handleInviteFromGameCenter(@NotNull NSArray<String> playersToInvite);
 
     /**
      * API-Since: 6.0
@@ -57,7 +58,7 @@ public interface GKTurnBasedEventHandlerDelegate {
     @IsOptional
     @Deprecated
     @Selector("handleMatchEnded:")
-    default void handleMatchEnded(GKTurnBasedMatch match) {
+    default void handleMatchEnded(@NotNull GKTurnBasedMatch match) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -69,7 +70,7 @@ public interface GKTurnBasedEventHandlerDelegate {
     @IsOptional
     @Deprecated
     @Selector("handleTurnEventForMatch:")
-    default void handleTurnEventForMatch(GKTurnBasedMatch match) {
+    default void handleTurnEventForMatch(@NotNull GKTurnBasedMatch match) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -80,5 +81,5 @@ public interface GKTurnBasedEventHandlerDelegate {
     @Generated
     @Deprecated
     @Selector("handleTurnEventForMatch:didBecomeActive:")
-    void handleTurnEventForMatchDidBecomeActive(GKTurnBasedMatch match, boolean didBecomeActive);
+    void handleTurnEventForMatchDidBecomeActive(@NotNull GKTurnBasedMatch match, boolean didBecomeActive);
 }

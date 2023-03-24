@@ -73,6 +73,8 @@ import org.moe.natj.general.ptr.NIntPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.ann.ObjCBlock;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("CoreFoundation")
@@ -5139,9 +5141,11 @@ public final class CoreFoundation {
      * it returns it; otherwise returns NULL. Caller must release the
      * returned value
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native ConstVoidPtr CFPreferencesCopyAppValue(CFStringRef key, CFStringRef applicationID);
+    public static native ConstVoidPtr CFPreferencesCopyAppValue(@NotNull CFStringRef key,
+            @NotNull CFStringRef applicationID);
 
     /**
      * Convenience to interpret a preferences value as a boolean directly.
@@ -5150,8 +5154,8 @@ public final class CoreFoundation {
      */
     @Generated
     @CFunction
-    public static native byte CFPreferencesGetAppBooleanValue(CFStringRef key, CFStringRef applicationID,
-            BytePtr keyExistsAndHasValidFormat);
+    public static native byte CFPreferencesGetAppBooleanValue(@NotNull CFStringRef key,
+            @NotNull CFStringRef applicationID, @Nullable BytePtr keyExistsAndHasValidFormat);
 
     /**
      * Convenience to interpret a preferences value as an integer directly.
@@ -5161,8 +5165,8 @@ public final class CoreFoundation {
     @Generated
     @CFunction
     @NInt
-    public static native long CFPreferencesGetAppIntegerValue(CFStringRef key, CFStringRef applicationID,
-            BytePtr keyExistsAndHasValidFormat);
+    public static native long CFPreferencesGetAppIntegerValue(@NotNull CFStringRef key,
+            @NotNull CFStringRef applicationID, @Nullable BytePtr keyExistsAndHasValidFormat);
 
     /**
      * Sets the given value for the given key in the "normal" place for
@@ -5171,7 +5175,8 @@ public final class CoreFoundation {
      */
     @Generated
     @CFunction
-    public static native void CFPreferencesSetAppValue(CFStringRef key, ConstVoidPtr value, CFStringRef applicationID);
+    public static native void CFPreferencesSetAppValue(@NotNull CFStringRef key, @Nullable ConstVoidPtr value,
+            @NotNull CFStringRef applicationID);
 
     /**
      * Adds the preferences for the given suite to the app preferences for
@@ -5181,12 +5186,13 @@ public final class CoreFoundation {
      */
     @Generated
     @CFunction
-    public static native void CFPreferencesAddSuitePreferencesToApp(CFStringRef applicationID, CFStringRef suiteID);
+    public static native void CFPreferencesAddSuitePreferencesToApp(@NotNull CFStringRef applicationID,
+            @NotNull CFStringRef suiteID);
 
     @Generated
     @CFunction
-    public static native void CFPreferencesRemoveSuitePreferencesFromApp(CFStringRef applicationID,
-            CFStringRef suiteID);
+    public static native void CFPreferencesRemoveSuitePreferencesFromApp(@NotNull CFStringRef applicationID,
+            @NotNull CFStringRef suiteID);
 
     /**
      * Writes all changes in all sources of application defaults.
@@ -5194,7 +5200,7 @@ public final class CoreFoundation {
      */
     @Generated
     @CFunction
-    public static native byte CFPreferencesAppSynchronize(CFStringRef applicationID);
+    public static native byte CFPreferencesAppSynchronize(@NotNull CFStringRef applicationID);
 
     /**
      * The primitive get mechanism; all arguments must be non-NULL
@@ -5202,10 +5208,11 @@ public final class CoreFoundation {
      * location specified by app-user-host is searched. The returned
      * CFType must be released by the caller when it is finished with it.
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native ConstVoidPtr CFPreferencesCopyValue(CFStringRef key, CFStringRef applicationID,
-            CFStringRef userName, CFStringRef hostName);
+    public static native ConstVoidPtr CFPreferencesCopyValue(@NotNull CFStringRef key,
+            @NotNull CFStringRef applicationID, @NotNull CFStringRef userName, @NotNull CFStringRef hostName);
 
     /**
      * Convenience to fetch multiple keys at once. Keys in
@@ -5213,10 +5220,11 @@ public final class CoreFoundation {
      * are not present in the domain. If keysToFetch is NULL, all
      * keys are fetched.
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFDictionaryRef CFPreferencesCopyMultiple(CFArrayRef keysToFetch, CFStringRef applicationID,
-            CFStringRef userName, CFStringRef hostName);
+    public static native CFDictionaryRef CFPreferencesCopyMultiple(@Nullable CFArrayRef keysToFetch,
+            @NotNull CFStringRef applicationID, @NotNull CFStringRef userName, @NotNull CFStringRef hostName);
 
     /**
      * The primitive set function; all arguments except value must be
@@ -5224,8 +5232,8 @@ public final class CoreFoundation {
      */
     @Generated
     @CFunction
-    public static native void CFPreferencesSetValue(CFStringRef key, ConstVoidPtr value, CFStringRef applicationID,
-            CFStringRef userName, CFStringRef hostName);
+    public static native void CFPreferencesSetValue(@NotNull CFStringRef key, @Nullable ConstVoidPtr value,
+            @NotNull CFStringRef applicationID, @NotNull CFStringRef userName, @NotNull CFStringRef hostName);
 
     /**
      * Convenience to set multiple values at once. Behavior is undefined
@@ -5233,13 +5241,14 @@ public final class CoreFoundation {
      */
     @Generated
     @CFunction
-    public static native void CFPreferencesSetMultiple(CFDictionaryRef keysToSet, CFArrayRef keysToRemove,
-            CFStringRef applicationID, CFStringRef userName, CFStringRef hostName);
+    public static native void CFPreferencesSetMultiple(@Nullable CFDictionaryRef keysToSet,
+            @Nullable CFArrayRef keysToRemove, @NotNull CFStringRef applicationID, @NotNull CFStringRef userName,
+            @NotNull CFStringRef hostName);
 
     @Generated
     @CFunction
-    public static native byte CFPreferencesSynchronize(CFStringRef applicationID, CFStringRef userName,
-            CFStringRef hostName);
+    public static native byte CFPreferencesSynchronize(@NotNull CFStringRef applicationID,
+            @NotNull CFStringRef userName, @NotNull CFStringRef hostName);
 
     /**
      * Constructs and returns the list of the name of all applications
@@ -5251,20 +5260,23 @@ public final class CoreFoundation {
      * Deprecated-Since: 7.0
      * Deprecated-Message: Unsupported API
      */
+    @Nullable
     @Generated
     @Deprecated
     @CFunction
-    public static native CFArrayRef CFPreferencesCopyApplicationList(CFStringRef userName, CFStringRef hostName);
+    public static native CFArrayRef CFPreferencesCopyApplicationList(@NotNull CFStringRef userName,
+            @NotNull CFStringRef hostName);
 
     /**
      * Constructs and returns the list of all keys set in the given
      * location, or NULL if no keys are set. The returned value must be released by the caller;
      * all arguments must be non-NULL
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFArrayRef CFPreferencesCopyKeyList(CFStringRef applicationID, CFStringRef userName,
-            CFStringRef hostName);
+    public static native CFArrayRef CFPreferencesCopyKeyList(@NotNull CFStringRef applicationID,
+            @NotNull CFStringRef userName, @NotNull CFStringRef hostName);
 
     /**
      * Function to determine whether or not a given key has been imposed on the
@@ -5274,7 +5286,8 @@ public final class CoreFoundation {
      */
     @Generated
     @CFunction
-    public static native byte CFPreferencesAppValueIsForced(CFStringRef key, CFStringRef applicationID);
+    public static native byte CFPreferencesAppValueIsForced(@NotNull CFStringRef key,
+            @NotNull CFStringRef applicationID);
 
     @Generated
     @CFunction
@@ -10625,26 +10638,32 @@ public final class CoreFoundation {
     @CVariable()
     public static native CFStringRef kCFNumberFormatterMaxSignificantDigits();
 
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFPreferencesAnyApplication();
 
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFPreferencesCurrentApplication();
 
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFPreferencesAnyHost();
 
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFPreferencesCurrentHost();
 
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFPreferencesAnyUser();
 
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFPreferencesCurrentUser();
@@ -11230,6 +11249,7 @@ public final class CoreFoundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertySOCKSProxy();
@@ -11246,6 +11266,7 @@ public final class CoreFoundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertySOCKSProxyHost();
@@ -11263,6 +11284,7 @@ public final class CoreFoundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertySOCKSProxyPort();
@@ -11280,6 +11302,7 @@ public final class CoreFoundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertySOCKSVersion();
@@ -11294,6 +11317,7 @@ public final class CoreFoundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamSocketSOCKSVersion4();
@@ -11308,6 +11332,7 @@ public final class CoreFoundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamSocketSOCKSVersion5();
@@ -11326,6 +11351,7 @@ public final class CoreFoundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertySOCKSUser();
@@ -11344,6 +11370,7 @@ public final class CoreFoundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertySOCKSPassword();
@@ -11375,6 +11402,7 @@ public final class CoreFoundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertySocketSecurityLevel();
@@ -11389,6 +11417,7 @@ public final class CoreFoundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamSocketSecurityLevelNone();
@@ -11406,6 +11435,7 @@ public final class CoreFoundation {
      * API-Since: 2.0
      * Deprecated-Since: 10.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -11424,6 +11454,7 @@ public final class CoreFoundation {
      * API-Since: 2.0
      * Deprecated-Since: 10.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -11439,6 +11470,7 @@ public final class CoreFoundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamSocketSecurityLevelTLSv1();
@@ -11454,6 +11486,7 @@ public final class CoreFoundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamSocketSecurityLevelNegotiatedSSL();
@@ -11476,6 +11509,7 @@ public final class CoreFoundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyShouldCloseNativeSocket();

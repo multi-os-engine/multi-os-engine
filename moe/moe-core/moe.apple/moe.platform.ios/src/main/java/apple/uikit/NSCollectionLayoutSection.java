@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -63,29 +65,33 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Supplementaries associated with the boundary edges of the section
      */
+    @NotNull
     @Generated
     @Selector("boundarySupplementaryItems")
     public native NSArray<? extends NSCollectionLayoutBoundarySupplementaryItem> boundarySupplementaryItems();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -95,11 +101,12 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
     @ByValue
     public native NSDirectionalEdgeInsets contentInsets();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -108,6 +115,7 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
     /**
      * decoration views anchored to the section's geometry (e.g. background decoration view)
      */
+    @NotNull
     @Generated
     @Selector("decorationItems")
     public native NSArray<? extends NSCollectionLayoutDecorationItem> decorationItems();
@@ -147,9 +155,10 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -174,7 +183,7 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
 
     @Generated
     @Selector("sectionWithGroup:")
-    public static native NSCollectionLayoutSection sectionWithGroup(NSCollectionLayoutGroup group);
+    public static native NSCollectionLayoutSection sectionWithGroup(@NotNull NSCollectionLayoutGroup group);
 
     /**
      * Supplementaries associated with the boundary edges of the section
@@ -182,7 +191,7 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
     @Generated
     @Selector("setBoundarySupplementaryItems:")
     public native void setBoundarySupplementaryItems(
-            NSArray<? extends NSCollectionLayoutBoundarySupplementaryItem> value);
+            @NotNull NSArray<? extends NSCollectionLayoutBoundarySupplementaryItem> value);
 
     @Generated
     @Selector("setContentInsets:")
@@ -193,7 +202,7 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setDecorationItems:")
-    public native void setDecorationItems(NSArray<? extends NSCollectionLayoutDecorationItem> value);
+    public native void setDecorationItems(@NotNull NSArray<? extends NSCollectionLayoutDecorationItem> value);
 
     @Generated
     @Selector("setInterGroupSpacing:")
@@ -227,14 +236,14 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
     @Generated
     @Selector("setVisibleItemsInvalidationHandler:")
     public native void setVisibleItemsInvalidationHandler(
-            @ObjCBlock(name = "call_setVisibleItemsInvalidationHandler") Block_setVisibleItemsInvalidationHandler value);
+            @Nullable @ObjCBlock(name = "call_setVisibleItemsInvalidationHandler") Block_setVisibleItemsInvalidationHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setVisibleItemsInvalidationHandler {
         @Generated
-        void call_setVisibleItemsInvalidationHandler(NSArray<?> visibleItems, @ByValue CGPoint contentOffset,
-                @Mapped(ObjCObjectMapper.class) Object layoutEnvironment);
+        void call_setVisibleItemsInvalidationHandler(@NotNull NSArray<?> visibleItems, @ByValue CGPoint contentOffset,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object layoutEnvironment);
     }
 
     @Generated
@@ -260,6 +269,7 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
     /**
      * Called for each layout pass to allow modification of item properties right before they are displayed.
      */
+    @Nullable
     @Generated
     @Selector("visibleItemsInvalidationHandler")
     @ObjCBlock(name = "call_visibleItemsInvalidationHandler_ret")
@@ -269,8 +279,8 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
     @Generated
     public interface Block_visibleItemsInvalidationHandler_ret {
         @Generated
-        void call_visibleItemsInvalidationHandler_ret(NSArray<?> visibleItems, @ByValue CGPoint contentOffset,
-                @Mapped(ObjCObjectMapper.class) Object layoutEnvironment);
+        void call_visibleItemsInvalidationHandler_ret(@NotNull NSArray<?> visibleItems, @ByValue CGPoint contentOffset,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object layoutEnvironment);
     }
 
     /**
@@ -292,8 +302,8 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
     @Generated
     @Selector("sectionWithListConfiguration:layoutEnvironment:")
     public static native NSCollectionLayoutSection sectionWithListConfigurationLayoutEnvironment(
-            UICollectionLayoutListConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) NSCollectionLayoutEnvironment layoutEnvironment);
+            @NotNull UICollectionLayoutListConfiguration configuration,
+            @NotNull @Mapped(ObjCObjectMapper.class) NSCollectionLayoutEnvironment layoutEnvironment);
 
     /**
      * default is UIContentInsetsReferenceAutomatic i.e. following the layout configuration's contentInsetsReference

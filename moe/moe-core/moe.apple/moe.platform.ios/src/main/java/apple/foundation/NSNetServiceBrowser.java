@@ -36,6 +36,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 2.0
@@ -73,22 +75,25 @@ public class NSNetServiceBrowser extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +128,10 @@ public class NSNetServiceBrowser extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,6 +162,7 @@ public class NSNetServiceBrowser extends NSObject {
     /**
      * Set a delegate to receive discovery events.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -177,7 +184,7 @@ public class NSNetServiceBrowser extends NSObject {
 
     @Generated
     @Selector("removeFromRunLoop:forMode:")
-    public native void removeFromRunLoopForMode(NSRunLoop aRunLoop, String mode);
+    public native void removeFromRunLoopForMode(@NotNull NSRunLoop aRunLoop, @NotNull String mode);
 
     /**
      * NSNetServiceBrowser instances may be scheduled on NSRunLoops to operate in different modes, or in other threads.
@@ -186,7 +193,7 @@ public class NSNetServiceBrowser extends NSObject {
      */
     @Generated
     @Selector("scheduleInRunLoop:forMode:")
-    public native void scheduleInRunLoopForMode(NSRunLoop aRunLoop, String mode);
+    public native void scheduleInRunLoopForMode(@NotNull NSRunLoop aRunLoop, @NotNull String mode);
 
     /**
      * Starts a search for domains that are browsable via Bonjour and the computer's network configuration. Discovered
@@ -215,20 +222,20 @@ public class NSNetServiceBrowser extends NSObject {
      */
     @Generated
     @Selector("searchForServicesOfType:inDomain:")
-    public native void searchForServicesOfTypeInDomain(String type, String domainString);
+    public native void searchForServicesOfTypeInDomain(@NotNull String type, @NotNull String domainString);
 
     /**
      * Set a delegate to receive discovery events.
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSNetServiceBrowserDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) NSNetServiceBrowserDelegate value);
 
     /**
      * Set a delegate to receive discovery events.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) NSNetServiceBrowserDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSNetServiceBrowserDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

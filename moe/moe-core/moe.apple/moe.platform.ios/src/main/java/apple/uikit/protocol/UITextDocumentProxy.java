@@ -27,6 +27,8 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -37,10 +39,12 @@ public interface UITextDocumentProxy extends UIKeyInput {
     @Selector("adjustTextPositionByCharacterOffset:")
     void adjustTextPositionByCharacterOffset(@NInt long offset);
 
+    @Nullable
     @Generated
     @Selector("documentContextAfterInput")
     String documentContextAfterInput();
 
+    @Nullable
     @Generated
     @Selector("documentContextBeforeInput")
     String documentContextBeforeInput();
@@ -52,6 +56,7 @@ public interface UITextDocumentProxy extends UIKeyInput {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("documentInputMode")
     UITextInputMode documentInputMode();
@@ -59,6 +64,7 @@ public interface UITextDocumentProxy extends UIKeyInput {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("documentIdentifier")
     NSUUID documentIdentifier();
@@ -66,6 +72,7 @@ public interface UITextDocumentProxy extends UIKeyInput {
     /**
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("selectedText")
     String selectedText();
@@ -78,7 +85,7 @@ public interface UITextDocumentProxy extends UIKeyInput {
      */
     @Generated
     @Selector("setMarkedText:selectedRange:")
-    void setMarkedTextSelectedRange(String markedText, @ByValue NSRange selectedRange);
+    void setMarkedTextSelectedRange(@NotNull String markedText, @ByValue NSRange selectedRange);
 
     /**
      * Unmark the currently marked text.

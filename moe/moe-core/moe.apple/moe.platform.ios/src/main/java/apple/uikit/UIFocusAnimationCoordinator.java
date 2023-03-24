@@ -38,6 +38,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * UIFocusAnimationCoordinator is used to coordinate disparate animations that are related to a focus update.
@@ -74,22 +76,25 @@ public class UIFocusAnimationCoordinator extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +129,10 @@ public class UIFocusAnimationCoordinator extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,8 +174,8 @@ public class UIFocusAnimationCoordinator extends NSObject {
     @Generated
     @Selector("addCoordinatedAnimations:completion:")
     public native void addCoordinatedAnimationsCompletion(
-            @ObjCBlock(name = "call_addCoordinatedAnimationsCompletion_0") Block_addCoordinatedAnimationsCompletion_0 animations,
-            @ObjCBlock(name = "call_addCoordinatedAnimationsCompletion_1") Block_addCoordinatedAnimationsCompletion_1 completion);
+            @Nullable @ObjCBlock(name = "call_addCoordinatedAnimationsCompletion_0") Block_addCoordinatedAnimationsCompletion_0 animations,
+            @Nullable @ObjCBlock(name = "call_addCoordinatedAnimationsCompletion_1") Block_addCoordinatedAnimationsCompletion_1 completion);
 
     @Generated
     @Selector("init")
@@ -205,14 +211,15 @@ public class UIFocusAnimationCoordinator extends NSObject {
     @Generated
     @Selector("addCoordinatedFocusingAnimations:completion:")
     public native void addCoordinatedFocusingAnimationsCompletion(
-            @ObjCBlock(name = "call_addCoordinatedFocusingAnimationsCompletion_0") Block_addCoordinatedFocusingAnimationsCompletion_0 animations,
-            @ObjCBlock(name = "call_addCoordinatedFocusingAnimationsCompletion_1") Block_addCoordinatedFocusingAnimationsCompletion_1 completion);
+            @Nullable @ObjCBlock(name = "call_addCoordinatedFocusingAnimationsCompletion_0") Block_addCoordinatedFocusingAnimationsCompletion_0 animations,
+            @Nullable @ObjCBlock(name = "call_addCoordinatedFocusingAnimationsCompletion_1") Block_addCoordinatedFocusingAnimationsCompletion_1 completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addCoordinatedFocusingAnimationsCompletion_0 {
         @Generated
-        void call_addCoordinatedFocusingAnimationsCompletion_0(@Mapped(ObjCObjectMapper.class) Object animationContext);
+        void call_addCoordinatedFocusingAnimationsCompletion_0(
+                @NotNull @Mapped(ObjCObjectMapper.class) Object animationContext);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -238,15 +245,15 @@ public class UIFocusAnimationCoordinator extends NSObject {
     @Generated
     @Selector("addCoordinatedUnfocusingAnimations:completion:")
     public native void addCoordinatedUnfocusingAnimationsCompletion(
-            @ObjCBlock(name = "call_addCoordinatedUnfocusingAnimationsCompletion_0") Block_addCoordinatedUnfocusingAnimationsCompletion_0 animations,
-            @ObjCBlock(name = "call_addCoordinatedUnfocusingAnimationsCompletion_1") Block_addCoordinatedUnfocusingAnimationsCompletion_1 completion);
+            @Nullable @ObjCBlock(name = "call_addCoordinatedUnfocusingAnimationsCompletion_0") Block_addCoordinatedUnfocusingAnimationsCompletion_0 animations,
+            @Nullable @ObjCBlock(name = "call_addCoordinatedUnfocusingAnimationsCompletion_1") Block_addCoordinatedUnfocusingAnimationsCompletion_1 completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addCoordinatedUnfocusingAnimationsCompletion_0 {
         @Generated
         void call_addCoordinatedUnfocusingAnimationsCompletion_0(
-                @Mapped(ObjCObjectMapper.class) Object animationContext);
+                @NotNull @Mapped(ObjCObjectMapper.class) Object animationContext);
     }
 
     @Runtime(ObjCRuntime.class)

@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -62,35 +64,40 @@ public class INBoatReservation extends INReservation implements NSCopying, NSSec
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("boatTrip")
     public native INBoatTrip boatTrip();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -102,7 +109,7 @@ public class INBoatReservation extends INReservation implements NSCopying, NSSec
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -115,14 +122,15 @@ public class INBoatReservation extends INReservation implements NSCopying, NSSec
 
     @Generated
     @Selector("initWithCoder:")
-    public native INBoatReservation initWithCoder(NSCoder coder);
+    public native INBoatReservation initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithItemReference:reservationNumber:bookingTime:reservationStatus:reservationHolderName:actions:URL:reservedSeat:boatTrip:")
     public native INBoatReservation initWithItemReferenceReservationNumberBookingTimeReservationStatusReservationHolderNameActionsURLReservedSeatBoatTrip(
-            INSpeakableString itemReference, String reservationNumber, NSDate bookingTime, @NInt long reservationStatus,
-            String reservationHolderName, NSArray<? extends INReservationAction> actions, NSURL URL,
-            INSeat reservedSeat, INBoatTrip boatTrip);
+            @NotNull INSpeakableString itemReference, @Nullable String reservationNumber, @Nullable NSDate bookingTime,
+            @NInt long reservationStatus, @Nullable String reservationHolderName,
+            @Nullable NSArray<? extends INReservationAction> actions, @Nullable NSURL URL,
+            @Nullable INSeat reservedSeat, @Nullable INBoatTrip boatTrip);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -141,15 +149,17 @@ public class INBoatReservation extends INReservation implements NSCopying, NSSec
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native INBoatReservation new_objc();
 
+    @Nullable
     @Generated
     @Selector("reservedSeat")
     public native INSeat reservedSeat();

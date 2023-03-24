@@ -26,6 +26,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -44,23 +46,23 @@ public interface UIImagePickerControllerDelegate {
     @IsOptional
     @Deprecated
     @Selector("imagePickerController:didFinishPickingImage:editingInfo:")
-    default void imagePickerControllerDidFinishPickingImageEditingInfo(UIImagePickerController picker, UIImage image,
-            NSDictionary<String, ?> editingInfo) {
+    default void imagePickerControllerDidFinishPickingImageEditingInfo(@NotNull UIImagePickerController picker,
+            @NotNull UIImage image, @Nullable NSDictionary<String, ?> editingInfo) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("imagePickerController:didFinishPickingMediaWithInfo:")
-    default void imagePickerControllerDidFinishPickingMediaWithInfo(UIImagePickerController picker,
-            NSDictionary<String, ?> info) {
+    default void imagePickerControllerDidFinishPickingMediaWithInfo(@NotNull UIImagePickerController picker,
+            @NotNull NSDictionary<String, ?> info) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("imagePickerControllerDidCancel:")
-    default void imagePickerControllerDidCancel(UIImagePickerController picker) {
+    default void imagePickerControllerDidCancel(@NotNull UIImagePickerController picker) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

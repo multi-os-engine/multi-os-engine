@@ -13,6 +13,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * UISpringLoadedContext supplies information about the springloading state and current drag.
@@ -33,7 +34,7 @@ public interface UISpringLoadedInteractionContext {
     @Generated
     @Selector("locationInView:")
     @ByValue
-    CGPoint locationInView(UIView view);
+    CGPoint locationInView(@Nullable UIView view);
 
     /**
      * The `targetItem` allows to distinguish a region of the view on which the interaction is installed.
@@ -41,14 +42,14 @@ public interface UISpringLoadedInteractionContext {
      */
     @Generated
     @Selector("setTargetItem:")
-    void setTargetItem(@Mapped(ObjCObjectMapper.class) Object value);
+    void setTargetItem(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * The view to which the interaction effect is applied. Defaults to the interaction's view.
      */
     @Generated
     @Selector("setTargetView:")
-    void setTargetView(UIView value);
+    void setTargetView(@Nullable UIView value);
 
     /**
      * The state that describes the current springloading style.
@@ -62,6 +63,7 @@ public interface UISpringLoadedInteractionContext {
      * The `targetItem` allows to distinguish a region of the view on which the interaction is installed.
      * It is convenient to set this property to a model object associated to `targetView`.
      */
+    @Nullable
     @Generated
     @Selector("targetItem")
     @MappedReturn(ObjCObjectMapper.class)
@@ -70,6 +72,7 @@ public interface UISpringLoadedInteractionContext {
     /**
      * The view to which the interaction effect is applied. Defaults to the interaction's view.
      */
+    @Nullable
     @Generated
     @Selector("targetView")
     UIView targetView();

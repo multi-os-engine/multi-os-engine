@@ -22,6 +22,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Keyboard profile. Contains the current state of buttons specified in GCKeyCodes.h.
@@ -61,7 +63,7 @@ public class GCKeyboardInput extends GCPhysicalInputProfile {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Alongside general subscript notation of GCPhysicalInputProfile keys can be accessed using this method.
@@ -71,24 +73,28 @@ public class GCKeyboardInput extends GCPhysicalInputProfile {
      * 
      * @param code is a low level key code that can be used for accessing a keyboard button.
      */
+    @Nullable
     @Generated
     @Selector("buttonForKeyCode:")
     public native GCControllerButtonInput buttonForKeyCode(@NInt long code);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,6 +140,7 @@ public class GCKeyboardInput extends GCPhysicalInputProfile {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @Nullable
     @Generated
     @Selector("keyChangedHandler")
     @ObjCBlock(name = "call_keyChangedHandler_ret")
@@ -143,13 +150,14 @@ public class GCKeyboardInput extends GCPhysicalInputProfile {
     @Generated
     public interface Block_keyChangedHandler_ret {
         @Generated
-        void call_keyChangedHandler_ret(GCKeyboardInput keyboard, GCControllerButtonInput key, @NInt long keyCode,
-                boolean pressed);
+        void call_keyChangedHandler_ret(@NotNull GCKeyboardInput keyboard, @NotNull GCControllerButtonInput key,
+                @NInt long keyCode, boolean pressed);
     }
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,14 +175,14 @@ public class GCKeyboardInput extends GCPhysicalInputProfile {
     @Generated
     @Selector("setKeyChangedHandler:")
     public native void setKeyChangedHandler(
-            @ObjCBlock(name = "call_setKeyChangedHandler") Block_setKeyChangedHandler value);
+            @Nullable @ObjCBlock(name = "call_setKeyChangedHandler") Block_setKeyChangedHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setKeyChangedHandler {
         @Generated
-        void call_setKeyChangedHandler(GCKeyboardInput keyboard, GCControllerButtonInput key, @NInt long keyCode,
-                boolean pressed);
+        void call_setKeyChangedHandler(@NotNull GCKeyboardInput keyboard, @NotNull GCControllerButtonInput key,
+                @NInt long keyCode, boolean pressed);
     }
 
     @Generated

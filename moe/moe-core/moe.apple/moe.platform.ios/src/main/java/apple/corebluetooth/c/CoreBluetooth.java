@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("CoreBluetooth")
@@ -42,6 +43,7 @@ public final class CoreBluetooth {
      * 
      * A <code>NSString</code> containing the local name of a peripheral.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -52,6 +54,7 @@ public final class CoreBluetooth {
      * 
      * A <code>NSNumber</code> containing the transmit power of a peripheral.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -62,6 +65,7 @@ public final class CoreBluetooth {
      * 
      * A list of one or more <code>CBUUID</code> objects, representing <code>CBService</code> UUIDs.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -73,6 +77,7 @@ public final class CoreBluetooth {
      * A dictionary containing service-specific advertisement data. Keys are <code>CBUUID</code> objects, representing
      * <code>CBService</code> UUIDs. Values are <code>NSData</code> objects.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -83,6 +88,7 @@ public final class CoreBluetooth {
      * 
      * A <code>NSData</code> object containing the manufacturer data of a peripheral.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -100,6 +106,7 @@ public final class CoreBluetooth {
      * 
      *      API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -115,6 +122,7 @@ public final class CoreBluetooth {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -128,6 +136,7 @@ public final class CoreBluetooth {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -145,6 +154,7 @@ public final class CoreBluetooth {
      * 
      *      API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -165,6 +175,7 @@ public final class CoreBluetooth {
      * 
      *      API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -184,6 +195,7 @@ public final class CoreBluetooth {
      * 
      * @see scanForPeripheralsWithServices:options:
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -201,6 +213,7 @@ public final class CoreBluetooth {
      * 
      *      API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -223,6 +236,7 @@ public final class CoreBluetooth {
      * 
      *      API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -242,6 +256,7 @@ public final class CoreBluetooth {
      * 
      * @see connectPeripheral:
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -264,6 +279,7 @@ public final class CoreBluetooth {
      * 
      *      API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -284,6 +300,7 @@ public final class CoreBluetooth {
      * 
      *      API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -301,6 +318,7 @@ public final class CoreBluetooth {
      * 
      *      API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -317,16 +335,19 @@ public final class CoreBluetooth {
      * 
      *      API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CBCentralManagerRestoredStateScanOptionsKey();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CBErrorDomain();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -344,6 +365,7 @@ public final class CoreBluetooth {
      * 
      *      API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -364,6 +386,7 @@ public final class CoreBluetooth {
      * 
      *      API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -384,6 +407,7 @@ public final class CoreBluetooth {
      * 
      *      API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -400,6 +424,7 @@ public final class CoreBluetooth {
      * 
      *      API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -411,6 +436,7 @@ public final class CoreBluetooth {
      * The string representation of the UUID for the extended properties descriptor.
      * The corresponding value for this descriptor is an <code>NSNumber</code> object.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -422,6 +448,7 @@ public final class CoreBluetooth {
      * The string representation of the UUID for the user description descriptor.
      * The corresponding value for this descriptor is an <code>NSString</code> object.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -433,6 +460,7 @@ public final class CoreBluetooth {
      * The string representation of the UUID for the client configuration descriptor.
      * The corresponding value for this descriptor is an <code>NSNumber</code> object.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -444,6 +472,7 @@ public final class CoreBluetooth {
      * The string representation of the UUID for the server configuration descriptor.
      * The corresponding value for this descriptor is an <code>NSNumber</code> object.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -455,6 +484,7 @@ public final class CoreBluetooth {
      * The string representation of the UUID for the presentation format descriptor.
      * The corresponding value for this descriptor is an <code>NSData</code> object.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -465,6 +495,7 @@ public final class CoreBluetooth {
      * 
      * The string representation of the UUID for the aggregate descriptor.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -475,6 +506,7 @@ public final class CoreBluetooth {
      * 
      * Data representing the valid min/max values accepted for a characteristic.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -489,6 +521,7 @@ public final class CoreBluetooth {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -504,6 +537,7 @@ public final class CoreBluetooth {
      * 
      *      API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -520,6 +554,7 @@ public final class CoreBluetooth {
      * 
      *      API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -536,6 +571,7 @@ public final class CoreBluetooth {
      * 
      *      API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -555,6 +591,7 @@ public final class CoreBluetooth {
      * 
      *      API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -573,6 +610,7 @@ public final class CoreBluetooth {
      * 
      *      API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -590,6 +628,7 @@ public final class CoreBluetooth {
      * 
      *      API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

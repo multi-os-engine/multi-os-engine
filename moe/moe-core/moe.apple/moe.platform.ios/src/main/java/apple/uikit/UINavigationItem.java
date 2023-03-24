@@ -43,6 +43,8 @@ import apple.uikit.protocol.UINavigationItemRenameDelegate;
 import apple.uikit.protocol.UIPopoverPresentationControllerSourceItem;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.objc.ann.ObjCBlock;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 2.0
@@ -77,22 +79,25 @@ public class UINavigationItem extends NSObject implements NSCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +132,10 @@ public class UINavigationItem extends NSObject implements NSCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -160,13 +166,14 @@ public class UINavigationItem extends NSObject implements NSCoding {
     /**
      * Bar button item to use for the back button when this item is the navigation bar's backItem.
      */
+    @Nullable
     @Generated
     @Selector("backBarButtonItem")
     public native UIBarButtonItem backBarButtonItem();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * If YES, this navigation item will hide the back button when it's on top of the stack.
@@ -181,16 +188,17 @@ public class UINavigationItem extends NSObject implements NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UINavigationItem initWithCoder(NSCoder coder);
+    public native UINavigationItem initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithTitle:")
-    public native UINavigationItem initWithTitle(String title);
+    public native UINavigationItem initWithTitle(@NotNull String title);
 
     /**
      * Some navigation items want to display a custom left or right item when they're on top of the stack. A custom left
      * item replaces the regular back button unless you set leftItemsSupplementBackButton to YES
      */
+    @Nullable
     @Generated
     @Selector("leftBarButtonItem")
     public native UIBarButtonItem leftBarButtonItem();
@@ -210,6 +218,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * 
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("leftBarButtonItems")
     public native NSArray<? extends UIBarButtonItem> leftBarButtonItems();
@@ -229,10 +238,12 @@ public class UINavigationItem extends NSObject implements NSCoding {
     /**
      * Explanatory text to display above the navigation bar buttons.
      */
+    @Nullable
     @Generated
     @Selector("prompt")
     public native String prompt();
 
+    @Nullable
     @Generated
     @Selector("rightBarButtonItem")
     public native UIBarButtonItem rightBarButtonItem();
@@ -240,6 +251,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
     /**
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("rightBarButtonItems")
     public native NSArray<? extends UIBarButtonItem> rightBarButtonItems();
@@ -249,7 +261,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("setBackBarButtonItem:")
-    public native void setBackBarButtonItem(UIBarButtonItem value);
+    public native void setBackBarButtonItem(@Nullable UIBarButtonItem value);
 
     /**
      * If YES, this navigation item will hide the back button when it's on top of the stack.
@@ -268,11 +280,11 @@ public class UINavigationItem extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("setLeftBarButtonItem:")
-    public native void setLeftBarButtonItem(UIBarButtonItem value);
+    public native void setLeftBarButtonItem(@Nullable UIBarButtonItem value);
 
     @Generated
     @Selector("setLeftBarButtonItem:animated:")
-    public native void setLeftBarButtonItemAnimated(UIBarButtonItem item, boolean animated);
+    public native void setLeftBarButtonItemAnimated(@Nullable UIBarButtonItem item, boolean animated);
 
     /**
      * Use these properties to set multiple items in a navigation bar.
@@ -291,14 +303,15 @@ public class UINavigationItem extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("setLeftBarButtonItems:")
-    public native void setLeftBarButtonItems(NSArray<? extends UIBarButtonItem> value);
+    public native void setLeftBarButtonItems(@Nullable NSArray<? extends UIBarButtonItem> value);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @Selector("setLeftBarButtonItems:animated:")
-    public native void setLeftBarButtonItemsAnimated(NSArray<? extends UIBarButtonItem> items, boolean animated);
+    public native void setLeftBarButtonItemsAnimated(@Nullable NSArray<? extends UIBarButtonItem> items,
+            boolean animated);
 
     /**
      * By default, the leftItemsSupplementBackButton property is NO. In this case,
@@ -317,47 +330,49 @@ public class UINavigationItem extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("setPrompt:")
-    public native void setPrompt(String value);
+    public native void setPrompt(@Nullable String value);
 
     @Generated
     @Selector("setRightBarButtonItem:")
-    public native void setRightBarButtonItem(UIBarButtonItem value);
+    public native void setRightBarButtonItem(@Nullable UIBarButtonItem value);
 
     @Generated
     @Selector("setRightBarButtonItem:animated:")
-    public native void setRightBarButtonItemAnimated(UIBarButtonItem item, boolean animated);
+    public native void setRightBarButtonItemAnimated(@Nullable UIBarButtonItem item, boolean animated);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @Selector("setRightBarButtonItems:")
-    public native void setRightBarButtonItems(NSArray<? extends UIBarButtonItem> value);
+    public native void setRightBarButtonItems(@Nullable NSArray<? extends UIBarButtonItem> value);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @Selector("setRightBarButtonItems:animated:")
-    public native void setRightBarButtonItemsAnimated(NSArray<? extends UIBarButtonItem> items, boolean animated);
+    public native void setRightBarButtonItemsAnimated(@Nullable NSArray<? extends UIBarButtonItem> items,
+            boolean animated);
 
     /**
      * Title when topmost on the stack. default is nil
      */
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@Nullable String value);
 
     /**
      * Custom view to use in lieu of a title. May be sized horizontally. Only used when item is topmost on the stack.
      */
     @Generated
     @Selector("setTitleView:")
-    public native void setTitleView(UIView value);
+    public native void setTitleView(@Nullable UIView value);
 
     /**
      * Title when topmost on the stack. default is nil
      */
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();
@@ -365,6 +380,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
     /**
      * Custom view to use in lieu of a title. May be sized horizontally. Only used when item is topmost on the stack.
      */
+    @Nullable
     @Generated
     @Selector("titleView")
     public native UIView titleView();
@@ -398,6 +414,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("searchController")
     public native UISearchController searchController();
@@ -432,7 +449,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("setSearchController:")
-    public native void setSearchController(UISearchController value);
+    public native void setSearchController(@Nullable UISearchController value);
 
     /**
      * When set and this item is topmost, overrides the hosting navigation bar's compactAppearance. See
@@ -440,6 +457,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("compactAppearance")
     public native UINavigationBarAppearance compactAppearance();
@@ -450,6 +468,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("scrollEdgeAppearance")
     public native UINavigationBarAppearance scrollEdgeAppearance();
@@ -462,7 +481,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("setCompactAppearance:")
-    public native void setCompactAppearance(UINavigationBarAppearance value);
+    public native void setCompactAppearance(@Nullable UINavigationBarAppearance value);
 
     /**
      * When set and this item is topmost, overrides the hosting navigation bar's scrollEdgeAppearance. See
@@ -472,7 +491,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("setScrollEdgeAppearance:")
-    public native void setScrollEdgeAppearance(UINavigationBarAppearance value);
+    public native void setScrollEdgeAppearance(@Nullable UINavigationBarAppearance value);
 
     /**
      * When set and this item is topmost, overrides the hosting navigation bar's standardAppearance. See
@@ -482,7 +501,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("setStandardAppearance:")
-    public native void setStandardAppearance(UINavigationBarAppearance value);
+    public native void setStandardAppearance(@Nullable UINavigationBarAppearance value);
 
     /**
      * When set and this item is topmost, overrides the hosting navigation bar's standardAppearance. See
@@ -490,6 +509,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("standardAppearance")
     public native UINavigationBarAppearance standardAppearance();
@@ -510,6 +530,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("backButtonTitle")
     public native String backButtonTitle();
@@ -531,7 +552,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("setBackButtonTitle:")
-    public native void setBackButtonTitle(String value);
+    public native void setBackButtonTitle(@Nullable String value);
 
     /**
      * When set and this item is topmost, overrides the hosting navigation bar's compactScrollEdgeAppearance. See
@@ -539,6 +560,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("compactScrollEdgeAppearance")
     public native UINavigationBarAppearance compactScrollEdgeAppearance();
@@ -551,7 +573,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("setCompactScrollEdgeAppearance:")
-    public native void setCompactScrollEdgeAppearance(UINavigationBarAppearance value);
+    public native void setCompactScrollEdgeAppearance(@Nullable UINavigationBarAppearance value);
 
     /**
      * Additional items to add to the overflow menu. Setting this property to a non-nil value will force the overflow
@@ -560,6 +582,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("additionalOverflowItems")
     public native UIDeferredMenuElement additionalOverflowItems();
@@ -570,6 +593,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("backAction")
     public native UIAction backAction();
@@ -580,6 +604,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("centerItemGroups")
     public native NSArray<? extends UIBarButtonItemGroup> centerItemGroups();
@@ -590,6 +615,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("customizationIdentifier")
     public native String customizationIdentifier();
@@ -599,6 +625,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("documentProperties")
     public native UIDocumentProperties documentProperties();
@@ -609,6 +636,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("leadingItemGroups")
     public native NSArray<? extends UIBarButtonItemGroup> leadingItemGroups();
@@ -619,6 +647,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("overflowPresentationSource")
     @MappedReturn(ObjCObjectMapper.class)
@@ -631,6 +660,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("pinnedTrailingGroup")
     public native UIBarButtonItemGroup pinnedTrailingGroup();
@@ -651,6 +681,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("renameDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -675,7 +706,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("setAdditionalOverflowItems:")
-    public native void setAdditionalOverflowItems(UIDeferredMenuElement value);
+    public native void setAdditionalOverflowItems(@Nullable UIDeferredMenuElement value);
 
     /**
      * Replaces the back action for the navigation bar. if a back button is naturally present, this replaces only its
@@ -685,7 +716,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("setBackAction:")
-    public native void setBackAction(UIAction value);
+    public native void setBackAction(@Nullable UIAction value);
 
     /**
      * Customizable UIBarButtonItemGroups that will be placed in the center region when the navigation bar is the
@@ -695,7 +726,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("setCenterItemGroups:")
-    public native void setCenterItemGroups(NSArray<? extends UIBarButtonItemGroup> value);
+    public native void setCenterItemGroups(@NotNull NSArray<? extends UIBarButtonItemGroup> value);
 
     /**
      * Setting a non-nil customizationIdentifier enables customization and UIKit will automatically save & restore
@@ -705,7 +736,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("setCustomizationIdentifier:")
-    public native void setCustomizationIdentifier(String value);
+    public native void setCustomizationIdentifier(@Nullable String value);
 
     /**
      * When non-nil, UIKit will use the metadata provided to generate additional controls displayed from the title.
@@ -714,7 +745,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("setDocumentProperties:")
-    public native void setDocumentProperties(UIDocumentProperties value);
+    public native void setDocumentProperties(@Nullable UIDocumentProperties value);
 
     /**
      * UIBarButtonItemGroups to be displayed in the leading section of the navigation bar. Items set via this method
@@ -724,7 +755,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("setLeadingItemGroups:")
-    public native void setLeadingItemGroups(NSArray<? extends UIBarButtonItemGroup> value);
+    public native void setLeadingItemGroups(@NotNull NSArray<? extends UIBarButtonItemGroup> value);
 
     /**
      * Set a group of items to be placed on the trailing edge of the bar, past the overflow & search items (if present).
@@ -735,7 +766,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("setPinnedTrailingGroup:")
-    public native void setPinnedTrailingGroup(UIBarButtonItemGroup value);
+    public native void setPinnedTrailingGroup(@Nullable UIBarButtonItemGroup value);
 
     /**
      * The preferred search bar placement, when a search controller is assigned to this item.
@@ -754,7 +785,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("setRenameDelegate:")
-    public native void setRenameDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UINavigationItemRenameDelegate value);
+    public native void setRenameDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) UINavigationItemRenameDelegate value);
 
     /**
      * When non-nil, enables the UINavigationBar to respond to the rename: action by providing an inline UI.
@@ -763,7 +795,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * API-Since: 16.0
      */
     @Generated
-    public void setRenameDelegate(@Mapped(ObjCObjectMapper.class) UINavigationItemRenameDelegate value) {
+    public void setRenameDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UINavigationItemRenameDelegate value) {
         Object __old = renameDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -792,13 +824,14 @@ public class UINavigationItem extends NSObject implements NSCoding {
     @Generated
     @Selector("setTitleMenuProvider:")
     public native void setTitleMenuProvider(
-            @ObjCBlock(name = "call_setTitleMenuProvider") Block_setTitleMenuProvider value);
+            @Nullable @ObjCBlock(name = "call_setTitleMenuProvider") Block_setTitleMenuProvider value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setTitleMenuProvider {
+        @Nullable
         @Generated
-        UIMenu call_setTitleMenuProvider(NSArray<? extends UIMenuElement> arg0);
+        UIMenu call_setTitleMenuProvider(@NotNull NSArray<? extends UIMenuElement> arg0);
     }
 
     /**
@@ -809,7 +842,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("setTrailingItemGroups:")
-    public native void setTrailingItemGroups(NSArray<? extends UIBarButtonItemGroup> value);
+    public native void setTrailingItemGroups(@NotNull NSArray<? extends UIBarButtonItemGroup> value);
 
     /**
      * Controls how content defined by this item is laid out in the navigation bar.
@@ -827,6 +860,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("titleMenuProvider")
     @ObjCBlock(name = "call_titleMenuProvider_ret")
@@ -835,8 +869,9 @@ public class UINavigationItem extends NSObject implements NSCoding {
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_titleMenuProvider_ret {
+        @Nullable
         @Generated
-        UIMenu call_titleMenuProvider_ret(NSArray<? extends UIMenuElement> arg0);
+        UIMenu call_titleMenuProvider_ret(@NotNull NSArray<? extends UIMenuElement> arg0);
     }
 
     /**
@@ -845,6 +880,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("trailingItemGroups")
     public native NSArray<? extends UIBarButtonItemGroup> trailingItemGroups();

@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * represents a booking at a restaurant during a given time for a given party size
@@ -79,22 +81,25 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +134,10 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,6 +169,7 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("bookingDate")
     public native NSDate bookingDate();
@@ -170,6 +177,7 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
     /**
      * A nullable string describing the booking
      */
+    @Nullable
     @Generated
     @Selector("bookingDescription")
     public native String bookingDescription();
@@ -177,19 +185,21 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
     /**
      * A vendor specific identifier that refers to this booking.
      */
+    @NotNull
     @Generated
     @Selector("bookingIdentifier")
     public native String bookingIdentifier();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -197,12 +207,13 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRestaurantReservationBooking initWithCoder(NSCoder coder);
+    public native INRestaurantReservationBooking initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithRestaurant:bookingDate:partySize:bookingIdentifier:")
     public native INRestaurantReservationBooking initWithRestaurantBookingDatePartySizeBookingIdentifier(
-            INRestaurant restaurant, NSDate bookingDate, @NUInt long partySize, String bookingIdentifier);
+            @NotNull INRestaurant restaurant, @NotNull NSDate bookingDate, @NUInt long partySize,
+            @NotNull String bookingIdentifier);
 
     /**
      * Boolean indicating whether timeslot is available for booking. Defaults to YES.
@@ -218,6 +229,7 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
     @Selector("setBookingAvailable:")
     public native void setBookingAvailable(boolean value);
 
+    @Nullable
     @Generated
     @Selector("offers")
     public native NSArray<? extends INRestaurantOffer> offers();
@@ -255,31 +267,32 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
     @Selector("requiresPhoneNumber")
     public native boolean requiresPhoneNumber();
 
+    @NotNull
     @Generated
     @Selector("restaurant")
     public native INRestaurant restaurant();
 
     @Generated
     @Selector("setBookingDate:")
-    public native void setBookingDate(NSDate value);
+    public native void setBookingDate(@NotNull NSDate value);
 
     /**
      * A nullable string describing the booking
      */
     @Generated
     @Selector("setBookingDescription:")
-    public native void setBookingDescription(String value);
+    public native void setBookingDescription(@Nullable String value);
 
     /**
      * A vendor specific identifier that refers to this booking.
      */
     @Generated
     @Selector("setBookingIdentifier:")
-    public native void setBookingIdentifier(String value);
+    public native void setBookingIdentifier(@NotNull String value);
 
     @Generated
     @Selector("setOffers:")
-    public native void setOffers(NSArray<? extends INRestaurantOffer> value);
+    public native void setOffers(@Nullable NSArray<? extends INRestaurantOffer> value);
 
     @Generated
     @Selector("setPartySize:")
@@ -315,7 +328,7 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
 
     @Generated
     @Selector("setRestaurant:")
-    public native void setRestaurant(INRestaurant value);
+    public native void setRestaurant(@NotNull INRestaurant value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

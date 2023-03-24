@@ -39,6 +39,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Used to request that Core Data do a batch update of data in a persistent store without
@@ -79,26 +81,29 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("batchUpdateRequestWithEntityName:")
-    public static native NSBatchUpdateRequest batchUpdateRequestWithEntityName(String entityName);
+    public static native NSBatchUpdateRequest batchUpdateRequestWithEntityName(@NotNull String entityName);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +138,10 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,10 +169,12 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("entity")
     public native NSEntityDescription entity();
 
+    @NotNull
     @Generated
     @Selector("entityName")
     public native String entityName();
@@ -184,12 +192,13 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
 
     @Generated
     @Selector("initWithEntity:")
-    public native NSBatchUpdateRequest initWithEntity(NSEntityDescription entity);
+    public native NSBatchUpdateRequest initWithEntity(@NotNull NSEntityDescription entity);
 
     @Generated
     @Selector("initWithEntityName:")
-    public native NSBatchUpdateRequest initWithEntityName(String entityName);
+    public native NSBatchUpdateRequest initWithEntityName(@NotNull String entityName);
 
+    @Nullable
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();
@@ -199,6 +208,7 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
      * desired updates.
      * The expressions can be any NSExpression that evaluates to a scalar value.
      */
+    @Nullable
     @Generated
     @Selector("propertiesToUpdate")
     public native NSDictionary<?, ?> propertiesToUpdate();
@@ -220,7 +230,7 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
 
     @Generated
     @Selector("setPredicate:")
-    public native void setPredicate(NSPredicate value);
+    public native void setPredicate(@Nullable NSPredicate value);
 
     /**
      * Dictionary of NSPropertyDescription|property name string -> constantValue/NSExpression pairs describing the
@@ -229,7 +239,7 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
      */
     @Generated
     @Selector("setPropertiesToUpdate:")
-    public native void setPropertiesToUpdate(NSDictionary<?, ?> value);
+    public native void setPropertiesToUpdate(@Nullable NSDictionary<?, ?> value);
 
     /**
      * The type of result that should be returned from this request. Defaults to NSStatusOnlyResultType

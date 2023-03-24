@@ -88,6 +88,8 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.ann.ObjCBlock;
 import apple.audiotoolbox.opaque.AUParameterListenerRef;
 import apple.audiotoolbox.struct.AudioUnitParameter;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("AudioToolbox")
@@ -125,10 +127,11 @@ public final class AudioToolbox {
      * 
      *         API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native AudioComponent AudioComponentFindNext(AudioComponent inComponent,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription inDesc);
+    public static native AudioComponent AudioComponentFindNext(@Nullable AudioComponent inComponent,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription inDesc);
 
     /**
      * [@function] AudioComponentCount
@@ -150,7 +153,7 @@ public final class AudioToolbox {
     @Generated
     @CFunction
     public static native int AudioComponentCount(
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription inDesc);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription inDesc);
 
     /**
      * [@function] AudioComponentCopyName
@@ -170,7 +173,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioComponentCopyName(AudioComponent inComponent, Ptr<CFStringRef> outName);
+    public static native int AudioComponentCopyName(@NotNull AudioComponent inComponent,
+            @NotNull Ptr<CFStringRef> outName);
 
     /**
      * [@function] AudioComponentGetDescription
@@ -190,8 +194,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioComponentGetDescription(AudioComponent inComponent,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription outDesc);
+    public static native int AudioComponentGetDescription(@NotNull AudioComponent inComponent,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription outDesc);
 
     /**
      * [@function] AudioComponentGetVersion
@@ -208,7 +212,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioComponentGetVersion(AudioComponent inComponent, IntPtr outVersion);
+    public static native int AudioComponentGetVersion(@NotNull AudioComponent inComponent, @NotNull IntPtr outVersion);
 
     /**
      * [@function] AudioComponentInstanceNew
@@ -234,8 +238,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioComponentInstanceNew(AudioComponent inComponent,
-            Ptr<AudioComponentInstance> outInstance);
+    public static native int AudioComponentInstanceNew(@NotNull AudioComponent inComponent,
+            @NotNull Ptr<AudioComponentInstance> outInstance);
 
     /**
      * [@function] AudioComponentInstantiate
@@ -260,8 +264,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native void AudioComponentInstantiate(AudioComponent inComponent, int inOptions,
-            @ObjCBlock(name = "call_AudioComponentInstantiate") Block_AudioComponentInstantiate inCompletionHandler);
+    public static native void AudioComponentInstantiate(@NotNull AudioComponent inComponent, int inOptions,
+            @NotNull @ObjCBlock(name = "call_AudioComponentInstantiate") Block_AudioComponentInstantiate inCompletionHandler);
 
     /**
      * [@function] AudioComponentInstanceDispose
@@ -279,7 +283,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioComponentInstanceDispose(AudioComponentInstance inInstance);
+    public static native int AudioComponentInstanceDispose(@NotNull AudioComponentInstance inInstance);
 
     /**
      * [@function] AudioComponentInstanceGetComponent
@@ -300,9 +304,10 @@ public final class AudioToolbox {
      * 
      *         API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native AudioComponent AudioComponentInstanceGetComponent(AudioComponentInstance inInstance);
+    public static native AudioComponent AudioComponentInstanceGetComponent(@NotNull AudioComponentInstance inInstance);
 
     /**
      * [@function] AudioComponentInstanceCanDo
@@ -321,7 +326,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native byte AudioComponentInstanceCanDo(AudioComponentInstance inInstance, short inSelectorID);
+    public static native byte AudioComponentInstanceCanDo(@NotNull AudioComponentInstance inInstance,
+            short inSelectorID);
 
     /**
      * [@function] AudioComponentRegister
@@ -348,12 +354,13 @@ public final class AudioToolbox {
      * 
      *         API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native AudioComponent AudioComponentRegister(
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription inDesc,
-            CFStringRef inName, int inVersion,
-            @FunctionPtr(name = "call_AudioComponentRegister") Function_AudioComponentRegister inFactory);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription inDesc,
+            @NotNull CFStringRef inName, int inVersion,
+            @NotNull @FunctionPtr(name = "call_AudioComponentRegister") Function_AudioComponentRegister inFactory);
 
     /**
      * [@function] AudioUnitInitialize
@@ -378,7 +385,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioUnitInitialize(AudioComponentInstance inUnit);
+    public static native int AudioUnitInitialize(@NotNull AudioComponentInstance inUnit);
 
     /**
      * [@function] AudioUnitUninitialize
@@ -402,7 +409,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioUnitUninitialize(AudioComponentInstance inUnit);
+    public static native int AudioUnitUninitialize(@NotNull AudioComponentInstance inUnit);
 
     /**
      * [@function] AudioUnitGetPropertyInfo
@@ -436,8 +443,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioUnitGetPropertyInfo(AudioComponentInstance inUnit, int inID, int inScope,
-            int inElement, IntPtr outDataSize, BytePtr outWritable);
+    public static native int AudioUnitGetPropertyInfo(@NotNull AudioComponentInstance inUnit, int inID, int inScope,
+            int inElement, @Nullable IntPtr outDataSize, @Nullable BytePtr outWritable);
 
     /**
      * [@function] AudioUnitGetProperty
@@ -468,8 +475,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioUnitGetProperty(AudioComponentInstance inUnit, int inID, int inScope, int inElement,
-            VoidPtr outData, IntPtr ioDataSize);
+    public static native int AudioUnitGetProperty(@NotNull AudioComponentInstance inUnit, int inID, int inScope,
+            int inElement, @NotNull VoidPtr outData, @NotNull IntPtr ioDataSize);
 
     /**
      * [@function] AudioUnitSetProperty
@@ -502,8 +509,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioUnitSetProperty(AudioComponentInstance inUnit, int inID, int inScope, int inElement,
-            ConstVoidPtr inData, int inDataSize);
+    public static native int AudioUnitSetProperty(@NotNull AudioComponentInstance inUnit, int inID, int inScope,
+            int inElement, @Nullable ConstVoidPtr inData, int inDataSize);
 
     /**
      * [@function] AudioUnitAddPropertyListener
@@ -533,9 +540,9 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioUnitAddPropertyListener(AudioComponentInstance inUnit, int inID,
-            @FunctionPtr(name = "call_AudioUnitAddPropertyListener") Function_AudioUnitAddPropertyListener inProc,
-            VoidPtr inProcUserData);
+    public static native int AudioUnitAddPropertyListener(@NotNull AudioComponentInstance inUnit, int inID,
+            @NotNull @FunctionPtr(name = "call_AudioUnitAddPropertyListener") Function_AudioUnitAddPropertyListener inProc,
+            @Nullable VoidPtr inProcUserData);
 
     /**
      * [@function] AudioUnitRemovePropertyListenerWithUserData
@@ -560,9 +567,10 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioUnitRemovePropertyListenerWithUserData(AudioComponentInstance inUnit, int inID,
-            @FunctionPtr(name = "call_AudioUnitRemovePropertyListenerWithUserData") Function_AudioUnitRemovePropertyListenerWithUserData inProc,
-            VoidPtr inProcUserData);
+    public static native int AudioUnitRemovePropertyListenerWithUserData(@NotNull AudioComponentInstance inUnit,
+            int inID,
+            @NotNull @FunctionPtr(name = "call_AudioUnitRemovePropertyListenerWithUserData") Function_AudioUnitRemovePropertyListenerWithUserData inProc,
+            @Nullable VoidPtr inProcUserData);
 
     /**
      * [@function] AudioUnitAddRenderNotify
@@ -592,9 +600,9 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioUnitAddRenderNotify(AudioComponentInstance inUnit,
-            @FunctionPtr(name = "call_AudioUnitAddRenderNotify") Function_AudioUnitAddRenderNotify inProc,
-            VoidPtr inProcUserData);
+    public static native int AudioUnitAddRenderNotify(@NotNull AudioComponentInstance inUnit,
+            @NotNull @FunctionPtr(name = "call_AudioUnitAddRenderNotify") Function_AudioUnitAddRenderNotify inProc,
+            @Nullable VoidPtr inProcUserData);
 
     /**
      * [@function] AudioUnitRemoveRenderNotify
@@ -615,9 +623,9 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioUnitRemoveRenderNotify(AudioComponentInstance inUnit,
-            @FunctionPtr(name = "call_AudioUnitRemoveRenderNotify") Function_AudioUnitRemoveRenderNotify inProc,
-            VoidPtr inProcUserData);
+    public static native int AudioUnitRemoveRenderNotify(@NotNull AudioComponentInstance inUnit,
+            @NotNull @FunctionPtr(name = "call_AudioUnitRemoveRenderNotify") Function_AudioUnitRemoveRenderNotify inProc,
+            @Nullable VoidPtr inProcUserData);
 
     /**
      * [@function] AudioUnitGetParameter
@@ -644,8 +652,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioUnitGetParameter(AudioComponentInstance inUnit, int inID, int inScope, int inElement,
-            FloatPtr outValue);
+    public static native int AudioUnitGetParameter(@NotNull AudioComponentInstance inUnit, int inID, int inScope,
+            int inElement, @NotNull FloatPtr outValue);
 
     /**
      * [@function] AudioUnitSetParameter
@@ -676,8 +684,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioUnitSetParameter(AudioComponentInstance inUnit, int inID, int inScope, int inElement,
-            float inValue, int inBufferOffsetInFrames);
+    public static native int AudioUnitSetParameter(@NotNull AudioComponentInstance inUnit, int inID, int inScope,
+            int inElement, float inValue, int inBufferOffsetInFrames);
 
     /**
      * [@function] AudioUnitScheduleParameters
@@ -716,8 +724,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioUnitScheduleParameters(AudioComponentInstance inUnit, VoidPtr inParameterEvent,
-            int inNumParamEvents);
+    public static native int AudioUnitScheduleParameters(@NotNull AudioComponentInstance inUnit,
+            @NotNull VoidPtr inParameterEvent, int inNumParamEvents);
 
     /**
      * [@function] AudioUnitRender
@@ -765,30 +773,32 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioUnitRender(AudioComponentInstance inUnit, IntPtr ioActionFlags,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp inTimeStamp,
+    public static native int AudioUnitRender(@NotNull AudioComponentInstance inUnit, @Nullable IntPtr ioActionFlags,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp inTimeStamp,
             int inOutputBusNumber, int inNumberFrames,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList ioData);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList ioData);
 
     /**
      * API-Since: 6.0
      */
     @Generated
     @CFunction
-    public static native int AudioUnitProcess(AudioComponentInstance inUnit, IntPtr ioActionFlags,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp inTimeStamp,
+    public static native int AudioUnitProcess(@NotNull AudioComponentInstance inUnit, @Nullable IntPtr ioActionFlags,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp inTimeStamp,
             int inNumberFrames,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList ioData);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList ioData);
 
     /**
      * API-Since: 6.0
      */
     @Generated
     @CFunction
-    public static native int AudioUnitProcessMultiple(AudioComponentInstance inUnit, IntPtr ioActionFlags,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp inTimeStamp,
-            int inNumberFrames, int inNumberInputBufferLists, Ptr<ConstPtr<AudioBufferList>> inInputBufferLists,
-            int inNumberOutputBufferLists, Ptr<Ptr<AudioBufferList>> ioOutputBufferLists);
+    public static native int AudioUnitProcessMultiple(@NotNull AudioComponentInstance inUnit,
+            @Nullable IntPtr ioActionFlags,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp inTimeStamp,
+            int inNumberFrames, int inNumberInputBufferLists,
+            @NotNull Ptr<ConstPtr<AudioBufferList>> inInputBufferLists, int inNumberOutputBufferLists,
+            @NotNull Ptr<Ptr<AudioBufferList>> ioOutputBufferLists);
 
     /**
      * [@function] AudioUnitReset
@@ -819,7 +829,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioUnitReset(AudioComponentInstance inUnit, int inScope, int inElement);
+    public static native int AudioUnitReset(@NotNull AudioComponentInstance inUnit, int inScope, int inElement);
 
     /**
      * [@function] AudioOutputUnitPublish
@@ -847,27 +857,29 @@ public final class AudioToolbox {
     @Generated
     @CFunction
     public static native int AudioOutputUnitPublish(
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription inDesc,
-            CFStringRef inName, int inVersion, AudioComponentInstance inOutputUnit);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription inDesc,
+            @NotNull CFStringRef inName, int inVersion, @NotNull AudioComponentInstance inOutputUnit);
 
     /**
      * API-Since: 7.0
      * Deprecated-Since: 13.0
      * Deprecated-Message: Inter-App Audio API is deprecated in favor of Audio Units
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native UIImage AudioOutputUnitGetHostIcon(AudioComponentInstance au, float desiredPointSize);
+    public static native UIImage AudioOutputUnitGetHostIcon(@NotNull AudioComponentInstance au, float desiredPointSize);
 
     /**
      * API-Since: 7.0
      * Deprecated-Since: 14.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native UIImage AudioComponentGetIcon(AudioComponent comp, float desiredPointSize);
+    public static native UIImage AudioComponentGetIcon(@NotNull AudioComponent comp, float desiredPointSize);
 
     /**
      * [@function] AudioComponentGetLastActiveTime
@@ -888,7 +900,7 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native double AudioComponentGetLastActiveTime(AudioComponent comp);
+    public static native double AudioComponentGetLastActiveTime(@NotNull AudioComponent comp);
 
     /**
      * -----------------------------------------------------------------------------
@@ -899,14 +911,14 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioOutputUnitStart(AudioComponentInstance ci);
+    public static native int AudioOutputUnitStart(@NotNull AudioComponentInstance ci);
 
     /**
      * API-Since: 2.0
      */
     @Generated
     @CFunction
-    public static native int AudioOutputUnitStop(AudioComponentInstance ci);
+    public static native int AudioOutputUnitStop(@NotNull AudioComponentInstance ci);
 
     @Generated
     @Inline
@@ -955,8 +967,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicDeviceMIDIEvent(AudioComponentInstance inUnit, int inStatus, int inData1, int inData2,
-            int inOffsetSampleFrame);
+    public static native int MusicDeviceMIDIEvent(@NotNull AudioComponentInstance inUnit, int inStatus, int inData1,
+            int inData2, int inOffsetSampleFrame);
 
     /**
      * [@function] MusicDeviceSysEx
@@ -979,8 +991,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicDeviceSysEx(AudioComponentInstance inUnit,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String inData,
+    public static native int MusicDeviceSysEx(@NotNull AudioComponentInstance inUnit,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String inData,
             int inLength);
 
     /**
@@ -1035,9 +1047,9 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicDeviceStartNote(AudioComponentInstance inUnit, int inInstrument, int inGroupID,
-            IntPtr outNoteInstanceID, int inOffsetSampleFrame,
-            @UncertainArgument("Options: reference, array Fallback: reference") MusicDeviceNoteParams inParams);
+    public static native int MusicDeviceStartNote(@NotNull AudioComponentInstance inUnit, int inInstrument,
+            int inGroupID, @NotNull IntPtr outNoteInstanceID, int inOffsetSampleFrame,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MusicDeviceNoteParams inParams);
 
     /**
      * [@function] MusicDeviceStopNote
@@ -1063,8 +1075,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicDeviceStopNote(AudioComponentInstance inUnit, int inGroupID, int inNoteInstanceID,
-            int inOffsetSampleFrame);
+    public static native int MusicDeviceStopNote(@NotNull AudioComponentInstance inUnit, int inGroupID,
+            int inNoteInstanceID, int inOffsetSampleFrame);
 
     /**
      * [@function] NewAUGraph
@@ -1080,7 +1092,7 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int NewAUGraph(Ptr<AUGraph> outGraph);
+    public static native int NewAUGraph(@NotNull Ptr<AUGraph> outGraph);
 
     /**
      * [@function] DisposeAUGraph
@@ -1098,7 +1110,7 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int DisposeAUGraph(AUGraph inGraph);
+    public static native int DisposeAUGraph(@NotNull AUGraph inGraph);
 
     /**
      * [@function] AUGraphAddNode
@@ -1119,9 +1131,9 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphAddNode(AUGraph inGraph,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription inDescription,
-            IntPtr outNode);
+    public static native int AUGraphAddNode(@NotNull AUGraph inGraph,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription inDescription,
+            @NotNull IntPtr outNode);
 
     /**
      * [@function] AUGraphRemoveNode
@@ -1141,7 +1153,7 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphRemoveNode(AUGraph inGraph, int inNode);
+    public static native int AUGraphRemoveNode(@NotNull AUGraph inGraph, int inNode);
 
     /**
      * [@function] AUGraphGetNodeCount
@@ -1158,7 +1170,7 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphGetNodeCount(AUGraph inGraph, IntPtr outNumberOfNodes);
+    public static native int AUGraphGetNodeCount(@NotNull AUGraph inGraph, @NotNull IntPtr outNumberOfNodes);
 
     /**
      * [@function] AUGraphGetIndNode
@@ -1179,7 +1191,7 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphGetIndNode(AUGraph inGraph, int inIndex, IntPtr outNode);
+    public static native int AUGraphGetIndNode(@NotNull AUGraph inGraph, int inIndex, @NotNull IntPtr outNode);
 
     /**
      * [@function] AUGraphNodeInfo
@@ -1201,9 +1213,9 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphNodeInfo(AUGraph inGraph, int inNode,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription outDescription,
-            Ptr<AudioComponentInstance> outAudioUnit);
+    public static native int AUGraphNodeInfo(@NotNull AUGraph inGraph, int inNode,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription outDescription,
+            @Nullable Ptr<AudioComponentInstance> outAudioUnit);
 
     /**
      * [@function] AUGraphConnectNodeInput
@@ -1217,8 +1229,8 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphConnectNodeInput(AUGraph inGraph, int inSourceNode, int inSourceOutputNumber,
-            int inDestNode, int inDestInputNumber);
+    public static native int AUGraphConnectNodeInput(@NotNull AUGraph inGraph, int inSourceNode,
+            int inSourceOutputNumber, int inDestNode, int inDestInputNumber);
 
     /**
      * [@function] AUGraphSetNodeInputCallback
@@ -1234,8 +1246,9 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphSetNodeInputCallback(AUGraph inGraph, int inDestNode, int inDestInputNumber,
-            @UncertainArgument("Options: reference, array Fallback: reference") AURenderCallbackStruct inInputCallback);
+    public static native int AUGraphSetNodeInputCallback(@NotNull AUGraph inGraph, int inDestNode,
+            int inDestInputNumber,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AURenderCallbackStruct inInputCallback);
 
     /**
      * [@function] AUGraphDisconnectNodeInput
@@ -1252,7 +1265,8 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphDisconnectNodeInput(AUGraph inGraph, int inDestNode, int inDestInputNumber);
+    public static native int AUGraphDisconnectNodeInput(@NotNull AUGraph inGraph, int inDestNode,
+            int inDestInputNumber);
 
     /**
      * [@function] AUGraphClearConnections
@@ -1268,7 +1282,7 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphClearConnections(AUGraph inGraph);
+    public static native int AUGraphClearConnections(@NotNull AUGraph inGraph);
 
     /**
      * [@function] AUGraphGetNumberOfInteractions
@@ -1284,7 +1298,8 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphGetNumberOfInteractions(AUGraph inGraph, IntPtr outNumInteractions);
+    public static native int AUGraphGetNumberOfInteractions(@NotNull AUGraph inGraph,
+            @NotNull IntPtr outNumInteractions);
 
     /**
      * [@function] AUGraphGetInteractionInfo
@@ -1307,7 +1322,8 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphGetInteractionInfo(AUGraph inGraph, int inInteractionIndex, VoidPtr outInteraction);
+    public static native int AUGraphGetInteractionInfo(@NotNull AUGraph inGraph, int inInteractionIndex,
+            @NotNull VoidPtr outInteraction);
 
     /**
      * [@function] AUGraphCountNodeInteractions
@@ -1323,7 +1339,8 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphCountNodeInteractions(AUGraph inGraph, int inNode, IntPtr outNumInteractions);
+    public static native int AUGraphCountNodeInteractions(@NotNull AUGraph inGraph, int inNode,
+            @NotNull IntPtr outNumInteractions);
 
     /**
      * [@function] AUGraphGetNodeInteractions
@@ -1342,8 +1359,8 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphGetNodeInteractions(AUGraph inGraph, int inNode, IntPtr ioNumInteractions,
-            VoidPtr outInteractions);
+    public static native int AUGraphGetNodeInteractions(@NotNull AUGraph inGraph, int inNode,
+            @NotNull IntPtr ioNumInteractions, @NotNull VoidPtr outInteractions);
 
     /**
      * [@function] AUGraphUpdate
@@ -1392,7 +1409,7 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphUpdate(AUGraph inGraph, BytePtr outIsUpdated);
+    public static native int AUGraphUpdate(@NotNull AUGraph inGraph, @Nullable BytePtr outIsUpdated);
 
     /**
      * [@function] AUGraphOpen
@@ -1408,7 +1425,7 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphOpen(AUGraph inGraph);
+    public static native int AUGraphOpen(@NotNull AUGraph inGraph);
 
     /**
      * [@function] AUGraphClose
@@ -1424,7 +1441,7 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphClose(AUGraph inGraph);
+    public static native int AUGraphClose(@NotNull AUGraph inGraph);
 
     /**
      * [@function] AUGraphInitialize
@@ -1445,7 +1462,7 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphInitialize(AUGraph inGraph);
+    public static native int AUGraphInitialize(@NotNull AUGraph inGraph);
 
     /**
      * [@function] AUGraphUninitialize
@@ -1461,7 +1478,7 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphUninitialize(AUGraph inGraph);
+    public static native int AUGraphUninitialize(@NotNull AUGraph inGraph);
 
     /**
      * [@function] AUGraphStart
@@ -1479,7 +1496,7 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphStart(AUGraph inGraph);
+    public static native int AUGraphStart(@NotNull AUGraph inGraph);
 
     /**
      * [@function] AUGraphStop
@@ -1495,7 +1512,7 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphStop(AUGraph inGraph);
+    public static native int AUGraphStop(@NotNull AUGraph inGraph);
 
     /**
      * [@function] AUGraphIsOpen
@@ -1509,7 +1526,7 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphIsOpen(AUGraph inGraph, BytePtr outIsOpen);
+    public static native int AUGraphIsOpen(@NotNull AUGraph inGraph, @NotNull BytePtr outIsOpen);
 
     /**
      * [@function] AUGraphIsInitialized
@@ -1523,7 +1540,7 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphIsInitialized(AUGraph inGraph, BytePtr outIsInitialized);
+    public static native int AUGraphIsInitialized(@NotNull AUGraph inGraph, @NotNull BytePtr outIsInitialized);
 
     /**
      * [@function] AUGraphIsRunning
@@ -1537,7 +1554,7 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphIsRunning(AUGraph inGraph, BytePtr outIsRunning);
+    public static native int AUGraphIsRunning(@NotNull AUGraph inGraph, @NotNull BytePtr outIsRunning);
 
     /**
      * [@function] AUGraphGetCPULoad
@@ -1553,7 +1570,7 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphGetCPULoad(AUGraph inGraph, FloatPtr outAverageCPULoad);
+    public static native int AUGraphGetCPULoad(@NotNull AUGraph inGraph, @NotNull FloatPtr outAverageCPULoad);
 
     /**
      * [@function] AUGraphGetMaxCPULoad
@@ -1570,7 +1587,7 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphGetMaxCPULoad(AUGraph inGraph, FloatPtr outMaxLoad);
+    public static native int AUGraphGetMaxCPULoad(@NotNull AUGraph inGraph, @NotNull FloatPtr outMaxLoad);
 
     /**
      * [@function] AUGraphAddRenderNotify
@@ -1588,9 +1605,9 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphAddRenderNotify(AUGraph inGraph,
-            @FunctionPtr(name = "call_AUGraphAddRenderNotify") Function_AUGraphAddRenderNotify inCallback,
-            VoidPtr inRefCon);
+    public static native int AUGraphAddRenderNotify(@NotNull AUGraph inGraph,
+            @NotNull @FunctionPtr(name = "call_AUGraphAddRenderNotify") Function_AUGraphAddRenderNotify inCallback,
+            @Nullable VoidPtr inRefCon);
 
     /**
      * [@function] AUGraphRemoveRenderNotify
@@ -1607,9 +1624,9 @@ public final class AudioToolbox {
     @Deprecated
     @Generated
     @CFunction
-    public static native int AUGraphRemoveRenderNotify(AUGraph inGraph,
-            @FunctionPtr(name = "call_AUGraphRemoveRenderNotify") Function_AUGraphRemoveRenderNotify inCallback,
-            VoidPtr inRefCon);
+    public static native int AUGraphRemoveRenderNotify(@NotNull AUGraph inGraph,
+            @NotNull @FunctionPtr(name = "call_AUGraphRemoveRenderNotify") Function_AUGraphRemoveRenderNotify inCallback,
+            @Nullable VoidPtr inRefCon);
 
     /**
      * -----------------------------------------------------------------------------
@@ -1655,9 +1672,9 @@ public final class AudioToolbox {
     @Generated
     @CFunction
     public static native int AudioConverterNew(
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inSourceFormat,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inDestinationFormat,
-            Ptr<AudioConverterRef> outAudioConverter);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inSourceFormat,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inDestinationFormat,
+            @NotNull Ptr<AudioConverterRef> outAudioConverter);
 
     /**
      * -----------------------------------------------------------------------------
@@ -1685,11 +1702,11 @@ public final class AudioToolbox {
     @Generated
     @CFunction
     public static native int AudioConverterNewSpecific(
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inSourceFormat,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inDestinationFormat,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inSourceFormat,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inDestinationFormat,
             int inNumberClassDescriptions,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioClassDescription inClassDescriptions,
-            Ptr<AudioConverterRef> outAudioConverter);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioClassDescription inClassDescriptions,
+            @NotNull Ptr<AudioConverterRef> outAudioConverter);
 
     /**
      * -----------------------------------------------------------------------------
@@ -1705,7 +1722,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioConverterDispose(AudioConverterRef inAudioConverter);
+    public static native int AudioConverterDispose(@NotNull AudioConverterRef inAudioConverter);
 
     /**
      * -----------------------------------------------------------------------------
@@ -1725,7 +1742,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioConverterReset(AudioConverterRef inAudioConverter);
+    public static native int AudioConverterReset(@NotNull AudioConverterRef inAudioConverter);
 
     /**
      * -----------------------------------------------------------------------------
@@ -1747,8 +1764,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioConverterGetPropertyInfo(AudioConverterRef inAudioConverter, int inPropertyID,
-            IntPtr outSize, BytePtr outWritable);
+    public static native int AudioConverterGetPropertyInfo(@NotNull AudioConverterRef inAudioConverter,
+            int inPropertyID, @Nullable IntPtr outSize, @Nullable BytePtr outWritable);
 
     /**
      * -----------------------------------------------------------------------------
@@ -1771,8 +1788,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioConverterGetProperty(AudioConverterRef inAudioConverter, int inPropertyID,
-            IntPtr ioPropertyDataSize, VoidPtr outPropertyData);
+    public static native int AudioConverterGetProperty(@NotNull AudioConverterRef inAudioConverter, int inPropertyID,
+            @NotNull IntPtr ioPropertyDataSize, @NotNull VoidPtr outPropertyData);
 
     /**
      * -----------------------------------------------------------------------------
@@ -1794,8 +1811,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioConverterSetProperty(AudioConverterRef inAudioConverter, int inPropertyID,
-            int inPropertyDataSize, ConstVoidPtr inPropertyData);
+    public static native int AudioConverterSetProperty(@NotNull AudioConverterRef inAudioConverter, int inPropertyID,
+            int inPropertyDataSize, @NotNull ConstVoidPtr inPropertyData);
 
     /**
      * -----------------------------------------------------------------------------
@@ -1828,8 +1845,9 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioConverterConvertBuffer(AudioConverterRef inAudioConverter, int inInputDataSize,
-            ConstVoidPtr inInputData, IntPtr ioOutputDataSize, VoidPtr outOutputData);
+    public static native int AudioConverterConvertBuffer(@NotNull AudioConverterRef inAudioConverter,
+            int inInputDataSize, @NotNull ConstVoidPtr inInputData, @NotNull IntPtr ioOutputDataSize,
+            @NotNull VoidPtr outOutputData);
 
     /**
      * -----------------------------------------------------------------------------
@@ -1873,11 +1891,11 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioConverterFillComplexBuffer(AudioConverterRef inAudioConverter,
-            @FunctionPtr(name = "call_AudioConverterFillComplexBuffer") Function_AudioConverterFillComplexBuffer inInputDataProc,
-            VoidPtr inInputDataProcUserData, IntPtr ioOutputDataPacketSize,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outOutputData,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription outPacketDescription);
+    public static native int AudioConverterFillComplexBuffer(@NotNull AudioConverterRef inAudioConverter,
+            @NotNull @FunctionPtr(name = "call_AudioConverterFillComplexBuffer") Function_AudioConverterFillComplexBuffer inInputDataProc,
+            @Nullable VoidPtr inInputDataProcUserData, @NotNull IntPtr ioOutputDataPacketSize,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outOutputData,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription outPacketDescription);
 
     /**
      * -----------------------------------------------------------------------------
@@ -1905,10 +1923,10 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioConverterConvertComplexBuffer(AudioConverterRef inAudioConverter,
+    public static native int AudioConverterConvertComplexBuffer(@NotNull AudioConverterRef inAudioConverter,
             int inNumberPCMFrames,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList inInputData,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outOutputData);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList inInputData,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outOutputData);
 
     @Generated
     @Inline
@@ -1922,12 +1940,13 @@ public final class AudioToolbox {
     @NUInt
     public static native long NumAudioFileMarkersToNumBytes(@NUInt long inNumMarkers);
 
+    @NotNull
     @Generated
     @Inline
     @CFunction
     @UncertainReturn("Options: reference, array Fallback: reference")
     public static native AudioFileRegion NextAudioFileRegion(
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioFileRegion inAFRegionPtr);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioFileRegion inAFRegionPtr);
 
     /**
      * [@function] AudioFileCreateWithURL
@@ -1952,9 +1971,9 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileCreateWithURL(CFURLRef inFileRef, int inFileType,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inFormat,
-            int inFlags, Ptr<AudioFileID> outAudioFile);
+    public static native int AudioFileCreateWithURL(@NotNull CFURLRef inFileRef, int inFileType,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inFormat,
+            int inFlags, @NotNull Ptr<AudioFileID> outAudioFile);
 
     /**
      * [@function] AudioFileOpenURL
@@ -1979,8 +1998,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileOpenURL(CFURLRef inFileRef, byte inPermissions, int inFileTypeHint,
-            Ptr<AudioFileID> outAudioFile);
+    public static native int AudioFileOpenURL(@NotNull CFURLRef inFileRef, byte inPermissions, int inFileTypeHint,
+            @NotNull Ptr<AudioFileID> outAudioFile);
 
     /**
      * [@function] AudioFileInitializeWithCallbacks
@@ -2006,14 +2025,14 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileInitializeWithCallbacks(VoidPtr inClientData,
-            @FunctionPtr(name = "call_AudioFileInitializeWithCallbacks_1") Function_AudioFileInitializeWithCallbacks_1 inReadFunc,
-            @FunctionPtr(name = "call_AudioFileInitializeWithCallbacks_2") Function_AudioFileInitializeWithCallbacks_2 inWriteFunc,
-            @FunctionPtr(name = "call_AudioFileInitializeWithCallbacks_3") Function_AudioFileInitializeWithCallbacks_3 inGetSizeFunc,
-            @FunctionPtr(name = "call_AudioFileInitializeWithCallbacks_4") Function_AudioFileInitializeWithCallbacks_4 inSetSizeFunc,
+    public static native int AudioFileInitializeWithCallbacks(@NotNull VoidPtr inClientData,
+            @NotNull @FunctionPtr(name = "call_AudioFileInitializeWithCallbacks_1") Function_AudioFileInitializeWithCallbacks_1 inReadFunc,
+            @NotNull @FunctionPtr(name = "call_AudioFileInitializeWithCallbacks_2") Function_AudioFileInitializeWithCallbacks_2 inWriteFunc,
+            @NotNull @FunctionPtr(name = "call_AudioFileInitializeWithCallbacks_3") Function_AudioFileInitializeWithCallbacks_3 inGetSizeFunc,
+            @NotNull @FunctionPtr(name = "call_AudioFileInitializeWithCallbacks_4") Function_AudioFileInitializeWithCallbacks_4 inSetSizeFunc,
             int inFileType,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inFormat,
-            int inFlags, Ptr<AudioFileID> outAudioFile);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inFormat,
+            int inFlags, @NotNull Ptr<AudioFileID> outAudioFile);
 
     /**
      * [@function] AudioFileOpenWithCallbacks
@@ -2041,12 +2060,12 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileOpenWithCallbacks(VoidPtr inClientData,
-            @FunctionPtr(name = "call_AudioFileOpenWithCallbacks_1") Function_AudioFileOpenWithCallbacks_1 inReadFunc,
-            @FunctionPtr(name = "call_AudioFileOpenWithCallbacks_2") Function_AudioFileOpenWithCallbacks_2 inWriteFunc,
-            @FunctionPtr(name = "call_AudioFileOpenWithCallbacks_3") Function_AudioFileOpenWithCallbacks_3 inGetSizeFunc,
-            @FunctionPtr(name = "call_AudioFileOpenWithCallbacks_4") Function_AudioFileOpenWithCallbacks_4 inSetSizeFunc,
-            int inFileTypeHint, Ptr<AudioFileID> outAudioFile);
+    public static native int AudioFileOpenWithCallbacks(@NotNull VoidPtr inClientData,
+            @NotNull @FunctionPtr(name = "call_AudioFileOpenWithCallbacks_1") Function_AudioFileOpenWithCallbacks_1 inReadFunc,
+            @Nullable @FunctionPtr(name = "call_AudioFileOpenWithCallbacks_2") Function_AudioFileOpenWithCallbacks_2 inWriteFunc,
+            @NotNull @FunctionPtr(name = "call_AudioFileOpenWithCallbacks_3") Function_AudioFileOpenWithCallbacks_3 inGetSizeFunc,
+            @Nullable @FunctionPtr(name = "call_AudioFileOpenWithCallbacks_4") Function_AudioFileOpenWithCallbacks_4 inSetSizeFunc,
+            int inFileTypeHint, @NotNull Ptr<AudioFileID> outAudioFile);
 
     /**
      * [@function] AudioFileClose
@@ -2060,7 +2079,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileClose(AudioFileID inAudioFile);
+    public static native int AudioFileClose(@NotNull AudioFileID inAudioFile);
 
     /**
      * [@function] AudioFileOptimize
@@ -2082,7 +2101,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileOptimize(AudioFileID inAudioFile);
+    public static native int AudioFileOptimize(@NotNull AudioFileID inAudioFile);
 
     /**
      * [@function] AudioFileReadBytes
@@ -2103,8 +2122,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileReadBytes(AudioFileID inAudioFile, byte inUseCache, long inStartingByte,
-            IntPtr ioNumBytes, VoidPtr outBuffer);
+    public static native int AudioFileReadBytes(@NotNull AudioFileID inAudioFile, byte inUseCache, long inStartingByte,
+            @NotNull IntPtr ioNumBytes, @NotNull VoidPtr outBuffer);
 
     /**
      * [@function] AudioFileWriteBytes
@@ -2123,8 +2142,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileWriteBytes(AudioFileID inAudioFile, byte inUseCache, long inStartingByte,
-            IntPtr ioNumBytes, ConstVoidPtr inBuffer);
+    public static native int AudioFileWriteBytes(@NotNull AudioFileID inAudioFile, byte inUseCache, long inStartingByte,
+            @NotNull IntPtr ioNumBytes, @NotNull ConstVoidPtr inBuffer);
 
     /**
      * [@function] AudioFileReadPacketData
@@ -2161,9 +2180,9 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileReadPacketData(AudioFileID inAudioFile, byte inUseCache, IntPtr ioNumBytes,
-            Ptr<AudioStreamPacketDescription> outPacketDescriptions, long inStartingPacket, IntPtr ioNumPackets,
-            VoidPtr outBuffer);
+    public static native int AudioFileReadPacketData(@NotNull AudioFileID inAudioFile, byte inUseCache,
+            @NotNull IntPtr ioNumBytes, @Nullable Ptr<AudioStreamPacketDescription> outPacketDescriptions,
+            long inStartingPacket, @NotNull IntPtr ioNumPackets, @Nullable VoidPtr outBuffer);
 
     /**
      * [@function] AudioFileReadPackets
@@ -2198,9 +2217,9 @@ public final class AudioToolbox {
     @Generated
     @Deprecated
     @CFunction
-    public static native int AudioFileReadPackets(AudioFileID inAudioFile, byte inUseCache, IntPtr outNumBytes,
-            Ptr<AudioStreamPacketDescription> outPacketDescriptions, long inStartingPacket, IntPtr ioNumPackets,
-            VoidPtr outBuffer);
+    public static native int AudioFileReadPackets(@NotNull AudioFileID inAudioFile, byte inUseCache,
+            @NotNull IntPtr outNumBytes, @Nullable Ptr<AudioStreamPacketDescription> outPacketDescriptions,
+            long inStartingPacket, @NotNull IntPtr ioNumPackets, @Nullable VoidPtr outBuffer);
 
     /**
      * [@function] AudioFileWritePackets
@@ -2225,9 +2244,9 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileWritePackets(AudioFileID inAudioFile, byte inUseCache, int inNumBytes,
-            ConstPtr<AudioStreamPacketDescription> inPacketDescriptions, long inStartingPacket, IntPtr ioNumPackets,
-            ConstVoidPtr inBuffer);
+    public static native int AudioFileWritePackets(@NotNull AudioFileID inAudioFile, byte inUseCache, int inNumBytes,
+            @Nullable ConstPtr<AudioStreamPacketDescription> inPacketDescriptions, long inStartingPacket,
+            @NotNull IntPtr ioNumPackets, @NotNull ConstVoidPtr inBuffer);
 
     /**
      * [@function] AudioFileCountUserData
@@ -2247,7 +2266,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileCountUserData(AudioFileID inAudioFile, int inUserDataID, IntPtr outNumberItems);
+    public static native int AudioFileCountUserData(@NotNull AudioFileID inAudioFile, int inUserDataID,
+            @NotNull IntPtr outNumberItems);
 
     /**
      * [@function] AudioFileGetUserDataSize
@@ -2264,8 +2284,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileGetUserDataSize(AudioFileID inAudioFile, int inUserDataID, int inIndex,
-            IntPtr outUserDataSize);
+    public static native int AudioFileGetUserDataSize(@NotNull AudioFileID inAudioFile, int inUserDataID, int inIndex,
+            @NotNull IntPtr outUserDataSize);
 
     /**
      * [@function] AudioFileGetUserData
@@ -2283,8 +2303,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileGetUserData(AudioFileID inAudioFile, int inUserDataID, int inIndex,
-            IntPtr ioUserDataSize, VoidPtr outUserData);
+    public static native int AudioFileGetUserData(@NotNull AudioFileID inAudioFile, int inUserDataID, int inIndex,
+            @NotNull IntPtr ioUserDataSize, @NotNull VoidPtr outUserData);
 
     /**
      * [@function] AudioFileSetUserData
@@ -2303,8 +2323,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileSetUserData(AudioFileID inAudioFile, int inUserDataID, int inIndex,
-            int inUserDataSize, ConstVoidPtr inUserData);
+    public static native int AudioFileSetUserData(@NotNull AudioFileID inAudioFile, int inUserDataID, int inIndex,
+            int inUserDataSize, @NotNull ConstVoidPtr inUserData);
 
     /**
      * [@function] AudioFileRemoveUserData
@@ -2320,7 +2340,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileRemoveUserData(AudioFileID inAudioFile, int inUserDataID, int inIndex);
+    public static native int AudioFileRemoveUserData(@NotNull AudioFileID inAudioFile, int inUserDataID, int inIndex);
 
     /**
      * [@function] AudioFileGetPropertyInfo
@@ -2338,8 +2358,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileGetPropertyInfo(AudioFileID inAudioFile, int inPropertyID, IntPtr outDataSize,
-            IntPtr isWritable);
+    public static native int AudioFileGetPropertyInfo(@NotNull AudioFileID inAudioFile, int inPropertyID,
+            @Nullable IntPtr outDataSize, @Nullable IntPtr isWritable);
 
     /**
      * [@function] AudioFileGetProperty
@@ -2357,8 +2377,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileGetProperty(AudioFileID inAudioFile, int inPropertyID, IntPtr ioDataSize,
-            VoidPtr outPropertyData);
+    public static native int AudioFileGetProperty(@NotNull AudioFileID inAudioFile, int inPropertyID,
+            @NotNull IntPtr ioDataSize, @NotNull VoidPtr outPropertyData);
 
     /**
      * [@function] AudioFileSetProperty
@@ -2375,8 +2395,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileSetProperty(AudioFileID inAudioFile, int inPropertyID, int inDataSize,
-            ConstVoidPtr inPropertyData);
+    public static native int AudioFileSetProperty(@NotNull AudioFileID inAudioFile, int inPropertyID, int inDataSize,
+            @NotNull ConstVoidPtr inPropertyData);
 
     /**
      * [@function] AudioFileGetGlobalInfoSize
@@ -2396,8 +2416,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileGetGlobalInfoSize(int inPropertyID, int inSpecifierSize, VoidPtr inSpecifier,
-            IntPtr outDataSize);
+    public static native int AudioFileGetGlobalInfoSize(int inPropertyID, int inSpecifierSize,
+            @Nullable VoidPtr inSpecifier, @NotNull IntPtr outDataSize);
 
     /**
      * [@function] AudioFileGetGlobalInfo
@@ -2417,8 +2437,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileGetGlobalInfo(int inPropertyID, int inSpecifierSize, VoidPtr inSpecifier,
-            IntPtr ioDataSize, VoidPtr outPropertyData);
+    public static native int AudioFileGetGlobalInfo(int inPropertyID, int inSpecifierSize,
+            @Nullable VoidPtr inSpecifier, @NotNull IntPtr ioDataSize, @NotNull VoidPtr outPropertyData);
 
     /**
      * [@function] AudioFileStreamOpen
@@ -2464,10 +2484,10 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileStreamOpen(VoidPtr inClientData,
-            @FunctionPtr(name = "call_AudioFileStreamOpen_1") Function_AudioFileStreamOpen_1 inPropertyListenerProc,
-            @FunctionPtr(name = "call_AudioFileStreamOpen_2") Function_AudioFileStreamOpen_2 inPacketsProc,
-            int inFileTypeHint, Ptr<AudioFileStreamID> outAudioFileStream);
+    public static native int AudioFileStreamOpen(@Nullable VoidPtr inClientData,
+            @NotNull @FunctionPtr(name = "call_AudioFileStreamOpen_1") Function_AudioFileStreamOpen_1 inPropertyListenerProc,
+            @NotNull @FunctionPtr(name = "call_AudioFileStreamOpen_2") Function_AudioFileStreamOpen_2 inPacketsProc,
+            int inFileTypeHint, @NotNull Ptr<AudioFileStreamID> outAudioFileStream);
 
     /**
      * [@function] AudioFileStreamParseBytes
@@ -2492,8 +2512,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileStreamParseBytes(AudioFileStreamID inAudioFileStream, int inDataByteSize,
-            ConstVoidPtr inData, int inFlags);
+    public static native int AudioFileStreamParseBytes(@NotNull AudioFileStreamID inAudioFileStream, int inDataByteSize,
+            @Nullable ConstVoidPtr inData, int inFlags);
 
     /**
      * [@function] AudioFileStreamSeek
@@ -2522,8 +2542,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileStreamSeek(AudioFileStreamID inAudioFileStream, long inPacketOffset,
-            LongPtr outDataByteOffset, IntPtr ioFlags);
+    public static native int AudioFileStreamSeek(@NotNull AudioFileStreamID inAudioFileStream, long inPacketOffset,
+            @NotNull LongPtr outDataByteOffset, @NotNull IntPtr ioFlags);
 
     /**
      * [@function] AudioFileStreamGetPropertyInfo
@@ -2546,8 +2566,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileStreamGetPropertyInfo(AudioFileStreamID inAudioFileStream, int inPropertyID,
-            IntPtr outPropertyDataSize, BytePtr outWritable);
+    public static native int AudioFileStreamGetPropertyInfo(@NotNull AudioFileStreamID inAudioFileStream,
+            int inPropertyID, @Nullable IntPtr outPropertyDataSize, @Nullable BytePtr outWritable);
 
     /**
      * [@function] AudioFileStreamGetProperty
@@ -2570,8 +2590,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileStreamGetProperty(AudioFileStreamID inAudioFileStream, int inPropertyID,
-            IntPtr ioPropertyDataSize, VoidPtr outPropertyData);
+    public static native int AudioFileStreamGetProperty(@NotNull AudioFileStreamID inAudioFileStream, int inPropertyID,
+            @NotNull IntPtr ioPropertyDataSize, @NotNull VoidPtr outPropertyData);
 
     /**
      * [@function] AudioFileStreamSetProperty
@@ -2593,8 +2613,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileStreamSetProperty(AudioFileStreamID inAudioFileStream, int inPropertyID,
-            int inPropertyDataSize, ConstVoidPtr inPropertyData);
+    public static native int AudioFileStreamSetProperty(@NotNull AudioFileStreamID inAudioFileStream, int inPropertyID,
+            int inPropertyDataSize, @NotNull ConstVoidPtr inPropertyData);
 
     /**
      * [@function] AudioFileStreamClose
@@ -2608,7 +2628,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFileStreamClose(AudioFileStreamID inAudioFileStream);
+    public static native int AudioFileStreamClose(@NotNull AudioFileStreamID inAudioFileStream);
 
     /**
      * [@function] AudioFormatGetPropertyInfo
@@ -2627,8 +2647,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFormatGetPropertyInfo(int inPropertyID, int inSpecifierSize, ConstVoidPtr inSpecifier,
-            IntPtr outPropertyDataSize);
+    public static native int AudioFormatGetPropertyInfo(int inPropertyID, int inSpecifierSize,
+            @Nullable ConstVoidPtr inSpecifier, @NotNull IntPtr outPropertyDataSize);
 
     /**
      * [@function] AudioFormatGetProperty
@@ -2649,8 +2669,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioFormatGetProperty(int inPropertyID, int inSpecifierSize, ConstVoidPtr inSpecifier,
-            IntPtr ioPropertyDataSize, VoidPtr outPropertyData);
+    public static native int AudioFormatGetProperty(int inPropertyID, int inSpecifierSize,
+            @Nullable ConstVoidPtr inSpecifier, @Nullable IntPtr ioPropertyDataSize, @Nullable VoidPtr outPropertyData);
 
     /**
      * [@function] AudioQueueNewOutput
@@ -2695,10 +2715,10 @@ public final class AudioToolbox {
     @Generated
     @CFunction
     public static native int AudioQueueNewOutput(
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inFormat,
-            @FunctionPtr(name = "call_AudioQueueNewOutput") Function_AudioQueueNewOutput inCallbackProc,
-            VoidPtr inUserData, CFRunLoopRef inCallbackRunLoop, CFStringRef inCallbackRunLoopMode, int inFlags,
-            Ptr<AudioQueueRef> outAQ);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inFormat,
+            @NotNull @FunctionPtr(name = "call_AudioQueueNewOutput") Function_AudioQueueNewOutput inCallbackProc,
+            @Nullable VoidPtr inUserData, @Nullable CFRunLoopRef inCallbackRunLoop,
+            @Nullable CFStringRef inCallbackRunLoopMode, int inFlags, @NotNull Ptr<AudioQueueRef> outAQ);
 
     /**
      * [@function] AudioQueueNewInput
@@ -2745,10 +2765,10 @@ public final class AudioToolbox {
     @Generated
     @CFunction
     public static native int AudioQueueNewInput(
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inFormat,
-            @FunctionPtr(name = "call_AudioQueueNewInput") Function_AudioQueueNewInput inCallbackProc,
-            VoidPtr inUserData, CFRunLoopRef inCallbackRunLoop, CFStringRef inCallbackRunLoopMode, int inFlags,
-            Ptr<AudioQueueRef> outAQ);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inFormat,
+            @NotNull @FunctionPtr(name = "call_AudioQueueNewInput") Function_AudioQueueNewInput inCallbackProc,
+            @Nullable VoidPtr inUserData, @Nullable CFRunLoopRef inCallbackRunLoop,
+            @Nullable CFStringRef inCallbackRunLoopMode, int inFlags, @NotNull Ptr<AudioQueueRef> outAQ);
 
     /**
      * [@function] AudioQueueNewOutputWithDispatchQueue
@@ -2782,10 +2802,10 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueNewOutputWithDispatchQueue(Ptr<AudioQueueRef> outAQ,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inFormat,
-            int inFlags, NSObject inCallbackDispatchQueue,
-            @ObjCBlock(name = "call_AudioQueueNewOutputWithDispatchQueue") Block_AudioQueueNewOutputWithDispatchQueue inCallbackBlock);
+    public static native int AudioQueueNewOutputWithDispatchQueue(@NotNull Ptr<AudioQueueRef> outAQ,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inFormat,
+            int inFlags, @NotNull NSObject inCallbackDispatchQueue,
+            @NotNull @ObjCBlock(name = "call_AudioQueueNewOutputWithDispatchQueue") Block_AudioQueueNewOutputWithDispatchQueue inCallbackBlock);
 
     /**
      * [@function] AudioQueueNewInputWithDispatchQueue
@@ -2822,10 +2842,10 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueNewInputWithDispatchQueue(Ptr<AudioQueueRef> outAQ,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inFormat,
-            int inFlags, NSObject inCallbackDispatchQueue,
-            @ObjCBlock(name = "call_AudioQueueNewInputWithDispatchQueue") Block_AudioQueueNewInputWithDispatchQueue inCallbackBlock);
+    public static native int AudioQueueNewInputWithDispatchQueue(@NotNull Ptr<AudioQueueRef> outAQ,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inFormat,
+            int inFlags, @NotNull NSObject inCallbackDispatchQueue,
+            @NotNull @ObjCBlock(name = "call_AudioQueueNewInputWithDispatchQueue") Block_AudioQueueNewInputWithDispatchQueue inCallbackBlock);
 
     /**
      * [@function] AudioQueueDispose
@@ -2851,7 +2871,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueDispose(AudioQueueRef inAQ, byte inImmediate);
+    public static native int AudioQueueDispose(@NotNull AudioQueueRef inAQ, byte inImmediate);
 
     /**
      * [@function] AudioQueueAllocateBuffer
@@ -2876,8 +2896,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueAllocateBuffer(AudioQueueRef inAQ, int inBufferByteSize,
-            Ptr<Ptr<AudioQueueBuffer>> outBuffer);
+    public static native int AudioQueueAllocateBuffer(@NotNull AudioQueueRef inAQ, int inBufferByteSize,
+            @NotNull Ptr<Ptr<AudioQueueBuffer>> outBuffer);
 
     /**
      * [@function] AudioQueueAllocateBufferWithPacketDescriptions
@@ -2906,8 +2926,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueAllocateBufferWithPacketDescriptions(AudioQueueRef inAQ, int inBufferByteSize,
-            int inNumberPacketDescriptions, Ptr<Ptr<AudioQueueBuffer>> outBuffer);
+    public static native int AudioQueueAllocateBufferWithPacketDescriptions(@NotNull AudioQueueRef inAQ,
+            int inBufferByteSize, int inNumberPacketDescriptions, @NotNull Ptr<Ptr<AudioQueueBuffer>> outBuffer);
 
     /**
      * [@function] AudioQueueFreeBuffer
@@ -2930,8 +2950,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueFreeBuffer(AudioQueueRef inAQ,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioQueueBuffer inBuffer);
+    public static native int AudioQueueFreeBuffer(@NotNull AudioQueueRef inAQ,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioQueueBuffer inBuffer);
 
     /**
      * [@function] AudioQueueEnqueueBuffer
@@ -2964,10 +2984,10 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueEnqueueBuffer(AudioQueueRef inAQ,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioQueueBuffer inBuffer,
+    public static native int AudioQueueEnqueueBuffer(@NotNull AudioQueueRef inAQ,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioQueueBuffer inBuffer,
             int inNumPacketDescs,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription inPacketDescs);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription inPacketDescs);
 
     /**
      * [@function] AudioQueueEnqueueBufferWithParameters
@@ -3039,14 +3059,14 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueEnqueueBufferWithParameters(AudioQueueRef inAQ,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioQueueBuffer inBuffer,
+    public static native int AudioQueueEnqueueBufferWithParameters(@NotNull AudioQueueRef inAQ,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioQueueBuffer inBuffer,
             int inNumPacketDescs,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription inPacketDescs,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription inPacketDescs,
             int inTrimFramesAtStart, int inTrimFramesAtEnd, int inNumParamValues,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioQueueParameterEvent inParamValues,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp inStartTime,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp outActualStartTime);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioQueueParameterEvent inParamValues,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp inStartTime,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp outActualStartTime);
 
     /**
      * [@function] AudioQueueStart
@@ -3067,8 +3087,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueStart(AudioQueueRef inAQ,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp inStartTime);
+    public static native int AudioQueueStart(@NotNull AudioQueueRef inAQ,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp inStartTime);
 
     /**
      * [@function] AudioQueuePrime
@@ -3104,8 +3124,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueuePrime(AudioQueueRef inAQ, int inNumberOfFramesToPrepare,
-            IntPtr outNumberOfFramesPrepared);
+    public static native int AudioQueuePrime(@NotNull AudioQueueRef inAQ, int inNumberOfFramesToPrepare,
+            @Nullable IntPtr outNumberOfFramesPrepared);
 
     /**
      * [@function] AudioQueueStop
@@ -3138,7 +3158,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueStop(AudioQueueRef inAQ, byte inImmediate);
+    public static native int AudioQueueStop(@NotNull AudioQueueRef inAQ, byte inImmediate);
 
     /**
      * [@function] AudioQueuePause
@@ -3156,7 +3176,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueuePause(AudioQueueRef inAQ);
+    public static native int AudioQueuePause(@NotNull AudioQueueRef inAQ);
 
     /**
      * [@function] AudioQueueFlush
@@ -3183,7 +3203,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueFlush(AudioQueueRef inAQ);
+    public static native int AudioQueueFlush(@NotNull AudioQueueRef inAQ);
 
     /**
      * [@function] AudioQueueReset
@@ -3211,7 +3231,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueReset(AudioQueueRef inAQ);
+    public static native int AudioQueueReset(@NotNull AudioQueueRef inAQ);
 
     /**
      * [@function] AudioQueueGetParameter
@@ -3236,7 +3256,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueGetParameter(AudioQueueRef inAQ, int inParamID, FloatPtr outValue);
+    public static native int AudioQueueGetParameter(@NotNull AudioQueueRef inAQ, int inParamID,
+            @NotNull FloatPtr outValue);
 
     /**
      * [@function] AudioQueueSetParameter
@@ -3256,7 +3277,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueSetParameter(AudioQueueRef inAQ, int inParamID, float inValue);
+    public static native int AudioQueueSetParameter(@NotNull AudioQueueRef inAQ, int inParamID, float inValue);
 
     /**
      * [@function] AudioQueueGetProperty
@@ -3279,7 +3300,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueGetProperty(AudioQueueRef inAQ, int inID, VoidPtr outData, IntPtr ioDataSize);
+    public static native int AudioQueueGetProperty(@NotNull AudioQueueRef inAQ, int inID, @NotNull VoidPtr outData,
+            @NotNull IntPtr ioDataSize);
 
     /**
      * [@function] AudioQueueSetProperty
@@ -3302,7 +3324,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueSetProperty(AudioQueueRef inAQ, int inID, ConstVoidPtr inData, int inDataSize);
+    public static native int AudioQueueSetProperty(@NotNull AudioQueueRef inAQ, int inID, @NotNull ConstVoidPtr inData,
+            int inDataSize);
 
     /**
      * [@function] AudioQueueGetPropertySize
@@ -3323,7 +3346,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueGetPropertySize(AudioQueueRef inAQ, int inID, IntPtr outDataSize);
+    public static native int AudioQueueGetPropertySize(@NotNull AudioQueueRef inAQ, int inID,
+            @NotNull IntPtr outDataSize);
 
     /**
      * [@function] AudioQueueAddPropertyListener
@@ -3351,9 +3375,9 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueAddPropertyListener(AudioQueueRef inAQ, int inID,
-            @FunctionPtr(name = "call_AudioQueueAddPropertyListener") Function_AudioQueueAddPropertyListener inProc,
-            VoidPtr inUserData);
+    public static native int AudioQueueAddPropertyListener(@NotNull AudioQueueRef inAQ, int inID,
+            @NotNull @FunctionPtr(name = "call_AudioQueueAddPropertyListener") Function_AudioQueueAddPropertyListener inProc,
+            @Nullable VoidPtr inUserData);
 
     /**
      * [@function] AudioQueueRemovePropertyListener
@@ -3375,9 +3399,9 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueRemovePropertyListener(AudioQueueRef inAQ, int inID,
-            @FunctionPtr(name = "call_AudioQueueRemovePropertyListener") Function_AudioQueueRemovePropertyListener inProc,
-            VoidPtr inUserData);
+    public static native int AudioQueueRemovePropertyListener(@NotNull AudioQueueRef inAQ, int inID,
+            @NotNull @FunctionPtr(name = "call_AudioQueueRemovePropertyListener") Function_AudioQueueRemovePropertyListener inProc,
+            @Nullable VoidPtr inUserData);
 
     /**
      * [@function] AudioQueueCreateTimeline
@@ -3398,7 +3422,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueCreateTimeline(AudioQueueRef inAQ, Ptr<AudioQueueTimelineRef> outTimeline);
+    public static native int AudioQueueCreateTimeline(@NotNull AudioQueueRef inAQ,
+            @NotNull Ptr<AudioQueueTimelineRef> outTimeline);
 
     /**
      * [@function] AudioQueueDisposeTimeline
@@ -3420,7 +3445,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueDisposeTimeline(AudioQueueRef inAQ, AudioQueueTimelineRef inTimeline);
+    public static native int AudioQueueDisposeTimeline(@NotNull AudioQueueRef inAQ,
+            @NotNull AudioQueueTimelineRef inTimeline);
 
     /**
      * [@function] AudioQueueGetCurrentTime
@@ -3460,9 +3486,10 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueGetCurrentTime(AudioQueueRef inAQ, AudioQueueTimelineRef inTimeline,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp outTimeStamp,
-            BytePtr outTimelineDiscontinuity);
+    public static native int AudioQueueGetCurrentTime(@NotNull AudioQueueRef inAQ,
+            @Nullable AudioQueueTimelineRef inTimeline,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp outTimeStamp,
+            @Nullable BytePtr outTimelineDiscontinuity);
 
     /**
      * [@function] AudioQueueDeviceGetCurrentTime
@@ -3486,8 +3513,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueDeviceGetCurrentTime(AudioQueueRef inAQ,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp outTimeStamp);
+    public static native int AudioQueueDeviceGetCurrentTime(@NotNull AudioQueueRef inAQ,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp outTimeStamp);
 
     /**
      * [@function] AudioQueueDeviceTranslateTime
@@ -3521,9 +3548,9 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueDeviceTranslateTime(AudioQueueRef inAQ,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp inTime,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp outTime);
+    public static native int AudioQueueDeviceTranslateTime(@NotNull AudioQueueRef inAQ,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp inTime,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp outTime);
 
     /**
      * [@function] AudioQueueDeviceGetNearestStartTime
@@ -3544,8 +3571,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueDeviceGetNearestStartTime(AudioQueueRef inAQ,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp ioRequestedStartTime,
+    public static native int AudioQueueDeviceGetNearestStartTime(@NotNull AudioQueueRef inAQ,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp ioRequestedStartTime,
             int inFlags);
 
     /**
@@ -3573,9 +3600,9 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueSetOfflineRenderFormat(AudioQueueRef inAQ,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inFormat,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioChannelLayout inLayout);
+    public static native int AudioQueueSetOfflineRenderFormat(@NotNull AudioQueueRef inAQ,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inFormat,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioChannelLayout inLayout);
 
     /**
      * [@function] AudioQueueOfflineRender
@@ -3600,9 +3627,9 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueOfflineRender(AudioQueueRef inAQ,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp inTimestamp,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioQueueBuffer ioBuffer,
+    public static native int AudioQueueOfflineRender(@NotNull AudioQueueRef inAQ,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp inTimestamp,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioQueueBuffer ioBuffer,
             int inNumberFrames);
 
     /**
@@ -3661,11 +3688,11 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueProcessingTapNew(AudioQueueRef inAQ,
-            @FunctionPtr(name = "call_AudioQueueProcessingTapNew") Function_AudioQueueProcessingTapNew inCallback,
-            VoidPtr inClientData, int inFlags, IntPtr outMaxFrames,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription outProcessingFormat,
-            Ptr<AudioQueueProcessingTapRef> outAQTap);
+    public static native int AudioQueueProcessingTapNew(@NotNull AudioQueueRef inAQ,
+            @NotNull @FunctionPtr(name = "call_AudioQueueProcessingTapNew") Function_AudioQueueProcessingTapNew inCallback,
+            @Nullable VoidPtr inClientData, int inFlags, @NotNull IntPtr outMaxFrames,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription outProcessingFormat,
+            @NotNull Ptr<AudioQueueProcessingTapRef> outAQTap);
 
     /**
      * [@function] AudioQueueProcessingTapDispose
@@ -3684,7 +3711,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueProcessingTapDispose(AudioQueueProcessingTapRef inAQTap);
+    public static native int AudioQueueProcessingTapDispose(@NotNull AudioQueueProcessingTapRef inAQTap);
 
     /**
      * [@function] AudioQueueProcessingTapGetSourceAudio
@@ -3721,11 +3748,11 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueProcessingTapGetSourceAudio(AudioQueueProcessingTapRef inAQTap,
+    public static native int AudioQueueProcessingTapGetSourceAudio(@NotNull AudioQueueProcessingTapRef inAQTap,
             int inNumberFrames,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp ioTimeStamp,
-            IntPtr outFlags, IntPtr outNumberFrames,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList ioData);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp ioTimeStamp,
+            @NotNull IntPtr outFlags, @NotNull IntPtr outNumberFrames,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList ioData);
 
     /**
      * [@function] AudioQueueProcessingTapGetQueueTime
@@ -3754,8 +3781,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioQueueProcessingTapGetQueueTime(AudioQueueProcessingTapRef inAQTap,
-            DoublePtr outQueueSampleTime, IntPtr outQueueFrameCount);
+    public static native int AudioQueueProcessingTapGetQueueTime(@NotNull AudioQueueProcessingTapRef inAQTap,
+            @NotNull DoublePtr outQueueSampleTime, @NotNull IntPtr outQueueFrameCount);
 
     /**
      * [@function] AudioSessionInitialize
@@ -4019,7 +4046,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioServicesCreateSystemSoundID(CFURLRef inFileURL, IntPtr outSystemSoundID);
+    public static native int AudioServicesCreateSystemSoundID(@NotNull CFURLRef inFileURL,
+            @NotNull IntPtr outSystemSoundID);
 
     /**
      * [@function] AudioServicesDisposeSystemSoundID
@@ -4060,7 +4088,7 @@ public final class AudioToolbox {
     @Generated
     @CFunction
     public static native void AudioServicesPlayAlertSoundWithCompletion(int inSystemSoundID,
-            @ObjCBlock(name = "call_AudioServicesPlayAlertSoundWithCompletion") Block_AudioServicesPlayAlertSoundWithCompletion inCompletionBlock);
+            @Nullable @ObjCBlock(name = "call_AudioServicesPlayAlertSoundWithCompletion") Block_AudioServicesPlayAlertSoundWithCompletion inCompletionBlock);
 
     /**
      * [@function] AudioServicesPlaySystemSoundWithCompletion
@@ -4081,7 +4109,7 @@ public final class AudioToolbox {
     @Generated
     @CFunction
     public static native void AudioServicesPlaySystemSoundWithCompletion(int inSystemSoundID,
-            @ObjCBlock(name = "call_AudioServicesPlaySystemSoundWithCompletion") Block_AudioServicesPlaySystemSoundWithCompletion inCompletionBlock);
+            @Nullable @ObjCBlock(name = "call_AudioServicesPlaySystemSoundWithCompletion") Block_AudioServicesPlaySystemSoundWithCompletion inCompletionBlock);
 
     /**
      * [@function] AudioServicesGetPropertyInfo
@@ -4108,7 +4136,7 @@ public final class AudioToolbox {
     @Generated
     @CFunction
     public static native int AudioServicesGetPropertyInfo(int inPropertyID, int inSpecifierSize,
-            ConstVoidPtr inSpecifier, IntPtr outPropertyDataSize, BytePtr outWritable);
+            @Nullable ConstVoidPtr inSpecifier, @Nullable IntPtr outPropertyDataSize, @Nullable BytePtr outWritable);
 
     /**
      * [@function] AudioServicesGetProperty
@@ -4135,8 +4163,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioServicesGetProperty(int inPropertyID, int inSpecifierSize, ConstVoidPtr inSpecifier,
-            IntPtr ioPropertyDataSize, VoidPtr outPropertyData);
+    public static native int AudioServicesGetProperty(int inPropertyID, int inSpecifierSize,
+            @Nullable ConstVoidPtr inSpecifier, @NotNull IntPtr ioPropertyDataSize, @Nullable VoidPtr outPropertyData);
 
     /**
      * [@function] AudioServicesSetProperty
@@ -4160,8 +4188,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioServicesSetProperty(int inPropertyID, int inSpecifierSize, ConstVoidPtr inSpecifier,
-            int inPropertyDataSize, ConstVoidPtr inPropertyData);
+    public static native int AudioServicesSetProperty(int inPropertyID, int inSpecifierSize,
+            @Nullable ConstVoidPtr inSpecifier, int inPropertyDataSize, @NotNull ConstVoidPtr inPropertyData);
 
     /**
      * This function will be deprecated in a future release. Use AudioServicesPlayAlertSoundWithCompletion instead.
@@ -4232,10 +4260,10 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioServicesAddSystemSoundCompletion(int inSystemSoundID, CFRunLoopRef inRunLoop,
-            CFStringRef inRunLoopMode,
-            @FunctionPtr(name = "call_AudioServicesAddSystemSoundCompletion") Function_AudioServicesAddSystemSoundCompletion inCompletionRoutine,
-            VoidPtr inClientData);
+    public static native int AudioServicesAddSystemSoundCompletion(int inSystemSoundID,
+            @Nullable CFRunLoopRef inRunLoop, @Nullable CFStringRef inRunLoopMode,
+            @NotNull @FunctionPtr(name = "call_AudioServicesAddSystemSoundCompletion") Function_AudioServicesAddSystemSoundCompletion inCompletionRoutine,
+            @Nullable VoidPtr inClientData);
 
     /**
      * This function will be deprecated in a future release. Use AudioServicesPlayAlertSoundWithCompletion
@@ -4275,7 +4303,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int ExtAudioFileOpenURL(CFURLRef inURL, Ptr<ExtAudioFileRef> outExtAudioFile);
+    public static native int ExtAudioFileOpenURL(@NotNull CFURLRef inURL,
+            @NotNull Ptr<ExtAudioFileRef> outExtAudioFile);
 
     /**
      * [@function] ExtAudioFileWrapAudioFileID
@@ -4300,8 +4329,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int ExtAudioFileWrapAudioFileID(AudioFileID inFileID, byte inForWriting,
-            Ptr<ExtAudioFileRef> outExtAudioFile);
+    public static native int ExtAudioFileWrapAudioFileID(@NotNull AudioFileID inFileID, byte inForWriting,
+            @NotNull Ptr<ExtAudioFileRef> outExtAudioFile);
 
     /**
      * [@function] ExtAudioFileCreateWithURL
@@ -4336,10 +4365,10 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int ExtAudioFileCreateWithURL(CFURLRef inURL, int inFileType,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inStreamDesc,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioChannelLayout inChannelLayout,
-            int inFlags, Ptr<ExtAudioFileRef> outExtAudioFile);
+    public static native int ExtAudioFileCreateWithURL(@NotNull CFURLRef inURL, int inFileType,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inStreamDesc,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioChannelLayout inChannelLayout,
+            int inFlags, @NotNull Ptr<ExtAudioFileRef> outExtAudioFile);
 
     /**
      * [@function] ExtAudioFileDispose
@@ -4356,7 +4385,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int ExtAudioFileDispose(ExtAudioFileRef inExtAudioFile);
+    public static native int ExtAudioFileDispose(@NotNull ExtAudioFileRef inExtAudioFile);
 
     /**
      * [@function] ExtAudioFileRead
@@ -4387,8 +4416,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int ExtAudioFileRead(ExtAudioFileRef inExtAudioFile, IntPtr ioNumberFrames,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList ioData);
+    public static native int ExtAudioFileRead(@NotNull ExtAudioFileRef inExtAudioFile, @NotNull IntPtr ioNumberFrames,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList ioData);
 
     /**
      * [@function] ExtAudioFileWrite
@@ -4411,8 +4440,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int ExtAudioFileWrite(ExtAudioFileRef inExtAudioFile, int inNumberFrames,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList ioData);
+    public static native int ExtAudioFileWrite(@NotNull ExtAudioFileRef inExtAudioFile, int inNumberFrames,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList ioData);
 
     /**
      * [@function] ExtAudioFileWriteAsync
@@ -4446,8 +4475,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int ExtAudioFileWriteAsync(ExtAudioFileRef inExtAudioFile, int inNumberFrames,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList ioData);
+    public static native int ExtAudioFileWriteAsync(@NotNull ExtAudioFileRef inExtAudioFile, int inNumberFrames,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList ioData);
 
     /**
      * [@function] ExtAudioFileSeek
@@ -4472,7 +4501,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int ExtAudioFileSeek(ExtAudioFileRef inExtAudioFile, long inFrameOffset);
+    public static native int ExtAudioFileSeek(@NotNull ExtAudioFileRef inExtAudioFile, long inFrameOffset);
 
     /**
      * [@function] ExtAudioFileTell
@@ -4490,7 +4519,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int ExtAudioFileTell(ExtAudioFileRef inExtAudioFile, LongPtr outFrameOffset);
+    public static native int ExtAudioFileTell(@NotNull ExtAudioFileRef inExtAudioFile, @NotNull LongPtr outFrameOffset);
 
     /**
      * [@function] ExtAudioFileGetPropertyInfo
@@ -4511,8 +4540,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int ExtAudioFileGetPropertyInfo(ExtAudioFileRef inExtAudioFile, int inPropertyID,
-            IntPtr outSize, BytePtr outWritable);
+    public static native int ExtAudioFileGetPropertyInfo(@NotNull ExtAudioFileRef inExtAudioFile, int inPropertyID,
+            @Nullable IntPtr outSize, @Nullable BytePtr outWritable);
 
     /**
      * [@function] ExtAudioFileGetProperty
@@ -4534,8 +4563,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int ExtAudioFileGetProperty(ExtAudioFileRef inExtAudioFile, int inPropertyID,
-            IntPtr ioPropertyDataSize, VoidPtr outPropertyData);
+    public static native int ExtAudioFileGetProperty(@NotNull ExtAudioFileRef inExtAudioFile, int inPropertyID,
+            @NotNull IntPtr ioPropertyDataSize, @NotNull VoidPtr outPropertyData);
 
     /**
      * [@function] ExtAudioFileSetProperty
@@ -4556,8 +4585,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int ExtAudioFileSetProperty(ExtAudioFileRef inExtAudioFile, int inPropertyID,
-            int inPropertyDataSize, ConstVoidPtr inPropertyData);
+    public static native int ExtAudioFileSetProperty(@NotNull ExtAudioFileRef inExtAudioFile, int inPropertyID,
+            int inPropertyDataSize, @NotNull ConstVoidPtr inPropertyData);
 
     /**
      * [@function] NewMusicPlayer
@@ -4574,7 +4603,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int NewMusicPlayer(Ptr<MusicPlayer> outPlayer);
+    public static native int NewMusicPlayer(@NotNull Ptr<MusicPlayer> outPlayer);
 
     /**
      * [@function] DisposeMusicPlayer
@@ -4587,7 +4616,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int DisposeMusicPlayer(MusicPlayer inPlayer);
+    public static native int DisposeMusicPlayer(@NotNull MusicPlayer inPlayer);
 
     /**
      * [@function] MusicPlayerSetSequence
@@ -4604,7 +4633,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicPlayerSetSequence(MusicPlayer inPlayer, MusicSequence inSequence);
+    public static native int MusicPlayerSetSequence(@NotNull MusicPlayer inPlayer, @Nullable MusicSequence inSequence);
 
     /**
      * [@function] MusicPlayerGetSequence
@@ -4621,7 +4650,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicPlayerGetSequence(MusicPlayer inPlayer, Ptr<MusicSequence> outSequence);
+    public static native int MusicPlayerGetSequence(@NotNull MusicPlayer inPlayer,
+            @NotNull Ptr<MusicSequence> outSequence);
 
     /**
      * [@function] MusicPlayerSetTime
@@ -4640,7 +4670,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicPlayerSetTime(MusicPlayer inPlayer, double inTime);
+    public static native int MusicPlayerSetTime(@NotNull MusicPlayer inPlayer, double inTime);
 
     /**
      * [@function] MusicPlayerGetTime
@@ -4657,7 +4687,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicPlayerGetTime(MusicPlayer inPlayer, DoublePtr outTime);
+    public static native int MusicPlayerGetTime(@NotNull MusicPlayer inPlayer, @NotNull DoublePtr outTime);
 
     /**
      * [@function] MusicPlayerGetHostTimeForBeats
@@ -4679,7 +4709,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicPlayerGetHostTimeForBeats(MusicPlayer inPlayer, double inBeats, LongPtr outHostTime);
+    public static native int MusicPlayerGetHostTimeForBeats(@NotNull MusicPlayer inPlayer, double inBeats,
+            @NotNull LongPtr outHostTime);
 
     /**
      * [@function] MusicPlayerGetBeatsForHostTime
@@ -4701,7 +4732,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicPlayerGetBeatsForHostTime(MusicPlayer inPlayer, long inHostTime, DoublePtr outBeats);
+    public static native int MusicPlayerGetBeatsForHostTime(@NotNull MusicPlayer inPlayer, long inHostTime,
+            @NotNull DoublePtr outBeats);
 
     /**
      * [@function] MusicPlayerPreroll
@@ -4717,7 +4749,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicPlayerPreroll(MusicPlayer inPlayer);
+    public static native int MusicPlayerPreroll(@NotNull MusicPlayer inPlayer);
 
     /**
      * [@function] MusicPlayerStart
@@ -4732,7 +4764,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicPlayerStart(MusicPlayer inPlayer);
+    public static native int MusicPlayerStart(@NotNull MusicPlayer inPlayer);
 
     /**
      * [@function] MusicPlayerStop
@@ -4745,7 +4777,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicPlayerStop(MusicPlayer inPlayer);
+    public static native int MusicPlayerStop(@NotNull MusicPlayer inPlayer);
 
     /**
      * [@function] MusicPlayerIsPlaying
@@ -4764,7 +4796,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicPlayerIsPlaying(MusicPlayer inPlayer, BytePtr outIsPlaying);
+    public static native int MusicPlayerIsPlaying(@NotNull MusicPlayer inPlayer, @NotNull BytePtr outIsPlaying);
 
     /**
      * [@function] MusicPlayerSetPlayRateScalar
@@ -4779,7 +4811,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicPlayerSetPlayRateScalar(MusicPlayer inPlayer, double inScaleRate);
+    public static native int MusicPlayerSetPlayRateScalar(@NotNull MusicPlayer inPlayer, double inScaleRate);
 
     /**
      * [@function] MusicPlayerGetPlayRateScalar
@@ -4793,7 +4825,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicPlayerGetPlayRateScalar(MusicPlayer inPlayer, DoublePtr outScaleRate);
+    public static native int MusicPlayerGetPlayRateScalar(@NotNull MusicPlayer inPlayer,
+            @NotNull DoublePtr outScaleRate);
 
     /**
      * [@functiongroup] Music Sequence
@@ -4815,7 +4848,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int NewMusicSequence(Ptr<MusicSequence> outSequence);
+    public static native int NewMusicSequence(@NotNull Ptr<MusicSequence> outSequence);
 
     /**
      * [@function] DisposeMusicSequence
@@ -4830,7 +4863,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int DisposeMusicSequence(MusicSequence inSequence);
+    public static native int DisposeMusicSequence(@NotNull MusicSequence inSequence);
 
     /**
      * [@function] MusicSequenceNewTrack
@@ -4844,7 +4877,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicSequenceNewTrack(MusicSequence inSequence, Ptr<MusicTrack> outTrack);
+    public static native int MusicSequenceNewTrack(@NotNull MusicSequence inSequence,
+            @NotNull Ptr<MusicTrack> outTrack);
 
     /**
      * [@function] MusicSequenceDisposeTrack
@@ -4858,7 +4892,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicSequenceDisposeTrack(MusicSequence inSequence, MusicTrack inTrack);
+    public static native int MusicSequenceDisposeTrack(@NotNull MusicSequence inSequence, @NotNull MusicTrack inTrack);
 
     /**
      * [@function] MusicSequenceGetTrackCount
@@ -4873,7 +4907,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicSequenceGetTrackCount(MusicSequence inSequence, IntPtr outNumberOfTracks);
+    public static native int MusicSequenceGetTrackCount(@NotNull MusicSequence inSequence,
+            @NotNull IntPtr outNumberOfTracks);
 
     /**
      * [@function] MusicSequenceGetIndTrack
@@ -4891,8 +4926,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicSequenceGetIndTrack(MusicSequence inSequence, int inTrackIndex,
-            Ptr<MusicTrack> outTrack);
+    public static native int MusicSequenceGetIndTrack(@NotNull MusicSequence inSequence, int inTrackIndex,
+            @NotNull Ptr<MusicTrack> outTrack);
 
     /**
      * [@function] MusicSequenceGetTrackIndex
@@ -4910,8 +4945,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicSequenceGetTrackIndex(MusicSequence inSequence, MusicTrack inTrack,
-            IntPtr outTrackIndex);
+    public static native int MusicSequenceGetTrackIndex(@NotNull MusicSequence inSequence, @NotNull MusicTrack inTrack,
+            @NotNull IntPtr outTrackIndex);
 
     /**
      * [@function] MusicSequenceGetTempoTrack
@@ -4929,7 +4964,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicSequenceGetTempoTrack(MusicSequence inSequence, Ptr<MusicTrack> outTrack);
+    public static native int MusicSequenceGetTempoTrack(@NotNull MusicSequence inSequence,
+            @NotNull Ptr<MusicTrack> outTrack);
 
     /**
      * [@function] MusicSequenceSetAUGraph
@@ -4950,7 +4986,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicSequenceSetAUGraph(MusicSequence inSequence, AUGraph inGraph);
+    public static native int MusicSequenceSetAUGraph(@NotNull MusicSequence inSequence, @Nullable AUGraph inGraph);
 
     /**
      * [@function] MusicSequenceGetAUGraph
@@ -4973,7 +5009,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicSequenceGetAUGraph(MusicSequence inSequence, Ptr<AUGraph> outGraph);
+    public static native int MusicSequenceGetAUGraph(@NotNull MusicSequence inSequence, @NotNull Ptr<AUGraph> outGraph);
 
     /**
      * [@function] MusicSequenceSetMIDIEndpoint
@@ -4990,7 +5026,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicSequenceSetMIDIEndpoint(MusicSequence inSequence, int inEndpoint);
+    public static native int MusicSequenceSetMIDIEndpoint(@NotNull MusicSequence inSequence, int inEndpoint);
 
     /**
      * [@function] MusicSequenceSetSequenceType
@@ -5023,7 +5059,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicSequenceSetSequenceType(MusicSequence inSequence, int inType);
+    public static native int MusicSequenceSetSequenceType(@NotNull MusicSequence inSequence, int inType);
 
     /**
      * [@function] MusicSequenceGetSequenceType
@@ -5039,7 +5075,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicSequenceGetSequenceType(MusicSequence inSequence, IntPtr outType);
+    public static native int MusicSequenceGetSequenceType(@NotNull MusicSequence inSequence, @NotNull IntPtr outType);
 
     /**
      * [@function] MusicSequenceFileLoad
@@ -5058,8 +5094,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicSequenceFileLoad(MusicSequence inSequence, CFURLRef inFileRef, int inFileTypeHint,
-            int inFlags);
+    public static native int MusicSequenceFileLoad(@NotNull MusicSequence inSequence, @NotNull CFURLRef inFileRef,
+            int inFileTypeHint, int inFlags);
 
     /**
      * [@function] MusicSequenceFileLoadData
@@ -5079,8 +5115,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicSequenceFileLoadData(MusicSequence inSequence, CFDataRef inData, int inFileTypeHint,
-            int inFlags);
+    public static native int MusicSequenceFileLoadData(@NotNull MusicSequence inSequence, @NotNull CFDataRef inData,
+            int inFileTypeHint, int inFlags);
 
     /**
      * [@function] MusicSequenceSetSMPTEResolution
@@ -5114,7 +5150,8 @@ public final class AudioToolbox {
     @Generated
     @Inline
     @CFunction
-    public static native void MusicSequenceGetSMPTEResolution(short inRes, BytePtr fps, BytePtr ticks);
+    public static native void MusicSequenceGetSMPTEResolution(short inRes, @NotNull BytePtr fps,
+            @NotNull BytePtr ticks);
 
     /**
      * [@function] MusicSequenceFileCreate
@@ -5167,8 +5204,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicSequenceFileCreate(MusicSequence inSequence, CFURLRef inFileRef, int inFileType,
-            int inFlags, short inResolution);
+    public static native int MusicSequenceFileCreate(@NotNull MusicSequence inSequence, @NotNull CFURLRef inFileRef,
+            int inFileType, int inFlags, short inResolution);
 
     /**
      * [@function] MusicSequenceFileCreateData
@@ -5189,8 +5226,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicSequenceFileCreateData(MusicSequence inSequence, int inFileType, int inFlags,
-            short inResolution, Ptr<CFDataRef> outData);
+    public static native int MusicSequenceFileCreateData(@NotNull MusicSequence inSequence, int inFileType, int inFlags,
+            short inResolution, @NotNull Ptr<CFDataRef> outData);
 
     /**
      * [@function] MusicSequenceReverse
@@ -5203,7 +5240,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicSequenceReverse(MusicSequence inSequence);
+    public static native int MusicSequenceReverse(@NotNull MusicSequence inSequence);
 
     /**
      * [@function] MusicSequenceGetSecondsForBeats
@@ -5220,8 +5257,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicSequenceGetSecondsForBeats(MusicSequence inSequence, double inBeats,
-            DoublePtr outSeconds);
+    public static native int MusicSequenceGetSecondsForBeats(@NotNull MusicSequence inSequence, double inBeats,
+            @NotNull DoublePtr outSeconds);
 
     /**
      * [@function] MusicSequenceGetBeatsForSeconds
@@ -5238,8 +5275,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicSequenceGetBeatsForSeconds(MusicSequence inSequence, double inSeconds,
-            DoublePtr outBeats);
+    public static native int MusicSequenceGetBeatsForSeconds(@NotNull MusicSequence inSequence, double inSeconds,
+            @NotNull DoublePtr outBeats);
 
     /**
      * [@function] MusicSequenceSetUserCallback
@@ -5271,9 +5308,9 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicSequenceSetUserCallback(MusicSequence inSequence,
-            @FunctionPtr(name = "call_MusicSequenceSetUserCallback") Function_MusicSequenceSetUserCallback inCallback,
-            VoidPtr inClientData);
+    public static native int MusicSequenceSetUserCallback(@NotNull MusicSequence inSequence,
+            @Nullable @FunctionPtr(name = "call_MusicSequenceSetUserCallback") Function_MusicSequenceSetUserCallback inCallback,
+            @Nullable VoidPtr inClientData);
 
     /**
      * [@function] MusicSequenceBeatsToBarBeatTime
@@ -5293,9 +5330,9 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicSequenceBeatsToBarBeatTime(MusicSequence inSequence, double inBeats,
+    public static native int MusicSequenceBeatsToBarBeatTime(@NotNull MusicSequence inSequence, double inBeats,
             int inSubbeatDivisor,
-            @UncertainArgument("Options: reference, array Fallback: reference") CABarBeatTime outBarBeatTime);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") CABarBeatTime outBarBeatTime);
 
     /**
      * [@function] MusicSequenceBarBeatTimeToBeats
@@ -5314,9 +5351,9 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicSequenceBarBeatTimeToBeats(MusicSequence inSequence,
-            @UncertainArgument("Options: reference, array Fallback: reference") CABarBeatTime inBarBeatTime,
-            DoublePtr outBeats);
+    public static native int MusicSequenceBarBeatTimeToBeats(@NotNull MusicSequence inSequence,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") CABarBeatTime inBarBeatTime,
+            @NotNull DoublePtr outBeats);
 
     /**
      * [@function] MusicSequenceGetInfoDictionary
@@ -5333,9 +5370,10 @@ public final class AudioToolbox {
      * 
      *         API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFDictionaryRef MusicSequenceGetInfoDictionary(MusicSequence inSequence);
+    public static native CFDictionaryRef MusicSequenceGetInfoDictionary(@NotNull MusicSequence inSequence);
 
     /**
      * [@function] MusicTrackGetSequence
@@ -5349,7 +5387,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicTrackGetSequence(MusicTrack inTrack, Ptr<MusicSequence> outSequence);
+    public static native int MusicTrackGetSequence(@NotNull MusicTrack inTrack,
+            @NotNull Ptr<MusicSequence> outSequence);
 
     /**
      * [@function] MusicTrackSetDestNode
@@ -5366,7 +5405,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicTrackSetDestNode(MusicTrack inTrack, int inNode);
+    public static native int MusicTrackSetDestNode(@NotNull MusicTrack inTrack, int inNode);
 
     /**
      * [@function] MusicTrackSetDestMIDIEndpoint
@@ -5382,7 +5421,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicTrackSetDestMIDIEndpoint(MusicTrack inTrack, int inEndpoint);
+    public static native int MusicTrackSetDestMIDIEndpoint(@NotNull MusicTrack inTrack, int inEndpoint);
 
     /**
      * [@function] MusicTrackGetDestNode
@@ -5399,7 +5438,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicTrackGetDestNode(MusicTrack inTrack, IntPtr outNode);
+    public static native int MusicTrackGetDestNode(@NotNull MusicTrack inTrack, @NotNull IntPtr outNode);
 
     /**
      * [@function] MusicTrackGetDestMIDIEndpoint
@@ -5416,7 +5455,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicTrackGetDestMIDIEndpoint(MusicTrack inTrack, IntPtr outEndpoint);
+    public static native int MusicTrackGetDestMIDIEndpoint(@NotNull MusicTrack inTrack, @NotNull IntPtr outEndpoint);
 
     /**
      * [@function] MusicTrackSetProperty
@@ -5434,7 +5473,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicTrackSetProperty(MusicTrack inTrack, int inPropertyID, VoidPtr inData, int inLength);
+    public static native int MusicTrackSetProperty(@NotNull MusicTrack inTrack, int inPropertyID,
+            @NotNull VoidPtr inData, int inLength);
 
     /**
      * [@function] MusicTrackGetProperty
@@ -5456,8 +5496,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicTrackGetProperty(MusicTrack inTrack, int inPropertyID, VoidPtr outData,
-            IntPtr ioLength);
+    public static native int MusicTrackGetProperty(@NotNull MusicTrack inTrack, int inPropertyID,
+            @NotNull VoidPtr outData, @NotNull IntPtr ioLength);
 
     /**
      * [@function] MusicTrackMoveEvents
@@ -5478,7 +5518,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicTrackMoveEvents(MusicTrack inTrack, double inStartTime, double inEndTime,
+    public static native int MusicTrackMoveEvents(@NotNull MusicTrack inTrack, double inStartTime, double inEndTime,
             double inMoveTime);
 
     /**
@@ -5496,7 +5536,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicTrackClear(MusicTrack inTrack, double inStartTime, double inEndTime);
+    public static native int MusicTrackClear(@NotNull MusicTrack inTrack, double inStartTime, double inEndTime);
 
     /**
      * [@function] MusicTrackCut
@@ -5515,7 +5555,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicTrackCut(MusicTrack inTrack, double inStartTime, double inEndTime);
+    public static native int MusicTrackCut(@NotNull MusicTrack inTrack, double inStartTime, double inEndTime);
 
     /**
      * [@function] MusicTrackCopyInsert
@@ -5538,8 +5578,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicTrackCopyInsert(MusicTrack inSourceTrack, double inSourceStartTime,
-            double inSourceEndTime, MusicTrack inDestTrack, double inDestInsertTime);
+    public static native int MusicTrackCopyInsert(@NotNull MusicTrack inSourceTrack, double inSourceStartTime,
+            double inSourceEndTime, @NotNull MusicTrack inDestTrack, double inDestInsertTime);
 
     /**
      * [@function] MusicTrackMerge
@@ -5561,8 +5601,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicTrackMerge(MusicTrack inSourceTrack, double inSourceStartTime, double inSourceEndTime,
-            MusicTrack inDestTrack, double inDestInsertTime);
+    public static native int MusicTrackMerge(@NotNull MusicTrack inSourceTrack, double inSourceStartTime,
+            double inSourceEndTime, @NotNull MusicTrack inDestTrack, double inDestInsertTime);
 
     /**
      * [@function] MusicTrackNewMIDINoteEvent
@@ -5579,8 +5619,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicTrackNewMIDINoteEvent(MusicTrack inTrack, double inTimeStamp,
-            @UncertainArgument("Options: reference, array Fallback: reference") MIDINoteMessage inMessage);
+    public static native int MusicTrackNewMIDINoteEvent(@NotNull MusicTrack inTrack, double inTimeStamp,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDINoteMessage inMessage);
 
     /**
      * [@function] MusicTrackNewMIDIChannelEvent
@@ -5597,8 +5637,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicTrackNewMIDIChannelEvent(MusicTrack inTrack, double inTimeStamp,
-            @UncertainArgument("Options: reference, array Fallback: reference") MIDIChannelMessage inMessage);
+    public static native int MusicTrackNewMIDIChannelEvent(@NotNull MusicTrack inTrack, double inTimeStamp,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIChannelMessage inMessage);
 
     /**
      * [@function] MusicTrackNewMIDIRawDataEvent
@@ -5615,8 +5655,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicTrackNewMIDIRawDataEvent(MusicTrack inTrack, double inTimeStamp,
-            @UncertainArgument("Options: reference, array Fallback: reference") MIDIRawData inRawData);
+    public static native int MusicTrackNewMIDIRawDataEvent(@NotNull MusicTrack inTrack, double inTimeStamp,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIRawData inRawData);
 
     /**
      * [@function] MusicTrackNewExtendedNoteEvent
@@ -5633,8 +5673,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicTrackNewExtendedNoteEvent(MusicTrack inTrack, double inTimeStamp,
-            @UncertainArgument("Options: reference, array Fallback: reference") ExtendedNoteOnEvent inInfo);
+    public static native int MusicTrackNewExtendedNoteEvent(@NotNull MusicTrack inTrack, double inTimeStamp,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") ExtendedNoteOnEvent inInfo);
 
     /**
      * [@function] MusicTrackNewParameterEvent
@@ -5651,8 +5691,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicTrackNewParameterEvent(MusicTrack inTrack, double inTimeStamp,
-            @UncertainArgument("Options: reference, array Fallback: reference") ParameterEvent inInfo);
+    public static native int MusicTrackNewParameterEvent(@NotNull MusicTrack inTrack, double inTimeStamp,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") ParameterEvent inInfo);
 
     /**
      * [@function] MusicTrackNewExtendedTempoEvent
@@ -5669,7 +5709,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicTrackNewExtendedTempoEvent(MusicTrack inTrack, double inTimeStamp, double inBPM);
+    public static native int MusicTrackNewExtendedTempoEvent(@NotNull MusicTrack inTrack, double inTimeStamp,
+            double inBPM);
 
     /**
      * [@function] MusicTrackNewMetaEvent
@@ -5686,8 +5727,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicTrackNewMetaEvent(MusicTrack inTrack, double inTimeStamp,
-            @UncertainArgument("Options: reference, array Fallback: reference") MIDIMetaEvent inMetaEvent);
+    public static native int MusicTrackNewMetaEvent(@NotNull MusicTrack inTrack, double inTimeStamp,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIMetaEvent inMetaEvent);
 
     /**
      * [@function] MusicEventUserData
@@ -5704,8 +5745,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicTrackNewUserEvent(MusicTrack inTrack, double inTimeStamp,
-            @UncertainArgument("Options: reference, array Fallback: reference") MusicEventUserData inUserData);
+    public static native int MusicTrackNewUserEvent(@NotNull MusicTrack inTrack, double inTimeStamp,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MusicEventUserData inUserData);
 
     /**
      * [@function] MusicTrackNewAUPresetEvent
@@ -5722,8 +5763,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicTrackNewAUPresetEvent(MusicTrack inTrack, double inTimeStamp,
-            @UncertainArgument("Options: reference, array Fallback: reference") AUPresetEvent inPresetEvent);
+    public static native int MusicTrackNewAUPresetEvent(@NotNull MusicTrack inTrack, double inTimeStamp,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AUPresetEvent inPresetEvent);
 
     /**
      * [@function] NewMusicEventIterator
@@ -5740,7 +5781,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int NewMusicEventIterator(MusicTrack inTrack, Ptr<MusicEventIterator> outIterator);
+    public static native int NewMusicEventIterator(@NotNull MusicTrack inTrack,
+            @NotNull Ptr<MusicEventIterator> outIterator);
 
     /**
      * [@function] DisposeMusicEventIterator
@@ -5753,7 +5795,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int DisposeMusicEventIterator(MusicEventIterator inIterator);
+    public static native int DisposeMusicEventIterator(@NotNull MusicEventIterator inIterator);
 
     /**
      * [@function] MusicEventIteratorSeek
@@ -5774,7 +5816,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicEventIteratorSeek(MusicEventIterator inIterator, double inTimeStamp);
+    public static native int MusicEventIteratorSeek(@NotNull MusicEventIterator inIterator, double inTimeStamp);
 
     /**
      * [@function] MusicEventIteratorNextEvent
@@ -5793,7 +5835,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicEventIteratorNextEvent(MusicEventIterator inIterator);
+    public static native int MusicEventIteratorNextEvent(@NotNull MusicEventIterator inIterator);
 
     /**
      * [@function] MusicEventIteratorPreviousEvent
@@ -5811,7 +5853,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicEventIteratorPreviousEvent(MusicEventIterator inIterator);
+    public static native int MusicEventIteratorPreviousEvent(@NotNull MusicEventIterator inIterator);
 
     /**
      * [@function] MusicEventIteratorGetEventInfo
@@ -5834,8 +5876,9 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicEventIteratorGetEventInfo(MusicEventIterator inIterator, DoublePtr outTimeStamp,
-            IntPtr outEventType, Ptr<ConstVoidPtr> outEventData, IntPtr outEventDataSize);
+    public static native int MusicEventIteratorGetEventInfo(@NotNull MusicEventIterator inIterator,
+            @NotNull DoublePtr outTimeStamp, @NotNull IntPtr outEventType, @NotNull Ptr<ConstVoidPtr> outEventData,
+            @NotNull IntPtr outEventDataSize);
 
     /**
      * [@function] MusicEventIteratorSetEventInfo
@@ -5854,8 +5897,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicEventIteratorSetEventInfo(MusicEventIterator inIterator, int inEventType,
-            ConstVoidPtr inEventData);
+    public static native int MusicEventIteratorSetEventInfo(@NotNull MusicEventIterator inIterator, int inEventType,
+            @NotNull ConstVoidPtr inEventData);
 
     /**
      * [@function] MusicEventIteratorSetEventTime
@@ -5873,7 +5916,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicEventIteratorSetEventTime(MusicEventIterator inIterator, double inTimeStamp);
+    public static native int MusicEventIteratorSetEventTime(@NotNull MusicEventIterator inIterator, double inTimeStamp);
 
     /**
      * [@function] MusicEventIteratorDeleteEvent
@@ -5888,7 +5931,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicEventIteratorDeleteEvent(MusicEventIterator inIterator);
+    public static native int MusicEventIteratorDeleteEvent(@NotNull MusicEventIterator inIterator);
 
     /**
      * [@function] MusicEventIteratorHasPreviousEvent
@@ -5914,7 +5957,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicEventIteratorHasPreviousEvent(MusicEventIterator inIterator, BytePtr outHasPrevEvent);
+    public static native int MusicEventIteratorHasPreviousEvent(@NotNull MusicEventIterator inIterator,
+            @NotNull BytePtr outHasPrevEvent);
 
     /**
      * [@function] MusicEventIteratorHasNextEvent
@@ -5939,7 +5983,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicEventIteratorHasNextEvent(MusicEventIterator inIterator, BytePtr outHasNextEvent);
+    public static native int MusicEventIteratorHasNextEvent(@NotNull MusicEventIterator inIterator,
+            @NotNull BytePtr outHasNextEvent);
 
     /**
      * [@function] MusicEventIteratorHasCurrentEvent
@@ -5953,7 +5998,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicEventIteratorHasCurrentEvent(MusicEventIterator inIterator, BytePtr outHasCurEvent);
+    public static native int MusicEventIteratorHasCurrentEvent(@NotNull MusicEventIterator inIterator,
+            @NotNull BytePtr outHasCurEvent);
 
     /**
      * Print the internal state of an object to os_log.
@@ -5962,7 +6008,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native void CAShow(VoidPtr inObject);
+    public static native void CAShow(@NotNull VoidPtr inObject);
 
     /**
      * Print the internal state of an object to the supplied FILE*.
@@ -5971,8 +6017,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native void CAShowFile(VoidPtr inObject,
-            @UncertainArgument("Options: reference, array Fallback: reference") FILE inFile);
+    public static native void CAShowFile(@NotNull VoidPtr inObject,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") FILE inFile);
 
     /**
      * [@function] CopyNameFromSoundBank
@@ -5990,7 +6036,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int CopyNameFromSoundBank(CFURLRef inURL, Ptr<CFStringRef> outName);
+    public static native int CopyNameFromSoundBank(@NotNull CFURLRef inURL, @NotNull Ptr<CFStringRef> outName);
 
     /**
      * [@function] CopyInstrumentInfoFromSoundBank
@@ -6019,7 +6065,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int CopyInstrumentInfoFromSoundBank(CFURLRef inURL, Ptr<CFArrayRef> outInstrumentInfo);
+    public static native int CopyInstrumentInfoFromSoundBank(@NotNull CFURLRef inURL,
+            @NotNull Ptr<CFArrayRef> outInstrumentInfo);
 
     /**
      * [@constant] kAudioComponentRegistrationsChangedNotification
@@ -6031,6 +6078,7 @@ public final class AudioToolbox {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kAudioComponentRegistrationsChangedNotification();
@@ -6078,6 +6126,7 @@ public final class AudioToolbox {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kAudioComponentInstanceInvalidationNotification();
@@ -6385,205 +6434,218 @@ public final class AudioToolbox {
     @Generated
     public interface Block_AudioComponentInstantiate {
         @Generated
-        void call_AudioComponentInstantiate(AudioComponentInstance arg0, int arg1);
+        void call_AudioComponentInstantiate(@Nullable AudioComponentInstance arg0, int arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioComponentRegister {
+        @Nullable
         @Generated
         VoidPtr call_AudioComponentRegister(
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription arg0);
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription arg0);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioUnitAddPropertyListener {
         @Generated
-        void call_AudioUnitAddPropertyListener(VoidPtr arg0, AudioComponentInstance arg1, int arg2, int arg3, int arg4);
+        void call_AudioUnitAddPropertyListener(@NotNull VoidPtr arg0, @NotNull AudioComponentInstance arg1, int arg2,
+                int arg3, int arg4);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioUnitRemovePropertyListenerWithUserData {
         @Generated
-        void call_AudioUnitRemovePropertyListenerWithUserData(VoidPtr arg0, AudioComponentInstance arg1, int arg2,
-                int arg3, int arg4);
+        void call_AudioUnitRemovePropertyListenerWithUserData(@NotNull VoidPtr arg0,
+                @NotNull AudioComponentInstance arg1, int arg2, int arg3, int arg4);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioUnitAddRenderNotify {
         @Generated
-        int call_AudioUnitAddRenderNotify(VoidPtr arg0, IntPtr arg1,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2, int arg3,
-                int arg4, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
+        int call_AudioUnitAddRenderNotify(@NotNull VoidPtr arg0, @NotNull IntPtr arg1,
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2,
+                int arg3, int arg4,
+                @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioUnitRemoveRenderNotify {
         @Generated
-        int call_AudioUnitRemoveRenderNotify(VoidPtr arg0, IntPtr arg1,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2, int arg3,
-                int arg4, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
+        int call_AudioUnitRemoveRenderNotify(@NotNull VoidPtr arg0, @NotNull IntPtr arg1,
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2,
+                int arg3, int arg4,
+                @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AUGraphAddRenderNotify {
         @Generated
-        int call_AUGraphAddRenderNotify(VoidPtr arg0, IntPtr arg1,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2, int arg3,
-                int arg4, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
+        int call_AUGraphAddRenderNotify(@NotNull VoidPtr arg0, @NotNull IntPtr arg1,
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2,
+                int arg3, int arg4,
+                @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AUGraphRemoveRenderNotify {
         @Generated
-        int call_AUGraphRemoveRenderNotify(VoidPtr arg0, IntPtr arg1,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2, int arg3,
-                int arg4, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
+        int call_AUGraphRemoveRenderNotify(@NotNull VoidPtr arg0, @NotNull IntPtr arg1,
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2,
+                int arg3, int arg4,
+                @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioConverterFillComplexBuffer {
         @Generated
-        int call_AudioConverterFillComplexBuffer(AudioConverterRef arg0, IntPtr arg1,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg2,
-                @ReferenceInfo(type = AudioStreamPacketDescription.class, depth = 2) Ptr<Ptr<AudioStreamPacketDescription>> arg3,
-                VoidPtr arg4);
+        int call_AudioConverterFillComplexBuffer(@NotNull AudioConverterRef arg0, @NotNull IntPtr arg1,
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg2,
+                @Nullable @ReferenceInfo(type = AudioStreamPacketDescription.class, depth = 2) Ptr<Ptr<AudioStreamPacketDescription>> arg3,
+                @Nullable VoidPtr arg4);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioFileInitializeWithCallbacks_1 {
         @Generated
-        int call_AudioFileInitializeWithCallbacks_1(VoidPtr arg0, long arg1, int arg2, VoidPtr arg3, IntPtr arg4);
+        int call_AudioFileInitializeWithCallbacks_1(@NotNull VoidPtr arg0, long arg1, int arg2, @NotNull VoidPtr arg3,
+                @NotNull IntPtr arg4);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioFileInitializeWithCallbacks_2 {
         @Generated
-        int call_AudioFileInitializeWithCallbacks_2(VoidPtr arg0, long arg1, int arg2, ConstVoidPtr arg3, IntPtr arg4);
+        int call_AudioFileInitializeWithCallbacks_2(@NotNull VoidPtr arg0, long arg1, int arg2,
+                @NotNull ConstVoidPtr arg3, @NotNull IntPtr arg4);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioFileInitializeWithCallbacks_3 {
         @Generated
-        long call_AudioFileInitializeWithCallbacks_3(VoidPtr arg0);
+        long call_AudioFileInitializeWithCallbacks_3(@NotNull VoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioFileInitializeWithCallbacks_4 {
         @Generated
-        int call_AudioFileInitializeWithCallbacks_4(VoidPtr arg0, long arg1);
+        int call_AudioFileInitializeWithCallbacks_4(@NotNull VoidPtr arg0, long arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioFileOpenWithCallbacks_1 {
         @Generated
-        int call_AudioFileOpenWithCallbacks_1(VoidPtr arg0, long arg1, int arg2, VoidPtr arg3, IntPtr arg4);
+        int call_AudioFileOpenWithCallbacks_1(@NotNull VoidPtr arg0, long arg1, int arg2, @NotNull VoidPtr arg3,
+                @NotNull IntPtr arg4);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioFileOpenWithCallbacks_2 {
         @Generated
-        int call_AudioFileOpenWithCallbacks_2(VoidPtr arg0, long arg1, int arg2, ConstVoidPtr arg3, IntPtr arg4);
+        int call_AudioFileOpenWithCallbacks_2(@NotNull VoidPtr arg0, long arg1, int arg2, @NotNull ConstVoidPtr arg3,
+                @NotNull IntPtr arg4);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioFileOpenWithCallbacks_3 {
         @Generated
-        long call_AudioFileOpenWithCallbacks_3(VoidPtr arg0);
+        long call_AudioFileOpenWithCallbacks_3(@NotNull VoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioFileOpenWithCallbacks_4 {
         @Generated
-        int call_AudioFileOpenWithCallbacks_4(VoidPtr arg0, long arg1);
+        int call_AudioFileOpenWithCallbacks_4(@NotNull VoidPtr arg0, long arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioFileStreamOpen_1 {
         @Generated
-        void call_AudioFileStreamOpen_1(VoidPtr arg0, AudioFileStreamID arg1, int arg2, IntPtr arg3);
+        void call_AudioFileStreamOpen_1(@NotNull VoidPtr arg0, @NotNull AudioFileStreamID arg1, int arg2,
+                @NotNull IntPtr arg3);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioFileStreamOpen_2 {
         @Generated
-        void call_AudioFileStreamOpen_2(VoidPtr arg0, int arg1, int arg2, ConstVoidPtr arg3,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription arg4);
+        void call_AudioFileStreamOpen_2(@NotNull VoidPtr arg0, int arg1, int arg2, @NotNull ConstVoidPtr arg3,
+                @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription arg4);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioQueueNewOutput {
         @Generated
-        void call_AudioQueueNewOutput(VoidPtr arg0, AudioQueueRef arg1, AudioQueueBuffer arg2);
+        void call_AudioQueueNewOutput(@Nullable VoidPtr arg0, @NotNull AudioQueueRef arg1,
+                @NotNull AudioQueueBuffer arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioQueueNewInput {
         @Generated
-        void call_AudioQueueNewInput(VoidPtr arg0, AudioQueueRef arg1, AudioQueueBuffer arg2, AudioTimeStamp arg3,
-                int arg4,
-                @ReferenceInfo(type = AudioStreamPacketDescription.class) ConstPtr<AudioStreamPacketDescription> arg5);
+        void call_AudioQueueNewInput(@Nullable VoidPtr arg0, @NotNull AudioQueueRef arg1,
+                @NotNull AudioQueueBuffer arg2, @NotNull AudioTimeStamp arg3, int arg4,
+                @Nullable @ReferenceInfo(type = AudioStreamPacketDescription.class) ConstPtr<AudioStreamPacketDescription> arg5);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_AudioQueueNewOutputWithDispatchQueue {
         @Generated
-        void call_AudioQueueNewOutputWithDispatchQueue(AudioQueueRef inAQ,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioQueueBuffer inBuffer);
+        void call_AudioQueueNewOutputWithDispatchQueue(@NotNull AudioQueueRef inAQ,
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioQueueBuffer inBuffer);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_AudioQueueNewInputWithDispatchQueue {
         @Generated
-        void call_AudioQueueNewInputWithDispatchQueue(AudioQueueRef inAQ,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioQueueBuffer inBuffer,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp inStartTime,
+        void call_AudioQueueNewInputWithDispatchQueue(@NotNull AudioQueueRef inAQ,
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioQueueBuffer inBuffer,
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp inStartTime,
                 int inNumberPacketDescriptions,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription inPacketDescs);
+                @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription inPacketDescs);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioQueueAddPropertyListener {
         @Generated
-        void call_AudioQueueAddPropertyListener(VoidPtr arg0, AudioQueueRef arg1, int arg2);
+        void call_AudioQueueAddPropertyListener(@Nullable VoidPtr arg0, @NotNull AudioQueueRef arg1, int arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioQueueRemovePropertyListener {
         @Generated
-        void call_AudioQueueRemovePropertyListener(VoidPtr arg0, AudioQueueRef arg1, int arg2);
+        void call_AudioQueueRemovePropertyListener(@Nullable VoidPtr arg0, @NotNull AudioQueueRef arg1, int arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioQueueProcessingTapNew {
         @Generated
-        void call_AudioQueueProcessingTapNew(VoidPtr arg0, AudioQueueProcessingTapRef arg1, int arg2,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg3, IntPtr arg4,
-                IntPtr arg5, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg6);
+        void call_AudioQueueProcessingTapNew(@NotNull VoidPtr arg0, @NotNull AudioQueueProcessingTapRef arg1, int arg2,
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg3,
+                @NotNull IntPtr arg4, @NotNull IntPtr arg5,
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg6);
     }
 
     @Runtime(CRuntime.class)
@@ -6625,15 +6687,16 @@ public final class AudioToolbox {
     @Generated
     public interface Function_AudioServicesAddSystemSoundCompletion {
         @Generated
-        void call_AudioServicesAddSystemSoundCompletion(int arg0, VoidPtr arg1);
+        void call_AudioServicesAddSystemSoundCompletion(int arg0, @Nullable VoidPtr arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_MusicSequenceSetUserCallback {
         @Generated
-        void call_MusicSequenceSetUserCallback(VoidPtr arg0, MusicSequence arg1, MusicTrack arg2, double arg3,
-                @UncertainArgument("Options: reference, array Fallback: reference") MusicEventUserData arg4,
+        void call_MusicSequenceSetUserCallback(@Nullable VoidPtr arg0, @NotNull MusicSequence arg1,
+                @NotNull MusicTrack arg2, double arg3,
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MusicEventUserData arg4,
                 double arg5, double arg6);
     }
 
@@ -6657,8 +6720,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioUnitExtensionSetComponentList(CFStringRef extensionIdentifier,
-            CFArrayRef audioComponentInfo);
+    public static native int AudioUnitExtensionSetComponentList(@NotNull CFStringRef extensionIdentifier,
+            @Nullable CFArrayRef audioComponentInfo);
 
     /**
      * [@function] AudioUnitExtensionCopyComponentList
@@ -6673,9 +6736,10 @@ public final class AudioToolbox {
      * 
      *         API-Since: 11.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFArrayRef AudioUnitExtensionCopyComponentList(CFStringRef extensionIdentifier);
+    public static native CFArrayRef AudioUnitExtensionCopyComponentList(@NotNull CFStringRef extensionIdentifier);
 
     /**
      * [@function] AudioCodecGetPropertyInfo
@@ -6700,8 +6764,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioCodecGetPropertyInfo(AudioComponentInstance inCodec, int inPropertyID, IntPtr outSize,
-            BytePtr outWritable);
+    public static native int AudioCodecGetPropertyInfo(@NotNull AudioComponentInstance inCodec, int inPropertyID,
+            @Nullable IntPtr outSize, @Nullable BytePtr outWritable);
 
     /**
      * [@function] AudioCodecGetProperty
@@ -6725,8 +6789,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioCodecGetProperty(AudioComponentInstance inCodec, int inPropertyID,
-            IntPtr ioPropertyDataSize, VoidPtr outPropertyData);
+    public static native int AudioCodecGetProperty(@NotNull AudioComponentInstance inCodec, int inPropertyID,
+            @NotNull IntPtr ioPropertyDataSize, @NotNull VoidPtr outPropertyData);
 
     /**
      * [@function] AudioCodecSetProperty
@@ -6748,8 +6812,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioCodecSetProperty(AudioComponentInstance inCodec, int inPropertyID,
-            int inPropertyDataSize, ConstVoidPtr inPropertyData);
+    public static native int AudioCodecSetProperty(@NotNull AudioComponentInstance inCodec, int inPropertyID,
+            int inPropertyDataSize, @NotNull ConstVoidPtr inPropertyData);
 
     /**
      * [@function] AudioCodecInitialize
@@ -6776,10 +6840,10 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioCodecInitialize(AudioComponentInstance inCodec,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inInputFormat,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inOutputFormat,
-            ConstVoidPtr inMagicCookie, int inMagicCookieByteSize);
+    public static native int AudioCodecInitialize(@NotNull AudioComponentInstance inCodec,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inInputFormat,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inOutputFormat,
+            @Nullable ConstVoidPtr inMagicCookie, int inMagicCookieByteSize);
 
     /**
      * [@function] AudioCodecUninitialize
@@ -6797,7 +6861,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioCodecUninitialize(AudioComponentInstance inCodec);
+    public static native int AudioCodecUninitialize(@NotNull AudioComponentInstance inCodec);
 
     /**
      * [@function] AudioCodecAppendInputData
@@ -6831,9 +6895,9 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioCodecAppendInputData(AudioComponentInstance inCodec, ConstVoidPtr inInputData,
-            IntPtr ioInputDataByteSize, IntPtr ioNumberPackets,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription inPacketDescription);
+    public static native int AudioCodecAppendInputData(@NotNull AudioComponentInstance inCodec,
+            @NotNull ConstVoidPtr inInputData, @NotNull IntPtr ioInputDataByteSize, @NotNull IntPtr ioNumberPackets,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription inPacketDescription);
 
     /**
      * [@function] AudioCodecProduceOutputPackets
@@ -6868,32 +6932,32 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioCodecProduceOutputPackets(AudioComponentInstance inCodec, VoidPtr outOutputData,
-            IntPtr ioOutputDataByteSize, IntPtr ioNumberPackets,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription outPacketDescription,
-            IntPtr outStatus);
+    public static native int AudioCodecProduceOutputPackets(@NotNull AudioComponentInstance inCodec,
+            @NotNull VoidPtr outOutputData, @NotNull IntPtr ioOutputDataByteSize, @NotNull IntPtr ioNumberPackets,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription outPacketDescription,
+            @NotNull IntPtr outStatus);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native int AudioCodecAppendInputBufferList(AudioComponentInstance inCodec,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList inBufferList,
-            IntPtr ioNumberPackets,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription inPacketDescription,
-            IntPtr outBytesConsumed);
+    public static native int AudioCodecAppendInputBufferList(@NotNull AudioComponentInstance inCodec,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList inBufferList,
+            @NotNull IntPtr ioNumberPackets,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription inPacketDescription,
+            @NotNull IntPtr outBytesConsumed);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native int AudioCodecProduceOutputBufferList(AudioComponentInstance inCodec,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList ioBufferList,
-            IntPtr ioNumberPackets,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription outPacketDescription,
-            IntPtr outStatus);
+    public static native int AudioCodecProduceOutputBufferList(@NotNull AudioComponentInstance inCodec,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList ioBufferList,
+            @NotNull IntPtr ioNumberPackets,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription outPacketDescription,
+            @NotNull IntPtr outStatus);
 
     /**
      * [@function] AudioCodecReset
@@ -6910,7 +6974,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioCodecReset(AudioComponentInstance inCodec);
+    public static native int AudioCodecReset(@NotNull AudioComponentInstance inCodec);
 
     /**
      * [@function] AudioComponentCopyIcon
@@ -6931,9 +6995,10 @@ public final class AudioToolbox {
      * @return
      *         A retained UIImage object.
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native UIImage AudioComponentCopyIcon(AudioComponent comp);
+    public static native UIImage AudioComponentCopyIcon(@NotNull AudioComponent comp);
 
     /**
      * [@fn] AudioWorkIntervalCreate
@@ -6955,11 +7020,13 @@ public final class AudioToolbox {
      * 
      *         API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native OS_os_workgroup AudioWorkIntervalCreate(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name, int clock,
-            @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_attr_opaque_s attr);
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+            int clock,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_attr_opaque_s attr);
 
     /**
      * [@function] MusicDeviceMIDIEventList
@@ -6998,8 +7065,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int MusicDeviceMIDIEventList(AudioComponentInstance inUnit, int inOffsetSampleFrame,
-            @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList evtList);
+    public static native int MusicDeviceMIDIEventList(@NotNull AudioComponentInstance inUnit, int inOffsetSampleFrame,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList evtList);
 
     /**
      * [@function] AudioComponentCopyConfigurationInfo
@@ -7021,8 +7088,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioComponentCopyConfigurationInfo(AudioComponent inComponent,
-            Ptr<CFDictionaryRef> outConfigurationInfo);
+    public static native int AudioComponentCopyConfigurationInfo(@NotNull AudioComponent inComponent,
+            @NotNull Ptr<CFDictionaryRef> outConfigurationInfo);
 
     /**
      * [@function] AudioComponentValidate
@@ -7045,8 +7112,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioComponentValidate(AudioComponent inComponent, CFDictionaryRef inValidationParameters,
-            IntPtr outValidationResult);
+    public static native int AudioComponentValidate(@NotNull AudioComponent inComponent,
+            @Nullable CFDictionaryRef inValidationParameters, @NotNull IntPtr outValidationResult);
 
     /**
      * [@function] AudioComponentValidateWithResults
@@ -7091,15 +7158,15 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AudioComponentValidateWithResults(AudioComponent inComponent,
-            CFDictionaryRef inValidationParameters,
-            @ObjCBlock(name = "call_AudioComponentValidateWithResults") Block_AudioComponentValidateWithResults inCompletionHandler);
+    public static native int AudioComponentValidateWithResults(@NotNull AudioComponent inComponent,
+            @Nullable CFDictionaryRef inValidationParameters,
+            @NotNull @ObjCBlock(name = "call_AudioComponentValidateWithResults") Block_AudioComponentValidateWithResults inCompletionHandler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_AudioComponentValidateWithResults {
         @Generated
-        void call_AudioComponentValidateWithResults(int arg0, CFDictionaryRef arg1);
+        void call_AudioComponentValidateWithResults(int arg0, @NotNull CFDictionaryRef arg1);
     }
 
     /**
@@ -7129,16 +7196,16 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AUListenerCreateWithDispatchQueue(Ptr<AUParameterListenerRef> outListener,
-            float inNotificationInterval, NSObject inDispatchQueue,
-            @ObjCBlock(name = "call_AUListenerCreateWithDispatchQueue") Block_AUListenerCreateWithDispatchQueue inBlock);
+    public static native int AUListenerCreateWithDispatchQueue(@NotNull Ptr<AUParameterListenerRef> outListener,
+            float inNotificationInterval, @NotNull NSObject inDispatchQueue,
+            @NotNull @ObjCBlock(name = "call_AUListenerCreateWithDispatchQueue") Block_AUListenerCreateWithDispatchQueue inBlock);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_AUListenerCreateWithDispatchQueue {
         @Generated
-        void call_AUListenerCreateWithDispatchQueue(VoidPtr inObject,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioUnitParameter inParameter,
+        void call_AUListenerCreateWithDispatchQueue(@Nullable VoidPtr inObject,
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioUnitParameter inParameter,
                 float inValue);
     }
 
@@ -7176,16 +7243,16 @@ public final class AudioToolbox {
     @Generated
     @CFunction
     public static native int AUListenerCreate(
-            @FunctionPtr(name = "call_AUListenerCreate") Function_AUListenerCreate inProc, VoidPtr inUserData,
-            CFRunLoopRef inRunLoop, CFStringRef inRunLoopMode, float inNotificationInterval,
-            Ptr<AUParameterListenerRef> outListener);
+            @NotNull @FunctionPtr(name = "call_AUListenerCreate") Function_AUListenerCreate inProc,
+            @NotNull VoidPtr inUserData, @Nullable CFRunLoopRef inRunLoop, @Nullable CFStringRef inRunLoopMode,
+            float inNotificationInterval, @NotNull Ptr<AUParameterListenerRef> outListener);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AUListenerCreate {
         @Generated
-        void call_AUListenerCreate(VoidPtr arg0, VoidPtr arg1,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioUnitParameter arg2,
+        void call_AUListenerCreate(@Nullable VoidPtr arg0, @Nullable VoidPtr arg1,
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioUnitParameter arg2,
                 float arg3);
     }
 
@@ -7201,7 +7268,7 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AUListenerDispose(AUParameterListenerRef inListener);
+    public static native int AUListenerDispose(@NotNull AUParameterListenerRef inListener);
 
     /**
      * [@function] AUListenerAddParameter
@@ -7225,8 +7292,9 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AUListenerAddParameter(AUParameterListenerRef inListener, VoidPtr inObject,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioUnitParameter inParameter);
+    public static native int AUListenerAddParameter(@NotNull AUParameterListenerRef inListener,
+            @Nullable VoidPtr inObject,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioUnitParameter inParameter);
 
     /**
      * [@function] AUListenerRemoveParameter
@@ -7244,8 +7312,9 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AUListenerRemoveParameter(AUParameterListenerRef inListener, VoidPtr inObject,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioUnitParameter inParameter);
+    public static native int AUListenerRemoveParameter(@NotNull AUParameterListenerRef inListener,
+            @Nullable VoidPtr inObject,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioUnitParameter inParameter);
 
     /**
      * [@function] AUParameterSet
@@ -7276,8 +7345,9 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AUParameterSet(AUParameterListenerRef inSendingListener, VoidPtr inSendingObject,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioUnitParameter inParameter,
+    public static native int AUParameterSet(@Nullable AUParameterListenerRef inSendingListener,
+            @Nullable VoidPtr inSendingObject,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioUnitParameter inParameter,
             float inValue, int inBufferOffsetInFrames);
 
     /**
@@ -7312,9 +7382,9 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AUParameterListenerNotify(AUParameterListenerRef inSendingListener,
-            VoidPtr inSendingObject,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioUnitParameter inParameter);
+    public static native int AUParameterListenerNotify(@Nullable AUParameterListenerRef inSendingListener,
+            @Nullable VoidPtr inSendingObject,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioUnitParameter inParameter);
 
     /**
      * [@function] AUEventListenerCreateWithDispatchQueue
@@ -7366,16 +7436,16 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AUEventListenerCreateWithDispatchQueue(Ptr<AUParameterListenerRef> outListener,
-            float inNotificationInterval, float inValueChangeGranularity, NSObject inDispatchQueue,
-            @ObjCBlock(name = "call_AUEventListenerCreateWithDispatchQueue") Block_AUEventListenerCreateWithDispatchQueue inBlock);
+    public static native int AUEventListenerCreateWithDispatchQueue(@NotNull Ptr<AUParameterListenerRef> outListener,
+            float inNotificationInterval, float inValueChangeGranularity, @NotNull NSObject inDispatchQueue,
+            @NotNull @ObjCBlock(name = "call_AUEventListenerCreateWithDispatchQueue") Block_AUEventListenerCreateWithDispatchQueue inBlock);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_AUEventListenerCreateWithDispatchQueue {
         @Generated
-        void call_AUEventListenerCreateWithDispatchQueue(VoidPtr inObject, VoidPtr inEvent, long inEventHostTime,
-                float inParameterValue);
+        void call_AUEventListenerCreateWithDispatchQueue(@Nullable VoidPtr inObject, @NotNull VoidPtr inEvent,
+                long inEventHostTime, float inParameterValue);
     }
 
     /**
@@ -7410,15 +7480,17 @@ public final class AudioToolbox {
     @Generated
     @CFunction
     public static native int AUEventListenerCreate(
-            @FunctionPtr(name = "call_AUEventListenerCreate") Function_AUEventListenerCreate inProc, VoidPtr inUserData,
-            CFRunLoopRef inRunLoop, CFStringRef inRunLoopMode, float inNotificationInterval,
-            float inValueChangeGranularity, Ptr<AUParameterListenerRef> outListener);
+            @NotNull @FunctionPtr(name = "call_AUEventListenerCreate") Function_AUEventListenerCreate inProc,
+            @Nullable VoidPtr inUserData, @Nullable CFRunLoopRef inRunLoop, @Nullable CFStringRef inRunLoopMode,
+            float inNotificationInterval, float inValueChangeGranularity,
+            @NotNull Ptr<AUParameterListenerRef> outListener);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AUEventListenerCreate {
         @Generated
-        void call_AUEventListenerCreate(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, long arg3, float arg4);
+        void call_AUEventListenerCreate(@Nullable VoidPtr arg0, @Nullable VoidPtr arg1, @NotNull VoidPtr arg2,
+                long arg3, float arg4);
     }
 
     /**
@@ -7440,8 +7512,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AUEventListenerAddEventType(AUParameterListenerRef inListener, VoidPtr inObject,
-            VoidPtr inEvent);
+    public static native int AUEventListenerAddEventType(@NotNull AUParameterListenerRef inListener,
+            @Nullable VoidPtr inObject, @NotNull VoidPtr inEvent);
 
     /**
      * [@function] AUEventListenerRemoveEventType
@@ -7460,8 +7532,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AUEventListenerRemoveEventType(AUParameterListenerRef inListener, VoidPtr inObject,
-            VoidPtr inEvent);
+    public static native int AUEventListenerRemoveEventType(@NotNull AUParameterListenerRef inListener,
+            @Nullable VoidPtr inObject, @NotNull VoidPtr inEvent);
 
     /**
      * [@function] AUEventListenerNotify
@@ -7488,8 +7560,8 @@ public final class AudioToolbox {
      */
     @Generated
     @CFunction
-    public static native int AUEventListenerNotify(AUParameterListenerRef inSendingListener, VoidPtr inSendingObject,
-            VoidPtr inEvent);
+    public static native int AUEventListenerNotify(@Nullable AUParameterListenerRef inSendingListener,
+            @Nullable VoidPtr inSendingObject, @NotNull VoidPtr inEvent);
 
     /**
      * [@function] AUParameterValueFromLinear
@@ -7509,7 +7581,7 @@ public final class AudioToolbox {
     @Generated
     @CFunction
     public static native float AUParameterValueFromLinear(float inLinearValue,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioUnitParameter inParameter);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioUnitParameter inParameter);
 
     /**
      * [@function] AUParameterValueToLinear
@@ -7530,7 +7602,7 @@ public final class AudioToolbox {
     @Generated
     @CFunction
     public static native float AUParameterValueToLinear(float inParameterValue,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioUnitParameter inParameter);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioUnitParameter inParameter);
 
     /**
      * [@function] AUParameterFormatValue
@@ -7568,11 +7640,12 @@ public final class AudioToolbox {
      * @return
      *         `inTextBuffer`
      */
+    @NotNull
     @Generated
     @CFunction
     public static native BytePtr AUParameterFormatValue(double inParameterValue,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioUnitParameter inParameter,
-            BytePtr inTextBuffer, int inDigits);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioUnitParameter inParameter,
+            @NotNull BytePtr inTextBuffer, int inDigits);
 
     @Generated public static final double AUDIO_TOOLBOX_VERSION = 1060.0;
     @Generated public static final double AU_SUPPORT_INTERAPP_AUDIO = 1.0;

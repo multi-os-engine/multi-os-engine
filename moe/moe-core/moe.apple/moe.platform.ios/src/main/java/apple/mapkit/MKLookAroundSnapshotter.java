@@ -23,6 +23,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -57,7 +59,7 @@ public class MKLookAroundSnapshotter extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancel")
@@ -65,18 +67,21 @@ public class MKLookAroundSnapshotter extends NSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -95,13 +100,13 @@ public class MKLookAroundSnapshotter extends NSObject {
     @Generated
     @Selector("getSnapshotWithCompletionHandler:")
     public native void getSnapshotWithCompletionHandler(
-            @ObjCBlock(name = "call_getSnapshotWithCompletionHandler") Block_getSnapshotWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_getSnapshotWithCompletionHandler") Block_getSnapshotWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getSnapshotWithCompletionHandler {
         @Generated
-        void call_getSnapshotWithCompletionHandler(MKLookAroundSnapshot snapshot, NSError error);
+        void call_getSnapshotWithCompletionHandler(@Nullable MKLookAroundSnapshot snapshot, @Nullable NSError error);
     }
 
     @Generated
@@ -115,8 +120,8 @@ public class MKLookAroundSnapshotter extends NSObject {
 
     @Generated
     @Selector("initWithScene:options:")
-    public native MKLookAroundSnapshotter initWithSceneOptions(MKLookAroundScene scene,
-            MKLookAroundSnapshotOptions options);
+    public native MKLookAroundSnapshotter initWithSceneOptions(@NotNull MKLookAroundScene scene,
+            @NotNull MKLookAroundSnapshotOptions options);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -139,9 +144,10 @@ public class MKLookAroundSnapshotter extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

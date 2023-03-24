@@ -41,6 +41,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CBCentralManager
@@ -81,22 +83,25 @@ public class CBCentralManager extends CBManager {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +136,10 @@ public class CBCentralManager extends CBManager {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -174,7 +180,7 @@ public class CBCentralManager extends CBManager {
      */
     @Generated
     @Selector("cancelPeripheralConnection:")
-    public native void cancelPeripheralConnection(CBPeripheral peripheral);
+    public native void cancelPeripheralConnection(@NotNull CBPeripheral peripheral);
 
     /**
      * connectPeripheral:options:
@@ -199,13 +205,15 @@ public class CBCentralManager extends CBManager {
      */
     @Generated
     @Selector("connectPeripheral:options:")
-    public native void connectPeripheralOptions(CBPeripheral peripheral, NSDictionary<String, ?> options);
+    public native void connectPeripheralOptions(@NotNull CBPeripheral peripheral,
+            @Nullable NSDictionary<String, ?> options);
 
     /**
      * [@property] delegate
      * 
      * The delegate object that will receive central events.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -227,7 +235,7 @@ public class CBCentralManager extends CBManager {
     @Generated
     @Selector("initWithDelegate:queue:")
     public native CBCentralManager initWithDelegateQueue(
-            @Mapped(ObjCObjectMapper.class) CBCentralManagerDelegate delegate, NSObject queue);
+            @Nullable @Mapped(ObjCObjectMapper.class) CBCentralManagerDelegate delegate, @Nullable NSObject queue);
 
     /**
      * initWithDelegate:queue:options:
@@ -248,8 +256,8 @@ public class CBCentralManager extends CBManager {
     @Generated
     @Selector("initWithDelegate:queue:options:")
     public native CBCentralManager initWithDelegateQueueOptions(
-            @Mapped(ObjCObjectMapper.class) CBCentralManagerDelegate delegate, NSObject queue,
-            NSDictionary<String, ?> options);
+            @Nullable @Mapped(ObjCObjectMapper.class) CBCentralManagerDelegate delegate, @Nullable NSObject queue,
+            @Nullable NSDictionary<String, ?> options);
 
     /**
      * [@property] isScanning
@@ -277,10 +285,11 @@ public class CBCentralManager extends CBManager {
      * 
      *         API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("retrieveConnectedPeripheralsWithServices:")
     public native NSArray<? extends CBPeripheral> retrieveConnectedPeripheralsWithServices(
-            NSArray<? extends CBUUID> serviceUUIDs);
+            @NotNull NSArray<? extends CBUUID> serviceUUIDs);
 
     /**
      * retrievePeripheralsWithIdentifiers:
@@ -294,10 +303,11 @@ public class CBCentralManager extends CBManager {
      * 
      *         API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("retrievePeripheralsWithIdentifiers:")
     public native NSArray<? extends CBPeripheral> retrievePeripheralsWithIdentifiers(
-            NSArray<? extends NSUUID> identifiers);
+            @NotNull NSArray<? extends NSUUID> identifiers);
 
     /**
      * scanForPeripheralsWithServices:options:
@@ -322,8 +332,8 @@ public class CBCentralManager extends CBManager {
      */
     @Generated
     @Selector("scanForPeripheralsWithServices:options:")
-    public native void scanForPeripheralsWithServicesOptions(NSArray<? extends CBUUID> serviceUUIDs,
-            NSDictionary<String, ?> options);
+    public native void scanForPeripheralsWithServicesOptions(@Nullable NSArray<? extends CBUUID> serviceUUIDs,
+            @Nullable NSDictionary<String, ?> options);
 
     /**
      * [@property] delegate
@@ -332,7 +342,7 @@ public class CBCentralManager extends CBManager {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CBCentralManagerDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) CBCentralManagerDelegate value);
 
     /**
      * [@property] delegate
@@ -340,7 +350,7 @@ public class CBCentralManager extends CBManager {
      * The delegate object that will receive central events.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) CBCentralManagerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CBCentralManagerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -382,7 +392,7 @@ public class CBCentralManager extends CBManager {
      */
     @Generated
     @Selector("registerForConnectionEventsWithOptions:")
-    public native void registerForConnectionEventsWithOptions(NSDictionary<String, ?> options);
+    public native void registerForConnectionEventsWithOptions(@Nullable NSDictionary<String, ?> options);
 
     /**
      * supportsFeatures

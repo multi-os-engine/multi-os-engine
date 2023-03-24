@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCapturePhotoBracketSettings
@@ -85,22 +87,25 @@ public class AVCapturePhotoBracketSettings extends AVCapturePhotoSettings {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,9 +140,10 @@ public class AVCapturePhotoBracketSettings extends AVCapturePhotoSettings {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -185,8 +191,8 @@ public class AVCapturePhotoBracketSettings extends AVCapturePhotoSettings {
     @Generated
     @Selector("photoBracketSettingsWithRawPixelFormatType:processedFormat:bracketedSettings:")
     public static native AVCapturePhotoBracketSettings photoBracketSettingsWithRawPixelFormatTypeProcessedFormatBracketedSettings(
-            int rawPixelFormatType, NSDictionary<String, ?> processedFormat,
-            NSArray<? extends AVCaptureBracketedStillImageSettings> bracketedSettings);
+            int rawPixelFormatType, @Nullable NSDictionary<String, ?> processedFormat,
+            @NotNull NSArray<? extends AVCaptureBracketedStillImageSettings> bracketedSettings);
 
     @Generated
     @Selector("photoSettings")
@@ -195,11 +201,12 @@ public class AVCapturePhotoBracketSettings extends AVCapturePhotoSettings {
     @Generated
     @Selector("photoSettingsFromPhotoSettings:")
     public static native AVCapturePhotoBracketSettings photoSettingsFromPhotoSettings(
-            AVCapturePhotoSettings photoSettings);
+            @NotNull AVCapturePhotoSettings photoSettings);
 
     @Generated
     @Selector("photoSettingsWithFormat:")
-    public static native AVCapturePhotoBracketSettings photoSettingsWithFormat(NSDictionary<String, ?> format);
+    public static native AVCapturePhotoBracketSettings photoSettingsWithFormat(
+            @Nullable NSDictionary<String, ?> format);
 
     @Generated
     @Selector("photoSettingsWithRawPixelFormatType:")
@@ -208,7 +215,7 @@ public class AVCapturePhotoBracketSettings extends AVCapturePhotoSettings {
     @Generated
     @Selector("photoSettingsWithRawPixelFormatType:processedFormat:")
     public static native AVCapturePhotoBracketSettings photoSettingsWithRawPixelFormatTypeProcessedFormat(
-            int rawPixelFormatType, NSDictionary<String, ?> processedFormat);
+            int rawPixelFormatType, @Nullable NSDictionary<String, ?> processedFormat);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -239,6 +246,7 @@ public class AVCapturePhotoBracketSettings extends AVCapturePhotoSettings {
      * 
      * This read-only property never returns nil.
      */
+    @NotNull
     @Generated
     @Selector("bracketedSettings")
     public native NSArray<? extends AVCaptureBracketedStillImageSettings> bracketedSettings();
@@ -323,12 +331,13 @@ public class AVCapturePhotoBracketSettings extends AVCapturePhotoSettings {
     @Generated
     @Selector("photoBracketSettingsWithRawPixelFormatType:rawFileType:processedFormat:processedFileType:bracketedSettings:")
     public static native AVCapturePhotoBracketSettings photoBracketSettingsWithRawPixelFormatTypeRawFileTypeProcessedFormatProcessedFileTypeBracketedSettings(
-            int rawPixelFormatType, String rawFileType, NSDictionary<String, ?> processedFormat,
-            String processedFileType, NSArray<? extends AVCaptureBracketedStillImageSettings> bracketedSettings);
+            int rawPixelFormatType, @Nullable String rawFileType, @Nullable NSDictionary<String, ?> processedFormat,
+            @Nullable String processedFileType,
+            @NotNull NSArray<? extends AVCaptureBracketedStillImageSettings> bracketedSettings);
 
     @Generated
     @Selector("photoSettingsWithRawPixelFormatType:rawFileType:processedFormat:processedFileType:")
     public static native AVCapturePhotoBracketSettings photoSettingsWithRawPixelFormatTypeRawFileTypeProcessedFormatProcessedFileType(
-            int rawPixelFormatType, String rawFileType, NSDictionary<String, ?> processedFormat,
-            String processedFileType);
+            int rawPixelFormatType, @Nullable String rawFileType, @Nullable NSDictionary<String, ?> processedFormat,
+            @Nullable String processedFileType);
 }

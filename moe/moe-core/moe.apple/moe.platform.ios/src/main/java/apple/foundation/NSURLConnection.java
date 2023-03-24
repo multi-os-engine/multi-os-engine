@@ -38,6 +38,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSURLConnection
@@ -147,7 +149,7 @@ public class NSURLConnection extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * canHandleRequest:
@@ -174,22 +176,25 @@ public class NSURLConnection extends NSObject {
      */
     @Generated
     @Selector("canHandleRequest:")
-    public static native boolean canHandleRequest(NSURLRequest request);
+    public static native boolean canHandleRequest(@NotNull NSURLRequest request);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -199,11 +204,12 @@ public class NSURLConnection extends NSObject {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSession (see NSURLSession.h)
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("connectionWithRequest:delegate:")
-    public static native NSURLConnection connectionWithRequestDelegate(NSURLRequest request,
-            @Mapped(ObjCObjectMapper.class) Object delegate);
+    public static native NSURLConnection connectionWithRequestDelegate(@NotNull NSURLRequest request,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object delegate);
 
     @Generated
     @Selector("debugDescription")
@@ -235,9 +241,10 @@ public class NSURLConnection extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -289,9 +296,9 @@ public class NSURLConnection extends NSObject {
     @Generated
     @Deprecated
     @Selector("sendAsynchronousRequest:queue:completionHandler:")
-    public static native void sendAsynchronousRequestQueueCompletionHandler(NSURLRequest request,
-            NSOperationQueue queue,
-            @ObjCBlock(name = "call_sendAsynchronousRequestQueueCompletionHandler") Block_sendAsynchronousRequestQueueCompletionHandler handler);
+    public static native void sendAsynchronousRequestQueueCompletionHandler(@NotNull NSURLRequest request,
+            @NotNull NSOperationQueue queue,
+            @NotNull @ObjCBlock(name = "call_sendAsynchronousRequestQueueCompletionHandler") Block_sendAsynchronousRequestQueueCompletionHandler handler);
 
     /**
      * sendSynchronousRequest:returningResponse:error:
@@ -333,12 +340,13 @@ public class NSURLConnection extends NSObject {
      *         Deprecated-Since: 9.0
      *         Deprecated-Message: Use [NSURLSession dataTaskWithRequest:completionHandler:] (see NSURLSession.h
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("sendSynchronousRequest:returningResponse:error:")
-    public static native NSData sendSynchronousRequestReturningResponseError(NSURLRequest request,
-            @ReferenceInfo(type = NSURLResponse.class) Ptr<NSURLResponse> response,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSData sendSynchronousRequestReturningResponseError(@NotNull NSURLRequest request,
+            @Nullable @ReferenceInfo(type = NSURLResponse.class) Ptr<NSURLResponse> response,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("setVersion:")
@@ -360,6 +368,7 @@ public class NSURLConnection extends NSObject {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @Selector("currentRequest")
     public native NSURLRequest currentRequest();
@@ -376,8 +385,8 @@ public class NSURLConnection extends NSObject {
     @Generated
     @Deprecated
     @Selector("initWithRequest:delegate:")
-    public native NSURLConnection initWithRequestDelegate(NSURLRequest request,
-            @Mapped(ObjCObjectMapper.class) Object delegate);
+    public native NSURLConnection initWithRequestDelegate(@NotNull NSURLRequest request,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object delegate);
 
     /**
      * Designated initializer
@@ -389,8 +398,8 @@ public class NSURLConnection extends NSObject {
     @Generated
     @Deprecated
     @Selector("initWithRequest:delegate:startImmediately:")
-    public native NSURLConnection initWithRequestDelegateStartImmediately(NSURLRequest request,
-            @Mapped(ObjCObjectMapper.class) Object delegate, boolean startImmediately);
+    public native NSURLConnection initWithRequestDelegateStartImmediately(@NotNull NSURLRequest request,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object delegate, boolean startImmediately);
 
     /**
      * [@property] newsstandAssetDownload
@@ -402,6 +411,7 @@ public class NSURLConnection extends NSObject {
      * Deprecated-Message: Use Remote notifications Background Modes instead:
      * https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_updates_to_your_app_silently
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("newsstandAssetDownload")
@@ -410,6 +420,7 @@ public class NSURLConnection extends NSObject {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @Selector("originalRequest")
     public native NSURLRequest originalRequest();
@@ -419,14 +430,14 @@ public class NSURLConnection extends NSObject {
      */
     @Generated
     @Selector("scheduleInRunLoop:forMode:")
-    public native void scheduleInRunLoopForMode(NSRunLoop aRunLoop, String mode);
+    public native void scheduleInRunLoopForMode(@NotNull NSRunLoop aRunLoop, @NotNull String mode);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @Selector("setDelegateQueue:")
-    public native void setDelegateQueue(NSOperationQueue queue);
+    public native void setDelegateQueue(@Nullable NSOperationQueue queue);
 
     /**
      * API-Since: 2.0
@@ -440,13 +451,13 @@ public class NSURLConnection extends NSObject {
      */
     @Generated
     @Selector("unscheduleFromRunLoop:forMode:")
-    public native void unscheduleFromRunLoopForMode(NSRunLoop aRunLoop, String mode);
+    public native void unscheduleFromRunLoopForMode(@NotNull NSRunLoop aRunLoop, @NotNull String mode);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sendAsynchronousRequestQueueCompletionHandler {
         @Generated
-        void call_sendAsynchronousRequestQueueCompletionHandler(NSURLResponse response, NSData data,
-                NSError connectionError);
+        void call_sendAsynchronousRequestQueueCompletionHandler(@Nullable NSURLResponse response, @Nullable NSData data,
+                @Nullable NSError connectionError);
     }
 }

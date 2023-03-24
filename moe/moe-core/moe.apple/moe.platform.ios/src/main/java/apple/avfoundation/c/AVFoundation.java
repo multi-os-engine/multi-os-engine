@@ -34,6 +34,8 @@ import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.map.ObjCStringMapper;
 import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("AVFoundation")
@@ -156,6 +158,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -176,6 +179,7 @@ public final class AVFoundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -198,6 +202,7 @@ public final class AVFoundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -212,6 +217,7 @@ public final class AVFoundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -225,6 +231,7 @@ public final class AVFoundation {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -239,6 +246,7 @@ public final class AVFoundation {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -253,6 +261,7 @@ public final class AVFoundation {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -265,6 +274,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -273,6 +283,7 @@ public final class AVFoundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -281,6 +292,7 @@ public final class AVFoundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -293,6 +305,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -301,6 +314,7 @@ public final class AVFoundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -309,6 +323,7 @@ public final class AVFoundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -317,6 +332,7 @@ public final class AVFoundation {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -325,6 +341,7 @@ public final class AVFoundation {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -335,6 +352,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -349,6 +367,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -364,6 +383,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -379,6 +399,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -394,6 +415,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -410,6 +432,7 @@ public final class AVFoundation {
      * API-Since: 9.0
      * Deprecated-Since: 100000.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -437,6 +460,7 @@ public final class AVFoundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -455,6 +479,7 @@ public final class AVFoundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -476,6 +501,7 @@ public final class AVFoundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -498,6 +524,7 @@ public final class AVFoundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -516,6 +543,7 @@ public final class AVFoundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -536,6 +564,7 @@ public final class AVFoundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -550,6 +579,7 @@ public final class AVFoundation {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -564,6 +594,7 @@ public final class AVFoundation {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -577,6 +608,7 @@ public final class AVFoundation {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -647,6 +679,7 @@ public final class AVFoundation {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -662,6 +695,7 @@ public final class AVFoundation {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -676,6 +710,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -690,6 +725,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -706,6 +742,7 @@ public final class AVFoundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -717,6 +754,7 @@ public final class AVFoundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -728,6 +766,7 @@ public final class AVFoundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -740,6 +779,7 @@ public final class AVFoundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -768,6 +808,7 @@ public final class AVFoundation {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -782,6 +823,7 @@ public final class AVFoundation {
      * Deprecated-Since: 10.2
      * Deprecated-Message: Use AVCaptureDeviceTypeBuiltInDualCamera instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -878,6 +920,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -893,6 +936,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -910,6 +954,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -925,6 +970,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -941,6 +987,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -961,6 +1008,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -978,6 +1026,7 @@ public final class AVFoundation {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -995,6 +1044,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1010,6 +1060,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1025,6 +1076,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1040,6 +1092,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1055,6 +1108,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1070,6 +1124,7 @@ public final class AVFoundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1085,6 +1140,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1100,6 +1156,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1115,6 +1172,7 @@ public final class AVFoundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1130,6 +1188,7 @@ public final class AVFoundation {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1146,6 +1205,7 @@ public final class AVFoundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1162,6 +1222,7 @@ public final class AVFoundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1183,6 +1244,7 @@ public final class AVFoundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6791,6 +6853,7 @@ public final class AVFoundation {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6805,6 +6868,7 @@ public final class AVFoundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6820,6 +6884,7 @@ public final class AVFoundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6836,6 +6901,7 @@ public final class AVFoundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6851,6 +6917,7 @@ public final class AVFoundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6865,6 +6932,7 @@ public final class AVFoundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6880,6 +6948,7 @@ public final class AVFoundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6895,6 +6964,7 @@ public final class AVFoundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6910,6 +6980,7 @@ public final class AVFoundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6924,6 +6995,7 @@ public final class AVFoundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6938,6 +7010,7 @@ public final class AVFoundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6954,6 +7027,7 @@ public final class AVFoundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6968,6 +7042,7 @@ public final class AVFoundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6983,6 +7058,7 @@ public final class AVFoundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6996,6 +7072,7 @@ public final class AVFoundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7004,6 +7081,7 @@ public final class AVFoundation {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7012,6 +7090,7 @@ public final class AVFoundation {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7020,6 +7099,7 @@ public final class AVFoundation {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7028,6 +7108,7 @@ public final class AVFoundation {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7047,6 +7128,7 @@ public final class AVFoundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7067,6 +7149,7 @@ public final class AVFoundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7084,6 +7167,7 @@ public final class AVFoundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7094,6 +7178,7 @@ public final class AVFoundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7104,6 +7189,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7114,6 +7200,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7124,6 +7211,7 @@ public final class AVFoundation {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7134,6 +7222,7 @@ public final class AVFoundation {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7144,6 +7233,7 @@ public final class AVFoundation {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7154,6 +7244,7 @@ public final class AVFoundation {
      * 
      * API-Since: 4.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7168,6 +7259,7 @@ public final class AVFoundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7186,6 +7278,7 @@ public final class AVFoundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7196,6 +7289,7 @@ public final class AVFoundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7206,6 +7300,7 @@ public final class AVFoundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7769,6 +7864,7 @@ public final class AVFoundation {
      * 
      * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7781,6 +7877,7 @@ public final class AVFoundation {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7794,6 +7891,7 @@ public final class AVFoundation {
      * 
      * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7807,6 +7905,7 @@ public final class AVFoundation {
      * 
      * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7820,6 +7919,7 @@ public final class AVFoundation {
      * 
      * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7833,6 +7933,7 @@ public final class AVFoundation {
      * 
      * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7964,6 +8065,7 @@ public final class AVFoundation {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7976,6 +8078,7 @@ public final class AVFoundation {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7984,6 +8087,7 @@ public final class AVFoundation {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -7995,6 +8099,7 @@ public final class AVFoundation {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8007,6 +8112,7 @@ public final class AVFoundation {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8024,6 +8130,7 @@ public final class AVFoundation {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8032,6 +8139,7 @@ public final class AVFoundation {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8179,6 +8287,7 @@ public final class AVFoundation {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8187,6 +8296,7 @@ public final class AVFoundation {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8199,6 +8309,7 @@ public final class AVFoundation {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8233,6 +8344,7 @@ public final class AVFoundation {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8247,6 +8359,7 @@ public final class AVFoundation {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8259,6 +8372,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8272,6 +8386,7 @@ public final class AVFoundation {
      * 
      * API-Since: 12.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8285,6 +8400,7 @@ public final class AVFoundation {
      * 
      * API-Since: 12.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8298,6 +8414,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8353,6 +8470,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8368,6 +8486,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8383,6 +8502,7 @@ public final class AVFoundation {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8400,6 +8520,7 @@ public final class AVFoundation {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8408,6 +8529,7 @@ public final class AVFoundation {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8416,6 +8538,7 @@ public final class AVFoundation {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8424,6 +8547,7 @@ public final class AVFoundation {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8440,6 +8564,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8452,6 +8577,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8479,6 +8605,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8506,6 +8633,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8521,6 +8649,7 @@ public final class AVFoundation {
      * 
      * API-Since: 11.1
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8537,6 +8666,7 @@ public final class AVFoundation {
      * 
      * API-Since: 11.1
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8591,6 +8721,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8605,6 +8736,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8619,6 +8751,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8633,6 +8766,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8644,6 +8778,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8655,6 +8790,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8666,6 +8802,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8677,6 +8814,7 @@ public final class AVFoundation {
      * 
      * API-Since: 11.1
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8688,6 +8826,7 @@ public final class AVFoundation {
      * 
      * API-Since: 11.1
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8699,6 +8838,7 @@ public final class AVFoundation {
      * 
      * API-Since: 11.1
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8711,6 +8851,7 @@ public final class AVFoundation {
      * 
      * API-Since: 11.1
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8722,6 +8863,7 @@ public final class AVFoundation {
      * 
      * API-Since: 11.1
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8850,6 +8992,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8864,6 +9007,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8884,6 +9028,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8899,6 +9044,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8912,6 +9058,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8926,6 +9073,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8934,6 +9082,7 @@ public final class AVFoundation {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8942,6 +9091,7 @@ public final class AVFoundation {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8957,6 +9107,7 @@ public final class AVFoundation {
      * 
      * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8967,6 +9118,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8977,6 +9129,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -8995,6 +9148,7 @@ public final class AVFoundation {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9010,6 +9164,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9103,6 +9258,7 @@ public final class AVFoundation {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9118,6 +9274,7 @@ public final class AVFoundation {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9175,6 +9332,7 @@ public final class AVFoundation {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9187,6 +9345,7 @@ public final class AVFoundation {
      * 
      * API-Since: 14.1
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9214,8 +9373,8 @@ public final class AVFoundation {
      */
     @Generated
     @CFunction
-    public static native boolean AVSampleBufferAttachContentKey(CMSampleBufferRef sbuf, AVContentKey contentKey,
-            Ptr<NSError> outError);
+    public static native boolean AVSampleBufferAttachContentKey(@NotNull CMSampleBufferRef sbuf,
+            @NotNull AVContentKey contentKey, @Nullable Ptr<NSError> outError);
 
     /**
      * API-Since: 15.0
@@ -9271,6 +9430,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9281,6 +9441,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9291,6 +9452,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9306,6 +9468,7 @@ public final class AVFoundation {
      * 
      * API-Since: 14.5
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9339,6 +9502,7 @@ public final class AVFoundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9354,6 +9518,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9368,6 +9533,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9385,6 +9551,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9393,6 +9560,7 @@ public final class AVFoundation {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9401,6 +9569,7 @@ public final class AVFoundation {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9409,6 +9578,7 @@ public final class AVFoundation {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9417,6 +9587,7 @@ public final class AVFoundation {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9432,6 +9603,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9444,6 +9616,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9456,6 +9629,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9468,6 +9642,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9480,6 +9655,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9492,6 +9668,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9504,6 +9681,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9516,6 +9694,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9528,6 +9707,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9545,6 +9725,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9557,6 +9738,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9569,6 +9751,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9584,6 +9767,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9603,6 +9787,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9613,6 +9798,7 @@ public final class AVFoundation {
      * 
      * API-Since: 14.5
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9636,6 +9822,7 @@ public final class AVFoundation {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9656,6 +9843,7 @@ public final class AVFoundation {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9670,6 +9858,7 @@ public final class AVFoundation {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9684,6 +9873,7 @@ public final class AVFoundation {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9692,6 +9882,7 @@ public final class AVFoundation {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9700,6 +9891,7 @@ public final class AVFoundation {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9708,6 +9900,7 @@ public final class AVFoundation {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9724,6 +9917,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9739,6 +9933,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9754,6 +9949,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9770,6 +9966,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9786,6 +9983,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9801,6 +9999,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -9816,6 +10015,7 @@ public final class AVFoundation {
      * 
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

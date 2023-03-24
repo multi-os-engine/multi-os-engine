@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A WKWebViewConfiguration object is a collection of properties with
@@ -81,22 +83,25 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +136,10 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -199,15 +205,17 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("applicationNameForUserAgent")
     public native String applicationNameForUserAgent();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * An enum value indicating the type of data detection desired.
@@ -229,7 +237,7 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * A Boolean value indicating whether the WKWebView should always allow scaling of the web page, regardless of
@@ -250,7 +258,7 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
 
     @Generated
     @Selector("initWithCoder:")
-    public native WKWebViewConfiguration initWithCoder(NSCoder coder);
+    public native WKWebViewConfiguration initWithCoder(@NotNull NSCoder coder);
 
     /**
      * API-Since: 8.0
@@ -281,6 +289,7 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     /**
      * The preference settings to be used by the web view.
      */
+    @NotNull
     @Generated
     @Selector("preferences")
     public native WKPreferences preferences();
@@ -293,6 +302,7 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      * will be created for it from the specified pool, or an existing process in
      * that pool will be used.
      */
+    @NotNull
     @Generated
     @Selector("processPool")
     public native WKProcessPool processPool();
@@ -358,7 +368,7 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      */
     @Generated
     @Selector("setApplicationNameForUserAgent:")
-    public native void setApplicationNameForUserAgent(String value);
+    public native void setApplicationNameForUserAgent(@Nullable String value);
 
     /**
      * An enum value indicating the type of data detection desired.
@@ -420,7 +430,7 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      */
     @Generated
     @Selector("setPreferences:")
-    public native void setPreferences(WKPreferences value);
+    public native void setPreferences(@NotNull WKPreferences value);
 
     /**
      * The process pool from which to obtain the view's web content
@@ -432,7 +442,7 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      */
     @Generated
     @Selector("setProcessPool:")
-    public native void setProcessPool(WKProcessPool value);
+    public native void setProcessPool(@NotNull WKProcessPool value);
 
     /**
      * API-Since: 9.0
@@ -469,7 +479,7 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      */
     @Generated
     @Selector("setUserContentController:")
-    public native void setUserContentController(WKUserContentController value);
+    public native void setUserContentController(@NotNull WKUserContentController value);
 
     /**
      * The website data store to be used by the web view.
@@ -478,7 +488,7 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      */
     @Generated
     @Selector("setWebsiteDataStore:")
-    public native void setWebsiteDataStore(WKWebsiteDataStore value);
+    public native void setWebsiteDataStore(@NotNull WKWebsiteDataStore value);
 
     /**
      * A Boolean value indicating whether the web view suppresses
@@ -493,6 +503,7 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     /**
      * The user content controller to associate with the web view.
      */
+    @NotNull
     @Generated
     @Selector("userContentController")
     public native WKUserContentController userContentController();
@@ -502,6 +513,7 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("websiteDataStore")
     public native WKWebsiteDataStore websiteDataStore();
@@ -527,7 +539,7 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     @Generated
     @Selector("setURLSchemeHandler:forURLScheme:")
     public native void setURLSchemeHandlerForURLScheme(
-            @Mapped(ObjCObjectMapper.class) WKURLSchemeHandler urlSchemeHandler, String urlScheme);
+            @Nullable @Mapped(ObjCObjectMapper.class) WKURLSchemeHandler urlSchemeHandler, @NotNull String urlScheme);
 
     /**
      * Returns the currently registered URL scheme handler object for the given URL scheme.
@@ -536,10 +548,11 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      * 
      *               API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("urlSchemeHandlerForURLScheme:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native WKURLSchemeHandler urlSchemeHandlerForURLScheme(String urlScheme);
+    public native WKURLSchemeHandler urlSchemeHandlerForURLScheme(@NotNull String urlScheme);
 
     /**
      * The set of default webpage preferences to use when loading and rendering content.

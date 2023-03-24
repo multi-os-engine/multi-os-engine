@@ -11,6 +11,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 15.4
@@ -37,8 +38,8 @@ public interface CPTemplateApplicationInstrumentClusterSceneDelegate extends UIS
     @IsOptional
     @Selector("templateApplicationInstrumentClusterScene:didConnectInstrumentClusterController:")
     default void templateApplicationInstrumentClusterSceneDidConnectInstrumentClusterController(
-            CPTemplateApplicationInstrumentClusterScene templateApplicationInstrumentClusterScene,
-            CPInstrumentClusterController instrumentClusterController) {
+            @NotNull CPTemplateApplicationInstrumentClusterScene templateApplicationInstrumentClusterScene,
+            @NotNull CPInstrumentClusterController instrumentClusterController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -49,8 +50,8 @@ public interface CPTemplateApplicationInstrumentClusterSceneDelegate extends UIS
     @IsOptional
     @Selector("templateApplicationInstrumentClusterScene:didDisconnectInstrumentClusterController:")
     default void templateApplicationInstrumentClusterSceneDidDisconnectInstrumentClusterController(
-            CPTemplateApplicationInstrumentClusterScene templateApplicationInstrumentClusterScene,
-            CPInstrumentClusterController instrumentClusterController) {
+            @NotNull CPTemplateApplicationInstrumentClusterScene templateApplicationInstrumentClusterScene,
+            @NotNull CPInstrumentClusterController instrumentClusterController) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

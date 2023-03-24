@@ -24,6 +24,7 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ptr.ConstFloatPtr;
 import org.moe.natj.general.ptr.ConstVoidPtr;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -44,13 +45,14 @@ public final class BNNSLayerData extends StructObject {
         super(peer);
     }
 
+    @Nullable
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native ConstVoidPtr data();
 
     @Generated
     @StructureField(order = 0, isGetter = false)
-    public native void setData(ConstVoidPtr value);
+    public native void setData(@Nullable ConstVoidPtr value);
 
     @Generated
     @StructureField(order = 1, isGetter = true)
@@ -76,11 +78,12 @@ public final class BNNSLayerData extends StructObject {
     @StructureField(order = 3, isGetter = false)
     public native void setData_bias(float value);
 
+    @Nullable
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native ConstFloatPtr data_table();
 
     @Generated
     @StructureField(order = 4, isGetter = false)
-    public native void setData_table(ConstFloatPtr value);
+    public native void setData_table(@Nullable ConstFloatPtr value);
 }

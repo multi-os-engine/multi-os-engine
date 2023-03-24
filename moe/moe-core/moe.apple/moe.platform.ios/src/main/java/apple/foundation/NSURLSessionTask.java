@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSURLSessionTask - a cancelable object that refers to the lifetime
@@ -75,22 +77,25 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +130,10 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * API-Since: 7.0
@@ -172,11 +178,12 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
     @Selector("cancel")
     public native void cancel();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * number of byte bytes we expect to receive, usually derived from the Content-Length header of an HTTP response.
@@ -209,6 +216,7 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
     /**
      * may differ from originalRequest due to http server redirection
      */
+    @Nullable
     @Generated
     @Selector("currentRequest")
     public native NSURLRequest currentRequest();
@@ -217,6 +225,7 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
      * The error, if any, delivered via -URLSession:task:didCompleteWithError:
      * This property will be nil in the event that no error occurred.
      */
+    @Nullable
     @Generated
     @Selector("error")
     public native NSError error();
@@ -234,6 +243,7 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
     /**
      * may be nil if this is a stream task
      */
+    @Nullable
     @Generated
     @Selector("originalRequest")
     public native NSURLRequest originalRequest();
@@ -262,6 +272,7 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
     /**
      * may be nil if no response has been received
      */
+    @Nullable
     @Generated
     @Selector("response")
     public native NSURLResponse response();
@@ -297,7 +308,7 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
      */
     @Generated
     @Selector("setTaskDescription:")
-    public native void setTaskDescription(String value);
+    public native void setTaskDescription(@Nullable String value);
 
     /**
      * The current state of the task within the session.
@@ -324,6 +335,7 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
      * The taskDescription property is available for the developer to
      * provide a descriptive label for the task.
      */
+    @Nullable
     @Generated
     @Selector("taskDescription")
     public native String taskDescription();
@@ -363,10 +375,12 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("earliestBeginDate")
     public native NSDate earliestBeginDate();
 
+    @NotNull
     @Generated
     @Selector("progress")
     public native NSProgress progress();
@@ -400,7 +414,7 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
      */
     @Generated
     @Selector("setEarliestBeginDate:")
-    public native void setEarliestBeginDate(NSDate value);
+    public native void setEarliestBeginDate(@Nullable NSDate value);
 
     /**
      * Sets a task-specific delegate. Methods not implemented on this delegate will
@@ -413,6 +427,7 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -447,7 +462,7 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate(@Mapped(ObjCObjectMapper.class) NSURLSessionTaskDelegate value);
+    public native void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSURLSessionTaskDelegate value);
 
     /**
      * Provides a hint indicating if incremental delivery of a partial response body

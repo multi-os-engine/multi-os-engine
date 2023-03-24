@@ -39,6 +39,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.0
@@ -73,22 +75,25 @@ public class EAAccessory extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +128,10 @@ public class EAAccessory extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,6 +170,7 @@ public class EAAccessory extends NSObject {
     /**
      * API-Since: 3.0
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -174,6 +181,7 @@ public class EAAccessory extends NSObject {
      * Deprecated-Since: 13.0
      * Deprecated-Message: Not supported
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("dockType")
@@ -182,6 +190,7 @@ public class EAAccessory extends NSObject {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("firmwareRevision")
     public native String firmwareRevision();
@@ -189,6 +198,7 @@ public class EAAccessory extends NSObject {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("hardwareRevision")
     public native String hardwareRevision();
@@ -207,6 +217,7 @@ public class EAAccessory extends NSObject {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("manufacturer")
     public native String manufacturer();
@@ -214,6 +225,7 @@ public class EAAccessory extends NSObject {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("modelNumber")
     public native String modelNumber();
@@ -221,6 +233,7 @@ public class EAAccessory extends NSObject {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -230,6 +243,7 @@ public class EAAccessory extends NSObject {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("protocolStrings")
     public native NSArray<String> protocolStrings();
@@ -237,6 +251,7 @@ public class EAAccessory extends NSObject {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("serialNumber")
     public native String serialNumber();
@@ -246,13 +261,13 @@ public class EAAccessory extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) EAAccessoryDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) EAAccessoryDelegate value);
 
     /**
      * API-Since: 3.0
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) EAAccessoryDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) EAAccessoryDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

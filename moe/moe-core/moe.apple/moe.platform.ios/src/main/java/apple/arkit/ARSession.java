@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The ARSession class configures and runs different Augmented Reality techniques on a device.
@@ -59,7 +61,7 @@ public class ARSession extends NSObject {
      */
     @Generated
     @Selector("addAnchor:")
-    public native void addAnchor(ARAnchor anchor);
+    public native void addAnchor(@NotNull ARAnchor anchor);
 
     @Generated
     @Owned
@@ -73,22 +75,25 @@ public class ARSession extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,6 +101,7 @@ public class ARSession extends NSObject {
     /**
      * The configuration currently being used by the session.
      */
+    @Nullable
     @Generated
     @Selector("configuration")
     public native ARConfiguration configuration();
@@ -103,6 +109,7 @@ public class ARSession extends NSObject {
     /**
      * The current frame of the session.
      */
+    @Nullable
     @Generated
     @Selector("currentFrame")
     public native ARFrame currentFrame();
@@ -114,6 +121,7 @@ public class ARSession extends NSObject {
     /**
      * A delegate for receiving ARSession updates.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -124,6 +132,7 @@ public class ARSession extends NSObject {
      * 
      * If not provided or nil, delegate calls will be performed on the main queue.
      */
+    @Nullable
     @Generated
     @Selector("delegateQueue")
     public native NSObject delegateQueue();
@@ -158,9 +167,10 @@ public class ARSession extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -186,7 +196,7 @@ public class ARSession extends NSObject {
      */
     @Generated
     @Selector("removeAnchor:")
-    public native void removeAnchor(ARAnchor anchor);
+    public native void removeAnchor(@NotNull ARAnchor anchor);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -206,7 +216,7 @@ public class ARSession extends NSObject {
      */
     @Generated
     @Selector("runWithConfiguration:")
-    public native void runWithConfiguration(ARConfiguration configuration);
+    public native void runWithConfiguration(@NotNull ARConfiguration configuration);
 
     /**
      * Runs the session with the provided configuration and options.
@@ -220,20 +230,20 @@ public class ARSession extends NSObject {
      */
     @Generated
     @Selector("runWithConfiguration:options:")
-    public native void runWithConfigurationOptions(ARConfiguration configuration, @NUInt long options);
+    public native void runWithConfigurationOptions(@NotNull ARConfiguration configuration, @NUInt long options);
 
     /**
      * A delegate for receiving ARSession updates.
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) ARSessionDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) ARSessionDelegate value);
 
     /**
      * A delegate for receiving ARSession updates.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) ARSessionDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) ARSessionDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -251,7 +261,7 @@ public class ARSession extends NSObject {
      */
     @Generated
     @Selector("setDelegateQueue:")
-    public native void setDelegateQueue(NSObject value);
+    public native void setDelegateQueue(@Nullable NSObject value);
 
     @Generated
     @Selector("setVersion:")
@@ -282,13 +292,13 @@ public class ARSession extends NSObject {
     @Generated
     @Selector("getCurrentWorldMapWithCompletionHandler:")
     public native void getCurrentWorldMapWithCompletionHandler(
-            @ObjCBlock(name = "call_getCurrentWorldMapWithCompletionHandler") Block_getCurrentWorldMapWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_getCurrentWorldMapWithCompletionHandler") Block_getCurrentWorldMapWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getCurrentWorldMapWithCompletionHandler {
         @Generated
-        void call_getCurrentWorldMapWithCompletionHandler(ARWorldMap worldMap, NSError error);
+        void call_getCurrentWorldMapWithCompletionHandler(@Nullable ARWorldMap worldMap, @Nullable NSError error);
     }
 
     /**
@@ -298,6 +308,7 @@ public class ARSession extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native NSUUID identifier();
@@ -311,9 +322,10 @@ public class ARSession extends NSObject {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("raycast:")
-    public native NSArray<? extends ARRaycastResult> raycast(ARRaycastQuery query);
+    public native NSArray<? extends ARRaycastResult> raycast(@NotNull ARRaycastQuery query);
 
     /**
      * Perform a tracked raycast.
@@ -332,16 +344,17 @@ public class ARSession extends NSObject {
      * 
      *         API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("trackedRaycast:updateHandler:")
-    public native ARTrackedRaycast trackedRaycastUpdateHandler(ARRaycastQuery query,
-            @ObjCBlock(name = "call_trackedRaycastUpdateHandler") Block_trackedRaycastUpdateHandler updateHandler);
+    public native ARTrackedRaycast trackedRaycastUpdateHandler(@NotNull ARRaycastQuery query,
+            @NotNull @ObjCBlock(name = "call_trackedRaycastUpdateHandler") Block_trackedRaycastUpdateHandler updateHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_trackedRaycastUpdateHandler {
         @Generated
-        void call_trackedRaycastUpdateHandler(NSArray<? extends ARRaycastResult> arg0);
+        void call_trackedRaycastUpdateHandler(@NotNull NSArray<? extends ARRaycastResult> arg0);
     }
 
     /**
@@ -356,7 +369,7 @@ public class ARSession extends NSObject {
      */
     @Generated
     @Selector("updateWithCollaborationData:")
-    public native void updateWithCollaborationData(ARCollaborationData collaborationData);
+    public native void updateWithCollaborationData(@NotNull ARCollaborationData collaborationData);
 
     /**
      * Requests a single, high resolution frame be captured at that moment in time.
@@ -373,12 +386,12 @@ public class ARSession extends NSObject {
     @Generated
     @Selector("captureHighResolutionFrameWithCompletion:")
     public native void captureHighResolutionFrameWithCompletion(
-            @ObjCBlock(name = "call_captureHighResolutionFrameWithCompletion") Block_captureHighResolutionFrameWithCompletion completion);
+            @NotNull @ObjCBlock(name = "call_captureHighResolutionFrameWithCompletion") Block_captureHighResolutionFrameWithCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_captureHighResolutionFrameWithCompletion {
         @Generated
-        void call_captureHighResolutionFrameWithCompletion(ARFrame frame, NSError error);
+        void call_captureHighResolutionFrameWithCompletion(@Nullable ARFrame frame, @Nullable NSError error);
     }
 }

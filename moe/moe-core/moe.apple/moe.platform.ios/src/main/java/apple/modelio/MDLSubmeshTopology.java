@@ -39,6 +39,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.0
@@ -73,22 +75,25 @@ public class MDLSubmeshTopology extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +128,10 @@ public class MDLSubmeshTopology extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -176,11 +182,13 @@ public class MDLSubmeshTopology extends NSObject {
      * than the number of entries in any other vertex buffer, it shouldn't be
      * interleaved with other data.
      */
+    @Nullable
     @Generated
     @Selector("edgeCreaseIndices")
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLMeshBuffer edgeCreaseIndices();
 
+    @Nullable
     @Generated
     @Selector("edgeCreases")
     @MappedReturn(ObjCObjectMapper.class)
@@ -213,6 +221,7 @@ public class MDLSubmeshTopology extends NSObject {
      * for the second, followed by four for the polygon, and finally two
      * indices for the line.
      */
+    @Nullable
     @Generated
     @Selector("faceTopology")
     @MappedReturn(ObjCObjectMapper.class)
@@ -236,6 +245,7 @@ public class MDLSubmeshTopology extends NSObject {
      * than the number of entries in any other vertex buffer, it shouldn't be
      * interleaved with other data.
      */
+    @Nullable
     @Generated
     @Selector("holes")
     @MappedReturn(ObjCObjectMapper.class)
@@ -252,7 +262,7 @@ public class MDLSubmeshTopology extends NSObject {
      */
     @Generated
     @Selector("initWithSubmesh:")
-    public native MDLSubmeshTopology initWithSubmesh(MDLSubmesh submesh);
+    public native MDLSubmeshTopology initWithSubmesh(@NotNull MDLSubmesh submesh);
 
     /**
      * [@property] edgeCreaseCount
@@ -278,11 +288,11 @@ public class MDLSubmeshTopology extends NSObject {
      */
     @Generated
     @Selector("setEdgeCreaseIndices:")
-    public native void setEdgeCreaseIndices(@Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
+    public native void setEdgeCreaseIndices(@Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
 
     @Generated
     @Selector("setEdgeCreases:")
-    public native void setEdgeCreases(@Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
+    public native void setEdgeCreases(@Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
 
     /**
      * [@property] faceCount
@@ -312,7 +322,7 @@ public class MDLSubmeshTopology extends NSObject {
      */
     @Generated
     @Selector("setFaceTopology:")
-    public native void setFaceTopology(@Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
+    public native void setFaceTopology(@Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
 
     /**
      * [@property] holeCount
@@ -333,7 +343,7 @@ public class MDLSubmeshTopology extends NSObject {
      */
     @Generated
     @Selector("setHoles:")
-    public native void setHoles(@Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
+    public native void setHoles(@Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
 
     /**
      * [@property] vertexCreaseCount
@@ -357,11 +367,11 @@ public class MDLSubmeshTopology extends NSObject {
      */
     @Generated
     @Selector("setVertexCreaseIndices:")
-    public native void setVertexCreaseIndices(@Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
+    public native void setVertexCreaseIndices(@Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
 
     @Generated
     @Selector("setVertexCreases:")
-    public native void setVertexCreases(@Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
+    public native void setVertexCreases(@Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
 
     /**
      * [@property] vertexCreaseCount
@@ -384,11 +394,13 @@ public class MDLSubmeshTopology extends NSObject {
      * than the number of entries in any other vertex buffer, it shouldn't be
      * interleaved with other data.
      */
+    @Nullable
     @Generated
     @Selector("vertexCreaseIndices")
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLMeshBuffer vertexCreaseIndices();
 
+    @Nullable
     @Generated
     @Selector("vertexCreases")
     @MappedReturn(ObjCObjectMapper.class)

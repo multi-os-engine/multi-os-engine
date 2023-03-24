@@ -41,6 +41,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 7.0
@@ -75,22 +77,25 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +130,10 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,11 +169,11 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
     @Generated
     @Selector("addAngularVelocity:forItem:")
     public native void addAngularVelocityForItem(@NFloat double velocity,
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
     @Generated
     @Selector("addItem:")
-    public native void addItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
+    public native void addItem(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
     /**
      * The linear velocity, expressed in points per second, that you want to add to the specified dynamic item
@@ -177,7 +183,7 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
     @Generated
     @Selector("addLinearVelocity:forItem:")
     public native void addLinearVelocityForItem(@ByValue CGPoint velocity,
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
     /**
      * force an item to never rotate
@@ -197,7 +203,7 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
     @Generated
     @Selector("angularVelocityForItem:")
     @NFloat
-    public native double angularVelocityForItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
+    public native double angularVelocityForItem(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
     /**
      * Specifies the charge associated with the item behavior. Charge determines the degree to which a dynamic item is
@@ -242,7 +248,7 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
 
     @Generated
     @Selector("initWithItems:")
-    public native UIDynamicItemBehavior initWithItems(NSArray<?> items);
+    public native UIDynamicItemBehavior initWithItems(@NotNull NSArray<?> items);
 
     /**
      * If an item is anchored, it can participate in collisions, but will not exhibit
@@ -266,6 +272,7 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
     @Selector("setAnchored:")
     public native void setAnchored(boolean value);
 
+    @NotNull
     @Generated
     @Selector("items")
     public native NSArray<?> items();
@@ -273,11 +280,11 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
     @Generated
     @Selector("linearVelocityForItem:")
     @ByValue
-    public native CGPoint linearVelocityForItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
+    public native CGPoint linearVelocityForItem(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
     @Generated
     @Selector("removeItem:")
-    public native void removeItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
+    public native void removeItem(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
     /**
      * 0: no velocity damping

@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("iAd")
@@ -49,6 +50,7 @@ public final class iAd {
      * API-Since: 7.1
      * Deprecated-Since: 15.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()

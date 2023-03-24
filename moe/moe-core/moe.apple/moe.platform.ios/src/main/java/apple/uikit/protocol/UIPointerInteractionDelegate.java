@@ -13,6 +13,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.4
@@ -32,11 +34,12 @@ public interface UIPointerInteractionDelegate {
      * @return A UIPointerRegion in which to apply a pointer style. Return nil to indicate that this interaction should
      *         not customize the pointer for the current location.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("pointerInteraction:regionForRequest:defaultRegion:")
-    default UIPointerRegion pointerInteractionRegionForRequestDefaultRegion(UIPointerInteraction interaction,
-            UIPointerRegionRequest request, UIPointerRegion defaultRegion) {
+    default UIPointerRegion pointerInteractionRegionForRequestDefaultRegion(@NotNull UIPointerInteraction interaction,
+            @NotNull UIPointerRegionRequest request, @NotNull UIPointerRegion defaultRegion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -49,10 +52,12 @@ public interface UIPointerInteractionDelegate {
      * 
      * @return A UIPointerStyle describing the desired hover effect or pointer appearance for the given UIPointerRegion.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("pointerInteraction:styleForRegion:")
-    default UIPointerStyle pointerInteractionStyleForRegion(UIPointerInteraction interaction, UIPointerRegion region) {
+    default UIPointerStyle pointerInteractionStyleForRegion(@NotNull UIPointerInteraction interaction,
+            @NotNull UIPointerRegion region) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -67,8 +72,9 @@ public interface UIPointerInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("pointerInteraction:willEnterRegion:animator:")
-    default void pointerInteractionWillEnterRegionAnimator(UIPointerInteraction interaction, UIPointerRegion region,
-            @Mapped(ObjCObjectMapper.class) UIPointerInteractionAnimating animator) {
+    default void pointerInteractionWillEnterRegionAnimator(@NotNull UIPointerInteraction interaction,
+            @NotNull UIPointerRegion region,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIPointerInteractionAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -82,8 +88,9 @@ public interface UIPointerInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("pointerInteraction:willExitRegion:animator:")
-    default void pointerInteractionWillExitRegionAnimator(UIPointerInteraction interaction, UIPointerRegion region,
-            @Mapped(ObjCObjectMapper.class) UIPointerInteractionAnimating animator) {
+    default void pointerInteractionWillExitRegionAnimator(@NotNull UIPointerInteraction interaction,
+            @NotNull UIPointerRegion region,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIPointerInteractionAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPMusicPlayerController allows playback of MPMediaItems through the Music application.
@@ -78,28 +80,32 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     /**
      * Playing items with applicationMusicPlayer does not affect Music's playback state.
      */
+    @NotNull
     @Generated
     @Selector("applicationMusicPlayer")
     public static native MPMusicPlayerController applicationMusicPlayer();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,6 +127,7 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
      * API-Since: 3.0
      * Deprecated-Since: 8.0
      */
+    @NotNull
     @Generated
     @Deprecated
     @Selector("iPodMusicPlayer")
@@ -143,9 +150,10 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -171,6 +179,7 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     /**
      * Playing media items with the systemMusicPlayer will replace the user's current Music state.
      */
+    @NotNull
     @Generated
     @Selector("systemMusicPlayer")
     public static native MPMusicPlayerController systemMusicPlayer();
@@ -235,6 +244,7 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
      * Returns the currently playing media item, or nil if none is playing.
      * Setting the nowPlayingItem to an item in the current queue will begin playback at that item.
      */
+    @Nullable
     @Generated
     @Selector("nowPlayingItem")
     public native MPMediaItem nowPlayingItem();
@@ -271,7 +281,7 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Generated
     @Selector("prepareToPlayWithCompletionHandler:")
     public native void prepareToPlayWithCompletionHandler(
-            @ObjCBlock(name = "call_prepareToPlayWithCompletionHandler") Block_prepareToPlayWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_prepareToPlayWithCompletionHandler") Block_prepareToPlayWithCompletionHandler completionHandler);
 
     /**
      * Determines how music repeats after playback completes. Defaults to MPMusicRepeatModeDefault.
@@ -295,18 +305,18 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
      */
     @Generated
     @Selector("setNowPlayingItem:")
-    public native void setNowPlayingItem(MPMediaItem value);
+    public native void setNowPlayingItem(@Nullable MPMediaItem value);
 
     /**
      * API-Since: 10.1
      */
     @Generated
     @Selector("setQueueWithDescriptor:")
-    public native void setQueueWithDescriptor(MPMusicPlayerQueueDescriptor descriptor);
+    public native void setQueueWithDescriptor(@NotNull MPMusicPlayerQueueDescriptor descriptor);
 
     @Generated
     @Selector("setQueueWithItemCollection:")
-    public native void setQueueWithItemCollection(MPMediaItemCollection itemCollection);
+    public native void setQueueWithItemCollection(@NotNull MPMediaItemCollection itemCollection);
 
     /**
      * Call -play to begin playback after setting an item queue source. Setting a query will implicitly use
@@ -314,14 +324,14 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
      */
     @Generated
     @Selector("setQueueWithQuery:")
-    public native void setQueueWithQuery(MPMediaQuery query);
+    public native void setQueueWithQuery(@NotNull MPMediaQuery query);
 
     /**
      * API-Since: 9.3
      */
     @Generated
     @Selector("setQueueWithStoreIDs:")
-    public native void setQueueWithStoreIDs(NSArray<String> storeIDs);
+    public native void setQueueWithStoreIDs(@NotNull NSArray<String> storeIDs);
 
     /**
      * Determines how music repeats after playback completes. Defaults to MPMusicRepeatModeDefault.
@@ -401,7 +411,7 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Generated
     public interface Block_prepareToPlayWithCompletionHandler {
         @Generated
-        void call_prepareToPlayWithCompletionHandler(NSError error);
+        void call_prepareToPlayWithCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -411,13 +421,14 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
      */
     @Generated
     @Selector("appendQueueDescriptor:")
-    public native void appendQueueDescriptor(MPMusicPlayerQueueDescriptor descriptor);
+    public native void appendQueueDescriptor(@NotNull MPMusicPlayerQueueDescriptor descriptor);
 
     /**
      * Similar to applicationMusicPlayer, but allows direct manipulation of the queue.
      * 
      * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @Selector("applicationQueuePlayer")
     public static native MPMusicPlayerApplicationController applicationQueuePlayer();
@@ -429,5 +440,5 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
      */
     @Generated
     @Selector("prependQueueDescriptor:")
-    public native void prependQueueDescriptor(MPMusicPlayerQueueDescriptor descriptor);
+    public native void prependQueueDescriptor(@NotNull MPMusicPlayerQueueDescriptor descriptor);
 }

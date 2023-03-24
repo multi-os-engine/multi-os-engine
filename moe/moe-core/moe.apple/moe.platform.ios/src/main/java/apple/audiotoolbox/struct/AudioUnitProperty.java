@@ -23,6 +23,7 @@ import org.moe.natj.c.ann.StructureField;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Structure()
@@ -44,7 +45,7 @@ public final class AudioUnitProperty extends StructObject {
     }
 
     @Generated
-    public AudioUnitProperty(AudioComponentInstance mAudioUnit, int mPropertyID, int mScope, int mElement) {
+    public AudioUnitProperty(@NotNull AudioComponentInstance mAudioUnit, int mPropertyID, int mScope, int mElement) {
         super(AudioUnitProperty.class);
         setMAudioUnit(mAudioUnit);
         setMPropertyID(mPropertyID);
@@ -52,13 +53,14 @@ public final class AudioUnitProperty extends StructObject {
         setMElement(mElement);
     }
 
+    @NotNull
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native AudioComponentInstance mAudioUnit();
 
     @Generated
     @StructureField(order = 0, isGetter = false)
-    public native void setMAudioUnit(AudioComponentInstance value);
+    public native void setMAudioUnit(@NotNull AudioComponentInstance value);
 
     @Generated
     @StructureField(order = 1, isGetter = true)

@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSImageHistogramEqualization
@@ -104,22 +106,25 @@ public class MPSImageHistogramEqualization extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -154,9 +159,10 @@ public class MPSImageHistogramEqualization extends MPSUnaryImageKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -212,9 +218,9 @@ public class MPSImageHistogramEqualization extends MPSUnaryImageKernel {
     @Generated
     @Selector("encodeTransformToCommandBuffer:sourceTexture:histogram:histogramOffset:")
     public native void encodeTransformToCommandBufferSourceTextureHistogramHistogramOffset(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture source, @Mapped(ObjCObjectMapper.class) MTLBuffer histogram,
-            @NUInt long histogramOffset);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture source,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer histogram, @NUInt long histogramOffset);
 
     @Generated
     @Selector("init")
@@ -222,7 +228,7 @@ public class MPSImageHistogramEqualization extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSImageHistogramEqualization initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageHistogramEqualization initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Specifies information about the histogram for the channels of an image.
@@ -234,11 +240,11 @@ public class MPSImageHistogramEqualization extends MPSUnaryImageKernel {
     @Generated
     @Selector("initWithDevice:histogramInfo:")
     public native MPSImageHistogramEqualization initWithDeviceHistogramInfo(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, VoidPtr histogramInfo);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull VoidPtr histogramInfo);
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSImageHistogramEqualization initWithCoder(NSCoder aDecoder);
+    public native MPSImageHistogramEqualization initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
@@ -257,8 +263,8 @@ public class MPSImageHistogramEqualization extends MPSUnaryImageKernel {
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSImageHistogramEqualization initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageHistogramEqualization initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("supportsSecureCoding")

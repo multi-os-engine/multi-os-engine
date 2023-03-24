@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -77,21 +79,23 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * The ride was canceled by the service (e.g. because the driver asked to cancel)
      */
+    @NotNull
     @Generated
     @Selector("canceledByService")
     public static native INRideCompletionStatus canceledByService();
@@ -99,6 +103,7 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
     /**
      * The ride was canceled by the user (e.g. by doing so through your application)
      */
+    @NotNull
     @Generated
     @Selector("canceledByUser")
     public static native INRideCompletionStatus canceledByUser();
@@ -107,14 +112,17 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
      * The ride was canceled by the service because the passenger was not present for pickup and the vehicle maximum
      * wait time elapsed.
      */
+    @NotNull
     @Generated
     @Selector("canceledMissedPickup")
     public static native INRideCompletionStatus canceledMissedPickup();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,6 +130,7 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
     /**
      * The ride completed.
      */
+    @NotNull
     @Generated
     @Selector("completed")
     public static native INRideCompletionStatus completed();
@@ -130,19 +139,21 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
      * The ride completed but there is a payment outstanding that the user needs to settle in the application.
      * The .completionUserActivity should be set, and will be continued in your application to perform payment tasks.
      */
+    @NotNull
     @Generated
     @Selector("completedWithOutstandingPaymentAmount:")
     public static native INRideCompletionStatus completedWithOutstandingPaymentAmount(
-            INCurrencyAmount outstandingPaymentAmount);
+            @NotNull INCurrencyAmount outstandingPaymentAmount);
 
     /**
      * The ride completed. The fare in the provided amount was successfully paid; this amount may be displayed to the
      * user.
      */
+    @NotNull
     @Generated
     @Selector("completedWithSettledPaymentAmount:")
     public static native INRideCompletionStatus completedWithSettledPaymentAmount(
-            INCurrencyAmount settledPaymentAmount);
+            @NotNull INCurrencyAmount settledPaymentAmount);
 
     @Generated
     @Selector("debugDescription")
@@ -174,9 +185,10 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -212,19 +224,21 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
      * If this property is set, UI may be shown to the user to complete post-ride tasks (e.g. for settling outstanding
      * payment). Acting on that UI will continue this activity in your application.
      */
+    @Nullable
     @Generated
     @Selector("completionUserActivity")
     public native NSUserActivity completionUserActivity();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -232,7 +246,7 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRideCompletionStatus initWithCoder(NSCoder coder);
+    public native INRideCompletionStatus initWithCoder(@NotNull NSCoder coder);
 
     /**
      * YES if the ride was canceled.
@@ -265,6 +279,7 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
     /**
      * The payment amount, if any.
      */
+    @Nullable
     @Generated
     @Selector("paymentAmount")
     public native INCurrencyAmount paymentAmount();
@@ -275,7 +290,7 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
      */
     @Generated
     @Selector("setCompletionUserActivity:")
-    public native void setCompletionUserActivity(NSUserActivity value);
+    public native void setCompletionUserActivity(@Nullable NSUserActivity value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -290,6 +305,7 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("completedWithOutstandingFeedbackType:")
     public static native INRideCompletionStatus completedWithOutstandingFeedbackType(@NUInt long feedbackType);
@@ -299,6 +315,7 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("defaultTippingOptions")
     public native NSSet<? extends INCurrencyAmount> defaultTippingOptions();
@@ -320,5 +337,5 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
      */
     @Generated
     @Selector("setDefaultTippingOptions:")
-    public native void setDefaultTippingOptions(NSSet<? extends INCurrencyAmount> value);
+    public native void setDefaultTippingOptions(@Nullable NSSet<? extends INCurrencyAmount> value);
 }

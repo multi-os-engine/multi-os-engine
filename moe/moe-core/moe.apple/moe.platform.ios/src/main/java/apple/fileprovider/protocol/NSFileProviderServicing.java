@@ -10,6 +10,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -40,15 +42,17 @@ public interface NSFileProviderServicing {
      * operation takes too much time. The extension is then expected to quickly call the completion
      * handler.
      */
+    @NotNull
     @Generated
     @Selector("supportedServiceSourcesForItemIdentifier:completionHandler:")
-    NSProgress supportedServiceSourcesForItemIdentifierCompletionHandler(String itemIdentifier,
-            @ObjCBlock(name = "call_supportedServiceSourcesForItemIdentifierCompletionHandler") Block_supportedServiceSourcesForItemIdentifierCompletionHandler completionHandler);
+    NSProgress supportedServiceSourcesForItemIdentifierCompletionHandler(@NotNull String itemIdentifier,
+            @NotNull @ObjCBlock(name = "call_supportedServiceSourcesForItemIdentifierCompletionHandler") Block_supportedServiceSourcesForItemIdentifierCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_supportedServiceSourcesForItemIdentifierCompletionHandler {
         @Generated
-        void call_supportedServiceSourcesForItemIdentifierCompletionHandler(NSArray<?> arg0, NSError arg1);
+        void call_supportedServiceSourcesForItemIdentifierCompletionHandler(@Nullable NSArray<?> arg0,
+                @Nullable NSError arg1);
     }
 }

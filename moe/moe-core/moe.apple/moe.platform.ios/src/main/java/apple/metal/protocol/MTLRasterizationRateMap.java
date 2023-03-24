@@ -14,6 +14,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLRasterizationRateMap
@@ -53,13 +55,14 @@ public interface MTLRasterizationRateMap {
      */
     @Generated
     @Selector("copyParameterDataToBuffer:offset:")
-    void copyParameterDataToBufferOffset(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset);
+    void copyParameterDataToBufferOffset(@NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset);
 
     /**
      * [@property] device
      * 
      * @return The device on which the rasterization rate map was created
      */
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -70,6 +73,7 @@ public interface MTLRasterizationRateMap {
      * 
      * A string to help identify this object.
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();

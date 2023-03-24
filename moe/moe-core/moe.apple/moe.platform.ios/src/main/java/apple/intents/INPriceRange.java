@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -77,22 +79,25 @@ public class INPriceRange extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +132,10 @@ public class INPriceRange extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,22 +167,24 @@ public class INPriceRange extends NSObject implements NSCopying, NSSecureCoding 
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * A ISO 4217 currency code. For a list of currency codes, see +[NSLocale ISOCurrencyCodes].
      */
+    @NotNull
     @Generated
     @Selector("currencyCode")
     public native String currencyCode();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -184,40 +192,43 @@ public class INPriceRange extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("initWithCoder:")
-    public native INPriceRange initWithCoder(NSCoder coder);
+    public native INPriceRange initWithCoder(@NotNull NSCoder coder);
 
     /**
      * "Up to (amount)."
      */
     @Generated
     @Selector("initWithMaximumPrice:currencyCode:")
-    public native INPriceRange initWithMaximumPriceCurrencyCode(NSDecimalNumber maximumPrice, String currencyCode);
+    public native INPriceRange initWithMaximumPriceCurrencyCode(@NotNull NSDecimalNumber maximumPrice,
+            @NotNull String currencyCode);
 
     /**
      * "Starting from (amount)."
      */
     @Generated
     @Selector("initWithMinimumPrice:currencyCode:")
-    public native INPriceRange initWithMinimumPriceCurrencyCode(NSDecimalNumber minimumPrice, String currencyCode);
+    public native INPriceRange initWithMinimumPriceCurrencyCode(@NotNull NSDecimalNumber minimumPrice,
+            @NotNull String currencyCode);
 
     /**
      * "(amount)". Convenience initializer.
      */
     @Generated
     @Selector("initWithPrice:currencyCode:")
-    public native INPriceRange initWithPriceCurrencyCode(NSDecimalNumber price, String currencyCode);
+    public native INPriceRange initWithPriceCurrencyCode(@NotNull NSDecimalNumber price, @NotNull String currencyCode);
 
     /**
      * "(min amount) to (max amount)"
      */
     @Generated
     @Selector("initWithRangeBetweenPrice:andPrice:currencyCode:")
-    public native INPriceRange initWithRangeBetweenPriceAndPriceCurrencyCode(NSDecimalNumber firstPrice,
-            NSDecimalNumber secondPrice, String currencyCode);
+    public native INPriceRange initWithRangeBetweenPriceAndPriceCurrencyCode(@NotNull NSDecimalNumber firstPrice,
+            @NotNull NSDecimalNumber secondPrice, @NotNull String currencyCode);
 
     /**
      * The highest of the two prices used to construct this range.
      */
+    @Nullable
     @Generated
     @Selector("maximumPrice")
     public native NSDecimalNumber maximumPrice();
@@ -225,6 +236,7 @@ public class INPriceRange extends NSObject implements NSCopying, NSSecureCoding 
     /**
      * The lowest of the two prices used to construct this range.
      */
+    @Nullable
     @Generated
     @Selector("minimumPrice")
     public native NSDecimalNumber minimumPrice();

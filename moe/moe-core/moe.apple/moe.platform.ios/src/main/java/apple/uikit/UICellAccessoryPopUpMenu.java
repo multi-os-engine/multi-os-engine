@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Up/down chevrons that indicate a tap anywhere in the cell presents a pop-up menu.
@@ -60,22 +62,25 @@ public class UICellAccessoryPopUpMenu extends UICellAccessory {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -99,14 +104,14 @@ public class UICellAccessoryPopUpMenu extends UICellAccessory {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UICellAccessoryPopUpMenu initWithCoder(NSCoder coder);
+    public native UICellAccessoryPopUpMenu initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Creates a new pop-up menu accessory using the provided menu.
      */
     @Generated
     @Selector("initWithMenu:")
-    public native UICellAccessoryPopUpMenu initWithMenu(UIMenu menu);
+    public native UICellAccessoryPopUpMenu initWithMenu(@NotNull UIMenu menu);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -125,10 +130,12 @@ public class UICellAccessoryPopUpMenu extends UICellAccessory {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("menu")
     public native UIMenu menu();
@@ -149,6 +156,7 @@ public class UICellAccessoryPopUpMenu extends UICellAccessory {
     /**
      * An optional handler to call when the selected element in the menu changes.
      */
+    @Nullable
     @Generated
     @Selector("selectedElementDidChangeHandler")
     @ObjCBlock(name = "call_selectedElementDidChangeHandler_ret")
@@ -158,7 +166,7 @@ public class UICellAccessoryPopUpMenu extends UICellAccessory {
     @Generated
     public interface Block_selectedElementDidChangeHandler_ret {
         @Generated
-        void call_selectedElementDidChangeHandler_ret(UIMenu arg0);
+        void call_selectedElementDidChangeHandler_ret(@NotNull UIMenu arg0);
     }
 
     /**
@@ -167,13 +175,13 @@ public class UICellAccessoryPopUpMenu extends UICellAccessory {
     @Generated
     @Selector("setSelectedElementDidChangeHandler:")
     public native void setSelectedElementDidChangeHandler(
-            @ObjCBlock(name = "call_setSelectedElementDidChangeHandler") Block_setSelectedElementDidChangeHandler value);
+            @Nullable @ObjCBlock(name = "call_setSelectedElementDidChangeHandler") Block_setSelectedElementDidChangeHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setSelectedElementDidChangeHandler {
         @Generated
-        void call_setSelectedElementDidChangeHandler(UIMenu arg0);
+        void call_setSelectedElementDidChangeHandler(@NotNull UIMenu arg0);
     }
 
     @Generated

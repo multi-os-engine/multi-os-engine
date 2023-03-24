@@ -23,6 +23,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -57,22 +59,25 @@ public class VSUserAccountManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -111,9 +116,10 @@ public class VSUserAccountManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -129,13 +135,14 @@ public class VSUserAccountManager extends NSObject {
     @Generated
     @Selector("queryUserAccountsWithOptions:completion:")
     public native void queryUserAccountsWithOptionsCompletion(@NInt long options,
-            @ObjCBlock(name = "call_queryUserAccountsWithOptionsCompletion") Block_queryUserAccountsWithOptionsCompletion completion);
+            @NotNull @ObjCBlock(name = "call_queryUserAccountsWithOptionsCompletion") Block_queryUserAccountsWithOptionsCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_queryUserAccountsWithOptionsCompletion {
         @Generated
-        void call_queryUserAccountsWithOptionsCompletion(NSArray<? extends VSUserAccount> accounts, NSError error);
+        void call_queryUserAccountsWithOptionsCompletion(@Nullable NSArray<? extends VSUserAccount> accounts,
+                @Nullable NSError error);
     }
 
     @Generated
@@ -150,6 +157,7 @@ public class VSUserAccountManager extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("sharedUserAccountManager")
     public static native VSUserAccountManager sharedUserAccountManager();
@@ -163,14 +171,14 @@ public class VSUserAccountManager extends NSObject {
      */
     @Generated
     @Selector("updateUserAccount:completion:")
-    public native void updateUserAccountCompletion(VSUserAccount account,
-            @ObjCBlock(name = "call_updateUserAccountCompletion") Block_updateUserAccountCompletion completion);
+    public native void updateUserAccountCompletion(@NotNull VSUserAccount account,
+            @Nullable @ObjCBlock(name = "call_updateUserAccountCompletion") Block_updateUserAccountCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateUserAccountCompletion {
         @Generated
-        void call_updateUserAccountCompletion(NSError error);
+        void call_updateUserAccountCompletion(@Nullable NSError error);
     }
 
     @Generated

@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 15.0
@@ -57,31 +59,35 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -97,6 +103,7 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
      * The set of additional binary functions to be accessed from the fragment function in an incrementally created
      * pipeline state.
      */
+    @Nullable
     @Generated
     @Selector("fragmentAdditionalBinaryFunctions")
     public native NSArray<?> fragmentAdditionalBinaryFunctions();
@@ -127,9 +134,10 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -152,7 +160,7 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
      */
     @Generated
     @Selector("setFragmentAdditionalBinaryFunctions:")
-    public native void setFragmentAdditionalBinaryFunctions(NSArray<?> value);
+    public native void setFragmentAdditionalBinaryFunctions(@Nullable NSArray<?> value);
 
     /**
      * [@property] tileAdditionalBinaryFunctions
@@ -162,7 +170,7 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
      */
     @Generated
     @Selector("setTileAdditionalBinaryFunctions:")
-    public native void setTileAdditionalBinaryFunctions(NSArray<?> value);
+    public native void setTileAdditionalBinaryFunctions(@Nullable NSArray<?> value);
 
     @Generated
     @Selector("setVersion:")
@@ -176,7 +184,7 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
      */
     @Generated
     @Selector("setVertexAdditionalBinaryFunctions:")
-    public native void setVertexAdditionalBinaryFunctions(NSArray<?> value);
+    public native void setVertexAdditionalBinaryFunctions(@Nullable NSArray<?> value);
 
     @Generated
     @Selector("superclass")
@@ -188,6 +196,7 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
      * The set of additional binary functions to be accessed from the tile function in an incrementally created pipeline
      * state.
      */
+    @Nullable
     @Generated
     @Selector("tileAdditionalBinaryFunctions")
     public native NSArray<?> tileAdditionalBinaryFunctions();
@@ -203,6 +212,7 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
      * The set of additional binary functions to be accessed from the vertex function in an incrementally created
      * pipeline state.
      */
+    @Nullable
     @Generated
     @Selector("vertexAdditionalBinaryFunctions")
     public native NSArray<?> vertexAdditionalBinaryFunctions();

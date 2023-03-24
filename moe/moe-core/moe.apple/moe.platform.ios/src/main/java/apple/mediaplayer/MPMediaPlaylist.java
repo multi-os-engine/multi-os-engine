@@ -41,6 +41,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An MPMediaPlaylist is a collection of related MPMediaItems in an MPMediaLibrary.
@@ -78,33 +80,37 @@ public class MPMediaPlaylist extends MPMediaItemCollection {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("canFilterByProperty:")
-    public static native boolean canFilterByProperty(String property);
+    public static native boolean canFilterByProperty(@NotNull String property);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("collectionWithItems:")
-    public static native MPMediaItemCollection collectionWithItems(NSArray<? extends MPMediaItem> items);
+    public static native MPMediaItemCollection collectionWithItems(@NotNull NSArray<? extends MPMediaItem> items);
 
     @Generated
     @Selector("debugDescription")
@@ -136,9 +142,10 @@ public class MPMediaPlaylist extends MPMediaItemCollection {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -175,20 +182,21 @@ public class MPMediaPlaylist extends MPMediaItemCollection {
      */
     @Generated
     @Selector("addItemWithProductID:completionHandler:")
-    public native void addItemWithProductIDCompletionHandler(String productID,
-            @ObjCBlock(name = "call_addItemWithProductIDCompletionHandler") Block_addItemWithProductIDCompletionHandler completionHandler);
+    public native void addItemWithProductIDCompletionHandler(@NotNull String productID,
+            @Nullable @ObjCBlock(name = "call_addItemWithProductIDCompletionHandler") Block_addItemWithProductIDCompletionHandler completionHandler);
 
     /**
      * API-Since: 9.3
      */
     @Generated
     @Selector("addMediaItems:completionHandler:")
-    public native void addMediaItemsCompletionHandler(NSArray<? extends MPMediaItem> mediaItems,
-            @ObjCBlock(name = "call_addMediaItemsCompletionHandler") Block_addMediaItemsCompletionHandler completionHandler);
+    public native void addMediaItemsCompletionHandler(@NotNull NSArray<? extends MPMediaItem> mediaItems,
+            @Nullable @ObjCBlock(name = "call_addMediaItemsCompletionHandler") Block_addMediaItemsCompletionHandler completionHandler);
 
     /**
      * API-Since: 9.3
      */
+    @Nullable
     @Generated
     @Selector("authorDisplayName")
     public native String authorDisplayName();
@@ -196,6 +204,7 @@ public class MPMediaPlaylist extends MPMediaItemCollection {
     /**
      * API-Since: 9.3
      */
+    @Nullable
     @Generated
     @Selector("descriptionText")
     public native String descriptionText();
@@ -206,15 +215,16 @@ public class MPMediaPlaylist extends MPMediaItemCollection {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPMediaPlaylist initWithCoder(NSCoder coder);
+    public native MPMediaPlaylist initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithItems:")
-    public native MPMediaPlaylist initWithItems(NSArray<? extends MPMediaItem> items);
+    public native MPMediaPlaylist initWithItems(@NotNull NSArray<? extends MPMediaItem> items);
 
     /**
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -237,6 +247,7 @@ public class MPMediaPlaylist extends MPMediaItemCollection {
     /**
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("seedItems")
     public native NSArray<? extends MPMediaItem> seedItems();
@@ -251,19 +262,20 @@ public class MPMediaPlaylist extends MPMediaItemCollection {
     @Generated
     public interface Block_addItemWithProductIDCompletionHandler {
         @Generated
-        void call_addItemWithProductIDCompletionHandler(NSError error);
+        void call_addItemWithProductIDCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addMediaItemsCompletionHandler {
         @Generated
-        void call_addMediaItemsCompletionHandler(NSError error);
+        void call_addMediaItemsCompletionHandler(@Nullable NSError error);
     }
 
     /**
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("cloudGlobalID")
     public native String cloudGlobalID();

@@ -28,6 +28,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] AVVideoCompositionInstruction
@@ -70,6 +72,7 @@ public interface AVVideoCompositionInstruction {
      * List of video track IDs required to compose frames for this instruction. If the value of this property is nil,
      * all source tracks will be considered required for composition
      */
+    @Nullable
     @Generated
     @Selector("requiredSourceTrackIDs")
     NSArray<? extends NSValue> requiredSourceTrackIDs();
@@ -89,6 +92,7 @@ public interface AVVideoCompositionInstruction {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("requiredSourceSampleDataTrackIDs")

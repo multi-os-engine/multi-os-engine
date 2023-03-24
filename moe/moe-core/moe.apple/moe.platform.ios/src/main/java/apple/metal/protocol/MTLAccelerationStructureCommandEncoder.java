@@ -13,6 +13,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -45,9 +47,9 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
     @Generated
     @Selector("buildAccelerationStructure:descriptor:scratchBuffer:scratchBufferOffset:")
     void buildAccelerationStructureDescriptorScratchBufferScratchBufferOffset(
-            @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure accelerationStructure,
-            MTLAccelerationStructureDescriptor descriptor, @Mapped(ObjCObjectMapper.class) MTLBuffer scratchBuffer,
-            @NUInt long scratchBufferOffset);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure accelerationStructure,
+            @NotNull MTLAccelerationStructureDescriptor descriptor,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer scratchBuffer, @NUInt long scratchBufferOffset);
 
     /**
      * Copy an acceleration structure. The source and destination acceleration structures must not
@@ -64,8 +66,8 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
     @Generated
     @Selector("copyAccelerationStructure:toAccelerationStructure:")
     void copyAccelerationStructureToAccelerationStructure(
-            @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure sourceAccelerationStructure,
-            @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure destinationAccelerationStructure);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure sourceAccelerationStructure,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure destinationAccelerationStructure);
 
     /**
      * Copy and compact an acceleration structure. The source and destination acceleration structures
@@ -81,8 +83,8 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
     @Generated
     @Selector("copyAndCompactAccelerationStructure:toAccelerationStructure:")
     void copyAndCompactAccelerationStructureToAccelerationStructure(
-            @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure sourceAccelerationStructure,
-            @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure destinationAccelerationStructure);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure sourceAccelerationStructure,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure destinationAccelerationStructure);
 
     /**
      * Encode an acceleration structure refit into the command buffer. Refitting can be used to
@@ -113,10 +115,10 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
     @Generated
     @Selector("refitAccelerationStructure:descriptor:destination:scratchBuffer:scratchBufferOffset:")
     void refitAccelerationStructureDescriptorDestinationScratchBufferScratchBufferOffset(
-            @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure sourceAccelerationStructure,
-            MTLAccelerationStructureDescriptor descriptor,
-            @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure destinationAccelerationStructure,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer scratchBuffer, @NUInt long scratchBufferOffset);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure sourceAccelerationStructure,
+            @NotNull MTLAccelerationStructureDescriptor descriptor,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure destinationAccelerationStructure,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer scratchBuffer, @NUInt long scratchBufferOffset);
 
     /**
      * sampleCountersInBuffer:atSampleIndex:withBarrier:
@@ -140,7 +142,7 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
     @Generated
     @Selector("sampleCountersInBuffer:atSampleIndex:withBarrier:")
     void sampleCountersInBufferAtSampleIndexWithBarrier(
-            @Mapped(ObjCObjectMapper.class) MTLCounterSampleBuffer sampleBuffer, @NUInt long sampleIndex,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCounterSampleBuffer sampleBuffer, @NUInt long sampleIndex,
             boolean barrier);
 
     /**
@@ -154,7 +156,7 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
      */
     @Generated
     @Selector("updateFence:")
-    void updateFence(@Mapped(ObjCObjectMapper.class) MTLFence fence);
+    void updateFence(@NotNull @Mapped(ObjCObjectMapper.class) MTLFence fence);
 
     /**
      * useHeap:
@@ -172,7 +174,7 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
      */
     @Generated
     @Selector("useHeap:")
-    void useHeap(@Mapped(ObjCObjectMapper.class) MTLHeap heap);
+    void useHeap(@NotNull @Mapped(ObjCObjectMapper.class) MTLHeap heap);
 
     /**
      * useHeaps:count:
@@ -190,7 +192,7 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
      */
     @Generated
     @Selector("useHeaps:count:")
-    void useHeapsCount(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> heaps, @NUInt long count);
+    void useHeapsCount(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> heaps, @NUInt long count);
 
     /**
      * useResource:usage:
@@ -204,7 +206,7 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
      */
     @Generated
     @Selector("useResource:usage:")
-    void useResourceUsage(@Mapped(ObjCObjectMapper.class) MTLResource resource, @NUInt long usage);
+    void useResourceUsage(@NotNull @Mapped(ObjCObjectMapper.class) MTLResource resource, @NUInt long usage);
 
     /**
      * useResources:count:usage:
@@ -218,8 +220,8 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
      */
     @Generated
     @Selector("useResources:count:usage:")
-    void useResourcesCountUsage(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> resources, @NUInt long count,
-            @NUInt long usage);
+    void useResourcesCountUsage(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> resources,
+            @NUInt long count, @NUInt long usage);
 
     /**
      * waitForFence:
@@ -232,7 +234,7 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
      */
     @Generated
     @Selector("waitForFence:")
-    void waitForFence(@Mapped(ObjCObjectMapper.class) MTLFence fence);
+    void waitForFence(@NotNull @Mapped(ObjCObjectMapper.class) MTLFence fence);
 
     /**
      * Compute the compacted size for an acceleration structure and write it into a buffer.
@@ -250,8 +252,8 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
     @Generated
     @Selector("writeCompactedAccelerationStructureSize:toBuffer:offset:")
     void writeCompactedAccelerationStructureSizeToBufferOffset(
-            @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure accelerationStructure,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure accelerationStructure,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset);
 
     /**
      * Compute the compacted size for an acceleration structure and write it into a buffer.
@@ -274,8 +276,8 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
     @Generated
     @Selector("writeCompactedAccelerationStructureSize:toBuffer:offset:sizeDataType:")
     void writeCompactedAccelerationStructureSizeToBufferOffsetSizeDataType(
-            @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure accelerationStructure,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset, @NUInt long sizeDataType);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure accelerationStructure,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset, @NUInt long sizeDataType);
 
     /**
      * Encode an acceleration structure refit into the command buffer. Refitting can be used to
@@ -309,9 +311,9 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
     @Generated
     @Selector("refitAccelerationStructure:descriptor:destination:scratchBuffer:scratchBufferOffset:options:")
     void refitAccelerationStructureDescriptorDestinationScratchBufferScratchBufferOffsetOptions(
-            @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure sourceAccelerationStructure,
-            MTLAccelerationStructureDescriptor descriptor,
-            @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure destinationAccelerationStructure,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer scratchBuffer, @NUInt long scratchBufferOffset,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure sourceAccelerationStructure,
+            @NotNull MTLAccelerationStructureDescriptor descriptor,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure destinationAccelerationStructure,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer scratchBuffer, @NUInt long scratchBufferOffset,
             @NUInt long options);
 }

@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Defines a shipping method for delivering physical goods.
@@ -74,22 +76,25 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +129,10 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -147,12 +153,13 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
 
     @Generated
     @Selector("summaryItemWithLabel:amount:")
-    public static native PKShippingMethod summaryItemWithLabelAmount(String label, NSDecimalNumber amount);
+    public static native PKShippingMethod summaryItemWithLabelAmount(@NotNull String label,
+            @NotNull NSDecimalNumber amount);
 
     @Generated
     @Selector("summaryItemWithLabel:amount:type:")
-    public static native PKShippingMethod summaryItemWithLabelAmountType(String label, NSDecimalNumber amount,
-            @NUInt long type);
+    public static native PKShippingMethod summaryItemWithLabelAmountType(@NotNull String label,
+            @NotNull NSDecimalNumber amount, @NUInt long type);
 
     @Generated
     @Selector("superclass")
@@ -167,6 +174,7 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
      * Additional localized information about the shipping method, e.g. "Ships in 24 hours" or
      * "Arrives Friday April 4."
      */
+    @Nullable
     @Generated
     @Selector("detail")
     public native String detail();
@@ -175,6 +183,7 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
      * Application-defined unique identifier for this shipping method. The application will receive this
      * in paymentAuthorizationViewController:didAuthorizePayment:completion:.
      */
+    @Nullable
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -189,7 +198,7 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
      */
     @Generated
     @Selector("setDetail:")
-    public native void setDetail(String value);
+    public native void setDetail(@Nullable String value);
 
     /**
      * Application-defined unique identifier for this shipping method. The application will receive this
@@ -197,7 +206,7 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
      */
     @Generated
     @Selector("setIdentifier:")
-    public native void setIdentifier(String value);
+    public native void setIdentifier(@Nullable String value);
 
     /**
      * Localized date range for this shipping method e.g. "Shipping by May 12 - 19"
@@ -205,6 +214,7 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("dateComponentsRange")
     public native PKDateComponentsRange dateComponentsRange();
@@ -217,5 +227,5 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
      */
     @Generated
     @Selector("setDateComponentsRange:")
-    public native void setDateComponentsRange(PKDateComponentsRange value);
+    public native void setDateComponentsRange(@Nullable PKDateComponentsRange value);
 }

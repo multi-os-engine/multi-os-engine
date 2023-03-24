@@ -27,6 +27,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNDArray
@@ -114,30 +116,34 @@ public class MPSNDArray extends NSObject {
      * @return A new MPSNDArray, if it is possible to make one. Otherwise nil is returned. The MPSNDArray is
      *         autoreleased.
      */
+    @Nullable
     @Generated
     @Selector("arrayViewWithCommandBuffer:descriptor:aliasing:")
     public native MPSNDArray arrayViewWithCommandBufferDescriptorAliasing(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MPSNDArrayDescriptor descriptor,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NotNull MPSNDArrayDescriptor descriptor,
             @NUInt long aliasing);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -164,6 +170,7 @@ public class MPSNDArray extends NSObject {
     /**
      * Get a well known <MPSNDArrayAllocator> that makes standard MTLBuffers
      */
+    @NotNull
     @Generated
     @Selector("defaultAllocator")
     @MappedReturn(ObjCObjectMapper.class)
@@ -185,6 +192,7 @@ public class MPSNDArray extends NSObject {
      *         shape of the MPSNDArray, suitable for introduction of slice,
      *         cast and transpose operations.
      */
+    @NotNull
     @Generated
     @Selector("descriptor")
     public native MPSNDArrayDescriptor descriptor();
@@ -194,6 +202,7 @@ public class MPSNDArray extends NSObject {
      * 
      * The device on which the MSPNDArray may be used
      */
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -214,8 +223,9 @@ public class MPSNDArray extends NSObject {
     @Generated
     @Selector("exportDataWithCommandBuffer:toBuffer:destinationDataType:offset:rowStrides:")
     public native void exportDataWithCommandBufferToBufferDestinationDataTypeOffsetRowStrides(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
-            int destinationDataType, @NUInt long offset, NIntPtr rowStrides);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, int destinationDataType, @NUInt long offset,
+            @Nullable NIntPtr rowStrides);
 
     @Generated
     @Selector("hash")
@@ -237,8 +247,9 @@ public class MPSNDArray extends NSObject {
     @Generated
     @Selector("importDataWithCommandBuffer:fromBuffer:sourceDataType:offset:rowStrides:")
     public native void importDataWithCommandBufferFromBufferSourceDataTypeOffsetRowStrides(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
-            int sourceDataType, @NUInt long offset, NIntPtr rowStrides);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, int sourceDataType, @NUInt long offset,
+            @Nullable NIntPtr rowStrides);
 
     @Generated
     @Selector("init")
@@ -256,15 +267,16 @@ public class MPSNDArray extends NSObject {
      */
     @Generated
     @Selector("initWithDevice:descriptor:")
-    public native MPSNDArray initWithDeviceDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            MPSNDArrayDescriptor descriptor);
+    public native MPSNDArray initWithDeviceDescriptor(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull MPSNDArrayDescriptor descriptor);
 
     /**
      * Create a 1-Dimensional length=1 NDArray to hold a scalar
      */
     @Generated
     @Selector("initWithDevice:scalar:")
-    public native MPSNDArray initWithDeviceScalar(@Mapped(ObjCObjectMapper.class) MTLDevice device, double value);
+    public native MPSNDArray initWithDeviceScalar(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            double value);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -283,15 +295,17 @@ public class MPSNDArray extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * A used specified string to help identify the array during debugging.
      * 
      * May be externally visible to tools like Instruments
      */
+    @Nullable
     @Generated
     @Selector("label")
     public native String label();
@@ -328,6 +342,7 @@ public class MPSNDArray extends NSObject {
      * in the same MTLBuffer, the original MPSNDArray will be retained as the parent here. Two MPSNDArrays
      * alias if they share a common ancestor. Note that the parent may itself have a parent, and so forth.
      */
+    @Nullable
     @Generated
     @Selector("parent")
     public native MPSNDArray parent();
@@ -348,7 +363,7 @@ public class MPSNDArray extends NSObject {
      */
     @Generated
     @Selector("readBytes:strideBytes:")
-    public native void readBytesStrideBytes(VoidPtr buffer, NIntPtr strideBytesPerDimension);
+    public native void readBytesStrideBytes(@NotNull VoidPtr buffer, @Nullable NIntPtr strideBytesPerDimension);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -387,7 +402,7 @@ public class MPSNDArray extends NSObject {
      */
     @Generated
     @Selector("setLabel:")
-    public native void setLabel(String value);
+    public native void setLabel(@Nullable String value);
 
     @Generated
     @Selector("setVersion:")
@@ -404,7 +419,8 @@ public class MPSNDArray extends NSObject {
      */
     @Generated
     @Selector("synchronizeOnCommandBuffer:")
-    public native void synchronizeOnCommandBuffer(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
+    public native void synchronizeOnCommandBuffer(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
 
     @Generated
     @Selector("version")
@@ -428,5 +444,5 @@ public class MPSNDArray extends NSObject {
      */
     @Generated
     @Selector("writeBytes:strideBytes:")
-    public native void writeBytesStrideBytes(VoidPtr buffer, NIntPtr strideBytesPerDimension);
+    public native void writeBytesStrideBytes(@NotNull VoidPtr buffer, @Nullable NIntPtr strideBytesPerDimension);
 }

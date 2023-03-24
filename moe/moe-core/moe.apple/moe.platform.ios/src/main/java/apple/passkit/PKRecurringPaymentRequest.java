@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a request to set up a recurring payment, typically a subscription. This request will
@@ -60,29 +62,33 @@ public class PKRecurringPaymentRequest extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Optional, localized billing agreement to be displayed to the user prior to payment authorization.
      */
+    @Nullable
     @Generated
     @Selector("billingAgreement")
     public native String billingAgreement();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -107,7 +113,8 @@ public class PKRecurringPaymentRequest extends NSObject {
     @Generated
     @Selector("initWithPaymentDescription:regularBilling:managementURL:")
     public native PKRecurringPaymentRequest initWithPaymentDescriptionRegularBillingManagementURL(
-            String paymentDescription, PKRecurringPaymentSummaryItem regularBilling, NSURL managementURL);
+            @NotNull String paymentDescription, @NotNull PKRecurringPaymentSummaryItem regularBilling,
+            @NotNull NSURL managementURL);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -126,14 +133,16 @@ public class PKRecurringPaymentRequest extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * A URL that links to a page on your web site where the user can manage the payment method for this
      * recurring payment, including deleting it.
      */
+    @NotNull
     @Generated
     @Selector("managementURL")
     public native NSURL managementURL();
@@ -146,6 +155,7 @@ public class PKRecurringPaymentRequest extends NSObject {
     /**
      * A description of the recurring payment, for example "Apple News+".
      */
+    @NotNull
     @Generated
     @Selector("paymentDescription")
     public native String paymentDescription();
@@ -153,6 +163,7 @@ public class PKRecurringPaymentRequest extends NSObject {
     /**
      * The regular billing cycle, for example "$9.99 monthly".
      */
+    @NotNull
     @Generated
     @Selector("regularBilling")
     public native PKRecurringPaymentSummaryItem regularBilling();
@@ -170,7 +181,7 @@ public class PKRecurringPaymentRequest extends NSObject {
      */
     @Generated
     @Selector("setBillingAgreement:")
-    public native void setBillingAgreement(String value);
+    public native void setBillingAgreement(@Nullable String value);
 
     /**
      * A URL that links to a page on your web site where the user can manage the payment method for this
@@ -178,21 +189,21 @@ public class PKRecurringPaymentRequest extends NSObject {
      */
     @Generated
     @Selector("setManagementURL:")
-    public native void setManagementURL(NSURL value);
+    public native void setManagementURL(@NotNull NSURL value);
 
     /**
      * A description of the recurring payment, for example "Apple News+".
      */
     @Generated
     @Selector("setPaymentDescription:")
-    public native void setPaymentDescription(String value);
+    public native void setPaymentDescription(@NotNull String value);
 
     /**
      * The regular billing cycle, for example "$9.99 monthly".
      */
     @Generated
     @Selector("setRegularBilling:")
-    public native void setRegularBilling(PKRecurringPaymentSummaryItem value);
+    public native void setRegularBilling(@NotNull PKRecurringPaymentSummaryItem value);
 
     /**
      * Optional URL to receive lifecycle notifications for the merchant-specific payment token issued
@@ -201,14 +212,14 @@ public class PKRecurringPaymentRequest extends NSObject {
      */
     @Generated
     @Selector("setTokenNotificationURL:")
-    public native void setTokenNotificationURL(NSURL value);
+    public native void setTokenNotificationURL(@Nullable NSURL value);
 
     /**
      * Optional, trial billing cycle, for example "$1.99 for the first six months".
      */
     @Generated
     @Selector("setTrialBilling:")
-    public native void setTrialBilling(PKRecurringPaymentSummaryItem value);
+    public native void setTrialBilling(@Nullable PKRecurringPaymentSummaryItem value);
 
     @Generated
     @Selector("setVersion:")
@@ -223,6 +234,7 @@ public class PKRecurringPaymentRequest extends NSObject {
      * for this request, if applicable. If this property is not set, notifications will not be sent when
      * lifecycle changes occur for the token, for example when the token is deleted.
      */
+    @Nullable
     @Generated
     @Selector("tokenNotificationURL")
     public native NSURL tokenNotificationURL();
@@ -230,6 +242,7 @@ public class PKRecurringPaymentRequest extends NSObject {
     /**
      * Optional, trial billing cycle, for example "$1.99 for the first six months".
      */
+    @Nullable
     @Generated
     @Selector("trialBilling")
     public native PKRecurringPaymentSummaryItem trialBilling();

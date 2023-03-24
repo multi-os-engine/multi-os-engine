@@ -12,6 +12,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * TKTokenDelegate contains operations implementing functionality of token class.
@@ -37,9 +39,11 @@ public interface TKTokenDelegate {
      * 
      * @param token Related token instance.
      */
+    @Nullable
     @Generated
     @Selector("token:createSessionWithError:")
-    TKTokenSession tokenCreateSessionWithError(TKToken token, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    TKTokenSession tokenCreateSessionWithError(@NotNull TKToken token,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Terminates previously created session, implementation should free all associated resources.
@@ -49,7 +53,7 @@ public interface TKTokenDelegate {
     @Generated
     @IsOptional
     @Selector("token:terminateSession:")
-    default void tokenTerminateSession(TKToken token, TKTokenSession session) {
+    default void tokenTerminateSession(@NotNull TKToken token, @NotNull TKTokenSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

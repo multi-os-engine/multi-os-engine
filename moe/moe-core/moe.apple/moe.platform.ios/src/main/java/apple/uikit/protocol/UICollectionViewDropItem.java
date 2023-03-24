@@ -10,6 +10,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -19,6 +21,7 @@ import apple.corefoundation.struct.CGSize;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UICollectionViewDropItem")
 public interface UICollectionViewDropItem {
+    @NotNull
     @Generated
     @Selector("dragItem")
     UIDragItem dragItem();
@@ -39,6 +42,7 @@ public interface UICollectionViewDropItem {
      * This is useful for directly accessing the model objects in the data source instead of using the item provider
      * to retrieve the data.
      */
+    @Nullable
     @Generated
     @Selector("sourceIndexPath")
     NSIndexPath sourceIndexPath();

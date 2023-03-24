@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -55,35 +57,40 @@ public class INStartCallCallRecordToCallBackResolutionResult extends INCallRecor
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithCallRecordToConfirm:")
     public static native INStartCallCallRecordToCallBackResolutionResult confirmationRequiredWithCallRecordToConfirm(
-            INCallRecord callRecordToConfirm);
+            @Nullable INCallRecord callRecordToConfirm);
 
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
     public static native INStartCallCallRecordToCallBackResolutionResult confirmationRequiredWithItemToConfirmForReason(
-            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("debugDescription")
@@ -93,10 +100,11 @@ public class INStartCallCallRecordToCallBackResolutionResult extends INCallRecor
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("disambiguationWithCallRecordsToDisambiguate:")
     public static native INStartCallCallRecordToCallBackResolutionResult disambiguationWithCallRecordsToDisambiguate(
-            NSArray<? extends INCallRecord> callRecordsToDisambiguate);
+            @NotNull NSArray<? extends INCallRecord> callRecordsToDisambiguate);
 
     @Generated
     @Selector("hash")
@@ -110,7 +118,7 @@ public class INStartCallCallRecordToCallBackResolutionResult extends INCallRecor
     @Generated
     @Selector("initWithCallRecordResolutionResult:")
     public native INStartCallCallRecordToCallBackResolutionResult initWithCallRecordResolutionResult(
-            INCallRecordResolutionResult callRecordResolutionResult);
+            @NotNull INCallRecordResolutionResult callRecordResolutionResult);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -129,10 +137,12 @@ public class INStartCallCallRecordToCallBackResolutionResult extends INCallRecor
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("needsValue")
     public static native INStartCallCallRecordToCallBackResolutionResult needsValue();
@@ -142,6 +152,7 @@ public class INStartCallCallRecordToCallBackResolutionResult extends INCallRecor
     @Selector("new")
     public static native INStartCallCallRecordToCallBackResolutionResult new_objc();
 
+    @NotNull
     @Generated
     @Selector("notRequired")
     public static native INStartCallCallRecordToCallBackResolutionResult notRequired();
@@ -158,23 +169,27 @@ public class INStartCallCallRecordToCallBackResolutionResult extends INCallRecor
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("successWithResolvedCallRecord:")
     public static native INStartCallCallRecordToCallBackResolutionResult successWithResolvedCallRecord(
-            INCallRecord resolvedCallRecord);
+            @NotNull INCallRecord resolvedCallRecord);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("unsupported")
     public static native INStartCallCallRecordToCallBackResolutionResult unsupported();
 
+    @NotNull
     @Generated
     @Selector("unsupportedForReason:")
     public static native INStartCallCallRecordToCallBackResolutionResult unsupportedForReason(@NInt long reason);
 
+    @NotNull
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INStartCallCallRecordToCallBackResolutionResult unsupportedWithReason(@NInt long reason);

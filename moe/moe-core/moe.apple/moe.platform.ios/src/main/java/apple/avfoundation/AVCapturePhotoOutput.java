@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.coremedia.struct.CMVideoDimensions;
 import org.moe.natj.general.ann.ByValue;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCapturePhotoOutput
@@ -128,11 +130,12 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * @return
      *         An NSData containing bits in the DNG file format. May return nil if the re-packaging process fails.
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("DNGPhotoDataRepresentationForRawSampleBuffer:previewPhotoSampleBuffer:")
     public static native NSData DNGPhotoDataRepresentationForRawSampleBufferPreviewPhotoSampleBuffer(
-            CMSampleBufferRef rawSampleBuffer, CMSampleBufferRef previewPhotoSampleBuffer);
+            @NotNull CMSampleBufferRef rawSampleBuffer, @Nullable CMSampleBufferRef previewPhotoSampleBuffer);
 
     /**
      * JPEGPhotoDataRepresentationForJPEGSampleBuffer:previewPhotoSampleBuffer:
@@ -157,11 +160,12 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * @return
      *         An NSData containing bits in the JPEG file format. May return nil if the re-packaging process fails.
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("JPEGPhotoDataRepresentationForJPEGSampleBuffer:previewPhotoSampleBuffer:")
     public static native NSData JPEGPhotoDataRepresentationForJPEGSampleBufferPreviewPhotoSampleBuffer(
-            CMSampleBufferRef JPEGSampleBuffer, CMSampleBufferRef previewPhotoSampleBuffer);
+            @NotNull CMSampleBufferRef JPEGSampleBuffer, @Nullable CMSampleBufferRef previewPhotoSampleBuffer);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -179,22 +183,25 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -229,9 +236,10 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -268,6 +276,7 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * present in the receiver's availablePhotoCodecTypes array. If you've not yet added your receiver to an
      * AVCaptureSession with a video source, no codec types are available. This property is key-value observable.
      */
+    @NotNull
     @Generated
     @Selector("availablePhotoCodecTypes")
     public native NSArray<String> availablePhotoCodecTypes();
@@ -282,6 +291,7 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * receiver to an AVCaptureSession with a video source, no pixel format types are available. This property is
      * key-value observable.
      */
+    @NotNull
     @Generated
     @Selector("availablePhotoPixelFormatTypes")
     public native NSArray<? extends NSNumber> availablePhotoPixelFormatTypes();
@@ -297,6 +307,7 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * for partially processed RAW formats. This property is key-value observable. RAW capture is not supported on all
      * platforms.
      */
+    @NotNull
     @Generated
     @Selector("availableRawPhotoPixelFormatTypes")
     public native NSArray<? extends NSNumber> availableRawPhotoPixelFormatTypes();
@@ -381,8 +392,8 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      */
     @Generated
     @Selector("capturePhotoWithSettings:delegate:")
-    public native void capturePhotoWithSettingsDelegate(AVCapturePhotoSettings settings,
-            @Mapped(ObjCObjectMapper.class) AVCapturePhotoCaptureDelegate delegate);
+    public native void capturePhotoWithSettingsDelegate(@NotNull AVCapturePhotoSettings settings,
+            @NotNull @Mapped(ObjCObjectMapper.class) AVCapturePhotoCaptureDelegate delegate);
 
     @Generated
     @Selector("init")
@@ -691,6 +702,7 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * lower overall light levels. The default value for this property is nil. See isStillImageStabilizationScene and
      * isFlashScene for further discussion.
      */
+    @Nullable
     @Generated
     @Selector("photoSettingsForSceneMonitoring")
     public native AVCapturePhotoSettings photoSettingsForSceneMonitoring();
@@ -708,6 +720,7 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * capture, RAW capture, and/or still image stabilization capture). By default, the receiver prepares sufficient
      * resources to capture photos with default settings, +[AVCapturePhotoSettings photoSettings].
      */
+    @NotNull
     @Generated
     @Selector("preparedPhotoSettingsArray")
     public native NSArray<? extends AVCapturePhotoSettings> preparedPhotoSettingsArray();
@@ -729,7 +742,7 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      */
     @Generated
     @Selector("setPhotoSettingsForSceneMonitoring:")
-    public native void setPhotoSettingsForSceneMonitoring(AVCapturePhotoSettings value);
+    public native void setPhotoSettingsForSceneMonitoring(@Nullable AVCapturePhotoSettings value);
 
     /**
      * setPreparedPhotoSettingsArray:completionHandler:
@@ -777,8 +790,8 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
     @Generated
     @Selector("setPreparedPhotoSettingsArray:completionHandler:")
     public native void setPreparedPhotoSettingsArrayCompletionHandler(
-            NSArray<? extends AVCapturePhotoSettings> preparedPhotoSettingsArray,
-            @ObjCBlock(name = "call_setPreparedPhotoSettingsArrayCompletionHandler") Block_setPreparedPhotoSettingsArrayCompletionHandler completionHandler);
+            @NotNull NSArray<? extends AVCapturePhotoSettings> preparedPhotoSettingsArray,
+            @Nullable @ObjCBlock(name = "call_setPreparedPhotoSettingsArrayCompletionHandler") Block_setPreparedPhotoSettingsArrayCompletionHandler completionHandler);
 
     /**
      * [@property] supportedFlashModes
@@ -790,6 +803,7 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * [photoOutput.supportedFlashModes containsObject:@(AVCaptureFlashModeAuto)]. This property is key-value
      * observable.
      */
+    @NotNull
     @Generated
     @Selector("supportedFlashModes")
     public native NSArray<? extends NSNumber> supportedFlashModes();
@@ -798,7 +812,7 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
     @Generated
     public interface Block_setPreparedPhotoSettingsArrayCompletionHandler {
         @Generated
-        void call_setPreparedPhotoSettingsArrayCompletionHandler(boolean prepared, NSError error);
+        void call_setPreparedPhotoSettingsArrayCompletionHandler(boolean prepared, @Nullable NSError error);
     }
 
     /**
@@ -815,6 +829,7 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("availableLivePhotoVideoCodecTypes")
     public native NSArray<String> availableLivePhotoVideoCodecTypes();
@@ -831,6 +846,7 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("availablePhotoFileTypes")
     public native NSArray<String> availablePhotoFileTypes();
@@ -847,6 +863,7 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("availableRawPhotoFileTypes")
     public native NSArray<String> availableRawPhotoFileTypes();
@@ -996,9 +1013,10 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * @return
      *         An array of AVVideoCodecKey values supported by the receiver for the file type in question.
      */
+    @NotNull
     @Generated
     @Selector("supportedPhotoCodecTypesForFileType:")
-    public native NSArray<String> supportedPhotoCodecTypesForFileType(String fileType);
+    public native NSArray<String> supportedPhotoCodecTypesForFileType(@NotNull String fileType);
 
     /**
      * supportedPhotoPixelFormatTypesForFileType:
@@ -1019,9 +1037,10 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      *         An array of CVPixelBufferPixelFormatTypeKey values supported by the receiver for the file type in
      *         question.
      */
+    @NotNull
     @Generated
     @Selector("supportedPhotoPixelFormatTypesForFileType:")
-    public native NSArray<? extends NSNumber> supportedPhotoPixelFormatTypesForFileType(String fileType);
+    public native NSArray<? extends NSNumber> supportedPhotoPixelFormatTypesForFileType(@NotNull String fileType);
 
     /**
      * supportedRawPhotoPixelFormatTypesForFileType:
@@ -1041,9 +1060,10 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * @return
      *         An array of CVPixelBufferPixelFormatType values supported by the receiver for the file type in question.
      */
+    @NotNull
     @Generated
     @Selector("supportedRawPhotoPixelFormatTypesForFileType:")
-    public native NSArray<? extends NSNumber> supportedRawPhotoPixelFormatTypesForFileType(String fileType);
+    public native NSArray<? extends NSNumber> supportedRawPhotoPixelFormatTypesForFileType(@NotNull String fileType);
 
     /**
      * [@property] availableSemanticSegmentationMatteTypes
@@ -1060,6 +1080,7 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("availableSemanticSegmentationMatteTypes")
     public native NSArray<String> availableSemanticSegmentationMatteTypes();
@@ -1077,6 +1098,7 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("enabledSemanticSegmentationMatteTypes")
     public native NSArray<String> enabledSemanticSegmentationMatteTypes();
@@ -1228,7 +1250,7 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      */
     @Generated
     @Selector("setEnabledSemanticSegmentationMatteTypes:")
-    public native void setEnabledSemanticSegmentationMatteTypes(NSArray<String> value);
+    public native void setEnabledSemanticSegmentationMatteTypes(@NotNull NSArray<String> value);
 
     /**
      * [@property] maxPhotoQualityPrioritization

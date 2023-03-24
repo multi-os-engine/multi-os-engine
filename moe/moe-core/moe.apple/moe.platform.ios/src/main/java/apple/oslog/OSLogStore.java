@@ -27,6 +27,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * OSLogStore
@@ -71,22 +73,25 @@ public class OSLogStore extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -111,10 +116,11 @@ public class OSLogStore extends NSObject {
      * 
      *              API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("entriesEnumeratorAndReturnError:")
     public native OSLogEnumerator entriesEnumeratorAndReturnError(
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * entriesEnumeratorWithOptions
@@ -143,10 +149,12 @@ public class OSLogStore extends NSObject {
      * 
      *                  API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("entriesEnumeratorWithOptions:position:predicate:error:")
     public native OSLogEnumerator entriesEnumeratorWithOptionsPositionPredicateError(@NUInt long options,
-            OSLogPosition position, NSPredicate predicate, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable OSLogPosition position, @Nullable NSPredicate predicate,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("hash")
@@ -174,9 +182,10 @@ public class OSLogStore extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -197,9 +206,10 @@ public class OSLogStore extends NSObject {
      * @param date
      *             The date to look for.
      */
+    @NotNull
     @Generated
     @Selector("positionWithDate:")
-    public native OSLogPosition positionWithDate(NSDate date);
+    public native OSLogPosition positionWithDate(@NotNull NSDate date);
 
     /**
      * positionWithTimeIntervalSinceEnd
@@ -212,6 +222,7 @@ public class OSLogStore extends NSObject {
      * 
      *                API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("positionWithTimeIntervalSinceEnd:")
     public native OSLogPosition positionWithTimeIntervalSinceEnd(double seconds);
@@ -230,6 +241,7 @@ public class OSLogStore extends NSObject {
      * @param seconds
      *                The seconds to add to the boot time point in the log time range.
      */
+    @NotNull
     @Generated
     @Selector("positionWithTimeIntervalSinceLatestBoot:")
     public native OSLogPosition positionWithTimeIntervalSinceLatestBoot(double seconds);
@@ -263,7 +275,7 @@ public class OSLogStore extends NSObject {
     @Generated
     @Selector("storeWithScope:error:")
     public static native OSLogStore storeWithScopeError(@NInt long scope,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * storeWithURL
@@ -283,8 +295,8 @@ public class OSLogStore extends NSObject {
      */
     @Generated
     @Selector("storeWithURL:error:")
-    public static native OSLogStore storeWithURLError(NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native OSLogStore storeWithURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("superclass")

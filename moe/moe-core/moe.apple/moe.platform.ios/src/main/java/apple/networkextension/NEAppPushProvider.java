@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEAppPushProvider
@@ -65,22 +67,25 @@ public class NEAppPushProvider extends NEProvider {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +136,10 @@ public class NEAppPushProvider extends NEProvider {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -148,6 +154,7 @@ public class NEAppPushProvider extends NEProvider {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("providerConfiguration")
     public native NSDictionary<String, ?> providerConfiguration();
@@ -164,7 +171,7 @@ public class NEAppPushProvider extends NEProvider {
      */
     @Generated
     @Selector("reportIncomingCallWithUserInfo:")
-    public native void reportIncomingCallWithUserInfo(NSDictionary<?, ?> userInfo);
+    public native void reportIncomingCallWithUserInfo(@NotNull NSDictionary<?, ?> userInfo);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -197,13 +204,13 @@ public class NEAppPushProvider extends NEProvider {
     @Generated
     @Selector("startWithCompletionHandler:")
     public native void startWithCompletionHandler(
-            @ObjCBlock(name = "call_startWithCompletionHandler") Block_startWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_startWithCompletionHandler") Block_startWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startWithCompletionHandler {
         @Generated
-        void call_startWithCompletionHandler(NSError error);
+        void call_startWithCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -220,7 +227,7 @@ public class NEAppPushProvider extends NEProvider {
     @Generated
     @Selector("stopWithReason:completionHandler:")
     public native void stopWithReasonCompletionHandler(@NInt long reason,
-            @ObjCBlock(name = "call_stopWithReasonCompletionHandler") Block_stopWithReasonCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_stopWithReasonCompletionHandler") Block_stopWithReasonCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated

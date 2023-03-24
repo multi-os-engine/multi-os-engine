@@ -38,6 +38,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.0
@@ -75,22 +77,25 @@ public class CTCallCenter extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +130,10 @@ public class CTCallCenter extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,6 +173,7 @@ public class CTCallCenter extends NSObject {
      * Deprecated-Since: 10.0
      * Deprecated-Message: Replaced by <CallKit/CXCallObserver.h>
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("callEventHandler")
@@ -185,6 +192,7 @@ public class CTCallCenter extends NSObject {
      * Deprecated-Since: 10.0
      * Deprecated-Message: Replaced by <CallKit/CXCallObserver.h>
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("currentCalls")
@@ -210,19 +218,19 @@ public class CTCallCenter extends NSObject {
     @Generated
     @Selector("setCallEventHandler:")
     public native void setCallEventHandler(
-            @ObjCBlock(name = "call_setCallEventHandler") Block_setCallEventHandler value);
+            @Nullable @ObjCBlock(name = "call_setCallEventHandler") Block_setCallEventHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_callEventHandler_ret {
         @Generated
-        void call_callEventHandler_ret(CTCall arg0);
+        void call_callEventHandler_ret(@NotNull CTCall arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setCallEventHandler {
         @Generated
-        void call_setCallEventHandler(CTCall arg0);
+        void call_setCallEventHandler(@NotNull CTCall arg0);
     }
 }

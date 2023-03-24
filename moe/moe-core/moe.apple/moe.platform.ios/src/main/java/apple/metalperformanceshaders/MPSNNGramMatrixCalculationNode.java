@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Node representing a @ref MPSNNGramMatrixCalculation kernel
@@ -68,22 +70,25 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -113,7 +118,7 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
      */
     @Generated
     @Selector("initWithSource:")
-    public native MPSNNGramMatrixCalculationNode initWithSource(MPSNNImageNode sourceNode);
+    public native MPSNNGramMatrixCalculationNode initWithSource(@NotNull MPSNNImageNode sourceNode);
 
     /**
      * Init a node representing a MPSNNGramMatrixCalculationNode kernel.
@@ -124,7 +129,7 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
      */
     @Generated
     @Selector("initWithSource:alpha:")
-    public native MPSNNGramMatrixCalculationNode initWithSourceAlpha(MPSNNImageNode sourceNode, float alpha);
+    public native MPSNNGramMatrixCalculationNode initWithSourceAlpha(@NotNull MPSNNImageNode sourceNode, float alpha);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -143,9 +148,10 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -160,7 +166,7 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
      */
     @Generated
     @Selector("nodeWithSource:")
-    public static native MPSNNGramMatrixCalculationNode nodeWithSource(MPSNNImageNode sourceNode);
+    public static native MPSNNGramMatrixCalculationNode nodeWithSource(@NotNull MPSNNImageNode sourceNode);
 
     /**
      * Init a node representing a autoreleased MPSNNGramMatrixCalculationNode kernel.
@@ -171,7 +177,8 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
      */
     @Generated
     @Selector("nodeWithSource:alpha:")
-    public static native MPSNNGramMatrixCalculationNode nodeWithSourceAlpha(MPSNNImageNode sourceNode, float alpha);
+    public static native MPSNNGramMatrixCalculationNode nodeWithSourceAlpha(@NotNull MPSNNImageNode sourceNode,
+            float alpha);
 
     /**
      * [@property] propertyCallBack
@@ -179,6 +186,7 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
      * Optional callback option - setting this allows the alpha value to be changed dynamically at encode time.
      * Default value: nil.
      */
+    @Nullable
     @Generated
     @Selector("propertyCallBack")
     @MappedReturn(ObjCObjectMapper.class)
@@ -200,7 +208,7 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
      */
     @Generated
     @Selector("setPropertyCallBack:")
-    public native void setPropertyCallBack(@Mapped(ObjCObjectMapper.class) MPSNNGramMatrixCallback value);
+    public native void setPropertyCallBack(@Nullable @Mapped(ObjCObjectMapper.class) MPSNNGramMatrixCallback value);
 
     @Generated
     @Selector("setVersion:")

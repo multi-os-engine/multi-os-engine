@@ -9,6 +9,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * For advanced clients with data model centric layouts (i.e. the layout refers to the data source
@@ -27,9 +29,10 @@ public interface UIDataSourceTranslating {
      * If the item was inserted at the index path, this will return nil.
      * If no effective change took place, will return passed value.
      */
+    @Nullable
     @Generated
     @Selector("dataSourceIndexPathForPresentationIndexPath:")
-    NSIndexPath dataSourceIndexPathForPresentationIndexPath(NSIndexPath presentationIndexPath);
+    NSIndexPath dataSourceIndexPathForPresentationIndexPath(@Nullable NSIndexPath presentationIndexPath);
 
     /**
      * Translate (if needed) a Presentation section index to its Data Source section index value.
@@ -49,7 +52,7 @@ public interface UIDataSourceTranslating {
     @Generated
     @Selector("performUsingPresentationValues:")
     void performUsingPresentationValues(
-            @ObjCBlock(name = "call_performUsingPresentationValues") Block_performUsingPresentationValues actionsToTranslate);
+            @NotNull @ObjCBlock(name = "call_performUsingPresentationValues") Block_performUsingPresentationValues actionsToTranslate);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -63,9 +66,10 @@ public interface UIDataSourceTranslating {
      * If the item was deleted at the index path, this will return nil.
      * If no effective change took place, will return passed value.
      */
+    @Nullable
     @Generated
     @Selector("presentationIndexPathForDataSourceIndexPath:")
-    NSIndexPath presentationIndexPathForDataSourceIndexPath(NSIndexPath dataSourceIndexPath);
+    NSIndexPath presentationIndexPathForDataSourceIndexPath(@Nullable NSIndexPath dataSourceIndexPath);
 
     /**
      * Translate (if needed) a Data Source section index to its Presentation section index value.

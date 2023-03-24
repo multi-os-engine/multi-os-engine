@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCaptureStillImageOutput
@@ -90,22 +92,25 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -154,13 +159,15 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
      *                         attachments. This method throws an NSInvalidArgumentException if jpegSampleBuffer is NULL
      *                         or not in the JPEG format.
      */
+    @Nullable
     @Generated
     @Selector("jpegStillImageNSDataRepresentation:")
-    public static native NSData jpegStillImageNSDataRepresentation(CMSampleBufferRef jpegSampleBuffer);
+    public static native NSData jpegStillImageNSDataRepresentation(@NotNull CMSampleBufferRef jpegSampleBuffer);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -213,6 +220,7 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
      * kCVPixelBufferPixelFormatTypeKey in the receiver's outputSettings property. The first format in the returned list
      * is the most efficient output format.
      */
+    @NotNull
     @Generated
     @Selector("availableImageDataCVPixelFormatTypes")
     public native NSArray<? extends NSNumber> availableImageDataCVPixelFormatTypes();
@@ -225,6 +233,7 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
      * The value of this property is an NSArray of AVVideoCodecTypes that can be used as values for the AVVideoCodecKey
      * in the receiver's outputSettings property.
      */
+    @NotNull
     @Generated
     @Selector("availableImageDataCodecTypes")
     public native NSArray<String> availableImageDataCodecTypes();
@@ -261,8 +270,9 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
      */
     @Generated
     @Selector("captureStillImageAsynchronouslyFromConnection:completionHandler:")
-    public native void captureStillImageAsynchronouslyFromConnectionCompletionHandler(AVCaptureConnection connection,
-            @ObjCBlock(name = "call_captureStillImageAsynchronouslyFromConnectionCompletionHandler") Block_captureStillImageAsynchronouslyFromConnectionCompletionHandler handler);
+    public native void captureStillImageAsynchronouslyFromConnectionCompletionHandler(
+            @NotNull AVCaptureConnection connection,
+            @NotNull @ObjCBlock(name = "call_captureStillImageAsynchronouslyFromConnectionCompletionHandler") Block_captureStillImageAsynchronouslyFromConnectionCompletionHandler handler);
 
     /**
      * captureStillImageBracketAsynchronouslyFromConnection:withSettingsArray:completionHandler:
@@ -295,8 +305,9 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
     @Generated
     @Selector("captureStillImageBracketAsynchronouslyFromConnection:withSettingsArray:completionHandler:")
     public native void captureStillImageBracketAsynchronouslyFromConnectionWithSettingsArrayCompletionHandler(
-            AVCaptureConnection connection, NSArray<? extends AVCaptureBracketedStillImageSettings> settings,
-            @ObjCBlock(name = "call_captureStillImageBracketAsynchronouslyFromConnectionWithSettingsArrayCompletionHandler") Block_captureStillImageBracketAsynchronouslyFromConnectionWithSettingsArrayCompletionHandler handler);
+            @NotNull AVCaptureConnection connection,
+            @NotNull NSArray<? extends AVCaptureBracketedStillImageSettings> settings,
+            @NotNull @ObjCBlock(name = "call_captureStillImageBracketAsynchronouslyFromConnectionWithSettingsArrayCompletionHandler") Block_captureStillImageBracketAsynchronouslyFromConnectionWithSettingsArrayCompletionHandler handler);
 
     @Generated
     @Selector("init")
@@ -491,6 +502,7 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
      * formats are supported. AVVideoQualityKey is supported on iOS 6.0 and later and may only be used when
      * AVVideoCodecKey is set to AVVideoCodecTypeJPEG.
      */
+    @NotNull
     @Generated
     @Selector("outputSettings")
     public native NSDictionary<String, ?> outputSettings();
@@ -527,8 +539,9 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
     @Generated
     @Selector("prepareToCaptureStillImageBracketFromConnection:withSettingsArray:completionHandler:")
     public native void prepareToCaptureStillImageBracketFromConnectionWithSettingsArrayCompletionHandler(
-            AVCaptureConnection connection, NSArray<? extends AVCaptureBracketedStillImageSettings> settings,
-            @ObjCBlock(name = "call_prepareToCaptureStillImageBracketFromConnectionWithSettingsArrayCompletionHandler") Block_prepareToCaptureStillImageBracketFromConnectionWithSettingsArrayCompletionHandler handler);
+            @NotNull AVCaptureConnection connection,
+            @NotNull NSArray<? extends AVCaptureBracketedStillImageSettings> settings,
+            @NotNull @ObjCBlock(name = "call_prepareToCaptureStillImageBracketFromConnectionWithSettingsArrayCompletionHandler") Block_prepareToCaptureStillImageBracketFromConnectionWithSettingsArrayCompletionHandler handler);
 
     /**
      * [@property] automaticallyEnablesStillImageStabilizationWhenAvailable
@@ -560,14 +573,14 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
      */
     @Generated
     @Selector("setOutputSettings:")
-    public native void setOutputSettings(NSDictionary<String, ?> value);
+    public native void setOutputSettings(@NotNull NSDictionary<String, ?> value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_captureStillImageAsynchronouslyFromConnectionCompletionHandler {
         @Generated
         void call_captureStillImageAsynchronouslyFromConnectionCompletionHandler(
-                CMSampleBufferRef imageDataSampleBuffer, NSError error);
+                @Nullable CMSampleBufferRef imageDataSampleBuffer, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -575,7 +588,8 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
     public interface Block_captureStillImageBracketAsynchronouslyFromConnectionWithSettingsArrayCompletionHandler {
         @Generated
         void call_captureStillImageBracketAsynchronouslyFromConnectionWithSettingsArrayCompletionHandler(
-                CMSampleBufferRef sampleBuffer, AVCaptureBracketedStillImageSettings stillImageSettings, NSError error);
+                @Nullable CMSampleBufferRef sampleBuffer,
+                @Nullable AVCaptureBracketedStillImageSettings stillImageSettings, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -583,6 +597,6 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
     public interface Block_prepareToCaptureStillImageBracketFromConnectionWithSettingsArrayCompletionHandler {
         @Generated
         void call_prepareToCaptureStillImageBracketFromConnectionWithSettingsArrayCompletionHandler(boolean prepared,
-                NSError error);
+                @Nullable NSError error);
     }
 }

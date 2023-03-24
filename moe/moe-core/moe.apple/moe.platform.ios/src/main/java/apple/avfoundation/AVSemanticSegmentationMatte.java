@@ -28,6 +28,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVSemanticSegmentationMatte
@@ -70,22 +72,25 @@ public class AVSemanticSegmentationMatte extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -116,10 +121,11 @@ public class AVSemanticSegmentationMatte extends NSObject {
      *         A dictionary of CGImageDestination compatible semantic segmentation matte information, or nil if the
      *         auxDataType is unsupported.
      */
+    @Nullable
     @Generated
     @Selector("dictionaryRepresentationForAuxiliaryDataType:")
     public native NSDictionary<?, ?> dictionaryRepresentationForAuxiliaryDataType(
-            @ReferenceInfo(type = NSString.class) Ptr<NSString> outAuxDataType);
+            @Nullable @ReferenceInfo(type = NSString.class) Ptr<NSString> outAuxDataType);
 
     @Generated
     @Selector("hash")
@@ -147,9 +153,10 @@ public class AVSemanticSegmentationMatte extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] matteType
@@ -158,6 +165,7 @@ public class AVSemanticSegmentationMatte extends NSObject {
      * 
      * An AVSemanticSegmentationMatte's matteType is immutable for the life of the object.
      */
+    @NotNull
     @Generated
     @Selector("matteType")
     public native String matteType();
@@ -169,6 +177,7 @@ public class AVSemanticSegmentationMatte extends NSObject {
      * 
      * The pixel format can be queried using the pixelFormatType property.
      */
+    @NotNull
     @Generated
     @Selector("mattingImage")
     public native CVBufferRef mattingImage();
@@ -213,6 +222,7 @@ public class AVSemanticSegmentationMatte extends NSObject {
      * @return
      *         An AVSemanticSegmentationMatte's instance.
      */
+    @NotNull
     @Generated
     @Selector("semanticSegmentationMatteByApplyingExifOrientation:")
     public native AVSemanticSegmentationMatte semanticSegmentationMatteByApplyingExifOrientation(int exifOrientation);
@@ -235,10 +245,11 @@ public class AVSemanticSegmentationMatte extends NSObject {
      * @return
      *         An AVSemanticSegmentationMatte instance, or nil if the pixel buffer is malformed.
      */
+    @Nullable
     @Generated
     @Selector("semanticSegmentationMatteByReplacingSemanticSegmentationMatteWithPixelBuffer:error:")
     public native AVSemanticSegmentationMatte semanticSegmentationMatteByReplacingSemanticSegmentationMatteWithPixelBufferError(
-            CVBufferRef pixelBuffer, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @NotNull CVBufferRef pixelBuffer, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * semanticSegmentationMatteFromDictionaryRepresentation:error:
@@ -267,8 +278,9 @@ public class AVSemanticSegmentationMatte extends NSObject {
     @Generated
     @Selector("semanticSegmentationMatteFromImageSourceAuxiliaryDataType:dictionaryRepresentation:error:")
     public static native AVSemanticSegmentationMatte semanticSegmentationMatteFromImageSourceAuxiliaryDataTypeDictionaryRepresentationError(
-            CFStringRef imageSourceAuxiliaryDataType, NSDictionary<?, ?> imageSourceAuxiliaryDataInfoDictionary,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @NotNull CFStringRef imageSourceAuxiliaryDataType,
+            @NotNull NSDictionary<?, ?> imageSourceAuxiliaryDataInfoDictionary,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("setVersion:")

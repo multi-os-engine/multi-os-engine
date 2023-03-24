@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSURLCredential
@@ -79,22 +81,25 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -108,9 +113,10 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
      * 
      *         API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("credentialForTrust:")
-    public static native NSURLCredential credentialForTrust(SecTrustRef trust);
+    public static native NSURLCredential credentialForTrust(@NotNull SecTrustRef trust);
 
     /**
      * credentialWithIdentity:certificates:persistence:
@@ -124,10 +130,11 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
      * 
      *         API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("credentialWithIdentity:certificates:persistence:")
-    public static native NSURLCredential credentialWithIdentityCertificatesPersistence(SecIdentityRef identity,
-            NSArray<?> certArray, @NUInt long persistence);
+    public static native NSURLCredential credentialWithIdentityCertificatesPersistence(@NotNull SecIdentityRef identity,
+            @Nullable NSArray<?> certArray, @NUInt long persistence);
 
     /**
      * credentialWithUser:password:persistence:
@@ -139,10 +146,11 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
      * @param persistence enum that says to store per session, permanently or not at all
      * @return The new autoreleased NSURLCredential
      */
+    @NotNull
     @Generated
     @Selector("credentialWithUser:password:persistence:")
-    public static native NSURLCredential credentialWithUserPasswordPersistence(String user, String password,
-            @NUInt long persistence);
+    public static native NSURLCredential credentialWithUserPasswordPersistence(@NotNull String user,
+            @NotNull String password, @NUInt long persistence);
 
     @Generated
     @Selector("debugDescription")
@@ -174,9 +182,10 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -216,19 +225,21 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
      * 
      *         API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("certificates")
     public native NSArray<?> certificates();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Find out if this credential has a password, without trying to get it
@@ -249,6 +260,7 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
      * 
      * @return A SecIdentityRef or NULL if this is a username/password credential
      */
+    @Nullable
     @Generated
     @Selector("identity")
     public native SecIdentityRef identity();
@@ -259,7 +271,7 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSURLCredential initWithCoder(NSCoder coder);
+    public native NSURLCredential initWithCoder(@NotNull NSCoder coder);
 
     /**
      * initWithIdentity:certificates:persistence:
@@ -275,8 +287,8 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
      */
     @Generated
     @Selector("initWithIdentity:certificates:persistence:")
-    public native NSURLCredential initWithIdentityCertificatesPersistence(SecIdentityRef identity, NSArray<?> certArray,
-            @NUInt long persistence);
+    public native NSURLCredential initWithIdentityCertificatesPersistence(@NotNull SecIdentityRef identity,
+            @Nullable NSArray<?> certArray, @NUInt long persistence);
 
     /**
      * initWithTrust:
@@ -289,7 +301,7 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
      */
     @Generated
     @Selector("initWithTrust:")
-    public native NSURLCredential initWithTrust(SecTrustRef trust);
+    public native NSURLCredential initWithTrust(@NotNull SecTrustRef trust);
 
     /**
      * initWithUser:password:persistence:
@@ -303,7 +315,7 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
      */
     @Generated
     @Selector("initWithUser:password:persistence:")
-    public native NSURLCredential initWithUserPasswordPersistence(String user, String password,
+    public native NSURLCredential initWithUserPasswordPersistence(@NotNull String user, @NotNull String password,
             @NUInt long persistence);
 
     /**
@@ -315,6 +327,7 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
      * 
      * @return The password string
      */
+    @Nullable
     @Generated
     @Selector("password")
     public native String password();
@@ -340,6 +353,7 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
      * 
      * @return The user string
      */
+    @Nullable
     @Generated
     @Selector("user")
     public native String user();

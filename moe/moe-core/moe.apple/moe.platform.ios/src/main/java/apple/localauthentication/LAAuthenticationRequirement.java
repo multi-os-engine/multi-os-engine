@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Builds requirements that can be used for protecting a @c LARight
@@ -57,7 +59,7 @@ public class LAAuthenticationRequirement extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Requires user authentication with the current biometric set
@@ -69,6 +71,7 @@ public class LAAuthenticationRequirement extends NSObject {
      * 
      * @return @c LAAuthenticationRequirement instance
      */
+    @NotNull
     @Generated
     @Selector("biometryCurrentSetRequirement")
     public static native LAAuthenticationRequirement biometryCurrentSetRequirement();
@@ -82,6 +85,7 @@ public class LAAuthenticationRequirement extends NSObject {
      * 
      * @return @c LAAuthenticationRequirement instance
      */
+    @NotNull
     @Generated
     @Selector("biometryRequirement")
     public static native LAAuthenticationRequirement biometryRequirement();
@@ -93,25 +97,29 @@ public class LAAuthenticationRequirement extends NSObject {
      *                 not preferred by the user.
      * @return @c LAAuthenticationRequirement instance
      */
+    @NotNull
     @Generated
     @Selector("biometryRequirementWithFallback:")
     public static native LAAuthenticationRequirement biometryRequirementWithFallback(
-            LABiometryFallbackRequirement fallback);
+            @NotNull LABiometryFallbackRequirement fallback);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,6 +133,7 @@ public class LAAuthenticationRequirement extends NSObject {
      * 
      * @return @c LAAuthenticationRequirement instance
      */
+    @NotNull
     @Generated
     @Selector("defaultRequirement")
     public static native LAAuthenticationRequirement defaultRequirement();
@@ -159,9 +168,10 @@ public class LAAuthenticationRequirement extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

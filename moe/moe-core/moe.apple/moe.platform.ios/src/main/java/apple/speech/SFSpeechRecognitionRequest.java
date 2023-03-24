@@ -37,6 +37,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A request for a speech recognition from an audio source
@@ -73,22 +75,25 @@ public class SFSpeechRecognitionRequest extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +128,10 @@ public class SFSpeechRecognitionRequest extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,6 +162,7 @@ public class SFSpeechRecognitionRequest extends NSObject {
     /**
      * Phrases which should be recognized even if they are not in the system vocabulary
      */
+    @NotNull
     @Generated
     @Selector("contextualStrings")
     public native NSArray<String> contextualStrings();
@@ -171,6 +178,7 @@ public class SFSpeechRecognitionRequest extends NSObject {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Not used anymore
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("interactionIdentifier")
@@ -181,7 +189,7 @@ public class SFSpeechRecognitionRequest extends NSObject {
      */
     @Generated
     @Selector("setContextualStrings:")
-    public native void setContextualStrings(NSArray<String> value);
+    public native void setContextualStrings(@NotNull NSArray<String> value);
 
     /**
      * String which can be used to identify the receiver by the developer
@@ -193,7 +201,7 @@ public class SFSpeechRecognitionRequest extends NSObject {
     @Deprecated
     @Generated
     @Selector("setInteractionIdentifier:")
-    public native void setInteractionIdentifier(String value);
+    public native void setInteractionIdentifier(@Nullable String value);
 
     /**
      * If true, partial (non-final) results for each utterance will be reported.

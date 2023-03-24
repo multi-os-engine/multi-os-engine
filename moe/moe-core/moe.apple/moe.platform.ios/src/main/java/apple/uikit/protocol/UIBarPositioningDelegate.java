@@ -26,6 +26,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -41,7 +42,7 @@ public interface UIBarPositioningDelegate {
     @IsOptional
     @Selector("positionForBar:")
     @NInt
-    default long positionForBar(@Mapped(ObjCObjectMapper.class) UIBarPositioning bar) {
+    default long positionForBar(@NotNull @Mapped(ObjCObjectMapper.class) UIBarPositioning bar) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

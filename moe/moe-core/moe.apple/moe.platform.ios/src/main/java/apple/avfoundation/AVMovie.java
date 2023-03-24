@@ -31,6 +31,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -54,6 +56,7 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      * 
      * The URL with which the instance of AVMovie was initialized; may be nil.
      */
+    @Nullable
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -74,11 +77,11 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
 
     @Generated
     @Selector("assetWithURL:")
-    public static native AVMovie assetWithURL(NSURL URL);
+    public static native AVMovie assetWithURL(@NotNull NSURL URL);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] canContainMovieFragments
@@ -94,18 +97,21 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,11 +130,12 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
     @Selector("containsMovieFragments")
     public native boolean containsMovieFragments();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] data
@@ -137,6 +144,7 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("data")
     public native NSData data();
@@ -155,6 +163,7 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("defaultMediaDataStorage")
     public native AVMediaDataStorage defaultMediaDataStorage();
@@ -196,7 +205,7 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      */
     @Generated
     @Selector("initWithData:options:")
-    public native AVMovie initWithDataOptions(NSData data, NSDictionary<String, ?> options);
+    public native AVMovie initWithDataOptions(@NotNull NSData data, @Nullable NSDictionary<String, ?> options);
 
     /**
      * initWithURL:options:
@@ -218,7 +227,7 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      */
     @Generated
     @Selector("initWithURL:options:")
-    public native AVMovie initWithURLOptions(NSURL URL, NSDictionary<String, ?> options);
+    public native AVMovie initWithURLOptions(@NotNull NSURL URL, @Nullable NSDictionary<String, ?> options);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -249,15 +258,16 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      */
     @Generated
     @Selector("isCompatibleWithFileType:")
-    public native boolean isCompatibleWithFileType(String fileType);
+    public native boolean isCompatibleWithFileType(@NotNull String fileType);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * movieHeaderWithFileType:error:
@@ -275,10 +285,11 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      *                 If an error occurs reading the movie header, describes the nature of the failure.
      * @return An NSData object.
      */
+    @Nullable
     @Generated
     @Selector("movieHeaderWithFileType:error:")
-    public native NSData movieHeaderWithFileTypeError(String fileType,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native NSData movieHeaderWithFileTypeError(@NotNull String fileType,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * movieTypes
@@ -287,6 +298,7 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      * 
      * @return An NSArray of UTIs identifying the file types the AVMovie class understands.
      */
+    @NotNull
     @Generated
     @Selector("movieTypes")
     public static native NSArray<String> movieTypes();
@@ -314,7 +326,7 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      */
     @Generated
     @Selector("movieWithData:options:")
-    public static native AVMovie movieWithDataOptions(NSData data, NSDictionary<String, ?> options);
+    public static native AVMovie movieWithDataOptions(@NotNull NSData data, @Nullable NSDictionary<String, ?> options);
 
     /**
      * movieWithURL:options:
@@ -336,13 +348,14 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      */
     @Generated
     @Selector("movieWithURL:options:")
-    public static native AVMovie movieWithURLOptions(NSURL URL, NSDictionary<String, ?> options);
+    public static native AVMovie movieWithURLOptions(@NotNull NSURL URL, @Nullable NSDictionary<String, ?> options);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Owned
@@ -379,6 +392,7 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      *                The trackID of the requested AVMovieTrack.
      * @return An instance of AVMovieTrack; may be nil if no track of the specified trackID is available.
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("trackWithTrackID:")
@@ -391,6 +405,7 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      * 
      * The value of this property is an array of tracks the movie contains; the tracks are of type AVMovieTrack.
      */
+    @NotNull
     @Generated
     @Selector("tracks")
     public native NSArray<? extends AVMovieTrack> tracks();
@@ -410,10 +425,11 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      *                            (Media characteristics are defined in AVMediaFormat.h)
      * @return An NSArray of AVMovieTracks; may be empty if no tracks with the specified characteristic are available.
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("tracksWithMediaCharacteristic:")
-    public native NSArray<? extends AVMovieTrack> tracksWithMediaCharacteristic(String mediaCharacteristic);
+    public native NSArray<? extends AVMovieTrack> tracksWithMediaCharacteristic(@NotNull String mediaCharacteristic);
 
     /**
      * tracksWithMediaType:
@@ -430,10 +446,11 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      *                  defined in AVMediaFormat.h)
      * @return An NSArray of AVMovieTracks; may be empty if no tracks of the specified media type are available.
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("tracksWithMediaType:")
-    public native NSArray<? extends AVMovieTrack> tracksWithMediaType(String mediaType);
+    public native NSArray<? extends AVMovieTrack> tracksWithMediaType(@NotNull String mediaType);
 
     @Generated
     @Selector("version")
@@ -462,8 +479,8 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      */
     @Generated
     @Selector("writeMovieHeaderToURL:fileType:options:error:")
-    public native boolean writeMovieHeaderToURLFileTypeOptionsError(NSURL URL, String fileType, @NUInt long options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean writeMovieHeaderToURLFileTypeOptionsError(@NotNull NSURL URL, @NotNull String fileType,
+            @NUInt long options, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * loadTrackWithTrackID:completionHandler:
@@ -481,13 +498,13 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
     @Generated
     @Selector("loadTrackWithTrackID:completionHandler:")
     public native void loadTrackWithTrackIDCompletionHandler(int trackID,
-            @ObjCBlock(name = "call_loadTrackWithTrackIDCompletionHandler") Block_loadTrackWithTrackIDCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_loadTrackWithTrackIDCompletionHandler") Block_loadTrackWithTrackIDCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadTrackWithTrackIDCompletionHandler {
         @Generated
-        void call_loadTrackWithTrackIDCompletionHandler(AVMovieTrack arg0, NSError arg1);
+        void call_loadTrackWithTrackIDCompletionHandler(@Nullable AVMovieTrack arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -507,15 +524,15 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      */
     @Generated
     @Selector("loadTracksWithMediaCharacteristic:completionHandler:")
-    public native void loadTracksWithMediaCharacteristicCompletionHandler(String mediaCharacteristic,
-            @ObjCBlock(name = "call_loadTracksWithMediaCharacteristicCompletionHandler") Block_loadTracksWithMediaCharacteristicCompletionHandler completionHandler);
+    public native void loadTracksWithMediaCharacteristicCompletionHandler(@NotNull String mediaCharacteristic,
+            @NotNull @ObjCBlock(name = "call_loadTracksWithMediaCharacteristicCompletionHandler") Block_loadTracksWithMediaCharacteristicCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadTracksWithMediaCharacteristicCompletionHandler {
         @Generated
-        void call_loadTracksWithMediaCharacteristicCompletionHandler(NSArray<? extends AVMovieTrack> arg0,
-                NSError arg1);
+        void call_loadTracksWithMediaCharacteristicCompletionHandler(@Nullable NSArray<? extends AVMovieTrack> arg0,
+                @Nullable NSError arg1);
     }
 
     /**
@@ -534,13 +551,14 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      */
     @Generated
     @Selector("loadTracksWithMediaType:completionHandler:")
-    public native void loadTracksWithMediaTypeCompletionHandler(String mediaType,
-            @ObjCBlock(name = "call_loadTracksWithMediaTypeCompletionHandler") Block_loadTracksWithMediaTypeCompletionHandler completionHandler);
+    public native void loadTracksWithMediaTypeCompletionHandler(@NotNull String mediaType,
+            @NotNull @ObjCBlock(name = "call_loadTracksWithMediaTypeCompletionHandler") Block_loadTracksWithMediaTypeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadTracksWithMediaTypeCompletionHandler {
         @Generated
-        void call_loadTracksWithMediaTypeCompletionHandler(NSArray<? extends AVMovieTrack> arg0, NSError arg1);
+        void call_loadTracksWithMediaTypeCompletionHandler(@Nullable NSArray<? extends AVMovieTrack> arg0,
+                @Nullable NSError arg1);
     }
 }

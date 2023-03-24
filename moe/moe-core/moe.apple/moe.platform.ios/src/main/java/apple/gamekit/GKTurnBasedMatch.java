@@ -41,6 +41,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 5.0
@@ -75,22 +77,25 @@ public class GKTurnBasedMatch extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -111,8 +116,8 @@ public class GKTurnBasedMatch extends NSObject {
      */
     @Generated
     @Selector("findMatchForRequest:withCompletionHandler:")
-    public static native void findMatchForRequestWithCompletionHandler(GKMatchRequest request,
-            @ObjCBlock(name = "call_findMatchForRequestWithCompletionHandler") Block_findMatchForRequestWithCompletionHandler completionHandler);
+    public static native void findMatchForRequestWithCompletionHandler(@NotNull GKMatchRequest request,
+            @NotNull @ObjCBlock(name = "call_findMatchForRequestWithCompletionHandler") Block_findMatchForRequestWithCompletionHandler completionHandler);
 
     @Generated
     @Selector("hash")
@@ -136,9 +141,10 @@ public class GKTurnBasedMatch extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * load a match based on a previously known match ID
@@ -147,8 +153,8 @@ public class GKTurnBasedMatch extends NSObject {
      */
     @Generated
     @Selector("loadMatchWithID:withCompletionHandler:")
-    public static native void loadMatchWithIDWithCompletionHandler(String matchID,
-            @ObjCBlock(name = "call_loadMatchWithIDWithCompletionHandler") Block_loadMatchWithIDWithCompletionHandler completionHandler);
+    public static native void loadMatchWithIDWithCompletionHandler(@NotNull String matchID,
+            @Nullable @ObjCBlock(name = "call_loadMatchWithIDWithCompletionHandler") Block_loadMatchWithIDWithCompletionHandler completionHandler);
 
     /**
      * This method retrieves the list of GKTurnBasedMatches that the current player is or has participated in. The
@@ -157,7 +163,7 @@ public class GKTurnBasedMatch extends NSObject {
     @Generated
     @Selector("loadMatchesWithCompletionHandler:")
     public static native void loadMatchesWithCompletionHandler(
-            @ObjCBlock(name = "call_loadMatchesWithCompletionHandler") Block_loadMatchesWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_loadMatchesWithCompletionHandler") Block_loadMatchesWithCompletionHandler completionHandler);
 
     @Generated
     @Owned
@@ -193,13 +199,14 @@ public class GKTurnBasedMatch extends NSObject {
     @Generated
     @Selector("acceptInviteWithCompletionHandler:")
     public native void acceptInviteWithCompletionHandler(
-            @ObjCBlock(name = "call_acceptInviteWithCompletionHandler") Block_acceptInviteWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_acceptInviteWithCompletionHandler") Block_acceptInviteWithCompletionHandler completionHandler);
 
     /**
      * returns the exchanges that currently await a reply from the local player
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("activeExchanges")
     public native NSArray<? extends GKTurnBasedExchange> activeExchanges();
@@ -210,10 +217,12 @@ public class GKTurnBasedMatch extends NSObject {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("completedExchanges")
     public native NSArray<? extends GKTurnBasedExchange> completedExchanges();
 
+    @Nullable
     @Generated
     @Selector("creationDate")
     public native NSDate creationDate();
@@ -222,6 +231,7 @@ public class GKTurnBasedMatch extends NSObject {
      * This indicates the participant who has the current turn. This is set by passing the next participant into
      * endTurnWithNextParticipant:matchData:completionHandler:
      */
+    @Nullable
     @Generated
     @Selector("currentParticipant")
     public native GKTurnBasedParticipant currentParticipant();
@@ -234,7 +244,7 @@ public class GKTurnBasedMatch extends NSObject {
     @Generated
     @Selector("declineInviteWithCompletionHandler:")
     public native void declineInviteWithCompletionHandler(
-            @ObjCBlock(name = "call_declineInviteWithCompletionHandler") Block_declineInviteWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_declineInviteWithCompletionHandler") Block_declineInviteWithCompletionHandler completionHandler);
 
     /**
      * This will end the match for all participants. You must set each participant’s matchOutcome before calling this
@@ -242,8 +252,8 @@ public class GKTurnBasedMatch extends NSObject {
      */
     @Generated
     @Selector("endMatchInTurnWithMatchData:completionHandler:")
-    public native void endMatchInTurnWithMatchDataCompletionHandler(NSData matchData,
-            @ObjCBlock(name = "call_endMatchInTurnWithMatchDataCompletionHandler") Block_endMatchInTurnWithMatchDataCompletionHandler completionHandler);
+    public native void endMatchInTurnWithMatchDataCompletionHandler(@NotNull NSData matchData,
+            @Nullable @ObjCBlock(name = "call_endMatchInTurnWithMatchDataCompletionHandler") Block_endMatchInTurnWithMatchDataCompletionHandler completionHandler);
 
     /**
      * This will end the match and submit scores and achievements for all participants. Scores should be submitted for
@@ -258,9 +268,9 @@ public class GKTurnBasedMatch extends NSObject {
     @Deprecated
     @Generated
     @Selector("endMatchInTurnWithMatchData:scores:achievements:completionHandler:")
-    public native void endMatchInTurnWithMatchDataScoresAchievementsCompletionHandler(NSData matchData,
-            NSArray<? extends GKScore> scores, NSArray<? extends GKAchievement> achievements,
-            @ObjCBlock(name = "call_endMatchInTurnWithMatchDataScoresAchievementsCompletionHandler") Block_endMatchInTurnWithMatchDataScoresAchievementsCompletionHandler completionHandler);
+    public native void endMatchInTurnWithMatchDataScoresAchievementsCompletionHandler(@NotNull NSData matchData,
+            @Nullable NSArray<? extends GKScore> scores, @Nullable NSArray<? extends GKAchievement> achievements,
+            @Nullable @ObjCBlock(name = "call_endMatchInTurnWithMatchDataScoresAchievementsCompletionHandler") Block_endMatchInTurnWithMatchDataScoresAchievementsCompletionHandler completionHandler);
 
     /**
      * deprecated methods
@@ -272,9 +282,9 @@ public class GKTurnBasedMatch extends NSObject {
     @Generated
     @Deprecated
     @Selector("endTurnWithNextParticipant:matchData:completionHandler:")
-    public native void endTurnWithNextParticipantMatchDataCompletionHandler(GKTurnBasedParticipant nextParticipant,
-            NSData matchData,
-            @ObjCBlock(name = "call_endTurnWithNextParticipantMatchDataCompletionHandler") Block_endTurnWithNextParticipantMatchDataCompletionHandler completionHandler);
+    public native void endTurnWithNextParticipantMatchDataCompletionHandler(
+            @NotNull GKTurnBasedParticipant nextParticipant, @NotNull NSData matchData,
+            @Nullable @ObjCBlock(name = "call_endTurnWithNextParticipantMatchDataCompletionHandler") Block_endTurnWithNextParticipantMatchDataCompletionHandler completionHandler);
 
     /**
      * Ends the current player's turn. You may update the matchOutcome for any GKTurnBasedPlayerInfos that you wish to
@@ -289,8 +299,9 @@ public class GKTurnBasedMatch extends NSObject {
     @Generated
     @Selector("endTurnWithNextParticipants:turnTimeout:matchData:completionHandler:")
     public native void endTurnWithNextParticipantsTurnTimeoutMatchDataCompletionHandler(
-            NSArray<? extends GKTurnBasedParticipant> nextParticipants, double timeout, NSData matchData,
-            @ObjCBlock(name = "call_endTurnWithNextParticipantsTurnTimeoutMatchDataCompletionHandler") Block_endTurnWithNextParticipantsTurnTimeoutMatchDataCompletionHandler completionHandler);
+            @NotNull NSArray<? extends GKTurnBasedParticipant> nextParticipants, double timeout,
+            @NotNull NSData matchData,
+            @Nullable @ObjCBlock(name = "call_endTurnWithNextParticipantsTurnTimeoutMatchDataCompletionHandler") Block_endTurnWithNextParticipantsTurnTimeoutMatchDataCompletionHandler completionHandler);
 
     /**
      * maximum data allowed for exchange data
@@ -318,6 +329,7 @@ public class GKTurnBasedMatch extends NSObject {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("exchanges")
     public native NSArray<? extends GKTurnBasedExchange> exchanges();
@@ -333,7 +345,7 @@ public class GKTurnBasedMatch extends NSObject {
     @Generated
     @Selector("loadMatchDataWithCompletionHandler:")
     public native void loadMatchDataWithCompletionHandler(
-            @ObjCBlock(name = "call_loadMatchDataWithCompletionHandler") Block_loadMatchDataWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_loadMatchDataWithCompletionHandler") Block_loadMatchDataWithCompletionHandler completionHandler);
 
     /**
      * Developer-defined data representing the current state of the game. This property is nil until loaded by
@@ -341,6 +353,7 @@ public class GKTurnBasedMatch extends NSObject {
      * The developer can submit updated matchData by passing it into
      * endTurnWithNextParticipant:matchData:completionHandler: or endMatchInTurnWithMatchData:completionHandler:
      */
+    @Nullable
     @Generated
     @Selector("matchData")
     public native NSData matchData();
@@ -355,6 +368,7 @@ public class GKTurnBasedMatch extends NSObject {
     @NUInt
     public native long matchDataMaximumSize();
 
+    @Nullable
     @Generated
     @Selector("matchID")
     public native String matchID();
@@ -363,6 +377,7 @@ public class GKTurnBasedMatch extends NSObject {
      * returns the localizable message in the current locale. Setting this is equivalent to calling [self
      * setLocalizableMessageWithKey:message arguments:nil]
      */
+    @Nullable
     @Generated
     @Selector("message")
     public native String message();
@@ -376,8 +391,8 @@ public class GKTurnBasedMatch extends NSObject {
     @Deprecated
     @Selector("participantQuitInTurnWithOutcome:nextParticipant:matchData:completionHandler:")
     public native void participantQuitInTurnWithOutcomeNextParticipantMatchDataCompletionHandler(
-            @NInt long matchOutcome, GKTurnBasedParticipant nextParticipant, NSData matchData,
-            @ObjCBlock(name = "call_participantQuitInTurnWithOutcomeNextParticipantMatchDataCompletionHandler") Block_participantQuitInTurnWithOutcomeNextParticipantMatchDataCompletionHandler completionHandler);
+            @NInt long matchOutcome, @NotNull GKTurnBasedParticipant nextParticipant, @NotNull NSData matchData,
+            @Nullable @ObjCBlock(name = "call_participantQuitInTurnWithOutcomeNextParticipantMatchDataCompletionHandler") Block_participantQuitInTurnWithOutcomeNextParticipantMatchDataCompletionHandler completionHandler);
 
     /**
      * Ends the current player's turn by quitting the match.  The caller must indicate the next player and pass in
@@ -388,9 +403,9 @@ public class GKTurnBasedMatch extends NSObject {
     @Generated
     @Selector("participantQuitInTurnWithOutcome:nextParticipants:turnTimeout:matchData:completionHandler:")
     public native void participantQuitInTurnWithOutcomeNextParticipantsTurnTimeoutMatchDataCompletionHandler(
-            @NInt long matchOutcome, NSArray<? extends GKTurnBasedParticipant> nextParticipants, double timeout,
-            NSData matchData,
-            @ObjCBlock(name = "call_participantQuitInTurnWithOutcomeNextParticipantsTurnTimeoutMatchDataCompletionHandler") Block_participantQuitInTurnWithOutcomeNextParticipantsTurnTimeoutMatchDataCompletionHandler completionHandler);
+            @NInt long matchOutcome, @NotNull NSArray<? extends GKTurnBasedParticipant> nextParticipants,
+            double timeout, @NotNull NSData matchData,
+            @Nullable @ObjCBlock(name = "call_participantQuitInTurnWithOutcomeNextParticipantsTurnTimeoutMatchDataCompletionHandler") Block_participantQuitInTurnWithOutcomeNextParticipantsTurnTimeoutMatchDataCompletionHandler completionHandler);
 
     /**
      * Abandon the match when it is not the current participant's turn. In this there is no update to matchData and no
@@ -399,11 +414,12 @@ public class GKTurnBasedMatch extends NSObject {
     @Generated
     @Selector("participantQuitOutOfTurnWithOutcome:withCompletionHandler:")
     public native void participantQuitOutOfTurnWithOutcomeWithCompletionHandler(@NInt long matchOutcome,
-            @ObjCBlock(name = "call_participantQuitOutOfTurnWithOutcomeWithCompletionHandler") Block_participantQuitOutOfTurnWithOutcomeWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_participantQuitOutOfTurnWithOutcomeWithCompletionHandler") Block_participantQuitOutOfTurnWithOutcomeWithCompletionHandler completionHandler);
 
     /**
      * array of GKTurnBasedParticipant objects
      */
+    @Nullable
     @Generated
     @Selector("participants")
     public native NSArray<? extends GKTurnBasedParticipant> participants();
@@ -421,7 +437,7 @@ public class GKTurnBasedMatch extends NSObject {
     @Generated
     @Selector("rematchWithCompletionHandler:")
     public native void rematchWithCompletionHandler(
-            @ObjCBlock(name = "call_rematchWithCompletionHandler") Block_rematchWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_rematchWithCompletionHandler") Block_rematchWithCompletionHandler completionHandler);
 
     /**
      * Remove a declined or completed match (one with a matchOutcome set) from the player's list of matches. If using
@@ -431,7 +447,7 @@ public class GKTurnBasedMatch extends NSObject {
     @Generated
     @Selector("removeWithCompletionHandler:")
     public native void removeWithCompletionHandler(
-            @ObjCBlock(name = "call_removeWithCompletionHandler") Block_removeWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_removeWithCompletionHandler") Block_removeWithCompletionHandler completionHandler);
 
     /**
      * saves the matchData for the current turn without ending the turn. If other players have the game running they
@@ -444,8 +460,8 @@ public class GKTurnBasedMatch extends NSObject {
      */
     @Generated
     @Selector("saveCurrentTurnWithMatchData:completionHandler:")
-    public native void saveCurrentTurnWithMatchDataCompletionHandler(NSData matchData,
-            @ObjCBlock(name = "call_saveCurrentTurnWithMatchDataCompletionHandler") Block_saveCurrentTurnWithMatchDataCompletionHandler completionHandler);
+    public native void saveCurrentTurnWithMatchDataCompletionHandler(@NotNull NSData matchData,
+            @Nullable @ObjCBlock(name = "call_saveCurrentTurnWithMatchDataCompletionHandler") Block_saveCurrentTurnWithMatchDataCompletionHandler completionHandler);
 
     /**
      * saves the merged matchData for the current turn without ending the turn and mark the supplied exchanges as
@@ -458,9 +474,9 @@ public class GKTurnBasedMatch extends NSObject {
      */
     @Generated
     @Selector("saveMergedMatchData:withResolvedExchanges:completionHandler:")
-    public native void saveMergedMatchDataWithResolvedExchangesCompletionHandler(NSData matchData,
-            NSArray<? extends GKTurnBasedExchange> exchanges,
-            @ObjCBlock(name = "call_saveMergedMatchDataWithResolvedExchangesCompletionHandler") Block_saveMergedMatchDataWithResolvedExchangesCompletionHandler completionHandler);
+    public native void saveMergedMatchDataWithResolvedExchangesCompletionHandler(@NotNull NSData matchData,
+            @NotNull NSArray<? extends GKTurnBasedExchange> exchanges,
+            @Nullable @ObjCBlock(name = "call_saveMergedMatchDataWithResolvedExchangesCompletionHandler") Block_saveMergedMatchDataWithResolvedExchangesCompletionHandler completionHandler);
 
     /**
      * Send an exchange request to one or more participants. Each recipient will receive a push notification using
@@ -473,9 +489,9 @@ public class GKTurnBasedMatch extends NSObject {
     @Generated
     @Selector("sendExchangeToParticipants:data:localizableMessageKey:arguments:timeout:completionHandler:")
     public native void sendExchangeToParticipantsDataLocalizableMessageKeyArgumentsTimeoutCompletionHandler(
-            NSArray<? extends GKTurnBasedParticipant> participants, NSData data, String key, NSArray<String> arguments,
-            double timeout,
-            @ObjCBlock(name = "call_sendExchangeToParticipantsDataLocalizableMessageKeyArgumentsTimeoutCompletionHandler") Block_sendExchangeToParticipantsDataLocalizableMessageKeyArgumentsTimeoutCompletionHandler completionHandler);
+            @NotNull NSArray<? extends GKTurnBasedParticipant> participants, @NotNull NSData data, @NotNull String key,
+            @NotNull NSArray<String> arguments, double timeout,
+            @Nullable @ObjCBlock(name = "call_sendExchangeToParticipantsDataLocalizableMessageKeyArgumentsTimeoutCompletionHandler") Block_sendExchangeToParticipantsDataLocalizableMessageKeyArgumentsTimeoutCompletionHandler completionHandler);
 
     /**
      * Send a reminder to one or more participants. Each recipient will receive a push notification using supplied
@@ -487,8 +503,9 @@ public class GKTurnBasedMatch extends NSObject {
     @Generated
     @Selector("sendReminderToParticipants:localizableMessageKey:arguments:completionHandler:")
     public native void sendReminderToParticipantsLocalizableMessageKeyArgumentsCompletionHandler(
-            NSArray<? extends GKTurnBasedParticipant> participants, String key, NSArray<String> arguments,
-            @ObjCBlock(name = "call_sendReminderToParticipantsLocalizableMessageKeyArgumentsCompletionHandler") Block_sendReminderToParticipantsLocalizableMessageKeyArgumentsCompletionHandler completionHandler);
+            @NotNull NSArray<? extends GKTurnBasedParticipant> participants, @NotNull String key,
+            @NotNull NSArray<String> arguments,
+            @Nullable @ObjCBlock(name = "call_sendReminderToParticipantsLocalizableMessageKeyArgumentsCompletionHandler") Block_sendReminderToParticipantsLocalizableMessageKeyArgumentsCompletionHandler completionHandler);
 
     /**
      * If the developer wishes to display a message in GKTurnBasedMatchmakerViewController at the end of a turn or end
@@ -509,7 +526,7 @@ public class GKTurnBasedMatch extends NSObject {
      */
     @Generated
     @Selector("setLocalizableMessageWithKey:arguments:")
-    public native void setLocalizableMessageWithKeyArguments(String key, NSArray<String> arguments);
+    public native void setLocalizableMessageWithKeyArguments(@NotNull String key, @Nullable NSArray<String> arguments);
 
     /**
      * returns the localizable message in the current locale. Setting this is equivalent to calling [self
@@ -517,7 +534,7 @@ public class GKTurnBasedMatch extends NSObject {
      */
     @Generated
     @Selector("setMessage:")
-    public native void setMessage(String value);
+    public native void setMessage(@Nullable String value);
 
     @Generated
     @Selector("status")
@@ -528,119 +545,121 @@ public class GKTurnBasedMatch extends NSObject {
     @Generated
     public interface Block_acceptInviteWithCompletionHandler {
         @Generated
-        void call_acceptInviteWithCompletionHandler(GKTurnBasedMatch match, NSError error);
+        void call_acceptInviteWithCompletionHandler(@Nullable GKTurnBasedMatch match, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_declineInviteWithCompletionHandler {
         @Generated
-        void call_declineInviteWithCompletionHandler(NSError error);
+        void call_declineInviteWithCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_endMatchInTurnWithMatchDataCompletionHandler {
         @Generated
-        void call_endMatchInTurnWithMatchDataCompletionHandler(NSError error);
+        void call_endMatchInTurnWithMatchDataCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_endMatchInTurnWithMatchDataScoresAchievementsCompletionHandler {
         @Generated
-        void call_endMatchInTurnWithMatchDataScoresAchievementsCompletionHandler(NSError error);
+        void call_endMatchInTurnWithMatchDataScoresAchievementsCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_endTurnWithNextParticipantMatchDataCompletionHandler {
         @Generated
-        void call_endTurnWithNextParticipantMatchDataCompletionHandler(NSError error);
+        void call_endTurnWithNextParticipantMatchDataCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_endTurnWithNextParticipantsTurnTimeoutMatchDataCompletionHandler {
         @Generated
-        void call_endTurnWithNextParticipantsTurnTimeoutMatchDataCompletionHandler(NSError error);
+        void call_endTurnWithNextParticipantsTurnTimeoutMatchDataCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_findMatchForRequestWithCompletionHandler {
         @Generated
-        void call_findMatchForRequestWithCompletionHandler(GKTurnBasedMatch match, NSError error);
+        void call_findMatchForRequestWithCompletionHandler(@Nullable GKTurnBasedMatch match, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadMatchDataWithCompletionHandler {
         @Generated
-        void call_loadMatchDataWithCompletionHandler(NSData matchData, NSError error);
+        void call_loadMatchDataWithCompletionHandler(@Nullable NSData matchData, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadMatchWithIDWithCompletionHandler {
         @Generated
-        void call_loadMatchWithIDWithCompletionHandler(GKTurnBasedMatch match, NSError error);
+        void call_loadMatchWithIDWithCompletionHandler(@Nullable GKTurnBasedMatch match, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadMatchesWithCompletionHandler {
         @Generated
-        void call_loadMatchesWithCompletionHandler(NSArray<? extends GKTurnBasedMatch> matches, NSError error);
+        void call_loadMatchesWithCompletionHandler(@Nullable NSArray<? extends GKTurnBasedMatch> matches,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_participantQuitInTurnWithOutcomeNextParticipantMatchDataCompletionHandler {
         @Generated
-        void call_participantQuitInTurnWithOutcomeNextParticipantMatchDataCompletionHandler(NSError error);
+        void call_participantQuitInTurnWithOutcomeNextParticipantMatchDataCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_participantQuitInTurnWithOutcomeNextParticipantsTurnTimeoutMatchDataCompletionHandler {
         @Generated
-        void call_participantQuitInTurnWithOutcomeNextParticipantsTurnTimeoutMatchDataCompletionHandler(NSError error);
+        void call_participantQuitInTurnWithOutcomeNextParticipantsTurnTimeoutMatchDataCompletionHandler(
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_participantQuitOutOfTurnWithOutcomeWithCompletionHandler {
         @Generated
-        void call_participantQuitOutOfTurnWithOutcomeWithCompletionHandler(NSError error);
+        void call_participantQuitOutOfTurnWithOutcomeWithCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_rematchWithCompletionHandler {
         @Generated
-        void call_rematchWithCompletionHandler(GKTurnBasedMatch match, NSError error);
+        void call_rematchWithCompletionHandler(@Nullable GKTurnBasedMatch match, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeWithCompletionHandler {
         @Generated
-        void call_removeWithCompletionHandler(NSError error);
+        void call_removeWithCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveCurrentTurnWithMatchDataCompletionHandler {
         @Generated
-        void call_saveCurrentTurnWithMatchDataCompletionHandler(NSError error);
+        void call_saveCurrentTurnWithMatchDataCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveMergedMatchDataWithResolvedExchangesCompletionHandler {
         @Generated
-        void call_saveMergedMatchDataWithResolvedExchangesCompletionHandler(NSError error);
+        void call_saveMergedMatchDataWithResolvedExchangesCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -648,14 +667,14 @@ public class GKTurnBasedMatch extends NSObject {
     public interface Block_sendExchangeToParticipantsDataLocalizableMessageKeyArgumentsTimeoutCompletionHandler {
         @Generated
         void call_sendExchangeToParticipantsDataLocalizableMessageKeyArgumentsTimeoutCompletionHandler(
-                GKTurnBasedExchange exchange, NSError error);
+                @Nullable GKTurnBasedExchange exchange, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sendReminderToParticipantsLocalizableMessageKeyArgumentsCompletionHandler {
         @Generated
-        void call_sendReminderToParticipantsLocalizableMessageKeyArgumentsCompletionHandler(NSError error);
+        void call_sendReminderToParticipantsLocalizableMessageKeyArgumentsCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -663,14 +682,15 @@ public class GKTurnBasedMatch extends NSObject {
      */
     @Generated
     @Selector("endMatchInTurnWithMatchData:leaderboardScores:achievements:completionHandler:")
-    public native void endMatchInTurnWithMatchDataLeaderboardScoresAchievementsCompletionHandler(NSData matchData,
-            NSArray<? extends GKLeaderboardScore> scores, NSArray<?> achievements,
-            @ObjCBlock(name = "call_endMatchInTurnWithMatchDataLeaderboardScoresAchievementsCompletionHandler") Block_endMatchInTurnWithMatchDataLeaderboardScoresAchievementsCompletionHandler completionHandler);
+    public native void endMatchInTurnWithMatchDataLeaderboardScoresAchievementsCompletionHandler(
+            @NotNull NSData matchData, @NotNull NSArray<? extends GKLeaderboardScore> scores,
+            @NotNull NSArray<?> achievements,
+            @NotNull @ObjCBlock(name = "call_endMatchInTurnWithMatchDataLeaderboardScoresAchievementsCompletionHandler") Block_endMatchInTurnWithMatchDataLeaderboardScoresAchievementsCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_endMatchInTurnWithMatchDataLeaderboardScoresAchievementsCompletionHandler {
         @Generated
-        void call_endMatchInTurnWithMatchDataLeaderboardScoresAchievementsCompletionHandler(NSError error);
+        void call_endMatchInTurnWithMatchDataLeaderboardScoresAchievementsCompletionHandler(@Nullable NSError error);
     }
 }

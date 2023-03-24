@@ -34,6 +34,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("SceneKit")
@@ -246,7 +247,7 @@ public final class SceneKit {
      */
     @Generated
     @CFunction
-    public static native void SCNExportJavaScriptModule(JSContext context);
+    public static native void SCNExportJavaScriptModule(@NotNull JSContext context);
 
     /**
      * The null vector: [0 0 0].
@@ -275,6 +276,7 @@ public final class SceneKit {
     /**
      * domain for errors from SceneKit API.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -283,6 +285,7 @@ public final class SceneKit {
     /**
      * Deprecated, use SCNHitTestSearchModeAny for the SCNHitTestOptionSearchMode option instead
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -291,6 +294,7 @@ public final class SceneKit {
     /**
      * Deprecated, use SCNHitTestSearchModeAll for the SCNHitTestOptionSearchMode option instead
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -299,6 +303,7 @@ public final class SceneKit {
     /**
      * If set to YES ignores the objects clipped by the zNear/zFar range of the current point of view. Defaults to YES.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -307,6 +312,7 @@ public final class SceneKit {
     /**
      * If set to YES ignores the faces not facing to the camera. Defaults to YES.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -315,6 +321,7 @@ public final class SceneKit {
     /**
      * If set to YES only tests the bounding boxes of the 3D objects. Defaults to NO.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -323,6 +330,7 @@ public final class SceneKit {
     /**
      * Determines whether the child nodes are ignored. Defaults to NO.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -331,6 +339,7 @@ public final class SceneKit {
     /**
      * Specifies the root node to use for the hit test. Defaults to the root node of the scene.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -339,6 +348,7 @@ public final class SceneKit {
     /**
      * Determines whether hidden nodes should be ignored. Defaults to YES.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -349,6 +359,7 @@ public final class SceneKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -360,6 +371,7 @@ public final class SceneKit {
      * channel allows to plug programs that work with multiple texture coordinates. The associated value must be a
      * NSNumber(integer) greater than zero.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -409,6 +421,7 @@ public final class SceneKit {
      * | _geometry.position.xyz += _geometry.normal * (Amplitude * _geometry.position.y * _geometry.position.x) *
      * sin(scn_frame.time);
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -506,6 +519,7 @@ public final class SceneKit {
      * | f1 = f1 * f1 * 2.0 * (3. * 2. * f1);
      * | _surface.diffuse = mix(float4(1.0), float4(0.0), f1);
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -563,6 +577,7 @@ public final class SceneKit {
      * | dotProduct = max(0.0, pow(max(0.0, dot(_surface.normal, halfVector)), _surface.shininess));
      * | _lightingContribution.specular += (dotProduct * _light.intensity.rgb);
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -604,6 +619,7 @@ public final class SceneKit {
      * Metal Shading Language
      * | _output.color.rgb = 1.0 - _output.color.rgb;
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -618,6 +634,7 @@ public final class SceneKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -630,6 +647,7 @@ public final class SceneKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -642,6 +660,7 @@ public final class SceneKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -652,6 +671,7 @@ public final class SceneKit {
      * File contributors. The values are dictionaries populated with keys documented in the "Contributor dictionary
      * keys" group.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -660,6 +680,7 @@ public final class SceneKit {
     /**
      * When the file was created. The value is a NSDate instance.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -668,6 +689,7 @@ public final class SceneKit {
     /**
      * When the file was last modified. The value is a NSDate instance.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -676,6 +698,7 @@ public final class SceneKit {
     /**
      * The up axis of the file. If the file is oriented Y-up, for example, then this is the string \@"0.0 1.0 0.0"
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -685,6 +708,7 @@ public final class SceneKit {
      * The unit used in the file. The value is a dictionary populated with keys documented in the "Unit dictionary keys"
      * group.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -694,6 +718,7 @@ public final class SceneKit {
      * [@group] Contributor dictionary keys
      * Authoring tool used to create the file. The corresponding value is an NSString.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -702,6 +727,7 @@ public final class SceneKit {
     /**
      * The file's author. The corresponding value is an NSString.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -711,6 +737,7 @@ public final class SceneKit {
      * [@group] Unit dictionary keys
      * The name (NSString) of the unit
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -720,6 +747,7 @@ public final class SceneKit {
      * A NSNumber encapsulating a floating-point value indicating how many meters the unit is. For example, if the name
      * is \@"centimeter", then this will be 0.01.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -732,6 +760,7 @@ public final class SceneKit {
      * 
      * Use this with a boolean value encapsulated in a NSNumber. The default value is NO.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -749,6 +778,7 @@ public final class SceneKit {
      * This is slower, but for security reasons it should be set to YES if you are not sure the files you load are valid
      * and have not been tampered with.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -764,6 +794,7 @@ public final class SceneKit {
      * SceneKit will attempt to reduce the scene graph by merging the geometries.
      * This option is suitable to preview a 3D scene efficiently and when manipulating the scene graph is not needed.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -784,6 +815,7 @@ public final class SceneKit {
      * Deprecated-Since: 11.0
      * Deprecated-Message: No longer supported
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -801,6 +833,7 @@ public final class SceneKit {
      * This is recommended if you want to construct your scene source from a data object, not from an URL,
      * and need to load resources whose paths are not absolute.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -816,6 +849,7 @@ public final class SceneKit {
      * SCNSceneSourceAssetDirectoryURLsKey key.
      * This can be useful to load a file and its resources from a specific bundle for instance.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -830,6 +864,7 @@ public final class SceneKit {
      * enable additional features and make the rendering as close as possible to the original intent. If you pass YES,
      * SceneKit will instead only consider features which are part of the file format specification.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -845,6 +880,7 @@ public final class SceneKit {
      * SCNSceneSourceAnimationImportPolicyPlayUsingSceneTimeBase. For compatibility reason if the application was built
      * on 10.9 or before the default behavior is SCNSceneSourceAnimationImportPolicyPlayUsingSceneTimeBase.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -860,6 +896,7 @@ public final class SceneKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -870,6 +907,7 @@ public final class SceneKit {
      * 
      * Add animations to the scene and play them once (repeatCount set to 1).
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -880,6 +918,7 @@ public final class SceneKit {
      * 
      * Add animations to the scene and play them repeatedly (repeatCount set to infinity).
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -890,6 +929,7 @@ public final class SceneKit {
      * 
      * Only keep animations in the SCNSceneSource and don't add to the animatable elements of the scene.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -901,6 +941,7 @@ public final class SceneKit {
      * Add animations to the scene and play them using the SCNView/SCNRenderer's scene time (usesSceneTimeBase set to
      * YES)
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -916,6 +957,7 @@ public final class SceneKit {
      * which represent consistency errors in the 3D file. Some metadata about these detailed errors is available
      * in their user info dictionary using the other keys (SCNConsistency*) defined in this file.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -928,6 +970,7 @@ public final class SceneKit {
      * 
      * When the element does not have an ID, the ID of the closest parent element which has one is returned.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -938,6 +981,7 @@ public final class SceneKit {
      * 
      * For XML-based formats, the tag name of the element where the error occurred.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -948,6 +992,7 @@ public final class SceneKit {
      * 
      * For text-based formats, the line number where an error occurred.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -961,6 +1006,7 @@ public final class SceneKit {
      * The destination URL is required if the scene is exported to a temporary directory and then moved to a final
      * destination. This enables the exported document to get correct relative paths to referenced images.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -969,6 +1015,7 @@ public final class SceneKit {
     /**
      * A floating point value, encapsulated in a NSNumber, containing the start time of the scene.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -977,6 +1024,7 @@ public final class SceneKit {
     /**
      * A floating point value, encapsulated in a NSNumber, containing the end time of the scene.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -985,6 +1033,7 @@ public final class SceneKit {
     /**
      * A floating point value, encapsulated in a NSNumber, containing the framerate of the scene.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -994,6 +1043,7 @@ public final class SceneKit {
      * A vector3 value, encapsulated in a NSValue, containing the up axis of the scene. This is just for information,
      * setting the up axis as no effect.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1005,31 +1055,37 @@ public final class SceneKit {
      * These keys are used for the 'semantic' argument of -[SCNProgram setSemantic:forSymbol:options:]
      * Transforms are SCNMatrix4 wrapped in NSValues.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNModelTransform();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNViewTransform();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNProjectionTransform();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNNormalTransform();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNModelViewTransform();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1038,6 +1094,7 @@ public final class SceneKit {
     /**
      * Ambient light
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1046,6 +1103,7 @@ public final class SceneKit {
     /**
      * Omnidirectional light
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1054,6 +1112,7 @@ public final class SceneKit {
     /**
      * Directional light
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1062,6 +1121,7 @@ public final class SceneKit {
     /**
      * Spot light
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1072,6 +1132,7 @@ public final class SceneKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1082,26 +1143,31 @@ public final class SceneKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNLightTypeProbe();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNLightingModelPhong();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNLightingModelBlinn();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNLightingModelLambert();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1110,26 +1176,31 @@ public final class SceneKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNLightingModelPhysicallyBased();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNGeometrySourceSemanticVertex();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNGeometrySourceSemanticNormal();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNGeometrySourceSemanticColor();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1138,26 +1209,31 @@ public final class SceneKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNGeometrySourceSemanticTangent();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNGeometrySourceSemanticVertexCrease();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNGeometrySourceSemanticEdgeCrease();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNGeometrySourceSemanticBoneWeights();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1166,6 +1242,7 @@ public final class SceneKit {
     /**
      * float3 : {x,y,z} controller animation type : {NSValue(SCNVector3)}
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1174,6 +1251,7 @@ public final class SceneKit {
     /**
      * float controller animation type : {NSNumber}
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1182,6 +1260,7 @@ public final class SceneKit {
     /**
      * float3 : {x,y,z} controller animation type : {NSValue(SCNVector3)}
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1190,6 +1269,7 @@ public final class SceneKit {
     /**
      * float3 : {x,y,z} controller animation type : {NSValue(SCNVector3)}
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1198,6 +1278,7 @@ public final class SceneKit {
     /**
      * float controller animation type : {NSNumber}
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1206,6 +1287,7 @@ public final class SceneKit {
     /**
      * float not controllable
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1214,6 +1296,7 @@ public final class SceneKit {
     /**
      * float4 : {r,g,b,a} controller animation type : {UIColor}
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1222,6 +1305,7 @@ public final class SceneKit {
     /**
      * float controller animation type : {NSNumber}
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1230,6 +1314,7 @@ public final class SceneKit {
     /**
      * float controller animation type : {NSNumber}
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1238,6 +1323,7 @@ public final class SceneKit {
     /**
      * float controller animation type : {NSNumber}
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1246,6 +1332,7 @@ public final class SceneKit {
     /**
      * float controller animation type : {NSNumber}
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1254,6 +1341,7 @@ public final class SceneKit {
     /**
      * float controller animation type : {NSNumber}
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1262,6 +1350,7 @@ public final class SceneKit {
     /**
      * float controller animation type : {NSNumber}
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1270,6 +1359,7 @@ public final class SceneKit {
     /**
      * float controller animation type : {NSNumber}
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1278,6 +1368,7 @@ public final class SceneKit {
     /**
      * float3 not controllable
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1286,6 +1377,7 @@ public final class SceneKit {
     /**
      * float3 not controllable
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1294,6 +1386,7 @@ public final class SceneKit {
     /**
      * Type of the physics shape. Default is SCNPhysicsShapeTypeConvexHull. See below for the list of shape types.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1303,6 +1396,7 @@ public final class SceneKit {
      * A boolean to decide if a hierarchy is kept as a compound of shapes or flattened as one single volume. Default is
      * true.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1311,6 +1405,7 @@ public final class SceneKit {
     /**
      * Local scaling of the physics shape (as an SCNVector3 wrapped in a NSValue)
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1321,21 +1416,25 @@ public final class SceneKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNPhysicsShapeOptionCollisionMargin();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNPhysicsShapeTypeBoundingBox();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNPhysicsShapeTypeConvexHull();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1345,6 +1444,7 @@ public final class SceneKit {
      * Allows to filter the objects tested by rayTest, contactTest and convexSweep. Default is
      * SCNPhysicsCollisionCategoryAll
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1354,6 +1454,7 @@ public final class SceneKit {
      * Specifies how to perform the ray/contact/sweep test. Values are defined below. If not defined, then defaults to
      * SCNPhysicsTestSearchModeAny
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1362,6 +1463,7 @@ public final class SceneKit {
     /**
      * Specifies whether the back faces should be ignored or not. Defaults to YES.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1370,6 +1472,7 @@ public final class SceneKit {
     /**
      * Returns the first contact found.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1378,6 +1481,7 @@ public final class SceneKit {
     /**
      * Returns the nearest contact found only.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1386,6 +1490,7 @@ public final class SceneKit {
     /**
      * All contacts are returned.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1396,6 +1501,7 @@ public final class SceneKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1415,6 +1521,7 @@ public final class SceneKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1431,6 +1538,7 @@ public final class SceneKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1441,6 +1549,7 @@ public final class SceneKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1451,6 +1560,7 @@ public final class SceneKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1459,6 +1569,7 @@ public final class SceneKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

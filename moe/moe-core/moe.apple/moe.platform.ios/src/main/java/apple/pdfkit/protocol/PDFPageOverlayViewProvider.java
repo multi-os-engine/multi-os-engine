@@ -10,6 +10,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -22,9 +24,10 @@ public interface PDFPageOverlayViewProvider {
     /**
      * Asks the provider for a view to be displayed on top of the specified page.
      */
+    @Nullable
     @Generated
     @Selector("pdfView:overlayViewForPage:")
-    UIView pdfViewOverlayViewForPage(PDFView view, PDFPage page);
+    UIView pdfViewOverlayViewForPage(@NotNull PDFView view, @NotNull PDFPage page);
 
     /**
      * Tells the provider that a view returned from `overlayViewForPage` has been added
@@ -34,7 +37,8 @@ public interface PDFPageOverlayViewProvider {
     @Generated
     @IsOptional
     @Selector("pdfView:willDisplayOverlayView:forPage:")
-    default void pdfViewWillDisplayOverlayViewForPage(PDFView pdfView, UIView overlayView, PDFPage page) {
+    default void pdfViewWillDisplayOverlayViewForPage(@NotNull PDFView pdfView, @NotNull UIView overlayView,
+            @NotNull PDFPage page) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -45,7 +49,8 @@ public interface PDFPageOverlayViewProvider {
     @Generated
     @IsOptional
     @Selector("pdfView:willEndDisplayingOverlayView:forPage:")
-    default void pdfViewWillEndDisplayingOverlayViewForPage(PDFView pdfView, UIView overlayView, PDFPage page) {
+    default void pdfViewWillEndDisplayingOverlayViewForPage(@NotNull PDFView pdfView, @NotNull UIView overlayView,
+            @NotNull PDFPage page) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

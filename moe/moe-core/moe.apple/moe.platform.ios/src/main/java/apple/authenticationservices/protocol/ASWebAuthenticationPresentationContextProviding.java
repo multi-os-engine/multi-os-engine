@@ -8,6 +8,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Provides context to target where in an application's UI the authorization view should be shown.
@@ -26,7 +27,8 @@ public interface ASWebAuthenticationPresentationContextProviding {
      * @param session The session requesting a presentation anchor.
      * @return The ASPresentationAnchor most closely associated with the UI used to trigger authentication.
      */
+    @NotNull
     @Generated
     @Selector("presentationAnchorForWebAuthenticationSession:")
-    UIWindow presentationAnchorForWebAuthenticationSession(ASWebAuthenticationSession session);
+    UIWindow presentationAnchorForWebAuthenticationSession(@NotNull ASWebAuthenticationSession session);
 }

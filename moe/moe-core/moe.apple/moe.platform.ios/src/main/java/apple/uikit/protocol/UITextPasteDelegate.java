@@ -12,6 +12,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Defines a delegate to handle text paste handling through item providers.
@@ -57,12 +58,13 @@ public interface UITextPasteDelegate {
      * The target text range is provided so you can alter behavior here depending on
      * where the text will be dropped.
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("textPasteConfigurationSupporting:combineItemAttributedStrings:forRange:")
     default NSAttributedString textPasteConfigurationSupportingCombineItemAttributedStringsForRange(
-            @Mapped(ObjCObjectMapper.class) UITextPasteConfigurationSupporting textPasteConfigurationSupporting,
-            NSArray<? extends NSAttributedString> itemStrings, UITextRange textRange) {
+            @NotNull @Mapped(ObjCObjectMapper.class) UITextPasteConfigurationSupporting textPasteConfigurationSupporting,
+            @NotNull NSArray<? extends NSAttributedString> itemStrings, @NotNull UITextRange textRange) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -76,12 +78,13 @@ public interface UITextPasteDelegate {
      * Return the resulting text range from the method (or nil to indicate no changes to the range).
      * This might be used to select the range for text drops.
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("textPasteConfigurationSupporting:performPasteOfAttributedString:toRange:")
     default UITextRange textPasteConfigurationSupportingPerformPasteOfAttributedStringToRange(
-            @Mapped(ObjCObjectMapper.class) UITextPasteConfigurationSupporting textPasteConfigurationSupporting,
-            NSAttributedString attributedString, UITextRange textRange) {
+            @NotNull @Mapped(ObjCObjectMapper.class) UITextPasteConfigurationSupporting textPasteConfigurationSupporting,
+            @NotNull NSAttributedString attributedString, @NotNull UITextRange textRange) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -92,8 +95,8 @@ public interface UITextPasteDelegate {
     @IsOptional
     @Selector("textPasteConfigurationSupporting:shouldAnimatePasteOfAttributedString:toRange:")
     default boolean textPasteConfigurationSupportingShouldAnimatePasteOfAttributedStringToRange(
-            @Mapped(ObjCObjectMapper.class) UITextPasteConfigurationSupporting textPasteConfigurationSupporting,
-            NSAttributedString attributedString, UITextRange textRange) {
+            @NotNull @Mapped(ObjCObjectMapper.class) UITextPasteConfigurationSupporting textPasteConfigurationSupporting,
+            @NotNull NSAttributedString attributedString, @NotNull UITextRange textRange) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -115,8 +118,8 @@ public interface UITextPasteDelegate {
     @IsOptional
     @Selector("textPasteConfigurationSupporting:transformPasteItem:")
     default void textPasteConfigurationSupportingTransformPasteItem(
-            @Mapped(ObjCObjectMapper.class) UITextPasteConfigurationSupporting textPasteConfigurationSupporting,
-            @Mapped(ObjCObjectMapper.class) UITextPasteItem item) {
+            @NotNull @Mapped(ObjCObjectMapper.class) UITextPasteConfigurationSupporting textPasteConfigurationSupporting,
+            @NotNull @Mapped(ObjCObjectMapper.class) UITextPasteItem item) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

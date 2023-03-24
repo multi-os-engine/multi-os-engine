@@ -10,6 +10,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("StoreKit")
@@ -24,8 +25,8 @@ public interface SKPaymentQueueDelegate {
     @Generated
     @IsOptional
     @Selector("paymentQueue:shouldContinueTransaction:inStorefront:")
-    default boolean paymentQueueShouldContinueTransactionInStorefront(SKPaymentQueue paymentQueue,
-            SKPaymentTransaction transaction, SKStorefront newStorefront) {
+    default boolean paymentQueueShouldContinueTransactionInStorefront(@NotNull SKPaymentQueue paymentQueue,
+            @NotNull SKPaymentTransaction transaction, @NotNull SKStorefront newStorefront) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -40,7 +41,7 @@ public interface SKPaymentQueueDelegate {
     @Generated
     @IsOptional
     @Selector("paymentQueueShouldShowPriceConsent:")
-    default boolean paymentQueueShouldShowPriceConsent(SKPaymentQueue paymentQueue) {
+    default boolean paymentQueueShouldShowPriceConsent(@NotNull SKPaymentQueue paymentQueue) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -46,6 +46,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNPhysicsBody
@@ -82,29 +84,32 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Creates an instance of a rigid body with a specific shape.
      */
     @Generated
     @Selector("bodyWithType:shape:")
-    public static native SCNPhysicsBody bodyWithTypeShape(@NInt long type, SCNPhysicsShape shape);
+    public static native SCNPhysicsBody bodyWithTypeShape(@NInt long type, @Nullable SCNPhysicsShape shape);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,6 +125,7 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     /**
      * Creates an instance of a dynamic body with default properties.
      */
+    @NotNull
     @Generated
     @Selector("dynamicBody")
     public static native SCNPhysicsBody dynamicBody();
@@ -146,13 +152,15 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Creates an instance of a kinematic body with default properties.
      */
+    @NotNull
     @Generated
     @Selector("kinematicBody")
     public static native SCNPhysicsBody kinematicBody();
@@ -177,6 +185,7 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     /**
      * Creates an instance of a static body with default properties.
      */
+    @NotNull
     @Generated
     @Selector("staticBody")
     public static native SCNPhysicsBody staticBody();
@@ -302,11 +311,12 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     @NUInt
     public native long contactTestBitMask();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Specifies the damping factor of the receiver. Optionally reduce the body's linear velocity each frame to simulate
@@ -319,7 +329,7 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Specifies the force resisting the relative motion of solid sliding against each other. Defaults to 0.5.
@@ -335,7 +345,7 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPhysicsBody initWithCoder(NSCoder coder);
+    public native SCNPhysicsBody initWithCoder(@NotNull NSCoder coder);
 
     /**
      * If set to YES this node will be affected by gravity. The default is YES.
@@ -387,6 +397,7 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
      * Specifies the physics shape of the receiver. Leaving this nil will let the system decide and use the most
      * efficients bounding representation of the actual geometry.
      */
+    @Nullable
     @Generated
     @Selector("physicsShape")
     public native SCNPhysicsShape physicsShape();
@@ -520,7 +531,7 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
      */
     @Generated
     @Selector("setPhysicsShape:")
-    public native void setPhysicsShape(SCNPhysicsShape value);
+    public native void setPhysicsShape(@Nullable SCNPhysicsShape value);
 
     /**
      * Specifies the restitution of collisions. Defaults to 0.5.

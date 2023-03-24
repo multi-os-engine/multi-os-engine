@@ -10,6 +10,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -22,6 +24,7 @@ public interface UITextSearchAggregator {
     /**
      * Returns all currently reported found ranges via @c foundRange:forSearchString:.
      */
+    @NotNull
     @Generated
     @Selector("allFoundRanges")
     NSOrderedSet<? extends UITextRange> allFoundRanges();
@@ -43,8 +46,8 @@ public interface UITextSearchAggregator {
      */
     @Generated
     @Selector("foundRange:forSearchString:inDocument:")
-    void foundRangeForSearchStringInDocument(UITextRange range, String string,
-            @Mapped(ObjCObjectMapper.class) Object document);
+    void foundRangeForSearchStringInDocument(@NotNull UITextRange range, @NotNull String string,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object document);
 
     /**
      * Call this method to invalidate all currently shown ranges. This will cause the system find panel to update
@@ -64,5 +67,6 @@ public interface UITextSearchAggregator {
      */
     @Generated
     @Selector("invalidateFoundRange:inDocument:")
-    void invalidateFoundRangeInDocument(UITextRange range, @Mapped(ObjCObjectMapper.class) Object document);
+    void invalidateFoundRangeInDocument(@NotNull UITextRange range,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object document);
 }

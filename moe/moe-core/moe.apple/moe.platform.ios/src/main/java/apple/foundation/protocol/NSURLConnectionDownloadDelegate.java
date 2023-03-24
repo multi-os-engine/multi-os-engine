@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] NSURLConnectionDownloadDelegate
@@ -70,19 +71,20 @@ public interface NSURLConnectionDownloadDelegate extends NSURLConnectionDelegate
     @Generated
     @IsOptional
     @Selector("connection:didWriteData:totalBytesWritten:expectedTotalBytes:")
-    default void connectionDidWriteDataTotalBytesWrittenExpectedTotalBytes(NSURLConnection connection,
+    default void connectionDidWriteDataTotalBytesWrittenExpectedTotalBytes(@NotNull NSURLConnection connection,
             long bytesWritten, long totalBytesWritten, long expectedTotalBytes) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @Selector("connectionDidFinishDownloading:destinationURL:")
-    void connectionDidFinishDownloadingDestinationURL(NSURLConnection connection, NSURL destinationURL);
+    void connectionDidFinishDownloadingDestinationURL(@NotNull NSURLConnection connection,
+            @NotNull NSURL destinationURL);
 
     @Generated
     @IsOptional
     @Selector("connectionDidResumeDownloading:totalBytesWritten:expectedTotalBytes:")
-    default void connectionDidResumeDownloadingTotalBytesWrittenExpectedTotalBytes(NSURLConnection connection,
+    default void connectionDidResumeDownloadingTotalBytesWrittenExpectedTotalBytes(@NotNull NSURLConnection connection,
             long totalBytesWritten, long expectedTotalBytes) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * HKCorrelationType
@@ -65,6 +67,7 @@ public class HKCorrelationType extends HKSampleType {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    @NotNull
     @Generated
     @Selector("activitySummaryType")
     public static native HKActivitySummaryType activitySummaryType();
@@ -81,37 +84,43 @@ public class HKCorrelationType extends HKSampleType {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @Nullable
     @Generated
     @Selector("categoryTypeForIdentifier:")
-    public static native HKCategoryType categoryTypeForIdentifier(String identifier);
+    public static native HKCategoryType categoryTypeForIdentifier(@NotNull String identifier);
 
+    @Nullable
     @Generated
     @Selector("characteristicTypeForIdentifier:")
-    public static native HKCharacteristicType characteristicTypeForIdentifier(String identifier);
+    public static native HKCharacteristicType characteristicTypeForIdentifier(@NotNull String identifier);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @Nullable
     @Generated
     @Selector("correlationTypeForIdentifier:")
-    public static native HKCorrelationType correlationTypeForIdentifier(String identifier);
+    public static native HKCorrelationType correlationTypeForIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -121,9 +130,10 @@ public class HKCorrelationType extends HKSampleType {
     @Selector("description")
     public static native String description_static();
 
+    @Nullable
     @Generated
     @Selector("documentTypeForIdentifier:")
-    public static native HKDocumentType documentTypeForIdentifier(String identifier);
+    public static native HKDocumentType documentTypeForIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("hash")
@@ -147,18 +157,20 @@ public class HKCorrelationType extends HKSampleType {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native HKCorrelationType new_objc();
 
+    @Nullable
     @Generated
     @Selector("quantityTypeForIdentifier:")
-    public static native HKQuantityType quantityTypeForIdentifier(String identifier);
+    public static native HKQuantityType quantityTypeForIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -185,6 +197,7 @@ public class HKCorrelationType extends HKSampleType {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("workoutType")
     public static native HKWorkoutType workoutType();
@@ -195,7 +208,7 @@ public class HKCorrelationType extends HKSampleType {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKCorrelationType initWithCoder(NSCoder coder);
+    public native HKCorrelationType initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -203,22 +216,27 @@ public class HKCorrelationType extends HKSampleType {
         return supportsSecureCoding();
     }
 
+    @Nullable
     @Generated
     @Selector("seriesTypeForIdentifier:")
-    public static native HKSeriesType seriesTypeForIdentifier(String identifier);
+    public static native HKSeriesType seriesTypeForIdentifier(@NotNull String identifier);
 
+    @NotNull
     @Generated
     @Selector("audiogramSampleType")
     public static native HKAudiogramSampleType audiogramSampleType();
 
+    @Nullable
     @Generated
     @Selector("clinicalTypeForIdentifier:")
-    public static native HKClinicalType clinicalTypeForIdentifier(String identifier);
+    public static native HKClinicalType clinicalTypeForIdentifier(@NotNull String identifier);
 
+    @NotNull
     @Generated
     @Selector("electrocardiogramType")
     public static native HKElectrocardiogramType electrocardiogramType();
 
+    @NotNull
     @Generated
     @Selector("visionPrescriptionType")
     public static native HKPrescriptionType visionPrescriptionType();

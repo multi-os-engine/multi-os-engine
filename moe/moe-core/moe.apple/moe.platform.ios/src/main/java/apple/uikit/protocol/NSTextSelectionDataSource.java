@@ -18,6 +18,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 15.0
@@ -34,11 +36,12 @@ public interface NSTextSelectionDataSource {
     @Generated
     @Selector("baseWritingDirectionAtLocation:")
     @NInt
-    long baseWritingDirectionAtLocation(@Mapped(ObjCObjectMapper.class) NSTextLocation location);
+    long baseWritingDirectionAtLocation(@NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location);
 
     /**
      * Declares the starting and ending locations for the document.
      */
+    @NotNull
     @Generated
     @Selector("documentRange")
     NSTextRange documentRange();
@@ -52,15 +55,15 @@ public interface NSTextSelectionDataSource {
     @Generated
     @Selector("enumerateCaretOffsetsInLineFragmentAtLocation:usingBlock:")
     void enumerateCaretOffsetsInLineFragmentAtLocationUsingBlock(
-            @Mapped(ObjCObjectMapper.class) NSTextLocation location,
-            @ObjCBlock(name = "call_enumerateCaretOffsetsInLineFragmentAtLocationUsingBlock") Block_enumerateCaretOffsetsInLineFragmentAtLocationUsingBlock block);
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location,
+            @NotNull @ObjCBlock(name = "call_enumerateCaretOffsetsInLineFragmentAtLocationUsingBlock") Block_enumerateCaretOffsetsInLineFragmentAtLocationUsingBlock block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateCaretOffsetsInLineFragmentAtLocationUsingBlock {
         @Generated
         void call_enumerateCaretOffsetsInLineFragmentAtLocationUsingBlock(@NFloat double caretOffset,
-                @Mapped(ObjCObjectMapper.class) Object location, boolean leadingEdge, BoolPtr stop);
+                @NotNull @Mapped(ObjCObjectMapper.class) Object location, boolean leadingEdge, @NotNull BoolPtr stop);
     }
 
     /**
@@ -71,8 +74,8 @@ public interface NSTextSelectionDataSource {
     @IsOptional
     @Selector("enumerateContainerBoundariesFromLocation:reverse:usingBlock:")
     default void enumerateContainerBoundariesFromLocationReverseUsingBlock(
-            @Mapped(ObjCObjectMapper.class) NSTextLocation location, boolean reverse,
-            @ObjCBlock(name = "call_enumerateContainerBoundariesFromLocationReverseUsingBlock") Block_enumerateContainerBoundariesFromLocationReverseUsingBlock block) {
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location, boolean reverse,
+            @NotNull @ObjCBlock(name = "call_enumerateContainerBoundariesFromLocationReverseUsingBlock") Block_enumerateContainerBoundariesFromLocationReverseUsingBlock block) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -81,7 +84,7 @@ public interface NSTextSelectionDataSource {
     public interface Block_enumerateContainerBoundariesFromLocationReverseUsingBlock {
         @Generated
         void call_enumerateContainerBoundariesFromLocationReverseUsingBlock(
-                @Mapped(ObjCObjectMapper.class) Object boundaryLocation, BoolPtr stop);
+                @NotNull @Mapped(ObjCObjectMapper.class) Object boundaryLocation, @NotNull BoolPtr stop);
     }
 
     /**
@@ -93,34 +96,36 @@ public interface NSTextSelectionDataSource {
      */
     @Generated
     @Selector("enumerateSubstringsFromLocation:options:usingBlock:")
-    void enumerateSubstringsFromLocationOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) NSTextLocation location,
-            @NUInt long options,
-            @ObjCBlock(name = "call_enumerateSubstringsFromLocationOptionsUsingBlock") Block_enumerateSubstringsFromLocationOptionsUsingBlock block);
+    void enumerateSubstringsFromLocationOptionsUsingBlock(
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location, @NUInt long options,
+            @NotNull @ObjCBlock(name = "call_enumerateSubstringsFromLocationOptionsUsingBlock") Block_enumerateSubstringsFromLocationOptionsUsingBlock block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateSubstringsFromLocationOptionsUsingBlock {
         @Generated
-        void call_enumerateSubstringsFromLocationOptionsUsingBlock(String substring, NSTextRange substringRange,
-                NSTextRange enclosingRange, BoolPtr stop);
+        void call_enumerateSubstringsFromLocationOptionsUsingBlock(@Nullable String substring,
+                @NotNull NSTextRange substringRange, @Nullable NSTextRange enclosingRange, @NotNull BoolPtr stop);
     }
 
     /**
      * Returns the range of the line fragment containing point inside the coordinate system containing location.
      */
+    @Nullable
     @Generated
     @Selector("lineFragmentRangeForPoint:inContainerAtLocation:")
     NSTextRange lineFragmentRangeForPointInContainerAtLocation(@ByValue CGPoint point,
-            @Mapped(ObjCObjectMapper.class) NSTextLocation location);
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location);
 
     /**
      * Returns a new location from location with offset. The offset value could be positive or negative indicating the
      * logical direction. Could return nil when the inputs don't produce any legal location (i.e. out of bounds index).
      */
+    @Nullable
     @Generated
     @Selector("locationFromLocation:withOffset:")
     @MappedReturn(ObjCObjectMapper.class)
-    NSTextLocation locationFromLocationWithOffset(@Mapped(ObjCObjectMapper.class) NSTextLocation location,
+    NSTextLocation locationFromLocationWithOffset(@NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location,
             @NInt long offset);
 
     /**
@@ -130,8 +135,8 @@ public interface NSTextSelectionDataSource {
     @Generated
     @Selector("offsetFromLocation:toLocation:")
     @NInt
-    long offsetFromLocationToLocation(@Mapped(ObjCObjectMapper.class) NSTextLocation from,
-            @Mapped(ObjCObjectMapper.class) NSTextLocation to);
+    long offsetFromLocationToLocation(@NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation from,
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation to);
 
     /**
      * Returns the text layout orientation at location. If not implemented, NSTextSelectionNavigation assumes it is
@@ -141,7 +146,7 @@ public interface NSTextSelectionDataSource {
     @IsOptional
     @Selector("textLayoutOrientationAtLocation:")
     @NInt
-    default long textLayoutOrientationAtLocation(@Mapped(ObjCObjectMapper.class) NSTextLocation location) {
+    default long textLayoutOrientationAtLocation(@NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -149,8 +154,9 @@ public interface NSTextSelectionDataSource {
      * Returns a text range corresponding to selectionGranularity enclosing location. Returns nil when
      * documentRange.isEmpty=YES.
      */
+    @Nullable
     @Generated
     @Selector("textRangeForSelectionGranularity:enclosingLocation:")
     NSTextRange textRangeForSelectionGranularityEnclosingLocation(@NInt long selectionGranularity,
-            @Mapped(ObjCObjectMapper.class) NSTextLocation location);
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location);
 }

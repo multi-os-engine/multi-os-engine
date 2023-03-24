@@ -25,6 +25,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("StoreKit")
@@ -48,6 +49,7 @@ public final class StoreKit {
     /**
      * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -56,6 +58,7 @@ public final class StoreKit {
     /**
      * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -66,6 +69,7 @@ public final class StoreKit {
      * 
      * API-Since: 10.1
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -76,6 +80,7 @@ public final class StoreKit {
      * 
      * API-Since: 10.1
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -86,6 +91,7 @@ public final class StoreKit {
      * 
      * API-Since: 10.1
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -104,6 +110,7 @@ public final class StoreKit {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -114,6 +121,7 @@ public final class StoreKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -124,6 +132,7 @@ public final class StoreKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -134,6 +143,7 @@ public final class StoreKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -144,6 +154,7 @@ public final class StoreKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -154,6 +165,7 @@ public final class StoreKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -164,6 +176,7 @@ public final class StoreKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -174,6 +187,7 @@ public final class StoreKit {
      * 
      * API-Since: 8.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -184,6 +198,7 @@ public final class StoreKit {
      * 
      * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -192,6 +207,7 @@ public final class StoreKit {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -202,6 +218,7 @@ public final class StoreKit {
      * 
      * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -212,6 +229,7 @@ public final class StoreKit {
      * 
      * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -225,6 +243,7 @@ public final class StoreKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -235,6 +254,7 @@ public final class StoreKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -243,6 +263,7 @@ public final class StoreKit {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -251,6 +272,7 @@ public final class StoreKit {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -259,6 +281,7 @@ public final class StoreKit {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -269,6 +292,7 @@ public final class StoreKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -279,6 +303,7 @@ public final class StoreKit {
      * 
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -289,6 +314,7 @@ public final class StoreKit {
      * 
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -299,6 +325,7 @@ public final class StoreKit {
      * 
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -309,6 +336,7 @@ public final class StoreKit {
      * 
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -319,6 +347,7 @@ public final class StoreKit {
      * 
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -329,6 +358,7 @@ public final class StoreKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -337,6 +367,7 @@ public final class StoreKit {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -347,6 +378,7 @@ public final class StoreKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -355,6 +387,7 @@ public final class StoreKit {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -363,6 +396,7 @@ public final class StoreKit {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -371,6 +405,7 @@ public final class StoreKit {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -379,6 +414,7 @@ public final class StoreKit {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -387,6 +423,7 @@ public final class StoreKit {
     /**
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

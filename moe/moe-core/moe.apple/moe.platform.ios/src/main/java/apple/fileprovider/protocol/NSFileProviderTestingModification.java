@@ -11,6 +11,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This operation causes the system to propagate a modification of an existing item from a source side to a target side.
@@ -35,6 +37,7 @@ public interface NSFileProviderTestingModification extends NSFileProviderTesting
     /**
      * The domain version at the time the change was discovered on the source side.
      */
+    @Nullable
     @Generated
     @Selector("domainVersion")
     NSFileProviderDomainVersion domainVersion();
@@ -42,6 +45,7 @@ public interface NSFileProviderTestingModification extends NSFileProviderTesting
     /**
      * The description of the item.
      */
+    @NotNull
     @Generated
     @Selector("sourceItem")
     @MappedReturn(ObjCObjectMapper.class)
@@ -50,6 +54,7 @@ public interface NSFileProviderTestingModification extends NSFileProviderTesting
     /**
      * The version of the target item on top of which the modification is applied
      */
+    @NotNull
     @Generated
     @Selector("targetItemBaseVersion")
     NSFileProviderItemVersion targetItemBaseVersion();
@@ -57,6 +62,7 @@ public interface NSFileProviderTestingModification extends NSFileProviderTesting
     /**
      * The identifier of the target item.
      */
+    @NotNull
     @Generated
     @Selector("targetItemIdentifier")
     String targetItemIdentifier();

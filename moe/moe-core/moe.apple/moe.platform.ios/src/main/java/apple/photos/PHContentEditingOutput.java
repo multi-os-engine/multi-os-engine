@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -72,22 +74,25 @@ public class PHContentEditingOutput extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,9 +127,10 @@ public class PHContentEditingOutput extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -155,6 +161,7 @@ public class PHContentEditingOutput extends NSObject {
     /**
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("adjustmentData")
     public native PHAdjustmentData adjustmentData();
@@ -168,7 +175,8 @@ public class PHContentEditingOutput extends NSObject {
      */
     @Generated
     @Selector("initWithContentEditingInput:")
-    public native PHContentEditingOutput initWithContentEditingInput(PHContentEditingInput contentEditingInput);
+    public native PHContentEditingOutput initWithContentEditingInput(
+            @NotNull PHContentEditingInput contentEditingInput);
 
     /**
      * Create a PHContentEditingOutput from a newly created asset within the change request block
@@ -178,13 +186,14 @@ public class PHContentEditingOutput extends NSObject {
     @Generated
     @Selector("initWithPlaceholderForCreatedAsset:")
     public native PHContentEditingOutput initWithPlaceholderForCreatedAsset(
-            PHObjectPlaceholder placeholderForCreatedAsset);
+            @NotNull PHObjectPlaceholder placeholderForCreatedAsset);
 
     /**
      * File URL where the rendered output, with adjustments baked-in, needs to be written to.
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("renderedContentURL")
     public native NSURL renderedContentURL();
@@ -194,5 +203,5 @@ public class PHContentEditingOutput extends NSObject {
      */
     @Generated
     @Selector("setAdjustmentData:")
-    public native void setAdjustmentData(PHAdjustmentData value);
+    public native void setAdjustmentData(@Nullable PHAdjustmentData value);
 }

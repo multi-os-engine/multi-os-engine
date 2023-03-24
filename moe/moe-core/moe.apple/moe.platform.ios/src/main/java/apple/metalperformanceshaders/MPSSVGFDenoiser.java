@@ -29,6 +29,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A convenience object which uses an MPSSVGF object to manage the denoising process
@@ -102,7 +104,7 @@ public class MPSSVGFDenoiser extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * The number of bilateral filter iterations to run. More iterations will improve quality at
@@ -115,18 +117,21 @@ public class MPSSVGFDenoiser extends NSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -179,14 +184,14 @@ public class MPSSVGFDenoiser extends NSObject {
     @Generated
     @Selector("encodeToCommandBuffer:sourceTexture:destinationTexture:sourceTexture2:destinationTexture2:motionVectorTexture:depthNormalTexture:previousDepthNormalTexture:")
     public native void encodeToCommandBufferSourceTextureDestinationTextureSourceTexture2DestinationTexture2MotionVectorTextureDepthNormalTexturePreviousDepthNormalTexture(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> destinationTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture2,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> destinationTexture2,
-            @Mapped(ObjCObjectMapper.class) MTLTexture motionVectorTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture previousDepthNormalTexture);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> destinationTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture2,
+            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> destinationTexture2,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture motionVectorTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture previousDepthNormalTexture);
 
     /**
      * Encode denoising kernels to a command buffer
@@ -213,15 +218,16 @@ public class MPSSVGFDenoiser extends NSObject {
      * [@parameter] previousDepthNormalTexture Depth/normal texture from the previous frame. See the MPSSVGF
      * object for more details.
      */
+    @NotNull
     @Generated
     @Selector("encodeToCommandBuffer:sourceTexture:motionVectorTexture:depthNormalTexture:previousDepthNormalTexture:")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLTexture encodeToCommandBufferSourceTextureMotionVectorTextureDepthNormalTexturePreviousDepthNormalTexture(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture motionVectorTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture previousDepthNormalTexture);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture motionVectorTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture previousDepthNormalTexture);
 
     @Generated
     @Selector("hash")
@@ -239,7 +245,7 @@ public class MPSSVGFDenoiser extends NSObject {
      */
     @Generated
     @Selector("initWithDevice:")
-    public native MPSSVGFDenoiser initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSSVGFDenoiser initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     /**
      * Initialize the MPSSVGFDenoiser object
@@ -253,8 +259,8 @@ public class MPSSVGFDenoiser extends NSObject {
      */
     @Generated
     @Selector("initWithSVGF:textureAllocator:")
-    public native MPSSVGFDenoiser initWithSVGFTextureAllocator(MPSSVGF svgf,
-            @Mapped(ObjCObjectMapper.class) MPSSVGFTextureAllocator textureAllocator);
+    public native MPSSVGFDenoiser initWithSVGFTextureAllocator(@NotNull MPSSVGF svgf,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSSVGFTextureAllocator textureAllocator);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -273,9 +279,10 @@ public class MPSSVGFDenoiser extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -318,6 +325,7 @@ public class MPSSVGFDenoiser extends NSObject {
      * The underlying MPSSVGF kernels object which will be used for denoising. Use this object
      * to customize the denoising process.
      */
+    @NotNull
     @Generated
     @Selector("svgf")
     public native MPSSVGF svgf();
@@ -325,6 +333,7 @@ public class MPSSVGFDenoiser extends NSObject {
     /**
      * The object which will be used to allocate intermediate and output textures.
      */
+    @NotNull
     @Generated
     @Selector("textureAllocator")
     @MappedReturn(ObjCObjectMapper.class)

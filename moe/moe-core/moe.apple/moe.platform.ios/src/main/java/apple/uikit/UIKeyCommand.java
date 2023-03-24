@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 7.0
@@ -74,22 +76,25 @@ public class UIKeyCommand extends UICommand {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,8 +134,8 @@ public class UIKeyCommand extends UICommand {
      */
     @Generated
     @Selector("keyCommandWithInput:modifierFlags:action:")
-    public static native UIKeyCommand keyCommandWithInputModifierFlagsAction(String input, @NInt long modifierFlags,
-            SEL action);
+    public static native UIKeyCommand keyCommandWithInputModifierFlagsAction(@NotNull String input,
+            @NInt long modifierFlags, @NotNull SEL action);
 
     /**
      * Key Commands with a discoverabilityTitle _will_ be discoverable in the UI.
@@ -141,12 +146,13 @@ public class UIKeyCommand extends UICommand {
     @Deprecated
     @Generated
     @Selector("keyCommandWithInput:modifierFlags:action:discoverabilityTitle:")
-    public static native UIKeyCommand keyCommandWithInputModifierFlagsActionDiscoverabilityTitle(String input,
-            @NInt long modifierFlags, SEL action, String discoverabilityTitle);
+    public static native UIKeyCommand keyCommandWithInputModifierFlagsActionDiscoverabilityTitle(@NotNull String input,
+            @NInt long modifierFlags, @NotNull SEL action, @NotNull String discoverabilityTitle);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -183,6 +189,7 @@ public class UIKeyCommand extends UICommand {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("discoverabilityTitle")
     public native String discoverabilityTitle();
@@ -193,8 +200,9 @@ public class UIKeyCommand extends UICommand {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIKeyCommand initWithCoder(NSCoder coder);
+    public native UIKeyCommand initWithCoder(@NotNull NSCoder coder);
 
+    @Nullable
     @Generated
     @Selector("input")
     public native String input();
@@ -211,7 +219,7 @@ public class UIKeyCommand extends UICommand {
      */
     @Generated
     @Selector("setDiscoverabilityTitle:")
-    public native void setDiscoverabilityTitle(String value);
+    public native void setDiscoverabilityTitle(@Nullable String value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -222,6 +230,7 @@ public class UIKeyCommand extends UICommand {
     /**
      * Action to take on choosing this command.
      */
+    @Nullable
     @Generated
     @Selector("action")
     public native SEL action();
@@ -231,6 +240,7 @@ public class UIKeyCommand extends UICommand {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("alternates")
     public native NSArray<? extends UICommandAlternate> alternates();
@@ -258,9 +268,9 @@ public class UIKeyCommand extends UICommand {
      */
     @Generated
     @Selector("commandWithTitle:image:action:input:modifierFlags:propertyList:")
-    public static native UIKeyCommand commandWithTitleImageActionInputModifierFlagsPropertyList(String title,
-            UIImage image, SEL action, String input, @NInt long modifierFlags,
-            @Mapped(ObjCObjectMapper.class) Object propertyList);
+    public static native UIKeyCommand commandWithTitleImageActionInputModifierFlagsPropertyList(@NotNull String title,
+            @Nullable UIImage image, @NotNull SEL action, @NotNull String input, @NInt long modifierFlags,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object propertyList);
 
     /**
      * Initializes a key command with alternates.
@@ -276,26 +286,29 @@ public class UIKeyCommand extends UICommand {
      */
     @Generated
     @Selector("commandWithTitle:image:action:input:modifierFlags:propertyList:alternates:")
-    public static native UIKeyCommand commandWithTitleImageActionInputModifierFlagsPropertyListAlternates(String title,
-            UIImage image, SEL action, String input, @NInt long modifierFlags,
-            @Mapped(ObjCObjectMapper.class) Object propertyList, NSArray<? extends UICommandAlternate> alternates);
+    public static native UIKeyCommand commandWithTitleImageActionInputModifierFlagsPropertyListAlternates(
+            @NotNull String title, @Nullable UIImage image, @NotNull SEL action, @NotNull String input,
+            @NInt long modifierFlags, @Nullable @Mapped(ObjCObjectMapper.class) Object propertyList,
+            @NotNull NSArray<? extends UICommandAlternate> alternates);
 
     @Generated
     @Selector("commandWithTitle:image:action:propertyList:")
-    public static native UIKeyCommand commandWithTitleImageActionPropertyList(String title, UIImage image, SEL action,
-            @Mapped(ObjCObjectMapper.class) Object propertyList);
+    public static native UIKeyCommand commandWithTitleImageActionPropertyList(@NotNull String title,
+            @Nullable UIImage image, @NotNull SEL action,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object propertyList);
 
     @Generated
     @Selector("commandWithTitle:image:action:propertyList:alternates:")
-    public static native UIKeyCommand commandWithTitleImageActionPropertyListAlternates(String title, UIImage image,
-            SEL action, @Mapped(ObjCObjectMapper.class) Object propertyList,
-            NSArray<? extends UICommandAlternate> alternates);
+    public static native UIKeyCommand commandWithTitleImageActionPropertyListAlternates(@NotNull String title,
+            @Nullable UIImage image, @NotNull SEL action, @Nullable @Mapped(ObjCObjectMapper.class) Object propertyList,
+            @NotNull NSArray<? extends UICommandAlternate> alternates);
 
     /**
      * Image that can appear next to this command.
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -305,6 +318,7 @@ public class UIKeyCommand extends UICommand {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("propertyList")
     @MappedReturn(ObjCObjectMapper.class)
@@ -326,7 +340,7 @@ public class UIKeyCommand extends UICommand {
      */
     @Generated
     @Selector("setImage:")
-    public native void setImage(UIImage value);
+    public native void setImage(@Nullable UIImage value);
 
     /**
      * State that can appear next to this command.
@@ -344,7 +358,7 @@ public class UIKeyCommand extends UICommand {
      */
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@NotNull String value);
 
     /**
      * State that can appear next to this command.
@@ -361,6 +375,7 @@ public class UIKeyCommand extends UICommand {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("title")
     public native String title();

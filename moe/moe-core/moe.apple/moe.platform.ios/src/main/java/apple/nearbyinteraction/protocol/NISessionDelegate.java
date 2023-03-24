@@ -14,6 +14,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import apple.nearbyinteraction.NIAlgorithmConvergence;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Delegate for nearby interaction session updates.
@@ -45,8 +47,8 @@ public interface NISessionDelegate {
     @Generated
     @IsOptional
     @Selector("session:didGenerateShareableConfigurationData:forObject:")
-    default void sessionDidGenerateShareableConfigurationDataForObject(NISession session,
-            NSData shareableConfigurationData, NINearbyObject object) {
+    default void sessionDidGenerateShareableConfigurationDataForObject(@NotNull NISession session,
+            @NotNull NSData shareableConfigurationData, @NotNull NINearbyObject object) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -60,7 +62,7 @@ public interface NISessionDelegate {
     @Generated
     @IsOptional
     @Selector("session:didInvalidateWithError:")
-    default void sessionDidInvalidateWithError(NISession session, NSError error) {
+    default void sessionDidInvalidateWithError(@NotNull NISession session, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -80,8 +82,8 @@ public interface NISessionDelegate {
     @Generated
     @IsOptional
     @Selector("session:didRemoveNearbyObjects:withReason:")
-    default void sessionDidRemoveNearbyObjectsWithReason(NISession session,
-            NSArray<? extends NINearbyObject> nearbyObjects, @NInt long reason) {
+    default void sessionDidRemoveNearbyObjectsWithReason(@NotNull NISession session,
+            @NotNull NSArray<? extends NINearbyObject> nearbyObjects, @NInt long reason) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -94,7 +96,8 @@ public interface NISessionDelegate {
     @Generated
     @IsOptional
     @Selector("session:didUpdateNearbyObjects:")
-    default void sessionDidUpdateNearbyObjects(NISession session, NSArray<? extends NINearbyObject> nearbyObjects) {
+    default void sessionDidUpdateNearbyObjects(@NotNull NISession session,
+            @NotNull NSArray<? extends NINearbyObject> nearbyObjects) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -106,7 +109,7 @@ public interface NISessionDelegate {
     @Generated
     @IsOptional
     @Selector("sessionSuspensionEnded:")
-    default void sessionSuspensionEnded(NISession session) {
+    default void sessionSuspensionEnded(@NotNull NISession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -122,7 +125,7 @@ public interface NISessionDelegate {
     @Generated
     @IsOptional
     @Selector("sessionWasSuspended:")
-    default void sessionWasSuspended(NISession session) {
+    default void sessionWasSuspended(@NotNull NISession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -138,8 +141,8 @@ public interface NISessionDelegate {
     @Generated
     @IsOptional
     @Selector("session:didUpdateAlgorithmConvergence:forObject:")
-    default void sessionDidUpdateAlgorithmConvergenceForObject(NISession session, NIAlgorithmConvergence convergence,
-            NINearbyObject object) {
+    default void sessionDidUpdateAlgorithmConvergenceForObject(@NotNull NISession session,
+            @NotNull NIAlgorithmConvergence convergence, @Nullable NINearbyObject object) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -163,7 +166,7 @@ public interface NISessionDelegate {
     @Generated
     @IsOptional
     @Selector("sessionDidStartRunning:")
-    default void sessionDidStartRunning(NISession session) {
+    default void sessionDidStartRunning(@NotNull NISession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

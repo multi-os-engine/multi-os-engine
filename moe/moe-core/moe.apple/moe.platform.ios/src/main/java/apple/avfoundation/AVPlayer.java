@@ -46,6 +46,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.0
@@ -80,22 +82,25 @@ public class AVPlayer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +135,10 @@ public class AVPlayer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -152,7 +158,7 @@ public class AVPlayer extends NSObject {
      */
     @Generated
     @Selector("playerWithPlayerItem:")
-    public static native AVPlayer playerWithPlayerItem(AVPlayerItem item);
+    public static native AVPlayer playerWithPlayerItem(@Nullable AVPlayerItem item);
 
     /**
      * playerWithURL:
@@ -166,7 +172,7 @@ public class AVPlayer extends NSObject {
      */
     @Generated
     @Selector("playerWithURL:")
-    public static native AVPlayer playerWithURL(NSURL URL);
+    public static native AVPlayer playerWithURL(@NotNull NSURL URL);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -225,12 +231,13 @@ public class AVPlayer extends NSObject {
      *         the time observer to be invoked by the player.
      *         Pass this object to -removeTimeObserver: to cancel time observation.
      */
+    @NotNull
     @Generated
     @Selector("addBoundaryTimeObserverForTimes:queue:usingBlock:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object addBoundaryTimeObserverForTimesQueueUsingBlock(NSArray<? extends NSValue> times,
-            NSObject queue,
-            @ObjCBlock(name = "call_addBoundaryTimeObserverForTimesQueueUsingBlock") Block_addBoundaryTimeObserverForTimesQueueUsingBlock block);
+    public native Object addBoundaryTimeObserverForTimesQueueUsingBlock(@NotNull NSArray<? extends NSValue> times,
+            @Nullable NSObject queue,
+            @NotNull @ObjCBlock(name = "call_addBoundaryTimeObserverForTimesQueueUsingBlock") Block_addBoundaryTimeObserverForTimesQueueUsingBlock block);
 
     /**
      * addPeriodicTimeObserverForInterval:queue:usingBlock:
@@ -262,11 +269,13 @@ public class AVPlayer extends NSObject {
      *         the time observer to be invoked by the player.
      *         Pass this object to -removeTimeObserver: to cancel time observation.
      */
+    @NotNull
     @Generated
     @Selector("addPeriodicTimeObserverForInterval:queue:usingBlock:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object addPeriodicTimeObserverForIntervalQueueUsingBlock(@ByValue CMTime interval, NSObject queue,
-            @ObjCBlock(name = "call_addPeriodicTimeObserverForIntervalQueueUsingBlock") Block_addPeriodicTimeObserverForIntervalQueueUsingBlock block);
+    public native Object addPeriodicTimeObserverForIntervalQueueUsingBlock(@ByValue CMTime interval,
+            @Nullable NSObject queue,
+            @NotNull @ObjCBlock(name = "call_addPeriodicTimeObserverForIntervalQueueUsingBlock") Block_addPeriodicTimeObserverForIntervalQueueUsingBlock block);
 
     /**
      * Indicates whether the player allows AirPlay Video playback. The default value is YES.
@@ -375,6 +384,7 @@ public class AVPlayer extends NSObject {
     /**
      * indicates the current item of the player
      */
+    @Nullable
     @Generated
     @Selector("currentItem")
     public native AVPlayerItem currentItem();
@@ -403,6 +413,7 @@ public class AVPlayer extends NSObject {
      * items.
      * If the receiver's status is not AVPlayerStatusFailed, the value of this property is nil.
      */
+    @Nullable
     @Generated
     @Selector("error")
     public native NSError error();
@@ -412,6 +423,7 @@ public class AVPlayer extends NSObject {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("externalPlaybackVideoGravity")
     public native String externalPlaybackVideoGravity();
@@ -435,7 +447,7 @@ public class AVPlayer extends NSObject {
      */
     @Generated
     @Selector("initWithPlayerItem:")
-    public native AVPlayer initWithPlayerItem(AVPlayerItem item);
+    public native AVPlayer initWithPlayerItem(@Nullable AVPlayerItem item);
 
     /**
      * initWithURL:
@@ -449,7 +461,7 @@ public class AVPlayer extends NSObject {
      */
     @Generated
     @Selector("initWithURL:")
-    public native AVPlayer initWithURL(NSURL URL);
+    public native AVPlayer initWithURL(@NotNull NSURL URL);
 
     /**
      * Indicates whether the player is currently playing video via AirPlay.
@@ -566,6 +578,7 @@ public class AVPlayer extends NSObject {
      * API-Since: 6.0
      * Deprecated-Since: 100000.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("masterClock")
@@ -586,10 +599,11 @@ public class AVPlayer extends NSObject {
      * 
      *                            API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("mediaSelectionCriteriaForMediaCharacteristic:")
     public native AVPlayerMediaSelectionCriteria mediaSelectionCriteriaForMediaCharacteristic(
-            String mediaCharacteristic);
+            @NotNull String mediaCharacteristic);
 
     /**
      * [@property] outputObscuredDueToInsufficientExternalProtection
@@ -684,7 +698,7 @@ public class AVPlayer extends NSObject {
     @Generated
     @Selector("prerollAtRate:completionHandler:")
     public native void prerollAtRateCompletionHandler(float rate,
-            @ObjCBlock(name = "call_prerollAtRateCompletionHandler") Block_prerollAtRateCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_prerollAtRateCompletionHandler") Block_prerollAtRateCompletionHandler completionHandler);
 
     /**
      * [@property] rate
@@ -730,6 +744,7 @@ public class AVPlayer extends NSObject {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("reasonForWaitingToPlay")
     public native String reasonForWaitingToPlay();
@@ -761,7 +776,7 @@ public class AVPlayer extends NSObject {
      */
     @Generated
     @Selector("removeTimeObserver:")
-    public native void removeTimeObserver(@Mapped(ObjCObjectMapper.class) Object observer);
+    public native void removeTimeObserver(@NotNull @Mapped(ObjCObjectMapper.class) Object observer);
 
     /**
      * replaceCurrentItemWithPlayerItem:
@@ -777,7 +792,7 @@ public class AVPlayer extends NSObject {
      */
     @Generated
     @Selector("replaceCurrentItemWithPlayerItem:")
-    public native void replaceCurrentItemWithPlayerItem(AVPlayerItem item);
+    public native void replaceCurrentItemWithPlayerItem(@Nullable AVPlayerItem item);
 
     /**
      * seekToDate:
@@ -792,7 +807,7 @@ public class AVPlayer extends NSObject {
      */
     @Generated
     @Selector("seekToDate:")
-    public native void seekToDate(NSDate date);
+    public native void seekToDate(@NotNull NSDate date);
 
     /**
      * seekToDate:completionHandler:
@@ -817,8 +832,8 @@ public class AVPlayer extends NSObject {
      */
     @Generated
     @Selector("seekToDate:completionHandler:")
-    public native void seekToDateCompletionHandler(NSDate date,
-            @ObjCBlock(name = "call_seekToDateCompletionHandler") Block_seekToDateCompletionHandler completionHandler);
+    public native void seekToDateCompletionHandler(@NotNull NSDate date,
+            @NotNull @ObjCBlock(name = "call_seekToDateCompletionHandler") Block_seekToDateCompletionHandler completionHandler);
 
     /**
      * seekToTime:
@@ -859,7 +874,7 @@ public class AVPlayer extends NSObject {
     @Generated
     @Selector("seekToTime:completionHandler:")
     public native void seekToTimeCompletionHandler(@ByValue CMTime time,
-            @ObjCBlock(name = "call_seekToTimeCompletionHandler") Block_seekToTimeCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_seekToTimeCompletionHandler") Block_seekToTimeCompletionHandler completionHandler);
 
     /**
      * seekToTime:toleranceBefore:toleranceAfter:
@@ -914,7 +929,7 @@ public class AVPlayer extends NSObject {
     @Selector("seekToTime:toleranceBefore:toleranceAfter:completionHandler:")
     public native void seekToTimeToleranceBeforeToleranceAfterCompletionHandler(@ByValue CMTime time,
             @ByValue CMTime toleranceBefore, @ByValue CMTime toleranceAfter,
-            @ObjCBlock(name = "call_seekToTimeToleranceBeforeToleranceAfterCompletionHandler") Block_seekToTimeToleranceBeforeToleranceAfterCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_seekToTimeToleranceBeforeToleranceAfterCompletionHandler") Block_seekToTimeToleranceBeforeToleranceAfterCompletionHandler completionHandler);
 
     /**
      * [@property] actionAtItemEnd
@@ -1025,7 +1040,7 @@ public class AVPlayer extends NSObject {
      */
     @Generated
     @Selector("setExternalPlaybackVideoGravity:")
-    public native void setExternalPlaybackVideoGravity(String value);
+    public native void setExternalPlaybackVideoGravity(@NotNull String value);
 
     /**
      * Use sourceClock instead.
@@ -1036,7 +1051,7 @@ public class AVPlayer extends NSObject {
     @Deprecated
     @Generated
     @Selector("setMasterClock:")
-    public native void setMasterClock(CMClockRef value);
+    public native void setMasterClock(@Nullable CMClockRef value);
 
     /**
      * setMediaSelectionCriteria:forMediaCharacteristic:
@@ -1066,8 +1081,8 @@ public class AVPlayer extends NSObject {
      */
     @Generated
     @Selector("setMediaSelectionCriteria:forMediaCharacteristic:")
-    public native void setMediaSelectionCriteriaForMediaCharacteristic(AVPlayerMediaSelectionCriteria criteria,
-            String mediaCharacteristic);
+    public native void setMediaSelectionCriteriaForMediaCharacteristic(
+            @Nullable AVPlayerMediaSelectionCriteria criteria, @NotNull String mediaCharacteristic);
 
     /**
      * [@property] rate
@@ -1411,6 +1426,7 @@ public class AVPlayer extends NSObject {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("playbackCoordinator")
     public native AVPlayerPlaybackCoordinator playbackCoordinator();
@@ -1447,7 +1463,7 @@ public class AVPlayer extends NSObject {
      */
     @Generated
     @Selector("setSourceClock:")
-    public native void setSourceClock(CMClockRef value);
+    public native void setSourceClock(@Nullable CMClockRef value);
 
     /**
      * [@property] sourceClock
@@ -1460,6 +1476,7 @@ public class AVPlayer extends NSObject {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("sourceClock")
     public native CMClockRef sourceClock();

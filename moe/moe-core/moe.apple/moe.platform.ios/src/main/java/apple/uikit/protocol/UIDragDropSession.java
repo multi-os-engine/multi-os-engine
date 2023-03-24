@@ -14,6 +14,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 11.0
@@ -41,7 +42,7 @@ public interface UIDragDropSession {
      */
     @Generated
     @Selector("canLoadObjectsOfClass:")
-    boolean canLoadObjectsOfClass(@Mapped(ObjCObjectMapper.class) NSItemProviderReading aClass);
+    boolean canLoadObjectsOfClass(@NotNull @Mapped(ObjCObjectMapper.class) NSItemProviderReading aClass);
 
     /**
      * Convenience methods to iterate through this session's `items`.
@@ -50,7 +51,7 @@ public interface UIDragDropSession {
      */
     @Generated
     @Selector("hasItemsConformingToTypeIdentifiers:")
-    boolean hasItemsConformingToTypeIdentifiers(NSArray<String> typeIdentifiers);
+    boolean hasItemsConformingToTypeIdentifiers(@NotNull NSArray<String> typeIdentifiers);
 
     /**
      * Whether this session is restricted to the application that began the drag.
@@ -74,6 +75,7 @@ public interface UIDragDropSession {
      * When handling the drop, if you display dropped items in a linear order,
      * place them in this order, first to last.
      */
+    @NotNull
     @Generated
     @Selector("items")
     NSArray<? extends UIDragItem> items();
@@ -84,5 +86,5 @@ public interface UIDragDropSession {
     @Generated
     @Selector("locationInView:")
     @ByValue
-    CGPoint locationInView(UIView view);
+    CGPoint locationInView(@NotNull UIView view);
 }

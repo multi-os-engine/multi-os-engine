@@ -15,6 +15,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("AVFAudio")
@@ -101,6 +102,7 @@ public final class AVFAudio {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -741,6 +743,7 @@ public final class AVFAudio {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -749,6 +752,7 @@ public final class AVFAudio {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -757,6 +761,7 @@ public final class AVFAudio {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -765,6 +770,7 @@ public final class AVFAudio {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -773,6 +779,7 @@ public final class AVFAudio {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -781,6 +788,7 @@ public final class AVFAudio {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -789,6 +797,7 @@ public final class AVFAudio {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -797,6 +806,7 @@ public final class AVFAudio {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -805,6 +815,7 @@ public final class AVFAudio {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -813,6 +824,7 @@ public final class AVFAudio {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -821,6 +833,7 @@ public final class AVFAudio {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -833,6 +846,7 @@ public final class AVFAudio {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -850,6 +864,7 @@ public final class AVFAudio {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -863,6 +878,7 @@ public final class AVFAudio {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -876,6 +892,7 @@ public final class AVFAudio {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -889,6 +906,7 @@ public final class AVFAudio {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -905,6 +923,7 @@ public final class AVFAudio {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -924,6 +943,7 @@ public final class AVFAudio {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -935,6 +955,7 @@ public final class AVFAudio {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -946,6 +967,7 @@ public final class AVFAudio {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -956,6 +978,7 @@ public final class AVFAudio {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -966,6 +989,7 @@ public final class AVFAudio {
      * 
      * API-Since: 14.5
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -988,6 +1012,7 @@ public final class AVFAudio {
      * Deprecated-Since: 14.5
      * Deprecated-Message: No longer supported - see AVAudioSessionInterruptionReasonKey
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1000,6 +1025,7 @@ public final class AVFAudio {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1010,6 +1036,7 @@ public final class AVFAudio {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1021,6 +1048,7 @@ public final class AVFAudio {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1031,6 +1059,7 @@ public final class AVFAudio {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1039,6 +1068,7 @@ public final class AVFAudio {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1047,6 +1077,7 @@ public final class AVFAudio {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1055,6 +1086,7 @@ public final class AVFAudio {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1063,6 +1095,7 @@ public final class AVFAudio {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1071,6 +1104,7 @@ public final class AVFAudio {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1079,6 +1113,7 @@ public final class AVFAudio {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1087,6 +1122,7 @@ public final class AVFAudio {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1095,6 +1131,7 @@ public final class AVFAudio {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1103,6 +1140,7 @@ public final class AVFAudio {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1113,6 +1151,7 @@ public final class AVFAudio {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1123,6 +1162,7 @@ public final class AVFAudio {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1145,6 +1185,7 @@ public final class AVFAudio {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1177,6 +1218,7 @@ public final class AVFAudio {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1188,6 +1230,7 @@ public final class AVFAudio {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1196,6 +1239,7 @@ public final class AVFAudio {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1204,6 +1248,7 @@ public final class AVFAudio {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1212,6 +1257,7 @@ public final class AVFAudio {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1220,6 +1266,7 @@ public final class AVFAudio {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1228,6 +1275,7 @@ public final class AVFAudio {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1236,6 +1284,7 @@ public final class AVFAudio {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1244,6 +1293,7 @@ public final class AVFAudio {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1252,6 +1302,7 @@ public final class AVFAudio {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1260,6 +1311,7 @@ public final class AVFAudio {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1268,6 +1320,7 @@ public final class AVFAudio {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1276,6 +1329,7 @@ public final class AVFAudio {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1284,6 +1338,7 @@ public final class AVFAudio {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1292,6 +1347,7 @@ public final class AVFAudio {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1300,6 +1356,7 @@ public final class AVFAudio {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1308,6 +1365,7 @@ public final class AVFAudio {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1316,6 +1374,7 @@ public final class AVFAudio {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1324,6 +1383,7 @@ public final class AVFAudio {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1332,6 +1392,7 @@ public final class AVFAudio {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1340,6 +1401,7 @@ public final class AVFAudio {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1348,6 +1410,7 @@ public final class AVFAudio {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1356,6 +1419,7 @@ public final class AVFAudio {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1364,6 +1428,7 @@ public final class AVFAudio {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

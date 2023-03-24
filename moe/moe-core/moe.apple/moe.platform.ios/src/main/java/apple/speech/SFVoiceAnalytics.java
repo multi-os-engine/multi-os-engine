@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Voice analytics corresponding to a segment of recorded audio
@@ -62,31 +64,35 @@ public class SFVoiceAnalytics extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -98,7 +104,7 @@ public class SFVoiceAnalytics extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -111,7 +117,7 @@ public class SFVoiceAnalytics extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("initWithCoder:")
-    public native SFVoiceAnalytics initWithCoder(NSCoder coder);
+    public native SFVoiceAnalytics initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -134,13 +140,15 @@ public class SFVoiceAnalytics extends NSObject implements NSCopying, NSSecureCod
      * Jitter measures vocal stability and is measured as an absolute difference between consecutive periods, divided by
      * the average period. It is expressed as a percentage
      */
+    @NotNull
     @Generated
     @Selector("jitter")
     public native SFAcousticFeature jitter();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -150,6 +158,7 @@ public class SFVoiceAnalytics extends NSObject implements NSCopying, NSSecureCod
     /**
      * Pitch measures the highness and lowness of tone and is measured in logarithm of normalized pitch estimates
      */
+    @NotNull
     @Generated
     @Selector("pitch")
     public native SFAcousticFeature pitch();
@@ -169,6 +178,7 @@ public class SFVoiceAnalytics extends NSObject implements NSCopying, NSSecureCod
     /**
      * Shimmer measures vocal stability and is measured in decibels
      */
+    @NotNull
     @Generated
     @Selector("shimmer")
     public native SFAcousticFeature shimmer();
@@ -195,6 +205,7 @@ public class SFVoiceAnalytics extends NSObject implements NSCopying, NSSecureCod
     /**
      * Voicing measures the probability of whether a frame is voiced or not and is measured as a probability
      */
+    @NotNull
     @Generated
     @Selector("voicing")
     public native SFAcousticFeature voicing();

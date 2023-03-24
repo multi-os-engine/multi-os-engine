@@ -39,6 +39,8 @@ import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ann.UncertainReturn;
 import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("SystemConfiguration")
@@ -66,10 +68,12 @@ public final class SystemConfiguration {
      * 
      *         API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native SCNetworkReachabilityRef SCNetworkReachabilityCreateWithAddress(CFAllocatorRef allocator,
-            @UncertainArgument("Options: reference, array Fallback: reference") sockaddr address);
+    public static native SCNetworkReachabilityRef SCNetworkReachabilityCreateWithAddress(
+            @Nullable CFAllocatorRef allocator,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") sockaddr address);
 
     /**
      * [@function] SCNetworkReachabilityCreateWithAddressPair
@@ -88,11 +92,13 @@ public final class SystemConfiguration {
      * 
      *         API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native SCNetworkReachabilityRef SCNetworkReachabilityCreateWithAddressPair(CFAllocatorRef allocator,
-            @UncertainArgument("Options: reference, array Fallback: reference") sockaddr localAddress,
-            @UncertainArgument("Options: reference, array Fallback: reference") sockaddr remoteAddress);
+    public static native SCNetworkReachabilityRef SCNetworkReachabilityCreateWithAddressPair(
+            @Nullable CFAllocatorRef allocator,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") sockaddr localAddress,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") sockaddr remoteAddress);
 
     /**
      * [@function] SCNetworkReachabilityCreateWithName
@@ -110,10 +116,12 @@ public final class SystemConfiguration {
      * 
      *         API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native SCNetworkReachabilityRef SCNetworkReachabilityCreateWithName(CFAllocatorRef allocator,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String nodename);
+    public static native SCNetworkReachabilityRef SCNetworkReachabilityCreateWithName(
+            @Nullable CFAllocatorRef allocator,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String nodename);
 
     /**
      * [@function] SCNetworkReachabilityGetTypeID
@@ -146,7 +154,8 @@ public final class SystemConfiguration {
      */
     @Generated
     @CFunction
-    public static native byte SCNetworkReachabilityGetFlags(SCNetworkReachabilityRef target, IntPtr flags);
+    public static native byte SCNetworkReachabilityGetFlags(@NotNull SCNetworkReachabilityRef target,
+            @NotNull IntPtr flags);
 
     /**
      * [@function] SCNetworkReachabilitySetCallback
@@ -167,9 +176,9 @@ public final class SystemConfiguration {
      */
     @Generated
     @CFunction
-    public static native byte SCNetworkReachabilitySetCallback(SCNetworkReachabilityRef target,
-            @FunctionPtr(name = "call_SCNetworkReachabilitySetCallback") Function_SCNetworkReachabilitySetCallback callout,
-            @UncertainArgument("Options: reference, array Fallback: reference") SCNetworkReachabilityContext context);
+    public static native byte SCNetworkReachabilitySetCallback(@NotNull SCNetworkReachabilityRef target,
+            @Nullable @FunctionPtr(name = "call_SCNetworkReachabilitySetCallback") Function_SCNetworkReachabilitySetCallback callout,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") SCNetworkReachabilityContext context);
 
     /**
      * [@function] SCNetworkReachabilityScheduleWithRunLoop
@@ -189,8 +198,8 @@ public final class SystemConfiguration {
      */
     @Generated
     @CFunction
-    public static native byte SCNetworkReachabilityScheduleWithRunLoop(SCNetworkReachabilityRef target,
-            CFRunLoopRef runLoop, CFStringRef runLoopMode);
+    public static native byte SCNetworkReachabilityScheduleWithRunLoop(@NotNull SCNetworkReachabilityRef target,
+            @NotNull CFRunLoopRef runLoop, @NotNull CFStringRef runLoopMode);
 
     /**
      * [@function] SCNetworkReachabilityUnscheduleFromRunLoop
@@ -211,8 +220,8 @@ public final class SystemConfiguration {
      */
     @Generated
     @CFunction
-    public static native byte SCNetworkReachabilityUnscheduleFromRunLoop(SCNetworkReachabilityRef target,
-            CFRunLoopRef runLoop, CFStringRef runLoopMode);
+    public static native byte SCNetworkReachabilityUnscheduleFromRunLoop(@NotNull SCNetworkReachabilityRef target,
+            @NotNull CFRunLoopRef runLoop, @NotNull CFStringRef runLoopMode);
 
     /**
      * [@function] SCNetworkReachabilitySetDispatchQueue
@@ -231,7 +240,8 @@ public final class SystemConfiguration {
      */
     @Generated
     @CFunction
-    public static native byte SCNetworkReachabilitySetDispatchQueue(SCNetworkReachabilityRef target, NSObject queue);
+    public static native byte SCNetworkReachabilitySetDispatchQueue(@NotNull SCNetworkReachabilityRef target,
+            @Nullable NSObject queue);
 
     /**
      * [@function] SCCopyLastError
@@ -243,6 +253,7 @@ public final class SystemConfiguration {
      * 
      *         API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CFErrorRef SCCopyLastError();
@@ -273,6 +284,7 @@ public final class SystemConfiguration {
      * 
      *         API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
@@ -303,7 +315,7 @@ public final class SystemConfiguration {
     @Generated
     @Deprecated
     @CFunction
-    public static native byte CNSetSupportedSSIDs(CFArrayRef ssidArray);
+    public static native byte CNSetSupportedSSIDs(@NotNull CFArrayRef ssidArray);
 
     /**
      * [@function] CNMarkPortalOnline
@@ -322,7 +334,7 @@ public final class SystemConfiguration {
     @Generated
     @Deprecated
     @CFunction
-    public static native byte CNMarkPortalOnline(CFStringRef interfaceName);
+    public static native byte CNMarkPortalOnline(@NotNull CFStringRef interfaceName);
 
     /**
      * [@function] CNMarkPortalOffline
@@ -339,7 +351,7 @@ public final class SystemConfiguration {
     @Generated
     @Deprecated
     @CFunction
-    public static native byte CNMarkPortalOffline(CFStringRef interfaceName);
+    public static native byte CNMarkPortalOffline(@NotNull CFStringRef interfaceName);
 
     /**
      * [@function] CNCopySupportedInterfaces
@@ -352,6 +364,7 @@ public final class SystemConfiguration {
      * 
      *         API-Since: 4.1
      */
+    @Nullable
     @Generated
     @CFunction
     public static native CFArrayRef CNCopySupportedInterfaces();
@@ -400,10 +413,11 @@ public final class SystemConfiguration {
      *         API-Since: 4.1
      *         Deprecated-Since: 100000.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native CFDictionaryRef CNCopyCurrentNetworkInfo(CFStringRef interfaceName);
+    public static native CFDictionaryRef CNCopyCurrentNetworkInfo(@NotNull CFStringRef interfaceName);
 
     /**
      * [@const] kCFErrorDomainSystemConfiguration
@@ -413,6 +427,7 @@ public final class SystemConfiguration {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFErrorDomainSystemConfiguration();
@@ -424,6 +439,7 @@ public final class SystemConfiguration {
      * 
      * API-Since: 4.1
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCNNetworkInfoKeySSIDData();
@@ -435,6 +451,7 @@ public final class SystemConfiguration {
      * 
      * API-Since: 4.1
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCNNetworkInfoKeySSID();
@@ -446,6 +463,7 @@ public final class SystemConfiguration {
      * 
      * API-Since: 4.1
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCNNetworkInfoKeyBSSID();
@@ -454,6 +472,7 @@ public final class SystemConfiguration {
     @Generated
     public interface Function_SCNetworkReachabilitySetCallback {
         @Generated
-        void call_SCNetworkReachabilitySetCallback(SCNetworkReachabilityRef arg0, int arg1, VoidPtr arg2);
+        void call_SCNetworkReachabilitySetCallback(@NotNull SCNetworkReachabilityRef arg0, int arg1,
+                @Nullable VoidPtr arg2);
     }
 }

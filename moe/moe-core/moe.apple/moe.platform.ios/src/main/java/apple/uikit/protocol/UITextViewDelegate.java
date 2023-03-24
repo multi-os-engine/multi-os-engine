@@ -34,6 +34,8 @@ import apple.uikit.UIMenu;
 import apple.uikit.UIMenuElement;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -43,8 +45,8 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("textView:shouldChangeTextInRange:replacementText:")
-    default boolean textViewShouldChangeTextInRangeReplacementText(UITextView textView, @ByValue NSRange range,
-            String text) {
+    default boolean textViewShouldChangeTextInRangeReplacementText(@NotNull UITextView textView, @ByValue NSRange range,
+            @NotNull String text) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -56,8 +58,8 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("textView:shouldInteractWithTextAttachment:inRange:")
-    default boolean textViewShouldInteractWithTextAttachmentInRange(UITextView textView,
-            NSTextAttachment textAttachment, @ByValue NSRange characterRange) {
+    default boolean textViewShouldInteractWithTextAttachmentInRange(@NotNull UITextView textView,
+            @NotNull NSTextAttachment textAttachment, @ByValue NSRange characterRange) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -67,8 +69,8 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("textView:shouldInteractWithTextAttachment:inRange:interaction:")
-    default boolean textViewShouldInteractWithTextAttachmentInRangeInteraction(UITextView textView,
-            NSTextAttachment textAttachment, @ByValue NSRange characterRange, @NInt long interaction) {
+    default boolean textViewShouldInteractWithTextAttachmentInRangeInteraction(@NotNull UITextView textView,
+            @NotNull NSTextAttachment textAttachment, @ByValue NSRange characterRange, @NInt long interaction) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -80,7 +82,7 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("textView:shouldInteractWithURL:inRange:")
-    default boolean textViewShouldInteractWithURLInRange(UITextView textView, NSURL URL,
+    default boolean textViewShouldInteractWithURLInRange(@NotNull UITextView textView, @NotNull NSURL URL,
             @ByValue NSRange characterRange) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -91,7 +93,7 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("textView:shouldInteractWithURL:inRange:interaction:")
-    default boolean textViewShouldInteractWithURLInRangeInteraction(UITextView textView, NSURL URL,
+    default boolean textViewShouldInteractWithURLInRangeInteraction(@NotNull UITextView textView, @NotNull NSURL URL,
             @ByValue NSRange characterRange, @NInt long interaction) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -99,42 +101,42 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("textViewDidBeginEditing:")
-    default void textViewDidBeginEditing(UITextView textView) {
+    default void textViewDidBeginEditing(@NotNull UITextView textView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("textViewDidChange:")
-    default void textViewDidChange(UITextView textView) {
+    default void textViewDidChange(@NotNull UITextView textView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("textViewDidChangeSelection:")
-    default void textViewDidChangeSelection(UITextView textView) {
+    default void textViewDidChangeSelection(@NotNull UITextView textView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("textViewDidEndEditing:")
-    default void textViewDidEndEditing(UITextView textView) {
+    default void textViewDidEndEditing(@NotNull UITextView textView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("textViewShouldBeginEditing:")
-    default boolean textViewShouldBeginEditing(UITextView textView) {
+    default boolean textViewShouldBeginEditing(@NotNull UITextView textView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("textViewShouldEndEditing:")
-    default boolean textViewShouldEndEditing(UITextView textView) {
+    default boolean textViewShouldEndEditing(@NotNull UITextView textView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -149,11 +151,12 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
      * 
      *         API-Since: 16.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("textView:editMenuForTextInRange:suggestedActions:")
-    default UIMenu textViewEditMenuForTextInRangeSuggestedActions(UITextView textView, @ByValue NSRange range,
-            NSArray<? extends UIMenuElement> suggestedActions) {
+    default UIMenu textViewEditMenuForTextInRangeSuggestedActions(@NotNull UITextView textView, @ByValue NSRange range,
+            @NotNull NSArray<? extends UIMenuElement> suggestedActions) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -168,8 +171,8 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("textView:willDismissEditMenuWithAnimator:")
-    default void textViewWillDismissEditMenuWithAnimator(UITextView textView,
-            @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator) {
+    default void textViewWillDismissEditMenuWithAnimator(@NotNull UITextView textView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -185,8 +188,8 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("textView:willPresentEditMenuWithAnimator:")
-    default void textViewWillPresentEditMenuWithAnimator(UITextView textView,
-            @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator) {
+    default void textViewWillPresentEditMenuWithAnimator(@NotNull UITextView textView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

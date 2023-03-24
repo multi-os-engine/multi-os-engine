@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * UITextInputTraits
@@ -313,6 +314,7 @@ public interface UITextInputTraits {
      * 
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("passwordRules")
@@ -328,7 +330,7 @@ public interface UITextInputTraits {
     @Generated
     @IsOptional
     @Selector("setPasswordRules:")
-    default void setPasswordRules(UITextInputPasswordRules value) {
+    default void setPasswordRules(@Nullable UITextInputPasswordRules value) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

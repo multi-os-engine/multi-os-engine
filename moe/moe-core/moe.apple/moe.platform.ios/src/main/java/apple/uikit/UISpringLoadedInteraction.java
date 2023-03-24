@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -60,22 +62,25 @@ public class UISpringLoadedInteraction extends NSObject implements UIInteraction
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -90,7 +95,7 @@ public class UISpringLoadedInteraction extends NSObject implements UIInteraction
 
     @Generated
     @Selector("didMoveToView:")
-    public native void didMoveToView(UIView view);
+    public native void didMoveToView(@Nullable UIView view);
 
     @Generated
     @Selector("hash")
@@ -111,14 +116,14 @@ public class UISpringLoadedInteraction extends NSObject implements UIInteraction
     @Generated
     @Selector("initWithActivationHandler:")
     public native UISpringLoadedInteraction initWithActivationHandler(
-            @ObjCBlock(name = "call_initWithActivationHandler") Block_initWithActivationHandler handler);
+            @NotNull @ObjCBlock(name = "call_initWithActivationHandler") Block_initWithActivationHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithActivationHandler {
         @Generated
-        void call_initWithActivationHandler(UISpringLoadedInteraction interaction,
-                @Mapped(ObjCObjectMapper.class) Object context);
+        void call_initWithActivationHandler(@NotNull UISpringLoadedInteraction interaction,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object context);
     }
 
     /**
@@ -135,16 +140,17 @@ public class UISpringLoadedInteraction extends NSObject implements UIInteraction
     @Generated
     @Selector("initWithInteractionBehavior:interactionEffect:activationHandler:")
     public native UISpringLoadedInteraction initWithInteractionBehaviorInteractionEffectActivationHandler(
-            @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionBehavior interactionBehavior,
-            @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionEffect interactionEffect,
-            @ObjCBlock(name = "call_initWithInteractionBehaviorInteractionEffectActivationHandler") Block_initWithInteractionBehaviorInteractionEffectActivationHandler handler);
+            @Nullable @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionBehavior interactionBehavior,
+            @Nullable @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionEffect interactionEffect,
+            @NotNull @ObjCBlock(name = "call_initWithInteractionBehaviorInteractionEffectActivationHandler") Block_initWithInteractionBehaviorInteractionEffectActivationHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithInteractionBehaviorInteractionEffectActivationHandler {
         @Generated
-        void call_initWithInteractionBehaviorInteractionEffectActivationHandler(UISpringLoadedInteraction interaction,
-                @Mapped(ObjCObjectMapper.class) Object context);
+        void call_initWithInteractionBehaviorInteractionEffectActivationHandler(
+                @NotNull UISpringLoadedInteraction interaction,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object context);
     }
 
     @Generated
@@ -160,11 +166,13 @@ public class UISpringLoadedInteraction extends NSObject implements UIInteraction
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    @NotNull
     @Generated
     @Selector("interactionBehavior")
     @MappedReturn(ObjCObjectMapper.class)
     public native UISpringLoadedInteractionBehavior interactionBehavior();
 
+    @NotNull
     @Generated
     @Selector("interactionEffect")
     @MappedReturn(ObjCObjectMapper.class)
@@ -174,9 +182,10 @@ public class UISpringLoadedInteraction extends NSObject implements UIInteraction
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -204,11 +213,12 @@ public class UISpringLoadedInteraction extends NSObject implements UIInteraction
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("view")
     public native UIView view();
 
     @Generated
     @Selector("willMoveToView:")
-    public native void willMoveToView(UIView view);
+    public native void willMoveToView(@Nullable UIView view);
 }

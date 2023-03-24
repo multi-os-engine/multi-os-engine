@@ -15,6 +15,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -27,19 +29,21 @@ public interface UIDocumentBrowserViewControllerDelegate {
     /**
      * Allows clients to add application specific UIActivity instances
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("documentBrowser:applicationActivitiesForDocumentURLs:")
     default NSArray<? extends UIActivity> documentBrowserApplicationActivitiesForDocumentURLs(
-            UIDocumentBrowserViewController controller, NSArray<? extends NSURL> documentURLs) {
+            @NotNull UIDocumentBrowserViewController controller, @NotNull NSArray<? extends NSURL> documentURLs) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("documentBrowser:didImportDocumentAtURL:toDestinationURL:")
-    default void documentBrowserDidImportDocumentAtURLToDestinationURL(UIDocumentBrowserViewController controller,
-            NSURL sourceURL, NSURL destinationURL) {
+    default void documentBrowserDidImportDocumentAtURLToDestinationURL(
+            @NotNull UIDocumentBrowserViewController controller, @NotNull NSURL sourceURL,
+            @NotNull NSURL destinationURL) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -55,8 +59,8 @@ public interface UIDocumentBrowserViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("documentBrowser:didPickDocumentURLs:")
-    default void documentBrowserDidPickDocumentURLs(UIDocumentBrowserViewController controller,
-            NSArray<? extends NSURL> documentURLs) {
+    default void documentBrowserDidPickDocumentURLs(@NotNull UIDocumentBrowserViewController controller,
+            @NotNull NSArray<? extends NSURL> documentURLs) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,8 +83,9 @@ public interface UIDocumentBrowserViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("documentBrowser:didRequestDocumentCreationWithHandler:")
-    default void documentBrowserDidRequestDocumentCreationWithHandler(UIDocumentBrowserViewController controller,
-            @ObjCBlock(name = "call_documentBrowserDidRequestDocumentCreationWithHandler") Block_documentBrowserDidRequestDocumentCreationWithHandler importHandler) {
+    default void documentBrowserDidRequestDocumentCreationWithHandler(
+            @NotNull UIDocumentBrowserViewController controller,
+            @NotNull @ObjCBlock(name = "call_documentBrowserDidRequestDocumentCreationWithHandler") Block_documentBrowserDidRequestDocumentCreationWithHandler importHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -88,14 +93,15 @@ public interface UIDocumentBrowserViewControllerDelegate {
     @Generated
     public interface Block_documentBrowserDidRequestDocumentCreationWithHandler {
         @Generated
-        void call_documentBrowserDidRequestDocumentCreationWithHandler(NSURL urlToImport, @NUInt long importMode);
+        void call_documentBrowserDidRequestDocumentCreationWithHandler(@Nullable NSURL urlToImport,
+                @NUInt long importMode);
     }
 
     @Generated
     @IsOptional
     @Selector("documentBrowser:failedToImportDocumentAtURL:error:")
-    default void documentBrowserFailedToImportDocumentAtURLError(UIDocumentBrowserViewController controller,
-            NSURL documentURL, NSError error) {
+    default void documentBrowserFailedToImportDocumentAtURLError(@NotNull UIDocumentBrowserViewController controller,
+            @NotNull NSURL documentURL, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -105,8 +111,8 @@ public interface UIDocumentBrowserViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("documentBrowser:willPresentActivityViewController:")
-    default void documentBrowserWillPresentActivityViewController(UIDocumentBrowserViewController controller,
-            UIActivityViewController activityViewController) {
+    default void documentBrowserWillPresentActivityViewController(@NotNull UIDocumentBrowserViewController controller,
+            @NotNull UIActivityViewController activityViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -116,8 +122,8 @@ public interface UIDocumentBrowserViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("documentBrowser:didPickDocumentsAtURLs:")
-    default void documentBrowserDidPickDocumentsAtURLs(UIDocumentBrowserViewController controller,
-            NSArray<? extends NSURL> documentURLs) {
+    default void documentBrowserDidPickDocumentsAtURLs(@NotNull UIDocumentBrowserViewController controller,
+            @NotNull NSArray<? extends NSURL> documentURLs) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

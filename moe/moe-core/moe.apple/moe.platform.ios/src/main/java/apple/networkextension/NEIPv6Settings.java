@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEIPv6Settings
@@ -83,22 +85,25 @@ public class NEIPv6Settings extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +138,10 @@ public class NEIPv6Settings extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -175,19 +181,21 @@ public class NEIPv6Settings extends NSObject implements NSSecureCoding, NSCopyin
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("addresses")
     public native NSArray<String> addresses();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] excludedRoutes
@@ -197,6 +205,7 @@ public class NEIPv6Settings extends NSObject implements NSSecureCoding, NSCopyin
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("excludedRoutes")
     public native NSArray<? extends NEIPv6Route> excludedRoutes();
@@ -209,6 +218,7 @@ public class NEIPv6Settings extends NSObject implements NSSecureCoding, NSCopyin
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("includedRoutes")
     public native NSArray<? extends NEIPv6Route> includedRoutes();
@@ -231,12 +241,12 @@ public class NEIPv6Settings extends NSObject implements NSSecureCoding, NSCopyin
      */
     @Generated
     @Selector("initWithAddresses:networkPrefixLengths:")
-    public native NEIPv6Settings initWithAddressesNetworkPrefixLengths(NSArray<String> addresses,
-            NSArray<? extends NSNumber> networkPrefixLengths);
+    public native NEIPv6Settings initWithAddressesNetworkPrefixLengths(@NotNull NSArray<String> addresses,
+            @NotNull NSArray<? extends NSNumber> networkPrefixLengths);
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEIPv6Settings initWithCoder(NSCoder coder);
+    public native NEIPv6Settings initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] networkPrefixLengths
@@ -246,6 +256,7 @@ public class NEIPv6Settings extends NSObject implements NSSecureCoding, NSCopyin
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("networkPrefixLengths")
     public native NSArray<? extends NSNumber> networkPrefixLengths();
@@ -260,7 +271,7 @@ public class NEIPv6Settings extends NSObject implements NSSecureCoding, NSCopyin
      */
     @Generated
     @Selector("setExcludedRoutes:")
-    public native void setExcludedRoutes(NSArray<? extends NEIPv6Route> value);
+    public native void setExcludedRoutes(@Nullable NSArray<? extends NEIPv6Route> value);
 
     /**
      * [@property] includedRoutes
@@ -272,7 +283,7 @@ public class NEIPv6Settings extends NSObject implements NSSecureCoding, NSCopyin
      */
     @Generated
     @Selector("setIncludedRoutes:")
-    public native void setIncludedRoutes(NSArray<? extends NEIPv6Route> value);
+    public native void setIncludedRoutes(@Nullable NSArray<? extends NEIPv6Route> value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

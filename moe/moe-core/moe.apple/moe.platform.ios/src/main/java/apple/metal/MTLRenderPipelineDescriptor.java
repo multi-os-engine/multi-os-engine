@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -74,22 +76,25 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +129,10 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -154,21 +160,24 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("colorAttachments")
     public native MTLRenderPipelineColorAttachmentDescriptorArray colorAttachments();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("depthAttachmentPixelFormat")
     @NUInt
     public native long depthAttachmentPixelFormat();
 
+    @Nullable
     @Generated
     @Selector("fragmentFunction")
     @MappedReturn(ObjCObjectMapper.class)
@@ -216,6 +225,7 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @Selector("setTessellationFactorScaleEnabled:")
     public native void setTessellationFactorScaleEnabled(boolean value);
 
+    @Nullable
     @Generated
     @Selector("label")
     public native String label();
@@ -255,11 +265,11 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("setFragmentFunction:")
-    public native void setFragmentFunction(@Mapped(ObjCObjectMapper.class) MTLFunction value);
+    public native void setFragmentFunction(@Nullable @Mapped(ObjCObjectMapper.class) MTLFunction value);
 
     @Generated
     @Selector("setLabel:")
-    public native void setLabel(String value);
+    public native void setLabel(@Nullable String value);
 
     /**
      * API-Since: 10.0
@@ -320,11 +330,11 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("setVertexDescriptor:")
-    public native void setVertexDescriptor(MTLVertexDescriptor value);
+    public native void setVertexDescriptor(@Nullable MTLVertexDescriptor value);
 
     @Generated
     @Selector("setVertexFunction:")
-    public native void setVertexFunction(@Mapped(ObjCObjectMapper.class) MTLFunction value);
+    public native void setVertexFunction(@Nullable @Mapped(ObjCObjectMapper.class) MTLFunction value);
 
     @Generated
     @Selector("stencilAttachmentPixelFormat")
@@ -371,10 +381,12 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @NUInt
     public native long tessellationPartitionMode();
 
+    @Nullable
     @Generated
     @Selector("vertexDescriptor")
     public native MTLVertexDescriptor vertexDescriptor();
 
+    @Nullable
     @Generated
     @Selector("vertexFunction")
     @MappedReturn(ObjCObjectMapper.class)
@@ -383,6 +395,7 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("fragmentBuffers")
     public native MTLPipelineBufferDescriptorArray fragmentBuffers();
@@ -399,6 +412,7 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("vertexBuffers")
     public native MTLPipelineBufferDescriptorArray vertexBuffers();
@@ -459,6 +473,7 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
      * 
      *      API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("binaryArchives")
     public native NSArray<?> binaryArchives();
@@ -477,7 +492,7 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setBinaryArchives:")
-    public native void setBinaryArchives(NSArray<?> value);
+    public native void setBinaryArchives(@Nullable NSArray<?> value);
 
     /**
      * [@property] fragmentLinkedFunctions
@@ -509,6 +524,7 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
      * 
      *      API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("fragmentPreloadedLibraries")
     public native NSArray<?> fragmentPreloadedLibraries();
@@ -569,7 +585,7 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setFragmentPreloadedLibraries:")
-    public native void setFragmentPreloadedLibraries(NSArray<?> value);
+    public native void setFragmentPreloadedLibraries(@NotNull NSArray<?> value);
 
     /**
      * [@property] maxFragmentCallStackDepth
@@ -647,7 +663,7 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setVertexPreloadedLibraries:")
-    public native void setVertexPreloadedLibraries(NSArray<?> value);
+    public native void setVertexPreloadedLibraries(@NotNull NSArray<?> value);
 
     /**
      * [@property] supportFragmentAddingBinaryFunctions
@@ -701,6 +717,7 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
      * 
      *      API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("vertexPreloadedLibraries")
     public native NSArray<?> vertexPreloadedLibraries();

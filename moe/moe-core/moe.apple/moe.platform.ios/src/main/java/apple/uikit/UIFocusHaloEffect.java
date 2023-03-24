@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 15.0
@@ -58,22 +60,25 @@ public class UIFocusHaloEffect extends UIFocusEffect {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -82,6 +87,7 @@ public class UIFocusHaloEffect extends UIFocusEffect {
      * Container view in which to place the effect. When not set, the container is determined automatically
      * from the focus item that provided this effect and the @c referenceView (if present).
      */
+    @Nullable
     @Generated
     @Selector("containerView")
     public native UIView containerView();
@@ -103,7 +109,7 @@ public class UIFocusHaloEffect extends UIFocusEffect {
      */
     @Generated
     @Selector("effectWithPath:")
-    public static native UIFocusHaloEffect effectWithPath(UIBezierPath bezierPath);
+    public static native UIFocusHaloEffect effectWithPath(@NotNull UIBezierPath bezierPath);
 
     /**
      * Creates a rectangular halo.
@@ -118,7 +124,7 @@ public class UIFocusHaloEffect extends UIFocusEffect {
     @Generated
     @Selector("effectWithRoundedRect:cornerRadius:curve:")
     public static native UIFocusHaloEffect effectWithRoundedRectCornerRadiusCurve(@ByValue CGRect rect,
-            @NFloat double cornerRadius, String curve);
+            @NFloat double cornerRadius, @NotNull String curve);
 
     @Generated
     @Selector("hash")
@@ -146,9 +152,10 @@ public class UIFocusHaloEffect extends UIFocusEffect {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -169,6 +176,7 @@ public class UIFocusHaloEffect extends UIFocusEffect {
      * of the @c containerView. The system will ensure that the halo is in the container but visually above the @c
      * referenceView.
      */
+    @Nullable
     @Generated
     @Selector("referenceView")
     public native UIView referenceView();
@@ -187,14 +195,14 @@ public class UIFocusHaloEffect extends UIFocusEffect {
      */
     @Generated
     @Selector("setContainerView:")
-    public native void setContainerView_unsafe(UIView value);
+    public native void setContainerView_unsafe(@Nullable UIView value);
 
     /**
      * Container view in which to place the effect. When not set, the container is determined automatically
      * from the focus item that provided this effect and the @c referenceView (if present).
      */
     @Generated
-    public void setContainerView(UIView value) {
+    public void setContainerView(@Nullable UIView value) {
         Object __old = containerView();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -220,7 +228,7 @@ public class UIFocusHaloEffect extends UIFocusEffect {
      */
     @Generated
     @Selector("setReferenceView:")
-    public native void setReferenceView_unsafe(UIView value);
+    public native void setReferenceView_unsafe(@Nullable UIView value);
 
     /**
      * When set, the halo is placed above this view. If a @c containerView is also set, the @c referenceView must be a
@@ -229,7 +237,7 @@ public class UIFocusHaloEffect extends UIFocusEffect {
      * referenceView.
      */
     @Generated
-    public void setReferenceView(UIView value) {
+    public void setReferenceView(@Nullable UIView value) {
         Object __old = referenceView();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

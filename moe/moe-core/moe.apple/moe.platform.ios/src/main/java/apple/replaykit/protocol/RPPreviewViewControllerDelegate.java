@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("ReplayKit")
@@ -38,8 +39,8 @@ public interface RPPreviewViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("previewController:didFinishWithActivityTypes:")
-    default void previewControllerDidFinishWithActivityTypes(RPPreviewViewController previewController,
-            NSSet<String> activityTypes) {
+    default void previewControllerDidFinishWithActivityTypes(@NotNull RPPreviewViewController previewController,
+            @NotNull NSSet<String> activityTypes) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -49,7 +50,7 @@ public interface RPPreviewViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("previewControllerDidFinish:")
-    default void previewControllerDidFinish(RPPreviewViewController previewController) {
+    default void previewControllerDidFinish(@NotNull RPPreviewViewController previewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

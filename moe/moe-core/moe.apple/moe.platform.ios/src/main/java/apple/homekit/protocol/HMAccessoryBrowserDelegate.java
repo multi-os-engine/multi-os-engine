@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * This delegate receives updates about new accessories in the home.
@@ -46,7 +47,8 @@ public interface HMAccessoryBrowserDelegate {
     @Generated
     @IsOptional
     @Selector("accessoryBrowser:didFindNewAccessory:")
-    default void accessoryBrowserDidFindNewAccessory(HMAccessoryBrowser browser, HMAccessory accessory) {
+    default void accessoryBrowserDidFindNewAccessory(@NotNull HMAccessoryBrowser browser,
+            @NotNull HMAccessory accessory) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -61,7 +63,8 @@ public interface HMAccessoryBrowserDelegate {
     @Generated
     @IsOptional
     @Selector("accessoryBrowser:didRemoveNewAccessory:")
-    default void accessoryBrowserDidRemoveNewAccessory(HMAccessoryBrowser browser, HMAccessory accessory) {
+    default void accessoryBrowserDidRemoveNewAccessory(@NotNull HMAccessoryBrowser browser,
+            @NotNull HMAccessory accessory) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -33,6 +33,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNMultiaryKernel
@@ -109,22 +111,25 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -183,6 +188,7 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * 
      * Default: MPSTemporaryImage.defaultAllocator
      */
+    @NotNull
     @Generated
     @Selector("destinationImageAllocator")
     @MappedReturn(ObjCObjectMapper.class)
@@ -265,10 +271,11 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * @param sourceStates An optional array of source states that will be passed into the -encode call
      * @return an image descriptor allocated on the autorelease pool
      */
+    @NotNull
     @Generated
     @Selector("destinationImageDescriptorForSourceImages:sourceStates:")
     public native MPSImageDescriptor destinationImageDescriptorForSourceImagesSourceStates(
-            NSArray<? extends MPSImage> sourceImages, NSArray<? extends MPSState> sourceStates);
+            @NotNull NSArray<? extends MPSImage> sourceImages, @Nullable NSArray<? extends MPSState> sourceStates);
 
     /**
      * Stride in source coordinates from one kernel tap to the next in the X dimension.
@@ -330,10 +337,12 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      *         The returned image will be automatically released when the command buffer completes. If you want to
      *         keep it around for longer, retain the image. (ARC will do this for you if you use it later.)
      */
+    @NotNull
     @Generated
     @Selector("encodeToCommandBuffer:sourceImages:")
     public native MPSImage encodeToCommandBufferSourceImages(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, NSArray<? extends MPSImage> sourceImages);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull NSArray<? extends MPSImage> sourceImages);
 
     /**
      * Encode a MPSCNNKernel into a command Buffer. The operation shall proceed out-of-place.
@@ -349,8 +358,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
     @Generated
     @Selector("encodeToCommandBuffer:sourceImages:destinationImage:")
     public native void encodeToCommandBufferSourceImagesDestinationImage(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, NSArray<? extends MPSImage> sourceImages,
-            MPSImage destinationImage);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull NSArray<? extends MPSImage> sourceImages, @NotNull MPSImage destinationImage);
 
     /**
      * Encode a MPSCNNKernel into a command Buffer. Create a texture and state to hold the results and return them.
@@ -376,11 +385,13 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      *         The returned image will be automatically released when the command buffer completes. If you want to
      *         keep it around for longer, retain the image. (ARC will do this for you if you use it later.)
      */
+    @NotNull
     @Generated
     @Selector("encodeToCommandBuffer:sourceImages:destinationState:destinationStateIsTemporary:")
     public native MPSImage encodeToCommandBufferSourceImagesDestinationStateDestinationStateIsTemporary(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, NSArray<? extends MPSImage> sourceImages,
-            @ReferenceInfo(type = MPSState.class) Ptr<MPSState> outState, boolean isTemporary);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull NSArray<? extends MPSImage> sourceImages,
+            @NotNull @ReferenceInfo(type = MPSState.class) Ptr<MPSState> outState, boolean isTemporary);
 
     @Generated
     @Selector("hash")
@@ -393,7 +404,7 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNMultiaryKernel initWithCoder(NSCoder aDecoder);
+    public native MPSCNNMultiaryKernel initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
@@ -410,12 +421,12 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNMultiaryKernel initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNMultiaryKernel initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNMultiaryKernel initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNMultiaryKernel initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Standard init with default properties per filter type
@@ -428,8 +439,8 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      */
     @Generated
     @Selector("initWithDevice:sourceCount:")
-    public native MPSCNNMultiaryKernel initWithDeviceSourceCount(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @NUInt long sourceCount);
+    public native MPSCNNMultiaryKernel initWithDeviceSourceCount(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long sourceCount);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -506,9 +517,10 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
     @NUInt
     public native long kernelWidthAtIndex(@NUInt long index);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -540,6 +552,7 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      * Some object types (e.g. MPSCNNFullyConnected) may override this default with something appropriate to its
      * operation.
      */
+    @NotNull
     @Generated
     @Selector("padding")
     @MappedReturn(ObjCObjectMapper.class)
@@ -617,11 +630,12 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      *         returns YES, then it will be called once per batch and the MPSStateBatch array will
      *         contain MPSStateBatch.length references to the same object.
      */
+    @Nullable
     @Generated
     @Selector("resultStateForSourceImages:sourceStates:destinationImage:")
     public native MPSState resultStateForSourceImagesSourceStatesDestinationImage(
-            NSArray<? extends MPSImage> sourceImages, NSArray<? extends MPSState> sourceStates,
-            MPSImage destinationImage);
+            @NotNull NSArray<? extends MPSImage> sourceImages, @Nullable NSArray<? extends MPSState> sourceStates,
+            @NotNull MPSImage destinationImage);
 
     /**
      * [@property] clipRect
@@ -669,7 +683,7 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      */
     @Generated
     @Selector("setDestinationImageAllocator:")
-    public native void setDestinationImageAllocator(@Mapped(ObjCObjectMapper.class) MPSImageAllocator value);
+    public native void setDestinationImageAllocator(@NotNull @Mapped(ObjCObjectMapper.class) MPSImageAllocator value);
 
     /**
      * Set the stride in source coordinates from one kernel tap to the next in the X dimension.
@@ -762,7 +776,7 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      */
     @Generated
     @Selector("setPadding:")
-    public native void setPadding(@Mapped(ObjCObjectMapper.class) MPSNNPadding value);
+    public native void setPadding(@NotNull @Mapped(ObjCObjectMapper.class) MPSNNPadding value);
 
     /**
      * Set the maximum number of channels in the source MPSImage to use
@@ -986,11 +1000,13 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
      *         returns YES, then it will be called once per batch and the MPSStateBatch array will
      *         contain MPSStateBatch.length references to the same object.
      */
+    @Nullable
     @Generated
     @Selector("temporaryResultStateForCommandBuffer:sourceImages:sourceStates:destinationImage:")
     public native MPSState temporaryResultStateForCommandBufferSourceImagesSourceStatesDestinationImage(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, NSArray<? extends MPSImage> sourceImage,
-            NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull NSArray<? extends MPSImage> sourceImage, @Nullable NSArray<? extends MPSState> sourceStates,
+            @NotNull MPSImage destinationImage);
 
     @Generated
     @Selector("version")

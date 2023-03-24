@@ -46,6 +46,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.0
@@ -80,22 +82,25 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -113,7 +118,7 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      */
     @Generated
     @Selector("fetchRequestWithEntityName:")
-    public static native <_ResultType> NSFetchRequest<?> fetchRequestWithEntityName(String entityName);
+    public static native <_ResultType> NSFetchRequest<?> fetchRequestWithEntityName(@NotNull String entityName);
 
     @Generated
     @Selector("hash")
@@ -137,9 +142,10 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,14 +173,16 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("affectedStores")
     public native NSArray<? extends NSPersistentStore> affectedStores();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    @Nullable
     @Generated
     @Selector("entity")
     public native NSEntityDescription entity();
@@ -182,6 +190,7 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
     /**
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("entityName")
     public native String entityName();
@@ -192,9 +201,10 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("execute:")
-    public native NSArray<?> execute(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSArray<?> execute(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * This breaks the result set into batches. The entire request will be evaluated, and the identities of all matching
@@ -237,6 +247,7 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * 
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("havingPredicate")
     public native NSPredicate havingPredicate();
@@ -282,15 +293,16 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSFetchRequest<?> initWithCoder(NSCoder coder);
+    public native NSFetchRequest<?> initWithCoder(@NotNull NSCoder coder);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @Selector("initWithEntityName:")
-    public native NSFetchRequest<?> initWithEntityName(String entityName);
+    public native NSFetchRequest<?> initWithEntityName(@NotNull String entityName);
 
+    @Nullable
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();
@@ -304,6 +316,7 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * 
      * API-Since: 3.0
      */
+    @Nullable
     @Generated
     @Selector("propertiesToFetch")
     public native NSArray<?> propertiesToFetch();
@@ -320,6 +333,7 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * 
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("propertiesToGroupBy")
     public native NSArray<?> propertiesToGroupBy();
@@ -333,6 +347,7 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * 
      * API-Since: 3.0
      */
+    @Nullable
     @Generated
     @Selector("relationshipKeyPathsForPrefetching")
     public native NSArray<String> relationshipKeyPathsForPrefetching();
@@ -375,11 +390,11 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
 
     @Generated
     @Selector("setAffectedStores:")
-    public native void setAffectedStores(NSArray<? extends NSPersistentStore> value);
+    public native void setAffectedStores(@Nullable NSArray<? extends NSPersistentStore> value);
 
     @Generated
     @Selector("setEntity:")
-    public native void setEntity(NSEntityDescription value);
+    public native void setEntity(@Nullable NSEntityDescription value);
 
     /**
      * This breaks the result set into batches. The entire request will be evaluated, and the identities of all matching
@@ -421,7 +436,7 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      */
     @Generated
     @Selector("setHavingPredicate:")
-    public native void setHavingPredicate(NSPredicate value);
+    public native void setHavingPredicate(@Nullable NSPredicate value);
 
     /**
      * Results accommodate the currently unsaved changes in the NSManagedObjectContext. When disabled, the fetch request
@@ -460,7 +475,7 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
 
     @Generated
     @Selector("setPredicate:")
-    public native void setPredicate(NSPredicate value);
+    public native void setPredicate(@Nullable NSPredicate value);
 
     /**
      * Specifies a collection of either NSPropertyDescriptions or NSString property names that should be fetched. The
@@ -473,7 +488,7 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      */
     @Generated
     @Selector("setPropertiesToFetch:")
-    public native void setPropertiesToFetch(NSArray<?> value);
+    public native void setPropertiesToFetch(@Nullable NSArray<?> value);
 
     /**
      * Specifies the way in which data should be grouped before a select statement is run in an SQL database.
@@ -489,7 +504,7 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      */
     @Generated
     @Selector("setPropertiesToGroupBy:")
-    public native void setPropertiesToGroupBy(NSArray<?> value);
+    public native void setPropertiesToGroupBy(@Nullable NSArray<?> value);
 
     /**
      * Returns/sets an array of relationship keypaths to prefetch along with the entity for the request. The array
@@ -502,7 +517,7 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      */
     @Generated
     @Selector("setRelationshipKeyPathsForPrefetching:")
-    public native void setRelationshipKeyPathsForPrefetching(NSArray<String> value);
+    public native void setRelationshipKeyPathsForPrefetching(@Nullable NSArray<String> value);
 
     /**
      * Returns/sets the result type of the fetch request (the instance type of objects returned from executing the
@@ -548,7 +563,7 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
 
     @Generated
     @Selector("setSortDescriptors:")
-    public native void setSortDescriptors(NSArray<? extends NSSortDescriptor> value);
+    public native void setSortDescriptors(@Nullable NSArray<? extends NSSortDescriptor> value);
 
     /**
      * API-Since: 5.0
@@ -557,13 +572,15 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
     @Selector("shouldRefreshRefetchedObjects")
     public native boolean shouldRefreshRefetchedObjects();
 
+    @Nullable
     @Generated
     @Selector("sortDescriptors")
     public native NSArray<? extends NSSortDescriptor> sortDescriptors();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 }

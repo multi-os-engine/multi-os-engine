@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.5
@@ -62,7 +64,7 @@ public class WKDownload extends NSObject implements NSProgressReporting {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Cancel the download.
@@ -75,29 +77,32 @@ public class WKDownload extends NSObject implements NSProgressReporting {
      */
     @Generated
     @Selector("cancel:")
-    public native void cancel(@ObjCBlock(name = "call_cancel") Block_cancel completionHandler);
+    public native void cancel(@Nullable @ObjCBlock(name = "call_cancel") Block_cancel completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_cancel {
         @Generated
-        void call_cancel(NSData resumeData);
+        void call_cancel(@Nullable NSData resumeData);
     }
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -109,6 +114,7 @@ public class WKDownload extends NSObject implements NSProgressReporting {
     /**
      * The delegate that receives progress updates for this download.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -144,9 +150,10 @@ public class WKDownload extends NSObject implements NSProgressReporting {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,10 +166,12 @@ public class WKDownload extends NSObject implements NSProgressReporting {
      * If the original request redirected to a different URL, originalRequest
      * will be unchanged after the download follows the redirect.
      */
+    @Nullable
     @Generated
     @Selector("originalRequest")
     public native NSURLRequest originalRequest();
 
+    @NotNull
     @Generated
     @Selector("progress")
     public native NSProgress progress();
@@ -180,13 +189,13 @@ public class WKDownload extends NSObject implements NSProgressReporting {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) WKDownloadDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) WKDownloadDelegate value);
 
     /**
      * The delegate that receives progress updates for this download.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) WKDownloadDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) WKDownloadDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -213,6 +222,7 @@ public class WKDownload extends NSObject implements NSProgressReporting {
     /**
      * The web view that originated this download.
      */
+    @Nullable
     @Generated
     @Selector("webView")
     public native WKWebView webView();

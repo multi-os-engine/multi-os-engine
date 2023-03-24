@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NFCNDEFReaderSession
@@ -78,22 +80,25 @@ public class NFCNDEFReaderSession extends NFCReaderSession {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -118,14 +123,14 @@ public class NFCNDEFReaderSession extends NFCReaderSession {
      */
     @Generated
     @Selector("connectToTag:completionHandler:")
-    public native void connectToTagCompletionHandler(@Mapped(ObjCObjectMapper.class) NFCNDEFTag tag,
-            @ObjCBlock(name = "call_connectToTagCompletionHandler") Block_connectToTagCompletionHandler completionHandler);
+    public native void connectToTagCompletionHandler(@NotNull @Mapped(ObjCObjectMapper.class) NFCNDEFTag tag,
+            @NotNull @ObjCBlock(name = "call_connectToTagCompletionHandler") Block_connectToTagCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_connectToTagCompletionHandler {
         @Generated
-        void call_connectToTagCompletionHandler(NSError error);
+        void call_connectToTagCompletionHandler(@Nullable NSError error);
     }
 
     @Generated
@@ -196,7 +201,7 @@ public class NFCNDEFReaderSession extends NFCReaderSession {
     @Generated
     @Selector("initWithDelegate:queue:invalidateAfterFirstRead:")
     public native NFCNDEFReaderSession initWithDelegateQueueInvalidateAfterFirstRead(
-            @Mapped(ObjCObjectMapper.class) NFCNDEFReaderSessionDelegate delegate, NSObject queue,
+            @NotNull @Mapped(ObjCObjectMapper.class) NFCNDEFReaderSessionDelegate delegate, @Nullable NSObject queue,
             boolean invalidateAfterFirstRead);
 
     @Generated
@@ -216,9 +221,10 @@ public class NFCNDEFReaderSession extends NFCReaderSession {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

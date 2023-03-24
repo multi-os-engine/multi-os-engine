@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a request to set up an automatic reload or refill payment, such as a store card top-up.
@@ -61,36 +63,41 @@ public class PKAutomaticReloadPaymentRequest extends NSObject {
     /**
      * Details about the automatic reload payment, for example "top-up with $20 when account reaches $5".
      */
+    @NotNull
     @Generated
     @Selector("automaticReloadBilling")
     public native PKAutomaticReloadPaymentSummaryItem automaticReloadBilling();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Optional, localized billing agreement to be displayed to the user prior to payment authorization.
      * This may include further details about the threshold amount or reload conditions.
      */
+    @Nullable
     @Generated
     @Selector("billingAgreement")
     public native String billingAgreement();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -115,7 +122,8 @@ public class PKAutomaticReloadPaymentRequest extends NSObject {
     @Generated
     @Selector("initWithPaymentDescription:automaticReloadBilling:managementURL:")
     public native PKAutomaticReloadPaymentRequest initWithPaymentDescriptionAutomaticReloadBillingManagementURL(
-            String paymentDescription, PKAutomaticReloadPaymentSummaryItem automaticReloadBilling, NSURL managementURL);
+            @NotNull String paymentDescription, @NotNull PKAutomaticReloadPaymentSummaryItem automaticReloadBilling,
+            @NotNull NSURL managementURL);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -134,14 +142,16 @@ public class PKAutomaticReloadPaymentRequest extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * A URL that links to a page on your web site where the user can manage the payment method for this
      * automatic reload payment, including deleting it.
      */
+    @NotNull
     @Generated
     @Selector("managementURL")
     public native NSURL managementURL();
@@ -154,6 +164,7 @@ public class PKAutomaticReloadPaymentRequest extends NSObject {
     /**
      * A description of the automatic reload, for example "Gift Card Reload".
      */
+    @NotNull
     @Generated
     @Selector("paymentDescription")
     public native String paymentDescription();
@@ -171,7 +182,7 @@ public class PKAutomaticReloadPaymentRequest extends NSObject {
      */
     @Generated
     @Selector("setAutomaticReloadBilling:")
-    public native void setAutomaticReloadBilling(PKAutomaticReloadPaymentSummaryItem value);
+    public native void setAutomaticReloadBilling(@NotNull PKAutomaticReloadPaymentSummaryItem value);
 
     /**
      * Optional, localized billing agreement to be displayed to the user prior to payment authorization.
@@ -179,7 +190,7 @@ public class PKAutomaticReloadPaymentRequest extends NSObject {
      */
     @Generated
     @Selector("setBillingAgreement:")
-    public native void setBillingAgreement(String value);
+    public native void setBillingAgreement(@Nullable String value);
 
     /**
      * A URL that links to a page on your web site where the user can manage the payment method for this
@@ -187,14 +198,14 @@ public class PKAutomaticReloadPaymentRequest extends NSObject {
      */
     @Generated
     @Selector("setManagementURL:")
-    public native void setManagementURL(NSURL value);
+    public native void setManagementURL(@NotNull NSURL value);
 
     /**
      * A description of the automatic reload, for example "Gift Card Reload".
      */
     @Generated
     @Selector("setPaymentDescription:")
-    public native void setPaymentDescription(String value);
+    public native void setPaymentDescription(@NotNull String value);
 
     /**
      * Optional URL to receive lifecycle notifications for the merchant-specific payment token issued
@@ -203,7 +214,7 @@ public class PKAutomaticReloadPaymentRequest extends NSObject {
      */
     @Generated
     @Selector("setTokenNotificationURL:")
-    public native void setTokenNotificationURL(NSURL value);
+    public native void setTokenNotificationURL(@Nullable NSURL value);
 
     @Generated
     @Selector("setVersion:")
@@ -218,6 +229,7 @@ public class PKAutomaticReloadPaymentRequest extends NSObject {
      * for this request, if applicable. If this property is not set, notifications will not be sent when
      * lifecycle changes occur for the token, for example when the token is deleted.
      */
+    @Nullable
     @Generated
     @Selector("tokenNotificationURL")
     public native NSURL tokenNotificationURL();

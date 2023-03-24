@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -49,6 +51,7 @@ public class VSUserAccount extends NSObject {
      * The identifier of the provider known to Apple that provides the account. For use only with TV Provider
      * Authentication integrated apps.
      */
+    @Nullable
     @Generated
     @Selector("accountProviderIdentifier")
     public native String accountProviderIdentifier();
@@ -77,35 +80,40 @@ public class VSUserAccount extends NSObject {
      * authenticate the user seamlessly without requiring username/password.
      * This data is not accessible by Apple.
      */
+    @Nullable
     @Generated
     @Selector("authenticationData")
     public native String authenticationData();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Identifies the billing group associated with the subscription.
      */
+    @Nullable
     @Generated
     @Selector("billingIdentifier")
     public native String billingIdentifier();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -136,6 +144,7 @@ public class VSUserAccount extends NSObject {
      * When an account update request is made to the application JS, this identifier will be provided in order to help
      * identify the account to be refreshed.
      */
+    @Nullable
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -150,7 +159,7 @@ public class VSUserAccount extends NSObject {
      */
     @Generated
     @Selector("initWithAccountType:updateURL:")
-    public native VSUserAccount initWithAccountTypeUpdateURL(@NInt long accountType, NSURL url);
+    public native VSUserAccount initWithAccountTypeUpdateURL(@NInt long accountType, @Nullable NSURL url);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -185,9 +194,10 @@ public class VSUserAccount extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -216,7 +226,7 @@ public class VSUserAccount extends NSObject {
      */
     @Generated
     @Selector("setAccountProviderIdentifier:")
-    public native void setAccountProviderIdentifier(String value);
+    public native void setAccountProviderIdentifier(@Nullable String value);
 
     @Generated
     @Selector("setAccountType:")
@@ -233,14 +243,14 @@ public class VSUserAccount extends NSObject {
      */
     @Generated
     @Selector("setAuthenticationData:")
-    public native void setAuthenticationData(String value);
+    public native void setAuthenticationData(@Nullable String value);
 
     /**
      * Identifies the billing group associated with the subscription.
      */
     @Generated
     @Selector("setBillingIdentifier:")
-    public native void setBillingIdentifier(String value);
+    public native void setBillingIdentifier(@Nullable String value);
 
     /**
      * Indicates that the user has deleted their account.
@@ -256,7 +266,7 @@ public class VSUserAccount extends NSObject {
      */
     @Generated
     @Selector("setIdentifier:")
-    public native void setIdentifier(String value);
+    public native void setIdentifier(@Nullable String value);
 
     /**
      * Indicates whether or not the update URL must have a certificate trusted by the system,
@@ -273,7 +283,7 @@ public class VSUserAccount extends NSObject {
      */
     @Generated
     @Selector("setSubscriptionBillingCycleEndDate:")
-    public native void setSubscriptionBillingCycleEndDate(NSDate value);
+    public native void setSubscriptionBillingCycleEndDate(@Nullable NSDate value);
 
     /**
      * Identifies a subset of content from your catalog that subscriber can play.
@@ -281,7 +291,7 @@ public class VSUserAccount extends NSObject {
      */
     @Generated
     @Selector("setTierIdentifiers:")
-    public native void setTierIdentifiers(NSArray<String> value);
+    public native void setTierIdentifiers(@Nullable NSArray<String> value);
 
     /**
      * The URL pointing to the application JS that can respond to account update requests, or nil if JS updates are not
@@ -289,7 +299,7 @@ public class VSUserAccount extends NSObject {
      */
     @Generated
     @Selector("setUpdateURL:")
-    public native void setUpdateURL(NSURL value);
+    public native void setUpdateURL(@Nullable NSURL value);
 
     @Generated
     @Selector("setVersion:")
@@ -300,6 +310,7 @@ public class VSUserAccount extends NSObject {
      * used as a heuristic to determine when a refresh should occur.
      * If there is no existing billing cycle, this value should be nil.
      */
+    @Nullable
     @Generated
     @Selector("subscriptionBillingCycleEndDate")
     public native NSDate subscriptionBillingCycleEndDate();
@@ -312,6 +323,7 @@ public class VSUserAccount extends NSObject {
      * Identifies a subset of content from your catalog that subscriber can play.
      * Matches tier identifiers that are present in the availability feed.
      */
+    @Nullable
     @Generated
     @Selector("tierIdentifiers")
     public native NSArray<String> tierIdentifiers();
@@ -320,6 +332,7 @@ public class VSUserAccount extends NSObject {
      * The URL pointing to the application JS that can respond to account update requests, or nil if JS updates are not
      * supported.
      */
+    @Nullable
     @Generated
     @Selector("updateURL")
     public native NSURL updateURL();

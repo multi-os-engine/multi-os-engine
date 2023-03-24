@@ -32,6 +32,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INSendMessageIntent. By implementing this protocol, a class can provide
@@ -65,8 +66,8 @@ public interface INSendMessageIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmSendMessage:completion:")
-    default void confirmSendMessageCompletion(INSendMessageIntent intent,
-            @ObjCBlock(name = "call_confirmSendMessageCompletion") Block_confirmSendMessageCompletion completion) {
+    default void confirmSendMessageCompletion(@NotNull INSendMessageIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmSendMessageCompletion") Block_confirmSendMessageCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -83,14 +84,14 @@ public interface INSendMessageIntentHandling {
      */
     @Generated
     @Selector("handleSendMessage:completion:")
-    void handleSendMessageCompletion(INSendMessageIntent intent,
-            @ObjCBlock(name = "call_handleSendMessageCompletion") Block_handleSendMessageCompletion completion);
+    void handleSendMessageCompletion(@NotNull INSendMessageIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleSendMessageCompletion") Block_handleSendMessageCompletion completion);
 
     @Generated
     @IsOptional
     @Selector("resolveContentForSendMessage:withCompletion:")
-    default void resolveContentForSendMessageWithCompletion(INSendMessageIntent intent,
-            @ObjCBlock(name = "call_resolveContentForSendMessageWithCompletion") Block_resolveContentForSendMessageWithCompletion completion) {
+    default void resolveContentForSendMessageWithCompletion(@NotNull INSendMessageIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveContentForSendMessageWithCompletion") Block_resolveContentForSendMessageWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,8 +105,8 @@ public interface INSendMessageIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveGroupNameForSendMessage:withCompletion:")
-    default void resolveGroupNameForSendMessageWithCompletion(INSendMessageIntent intent,
-            @ObjCBlock(name = "call_resolveGroupNameForSendMessageWithCompletion") Block_resolveGroupNameForSendMessageWithCompletion completion) {
+    default void resolveGroupNameForSendMessageWithCompletion(@NotNull INSendMessageIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveGroupNameForSendMessageWithCompletion") Block_resolveGroupNameForSendMessageWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -129,8 +130,8 @@ public interface INSendMessageIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveRecipientsForSendMessage:withCompletion:")
-    default void resolveRecipientsForSendMessageWithCompletion(INSendMessageIntent intent,
-            @ObjCBlock(name = "call_resolveRecipientsForSendMessageWithCompletion") Block_resolveRecipientsForSendMessageWithCompletion completion) {
+    default void resolveRecipientsForSendMessageWithCompletion(@NotNull INSendMessageIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveRecipientsForSendMessageWithCompletion") Block_resolveRecipientsForSendMessageWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -138,28 +139,28 @@ public interface INSendMessageIntentHandling {
     @Generated
     public interface Block_confirmSendMessageCompletion {
         @Generated
-        void call_confirmSendMessageCompletion(INSendMessageIntentResponse response);
+        void call_confirmSendMessageCompletion(@NotNull INSendMessageIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSendMessageCompletion {
         @Generated
-        void call_handleSendMessageCompletion(INSendMessageIntentResponse response);
+        void call_handleSendMessageCompletion(@NotNull INSendMessageIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveContentForSendMessageWithCompletion {
         @Generated
-        void call_resolveContentForSendMessageWithCompletion(INStringResolutionResult resolutionResult);
+        void call_resolveContentForSendMessageWithCompletion(@NotNull INStringResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveGroupNameForSendMessageWithCompletion {
         @Generated
-        void call_resolveGroupNameForSendMessageWithCompletion(INStringResolutionResult resolutionResult);
+        void call_resolveGroupNameForSendMessageWithCompletion(@NotNull INStringResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -167,7 +168,7 @@ public interface INSendMessageIntentHandling {
     public interface Block_resolveRecipientsForSendMessageWithCompletion {
         @Generated
         void call_resolveRecipientsForSendMessageWithCompletion(
-                NSArray<? extends INPersonResolutionResult> resolutionResults);
+                @NotNull NSArray<? extends INPersonResolutionResult> resolutionResults);
     }
 
     /**
@@ -176,8 +177,8 @@ public interface INSendMessageIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveRecipientsForSendMessage:completion:")
-    default void resolveRecipientsForSendMessageCompletion(INSendMessageIntent intent,
-            @ObjCBlock(name = "call_resolveRecipientsForSendMessageCompletion") Block_resolveRecipientsForSendMessageCompletion completion) {
+    default void resolveRecipientsForSendMessageCompletion(@NotNull INSendMessageIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveRecipientsForSendMessageCompletion") Block_resolveRecipientsForSendMessageCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -186,7 +187,7 @@ public interface INSendMessageIntentHandling {
     public interface Block_resolveRecipientsForSendMessageCompletion {
         @Generated
         void call_resolveRecipientsForSendMessageCompletion(
-                NSArray<? extends INSendMessageRecipientResolutionResult> resolutionResults);
+                @NotNull NSArray<? extends INSendMessageRecipientResolutionResult> resolutionResults);
     }
 
     /**
@@ -195,8 +196,8 @@ public interface INSendMessageIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveSpeakableGroupNameForSendMessage:withCompletion:")
-    default void resolveSpeakableGroupNameForSendMessageWithCompletion(INSendMessageIntent intent,
-            @ObjCBlock(name = "call_resolveSpeakableGroupNameForSendMessageWithCompletion") Block_resolveSpeakableGroupNameForSendMessageWithCompletion completion) {
+    default void resolveSpeakableGroupNameForSendMessageWithCompletion(@NotNull INSendMessageIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveSpeakableGroupNameForSendMessageWithCompletion") Block_resolveSpeakableGroupNameForSendMessageWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -205,7 +206,7 @@ public interface INSendMessageIntentHandling {
     public interface Block_resolveSpeakableGroupNameForSendMessageWithCompletion {
         @Generated
         void call_resolveSpeakableGroupNameForSendMessageWithCompletion(
-                INSpeakableStringResolutionResult resolutionResult);
+                @NotNull INSpeakableStringResolutionResult resolutionResult);
     }
 
     /**
@@ -214,8 +215,8 @@ public interface INSendMessageIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveOutgoingMessageTypeForSendMessage:withCompletion:")
-    default void resolveOutgoingMessageTypeForSendMessageWithCompletion(INSendMessageIntent intent,
-            @ObjCBlock(name = "call_resolveOutgoingMessageTypeForSendMessageWithCompletion") Block_resolveOutgoingMessageTypeForSendMessageWithCompletion completion) {
+    default void resolveOutgoingMessageTypeForSendMessageWithCompletion(@NotNull INSendMessageIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveOutgoingMessageTypeForSendMessageWithCompletion") Block_resolveOutgoingMessageTypeForSendMessageWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -224,6 +225,6 @@ public interface INSendMessageIntentHandling {
     public interface Block_resolveOutgoingMessageTypeForSendMessageWithCompletion {
         @Generated
         void call_resolveOutgoingMessageTypeForSendMessageWithCompletion(
-                INOutgoingMessageTypeResolutionResult resolutionResult);
+                @NotNull INOutgoingMessageTypeResolutionResult resolutionResult);
     }
 }

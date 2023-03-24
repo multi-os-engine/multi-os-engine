@@ -21,6 +21,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This object is the main configuration mechanism for the communication between two processes. Each NSXPCConnection
@@ -67,22 +69,25 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -103,6 +108,7 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     @Selector("effectiveUserIdentifier")
     public native int effectiveUserIdentifier();
 
+    @NotNull
     @Generated
     @Selector("endpoint")
     public native NSXPCListenerEndpoint endpoint();
@@ -111,6 +117,7 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
      * The interface that describes messages that are allowed to be received by the exported object on this connection.
      * This value is required if a exported object is set.
      */
+    @Nullable
     @Generated
     @Selector("exportedInterface")
     public native NSXPCInterface exportedInterface();
@@ -121,6 +128,7 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
      * non-main queue. The receiver is responsible for handling the messages on a different queue or thread if it is
      * required.
      */
+    @Nullable
     @Generated
     @Selector("exportedObject")
     @MappedReturn(ObjCObjectMapper.class)
@@ -140,7 +148,7 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
      */
     @Generated
     @Selector("initWithListenerEndpoint:")
-    public native NSXPCConnection initWithListenerEndpoint(NSXPCListenerEndpoint endpoint);
+    public native NSXPCConnection initWithListenerEndpoint(@NotNull NSXPCListenerEndpoint endpoint);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -162,6 +170,7 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
      * The interruptionHandler property is cleared after the connection becomes invalid. This is to mitigate the impact
      * of a retain cycle created by referencing the NSXPCConnection instance inside this block.
      */
+    @Nullable
     @Generated
     @Selector("interruptionHandler")
     @ObjCBlock(name = "call_interruptionHandler_ret")
@@ -193,6 +202,7 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
      * The invalidationHandler property is cleared after the connection becomes invalid. This is to mitigate the impact
      * of a retain cycle created by referencing the NSXPCConnection instance inside this block.
      */
+    @Nullable
     @Generated
     @Selector("invalidationHandler")
     @ObjCBlock(name = "call_invalidationHandler_ret")
@@ -209,9 +219,10 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -226,20 +237,23 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
      * The interface that describes messages that are allowed to be received by object that has been "imported" to this
      * connection (exported from the other side). This value is required if messages are sent over this connection.
      */
+    @Nullable
     @Generated
     @Selector("remoteObjectInterface")
     public native NSXPCInterface remoteObjectInterface();
 
+    @NotNull
     @Generated
     @Selector("remoteObjectProxy")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object remoteObjectProxy();
 
+    @NotNull
     @Generated
     @Selector("remoteObjectProxyWithErrorHandler:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object remoteObjectProxyWithErrorHandler(
-            @ObjCBlock(name = "call_remoteObjectProxyWithErrorHandler") NSXPCProxyCreating.Block_remoteObjectProxyWithErrorHandler handler);
+            @NotNull @ObjCBlock(name = "call_remoteObjectProxyWithErrorHandler") NSXPCProxyCreating.Block_remoteObjectProxyWithErrorHandler handler);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -261,6 +275,7 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     @Selector("resume")
     public native void resume();
 
+    @Nullable
     @Generated
     @Selector("serviceName")
     public native String serviceName();
@@ -271,7 +286,7 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
      */
     @Generated
     @Selector("setExportedInterface:")
-    public native void setExportedInterface(NSXPCInterface value);
+    public native void setExportedInterface(@Nullable NSXPCInterface value);
 
     /**
      * Set an exported object for the connection. Messages sent to the remoteObjectProxy from the other side of the
@@ -281,7 +296,7 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
      */
     @Generated
     @Selector("setExportedObject:")
-    public native void setExportedObject(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setExportedObject(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * The interruption handler will be called if the remote process exits or crashes. It may be possible to
@@ -293,7 +308,7 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     @Generated
     @Selector("setInterruptionHandler:")
     public native void setInterruptionHandler(
-            @ObjCBlock(name = "call_setInterruptionHandler") Block_setInterruptionHandler value);
+            @Nullable @ObjCBlock(name = "call_setInterruptionHandler") Block_setInterruptionHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -315,7 +330,7 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     @Generated
     @Selector("setInvalidationHandler:")
     public native void setInvalidationHandler(
-            @ObjCBlock(name = "call_setInvalidationHandler") Block_setInvalidationHandler value);
+            @Nullable @ObjCBlock(name = "call_setInvalidationHandler") Block_setInvalidationHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -330,7 +345,7 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
      */
     @Generated
     @Selector("setRemoteObjectInterface:")
-    public native void setRemoteObjectInterface(NSXPCInterface value);
+    public native void setRemoteObjectInterface(@Nullable NSXPCInterface value);
 
     @Generated
     @Selector("setVersion:")
@@ -347,11 +362,12 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     @Selector("suspend")
     public native void suspend();
 
+    @NotNull
     @Generated
     @Selector("synchronousRemoteObjectProxyWithErrorHandler:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object synchronousRemoteObjectProxyWithErrorHandler(
-            @ObjCBlock(name = "call_synchronousRemoteObjectProxyWithErrorHandler") NSXPCProxyCreating.Block_synchronousRemoteObjectProxyWithErrorHandler handler);
+            @NotNull @ObjCBlock(name = "call_synchronousRemoteObjectProxyWithErrorHandler") NSXPCProxyCreating.Block_synchronousRemoteObjectProxyWithErrorHandler handler);
 
     @Generated
     @Selector("version")
@@ -364,6 +380,7 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("currentConnection")
     public static native NSXPCConnection currentConnection();
@@ -379,7 +396,7 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     @Generated
     @Selector("scheduleSendBarrierBlock:")
     public native void scheduleSendBarrierBlock(
-            @ObjCBlock(name = "call_scheduleSendBarrierBlock") Block_scheduleSendBarrierBlock block);
+            @NotNull @ObjCBlock(name = "call_scheduleSendBarrierBlock") Block_scheduleSendBarrierBlock block);
 
     @Runtime(ObjCRuntime.class)
     @Generated

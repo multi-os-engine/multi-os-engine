@@ -30,6 +30,7 @@ import org.moe.natj.general.ptr.DoublePtr;
 import org.moe.natj.general.ptr.FloatPtr;
 import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -50,14 +51,16 @@ public final class HostCallbackInfo extends StructObject {
         super(peer);
     }
 
+    @Nullable
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native VoidPtr hostUserData();
 
     @Generated
     @StructureField(order = 0, isGetter = false)
-    public native void setHostUserData(VoidPtr value);
+    public native void setHostUserData(@Nullable VoidPtr value);
 
+    @Nullable
     @Generated
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_beatAndTempoProc")
@@ -66,8 +69,9 @@ public final class HostCallbackInfo extends StructObject {
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setBeatAndTempoProc(
-            @FunctionPtr(name = "call_beatAndTempoProc") Function_beatAndTempoProc value);
+            @Nullable @FunctionPtr(name = "call_beatAndTempoProc") Function_beatAndTempoProc value);
 
+    @Nullable
     @Generated
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call_musicalTimeLocationProc")
@@ -76,8 +80,9 @@ public final class HostCallbackInfo extends StructObject {
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setMusicalTimeLocationProc(
-            @FunctionPtr(name = "call_musicalTimeLocationProc") Function_musicalTimeLocationProc value);
+            @Nullable @FunctionPtr(name = "call_musicalTimeLocationProc") Function_musicalTimeLocationProc value);
 
+    @Nullable
     @Generated
     @StructureField(order = 3, isGetter = true)
     @FunctionPtr(name = "call_transportStateProc")
@@ -86,8 +91,9 @@ public final class HostCallbackInfo extends StructObject {
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setTransportStateProc(
-            @FunctionPtr(name = "call_transportStateProc") Function_transportStateProc value);
+            @Nullable @FunctionPtr(name = "call_transportStateProc") Function_transportStateProc value);
 
+    @Nullable
     @Generated
     @StructureField(order = 4, isGetter = true)
     @FunctionPtr(name = "call_transportStateProc2")
@@ -96,35 +102,37 @@ public final class HostCallbackInfo extends StructObject {
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setTransportStateProc2(
-            @FunctionPtr(name = "call_transportStateProc2") Function_transportStateProc2 value);
+            @Nullable @FunctionPtr(name = "call_transportStateProc2") Function_transportStateProc2 value);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_beatAndTempoProc {
         @Generated
-        int call_beatAndTempoProc(VoidPtr arg0, DoublePtr arg1, DoublePtr arg2);
+        int call_beatAndTempoProc(@Nullable VoidPtr arg0, @Nullable DoublePtr arg1, @Nullable DoublePtr arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_musicalTimeLocationProc {
         @Generated
-        int call_musicalTimeLocationProc(VoidPtr arg0, IntPtr arg1, FloatPtr arg2, IntPtr arg3, DoublePtr arg4);
+        int call_musicalTimeLocationProc(@Nullable VoidPtr arg0, @Nullable IntPtr arg1, @Nullable FloatPtr arg2,
+                @Nullable IntPtr arg3, @Nullable DoublePtr arg4);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_transportStateProc {
         @Generated
-        int call_transportStateProc(VoidPtr arg0, BytePtr arg1, BytePtr arg2, DoublePtr arg3, BytePtr arg4,
-                DoublePtr arg5, DoublePtr arg6);
+        int call_transportStateProc(@Nullable VoidPtr arg0, @Nullable BytePtr arg1, @Nullable BytePtr arg2,
+                @Nullable DoublePtr arg3, @Nullable BytePtr arg4, @Nullable DoublePtr arg5, @Nullable DoublePtr arg6);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_transportStateProc2 {
         @Generated
-        int call_transportStateProc2(VoidPtr arg0, BytePtr arg1, BytePtr arg2, BytePtr arg3, DoublePtr arg4,
-                BytePtr arg5, DoublePtr arg6, DoublePtr arg7);
+        int call_transportStateProc2(@Nullable VoidPtr arg0, @Nullable BytePtr arg1, @Nullable BytePtr arg2,
+                @Nullable BytePtr arg3, @Nullable DoublePtr arg4, @Nullable BytePtr arg5, @Nullable DoublePtr arg6,
+                @Nullable DoublePtr arg7);
     }
 }

@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * BGTaskScheduler
@@ -63,7 +65,7 @@ public class BGTaskScheduler extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Cancel all previously submitted task requests.
@@ -74,13 +76,14 @@ public class BGTaskScheduler extends NSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Cancel a previously submitted task request.
@@ -89,12 +92,14 @@ public class BGTaskScheduler extends NSObject {
      */
     @Generated
     @Selector("cancelTaskRequestWithIdentifier:")
-    public native void cancelTaskRequestWithIdentifier(String identifier);
+    public native void cancelTaskRequestWithIdentifier(@NotNull String identifier);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,13 +125,13 @@ public class BGTaskScheduler extends NSObject {
     @Generated
     @Selector("getPendingTaskRequestsWithCompletionHandler:")
     public native void getPendingTaskRequestsWithCompletionHandler(
-            @ObjCBlock(name = "call_getPendingTaskRequestsWithCompletionHandler") Block_getPendingTaskRequestsWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_getPendingTaskRequestsWithCompletionHandler") Block_getPendingTaskRequestsWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getPendingTaskRequestsWithCompletionHandler {
         @Generated
-        void call_getPendingTaskRequestsWithCompletionHandler(NSArray<? extends BGTaskRequest> taskRequests);
+        void call_getPendingTaskRequestsWithCompletionHandler(@NotNull NSArray<? extends BGTaskRequest> taskRequests);
     }
 
     @Generated
@@ -155,9 +160,10 @@ public class BGTaskScheduler extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -184,14 +190,15 @@ public class BGTaskScheduler extends NSObject {
      */
     @Generated
     @Selector("registerForTaskWithIdentifier:usingQueue:launchHandler:")
-    public native boolean registerForTaskWithIdentifierUsingQueueLaunchHandler(String identifier, NSObject queue,
-            @ObjCBlock(name = "call_registerForTaskWithIdentifierUsingQueueLaunchHandler") Block_registerForTaskWithIdentifierUsingQueueLaunchHandler launchHandler);
+    public native boolean registerForTaskWithIdentifierUsingQueueLaunchHandler(@NotNull String identifier,
+            @Nullable NSObject queue,
+            @NotNull @ObjCBlock(name = "call_registerForTaskWithIdentifierUsingQueueLaunchHandler") Block_registerForTaskWithIdentifierUsingQueueLaunchHandler launchHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_registerForTaskWithIdentifierUsingQueueLaunchHandler {
         @Generated
-        void call_registerForTaskWithIdentifierUsingQueueLaunchHandler(BGTask task);
+        void call_registerForTaskWithIdentifierUsingQueueLaunchHandler(@NotNull BGTask task);
     }
 
     @Generated
@@ -206,6 +213,7 @@ public class BGTaskScheduler extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("sharedScheduler")
     public static native BGTaskScheduler sharedScheduler();
@@ -222,8 +230,8 @@ public class BGTaskScheduler extends NSObject {
      */
     @Generated
     @Selector("submitTaskRequest:error:")
-    public native boolean submitTaskRequestError(BGTaskRequest taskRequest,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean submitTaskRequestError(@NotNull BGTaskRequest taskRequest,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("superclass")

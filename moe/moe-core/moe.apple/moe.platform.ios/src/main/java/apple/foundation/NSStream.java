@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSStream is an abstract class encapsulating the common API to NSInputStream and NSOutputStream.
@@ -73,22 +75,25 @@ public class NSStream extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -107,8 +112,8 @@ public class NSStream extends NSObject {
     @Generated
     @Selector("getBoundStreamsWithBufferSize:inputStream:outputStream:")
     public static native void getBoundStreamsWithBufferSizeInputStreamOutputStream(@NUInt long bufferSize,
-            @ReferenceInfo(type = NSInputStream.class) Ptr<NSInputStream> inputStream,
-            @ReferenceInfo(type = NSOutputStream.class) Ptr<NSOutputStream> outputStream);
+            @Nullable @ReferenceInfo(type = NSInputStream.class) Ptr<NSInputStream> inputStream,
+            @Nullable @ReferenceInfo(type = NSOutputStream.class) Ptr<NSOutputStream> outputStream);
 
     /**
      * API-Since: 8.0
@@ -118,9 +123,9 @@ public class NSStream extends NSObject {
     @Deprecated
     @Generated
     @Selector("getStreamsToHostWithName:port:inputStream:outputStream:")
-    public static native void getStreamsToHostWithNamePortInputStreamOutputStream(String hostname, @NInt long port,
-            @ReferenceInfo(type = NSInputStream.class) Ptr<NSInputStream> inputStream,
-            @ReferenceInfo(type = NSOutputStream.class) Ptr<NSOutputStream> outputStream);
+    public static native void getStreamsToHostWithNamePortInputStreamOutputStream(@NotNull String hostname,
+            @NInt long port, @Nullable @ReferenceInfo(type = NSInputStream.class) Ptr<NSInputStream> inputStream,
+            @Nullable @ReferenceInfo(type = NSOutputStream.class) Ptr<NSOutputStream> outputStream);
 
     @Generated
     @Selector("hash")
@@ -144,9 +149,10 @@ public class NSStream extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -178,6 +184,7 @@ public class NSStream extends NSObject {
     @Selector("close")
     public native void close();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -195,25 +202,26 @@ public class NSStream extends NSObject {
      * By default, a stream is its own delegate, and subclassers of NSInputStream and NSOutputStream must maintain this
      * contract. [someStream setDelegate:nil] must restore this behavior. As usual, delegates are not retained.
      */
+    @Nullable
     @Generated
     @Selector("propertyForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object propertyForKey(String key);
+    public native Object propertyForKey(@NotNull String key);
 
     @Generated
     @Selector("removeFromRunLoop:forMode:")
-    public native void removeFromRunLoopForMode(NSRunLoop aRunLoop, String mode);
+    public native void removeFromRunLoopForMode(@NotNull NSRunLoop aRunLoop, @NotNull String mode);
 
     @Generated
     @Selector("scheduleInRunLoop:forMode:")
-    public native void scheduleInRunLoopForMode(NSRunLoop aRunLoop, String mode);
+    public native void scheduleInRunLoopForMode(@NotNull NSRunLoop aRunLoop, @NotNull String mode);
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSStreamDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) NSStreamDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) NSStreamDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSStreamDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -226,8 +234,10 @@ public class NSStream extends NSObject {
 
     @Generated
     @Selector("setProperty:forKey:")
-    public native boolean setPropertyForKey(@Mapped(ObjCObjectMapper.class) Object property, String key);
+    public native boolean setPropertyForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object property,
+            @NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("streamError")
     public native NSError streamError();

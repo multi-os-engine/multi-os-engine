@@ -12,6 +12,8 @@ import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] CHHapticPatternPlayer
@@ -35,7 +37,7 @@ public interface CHHapticPatternPlayer {
      */
     @Generated
     @Selector("cancelAndReturnError:")
-    boolean cancelAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    boolean cancelAndReturnError(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] isMuted
@@ -58,8 +60,8 @@ public interface CHHapticPatternPlayer {
      */
     @Generated
     @Selector("scheduleParameterCurve:atTime:error:")
-    boolean scheduleParameterCurveAtTimeError(CHHapticParameterCurve parameterCurve, double time,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    boolean scheduleParameterCurveAtTimeError(@NotNull CHHapticParameterCurve parameterCurve, double time,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * sendParameters:atTime:error
@@ -69,8 +71,8 @@ public interface CHHapticPatternPlayer {
      */
     @Generated
     @Selector("sendParameters:atTime:error:")
-    boolean sendParametersAtTimeError(NSArray<? extends CHHapticDynamicParameter> parameters, double time,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    boolean sendParametersAtTimeError(@NotNull NSArray<? extends CHHapticDynamicParameter> parameters, double time,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] isMuted
@@ -89,7 +91,7 @@ public interface CHHapticPatternPlayer {
      */
     @Generated
     @Selector("startAtTime:error:")
-    boolean startAtTimeError(double time, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    boolean startAtTimeError(double time, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * stopAtTime:error
@@ -99,5 +101,5 @@ public interface CHHapticPatternPlayer {
      */
     @Generated
     @Selector("stopAtTime:error:")
-    boolean stopAtTimeError(double time, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    boolean stopAtTimeError(double time, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 }

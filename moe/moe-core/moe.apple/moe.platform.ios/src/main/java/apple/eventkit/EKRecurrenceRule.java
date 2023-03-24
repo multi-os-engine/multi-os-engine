@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * EKRecurrenceRule
@@ -86,22 +88,25 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -136,9 +141,10 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -171,15 +177,17 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
      * 
      * Calendar used by this recurrence rule.
      */
+    @NotNull
     @Generated
     @Selector("calendarIdentifier")
     public native String calendarIdentifier();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] daysOfTheMonth
@@ -192,6 +200,7 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
      * For all other EKRecurrenceRules, this property is nil. This property corresponds to BYMONTHDAY in the iCalendar
      * specification.
      */
+    @Nullable
     @Generated
     @Selector("daysOfTheMonth")
     public native NSArray<? extends NSNumber> daysOfTheMonth();
@@ -206,6 +215,7 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
      * corresponding to the days of the week the event recurs. For all other EKRecurrenceRules, this property is nil.
      * This property corresponds to BYDAY in the iCalendar specification.
      */
+    @Nullable
     @Generated
     @Selector("daysOfTheWeek")
     public native NSArray<? extends EKRecurrenceDayOfWeek> daysOfTheWeek();
@@ -221,6 +231,7 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
      * It should
      * contain values between 1 to 366 or -366 to -1.
      */
+    @Nullable
     @Generated
     @Selector("daysOfTheYear")
     public native NSArray<? extends NSNumber> daysOfTheYear();
@@ -301,10 +312,10 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
     @Generated
     @Selector("initRecurrenceWithFrequency:interval:daysOfTheWeek:daysOfTheMonth:monthsOfTheYear:weeksOfTheYear:daysOfTheYear:setPositions:end:")
     public native EKRecurrenceRule initRecurrenceWithFrequencyIntervalDaysOfTheWeekDaysOfTheMonthMonthsOfTheYearWeeksOfTheYearDaysOfTheYearSetPositionsEnd(
-            @NInt long type, @NInt long interval, NSArray<? extends EKRecurrenceDayOfWeek> days,
-            NSArray<? extends NSNumber> monthDays, NSArray<? extends NSNumber> months,
-            NSArray<? extends NSNumber> weeksOfTheYear, NSArray<? extends NSNumber> daysOfTheYear,
-            NSArray<? extends NSNumber> setPositions, EKRecurrenceEnd end);
+            @NInt long type, @NInt long interval, @Nullable NSArray<? extends EKRecurrenceDayOfWeek> days,
+            @Nullable NSArray<? extends NSNumber> monthDays, @Nullable NSArray<? extends NSNumber> months,
+            @Nullable NSArray<? extends NSNumber> weeksOfTheYear, @Nullable NSArray<? extends NSNumber> daysOfTheYear,
+            @Nullable NSArray<? extends NSNumber> setPositions, @Nullable EKRecurrenceEnd end);
 
     /**
      * initRecurrenceWithFrequency:interval:end:
@@ -317,7 +328,7 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
     @Generated
     @Selector("initRecurrenceWithFrequency:interval:end:")
     public native EKRecurrenceRule initRecurrenceWithFrequencyIntervalEnd(@NInt long type, @NInt long interval,
-            EKRecurrenceEnd end);
+            @Nullable EKRecurrenceEnd end);
 
     /**
      * [@property] interval
@@ -343,6 +354,7 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
      * other
      * EKRecurrenceRules, this property is nil. This property corresponds to BYMONTH in the iCalendar specification.
      */
+    @Nullable
     @Generated
     @Selector("monthsOfTheYear")
     public native NSArray<? extends NSNumber> monthsOfTheYear();
@@ -354,6 +366,7 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
      * of
      * occurrences, or with an end date.
      */
+    @Nullable
     @Generated
     @Selector("recurrenceEnd")
     public native EKRecurrenceEnd recurrenceEnd();
@@ -370,6 +383,7 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
      * the last weekday in the recurrence range (month, year, etc). This value corresponds to the iCalendar BYSETPOS
      * property.
      */
+    @Nullable
     @Generated
     @Selector("setPositions")
     public native NSArray<? extends NSNumber> setPositions();
@@ -383,7 +397,7 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
      */
     @Generated
     @Selector("setRecurrenceEnd:")
-    public native void setRecurrenceEnd(EKRecurrenceEnd value);
+    public native void setRecurrenceEnd(@Nullable EKRecurrenceEnd value);
 
     /**
      * [@property] weeksOfTheYear
@@ -396,6 +410,7 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
      * should
      * contain integers from 1 to 53 or -1 to -53.
      */
+    @Nullable
     @Generated
     @Selector("weeksOfTheYear")
     public native NSArray<? extends NSNumber> weeksOfTheYear();

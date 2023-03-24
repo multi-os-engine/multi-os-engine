@@ -23,6 +23,8 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Used by +[CIFilter registerFilterName:constructor:classAttributes:]
@@ -32,7 +34,8 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CIFilterConstructor")
 public interface CIFilterConstructor {
+    @Nullable
     @Generated
     @Selector("filterWithName:")
-    CIFilter filterWithName(String name);
+    CIFilter filterWithName(@NotNull String name);
 }

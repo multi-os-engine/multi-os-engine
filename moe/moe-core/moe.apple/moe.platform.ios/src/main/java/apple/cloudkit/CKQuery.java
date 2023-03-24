@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CKQuery
@@ -98,22 +100,25 @@ public class CKQuery extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -148,9 +153,10 @@ public class CKQuery extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -182,15 +188,16 @@ public class CKQuery extends NSObject implements NSSecureCoding, NSCopying {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -198,7 +205,7 @@ public class CKQuery extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKQuery initWithCoder(NSCoder aDecoder);
+    public native CKQuery initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * Use @code [NSPredicate predicateWithValue:YES] / NSPredicate(value: true) @endcode if you want to query for all
@@ -206,20 +213,23 @@ public class CKQuery extends NSObject implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("initWithRecordType:predicate:")
-    public native CKQuery initWithRecordTypePredicate(String recordType, NSPredicate predicate);
+    public native CKQuery initWithRecordTypePredicate(@NotNull String recordType, @NotNull NSPredicate predicate);
 
+    @NotNull
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();
 
+    @NotNull
     @Generated
     @Selector("recordType")
     public native String recordType();
 
     @Generated
     @Selector("setSortDescriptors:")
-    public native void setSortDescriptors(NSArray<? extends NSSortDescriptor> value);
+    public native void setSortDescriptors(@Nullable NSArray<? extends NSSortDescriptor> value);
 
+    @Nullable
     @Generated
     @Selector("sortDescriptors")
     public native NSArray<? extends NSSortDescriptor> sortDescriptors();

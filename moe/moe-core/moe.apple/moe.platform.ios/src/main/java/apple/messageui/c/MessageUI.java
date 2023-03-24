@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("MessageUI")
@@ -48,6 +49,7 @@ public final class MessageUI {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -56,6 +58,7 @@ public final class MessageUI {
     /**
      * [@constant] MFMessageComposeViewControllerAttachmentURL The url for the given attachment.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -65,6 +68,7 @@ public final class MessageUI {
      * [@constant] MFMessageComposeViewControllerAttachmentAlternateFilename The alternate filename for the given
      * attachment.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -80,6 +84,7 @@ public final class MessageUI {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -96,6 +101,7 @@ public final class MessageUI {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

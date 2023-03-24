@@ -15,6 +15,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.metal.struct.MTLOrigin;
 import apple.metal.struct.MTLSize;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 13.0
@@ -37,7 +38,7 @@ public interface MTLResourceStateCommandEncoder extends MTLCommandEncoder {
      */
     @Generated
     @Selector("updateFence:")
-    void updateFence(@Mapped(ObjCObjectMapper.class) MTLFence fence);
+    void updateFence(@NotNull @Mapped(ObjCObjectMapper.class) MTLFence fence);
 
     /**
      * updateTextureMapping:indirectBuffer:indirectBufferOffset:
@@ -54,9 +55,9 @@ public interface MTLResourceStateCommandEncoder extends MTLCommandEncoder {
      */
     @Generated
     @Selector("updateTextureMapping:mode:indirectBuffer:indirectBufferOffset:")
-    void updateTextureMappingModeIndirectBufferIndirectBufferOffset(@Mapped(ObjCObjectMapper.class) MTLTexture texture,
-            @NUInt long mode, @Mapped(ObjCObjectMapper.class) MTLBuffer indirectBuffer,
-            @NUInt long indirectBufferOffset);
+    void updateTextureMappingModeIndirectBufferIndirectBufferOffset(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture texture, @NUInt long mode,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer indirectBuffer, @NUInt long indirectBufferOffset);
 
     /**
      * updateTextureMapping:region:mipLevel:slice:mode:
@@ -67,7 +68,7 @@ public interface MTLResourceStateCommandEncoder extends MTLCommandEncoder {
      */
     @Generated
     @Selector("updateTextureMapping:mode:region:mipLevel:slice:")
-    void updateTextureMappingModeRegionMipLevelSlice(@Mapped(ObjCObjectMapper.class) MTLTexture texture,
+    void updateTextureMappingModeRegionMipLevelSlice(@NotNull @Mapped(ObjCObjectMapper.class) MTLTexture texture,
             @NUInt long mode, @ByValue MTLRegion region, @NUInt long mipLevel, @NUInt long slice);
 
     /**
@@ -79,9 +80,10 @@ public interface MTLResourceStateCommandEncoder extends MTLCommandEncoder {
      */
     @Generated
     @Selector("updateTextureMappings:mode:regions:mipLevels:slices:numRegions:")
-    void updateTextureMappingsModeRegionsMipLevelsSlicesNumRegions(@Mapped(ObjCObjectMapper.class) MTLTexture texture,
-            @NUInt long mode, @UncertainArgument("Options: reference, array Fallback: reference") MTLRegion regions,
-            ConstNUIntPtr mipLevels, ConstNUIntPtr slices, @NUInt long numRegions);
+    void updateTextureMappingsModeRegionsMipLevelsSlicesNumRegions(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture texture, @NUInt long mode,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MTLRegion regions,
+            @NotNull ConstNUIntPtr mipLevels, @NotNull ConstNUIntPtr slices, @NUInt long numRegions);
 
     /**
      * waitForFence:
@@ -96,7 +98,7 @@ public interface MTLResourceStateCommandEncoder extends MTLCommandEncoder {
      */
     @Generated
     @Selector("waitForFence:")
-    void waitForFence(@Mapped(ObjCObjectMapper.class) MTLFence fence);
+    void waitForFence(@NotNull @Mapped(ObjCObjectMapper.class) MTLFence fence);
 
     /**
      * moveTextureMappingsFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:
@@ -112,8 +114,8 @@ public interface MTLResourceStateCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("moveTextureMappingsFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:")
     void moveTextureMappingsFromTextureSourceSliceSourceLevelSourceOriginSourceSizeToTextureDestinationSliceDestinationLevelDestinationOrigin(
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture, @NUInt long sourceSlice, @NUInt long sourceLevel,
-            @ByValue MTLOrigin sourceOrigin, @ByValue MTLSize sourceSize,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture, @NUInt long destinationSlice,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture, @NUInt long sourceSlice,
+            @NUInt long sourceLevel, @ByValue MTLOrigin sourceOrigin, @ByValue MTLSize sourceSize,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture, @NUInt long destinationSlice,
             @NUInt long destinationLevel, @ByValue MTLOrigin destinationOrigin);
 }

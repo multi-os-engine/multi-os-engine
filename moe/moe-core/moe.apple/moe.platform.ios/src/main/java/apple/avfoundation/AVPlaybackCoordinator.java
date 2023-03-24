@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVPlaybackCoordinator
@@ -73,7 +75,7 @@ public class AVPlaybackCoordinator extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * beginSuspensionForReason:
@@ -93,24 +95,28 @@ public class AVPlaybackCoordinator extends NSObject {
      *                         Indicates the reason for the suspension that is shared with other participants. Can be a
      *                         system-defined reason (see AVCoordinatedPlaybackSuspensionReason*) or a custom string.
      */
+    @NotNull
     @Generated
     @Selector("beginSuspensionForReason:")
-    public native AVCoordinatedPlaybackSuspension beginSuspensionForReason(String suspensionReason);
+    public native AVCoordinatedPlaybackSuspension beginSuspensionForReason(@NotNull String suspensionReason);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -163,9 +169,10 @@ public class AVPlaybackCoordinator extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -181,6 +188,7 @@ public class AVPlaybackCoordinator extends NSObject {
      * [@note] The coordinator posts AVPlaybackCoordinatorOtherParticipantsDidChangeNotification when the contents of
      * the array changes.
      */
+    @NotNull
     @Generated
     @Selector("otherParticipants")
     public native NSArray<? extends AVCoordinatedPlaybackParticipant> otherParticipants();
@@ -194,7 +202,7 @@ public class AVPlaybackCoordinator extends NSObject {
     @Generated
     @Selector("participantLimitForWaitingOutSuspensionsWithReason:")
     @NInt
-    public native long participantLimitForWaitingOutSuspensionsWithReason(String reason);
+    public native long participantLimitForWaitingOutSuspensionsWithReason(@NotNull String reason);
 
     /**
      * [@property] pauseSnapsToMediaTimeOfOriginator
@@ -231,7 +239,7 @@ public class AVPlaybackCoordinator extends NSObject {
     @Generated
     @Selector("setParticipantLimit:forWaitingOutSuspensionsWithReason:")
     public native void setParticipantLimitForWaitingOutSuspensionsWithReason(@NInt long participantLimit,
-            String reason);
+            @NotNull String reason);
 
     /**
      * [@property] pauseSnapsToMediaTimeOfOriginator
@@ -254,7 +262,7 @@ public class AVPlaybackCoordinator extends NSObject {
      */
     @Generated
     @Selector("setSuspensionReasonsThatTriggerWaiting:")
-    public native void setSuspensionReasonsThatTriggerWaiting(NSArray<String> value);
+    public native void setSuspensionReasonsThatTriggerWaiting(@NotNull NSArray<String> value);
 
     @Generated
     @Selector("setVersion:")
@@ -271,6 +279,7 @@ public class AVPlaybackCoordinator extends NSObject {
      * 
      * If the list of reasons is non-empty, the coordinator will not react to any changes of group playback state.
      */
+    @NotNull
     @Generated
     @Selector("suspensionReasons")
     public native NSArray<String> suspensionReasons();
@@ -280,6 +289,7 @@ public class AVPlaybackCoordinator extends NSObject {
      * 
      * If the coordinator decides to delay playback to wait for others, it will wait out these reasons, but not others.
      */
+    @NotNull
     @Generated
     @Selector("suspensionReasonsThatTriggerWaiting")
     public native NSArray<String> suspensionReasonsThatTriggerWaiting();

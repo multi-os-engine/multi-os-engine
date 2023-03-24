@@ -29,6 +29,7 @@ import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Protocol to which principal classes of v3 audio units (extensions) must conform.
@@ -55,8 +56,9 @@ public interface AUAudioUnitFactory extends NSExtensionRequestHandling {
      * C functions); the implementor should return an object with reference count 1 but
      * autoreleased.
      */
+    @Nullable
     @Generated
     @Selector("createAudioUnitWithComponentDescription:error:")
     AUAudioUnit createAudioUnitWithComponentDescriptionError(@ByValue AudioComponentDescription desc,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

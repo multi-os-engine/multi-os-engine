@@ -15,6 +15,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 16.0
@@ -30,8 +31,8 @@ public interface PTChannelManagerDelegate {
      */
     @Generated
     @Selector("channelManager:channelUUID:didBeginTransmittingFromSource:")
-    void channelManagerChannelUUIDDidBeginTransmittingFromSource(PTChannelManager channelManager, NSUUID channelUUID,
-            @NInt long source);
+    void channelManagerChannelUUIDDidBeginTransmittingFromSource(@NotNull PTChannelManager channelManager,
+            @NotNull NSUUID channelUUID, @NInt long source);
 
     /**
      * This method is called when the user stops pressing the Talk button in the system user interface, when a
@@ -39,62 +40,64 @@ public interface PTChannelManagerDelegate {
      */
     @Generated
     @Selector("channelManager:channelUUID:didEndTransmittingFromSource:")
-    void channelManagerChannelUUIDDidEndTransmittingFromSource(PTChannelManager channelManager, NSUUID channelUUID,
-            @NInt long source);
+    void channelManagerChannelUUIDDidEndTransmittingFromSource(@NotNull PTChannelManager channelManager,
+            @NotNull NSUUID channelUUID, @NInt long source);
 
     @Generated
     @Selector("channelManager:didActivateAudioSession:")
-    void channelManagerDidActivateAudioSession(PTChannelManager channelManager, AVAudioSession audioSession);
+    void channelManagerDidActivateAudioSession(@NotNull PTChannelManager channelManager,
+            @NotNull AVAudioSession audioSession);
 
     @Generated
     @Selector("channelManager:didDeactivateAudioSession:")
-    void channelManagerDidDeactivateAudioSession(PTChannelManager channelManager, AVAudioSession audioSession);
+    void channelManagerDidDeactivateAudioSession(@NotNull PTChannelManager channelManager,
+            @NotNull AVAudioSession audioSession);
 
     /**
      * This method is called when your channel becomes active in the system user interface
      */
     @Generated
     @Selector("channelManager:didJoinChannelWithUUID:reason:")
-    void channelManagerDidJoinChannelWithUUIDReason(PTChannelManager channelManager, NSUUID channelUUID,
-            @NInt long reason);
+    void channelManagerDidJoinChannelWithUUIDReason(@NotNull PTChannelManager channelManager,
+            @NotNull NSUUID channelUUID, @NInt long reason);
 
     /**
      * This method is called once your channel is ended
      */
     @Generated
     @Selector("channelManager:didLeaveChannelWithUUID:reason:")
-    void channelManagerDidLeaveChannelWithUUIDReason(PTChannelManager channelManager, NSUUID channelUUID,
-            @NInt long reason);
+    void channelManagerDidLeaveChannelWithUUIDReason(@NotNull PTChannelManager channelManager,
+            @NotNull NSUUID channelUUID, @NInt long reason);
 
     @Generated
     @IsOptional
     @Selector("channelManager:failedToBeginTransmittingInChannelWithUUID:error:")
-    default void channelManagerFailedToBeginTransmittingInChannelWithUUIDError(PTChannelManager channelManager,
-            NSUUID channelUUID, NSError error) {
+    default void channelManagerFailedToBeginTransmittingInChannelWithUUIDError(@NotNull PTChannelManager channelManager,
+            @NotNull NSUUID channelUUID, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("channelManager:failedToJoinChannelWithUUID:error:")
-    default void channelManagerFailedToJoinChannelWithUUIDError(PTChannelManager channelManager, NSUUID channelUUID,
-            NSError error) {
+    default void channelManagerFailedToJoinChannelWithUUIDError(@NotNull PTChannelManager channelManager,
+            @NotNull NSUUID channelUUID, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("channelManager:failedToLeaveChannelWithUUID:error:")
-    default void channelManagerFailedToLeaveChannelWithUUIDError(PTChannelManager channelManager, NSUUID channelUUID,
-            NSError error) {
+    default void channelManagerFailedToLeaveChannelWithUUIDError(@NotNull PTChannelManager channelManager,
+            @NotNull NSUUID channelUUID, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("channelManager:failedToStopTransmittingInChannelWithUUID:error:")
-    default void channelManagerFailedToStopTransmittingInChannelWithUUIDError(PTChannelManager channelManager,
-            NSUUID channelUUID, NSError error) {
+    default void channelManagerFailedToStopTransmittingInChannelWithUUIDError(@NotNull PTChannelManager channelManager,
+            @NotNull NSUUID channelUUID, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -106,14 +109,15 @@ public interface PTChannelManagerDelegate {
      */
     @Generated
     @Selector("channelManager:receivedEphemeralPushToken:")
-    void channelManagerReceivedEphemeralPushToken(PTChannelManager channelManager, NSData pushToken);
+    void channelManagerReceivedEphemeralPushToken(@NotNull PTChannelManager channelManager, @NotNull NSData pushToken);
 
     /**
      * This method is called for each incoming push. You must instantiate and return nonnil PTPushResult for each
      * incoming push. The system will fulfill the action specified by the PTPushResult on your behalf automatically.
      */
+    @NotNull
     @Generated
     @Selector("incomingPushResultForChannelManager:channelUUID:pushPayload:")
-    PTPushResult incomingPushResultForChannelManagerChannelUUIDPushPayload(PTChannelManager channelManager,
-            NSUUID channelUUID, NSDictionary<String, ?> pushPayload);
+    PTPushResult incomingPushResultForChannelManagerChannelUUIDPushPayload(@NotNull PTChannelManager channelManager,
+            @NotNull NSUUID channelUUID, @NotNull NSDictionary<String, ?> pushPayload);
 }

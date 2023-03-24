@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.4
@@ -57,31 +59,35 @@ public class UIPointerStyle extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -99,6 +105,7 @@ public class UIPointerStyle extends NSObject implements NSCopying {
     /**
      * Hides the pointer when hovering over the current region.
      */
+    @NotNull
     @Generated
     @Selector("hiddenPointerStyle")
     public static native UIPointerStyle hiddenPointerStyle();
@@ -124,9 +131,10 @@ public class UIPointerStyle extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -154,7 +162,8 @@ public class UIPointerStyle extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("styleWithEffect:shape:")
-    public static native UIPointerStyle styleWithEffectShape(UIPointerEffect effect, UIPointerShape shape);
+    public static native UIPointerStyle styleWithEffectShape(@NotNull UIPointerEffect effect,
+            @Nullable UIPointerShape shape);
 
     /**
      * Morphs the pointer into the provided shape when hovering over the current region.
@@ -164,7 +173,7 @@ public class UIPointerStyle extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("styleWithShape:constrainedAxes:")
-    public static native UIPointerStyle styleWithShapeConstrainedAxes(UIPointerShape shape, @NUInt long axes);
+    public static native UIPointerStyle styleWithShapeConstrainedAxes(@NotNull UIPointerShape shape, @NUInt long axes);
 
     @Generated
     @Selector("superclass")
@@ -181,6 +190,7 @@ public class UIPointerStyle extends NSObject implements NSCopying {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("accessories")
     public native NSArray<? extends UIPointerAccessory> accessories();
@@ -193,7 +203,7 @@ public class UIPointerStyle extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setAccessories:")
-    public native void setAccessories(NSArray<? extends UIPointerAccessory> value);
+    public native void setAccessories(@NotNull NSArray<? extends UIPointerAccessory> value);
 
     /**
      * Pointer style that displays an unconstrained system pointer. Use this to display accessories alongside the
@@ -201,6 +211,7 @@ public class UIPointerStyle extends NSObject implements NSCopying {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("systemPointerStyle")
     public static native UIPointerStyle systemPointerStyle();

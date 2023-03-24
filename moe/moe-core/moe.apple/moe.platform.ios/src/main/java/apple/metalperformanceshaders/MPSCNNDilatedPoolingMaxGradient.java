@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNDilatedPoolingMaxGradient
@@ -64,22 +66,25 @@ public class MPSCNNDilatedPoolingMaxGradient extends MPSCNNPoolingGradient {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -103,7 +108,7 @@ public class MPSCNNDilatedPoolingMaxGradient extends MPSCNNPoolingGradient {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNDilatedPoolingMaxGradient initWithCoder(NSCoder aDecoder);
+    public native MPSCNNDilatedPoolingMaxGradient initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
@@ -116,17 +121,19 @@ public class MPSCNNDilatedPoolingMaxGradient extends MPSCNNPoolingGradient {
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNDilatedPoolingMaxGradient initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNDilatedPoolingMaxGradient initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNDilatedPoolingMaxGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNDilatedPoolingMaxGradient initWithDevice(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:")
     public native MPSCNNDilatedPoolingMaxGradient initWithDeviceKernelWidthKernelHeight(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth,
+            @NUInt long kernelHeight);
 
     /**
      * Initialize a MPSCNNDilatedPoolingMaxGradient pooling filter
@@ -143,15 +150,15 @@ public class MPSCNNDilatedPoolingMaxGradient extends MPSCNNPoolingGradient {
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:dilationRateX:dilationRateY:strideInPixelsX:strideInPixelsY:")
     public native MPSCNNDilatedPoolingMaxGradient initWithDeviceKernelWidthKernelHeightDilationRateXDilationRateYStrideInPixelsXStrideInPixelsY(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight,
-            @NUInt long dilationRateX, @NUInt long dilationRateY, @NUInt long strideInPixelsX,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth,
+            @NUInt long kernelHeight, @NUInt long dilationRateX, @NUInt long dilationRateY, @NUInt long strideInPixelsX,
             @NUInt long strideInPixelsY);
 
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:")
     public native MPSCNNDilatedPoolingMaxGradient initWithDeviceKernelWidthKernelHeightStrideInPixelsXStrideInPixelsY(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight,
-            @NUInt long strideInPixelsX, @NUInt long strideInPixelsY);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth,
+            @NUInt long kernelHeight, @NUInt long strideInPixelsX, @NUInt long strideInPixelsY);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -170,9 +177,10 @@ public class MPSCNNDilatedPoolingMaxGradient extends MPSCNNPoolingGradient {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

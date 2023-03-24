@@ -9,6 +9,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An object conforming to \c GCRelativeInput represents an input that reports
@@ -37,6 +39,7 @@ public interface GCRelativeInput {
      *              The amount that the input has changed since the last time
      *              \c deltaDidChangeHandler fired.
      */
+    @Nullable
     @Generated
     @Selector("deltaDidChangeHandler")
     @ObjCBlock(name = "call_deltaDidChangeHandler_ret")
@@ -46,8 +49,8 @@ public interface GCRelativeInput {
     @Generated
     public interface Block_deltaDidChangeHandler_ret {
         @Generated
-        void call_deltaDidChangeHandler_ret(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, float arg2);
+        void call_deltaDidChangeHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, float arg2);
     }
 
     /**
@@ -92,13 +95,13 @@ public interface GCRelativeInput {
     @Generated
     @Selector("setDeltaDidChangeHandler:")
     void setDeltaDidChangeHandler(
-            @ObjCBlock(name = "call_setDeltaDidChangeHandler") Block_setDeltaDidChangeHandler value);
+            @Nullable @ObjCBlock(name = "call_setDeltaDidChangeHandler") Block_setDeltaDidChangeHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setDeltaDidChangeHandler {
         @Generated
-        void call_setDeltaDidChangeHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, float arg2);
+        void call_setDeltaDidChangeHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, float arg2);
     }
 }

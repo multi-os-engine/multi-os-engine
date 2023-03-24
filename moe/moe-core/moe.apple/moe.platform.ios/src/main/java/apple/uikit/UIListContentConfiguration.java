@@ -31,6 +31,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -56,6 +58,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * Returns the default configuration for an accompanied sidebar list cell.
      */
+    @NotNull
     @Generated
     @Selector("accompaniedSidebarCellConfiguration")
     public static native UIListContentConfiguration accompaniedSidebarCellConfiguration();
@@ -63,6 +66,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * Returns the default configuration for an accompanied sidebar list cell with subtitle text.
      */
+    @NotNull
     @Generated
     @Selector("accompaniedSidebarSubtitleCellConfiguration")
     public static native UIListContentConfiguration accompaniedSidebarSubtitleCellConfiguration();
@@ -81,13 +85,14 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
      * An attributed variant of the primary text, which supersedes the `text` and some properties of the
      * `textProperties` if set.
      */
+    @Nullable
     @Generated
     @Selector("attributedText")
     public native NSAttributedString attributedText();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Whether the content view will preserve inherited layout margins from its superview on the horizontal and/or
@@ -100,34 +105,39 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Returns the default configuration for a list cell.
      */
+    @NotNull
     @Generated
     @Selector("cellConfiguration")
     public static native UIListContentConfiguration cellConfiguration();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -148,11 +158,12 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Returns the default configuration for a grouped list footer.
      */
+    @NotNull
     @Generated
     @Selector("groupedFooterConfiguration")
     public static native UIListContentConfiguration groupedFooterConfiguration();
@@ -160,6 +171,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * Returns the default configuration for a grouped list header.
      */
+    @NotNull
     @Generated
     @Selector("groupedHeaderConfiguration")
     public static native UIListContentConfiguration groupedHeaderConfiguration();
@@ -172,6 +184,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * The image to display.
      */
+    @Nullable
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -179,6 +192,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * Additional properties to configure the image.
      */
+    @NotNull
     @Generated
     @Selector("imageProperties")
     public native UIListContentImageProperties imageProperties();
@@ -197,7 +211,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIListContentConfiguration initWithCoder(NSCoder coder);
+    public native UIListContentConfiguration initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -216,10 +230,12 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("makeContentView")
     public native UIView makeContentView();
@@ -232,6 +248,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * Returns the default configuration for a plain list footer.
      */
+    @NotNull
     @Generated
     @Selector("plainFooterConfiguration")
     public static native UIListContentConfiguration plainFooterConfiguration();
@@ -239,6 +256,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * Returns the default configuration for a plain list header.
      */
+    @NotNull
     @Generated
     @Selector("plainHeaderConfiguration")
     public static native UIListContentConfiguration plainHeaderConfiguration();
@@ -263,6 +281,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
      * An attributed variant of the secondary text, which supersedes the `secondaryText` and some properties of the
      * `secondaryTextProperties` if set.
      */
+    @Nullable
     @Generated
     @Selector("secondaryAttributedText")
     public native NSAttributedString secondaryAttributedText();
@@ -270,6 +289,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * The secondary text.
      */
+    @Nullable
     @Generated
     @Selector("secondaryText")
     public native String secondaryText();
@@ -277,6 +297,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * Additional properties to configure the secondary text.
      */
+    @NotNull
     @Generated
     @Selector("secondaryTextProperties")
     public native UIListContentTextProperties secondaryTextProperties();
@@ -287,7 +308,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
      */
     @Generated
     @Selector("setAttributedText:")
-    public native void setAttributedText(NSAttributedString value);
+    public native void setAttributedText(@Nullable NSAttributedString value);
 
     /**
      * Whether the content view will preserve inherited layout margins from its superview on the horizontal and/or
@@ -310,7 +331,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
      */
     @Generated
     @Selector("setImage:")
-    public native void setImage(UIImage value);
+    public native void setImage(@Nullable UIImage value);
 
     /**
      * Padding between the image and text. Only applies when there is both an image and text.
@@ -333,21 +354,21 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
      */
     @Generated
     @Selector("setSecondaryAttributedText:")
-    public native void setSecondaryAttributedText(NSAttributedString value);
+    public native void setSecondaryAttributedText(@Nullable NSAttributedString value);
 
     /**
      * The secondary text.
      */
     @Generated
     @Selector("setSecondaryText:")
-    public native void setSecondaryText(String value);
+    public native void setSecondaryText(@Nullable String value);
 
     /**
      * The primary text.
      */
     @Generated
     @Selector("setText:")
-    public native void setText(String value);
+    public native void setText(@Nullable String value);
 
     /**
      * Horizontal (minimum) padding between the text and secondary text. Only applies when there is both text and
@@ -372,6 +393,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * Returns the default configuration for a sidebar list cell.
      */
+    @NotNull
     @Generated
     @Selector("sidebarCellConfiguration")
     public static native UIListContentConfiguration sidebarCellConfiguration();
@@ -379,6 +401,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * Returns the default configuration for a sidebar list header.
      */
+    @NotNull
     @Generated
     @Selector("sidebarHeaderConfiguration")
     public static native UIListContentConfiguration sidebarHeaderConfiguration();
@@ -386,6 +409,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * Returns the default configuration for a sidebar list cell with subtitle text.
      */
+    @NotNull
     @Generated
     @Selector("sidebarSubtitleCellConfiguration")
     public static native UIListContentConfiguration sidebarSubtitleCellConfiguration();
@@ -393,6 +417,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * Returns the default configuration for a list cell with subtitle text.
      */
+    @NotNull
     @Generated
     @Selector("subtitleCellConfiguration")
     public static native UIListContentConfiguration subtitleCellConfiguration();
@@ -414,6 +439,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * The primary text.
      */
+    @Nullable
     @Generated
     @Selector("text")
     public native String text();
@@ -421,6 +447,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     /**
      * Additional properties to configure the primary text.
      */
+    @NotNull
     @Generated
     @Selector("textProperties")
     public native UIListContentTextProperties textProperties();
@@ -443,14 +470,16 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     @NFloat
     public native double textToSecondaryTextVerticalPadding();
 
+    @NotNull
     @Generated
     @Selector("updatedConfigurationForState:")
     public native UIListContentConfiguration updatedConfigurationForState(
-            @Mapped(ObjCObjectMapper.class) UIConfigurationState state);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIConfigurationState state);
 
     /**
      * Returns the default configuration for a list cell with side-by-side value text.
      */
+    @NotNull
     @Generated
     @Selector("valueCellConfiguration")
     public static native UIListContentConfiguration valueCellConfiguration();
@@ -465,6 +494,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("extraProminentInsetGroupedHeaderConfiguration")
     public static native UIListContentConfiguration extraProminentInsetGroupedHeaderConfiguration();
@@ -474,6 +504,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("prominentInsetGroupedHeaderConfiguration")
     public static native UIListContentConfiguration prominentInsetGroupedHeaderConfiguration();

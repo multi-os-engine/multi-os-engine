@@ -26,6 +26,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * The user activity delegate is responsible for updating the state of an activity and is also notified when an activity
@@ -46,8 +47,8 @@ public interface NSUserActivityDelegate {
     @Generated
     @IsOptional
     @Selector("userActivity:didReceiveInputStream:outputStream:")
-    default void userActivityDidReceiveInputStreamOutputStream(NSUserActivity userActivity, NSInputStream inputStream,
-            NSOutputStream outputStream) {
+    default void userActivityDidReceiveInputStreamOutputStream(@NotNull NSUserActivity userActivity,
+            @NotNull NSInputStream inputStream, @NotNull NSOutputStream outputStream) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -57,7 +58,7 @@ public interface NSUserActivityDelegate {
     @Generated
     @IsOptional
     @Selector("userActivityWasContinued:")
-    default void userActivityWasContinued(NSUserActivity userActivity) {
+    default void userActivityWasContinued(@NotNull NSUserActivity userActivity) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,7 +69,7 @@ public interface NSUserActivityDelegate {
     @Generated
     @IsOptional
     @Selector("userActivityWillSave:")
-    default void userActivityWillSave(NSUserActivity userActivity) {
+    default void userActivityWillSave(@NotNull NSUserActivity userActivity) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

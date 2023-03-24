@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] SCNShadable
@@ -54,8 +56,8 @@ public interface SCNShadable {
     @Generated
     @IsOptional
     @Selector("handleBindingOfSymbol:usingBlock:")
-    default void handleBindingOfSymbolUsingBlock(String symbol,
-            @ObjCBlock(name = "call_handleBindingOfSymbolUsingBlock") Block_handleBindingOfSymbolUsingBlock block) {
+    default void handleBindingOfSymbolUsingBlock(@NotNull String symbol,
+            @Nullable @ObjCBlock(name = "call_handleBindingOfSymbolUsingBlock") Block_handleBindingOfSymbolUsingBlock block) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -73,8 +75,8 @@ public interface SCNShadable {
     @Generated
     @IsOptional
     @Selector("handleUnbindingOfSymbol:usingBlock:")
-    default void handleUnbindingOfSymbolUsingBlock(String symbol,
-            @ObjCBlock(name = "call_handleUnbindingOfSymbolUsingBlock") Block_handleUnbindingOfSymbolUsingBlock block) {
+    default void handleUnbindingOfSymbolUsingBlock(@NotNull String symbol,
+            @Nullable @ObjCBlock(name = "call_handleUnbindingOfSymbolUsingBlock") Block_handleUnbindingOfSymbolUsingBlock block) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -85,6 +87,7 @@ public interface SCNShadable {
      * 
      * When a program is set, it overrides all the rendering parameters such as material settings and shaderModifiers.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("program")
@@ -102,7 +105,7 @@ public interface SCNShadable {
     @Generated
     @IsOptional
     @Selector("setProgram:")
-    default void setProgram(SCNProgram value) {
+    default void setProgram(@Nullable SCNProgram value) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -262,7 +265,7 @@ public interface SCNShadable {
     @Generated
     @IsOptional
     @Selector("setShaderModifiers:")
-    default void setShaderModifiers(NSDictionary<String, String> value) {
+    default void setShaderModifiers(@Nullable NSDictionary<String, String> value) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -419,6 +422,7 @@ public interface SCNShadable {
      * 
      * Custom uniforms can be animated using explicit animations.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("shaderModifiers")
@@ -430,16 +434,16 @@ public interface SCNShadable {
     @Generated
     public interface Block_handleBindingOfSymbolUsingBlock {
         @Generated
-        void call_handleBindingOfSymbolUsingBlock(int programID, int location, SCNNode renderedNode,
-                SCNRenderer renderer);
+        void call_handleBindingOfSymbolUsingBlock(int programID, int location, @Nullable SCNNode renderedNode,
+                @NotNull SCNRenderer renderer);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleUnbindingOfSymbolUsingBlock {
         @Generated
-        void call_handleUnbindingOfSymbolUsingBlock(int programID, int location, SCNNode renderedNode,
-                SCNRenderer renderer);
+        void call_handleUnbindingOfSymbolUsingBlock(int programID, int location, @Nullable SCNNode renderedNode,
+                @NotNull SCNRenderer renderer);
     }
 
     /**
@@ -453,6 +457,7 @@ public interface SCNShadable {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("minimumLanguageVersion")
@@ -474,7 +479,7 @@ public interface SCNShadable {
     @Generated
     @IsOptional
     @Selector("setMinimumLanguageVersion:")
-    default void setMinimumLanguageVersion(NSNumber value) {
+    default void setMinimumLanguageVersion(@Nullable NSNumber value) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

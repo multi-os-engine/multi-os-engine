@@ -51,6 +51,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The base animation class. *
@@ -94,22 +96,25 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,10 +127,11 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
      * Animations implement the same property model as defined by CALayer.
      * See CALayer.h for more details.
      */
+    @Nullable
     @Generated
     @Selector("defaultValueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultValueForKey(String key);
+    public static native Object defaultValueForKey(@NotNull String key);
 
     @Generated
     @Selector("description")
@@ -153,9 +159,10 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -188,6 +195,7 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
      * 
      * Specifies the animation events attached to the receiver.
      */
+    @Nullable
     @Generated
     @Selector("animationEvents")
     public native NSArray<? extends SCNAnimationEvent> animationEvents();
@@ -200,17 +208,19 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     @Selector("beginTime")
     public native double beginTime();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * The delegate of the animation. This object is retained for the
      * lifetime of the animation object. Defaults to nil. See below for the
      * supported delegate methods.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -222,7 +232,7 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] fadeInDuration
@@ -250,6 +260,7 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     @NFloat
     public native double fadeOutDuration();
 
+    @NotNull
     @Generated
     @Selector("fillMode")
     public native String fillMode();
@@ -260,7 +271,7 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAAnimation initWithCoder(NSCoder coder);
+    public native CAAnimation initWithCoder(@NotNull NSCoder coder);
 
     /**
      * When true, the animation is removed from the render tree once its
@@ -288,8 +299,8 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
 
     @Generated
     @Selector("runActionForKey:object:arguments:")
-    public native void runActionForKeyObjectArguments(String event, @Mapped(ObjCObjectMapper.class) Object anObject,
-            NSDictionary<?, ?> dict);
+    public native void runActionForKeyObjectArguments(@NotNull String event,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object anObject, @Nullable NSDictionary<?, ?> dict);
 
     /**
      * [@property] animationEvents
@@ -298,7 +309,7 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
      */
     @Generated
     @Selector("setAnimationEvents:")
-    public native void setAnimationEvents(NSArray<? extends SCNAnimationEvent> value);
+    public native void setAnimationEvents(@Nullable NSArray<? extends SCNAnimationEvent> value);
 
     @Generated
     @Selector("setAutoreverses:")
@@ -315,7 +326,7 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate(@Mapped(ObjCObjectMapper.class) CAAnimationDelegate value);
+    public native void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CAAnimationDelegate value);
 
     @Generated
     @Selector("setDuration:")
@@ -347,7 +358,7 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
 
     @Generated
     @Selector("setFillMode:")
-    public native void setFillMode(String value);
+    public native void setFillMode(@NotNull String value);
 
     @Generated
     @Selector("setRepeatCount:")
@@ -371,7 +382,7 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
      */
     @Generated
     @Selector("setTimingFunction:")
-    public native void setTimingFunction(CAMediaTimingFunction value);
+    public native void setTimingFunction(@Nullable CAMediaTimingFunction value);
 
     /**
      * [@property] usesSceneTimeBase
@@ -386,7 +397,7 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
 
     @Generated
     @Selector("shouldArchiveValueForKey:")
-    public native boolean shouldArchiveValueForKey(String key);
+    public native boolean shouldArchiveValueForKey(@NotNull String key);
 
     @Generated
     @Selector("speed")
@@ -400,6 +411,7 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
      * A timing function defining the pacing of the animation. Defaults to
      * nil indicating linear pacing.
      */
+    @Nullable
     @Generated
     @Selector("timingFunction")
     public native CAMediaTimingFunction timingFunction();
@@ -421,9 +433,10 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("animationWithSCNAnimation:")
-    public static native CAAnimation animationWithSCNAnimation(apple.scenekit.SCNAnimation animation);
+    public static native CAAnimation animationWithSCNAnimation(@NotNull apple.scenekit.SCNAnimation animation);
 
     @Generated
     @Selector("supportsSecureCoding")

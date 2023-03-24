@@ -13,6 +13,7 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INGetCarPowerLevelStatusIntent. By implementing this protocol, a class
@@ -47,8 +48,8 @@ public interface INGetCarPowerLevelStatusIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmGetCarPowerLevelStatus:completion:")
-    default void confirmGetCarPowerLevelStatusCompletion(INGetCarPowerLevelStatusIntent intent,
-            @ObjCBlock(name = "call_confirmGetCarPowerLevelStatusCompletion") Block_confirmGetCarPowerLevelStatusCompletion completion) {
+    default void confirmGetCarPowerLevelStatusCompletion(@NotNull INGetCarPowerLevelStatusIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmGetCarPowerLevelStatusCompletion") Block_confirmGetCarPowerLevelStatusCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -56,7 +57,7 @@ public interface INGetCarPowerLevelStatusIntentHandling {
     @Generated
     public interface Block_confirmGetCarPowerLevelStatusCompletion {
         @Generated
-        void call_confirmGetCarPowerLevelStatusCompletion(INGetCarPowerLevelStatusIntentResponse response);
+        void call_confirmGetCarPowerLevelStatusCompletion(@NotNull INGetCarPowerLevelStatusIntentResponse response);
     }
 
     /**
@@ -72,14 +73,14 @@ public interface INGetCarPowerLevelStatusIntentHandling {
      */
     @Generated
     @Selector("handleGetCarPowerLevelStatus:completion:")
-    void handleGetCarPowerLevelStatusCompletion(INGetCarPowerLevelStatusIntent intent,
-            @ObjCBlock(name = "call_handleGetCarPowerLevelStatusCompletion") Block_handleGetCarPowerLevelStatusCompletion completion);
+    void handleGetCarPowerLevelStatusCompletion(@NotNull INGetCarPowerLevelStatusIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleGetCarPowerLevelStatusCompletion") Block_handleGetCarPowerLevelStatusCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleGetCarPowerLevelStatusCompletion {
         @Generated
-        void call_handleGetCarPowerLevelStatusCompletion(INGetCarPowerLevelStatusIntentResponse response);
+        void call_handleGetCarPowerLevelStatusCompletion(@NotNull INGetCarPowerLevelStatusIntentResponse response);
     }
 
     /**
@@ -96,8 +97,8 @@ public interface INGetCarPowerLevelStatusIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveCarNameForGetCarPowerLevelStatus:withCompletion:")
-    default void resolveCarNameForGetCarPowerLevelStatusWithCompletion(INGetCarPowerLevelStatusIntent intent,
-            @ObjCBlock(name = "call_resolveCarNameForGetCarPowerLevelStatusWithCompletion") Block_resolveCarNameForGetCarPowerLevelStatusWithCompletion completion) {
+    default void resolveCarNameForGetCarPowerLevelStatusWithCompletion(@NotNull INGetCarPowerLevelStatusIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveCarNameForGetCarPowerLevelStatusWithCompletion") Block_resolveCarNameForGetCarPowerLevelStatusWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -106,7 +107,7 @@ public interface INGetCarPowerLevelStatusIntentHandling {
     public interface Block_resolveCarNameForGetCarPowerLevelStatusWithCompletion {
         @Generated
         void call_resolveCarNameForGetCarPowerLevelStatusWithCompletion(
-                INSpeakableStringResolutionResult resolutionResult);
+                @NotNull INSpeakableStringResolutionResult resolutionResult);
     }
 
     /**
@@ -115,8 +116,8 @@ public interface INGetCarPowerLevelStatusIntentHandling {
     @Generated
     @IsOptional
     @Selector("startSendingUpdatesForGetCarPowerLevelStatus:toObserver:")
-    default void startSendingUpdatesForGetCarPowerLevelStatusToObserver(INGetCarPowerLevelStatusIntent intent,
-            @Mapped(ObjCObjectMapper.class) INGetCarPowerLevelStatusIntentResponseObserver observer) {
+    default void startSendingUpdatesForGetCarPowerLevelStatusToObserver(@NotNull INGetCarPowerLevelStatusIntent intent,
+            @NotNull @Mapped(ObjCObjectMapper.class) INGetCarPowerLevelStatusIntentResponseObserver observer) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -126,7 +127,7 @@ public interface INGetCarPowerLevelStatusIntentHandling {
     @Generated
     @IsOptional
     @Selector("stopSendingUpdatesForGetCarPowerLevelStatus:")
-    default void stopSendingUpdatesForGetCarPowerLevelStatus(INGetCarPowerLevelStatusIntent intent) {
+    default void stopSendingUpdatesForGetCarPowerLevelStatus(@NotNull INGetCarPowerLevelStatusIntent intent) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * HKVerifiableClinicalRecord
@@ -55,6 +57,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
      * API-Since: 15.0
      * Deprecated-Since: 15.4
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("JWSRepresentation")
@@ -76,22 +79,25 @@ public class HKVerifiableClinicalRecord extends HKSample {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -109,6 +115,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
      * 
      * The date this record expires.
      */
+    @Nullable
     @Generated
     @Selector("expirationDate")
     public native NSDate expirationDate();
@@ -124,7 +131,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKVerifiableClinicalRecord initWithCoder(NSCoder coder);
+    public native HKVerifiableClinicalRecord initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -148,6 +155,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
      * 
      * The date this record was issued.
      */
+    @NotNull
     @Generated
     @Selector("issuedDate")
     public native NSDate issuedDate();
@@ -157,6 +165,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
      * 
      * The identifier for the issuer of this record.
      */
+    @NotNull
     @Generated
     @Selector("issuerIdentifier")
     public native String issuerIdentifier();
@@ -166,13 +175,15 @@ public class HKVerifiableClinicalRecord extends HKSample {
      * 
      * A list of display names for each item contained in this record.
      */
+    @NotNull
     @Generated
     @Selector("itemNames")
     public native NSArray<String> itemNames();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -184,6 +195,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
      * 
      * The types present in this record.
      */
+    @NotNull
     @Generated
     @Selector("recordTypes")
     public native NSArray<String> recordTypes();
@@ -194,6 +206,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
      * A date most relevant to this record, like when a vaccine was
      * administered or a test was performed.
      */
+    @NotNull
     @Generated
     @Selector("relevantDate")
     public native NSDate relevantDate();
@@ -215,6 +228,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
      * 
      * The subject of this record.
      */
+    @NotNull
     @Generated
     @Selector("subject")
     public native HKVerifiableClinicalRecordSubject subject();
@@ -245,6 +259,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
      * 
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("dataRepresentation")
     public native NSData dataRepresentation();
@@ -256,6 +271,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
      * 
      * API-Since: 15.4
      */
+    @Nullable
     @Generated
     @Selector("sourceType")
     public native String sourceType();

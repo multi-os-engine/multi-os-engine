@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.3
@@ -62,7 +64,7 @@ public class AVContentKeyRequest extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] canProvidePersistableContentKey
@@ -82,18 +84,21 @@ public class AVContentKeyRequest extends NSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -114,6 +119,7 @@ public class AVContentKeyRequest extends NSObject {
      * The value of this property is an NSError that describes what caused the content key request to fail. If the
      * receiver's status is not AVContentKeyRequestStatusFailed, the value of this property is nil.
      */
+    @Nullable
     @Generated
     @Selector("error")
     public native NSError error();
@@ -131,6 +137,7 @@ public class AVContentKeyRequest extends NSObject {
      * In order to use a key with an HTTP Live Streaming AVURLAsset, the identifier must be an NSURL that matches a key
      * URI in the Media Playlist.
      */
+    @Nullable
     @Generated
     @Selector("identifier")
     @MappedReturn(ObjCObjectMapper.class)
@@ -145,6 +152,7 @@ public class AVContentKeyRequest extends NSObject {
      * 
      * Container- and protocol-specific data to be used to obtain a key response.
      */
+    @Nullable
     @Generated
     @Selector("initializationData")
     public native NSData initializationData();
@@ -166,9 +174,10 @@ public class AVContentKeyRequest extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * makeStreamingContentKeyRequestDataForApp:contentIdentifier:options:completionHandler:
@@ -193,15 +202,16 @@ public class AVContentKeyRequest extends NSObject {
     @Generated
     @Selector("makeStreamingContentKeyRequestDataForApp:contentIdentifier:options:completionHandler:")
     public native void makeStreamingContentKeyRequestDataForAppContentIdentifierOptionsCompletionHandler(
-            NSData appIdentifier, NSData contentIdentifier, NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_makeStreamingContentKeyRequestDataForAppContentIdentifierOptionsCompletionHandler") Block_makeStreamingContentKeyRequestDataForAppContentIdentifierOptionsCompletionHandler handler);
+            @NotNull NSData appIdentifier, @Nullable NSData contentIdentifier,
+            @Nullable NSDictionary<String, ?> options,
+            @NotNull @ObjCBlock(name = "call_makeStreamingContentKeyRequestDataForAppContentIdentifierOptionsCompletionHandler") Block_makeStreamingContentKeyRequestDataForAppContentIdentifierOptionsCompletionHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_makeStreamingContentKeyRequestDataForAppContentIdentifierOptionsCompletionHandler {
         @Generated
         void call_makeStreamingContentKeyRequestDataForAppContentIdentifierOptionsCompletionHandler(
-                NSData contentKeyRequestData, NSError error);
+                @Nullable NSData contentKeyRequestData, @Nullable NSError error);
     }
 
     @Generated
@@ -226,7 +236,7 @@ public class AVContentKeyRequest extends NSObject {
      */
     @Generated
     @Selector("processContentKeyResponse:")
-    public native void processContentKeyResponse(AVContentKeyResponse keyResponse);
+    public native void processContentKeyResponse(@NotNull AVContentKeyResponse keyResponse);
 
     /**
      * processContentKeyResponseError:
@@ -238,7 +248,7 @@ public class AVContentKeyRequest extends NSObject {
      */
     @Generated
     @Selector("processContentKeyResponseError:")
-    public native void processContentKeyResponseError(NSError error);
+    public native void processContentKeyResponseError(@NotNull NSError error);
 
     /**
      * [@property] renewsExpiringResponseData
@@ -311,6 +321,7 @@ public class AVContentKeyRequest extends NSObject {
      * 
      * API-Since: 12.2
      */
+    @NotNull
     @Generated
     @Selector("options")
     public native NSDictionary<String, ?> options();
@@ -339,7 +350,7 @@ public class AVContentKeyRequest extends NSObject {
     @Generated
     @Selector("respondByRequestingPersistableContentKeyRequestAndReturnError:")
     public native boolean respondByRequestingPersistableContentKeyRequestAndReturnError(
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] contentKey
@@ -354,6 +365,7 @@ public class AVContentKeyRequest extends NSObject {
      * 
      * API-Since: 14.5
      */
+    @Nullable
     @Generated
     @Selector("contentKey")
     public native AVContentKey contentKey();
@@ -365,6 +377,7 @@ public class AVContentKeyRequest extends NSObject {
      * 
      * API-Since: 14.5
      */
+    @NotNull
     @Generated
     @Selector("contentKeySpecifier")
     public native AVContentKeySpecifier contentKeySpecifier();

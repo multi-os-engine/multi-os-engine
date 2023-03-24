@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * -----------------------------------------------------------------------------------------------------------------
@@ -68,7 +70,7 @@ public class ICCameraFile extends ICCameraItem {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] burstFavorite
@@ -99,24 +101,28 @@ public class ICCameraFile extends ICCameraItem {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("burstUUID")
     public native String burstUUID();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,6 +134,7 @@ public class ICCameraFile extends ICCameraItem {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("createdFilename")
     public native String createdFilename();
@@ -159,6 +166,7 @@ public class ICCameraFile extends ICCameraItem {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("exifCreationDate")
     public native NSDate exifCreationDate();
@@ -171,6 +179,7 @@ public class ICCameraFile extends ICCameraItem {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("exifModificationDate")
     public native NSDate exifModificationDate();
@@ -183,6 +192,7 @@ public class ICCameraFile extends ICCameraItem {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("fileCreationDate")
     public native NSDate fileCreationDate();
@@ -195,6 +205,7 @@ public class ICCameraFile extends ICCameraItem {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("fileModificationDate")
     public native NSDate fileModificationDate();
@@ -228,6 +239,7 @@ public class ICCameraFile extends ICCameraItem {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("gpsString")
     public native String gpsString();
@@ -239,6 +251,7 @@ public class ICCameraFile extends ICCameraItem {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("groupUUID")
     public native String groupUUID();
@@ -292,9 +305,10 @@ public class ICCameraFile extends ICCameraItem {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -324,6 +338,7 @@ public class ICCameraFile extends ICCameraItem {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("originalFilename")
     public native String originalFilename();
@@ -335,6 +350,7 @@ public class ICCameraFile extends ICCameraItem {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("originatingAssetID")
     public native String originatingAssetID();
@@ -347,6 +363,7 @@ public class ICCameraFile extends ICCameraItem {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("pairedRawImage")
     public native ICCameraFile pairedRawImage();
@@ -358,6 +375,7 @@ public class ICCameraFile extends ICCameraItem {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("relatedUUID")
     public native String relatedUUID();
@@ -380,16 +398,17 @@ public class ICCameraFile extends ICCameraItem {
      * 
      * @param completion Completion block to executed after request has returned,
      */
+    @Nullable
     @Generated
     @Selector("requestDownloadWithOptions:completion:")
-    public native NSProgress requestDownloadWithOptionsCompletion(NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_requestDownloadWithOptionsCompletion") Block_requestDownloadWithOptionsCompletion completion);
+    public native NSProgress requestDownloadWithOptionsCompletion(@Nullable NSDictionary<String, ?> options,
+            @NotNull @ObjCBlock(name = "call_requestDownloadWithOptionsCompletion") Block_requestDownloadWithOptionsCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestDownloadWithOptionsCompletion {
         @Generated
-        void call_requestDownloadWithOptionsCompletion(String filename, NSError error);
+        void call_requestDownloadWithOptionsCompletion(@Nullable String filename, @Nullable NSError error);
     }
 
     /**
@@ -406,14 +425,15 @@ public class ICCameraFile extends ICCameraItem {
      */
     @Generated
     @Selector("requestMetadataDictionaryWithOptions:completion:")
-    public native void requestMetadataDictionaryWithOptionsCompletion(NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_requestMetadataDictionaryWithOptionsCompletion") Block_requestMetadataDictionaryWithOptionsCompletion completion);
+    public native void requestMetadataDictionaryWithOptionsCompletion(@Nullable NSDictionary<String, ?> options,
+            @NotNull @ObjCBlock(name = "call_requestMetadataDictionaryWithOptionsCompletion") Block_requestMetadataDictionaryWithOptionsCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestMetadataDictionaryWithOptionsCompletion {
         @Generated
-        void call_requestMetadataDictionaryWithOptionsCompletion(NSDictionary<?, ?> arg0, NSError arg1);
+        void call_requestMetadataDictionaryWithOptionsCompletion(@Nullable NSDictionary<?, ?> arg0,
+                @Nullable NSError arg1);
     }
 
     /**
@@ -432,13 +452,13 @@ public class ICCameraFile extends ICCameraItem {
     @Generated
     @Selector("requestReadDataAtOffset:length:completion:")
     public native void requestReadDataAtOffsetLengthCompletion(long offset, long length,
-            @ObjCBlock(name = "call_requestReadDataAtOffsetLengthCompletion") Block_requestReadDataAtOffsetLengthCompletion completion);
+            @NotNull @ObjCBlock(name = "call_requestReadDataAtOffsetLengthCompletion") Block_requestReadDataAtOffsetLengthCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestReadDataAtOffsetLengthCompletion {
         @Generated
-        void call_requestReadDataAtOffsetLengthCompletion(NSData arg0, NSError arg1);
+        void call_requestReadDataAtOffsetLengthCompletion(@Nullable NSData arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -459,14 +479,14 @@ public class ICCameraFile extends ICCameraItem {
      */
     @Generated
     @Selector("requestThumbnailDataWithOptions:completion:")
-    public native void requestThumbnailDataWithOptionsCompletion(NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_requestThumbnailDataWithOptionsCompletion") Block_requestThumbnailDataWithOptionsCompletion completion);
+    public native void requestThumbnailDataWithOptionsCompletion(@Nullable NSDictionary<String, ?> options,
+            @NotNull @ObjCBlock(name = "call_requestThumbnailDataWithOptionsCompletion") Block_requestThumbnailDataWithOptionsCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestThumbnailDataWithOptionsCompletion {
         @Generated
-        void call_requestThumbnailDataWithOptionsCompletion(NSData arg0, NSError arg1);
+        void call_requestThumbnailDataWithOptionsCompletion(@Nullable NSData arg0, @Nullable NSError arg1);
     }
 
     @Generated
@@ -506,6 +526,7 @@ public class ICCameraFile extends ICCameraItem {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("sidecarFiles")
     public native NSArray<? extends ICCameraItem> sidecarFiles();

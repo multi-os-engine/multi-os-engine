@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -73,22 +75,25 @@ public class CXCallController extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +128,10 @@ public class CXCallController extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -153,6 +159,7 @@ public class CXCallController extends NSObject {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("callObserver")
     public native CXCallObserver callObserver();
@@ -169,7 +176,7 @@ public class CXCallController extends NSObject {
      */
     @Generated
     @Selector("initWithQueue:")
-    public native CXCallController initWithQueue(NSObject queue);
+    public native CXCallController initWithQueue(@NotNull NSObject queue);
 
     /**
      * Request a transaction to be performed by the in-app provider.
@@ -182,14 +189,14 @@ public class CXCallController extends NSObject {
      */
     @Generated
     @Selector("requestTransaction:completion:")
-    public native void requestTransactionCompletion(CXTransaction transaction,
-            @ObjCBlock(name = "call_requestTransactionCompletion") Block_requestTransactionCompletion completion);
+    public native void requestTransactionCompletion(@NotNull CXTransaction transaction,
+            @NotNull @ObjCBlock(name = "call_requestTransactionCompletion") Block_requestTransactionCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestTransactionCompletion {
         @Generated
-        void call_requestTransactionCompletion(NSError error);
+        void call_requestTransactionCompletion(@Nullable NSError error);
     }
 
     /**
@@ -205,14 +212,14 @@ public class CXCallController extends NSObject {
      */
     @Generated
     @Selector("requestTransactionWithAction:completion:")
-    public native void requestTransactionWithActionCompletion(CXAction action,
-            @ObjCBlock(name = "call_requestTransactionWithActionCompletion") Block_requestTransactionWithActionCompletion completion);
+    public native void requestTransactionWithActionCompletion(@NotNull CXAction action,
+            @NotNull @ObjCBlock(name = "call_requestTransactionWithActionCompletion") Block_requestTransactionWithActionCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestTransactionWithActionCompletion {
         @Generated
-        void call_requestTransactionWithActionCompletion(NSError error);
+        void call_requestTransactionWithActionCompletion(@Nullable NSError error);
     }
 
     /**
@@ -228,13 +235,13 @@ public class CXCallController extends NSObject {
      */
     @Generated
     @Selector("requestTransactionWithActions:completion:")
-    public native void requestTransactionWithActionsCompletion(NSArray<? extends CXAction> actions,
-            @ObjCBlock(name = "call_requestTransactionWithActionsCompletion") Block_requestTransactionWithActionsCompletion completion);
+    public native void requestTransactionWithActionsCompletion(@NotNull NSArray<? extends CXAction> actions,
+            @NotNull @ObjCBlock(name = "call_requestTransactionWithActionsCompletion") Block_requestTransactionWithActionsCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestTransactionWithActionsCompletion {
         @Generated
-        void call_requestTransactionWithActionsCompletion(NSError error);
+        void call_requestTransactionWithActionsCompletion(@Nullable NSError error);
     }
 }

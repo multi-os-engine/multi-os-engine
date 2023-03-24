@@ -9,6 +9,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An object conforming to \c GCDevicePhysicalInputState contains the state of
@@ -23,10 +25,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GCDevicePhysicalInputState")
 public interface GCDevicePhysicalInputState {
+    @NotNull
     @Generated
     @Selector("axes")
     GCPhysicalInputElementCollection<String, Object> axes();
 
+    @NotNull
     @Generated
     @Selector("buttons")
     GCPhysicalInputElementCollection<String, Object> buttons();
@@ -34,11 +38,13 @@ public interface GCDevicePhysicalInputState {
     /**
      * The device that this profile is mapping input from.
      */
+    @Nullable
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
     GCDevice device();
 
+    @NotNull
     @Generated
     @Selector("dpads")
     GCPhysicalInputElementCollection<String, Object> dpads();
@@ -51,6 +57,7 @@ public interface GCDevicePhysicalInputState {
      * [@example] input.dpads[GCInputLeftThumbstick]
      * [@example] input.dpads[GCInputButtonB] // fails, "Button B" is not a DirectionPad
      */
+    @NotNull
     @Generated
     @Selector("elements")
     GCPhysicalInputElementCollection<String, Object> elements();
@@ -91,11 +98,13 @@ public interface GCDevicePhysicalInputState {
      * [@example] physicalInput[GCInputButtonX]
      * [@note] Equivalent to -elements
      */
+    @Nullable
     @Generated
     @Selector("objectForKeyedSubscript:")
     @MappedReturn(ObjCObjectMapper.class)
-    GCPhysicalInputElement objectForKeyedSubscript(String key);
+    GCPhysicalInputElement objectForKeyedSubscript(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("switches")
     GCPhysicalInputElementCollection<String, Object> switches();

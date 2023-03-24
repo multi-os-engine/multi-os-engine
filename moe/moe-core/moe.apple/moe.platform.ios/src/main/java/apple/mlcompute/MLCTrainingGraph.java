@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCTrainingGraph
@@ -61,8 +63,8 @@ public class MLCTrainingGraph extends MLCGraph {
      */
     @Generated
     @Selector("addInputs:lossLabels:")
-    public native boolean addInputsLossLabels(NSDictionary<String, ? extends MLCTensor> inputs,
-            NSDictionary<String, ? extends MLCTensor> lossLabels);
+    public native boolean addInputsLossLabels(@NotNull NSDictionary<String, ? extends MLCTensor> inputs,
+            @Nullable NSDictionary<String, ? extends MLCTensor> lossLabels);
 
     /**
      * Add the list of inputs to the training graph
@@ -79,9 +81,9 @@ public class MLCTrainingGraph extends MLCGraph {
      */
     @Generated
     @Selector("addInputs:lossLabels:lossLabelWeights:")
-    public native boolean addInputsLossLabelsLossLabelWeights(NSDictionary<String, ? extends MLCTensor> inputs,
-            NSDictionary<String, ? extends MLCTensor> lossLabels,
-            NSDictionary<String, ? extends MLCTensor> lossLabelWeights);
+    public native boolean addInputsLossLabelsLossLabelWeights(@NotNull NSDictionary<String, ? extends MLCTensor> inputs,
+            @Nullable NSDictionary<String, ? extends MLCTensor> lossLabels,
+            @Nullable NSDictionary<String, ? extends MLCTensor> lossLabelWeights);
 
     /**
      * Add the list of outputs to the training graph
@@ -91,7 +93,7 @@ public class MLCTrainingGraph extends MLCGraph {
      */
     @Generated
     @Selector("addOutputs:")
-    public native boolean addOutputs(NSDictionary<String, ? extends MLCTensor> outputs);
+    public native boolean addOutputs(@NotNull NSDictionary<String, ? extends MLCTensor> outputs);
 
     @Generated
     @Owned
@@ -111,13 +113,14 @@ public class MLCTrainingGraph extends MLCGraph {
      *               provide a user gradient during the gradient pass.
      * @return A gradient tensor
      */
+    @Nullable
     @Generated
     @Selector("allocateUserGradientForTensor:")
-    public native MLCTensor allocateUserGradientForTensor(MLCTensor tensor);
+    public native MLCTensor allocateUserGradientForTensor(@NotNull MLCTensor tensor);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Associates the given optimizer data and device data buffers with the tensor.
@@ -136,23 +139,26 @@ public class MLCTrainingGraph extends MLCGraph {
      */
     @Generated
     @Selector("bindOptimizerData:deviceData:withTensor:")
-    public native boolean bindOptimizerDataDeviceDataWithTensor(NSArray<? extends MLCTensorData> data,
-            NSArray<? extends MLCTensorOptimizerDeviceData> deviceData, MLCTensor tensor);
+    public native boolean bindOptimizerDataDeviceDataWithTensor(@NotNull NSArray<? extends MLCTensorData> data,
+            @Nullable NSArray<? extends MLCTensorOptimizerDeviceData> deviceData, @NotNull MLCTensor tensor);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -172,7 +178,7 @@ public class MLCTrainingGraph extends MLCGraph {
      */
     @Generated
     @Selector("compileOptimizer:")
-    public native boolean compileOptimizer(MLCOptimizer optimizer);
+    public native boolean compileOptimizer(@NotNull MLCOptimizer optimizer);
 
     /**
      * Compile the training graph for a device.
@@ -183,7 +189,7 @@ public class MLCTrainingGraph extends MLCGraph {
      */
     @Generated
     @Selector("compileWithOptions:device:")
-    public native boolean compileWithOptionsDevice(long options, MLCDevice device);
+    public native boolean compileWithOptionsDevice(long options, @NotNull MLCDevice device);
 
     /**
      * Compile the training graph for a device.
@@ -201,9 +207,9 @@ public class MLCTrainingGraph extends MLCGraph {
      */
     @Generated
     @Selector("compileWithOptions:device:inputTensors:inputTensorsData:")
-    public native boolean compileWithOptionsDeviceInputTensorsInputTensorsData(long options, MLCDevice device,
-            NSDictionary<String, ? extends MLCTensor> inputTensors,
-            NSDictionary<String, ? extends MLCTensorData> inputTensorsData);
+    public native boolean compileWithOptionsDeviceInputTensorsInputTensorsData(long options, @NotNull MLCDevice device,
+            @Nullable NSDictionary<String, ? extends MLCTensor> inputTensors,
+            @Nullable NSDictionary<String, ? extends MLCTensorData> inputTensorsData);
 
     @Generated
     @Selector("debugDescription")
@@ -241,14 +247,14 @@ public class MLCTrainingGraph extends MLCGraph {
     @Generated
     @Selector("executeForwardWithBatchSize:options:completionHandler:")
     public native boolean executeForwardWithBatchSizeOptionsCompletionHandler(@NUInt long batchSize, long options,
-            @ObjCBlock(name = "call_executeForwardWithBatchSizeOptionsCompletionHandler") Block_executeForwardWithBatchSizeOptionsCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_executeForwardWithBatchSizeOptionsCompletionHandler") Block_executeForwardWithBatchSizeOptionsCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_executeForwardWithBatchSizeOptionsCompletionHandler {
         @Generated
-        void call_executeForwardWithBatchSizeOptionsCompletionHandler(MLCTensor resultTensor, NSError error,
-                double executionTime);
+        void call_executeForwardWithBatchSizeOptionsCompletionHandler(@Nullable MLCTensor resultTensor,
+                @Nullable NSError error, double executionTime);
     }
 
     /**
@@ -264,15 +270,15 @@ public class MLCTrainingGraph extends MLCGraph {
     @Generated
     @Selector("executeForwardWithBatchSize:options:outputsData:completionHandler:")
     public native boolean executeForwardWithBatchSizeOptionsOutputsDataCompletionHandler(@NUInt long batchSize,
-            long options, NSDictionary<String, ? extends MLCTensorData> outputsData,
-            @ObjCBlock(name = "call_executeForwardWithBatchSizeOptionsOutputsDataCompletionHandler") Block_executeForwardWithBatchSizeOptionsOutputsDataCompletionHandler completionHandler);
+            long options, @Nullable NSDictionary<String, ? extends MLCTensorData> outputsData,
+            @Nullable @ObjCBlock(name = "call_executeForwardWithBatchSizeOptionsOutputsDataCompletionHandler") Block_executeForwardWithBatchSizeOptionsOutputsDataCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_executeForwardWithBatchSizeOptionsOutputsDataCompletionHandler {
         @Generated
-        void call_executeForwardWithBatchSizeOptionsOutputsDataCompletionHandler(MLCTensor resultTensor, NSError error,
-                double executionTime);
+        void call_executeForwardWithBatchSizeOptionsOutputsDataCompletionHandler(@Nullable MLCTensor resultTensor,
+                @Nullable NSError error, double executionTime);
     }
 
     /**
@@ -287,14 +293,14 @@ public class MLCTrainingGraph extends MLCGraph {
     @Generated
     @Selector("executeGradientWithBatchSize:options:completionHandler:")
     public native boolean executeGradientWithBatchSizeOptionsCompletionHandler(@NUInt long batchSize, long options,
-            @ObjCBlock(name = "call_executeGradientWithBatchSizeOptionsCompletionHandler") Block_executeGradientWithBatchSizeOptionsCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_executeGradientWithBatchSizeOptionsCompletionHandler") Block_executeGradientWithBatchSizeOptionsCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_executeGradientWithBatchSizeOptionsCompletionHandler {
         @Generated
-        void call_executeGradientWithBatchSizeOptionsCompletionHandler(MLCTensor resultTensor, NSError error,
-                double executionTime);
+        void call_executeGradientWithBatchSizeOptionsCompletionHandler(@Nullable MLCTensor resultTensor,
+                @Nullable NSError error, double executionTime);
     }
 
     /**
@@ -310,15 +316,15 @@ public class MLCTrainingGraph extends MLCGraph {
     @Generated
     @Selector("executeGradientWithBatchSize:options:outputsData:completionHandler:")
     public native boolean executeGradientWithBatchSizeOptionsOutputsDataCompletionHandler(@NUInt long batchSize,
-            long options, NSDictionary<String, ? extends MLCTensorData> outputsData,
-            @ObjCBlock(name = "call_executeGradientWithBatchSizeOptionsOutputsDataCompletionHandler") Block_executeGradientWithBatchSizeOptionsOutputsDataCompletionHandler completionHandler);
+            long options, @Nullable NSDictionary<String, ? extends MLCTensorData> outputsData,
+            @Nullable @ObjCBlock(name = "call_executeGradientWithBatchSizeOptionsOutputsDataCompletionHandler") Block_executeGradientWithBatchSizeOptionsOutputsDataCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_executeGradientWithBatchSizeOptionsOutputsDataCompletionHandler {
         @Generated
-        void call_executeGradientWithBatchSizeOptionsOutputsDataCompletionHandler(MLCTensor resultTensor, NSError error,
-                double executionTime);
+        void call_executeGradientWithBatchSizeOptionsOutputsDataCompletionHandler(@Nullable MLCTensor resultTensor,
+                @Nullable NSError error, double executionTime);
     }
 
     /**
@@ -331,14 +337,14 @@ public class MLCTrainingGraph extends MLCGraph {
     @Generated
     @Selector("executeOptimizerUpdateWithOptions:completionHandler:")
     public native boolean executeOptimizerUpdateWithOptionsCompletionHandler(long options,
-            @ObjCBlock(name = "call_executeOptimizerUpdateWithOptionsCompletionHandler") Block_executeOptimizerUpdateWithOptionsCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_executeOptimizerUpdateWithOptionsCompletionHandler") Block_executeOptimizerUpdateWithOptionsCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_executeOptimizerUpdateWithOptionsCompletionHandler {
         @Generated
-        void call_executeOptimizerUpdateWithOptionsCompletionHandler(MLCTensor resultTensor, NSError error,
-                double executionTime);
+        void call_executeOptimizerUpdateWithOptionsCompletionHandler(@Nullable MLCTensor resultTensor,
+                @Nullable NSError error, double executionTime);
     }
 
     /**
@@ -364,17 +370,18 @@ public class MLCTrainingGraph extends MLCGraph {
     @Generated
     @Selector("executeWithInputsData:lossLabelsData:lossLabelWeightsData:batchSize:options:completionHandler:")
     public native boolean executeWithInputsDataLossLabelsDataLossLabelWeightsDataBatchSizeOptionsCompletionHandler(
-            NSDictionary<String, ? extends MLCTensorData> inputsData,
-            NSDictionary<String, ? extends MLCTensorData> lossLabelsData,
-            NSDictionary<String, ? extends MLCTensorData> lossLabelWeightsData, @NUInt long batchSize, long options,
-            @ObjCBlock(name = "call_executeWithInputsDataLossLabelsDataLossLabelWeightsDataBatchSizeOptionsCompletionHandler") Block_executeWithInputsDataLossLabelsDataLossLabelWeightsDataBatchSizeOptionsCompletionHandler completionHandler);
+            @NotNull NSDictionary<String, ? extends MLCTensorData> inputsData,
+            @Nullable NSDictionary<String, ? extends MLCTensorData> lossLabelsData,
+            @Nullable NSDictionary<String, ? extends MLCTensorData> lossLabelWeightsData, @NUInt long batchSize,
+            long options,
+            @Nullable @ObjCBlock(name = "call_executeWithInputsDataLossLabelsDataLossLabelWeightsDataBatchSizeOptionsCompletionHandler") Block_executeWithInputsDataLossLabelsDataLossLabelWeightsDataBatchSizeOptionsCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_executeWithInputsDataLossLabelsDataLossLabelWeightsDataBatchSizeOptionsCompletionHandler {
         @Generated
         void call_executeWithInputsDataLossLabelsDataLossLabelWeightsDataBatchSizeOptionsCompletionHandler(
-                MLCTensor resultTensor, NSError error, double executionTime);
+                @Nullable MLCTensor resultTensor, @Nullable NSError error, double executionTime);
     }
 
     /**
@@ -393,18 +400,18 @@ public class MLCTrainingGraph extends MLCGraph {
     @Generated
     @Selector("executeWithInputsData:lossLabelsData:lossLabelWeightsData:outputsData:batchSize:options:completionHandler:")
     public native boolean executeWithInputsDataLossLabelsDataLossLabelWeightsDataOutputsDataBatchSizeOptionsCompletionHandler(
-            NSDictionary<String, ? extends MLCTensorData> inputsData,
-            NSDictionary<String, ? extends MLCTensorData> lossLabelsData,
-            NSDictionary<String, ? extends MLCTensorData> lossLabelWeightsData,
-            NSDictionary<String, ? extends MLCTensorData> outputsData, @NUInt long batchSize, long options,
-            @ObjCBlock(name = "call_executeWithInputsDataLossLabelsDataLossLabelWeightsDataOutputsDataBatchSizeOptionsCompletionHandler") Block_executeWithInputsDataLossLabelsDataLossLabelWeightsDataOutputsDataBatchSizeOptionsCompletionHandler completionHandler);
+            @NotNull NSDictionary<String, ? extends MLCTensorData> inputsData,
+            @Nullable NSDictionary<String, ? extends MLCTensorData> lossLabelsData,
+            @Nullable NSDictionary<String, ? extends MLCTensorData> lossLabelWeightsData,
+            @Nullable NSDictionary<String, ? extends MLCTensorData> outputsData, @NUInt long batchSize, long options,
+            @Nullable @ObjCBlock(name = "call_executeWithInputsDataLossLabelsDataLossLabelWeightsDataOutputsDataBatchSizeOptionsCompletionHandler") Block_executeWithInputsDataLossLabelsDataLossLabelWeightsDataOutputsDataBatchSizeOptionsCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_executeWithInputsDataLossLabelsDataLossLabelWeightsDataOutputsDataBatchSizeOptionsCompletionHandler {
         @Generated
         void call_executeWithInputsDataLossLabelsDataLossLabelWeightsDataOutputsDataBatchSizeOptionsCompletionHandler(
-                MLCTensor resultTensor, NSError error, double executionTime);
+                @Nullable MLCTensor resultTensor, @Nullable NSError error, double executionTime);
     }
 
     /**
@@ -426,9 +433,10 @@ public class MLCTrainingGraph extends MLCGraph {
      * @return The gradient data. Will return nil if the layer is marked as not trainable or if
      *         training graph is not executed with separate calls to forward and gradient passes.
      */
+    @Nullable
     @Generated
     @Selector("gradientDataForParameter:layer:")
-    public native NSData gradientDataForParameterLayer(MLCTensor parameter, MLCLayer layer);
+    public native NSData gradientDataForParameterLayer(@NotNull MLCTensor parameter, @NotNull MLCLayer layer);
 
     /**
      * Get the gradient tensor for an input tensor
@@ -436,9 +444,10 @@ public class MLCTrainingGraph extends MLCGraph {
      * @param input The input tensor
      * @return The gradient tensor
      */
+    @Nullable
     @Generated
     @Selector("gradientTensorForInput:")
-    public native MLCTensor gradientTensorForInput(MLCTensor input);
+    public native MLCTensor gradientTensorForInput(@NotNull MLCTensor input);
 
     @Generated
     @Selector("graph")
@@ -456,7 +465,8 @@ public class MLCTrainingGraph extends MLCGraph {
     @Generated
     @Selector("graphWithGraphObjects:lossLayer:optimizer:")
     public static native MLCTrainingGraph graphWithGraphObjectsLossLayerOptimizer(
-            NSArray<? extends MLCGraph> graphObjects, MLCLayer lossLayer, MLCOptimizer optimizer);
+            @NotNull NSArray<? extends MLCGraph> graphObjects, @Nullable MLCLayer lossLayer,
+            @Nullable MLCOptimizer optimizer);
 
     @Generated
     @Selector("hash")
@@ -484,9 +494,10 @@ public class MLCTrainingGraph extends MLCGraph {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Link mutiple training graphs
@@ -499,7 +510,7 @@ public class MLCTrainingGraph extends MLCGraph {
      */
     @Generated
     @Selector("linkWithGraphs:")
-    public native boolean linkWithGraphs(NSArray<? extends MLCTrainingGraph> graphs);
+    public native boolean linkWithGraphs(@NotNull NSArray<? extends MLCTrainingGraph> graphs);
 
     @Generated
     @Owned
@@ -511,6 +522,7 @@ public class MLCTrainingGraph extends MLCGraph {
      * 
      * The optimizer to be used with the training graph
      */
+    @Nullable
     @Generated
     @Selector("optimizer")
     public native MLCOptimizer optimizer();
@@ -529,9 +541,10 @@ public class MLCTrainingGraph extends MLCGraph {
      * @param layer A layer in the training graph
      * @return A list of tensors
      */
+    @NotNull
     @Generated
     @Selector("resultGradientTensorsForLayer:")
-    public native NSArray<? extends MLCTensor> resultGradientTensorsForLayer(MLCLayer layer);
+    public native NSArray<? extends MLCTensor> resultGradientTensorsForLayer(@NotNull MLCLayer layer);
 
     /**
      * Set the input tensor parameters that also will be updated by the optimizer
@@ -545,7 +558,7 @@ public class MLCTrainingGraph extends MLCGraph {
      */
     @Generated
     @Selector("setTrainingTensorParameters:")
-    public native boolean setTrainingTensorParameters(NSArray<? extends MLCTensorParameter> parameters);
+    public native boolean setTrainingTensorParameters(@NotNull NSArray<? extends MLCTensorParameter> parameters);
 
     @Generated
     @Selector("setVersion:")
@@ -557,9 +570,10 @@ public class MLCTrainingGraph extends MLCGraph {
      * @param layer A layer in the training graph
      * @return A list of tensors
      */
+    @NotNull
     @Generated
     @Selector("sourceGradientTensorsForLayer:")
-    public native NSArray<? extends MLCTensor> sourceGradientTensorsForLayer(MLCLayer layer);
+    public native NSArray<? extends MLCTensor> sourceGradientTensorsForLayer(@NotNull MLCLayer layer);
 
     /**
      * Add the list of tensors whose contributions are not to be taken when computing gradients during gradient pass
@@ -569,7 +583,7 @@ public class MLCTrainingGraph extends MLCGraph {
      */
     @Generated
     @Selector("stopGradientForTensors:")
-    public native boolean stopGradientForTensors(NSArray<? extends MLCTensor> tensors);
+    public native boolean stopGradientForTensors(@NotNull NSArray<? extends MLCTensor> tensors);
 
     @Generated
     @Selector("superclass")

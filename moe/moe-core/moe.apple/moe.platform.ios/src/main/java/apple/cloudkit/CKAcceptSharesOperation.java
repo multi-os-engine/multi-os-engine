@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -73,22 +75,25 @@ public class CKAcceptSharesOperation extends CKOperation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +128,10 @@ public class CKAcceptSharesOperation extends CKOperation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,6 +168,7 @@ public class CKAcceptSharesOperation extends CKOperation {
      * perShareCompletionBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
+    @Nullable
     @Generated
     @Selector("acceptSharesCompletionBlock")
     @ObjCBlock(name = "call_acceptSharesCompletionBlock_ret")
@@ -173,7 +180,8 @@ public class CKAcceptSharesOperation extends CKOperation {
 
     @Generated
     @Selector("initWithShareMetadatas:")
-    public native CKAcceptSharesOperation initWithShareMetadatas(NSArray<? extends CKShareMetadata> shareMetadatas);
+    public native CKAcceptSharesOperation initWithShareMetadatas(
+            @NotNull NSArray<? extends CKShareMetadata> shareMetadatas);
 
     /**
      * Called once for each share metadata that the server processed
@@ -181,6 +189,7 @@ public class CKAcceptSharesOperation extends CKOperation {
      * If error is nil then the share was successfully accepted.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
+    @Nullable
     @Generated
     @Selector("perShareCompletionBlock")
     @ObjCBlock(name = "call_perShareCompletionBlock_ret")
@@ -198,7 +207,7 @@ public class CKAcceptSharesOperation extends CKOperation {
     @Generated
     @Selector("setAcceptSharesCompletionBlock:")
     public native void setAcceptSharesCompletionBlock(
-            @ObjCBlock(name = "call_setAcceptSharesCompletionBlock") Block_setAcceptSharesCompletionBlock value);
+            @Nullable @ObjCBlock(name = "call_setAcceptSharesCompletionBlock") Block_setAcceptSharesCompletionBlock value);
 
     /**
      * Called once for each share metadata that the server processed
@@ -209,12 +218,13 @@ public class CKAcceptSharesOperation extends CKOperation {
     @Generated
     @Selector("setPerShareCompletionBlock:")
     public native void setPerShareCompletionBlock(
-            @ObjCBlock(name = "call_setPerShareCompletionBlock") Block_setPerShareCompletionBlock value);
+            @Nullable @ObjCBlock(name = "call_setPerShareCompletionBlock") Block_setPerShareCompletionBlock value);
 
     @Generated
     @Selector("setShareMetadatas:")
-    public native void setShareMetadatas(NSArray<? extends CKShareMetadata> value);
+    public native void setShareMetadatas(@Nullable NSArray<? extends CKShareMetadata> value);
 
+    @Nullable
     @Generated
     @Selector("shareMetadatas")
     public native NSArray<? extends CKShareMetadata> shareMetadatas();
@@ -223,27 +233,29 @@ public class CKAcceptSharesOperation extends CKOperation {
     @Generated
     public interface Block_acceptSharesCompletionBlock_ret {
         @Generated
-        void call_acceptSharesCompletionBlock_ret(NSError arg0);
+        void call_acceptSharesCompletionBlock_ret(@Nullable NSError arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_perShareCompletionBlock_ret {
         @Generated
-        void call_perShareCompletionBlock_ret(CKShareMetadata arg0, CKShare arg1, NSError arg2);
+        void call_perShareCompletionBlock_ret(@NotNull CKShareMetadata arg0, @Nullable CKShare arg1,
+                @Nullable NSError arg2);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setAcceptSharesCompletionBlock {
         @Generated
-        void call_setAcceptSharesCompletionBlock(NSError arg0);
+        void call_setAcceptSharesCompletionBlock(@Nullable NSError arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setPerShareCompletionBlock {
         @Generated
-        void call_setPerShareCompletionBlock(CKShareMetadata arg0, CKShare arg1, NSError arg2);
+        void call_setPerShareCompletionBlock(@NotNull CKShareMetadata arg0, @Nullable CKShare arg1,
+                @Nullable NSError arg2);
     }
 }

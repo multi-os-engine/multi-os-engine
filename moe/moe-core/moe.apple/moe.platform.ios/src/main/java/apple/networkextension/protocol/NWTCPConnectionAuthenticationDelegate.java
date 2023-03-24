@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] NWTCPConnectionAuthenticationDelegate
@@ -63,9 +64,9 @@ public interface NWTCPConnectionAuthenticationDelegate {
     @Generated
     @IsOptional
     @Selector("evaluateTrustForConnection:peerCertificateChain:completionHandler:")
-    default void evaluateTrustForConnectionPeerCertificateChainCompletionHandler(NWTCPConnection connection,
-            NSArray<?> peerCertificateChain,
-            @ObjCBlock(name = "call_evaluateTrustForConnectionPeerCertificateChainCompletionHandler") Block_evaluateTrustForConnectionPeerCertificateChainCompletionHandler completion) {
+    default void evaluateTrustForConnectionPeerCertificateChainCompletionHandler(@NotNull NWTCPConnection connection,
+            @NotNull NSArray<?> peerCertificateChain,
+            @NotNull @ObjCBlock(name = "call_evaluateTrustForConnectionPeerCertificateChainCompletionHandler") Block_evaluateTrustForConnectionPeerCertificateChainCompletionHandler completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -94,8 +95,8 @@ public interface NWTCPConnectionAuthenticationDelegate {
     @Generated
     @IsOptional
     @Selector("provideIdentityForConnection:completionHandler:")
-    default void provideIdentityForConnectionCompletionHandler(NWTCPConnection connection,
-            @ObjCBlock(name = "call_provideIdentityForConnectionCompletionHandler") Block_provideIdentityForConnectionCompletionHandler completion) {
+    default void provideIdentityForConnectionCompletionHandler(@NotNull NWTCPConnection connection,
+            @NotNull @ObjCBlock(name = "call_provideIdentityForConnectionCompletionHandler") Block_provideIdentityForConnectionCompletionHandler completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -116,7 +117,7 @@ public interface NWTCPConnectionAuthenticationDelegate {
     @Generated
     @IsOptional
     @Selector("shouldEvaluateTrustForConnection:")
-    default boolean shouldEvaluateTrustForConnection(NWTCPConnection connection) {
+    default boolean shouldEvaluateTrustForConnection(@NotNull NWTCPConnection connection) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -137,7 +138,7 @@ public interface NWTCPConnectionAuthenticationDelegate {
     @Generated
     @IsOptional
     @Selector("shouldProvideIdentityForConnection:")
-    default boolean shouldProvideIdentityForConnection(NWTCPConnection connection) {
+    default boolean shouldProvideIdentityForConnection(@NotNull NWTCPConnection connection) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -145,13 +146,14 @@ public interface NWTCPConnectionAuthenticationDelegate {
     @Generated
     public interface Block_evaluateTrustForConnectionPeerCertificateChainCompletionHandler {
         @Generated
-        void call_evaluateTrustForConnectionPeerCertificateChainCompletionHandler(SecTrustRef trust);
+        void call_evaluateTrustForConnectionPeerCertificateChainCompletionHandler(@NotNull SecTrustRef trust);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_provideIdentityForConnectionCompletionHandler {
         @Generated
-        void call_provideIdentityForConnectionCompletionHandler(SecIdentityRef identity, NSArray<?> certificateChain);
+        void call_provideIdentityForConnectionCompletionHandler(@NotNull SecIdentityRef identity,
+                @NotNull NSArray<?> certificateChain);
     }
 }

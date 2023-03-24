@@ -34,6 +34,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNGraph
@@ -100,31 +102,35 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -140,6 +146,7 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      * This property overrides the allocator for the final result image in
      * the graph. Default: MPSImage.defaultAllocator
      */
+    @NotNull
     @Generated
     @Selector("destinationImageAllocator")
     @MappedReturn(ObjCObjectMapper.class)
@@ -172,10 +179,12 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      *         It will be automatically released when commandBuffer completes. It can be nil if resultImageIsNeeded ==
      *         NO
      */
+    @Nullable
     @Generated
     @Selector("encodeToCommandBuffer:sourceImages:")
     public native MPSImage encodeToCommandBufferSourceImages(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, NSArray<? extends MPSImage> sourceImages);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull NSArray<? extends MPSImage> sourceImages);
 
     /**
      * Encode the graph to a MTLCommandBuffer
@@ -217,16 +226,18 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      *         graph.
      *         It will be automatically released when commandBuffer completes.
      */
+    @Nullable
     @Generated
     @Selector("encodeToCommandBuffer:sourceImages:sourceStates:intermediateImages:destinationStates:")
     public native MPSImage encodeToCommandBufferSourceImagesSourceStatesIntermediateImagesDestinationStates(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, NSArray<? extends MPSImage> sourceImages,
-            NSArray<? extends MPSState> sourceStates, NSMutableArray<MPSImage> intermediateImages,
-            NSMutableArray<MPSState> destinationStates);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull NSArray<? extends MPSImage> sourceImages, @Nullable NSArray<? extends MPSState> sourceStates,
+            @Nullable NSMutableArray<MPSImage> intermediateImages,
+            @Nullable NSMutableArray<MPSState> destinationStates);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Convenience method to execute a graph without having to manage many Metal details
@@ -276,16 +287,18 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      * @return A MPSImage to receive the result. The data in the image will not be valid until
      *         the completionHandler is called.
      */
+    @NotNull
     @Generated
     @Selector("executeAsyncWithSourceImages:completionHandler:")
-    public native MPSImage executeAsyncWithSourceImagesCompletionHandler(NSArray<? extends MPSImage> sourceImages,
-            @ObjCBlock(name = "call_executeAsyncWithSourceImagesCompletionHandler") Block_executeAsyncWithSourceImagesCompletionHandler handler);
+    public native MPSImage executeAsyncWithSourceImagesCompletionHandler(
+            @NotNull NSArray<? extends MPSImage> sourceImages,
+            @NotNull @ObjCBlock(name = "call_executeAsyncWithSourceImagesCompletionHandler") Block_executeAsyncWithSourceImagesCompletionHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_executeAsyncWithSourceImagesCompletionHandler {
         @Generated
-        void call_executeAsyncWithSourceImagesCompletionHandler(MPSImage result, NSError error);
+        void call_executeAsyncWithSourceImagesCompletionHandler(@Nullable MPSImage result, @Nullable NSError error);
     }
 
     @Generated
@@ -299,7 +312,7 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNGraph initWithCoder(NSCoder coder);
+    public native MPSNNGraph initWithCoder(@NotNull NSCoder coder);
 
     /**
      * NSSecureCoding compatability
@@ -316,11 +329,12 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNNGraph initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNGraph initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNNGraph initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNGraph initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * API-Since: 11.0
@@ -329,8 +343,8 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
     @Deprecated
     @Generated
     @Selector("initWithDevice:resultImage:")
-    public native MPSNNGraph initWithDeviceResultImage(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            MPSNNImageNode resultImage);
+    public native MPSNNGraph initWithDeviceResultImage(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull MPSNNImageNode resultImage);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -348,6 +362,7 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
     /**
      * Get a list of identifiers for intermediate images objects produced by the graph
      */
+    @Nullable
     @Generated
     @Selector("intermediateImageHandles")
     public native NSArray<?> intermediateImageHandles();
@@ -356,9 +371,10 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -385,6 +401,7 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
     /**
      * Get a handle for the graph result image
      */
+    @Nullable
     @Generated
     @Selector("resultHandle")
     @MappedReturn(ObjCObjectMapper.class)
@@ -395,6 +412,7 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      * 
      * Not guaranteed to be in the same order as sourceStateHandles
      */
+    @Nullable
     @Generated
     @Selector("resultStateHandles")
     public native NSArray<?> resultStateHandles();
@@ -407,7 +425,7 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setDestinationImageAllocator:")
-    public native void setDestinationImageAllocator(@Mapped(ObjCObjectMapper.class) MPSImageAllocator value);
+    public native void setDestinationImageAllocator(@NotNull @Mapped(ObjCObjectMapper.class) MPSImageAllocator value);
 
     /**
      * Should MPSState objects produced by -encodeToCommandBuffer... be temporary objects.
@@ -425,6 +443,7 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
     /**
      * Get a list of identifiers for source images needed to calculate the result image
      */
+    @NotNull
     @Generated
     @Selector("sourceImageHandles")
     public native NSArray<?> sourceImageHandles();
@@ -434,6 +453,7 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      * 
      * Not guaranteed to be in the same order as resultStateHandles
      */
+    @Nullable
     @Generated
     @Selector("sourceStateHandles")
     public native NSArray<?> sourceStateHandles();
@@ -477,13 +497,14 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
     @Deprecated
     @Generated
     @Selector("graphWithDevice:resultImage:")
-    public static native MPSNNGraph graphWithDeviceResultImage(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            MPSNNImageNode resultImage);
+    public static native MPSNNGraph graphWithDeviceResultImage(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MPSNNImageNode resultImage);
 
     @Generated
     @Selector("graphWithDevice:resultImage:resultImageIsNeeded:")
     public static native MPSNNGraph graphWithDeviceResultImageResultImageIsNeeded(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, MPSNNImageNode resultImage, boolean resultIsNeeded);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MPSNNImageNode resultImage,
+            boolean resultIsNeeded);
 
     /**
      * API-Since: 13.0
@@ -491,8 +512,8 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("graphWithDevice:resultImages:resultsAreNeeded:")
     public static native MPSNNGraph graphWithDeviceResultImagesResultsAreNeeded(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, NSArray<? extends MPSNNImageNode> resultImages,
-            BoolPtr areResultsNeeded);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull NSArray<? extends MPSNNImageNode> resultImages, @Nullable BoolPtr areResultsNeeded);
 
     /**
      * Initialize a MPSNNGraph object on a device starting with resultImage working backward
@@ -516,7 +537,8 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("initWithDevice:resultImage:resultImageIsNeeded:")
     public native MPSNNGraph initWithDeviceResultImageResultImageIsNeeded(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, MPSNNImageNode resultImage, boolean resultIsNeeded);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MPSNNImageNode resultImage,
+            boolean resultIsNeeded);
 
     /**
      * Initialize a MPSNNGraph object on a device starting with resultImage working backward
@@ -542,8 +564,8 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("initWithDevice:resultImages:resultsAreNeeded:")
     public native MPSNNGraph initWithDeviceResultImagesResultsAreNeeded(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, NSArray<? extends MPSNNImageNode> resultImages,
-            BoolPtr areResultsNeeded);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull NSArray<? extends MPSNNImageNode> resultImages, @Nullable BoolPtr areResultsNeeded);
 
     /**
      * Find the number of times a image will be read by the graph *

@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 15.0
@@ -58,22 +60,25 @@ public class UIToolTipInteraction extends NSObject implements UIInteraction {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -85,6 +90,7 @@ public class UIToolTipInteraction extends NSObject implements UIInteraction {
     /**
      * The interaction's default tool tip string.
      */
+    @Nullable
     @Generated
     @Selector("defaultToolTip")
     public native String defaultToolTip();
@@ -92,6 +98,7 @@ public class UIToolTipInteraction extends NSObject implements UIInteraction {
     /**
      * The interaction's delegate.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -103,7 +110,7 @@ public class UIToolTipInteraction extends NSObject implements UIInteraction {
 
     @Generated
     @Selector("didMoveToView:")
-    public native void didMoveToView(UIView view);
+    public native void didMoveToView(@Nullable UIView view);
 
     @Generated
     @Selector("hash")
@@ -119,7 +126,7 @@ public class UIToolTipInteraction extends NSObject implements UIInteraction {
 
     @Generated
     @Selector("initWithDefaultToolTip:")
-    public native UIToolTipInteraction initWithDefaultToolTip(String defaultToolTip);
+    public native UIToolTipInteraction initWithDefaultToolTip(@NotNull String defaultToolTip);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -145,9 +152,10 @@ public class UIToolTipInteraction extends NSObject implements UIInteraction {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,20 +175,20 @@ public class UIToolTipInteraction extends NSObject implements UIInteraction {
      */
     @Generated
     @Selector("setDefaultToolTip:")
-    public native void setDefaultToolTip(String value);
+    public native void setDefaultToolTip(@Nullable String value);
 
     /**
      * The interaction's delegate.
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIToolTipInteractionDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UIToolTipInteractionDelegate value);
 
     /**
      * The interaction's delegate.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UIToolTipInteractionDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIToolTipInteractionDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -211,11 +219,12 @@ public class UIToolTipInteraction extends NSObject implements UIInteraction {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("view")
     public native UIView view();
 
     @Generated
     @Selector("willMoveToView:")
-    public native void willMoveToView(UIView view);
+    public native void willMoveToView(@Nullable UIView view);
 }

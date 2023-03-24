@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An immutable value object representing a postal address.
@@ -81,22 +83,25 @@ public class CNPostalAddress extends NSObject implements NSCopying, NSMutableCop
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,16 +136,18 @@ public class CNPostalAddress extends NSObject implements NSCopying, NSMutableCop
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Returns a user displayable property name.
      */
+    @NotNull
     @Generated
     @Selector("localizedStringForKey:")
-    public static native String localizedStringForKey(String key);
+    public static native String localizedStringForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -172,27 +179,31 @@ public class CNPostalAddress extends NSObject implements NSCopying, NSMutableCop
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("ISOCountryCode")
     public native String ISOCountryCode();
 
+    @NotNull
     @Generated
     @Selector("city")
     public native String city();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("country")
     public native String country();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -200,18 +211,21 @@ public class CNPostalAddress extends NSObject implements NSCopying, NSMutableCop
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNPostalAddress initWithCoder(NSCoder coder);
+    public native CNPostalAddress initWithCoder(@NotNull NSCoder coder);
 
+    @NotNull
     @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("postalCode")
     public native String postalCode();
 
+    @NotNull
     @Generated
     @Selector("state")
     public native String state();
@@ -219,6 +233,7 @@ public class CNPostalAddress extends NSObject implements NSCopying, NSMutableCop
     /**
      * multi-street address is delimited with carriage returns “\n”
      */
+    @NotNull
     @Generated
     @Selector("street")
     public native String street();
@@ -232,6 +247,7 @@ public class CNPostalAddress extends NSObject implements NSCopying, NSMutableCop
     /**
      * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @Selector("subAdministrativeArea")
     public native String subAdministrativeArea();
@@ -239,6 +255,7 @@ public class CNPostalAddress extends NSObject implements NSCopying, NSMutableCop
     /**
      * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @Selector("subLocality")
     public native String subLocality();

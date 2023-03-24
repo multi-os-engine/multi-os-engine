@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * PKPaymentSummaryItem Defines a line-item for a payment such as tax, shipping, or discount.
@@ -74,22 +76,25 @@ public class PKPaymentSummaryItem extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +129,10 @@ public class PKPaymentSummaryItem extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -147,15 +153,16 @@ public class PKPaymentSummaryItem extends NSObject {
 
     @Generated
     @Selector("summaryItemWithLabel:amount:")
-    public static native PKPaymentSummaryItem summaryItemWithLabelAmount(String label, NSDecimalNumber amount);
+    public static native PKPaymentSummaryItem summaryItemWithLabelAmount(@NotNull String label,
+            @NotNull NSDecimalNumber amount);
 
     /**
      * API-Since: 9.0
      */
     @Generated
     @Selector("summaryItemWithLabel:amount:type:")
-    public static native PKPaymentSummaryItem summaryItemWithLabelAmountType(String label, NSDecimalNumber amount,
-            @NUInt long type);
+    public static native PKPaymentSummaryItem summaryItemWithLabelAmountType(@NotNull String label,
+            @NotNull NSDecimalNumber amount, @NUInt long type);
 
     @Generated
     @Selector("superclass")
@@ -170,6 +177,7 @@ public class PKPaymentSummaryItem extends NSObject {
      * Same currency as the enclosing PKPaymentRequest. Negative values are permitted, for example when
      * redeeming a coupon. An amount is always required unless the summary item's type is set to pending
      */
+    @NotNull
     @Generated
     @Selector("amount")
     public native NSDecimalNumber amount();
@@ -181,6 +189,7 @@ public class PKPaymentSummaryItem extends NSObject {
     /**
      * A short localized description of the item, e.g. "Tax" or "Gift Card".
      */
+    @NotNull
     @Generated
     @Selector("label")
     public native String label();
@@ -191,14 +200,14 @@ public class PKPaymentSummaryItem extends NSObject {
      */
     @Generated
     @Selector("setAmount:")
-    public native void setAmount(NSDecimalNumber value);
+    public native void setAmount(@NotNull NSDecimalNumber value);
 
     /**
      * A short localized description of the item, e.g. "Tax" or "Gift Card".
      */
     @Generated
     @Selector("setLabel:")
-    public native void setLabel(String value);
+    public native void setLabel(@NotNull String value);
 
     /**
      * Defaults to PKPaymentSummaryItemTypeFinal

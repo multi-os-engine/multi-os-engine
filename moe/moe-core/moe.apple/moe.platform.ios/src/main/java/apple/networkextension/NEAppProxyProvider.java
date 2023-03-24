@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEAppProxyProvider
@@ -81,22 +83,25 @@ public class NEAppProxyProvider extends NETunnelProvider {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +136,10 @@ public class NEAppProxyProvider extends NETunnelProvider {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -174,7 +180,7 @@ public class NEAppProxyProvider extends NETunnelProvider {
      */
     @Generated
     @Selector("cancelProxyWithError:")
-    public native void cancelProxyWithError(NSError error);
+    public native void cancelProxyWithError(@Nullable NSError error);
 
     /**
      * handleNewFlow:
@@ -196,7 +202,7 @@ public class NEAppProxyProvider extends NETunnelProvider {
      */
     @Generated
     @Selector("handleNewFlow:")
-    public native boolean handleNewFlow(NEAppProxyFlow flow);
+    public native boolean handleNewFlow(@NotNull NEAppProxyFlow flow);
 
     @Generated
     @Selector("init")
@@ -219,8 +225,8 @@ public class NEAppProxyProvider extends NETunnelProvider {
      */
     @Generated
     @Selector("startProxyWithOptions:completionHandler:")
-    public native void startProxyWithOptionsCompletionHandler(NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_startProxyWithOptionsCompletionHandler") Block_startProxyWithOptionsCompletionHandler completionHandler);
+    public native void startProxyWithOptionsCompletionHandler(@Nullable NSDictionary<String, ?> options,
+            @NotNull @ObjCBlock(name = "call_startProxyWithOptionsCompletionHandler") Block_startProxyWithOptionsCompletionHandler completionHandler);
 
     /**
      * stopProxyWithReason:completionHandler:
@@ -236,13 +242,13 @@ public class NEAppProxyProvider extends NETunnelProvider {
     @Generated
     @Selector("stopProxyWithReason:completionHandler:")
     public native void stopProxyWithReasonCompletionHandler(@NInt long reason,
-            @ObjCBlock(name = "call_stopProxyWithReasonCompletionHandler") Block_stopProxyWithReasonCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_stopProxyWithReasonCompletionHandler") Block_stopProxyWithReasonCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startProxyWithOptionsCompletionHandler {
         @Generated
-        void call_startProxyWithOptionsCompletionHandler(NSError error);
+        void call_startProxyWithOptionsCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -276,5 +282,6 @@ public class NEAppProxyProvider extends NETunnelProvider {
      */
     @Generated
     @Selector("handleNewUDPFlow:initialRemoteEndpoint:")
-    public native boolean handleNewUDPFlowInitialRemoteEndpoint(NEAppProxyUDPFlow flow, NWEndpoint remoteEndpoint);
+    public native boolean handleNewUDPFlowInitialRemoteEndpoint(@NotNull NEAppProxyUDPFlow flow,
+            @NotNull NWEndpoint remoteEndpoint);
 }

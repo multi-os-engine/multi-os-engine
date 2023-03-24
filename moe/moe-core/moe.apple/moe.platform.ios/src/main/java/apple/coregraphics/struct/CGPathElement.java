@@ -25,6 +25,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ptr.Ptr;
 import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Structure()
@@ -46,7 +47,7 @@ public final class CGPathElement extends StructObject {
     }
 
     @Generated
-    public CGPathElement(int type, Ptr<CGPoint> points) {
+    public CGPathElement(int type, @NotNull Ptr<CGPoint> points) {
         super(CGPathElement.class);
         setType(type);
         setPoints(points);
@@ -60,6 +61,7 @@ public final class CGPathElement extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setType(int value);
 
+    @NotNull
     @Generated
     @StructureField(order = 1, isGetter = true)
     @ReferenceInfo(type = CGPoint.class)
@@ -67,5 +69,5 @@ public final class CGPathElement extends StructObject {
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setPoints(Ptr<CGPoint> value);
+    public native void setPoints(@NotNull Ptr<CGPoint> value);
 }

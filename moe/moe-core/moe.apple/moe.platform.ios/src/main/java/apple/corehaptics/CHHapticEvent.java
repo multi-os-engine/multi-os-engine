@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CHHapticEvent
@@ -61,22 +63,25 @@ public class CHHapticEvent extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,6 +106,7 @@ public class CHHapticEvent extends NSObject {
      * [@property] eventParameters
      * NSArray of Event parameters. Can be empty.
      */
+    @NotNull
     @Generated
     @Selector("eventParameters")
     public native NSArray<? extends CHHapticEventParameter> eventParameters();
@@ -130,7 +136,7 @@ public class CHHapticEvent extends NSObject {
     @Generated
     @Selector("initWithAudioResourceID:parameters:relativeTime:")
     public native CHHapticEvent initWithAudioResourceIDParametersRelativeTime(@NUInt long resID,
-            NSArray<? extends CHHapticEventParameter> eventParams, double time);
+            @NotNull NSArray<? extends CHHapticEventParameter> eventParams, double time);
 
     /**
      * initWithAudioResourceID:parameters:relativeTime:duration
@@ -153,7 +159,7 @@ public class CHHapticEvent extends NSObject {
     @Generated
     @Selector("initWithAudioResourceID:parameters:relativeTime:duration:")
     public native CHHapticEvent initWithAudioResourceIDParametersRelativeTimeDuration(@NUInt long resID,
-            NSArray<? extends CHHapticEventParameter> eventParams, double time, double duration);
+            @NotNull NSArray<? extends CHHapticEventParameter> eventParams, double time, double duration);
 
     /**
      * initWithEventType:parameters:relativeTime
@@ -170,8 +176,8 @@ public class CHHapticEvent extends NSObject {
      */
     @Generated
     @Selector("initWithEventType:parameters:relativeTime:")
-    public native CHHapticEvent initWithEventTypeParametersRelativeTime(String type,
-            NSArray<? extends CHHapticEventParameter> eventParams, double time);
+    public native CHHapticEvent initWithEventTypeParametersRelativeTime(@NotNull String type,
+            @NotNull NSArray<? extends CHHapticEventParameter> eventParams, double time);
 
     /**
      * initWithEventType:parameters:relativeTime:duration
@@ -191,8 +197,8 @@ public class CHHapticEvent extends NSObject {
      */
     @Generated
     @Selector("initWithEventType:parameters:relativeTime:duration:")
-    public native CHHapticEvent initWithEventTypeParametersRelativeTimeDuration(String type,
-            NSArray<? extends CHHapticEventParameter> eventParams, double time, double duration);
+    public native CHHapticEvent initWithEventTypeParametersRelativeTimeDuration(@NotNull String type,
+            @NotNull NSArray<? extends CHHapticEventParameter> eventParams, double time, double duration);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -211,9 +217,10 @@ public class CHHapticEvent extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -264,6 +271,7 @@ public class CHHapticEvent extends NSObject {
      * [@property] type
      * The type of event.
      */
+    @NotNull
     @Generated
     @Selector("type")
     public native String type();

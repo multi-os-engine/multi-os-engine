@@ -16,6 +16,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -35,11 +37,13 @@ public interface UIEditMenuInteractionDelegate {
      * 
      * @return Return a UIMenu describing the desired menu hierarchy. Return @c nil to present the default system menu.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("editMenuInteraction:menuForConfiguration:suggestedActions:")
-    default UIMenu editMenuInteractionMenuForConfigurationSuggestedActions(UIEditMenuInteraction interaction,
-            UIEditMenuConfiguration configuration, NSArray<? extends UIMenuElement> suggestedActions) {
+    default UIMenu editMenuInteractionMenuForConfigurationSuggestedActions(@NotNull UIEditMenuInteraction interaction,
+            @NotNull UIEditMenuConfiguration configuration,
+            @NotNull NSArray<? extends UIMenuElement> suggestedActions) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -60,8 +64,8 @@ public interface UIEditMenuInteractionDelegate {
     @IsOptional
     @Selector("editMenuInteraction:targetRectForConfiguration:")
     @ByValue
-    default CGRect editMenuInteractionTargetRectForConfiguration(UIEditMenuInteraction interaction,
-            UIEditMenuConfiguration configuration) {
+    default CGRect editMenuInteractionTargetRectForConfiguration(@NotNull UIEditMenuInteraction interaction,
+            @NotNull UIEditMenuConfiguration configuration) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -76,9 +80,9 @@ public interface UIEditMenuInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("editMenuInteraction:willDismissMenuForConfiguration:animator:")
-    default void editMenuInteractionWillDismissMenuForConfigurationAnimator(UIEditMenuInteraction interaction,
-            UIEditMenuConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator) {
+    default void editMenuInteractionWillDismissMenuForConfigurationAnimator(@NotNull UIEditMenuInteraction interaction,
+            @NotNull UIEditMenuConfiguration configuration,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -93,9 +97,9 @@ public interface UIEditMenuInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("editMenuInteraction:willPresentMenuForConfiguration:animator:")
-    default void editMenuInteractionWillPresentMenuForConfigurationAnimator(UIEditMenuInteraction interaction,
-            UIEditMenuConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator) {
+    default void editMenuInteractionWillPresentMenuForConfigurationAnimator(@NotNull UIEditMenuInteraction interaction,
+            @NotNull UIEditMenuConfiguration configuration,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

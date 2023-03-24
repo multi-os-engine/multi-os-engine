@@ -42,6 +42,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * View controller that provides the standard user interface for achievements. Present modally from the top view
@@ -87,29 +89,32 @@ public class GKAchievementViewController extends GKGameCenterViewController {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -141,9 +146,10 @@ public class GKAchievementViewController extends GKGameCenterViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -182,20 +188,21 @@ public class GKAchievementViewController extends GKGameCenterViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKAchievementViewController initWithCoder(NSCoder coder);
+    public native GKAchievementViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")
-    public native GKAchievementViewController initWithNavigationBarClassToolbarClass(Class navigationBarClass,
-            Class toolbarClass);
+    public native GKAchievementViewController initWithNavigationBarClassToolbarClass(@Nullable Class navigationBarClass,
+            @Nullable Class toolbarClass);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native GKAchievementViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native GKAchievementViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     @Generated
     @Selector("initWithRootViewController:")
-    public native GKAchievementViewController initWithRootViewController(UIViewController rootViewController);
+    public native GKAchievementViewController initWithRootViewController(@NotNull UIViewController rootViewController);
 
     @Generated
     @Selector("setAchievementDelegate:")
@@ -216,16 +223,16 @@ public class GKAchievementViewController extends GKGameCenterViewController {
 
     @Generated
     @Selector("initWithAchievementID:")
-    public native GKAchievementViewController initWithAchievementID(String achievementID);
+    public native GKAchievementViewController initWithAchievementID(@NotNull String achievementID);
 
     @Generated
     @Selector("initWithLeaderboard:playerScope:")
-    public native GKAchievementViewController initWithLeaderboardPlayerScope(GKLeaderboard leaderboard,
+    public native GKAchievementViewController initWithLeaderboardPlayerScope(@NotNull GKLeaderboard leaderboard,
             @NInt long playerScope);
 
     @Generated
     @Selector("initWithLeaderboardID:playerScope:timeScope:")
-    public native GKAchievementViewController initWithLeaderboardIDPlayerScopeTimeScope(String leaderboardID,
+    public native GKAchievementViewController initWithLeaderboardIDPlayerScopeTimeScope(@NotNull String leaderboardID,
             @NInt long playerScope, @NInt long timeScope);
 
     @Generated

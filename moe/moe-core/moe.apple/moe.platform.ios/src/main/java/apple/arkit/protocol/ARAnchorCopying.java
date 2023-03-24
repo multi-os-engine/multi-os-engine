@@ -8,6 +8,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * An anchor object that can be copied from values of an existing anchor.
@@ -27,7 +28,8 @@ public interface ARAnchorCopying extends NSCopying {
      * 
      * @param anchor The anchor from which to copy values.
      */
+    @NotNull
     @Generated
     @Selector("initWithAnchor:")
-    ARAnchorCopying initWithAnchor(ARAnchor anchor);
+    ARAnchorCopying initWithAnchor(@NotNull ARAnchor anchor);
 }

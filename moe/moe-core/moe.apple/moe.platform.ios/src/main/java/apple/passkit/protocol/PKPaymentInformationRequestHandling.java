@@ -12,6 +12,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("PassKit")
@@ -20,8 +21,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface PKPaymentInformationRequestHandling {
     @Generated
     @Selector("handleConfigurationRequest:completion:")
-    void handleConfigurationRequestCompletion(PKBarcodeEventConfigurationRequest configurationRequest,
-            @ObjCBlock(name = "call_handleConfigurationRequestCompletion") Block_handleConfigurationRequestCompletion completion);
+    void handleConfigurationRequestCompletion(@NotNull PKBarcodeEventConfigurationRequest configurationRequest,
+            @NotNull @ObjCBlock(name = "call_handleConfigurationRequestCompletion") Block_handleConfigurationRequestCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -32,25 +33,25 @@ public interface PKPaymentInformationRequestHandling {
 
     @Generated
     @Selector("handleInformationRequest:completion:")
-    void handleInformationRequestCompletion(PKBarcodeEventMetadataRequest infoRequest,
-            @ObjCBlock(name = "call_handleInformationRequestCompletion") Block_handleInformationRequestCompletion completion);
+    void handleInformationRequestCompletion(@NotNull PKBarcodeEventMetadataRequest infoRequest,
+            @NotNull @ObjCBlock(name = "call_handleInformationRequestCompletion") Block_handleInformationRequestCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleInformationRequestCompletion {
         @Generated
-        void call_handleInformationRequestCompletion(PKBarcodeEventMetadataResponse arg0);
+        void call_handleInformationRequestCompletion(@NotNull PKBarcodeEventMetadataResponse arg0);
     }
 
     @Generated
     @Selector("handleSignatureRequest:completion:")
-    void handleSignatureRequestCompletion(PKBarcodeEventSignatureRequest signatureRequest,
-            @ObjCBlock(name = "call_handleSignatureRequestCompletion") Block_handleSignatureRequestCompletion completion);
+    void handleSignatureRequestCompletion(@NotNull PKBarcodeEventSignatureRequest signatureRequest,
+            @NotNull @ObjCBlock(name = "call_handleSignatureRequestCompletion") Block_handleSignatureRequestCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSignatureRequestCompletion {
         @Generated
-        void call_handleSignatureRequestCompletion(PKBarcodeEventSignatureResponse arg0);
+        void call_handleSignatureRequestCompletion(@NotNull PKBarcodeEventSignatureResponse arg0);
     }
 }

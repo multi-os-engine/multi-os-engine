@@ -31,6 +31,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INSearchForPhotosIntent. By implementing this protocol, a class can
@@ -67,8 +68,8 @@ public interface INSearchForPhotosIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmSearchForPhotos:completion:")
-    default void confirmSearchForPhotosCompletion(INSearchForPhotosIntent intent,
-            @ObjCBlock(name = "call_confirmSearchForPhotosCompletion") Block_confirmSearchForPhotosCompletion completion) {
+    default void confirmSearchForPhotosCompletion(@NotNull INSearchForPhotosIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmSearchForPhotosCompletion") Block_confirmSearchForPhotosCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -85,14 +86,14 @@ public interface INSearchForPhotosIntentHandling {
      */
     @Generated
     @Selector("handleSearchForPhotos:completion:")
-    void handleSearchForPhotosCompletion(INSearchForPhotosIntent intent,
-            @ObjCBlock(name = "call_handleSearchForPhotosCompletion") Block_handleSearchForPhotosCompletion completion);
+    void handleSearchForPhotosCompletion(@NotNull INSearchForPhotosIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleSearchForPhotosCompletion") Block_handleSearchForPhotosCompletion completion);
 
     @Generated
     @IsOptional
     @Selector("resolveAlbumNameForSearchForPhotos:withCompletion:")
-    default void resolveAlbumNameForSearchForPhotosWithCompletion(INSearchForPhotosIntent intent,
-            @ObjCBlock(name = "call_resolveAlbumNameForSearchForPhotosWithCompletion") Block_resolveAlbumNameForSearchForPhotosWithCompletion completion) {
+    default void resolveAlbumNameForSearchForPhotosWithCompletion(@NotNull INSearchForPhotosIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveAlbumNameForSearchForPhotosWithCompletion") Block_resolveAlbumNameForSearchForPhotosWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -110,24 +111,24 @@ public interface INSearchForPhotosIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveDateCreatedForSearchForPhotos:withCompletion:")
-    default void resolveDateCreatedForSearchForPhotosWithCompletion(INSearchForPhotosIntent intent,
-            @ObjCBlock(name = "call_resolveDateCreatedForSearchForPhotosWithCompletion") Block_resolveDateCreatedForSearchForPhotosWithCompletion completion) {
+    default void resolveDateCreatedForSearchForPhotosWithCompletion(@NotNull INSearchForPhotosIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveDateCreatedForSearchForPhotosWithCompletion") Block_resolveDateCreatedForSearchForPhotosWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("resolveLocationCreatedForSearchForPhotos:withCompletion:")
-    default void resolveLocationCreatedForSearchForPhotosWithCompletion(INSearchForPhotosIntent intent,
-            @ObjCBlock(name = "call_resolveLocationCreatedForSearchForPhotosWithCompletion") Block_resolveLocationCreatedForSearchForPhotosWithCompletion completion) {
+    default void resolveLocationCreatedForSearchForPhotosWithCompletion(@NotNull INSearchForPhotosIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveLocationCreatedForSearchForPhotosWithCompletion") Block_resolveLocationCreatedForSearchForPhotosWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("resolvePeopleInPhotoForSearchForPhotos:withCompletion:")
-    default void resolvePeopleInPhotoForSearchForPhotosWithCompletion(INSearchForPhotosIntent intent,
-            @ObjCBlock(name = "call_resolvePeopleInPhotoForSearchForPhotosWithCompletion") Block_resolvePeopleInPhotoForSearchForPhotosWithCompletion completion) {
+    default void resolvePeopleInPhotoForSearchForPhotosWithCompletion(@NotNull INSearchForPhotosIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolvePeopleInPhotoForSearchForPhotosWithCompletion") Block_resolvePeopleInPhotoForSearchForPhotosWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -135,21 +136,21 @@ public interface INSearchForPhotosIntentHandling {
     @Generated
     public interface Block_confirmSearchForPhotosCompletion {
         @Generated
-        void call_confirmSearchForPhotosCompletion(INSearchForPhotosIntentResponse response);
+        void call_confirmSearchForPhotosCompletion(@NotNull INSearchForPhotosIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSearchForPhotosCompletion {
         @Generated
-        void call_handleSearchForPhotosCompletion(INSearchForPhotosIntentResponse response);
+        void call_handleSearchForPhotosCompletion(@NotNull INSearchForPhotosIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveAlbumNameForSearchForPhotosWithCompletion {
         @Generated
-        void call_resolveAlbumNameForSearchForPhotosWithCompletion(INStringResolutionResult resolutionResult);
+        void call_resolveAlbumNameForSearchForPhotosWithCompletion(@NotNull INStringResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -157,14 +158,15 @@ public interface INSearchForPhotosIntentHandling {
     public interface Block_resolveDateCreatedForSearchForPhotosWithCompletion {
         @Generated
         void call_resolveDateCreatedForSearchForPhotosWithCompletion(
-                INDateComponentsRangeResolutionResult resolutionResult);
+                @NotNull INDateComponentsRangeResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveLocationCreatedForSearchForPhotosWithCompletion {
         @Generated
-        void call_resolveLocationCreatedForSearchForPhotosWithCompletion(INPlacemarkResolutionResult resolutionResult);
+        void call_resolveLocationCreatedForSearchForPhotosWithCompletion(
+                @NotNull INPlacemarkResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -172,7 +174,7 @@ public interface INSearchForPhotosIntentHandling {
     public interface Block_resolvePeopleInPhotoForSearchForPhotosWithCompletion {
         @Generated
         void call_resolvePeopleInPhotoForSearchForPhotosWithCompletion(
-                NSArray<? extends INPersonResolutionResult> resolutionResults);
+                @NotNull NSArray<? extends INPersonResolutionResult> resolutionResults);
     }
 
     /**
@@ -183,8 +185,8 @@ public interface INSearchForPhotosIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveSearchTermsForSearchForPhotos:withCompletion:")
-    default void resolveSearchTermsForSearchForPhotosWithCompletion(INSearchForPhotosIntent intent,
-            @ObjCBlock(name = "call_resolveSearchTermsForSearchForPhotosWithCompletion") Block_resolveSearchTermsForSearchForPhotosWithCompletion completion) {
+    default void resolveSearchTermsForSearchForPhotosWithCompletion(@NotNull INSearchForPhotosIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveSearchTermsForSearchForPhotosWithCompletion") Block_resolveSearchTermsForSearchForPhotosWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -193,6 +195,6 @@ public interface INSearchForPhotosIntentHandling {
     public interface Block_resolveSearchTermsForSearchForPhotosWithCompletion {
         @Generated
         void call_resolveSearchTermsForSearchForPhotosWithCompletion(
-                NSArray<? extends INStringResolutionResult> resolutionResults);
+                @NotNull NSArray<? extends INStringResolutionResult> resolutionResults);
     }
 }

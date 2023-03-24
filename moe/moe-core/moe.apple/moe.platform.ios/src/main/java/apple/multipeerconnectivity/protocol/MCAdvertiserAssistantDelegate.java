@@ -24,6 +24,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("MultipeerConnectivity")
@@ -36,7 +37,7 @@ public interface MCAdvertiserAssistantDelegate {
     @Generated
     @IsOptional
     @Selector("advertiserAssistantDidDismissInvitation:")
-    default void advertiserAssistantDidDismissInvitation(MCAdvertiserAssistant advertiserAssistant) {
+    default void advertiserAssistantDidDismissInvitation(@NotNull MCAdvertiserAssistant advertiserAssistant) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -46,7 +47,7 @@ public interface MCAdvertiserAssistantDelegate {
     @Generated
     @IsOptional
     @Selector("advertiserAssistantWillPresentInvitation:")
-    default void advertiserAssistantWillPresentInvitation(MCAdvertiserAssistant advertiserAssistant) {
+    default void advertiserAssistantWillPresentInvitation(@NotNull MCAdvertiserAssistant advertiserAssistant) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

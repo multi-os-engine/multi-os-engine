@@ -28,6 +28,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] AVPlayerItemLegibleOutputPushDelegate
@@ -66,8 +67,9 @@ public interface AVPlayerItemLegibleOutputPushDelegate extends AVPlayerItemOutpu
     @Generated
     @IsOptional
     @Selector("legibleOutput:didOutputAttributedStrings:nativeSampleBuffers:forItemTime:")
-    default void legibleOutputDidOutputAttributedStringsNativeSampleBuffersForItemTime(AVPlayerItemLegibleOutput output,
-            NSArray<? extends NSAttributedString> strings, NSArray<?> nativeSamples, @ByValue CMTime itemTime) {
+    default void legibleOutputDidOutputAttributedStringsNativeSampleBuffersForItemTime(
+            @NotNull AVPlayerItemLegibleOutput output, @NotNull NSArray<? extends NSAttributedString> strings,
+            @NotNull NSArray<?> nativeSamples, @ByValue CMTime itemTime) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

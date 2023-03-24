@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A collection of GKGraphNodes that are governed by a set of extruded GKPolygonObstacles
@@ -75,22 +77,25 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -105,7 +110,7 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
 
     @Generated
     @Selector("graphWithNodes:")
-    public static native GKObstacleGraph<?> graphWithNodes(NSArray<? extends GKGraphNode> nodes);
+    public static native GKObstacleGraph<?> graphWithNodes(@NotNull NSArray<? extends GKGraphNode> nodes);
 
     /**
      * Creates an optimal bidirectional graph based on a list of obstacles.
@@ -122,7 +127,7 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
     @Generated
     @Selector("graphWithObstacles:bufferRadius:")
     public static native <_NodeType> GKObstacleGraph<?> graphWithObstaclesBufferRadius(
-            NSArray<? extends GKPolygonObstacle> obstacles, float bufferRadius);
+            @NotNull NSArray<? extends GKPolygonObstacle> obstacles, float bufferRadius);
 
     /**
      * Creates an optimal bidirectional graph based on a list of obstacles.
@@ -140,7 +145,7 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
     @Generated
     @Selector("graphWithObstacles:bufferRadius:nodeClass:")
     public static native <_NodeType> GKObstacleGraph<?> graphWithObstaclesBufferRadiusNodeClass(
-            NSArray<? extends GKPolygonObstacle> obstacles, float bufferRadius, Class nodeClass);
+            @NotNull NSArray<? extends GKPolygonObstacle> obstacles, float bufferRadius, @NotNull Class nodeClass);
 
     @Generated
     @Selector("hash")
@@ -164,9 +169,10 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -206,7 +212,7 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
      */
     @Generated
     @Selector("addObstacles:")
-    public native void addObstacles(NSArray<? extends GKPolygonObstacle> obstacles);
+    public native void addObstacles(@NotNull NSArray<? extends GKPolygonObstacle> obstacles);
 
     /**
      * The distance by which all obstacles are extruded.
@@ -219,6 +225,7 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
     /**
      * Returns the class of the specified generic index
      */
+    @NotNull
     @Generated
     @Selector("classForGenericArgumentAtIndex:")
     public native Class classForGenericArgumentAtIndex(@NUInt long index);
@@ -231,7 +238,7 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
      */
     @Generated
     @Selector("connectNodeUsingObstacles:")
-    public native void connectNodeUsingObstacles(GKGraphNode2D node);
+    public native void connectNodeUsingObstacles(@NotNull GKGraphNode2D node);
 
     /**
      * Same behavior as connectNodeUsingObstacles: except you can optionally ignore the bounding radius of certain
@@ -239,8 +246,8 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
      */
     @Generated
     @Selector("connectNodeUsingObstacles:ignoringBufferRadiusOfObstacles:")
-    public native void connectNodeUsingObstaclesIgnoringBufferRadiusOfObstacles(GKGraphNode2D node,
-            NSArray<? extends GKPolygonObstacle> obstaclesBufferRadiusToIgnore);
+    public native void connectNodeUsingObstaclesIgnoringBufferRadiusOfObstacles(@NotNull GKGraphNode2D node,
+            @NotNull NSArray<? extends GKPolygonObstacle> obstaclesBufferRadiusToIgnore);
 
     /**
      * Same behavior as connectNodeUsingObstacles: except you can optionally ignore certain obstacles from being tested
@@ -248,8 +255,8 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
      */
     @Generated
     @Selector("connectNodeUsingObstacles:ignoringObstacles:")
-    public native void connectNodeUsingObstaclesIgnoringObstacles(GKGraphNode2D node,
-            NSArray<? extends GKPolygonObstacle> obstaclesToIgnore);
+    public native void connectNodeUsingObstaclesIgnoringObstacles(@NotNull GKGraphNode2D node,
+            @NotNull NSArray<? extends GKPolygonObstacle> obstaclesToIgnore);
 
     @Generated
     @Selector("init")
@@ -257,21 +264,21 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKObstacleGraph<?> initWithCoder(NSCoder coder);
+    public native GKObstacleGraph<?> initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNodes:")
-    public native GKObstacleGraph<?> initWithNodes(NSArray<? extends GKGraphNode> nodes);
+    public native GKObstacleGraph<?> initWithNodes(@NotNull NSArray<? extends GKGraphNode> nodes);
 
     @Generated
     @Selector("initWithObstacles:bufferRadius:")
-    public native GKObstacleGraph<?> initWithObstaclesBufferRadius(NSArray<? extends GKPolygonObstacle> obstacles,
-            float bufferRadius);
+    public native GKObstacleGraph<?> initWithObstaclesBufferRadius(
+            @NotNull NSArray<? extends GKPolygonObstacle> obstacles, float bufferRadius);
 
     @Generated
     @Selector("initWithObstacles:bufferRadius:nodeClass:")
     public native GKObstacleGraph<?> initWithObstaclesBufferRadiusNodeClass(
-            NSArray<? extends GKPolygonObstacle> obstacles, float bufferRadius, Class nodeClass);
+            @NotNull NSArray<? extends GKPolygonObstacle> obstacles, float bufferRadius, @NotNull Class nodeClass);
 
     /**
      * Query if a given connection is locked
@@ -285,7 +292,8 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
      */
     @Generated
     @Selector("isConnectionLockedFromNode:toNode:")
-    public native boolean isConnectionLockedFromNodeToNode(GKGraphNode2D startNode, GKGraphNode2D endNode);
+    public native boolean isConnectionLockedFromNodeToNode(@NotNull GKGraphNode2D startNode,
+            @NotNull GKGraphNode2D endNode);
 
     /**
      * Marks a connection as "locked", preventing this connection from being destroyed when you add obstacles that would
@@ -296,20 +304,22 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
      */
     @Generated
     @Selector("lockConnectionFromNode:toNode:")
-    public native void lockConnectionFromNodeToNode(GKGraphNode2D startNode, GKGraphNode2D endNode);
+    public native void lockConnectionFromNodeToNode(@NotNull GKGraphNode2D startNode, @NotNull GKGraphNode2D endNode);
 
     /**
      * Returns an array of the graph nodes associated with a given obstacle
      * 
      * @param obstacle the obstacle who's nodes are to be retrieved
      */
+    @NotNull
     @Generated
     @Selector("nodesForObstacle:")
-    public native NSArray<? extends GKGraphNode2D> nodesForObstacle(GKPolygonObstacle obstacle);
+    public native NSArray<? extends GKGraphNode2D> nodesForObstacle(@NotNull GKPolygonObstacle obstacle);
 
     /**
      * Array of the extruded obstacles currently represented by this graph
      */
+    @NotNull
     @Generated
     @Selector("obstacles")
     public native NSArray<? extends GKPolygonObstacle> obstacles();
@@ -331,7 +341,7 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
      */
     @Generated
     @Selector("removeObstacles:")
-    public native void removeObstacles(NSArray<? extends GKPolygonObstacle> obstacles);
+    public native void removeObstacles(@NotNull NSArray<? extends GKPolygonObstacle> obstacles);
 
     /**
      * "Unlocks" a connection, removing its protection from being destroyed when you add obstacles that would intersect
@@ -343,7 +353,7 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
      */
     @Generated
     @Selector("unlockConnectionFromNode:toNode:")
-    public native void unlockConnectionFromNodeToNode(GKGraphNode2D startNode, GKGraphNode2D endNode);
+    public native void unlockConnectionFromNodeToNode(@NotNull GKGraphNode2D startNode, @NotNull GKGraphNode2D endNode);
 
     @Generated
     @Selector("supportsSecureCoding")

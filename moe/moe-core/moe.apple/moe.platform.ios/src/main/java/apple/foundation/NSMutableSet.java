@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Mutable Set ***************
@@ -73,22 +75,25 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +128,10 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -150,7 +156,7 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
 
     @Generated
     @Selector("setWithArray:")
-    public static native <_ObjectType> NSMutableSet<?> setWithArray(NSArray<_ObjectType> array);
+    public static native <_ObjectType> NSMutableSet<?> setWithArray(@NotNull NSArray<_ObjectType> array);
 
     @Generated
     @Selector("setWithCapacity:")
@@ -159,22 +165,22 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
     @Generated
     @Selector("setWithObject:")
     public static native <_ObjectType> NSMutableSet<?> setWithObject(
-            @Mapped(ObjCObjectMapper.class) _ObjectType object);
+            @NotNull @Mapped(ObjCObjectMapper.class) _ObjectType object);
 
     @Generated
     @Variadic()
     @Selector("setWithObjects:")
     public static native <_ObjectType> NSMutableSet<?> setWithObjects(
-            @Mapped(ObjCObjectMapper.class) _ObjectType firstObj, Object... varargs);
+            @NotNull @Mapped(ObjCObjectMapper.class) _ObjectType firstObj, Object... varargs);
 
     @Generated
     @Selector("setWithObjects:count:")
     public static native <_ObjectType> NSMutableSet<?> setWithObjectsCount(
-            @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("setWithSet:")
-    public static native <_ObjectType> NSMutableSet<?> setWithSet(NSSet<_ObjectType> set);
+    public static native <_ObjectType> NSMutableSet<?> setWithSet(@NotNull NSSet<_ObjectType> set);
 
     @Generated
     @Selector("superclass")
@@ -191,11 +197,11 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
 
     @Generated
     @Selector("addObject:")
-    public native void addObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
+    public native void addObject(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType object);
 
     @Generated
     @Selector("addObjectsFromArray:")
-    public native void addObjectsFromArray(NSArray<_ObjectType> array);
+    public native void addObjectsFromArray(@NotNull NSArray<_ObjectType> array);
 
     /**
      * evaluate a predicate against a set of objects and filter the mutable set directly
@@ -204,7 +210,7 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
      */
     @Generated
     @Selector("filterUsingPredicate:")
-    public native void filterUsingPredicate(NSPredicate predicate);
+    public native void filterUsingPredicate(@NotNull NSPredicate predicate);
 
     @Generated
     @Selector("init")
@@ -212,7 +218,7 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
 
     @Generated
     @Selector("initWithArray:")
-    public native NSMutableSet<?> initWithArray(NSArray<_ObjectType> array);
+    public native NSMutableSet<?> initWithArray(@NotNull NSArray<_ObjectType> array);
 
     @Generated
     @Selector("initWithCapacity:")
@@ -220,34 +226,34 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMutableSet<?> initWithCoder(NSCoder coder);
+    public native NSMutableSet<?> initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Variadic()
     @Selector("initWithObjects:")
-    public native NSMutableSet<?> initWithObjects(@Mapped(ObjCObjectMapper.class) _ObjectType firstObj,
+    public native NSMutableSet<?> initWithObjects(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType firstObj,
             Object... varargs);
 
     @Generated
     @Selector("initWithObjects:count:")
-    public native NSMutableSet<?> initWithObjectsCount(@ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
-            @NUInt long cnt);
+    public native NSMutableSet<?> initWithObjectsCount(
+            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("initWithSet:")
-    public native NSMutableSet<?> initWithSet(NSSet<_ObjectType> set);
+    public native NSMutableSet<?> initWithSet(@NotNull NSSet<_ObjectType> set);
 
     @Generated
     @Selector("initWithSet:copyItems:")
-    public native NSMutableSet<?> initWithSetCopyItems(NSSet<_ObjectType> set, boolean flag);
+    public native NSMutableSet<?> initWithSetCopyItems(@NotNull NSSet<_ObjectType> set, boolean flag);
 
     @Generated
     @Selector("intersectSet:")
-    public native void intersectSet(NSSet<_ObjectType> otherSet);
+    public native void intersectSet(@NotNull NSSet<_ObjectType> otherSet);
 
     @Generated
     @Selector("minusSet:")
-    public native void minusSet(NSSet<_ObjectType> otherSet);
+    public native void minusSet(@NotNull NSSet<_ObjectType> otherSet);
 
     @Generated
     @Selector("removeAllObjects")
@@ -255,11 +261,11 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
 
     @Generated
     @Selector("removeObject:")
-    public native void removeObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
+    public native void removeObject(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType object);
 
     @Generated
     @Selector("setSet:")
-    public native void setSet(NSSet<_ObjectType> otherSet);
+    public native void setSet(@NotNull NSSet<_ObjectType> otherSet);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -269,5 +275,5 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
 
     @Generated
     @Selector("unionSet:")
-    public native void unionSet(NSSet<_ObjectType> otherSet);
+    public native void unionSet(@NotNull NSSet<_ObjectType> otherSet);
 }

@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A protocol to be implemented by objects that present the contents of files or directories to the user for viewing or
@@ -75,7 +77,7 @@ public interface NSFilePresenter {
     @IsOptional
     @Selector("accommodatePresentedItemDeletionWithCompletionHandler:")
     default void accommodatePresentedItemDeletionWithCompletionHandler(
-            @ObjCBlock(name = "call_accommodatePresentedItemDeletionWithCompletionHandler") Block_accommodatePresentedItemDeletionWithCompletionHandler completionHandler) {
+            @NotNull @ObjCBlock(name = "call_accommodatePresentedItemDeletionWithCompletionHandler") Block_accommodatePresentedItemDeletionWithCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -96,8 +98,8 @@ public interface NSFilePresenter {
     @Generated
     @IsOptional
     @Selector("accommodatePresentedSubitemDeletionAtURL:completionHandler:")
-    default void accommodatePresentedSubitemDeletionAtURLCompletionHandler(NSURL url,
-            @ObjCBlock(name = "call_accommodatePresentedSubitemDeletionAtURLCompletionHandler") Block_accommodatePresentedSubitemDeletionAtURLCompletionHandler completionHandler) {
+    default void accommodatePresentedSubitemDeletionAtURLCompletionHandler(@NotNull NSURL url,
+            @NotNull @ObjCBlock(name = "call_accommodatePresentedSubitemDeletionAtURLCompletionHandler") Block_accommodatePresentedSubitemDeletionAtURLCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -133,14 +135,14 @@ public interface NSFilePresenter {
     @Generated
     @IsOptional
     @Selector("presentedItemDidGainVersion:")
-    default void presentedItemDidGainVersion(NSFileVersion version) {
+    default void presentedItemDidGainVersion(@NotNull NSFileVersion version) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("presentedItemDidLoseVersion:")
-    default void presentedItemDidLoseVersion(NSFileVersion version) {
+    default void presentedItemDidLoseVersion(@NotNull NSFileVersion version) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -161,14 +163,14 @@ public interface NSFilePresenter {
     @Generated
     @IsOptional
     @Selector("presentedItemDidMoveToURL:")
-    default void presentedItemDidMoveToURL(NSURL newURL) {
+    default void presentedItemDidMoveToURL(@NotNull NSURL newURL) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("presentedItemDidResolveConflictVersion:")
-    default void presentedItemDidResolveConflictVersion(NSFileVersion version) {
+    default void presentedItemDidResolveConflictVersion(@NotNull NSFileVersion version) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -180,6 +182,7 @@ public interface NSFilePresenter {
      * For example, NSDocument has a -presentedItemOperationQueue method that returns a private queue. In very simple
      * cases you can return [NSOperationQueue mainQueue], but doing so is often an invitation to deadlocks.
      */
+    @NotNull
     @Generated
     @Selector("presentedItemOperationQueue")
     NSOperationQueue presentedItemOperationQueue();
@@ -195,6 +198,7 @@ public interface NSFilePresenter {
      * application that stores the user's data in files somewhere on the user's computer you can implement this method
      * to specify the directory that contains those files.
      */
+    @Nullable
     @Generated
     @Selector("presentedItemURL")
     NSURL presentedItemURL();
@@ -206,14 +210,14 @@ public interface NSFilePresenter {
     @Generated
     @IsOptional
     @Selector("presentedSubitemAtURL:didGainVersion:")
-    default void presentedSubitemAtURLDidGainVersion(NSURL url, NSFileVersion version) {
+    default void presentedSubitemAtURLDidGainVersion(@NotNull NSURL url, @NotNull NSFileVersion version) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("presentedSubitemAtURL:didLoseVersion:")
-    default void presentedSubitemAtURLDidLoseVersion(NSURL url, NSFileVersion version) {
+    default void presentedSubitemAtURLDidLoseVersion(@NotNull NSURL url, @NotNull NSFileVersion version) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -228,14 +232,14 @@ public interface NSFilePresenter {
     @Generated
     @IsOptional
     @Selector("presentedSubitemAtURL:didMoveToURL:")
-    default void presentedSubitemAtURLDidMoveToURL(NSURL oldURL, NSURL newURL) {
+    default void presentedSubitemAtURLDidMoveToURL(@NotNull NSURL oldURL, @NotNull NSURL newURL) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("presentedSubitemAtURL:didResolveConflictVersion:")
-    default void presentedSubitemAtURLDidResolveConflictVersion(NSURL url, NSFileVersion version) {
+    default void presentedSubitemAtURLDidResolveConflictVersion(@NotNull NSURL url, @NotNull NSFileVersion version) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -250,7 +254,7 @@ public interface NSFilePresenter {
     @Generated
     @IsOptional
     @Selector("presentedSubitemDidAppearAtURL:")
-    default void presentedSubitemDidAppearAtURL(NSURL url) {
+    default void presentedSubitemDidAppearAtURL(@NotNull NSURL url) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -266,7 +270,7 @@ public interface NSFilePresenter {
     @Generated
     @IsOptional
     @Selector("presentedSubitemDidChangeAtURL:")
-    default void presentedSubitemDidChangeAtURL(NSURL url) {
+    default void presentedSubitemDidChangeAtURL(@NotNull NSURL url) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -293,7 +297,7 @@ public interface NSFilePresenter {
     @IsOptional
     @Selector("savePresentedItemChangesWithCompletionHandler:")
     default void savePresentedItemChangesWithCompletionHandler(
-            @ObjCBlock(name = "call_savePresentedItemChangesWithCompletionHandler") Block_savePresentedItemChangesWithCompletionHandler completionHandler) {
+            @NotNull @ObjCBlock(name = "call_savePresentedItemChangesWithCompletionHandler") Block_savePresentedItemChangesWithCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -301,21 +305,21 @@ public interface NSFilePresenter {
     @Generated
     public interface Block_accommodatePresentedItemDeletionWithCompletionHandler {
         @Generated
-        void call_accommodatePresentedItemDeletionWithCompletionHandler(NSError errorOrNil);
+        void call_accommodatePresentedItemDeletionWithCompletionHandler(@Nullable NSError errorOrNil);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_accommodatePresentedSubitemDeletionAtURLCompletionHandler {
         @Generated
-        void call_accommodatePresentedSubitemDeletionAtURLCompletionHandler(NSError errorOrNil);
+        void call_accommodatePresentedSubitemDeletionAtURLCompletionHandler(@Nullable NSError errorOrNil);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_savePresentedItemChangesWithCompletionHandler {
         @Generated
-        void call_savePresentedItemChangesWithCompletionHandler(NSError errorOrNil);
+        void call_savePresentedItemChangesWithCompletionHandler(@Nullable NSError errorOrNil);
     }
 
     /**
@@ -336,6 +340,7 @@ public interface NSFilePresenter {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("observedPresentedItemUbiquityAttributes")
@@ -355,7 +360,7 @@ public interface NSFilePresenter {
     @Generated
     @IsOptional
     @Selector("presentedItemDidChangeUbiquityAttributes:")
-    default void presentedItemDidChangeUbiquityAttributes(NSSet<String> attributes) {
+    default void presentedItemDidChangeUbiquityAttributes(@NotNull NSSet<String> attributes) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -376,7 +381,7 @@ public interface NSFilePresenter {
     @IsOptional
     @Selector("relinquishPresentedItemToReader:")
     default void relinquishPresentedItemToReader(
-            @ObjCBlock(name = "call_relinquishPresentedItemToReader") Block_relinquishPresentedItemToReader reader) {
+            @NotNull @ObjCBlock(name = "call_relinquishPresentedItemToReader") Block_relinquishPresentedItemToReader reader) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -392,7 +397,7 @@ public interface NSFilePresenter {
 
         @Generated
         void call_relinquishPresentedItemToReader(
-                @ObjCBlock(name = "call_Block_relinquishPresentedItemToReader") Block_Block_relinquishPresentedItemToReader reacquirer);
+                @Nullable @ObjCBlock(name = "call_Block_relinquishPresentedItemToReader") Block_Block_relinquishPresentedItemToReader reacquirer);
     }
 
     /**
@@ -414,7 +419,7 @@ public interface NSFilePresenter {
     @IsOptional
     @Selector("relinquishPresentedItemToWriter:")
     default void relinquishPresentedItemToWriter(
-            @ObjCBlock(name = "call_relinquishPresentedItemToWriter") Block_relinquishPresentedItemToWriter writer) {
+            @NotNull @ObjCBlock(name = "call_relinquishPresentedItemToWriter") Block_relinquishPresentedItemToWriter writer) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -430,6 +435,6 @@ public interface NSFilePresenter {
 
         @Generated
         void call_relinquishPresentedItemToWriter(
-                @ObjCBlock(name = "call_Block_relinquishPresentedItemToWriter") Block_Block_relinquishPresentedItemToWriter reacquirer);
+                @Nullable @ObjCBlock(name = "call_Block_relinquishPresentedItemToWriter") Block_Block_relinquishPresentedItemToWriter reacquirer);
     }
 }

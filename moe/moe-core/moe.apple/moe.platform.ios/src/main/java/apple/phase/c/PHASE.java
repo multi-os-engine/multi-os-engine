@@ -8,6 +8,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("PHASE")
@@ -54,6 +55,7 @@ public final class PHASE {
     /**
      * [@constant] PHASESpatialCategoryDirectPathTransmission
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -62,6 +64,7 @@ public final class PHASE {
     /**
      * [@constant] PHASEEarlyReflections
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -70,6 +73,7 @@ public final class PHASE {
     /**
      * [@constant] PHASELateReverb
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

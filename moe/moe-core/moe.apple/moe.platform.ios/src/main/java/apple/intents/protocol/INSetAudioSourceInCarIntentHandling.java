@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INSetAudioSourceInCarIntent. By implementing this protocol, a class can
@@ -65,8 +66,8 @@ public interface INSetAudioSourceInCarIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmSetAudioSourceInCar:completion:")
-    default void confirmSetAudioSourceInCarCompletion(INSetAudioSourceInCarIntent intent,
-            @ObjCBlock(name = "call_confirmSetAudioSourceInCarCompletion") Block_confirmSetAudioSourceInCarCompletion completion) {
+    default void confirmSetAudioSourceInCarCompletion(@NotNull INSetAudioSourceInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmSetAudioSourceInCarCompletion") Block_confirmSetAudioSourceInCarCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -83,8 +84,8 @@ public interface INSetAudioSourceInCarIntentHandling {
      */
     @Generated
     @Selector("handleSetAudioSourceInCar:completion:")
-    void handleSetAudioSourceInCarCompletion(INSetAudioSourceInCarIntent intent,
-            @ObjCBlock(name = "call_handleSetAudioSourceInCarCompletion") Block_handleSetAudioSourceInCarCompletion completion);
+    void handleSetAudioSourceInCarCompletion(@NotNull INSetAudioSourceInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleSetAudioSourceInCarCompletion") Block_handleSetAudioSourceInCarCompletion completion);
 
     /**
      * Resolution methods - Determine if this intent is ready for the next step (confirmation)
@@ -100,8 +101,8 @@ public interface INSetAudioSourceInCarIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveAudioSourceForSetAudioSourceInCar:withCompletion:")
-    default void resolveAudioSourceForSetAudioSourceInCarWithCompletion(INSetAudioSourceInCarIntent intent,
-            @ObjCBlock(name = "call_resolveAudioSourceForSetAudioSourceInCarWithCompletion") Block_resolveAudioSourceForSetAudioSourceInCarWithCompletion completion) {
+    default void resolveAudioSourceForSetAudioSourceInCarWithCompletion(@NotNull INSetAudioSourceInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveAudioSourceForSetAudioSourceInCarWithCompletion") Block_resolveAudioSourceForSetAudioSourceInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -109,8 +110,8 @@ public interface INSetAudioSourceInCarIntentHandling {
     @IsOptional
     @Selector("resolveRelativeAudioSourceReferenceForSetAudioSourceInCar:withCompletion:")
     default void resolveRelativeAudioSourceReferenceForSetAudioSourceInCarWithCompletion(
-            INSetAudioSourceInCarIntent intent,
-            @ObjCBlock(name = "call_resolveRelativeAudioSourceReferenceForSetAudioSourceInCarWithCompletion") Block_resolveRelativeAudioSourceReferenceForSetAudioSourceInCarWithCompletion completion) {
+            @NotNull INSetAudioSourceInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveRelativeAudioSourceReferenceForSetAudioSourceInCarWithCompletion") Block_resolveRelativeAudioSourceReferenceForSetAudioSourceInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -118,14 +119,14 @@ public interface INSetAudioSourceInCarIntentHandling {
     @Generated
     public interface Block_confirmSetAudioSourceInCarCompletion {
         @Generated
-        void call_confirmSetAudioSourceInCarCompletion(INSetAudioSourceInCarIntentResponse response);
+        void call_confirmSetAudioSourceInCarCompletion(@NotNull INSetAudioSourceInCarIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSetAudioSourceInCarCompletion {
         @Generated
-        void call_handleSetAudioSourceInCarCompletion(INSetAudioSourceInCarIntentResponse response);
+        void call_handleSetAudioSourceInCarCompletion(@NotNull INSetAudioSourceInCarIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -133,7 +134,7 @@ public interface INSetAudioSourceInCarIntentHandling {
     public interface Block_resolveAudioSourceForSetAudioSourceInCarWithCompletion {
         @Generated
         void call_resolveAudioSourceForSetAudioSourceInCarWithCompletion(
-                INCarAudioSourceResolutionResult resolutionResult);
+                @NotNull INCarAudioSourceResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -141,6 +142,6 @@ public interface INSetAudioSourceInCarIntentHandling {
     public interface Block_resolveRelativeAudioSourceReferenceForSetAudioSourceInCarWithCompletion {
         @Generated
         void call_resolveRelativeAudioSourceReferenceForSetAudioSourceInCarWithCompletion(
-                INRelativeReferenceResolutionResult resolutionResult);
+                @NotNull INRelativeReferenceResolutionResult resolutionResult);
     }
 }

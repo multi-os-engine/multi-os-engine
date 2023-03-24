@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -44,6 +46,7 @@ public class MSServiceAccount extends NSObject {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    @NotNull
     @Generated
     @Selector("accountName")
     public native String accountName();
@@ -61,6 +64,7 @@ public class MSServiceAccount extends NSObject {
     /**
      * authorizationScope is an optional OAuth 2.0 scope parameter provided when requesting a token.
      */
+    @Nullable
     @Generated
     @Selector("authorizationScope")
     public native String authorizationScope();
@@ -69,28 +73,32 @@ public class MSServiceAccount extends NSObject {
      * authorizationTokenURL is an OAuth 2.0 token service endpoint that can provide a Bearer token for retrieving
      * configuration.
      */
+    @Nullable
     @Generated
     @Selector("authorizationTokenURL")
     public native NSURL authorizationTokenURL();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -99,6 +107,7 @@ public class MSServiceAccount extends NSObject {
      * clientID is used to create a HTTP Basic auth for a token request and should be unique for an account, though it
      * can also be unique per registration.
      */
+    @Nullable
     @Generated
     @Selector("clientID")
     public native String clientID();
@@ -107,6 +116,7 @@ public class MSServiceAccount extends NSObject {
      * clientSecret is used to create a HTTP Basic auth for a token request and is a freeform string that may be a hash,
      * but not a plaintext password
      */
+    @Nullable
     @Generated
     @Selector("clientSecret")
     public native String clientSecret();
@@ -115,6 +125,7 @@ public class MSServiceAccount extends NSObject {
      * configurationURL is a URL to the configuration endpoint of the CloudExtension instance servicing this account.
      * The configuration is retrieved with the Oauth2 Bearer token.
      */
+    @Nullable
     @Generated
     @Selector("configurationURL")
     public native NSURL configurationURL();
@@ -138,7 +149,8 @@ public class MSServiceAccount extends NSObject {
 
     @Generated
     @Selector("initWithServiceName:accountName:")
-    public native MSServiceAccount initWithServiceNameAccountName(String serviceName, String accountName);
+    public native MSServiceAccount initWithServiceNameAccountName(@NotNull String serviceName,
+            @NotNull String accountName);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -157,9 +169,10 @@ public class MSServiceAccount extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -174,6 +187,7 @@ public class MSServiceAccount extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @NotNull
     @Generated
     @Selector("serviceName")
     public native String serviceName();
@@ -183,7 +197,7 @@ public class MSServiceAccount extends NSObject {
      */
     @Generated
     @Selector("setAuthorizationScope:")
-    public native void setAuthorizationScope(String value);
+    public native void setAuthorizationScope(@Nullable String value);
 
     /**
      * authorizationTokenURL is an OAuth 2.0 token service endpoint that can provide a Bearer token for retrieving
@@ -191,7 +205,7 @@ public class MSServiceAccount extends NSObject {
      */
     @Generated
     @Selector("setAuthorizationTokenURL:")
-    public native void setAuthorizationTokenURL(NSURL value);
+    public native void setAuthorizationTokenURL(@Nullable NSURL value);
 
     /**
      * clientID is used to create a HTTP Basic auth for a token request and should be unique for an account, though it
@@ -199,7 +213,7 @@ public class MSServiceAccount extends NSObject {
      */
     @Generated
     @Selector("setClientID:")
-    public native void setClientID(String value);
+    public native void setClientID(@Nullable String value);
 
     /**
      * clientSecret is used to create a HTTP Basic auth for a token request and is a freeform string that may be a hash,
@@ -207,7 +221,7 @@ public class MSServiceAccount extends NSObject {
      */
     @Generated
     @Selector("setClientSecret:")
-    public native void setClientSecret(String value);
+    public native void setClientSecret(@Nullable String value);
 
     /**
      * configurationURL is a URL to the configuration endpoint of the CloudExtension instance servicing this account.
@@ -215,7 +229,7 @@ public class MSServiceAccount extends NSObject {
      */
     @Generated
     @Selector("setConfigurationURL:")
-    public native void setConfigurationURL(NSURL value);
+    public native void setConfigurationURL(@Nullable NSURL value);
 
     @Generated
     @Selector("setVersion:")

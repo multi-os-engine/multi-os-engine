@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEAppProxyFlow
@@ -82,22 +84,25 @@ public class NEAppProxyFlow extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -132,9 +137,10 @@ public class NEAppProxyFlow extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -174,7 +180,7 @@ public class NEAppProxyFlow extends NSObject {
      */
     @Generated
     @Selector("closeReadWithError:")
-    public native void closeReadWithError(NSError error);
+    public native void closeReadWithError(@Nullable NSError error);
 
     /**
      * closeWriteWithError:
@@ -188,7 +194,7 @@ public class NEAppProxyFlow extends NSObject {
      */
     @Generated
     @Selector("closeWriteWithError:")
-    public native void closeWriteWithError(NSError error);
+    public native void closeWriteWithError(@Nullable NSError error);
 
     @Generated
     @Selector("init")
@@ -201,6 +207,7 @@ public class NEAppProxyFlow extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("metaData")
     public native NEFlowMetaData metaData();
@@ -221,14 +228,14 @@ public class NEAppProxyFlow extends NSObject {
      */
     @Generated
     @Selector("openWithLocalEndpoint:completionHandler:")
-    public native void openWithLocalEndpointCompletionHandler(NWHostEndpoint localEndpoint,
-            @ObjCBlock(name = "call_openWithLocalEndpointCompletionHandler") Block_openWithLocalEndpointCompletionHandler completionHandler);
+    public native void openWithLocalEndpointCompletionHandler(@Nullable NWHostEndpoint localEndpoint,
+            @NotNull @ObjCBlock(name = "call_openWithLocalEndpointCompletionHandler") Block_openWithLocalEndpointCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_openWithLocalEndpointCompletionHandler {
         @Generated
-        void call_openWithLocalEndpointCompletionHandler(NSError error);
+        void call_openWithLocalEndpointCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -240,6 +247,7 @@ public class NEAppProxyFlow extends NSObject {
      * 
      * API-Since: 13.4
      */
+    @Nullable
     @Generated
     @Selector("networkInterface")
     public native NSObject networkInterface();
@@ -255,7 +263,7 @@ public class NEAppProxyFlow extends NSObject {
      */
     @Generated
     @Selector("setNetworkInterface:")
-    public native void setNetworkInterface(NSObject value);
+    public native void setNetworkInterface(@Nullable NSObject value);
 
     /**
      * [@property] remoteHostname
@@ -266,6 +274,7 @@ public class NEAppProxyFlow extends NSObject {
      * 
      * API-Since: 14.2
      */
+    @Nullable
     @Generated
     @Selector("remoteHostname")
     public native String remoteHostname();

@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * GKLeaderboardSet represents the sets that leaderboards can be broken out into.
@@ -80,22 +82,25 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +135,10 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Loads array with all sets for game
@@ -146,7 +152,7 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
     @Generated
     @Selector("loadLeaderboardSetsWithCompletionHandler:")
     public static native void loadLeaderboardSetsWithCompletionHandler(
-            @ObjCBlock(name = "call_loadLeaderboardSetsWithCompletionHandler") Block_loadLeaderboardSetsWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_loadLeaderboardSetsWithCompletionHandler") Block_loadLeaderboardSetsWithCompletionHandler completionHandler);
 
     @Generated
     @Owned
@@ -180,12 +186,13 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * set when leaderboardSets have been designated a game group; set when loadLeaderboardSetsWithCompletionHandler has
      * been called for leaderboards that support game groups
      */
+    @Nullable
     @Generated
     @Selector("groupIdentifier")
     public native String groupIdentifier();
@@ -193,6 +200,7 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
     /**
      * leaderboard set.
      */
+    @Nullable
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -203,12 +211,12 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKLeaderboardSet initWithCoder(NSCoder coder);
+    public native GKLeaderboardSet initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("loadImageWithCompletionHandler:")
     public native void loadImageWithCompletionHandler(
-            @ObjCBlock(name = "call_loadImageWithCompletionHandler") Block_loadImageWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_loadImageWithCompletionHandler") Block_loadImageWithCompletionHandler completionHandler);
 
     /**
      * Loads array with all leaderboards for the leaderboardSet
@@ -224,14 +232,14 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
     @Generated
     @Selector("loadLeaderboardsWithCompletionHandler:")
     public native void loadLeaderboardsWithCompletionHandler(
-            @ObjCBlock(name = "call_loadLeaderboardsWithCompletionHandler") Block_loadLeaderboardsWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_loadLeaderboardsWithCompletionHandler") Block_loadLeaderboardsWithCompletionHandler completionHandler);
 
     /**
      * leaderboard set.
      */
     @Generated
     @Selector("setIdentifier:")
-    public native void setIdentifier(String value);
+    public native void setIdentifier(@Nullable String value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -242,6 +250,7 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
     /**
      * Localized set title.
      */
+    @NotNull
     @Generated
     @Selector("title")
     public native String title();
@@ -250,22 +259,23 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
     @Generated
     public interface Block_loadImageWithCompletionHandler {
         @Generated
-        void call_loadImageWithCompletionHandler(UIImage image, NSError error);
+        void call_loadImageWithCompletionHandler(@Nullable UIImage image, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadLeaderboardSetsWithCompletionHandler {
         @Generated
-        void call_loadLeaderboardSetsWithCompletionHandler(NSArray<? extends GKLeaderboardSet> leaderboardSets,
-                NSError error);
+        void call_loadLeaderboardSetsWithCompletionHandler(
+                @Nullable NSArray<? extends GKLeaderboardSet> leaderboardSets, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadLeaderboardsWithCompletionHandler {
         @Generated
-        void call_loadLeaderboardsWithCompletionHandler(NSArray<? extends GKLeaderboard> leaderboards, NSError error);
+        void call_loadLeaderboardsWithCompletionHandler(@Nullable NSArray<? extends GKLeaderboard> leaderboards,
+                @Nullable NSError error);
     }
 
     /**
@@ -279,12 +289,13 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
     @Generated
     @Selector("loadLeaderboardsWithHandler:")
     public native void loadLeaderboardsWithHandler(
-            @ObjCBlock(name = "call_loadLeaderboardsWithHandler") Block_loadLeaderboardsWithHandler handler);
+            @NotNull @ObjCBlock(name = "call_loadLeaderboardsWithHandler") Block_loadLeaderboardsWithHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadLeaderboardsWithHandler {
         @Generated
-        void call_loadLeaderboardsWithHandler(NSArray<? extends GKLeaderboard> leaderboards, NSError error);
+        void call_loadLeaderboardsWithHandler(@Nullable NSArray<? extends GKLeaderboard> leaderboards,
+                @Nullable NSError error);
     }
 }

@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.DoublePtr;
 import org.moe.natj.objc.ann.ObjCBlock;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVMusicTrack
@@ -69,22 +71,25 @@ public class AVMusicTrack extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -107,6 +112,7 @@ public class AVMusicTrack extends NSObject {
      * with that engine. When playing, the track will send its events to that AVAudioUnit. The
      * destination AU cannot be changed while the track's sequence is playing.
      */
+    @Nullable
     @Generated
     @Selector("destinationAudioUnit")
     public native AVAudioUnit destinationAudioUnit();
@@ -170,9 +176,10 @@ public class AVMusicTrack extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] lengthInBeats
@@ -267,7 +274,7 @@ public class AVMusicTrack extends NSObject {
      */
     @Generated
     @Selector("setDestinationAudioUnit:")
-    public native void setDestinationAudioUnit(AVAudioUnit value);
+    public native void setDestinationAudioUnit(@Nullable AVAudioUnit value);
 
     @Generated
     @Selector("setDestinationMIDIEndpoint:")
@@ -423,7 +430,7 @@ public class AVMusicTrack extends NSObject {
      */
     @Generated
     @Selector("addEvent:atBeat:")
-    public native void addEventAtBeat(AVMusicEvent event, double beat);
+    public native void addEventAtBeat(@NotNull AVMusicEvent event, double beat);
 
     /**
      * clearEventsInRange:
@@ -456,7 +463,7 @@ public class AVMusicTrack extends NSObject {
     @Generated
     @Selector("copyAndMergeEventsInRange:fromTrack:mergeAtBeat:")
     public native void copyAndMergeEventsInRangeFromTrackMergeAtBeat(@ByValue AVBeatRange range,
-            AVMusicTrack sourceTrack, double mergeStartBeat);
+            @NotNull AVMusicTrack sourceTrack, double mergeStartBeat);
 
     /**
      * copyEventsInRange:fromTrack:insertAtBeat
@@ -473,8 +480,8 @@ public class AVMusicTrack extends NSObject {
      */
     @Generated
     @Selector("copyEventsInRange:fromTrack:insertAtBeat:")
-    public native void copyEventsInRangeFromTrackInsertAtBeat(@ByValue AVBeatRange range, AVMusicTrack sourceTrack,
-            double insertStartBeat);
+    public native void copyEventsInRangeFromTrackInsertAtBeat(@ByValue AVBeatRange range,
+            @NotNull AVMusicTrack sourceTrack, double insertStartBeat);
 
     /**
      * cutEventsInRange:
@@ -508,13 +515,14 @@ public class AVMusicTrack extends NSObject {
     @Generated
     @Selector("enumerateEventsInRange:usingBlock:")
     public native void enumerateEventsInRangeUsingBlock(@ByValue AVBeatRange range,
-            @ObjCBlock(name = "call_enumerateEventsInRangeUsingBlock") Block_enumerateEventsInRangeUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateEventsInRangeUsingBlock") Block_enumerateEventsInRangeUsingBlock block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateEventsInRangeUsingBlock {
         @Generated
-        void call_enumerateEventsInRangeUsingBlock(AVMusicEvent event, DoublePtr timeStamp, BoolPtr removeEvent);
+        void call_enumerateEventsInRangeUsingBlock(@NotNull AVMusicEvent event, @NotNull DoublePtr timeStamp,
+                @NotNull BoolPtr removeEvent);
     }
 
     /**

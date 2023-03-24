@@ -9,6 +9,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 11.0
@@ -27,13 +28,13 @@ public interface UICollectionViewDropPlaceholderContext extends UIDragAnimating 
     @Generated
     @Selector("commitInsertionWithDataSourceUpdates:")
     boolean commitInsertionWithDataSourceUpdates(
-            @ObjCBlock(name = "call_commitInsertionWithDataSourceUpdates") Block_commitInsertionWithDataSourceUpdates dataSourceUpdates);
+            @NotNull @ObjCBlock(name = "call_commitInsertionWithDataSourceUpdates") Block_commitInsertionWithDataSourceUpdates dataSourceUpdates);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_commitInsertionWithDataSourceUpdates {
         @Generated
-        void call_commitInsertionWithDataSourceUpdates(NSIndexPath insertionIndexPath);
+        void call_commitInsertionWithDataSourceUpdates(@NotNull NSIndexPath insertionIndexPath);
     }
 
     /**
@@ -48,6 +49,7 @@ public interface UICollectionViewDropPlaceholderContext extends UIDragAnimating 
     /**
      * Retrieve drop data from the dragItem's itemProvider.
      */
+    @NotNull
     @Generated
     @Selector("dragItem")
     UIDragItem dragItem();

@@ -11,6 +11,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 13.4
@@ -33,8 +34,8 @@ public interface CPTemplateApplicationDashboardSceneDelegate extends UISceneDele
     @IsOptional
     @Selector("templateApplicationDashboardScene:didConnectDashboardController:toWindow:")
     default void templateApplicationDashboardSceneDidConnectDashboardControllerToWindow(
-            CPTemplateApplicationDashboardScene templateApplicationDashboardScene,
-            CPDashboardController dashboardController, UIWindow window) {
+            @NotNull CPTemplateApplicationDashboardScene templateApplicationDashboardScene,
+            @NotNull CPDashboardController dashboardController, @NotNull UIWindow window) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -45,8 +46,8 @@ public interface CPTemplateApplicationDashboardSceneDelegate extends UISceneDele
     @IsOptional
     @Selector("templateApplicationDashboardScene:didDisconnectDashboardController:fromWindow:")
     default void templateApplicationDashboardSceneDidDisconnectDashboardControllerFromWindow(
-            CPTemplateApplicationDashboardScene templateApplicationDashboardScene,
-            CPDashboardController dashboardController, UIWindow window) {
+            @NotNull CPTemplateApplicationDashboardScene templateApplicationDashboardScene,
+            @NotNull CPDashboardController dashboardController, @NotNull UIWindow window) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

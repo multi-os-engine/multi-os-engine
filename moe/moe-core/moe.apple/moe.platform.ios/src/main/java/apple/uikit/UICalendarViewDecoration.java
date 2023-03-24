@@ -22,6 +22,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -56,22 +58,25 @@ public class UICalendarViewDecoration extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -85,7 +90,7 @@ public class UICalendarViewDecoration extends NSObject {
      */
     @Generated
     @Selector("decorationWithColor:size:")
-    public static native UICalendarViewDecoration decorationWithColorSize(UIColor color, @NInt long size);
+    public static native UICalendarViewDecoration decorationWithColorSize(@Nullable UIColor color, @NInt long size);
 
     /**
      * Creates a new custom view decoration using the specified custom view provider. The provider will be called once
@@ -95,11 +100,12 @@ public class UICalendarViewDecoration extends NSObject {
     @Generated
     @Selector("decorationWithCustomViewProvider:")
     public static native UICalendarViewDecoration decorationWithCustomViewProvider(
-            @ObjCBlock(name = "call_decorationWithCustomViewProvider") Block_decorationWithCustomViewProvider customViewProvider);
+            @NotNull @ObjCBlock(name = "call_decorationWithCustomViewProvider") Block_decorationWithCustomViewProvider customViewProvider);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_decorationWithCustomViewProvider {
+        @NotNull
         @Generated
         UIView call_decorationWithCustomViewProvider();
     }
@@ -109,15 +115,15 @@ public class UICalendarViewDecoration extends NSObject {
      */
     @Generated
     @Selector("decorationWithImage:")
-    public static native UICalendarViewDecoration decorationWithImage(UIImage image);
+    public static native UICalendarViewDecoration decorationWithImage(@Nullable UIImage image);
 
     /**
      * Creates an accessory with the specified image, color, and size.
      */
     @Generated
     @Selector("decorationWithImage:color:size:")
-    public static native UICalendarViewDecoration decorationWithImageColorSize(UIImage image, UIColor color,
-            @NInt long size);
+    public static native UICalendarViewDecoration decorationWithImageColorSize(@Nullable UIImage image,
+            @Nullable UIColor color, @NInt long size);
 
     @Generated
     @Selector("description")
@@ -143,11 +149,12 @@ public class UICalendarViewDecoration extends NSObject {
     @Generated
     @Selector("initWithCustomViewProvider:")
     public native UICalendarViewDecoration initWithCustomViewProvider(
-            @ObjCBlock(name = "call_initWithCustomViewProvider") Block_initWithCustomViewProvider customViewProvider);
+            @NotNull @ObjCBlock(name = "call_initWithCustomViewProvider") Block_initWithCustomViewProvider customViewProvider);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithCustomViewProvider {
+        @NotNull
         @Generated
         UIView call_initWithCustomViewProvider();
     }
@@ -161,7 +168,8 @@ public class UICalendarViewDecoration extends NSObject {
      */
     @Generated
     @Selector("initWithImage:color:size:")
-    public native UICalendarViewDecoration initWithImageColorSize(UIImage image, UIColor color, @NInt long size);
+    public native UICalendarViewDecoration initWithImageColorSize(@Nullable UIImage image, @Nullable UIColor color,
+            @NInt long size);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -180,9 +188,10 @@ public class UICalendarViewDecoration extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

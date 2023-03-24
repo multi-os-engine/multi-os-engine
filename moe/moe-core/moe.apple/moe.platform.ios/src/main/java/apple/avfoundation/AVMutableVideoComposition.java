@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.foundation.NSError;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.0
@@ -79,22 +81,25 @@ public class AVMutableVideoComposition extends AVVideoComposition {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +134,10 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,6 +173,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * The returned AVMutableVideoComposition will have a frameDuration of kCMTimeZero, a renderSize of {0.0, 0.0}, a
      * nil array of instructions, and a nil animationTool.
      */
+    @NotNull
     @Generated
     @Selector("videoComposition")
     public static native AVMutableVideoComposition videoComposition();
@@ -218,11 +225,13 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      *              asset are already loaded before invoking this method.
      * @return An instance of AVMutableVideoComposition.
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("videoCompositionWithAsset:applyingCIFiltersWithHandler:")
-    public static native AVMutableVideoComposition videoCompositionWithAssetApplyingCIFiltersWithHandler(AVAsset asset,
-            @ObjCBlock(name = "call_videoCompositionWithAssetApplyingCIFiltersWithHandler") Block_videoCompositionWithAssetApplyingCIFiltersWithHandler applier);
+    public static native AVMutableVideoComposition videoCompositionWithAssetApplyingCIFiltersWithHandler(
+            @NotNull AVAsset asset,
+            @NotNull @ObjCBlock(name = "call_videoCompositionWithAssetApplyingCIFiltersWithHandler") Block_videoCompositionWithAssetApplyingCIFiltersWithHandler applier);
 
     /**
      * videoCompositionWithPropertiesOfAsset:
@@ -256,14 +265,16 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      *              asset are already loaded before invoking this method.
      * @return An instance of AVMutableVideoComposition.
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("videoCompositionWithPropertiesOfAsset:")
-    public static native AVMutableVideoComposition videoCompositionWithPropertiesOfAsset(AVAsset asset);
+    public static native AVMutableVideoComposition videoCompositionWithPropertiesOfAsset(@NotNull AVAsset asset);
 
     /**
      * indicates a special video composition tool for use of Core Animation; may be nil
      */
+    @Nullable
     @Generated
     @Selector("animationTool")
     public native AVVideoCompositionCoreAnimationTool animationTool();
@@ -279,6 +290,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("colorPrimaries")
     public native String colorPrimaries();
@@ -294,6 +306,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("colorTransferFunction")
     public native String colorTransferFunction();
@@ -309,6 +322,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("colorYCbCrMatrix")
     public native String colorYCbCrMatrix();
@@ -318,6 +332,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("customVideoCompositorClass")
     @MappedReturn(ObjCObjectMapper.class)
@@ -346,6 +361,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * be attempted (note that this will often be
      * the duration of the asset with which the instance of AVVideoComposition is associated).
      */
+    @NotNull
     @Generated
     @Selector("instructions")
     public native NSArray<?> instructions();
@@ -373,7 +389,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      */
     @Generated
     @Selector("setAnimationTool:")
-    public native void setAnimationTool(AVVideoCompositionCoreAnimationTool value);
+    public native void setAnimationTool(@Nullable AVVideoCompositionCoreAnimationTool value);
 
     /**
      * [@property] colorPrimaries
@@ -388,7 +404,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      */
     @Generated
     @Selector("setColorPrimaries:")
-    public native void setColorPrimaries(String value);
+    public native void setColorPrimaries(@Nullable String value);
 
     /**
      * [@property] colorTransferFunction
@@ -403,7 +419,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      */
     @Generated
     @Selector("setColorTransferFunction:")
-    public native void setColorTransferFunction(String value);
+    public native void setColorTransferFunction(@Nullable String value);
 
     /**
      * [@property] colorYCbCrMatrix
@@ -418,7 +434,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      */
     @Generated
     @Selector("setColorYCbCrMatrix:")
-    public native void setColorYCbCrMatrix(String value);
+    public native void setColorYCbCrMatrix(@Nullable String value);
 
     /**
      * indicates the custom compositor class to use. If nil, the default, internal video compositor is used
@@ -427,7 +443,8 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      */
     @Generated
     @Selector("setCustomVideoCompositorClass:")
-    public native void setCustomVideoCompositorClass(@Mapped(ObjCObjectMapper.class) AVVideoCompositing value);
+    public native void setCustomVideoCompositorClass(
+            @Nullable @Mapped(ObjCObjectMapper.class) AVVideoCompositing value);
 
     /**
      * indicates the interval which the video composition, when enabled, should render composed video frames
@@ -449,7 +466,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      */
     @Generated
     @Selector("setInstructions:")
-    public native void setInstructions(NSArray<?> value);
+    public native void setInstructions(@NotNull NSArray<?> value);
 
     /**
      * indicates the scale at which the video composition should render. May only be other than 1.0 for a video
@@ -472,7 +489,8 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     @Generated
     public interface Block_videoCompositionWithAssetApplyingCIFiltersWithHandler {
         @Generated
-        void call_videoCompositionWithAssetApplyingCIFiltersWithHandler(AVAsynchronousCIImageFilteringRequest request);
+        void call_videoCompositionWithAssetApplyingCIFiltersWithHandler(
+                @NotNull AVAsynchronousCIImageFilteringRequest request);
     }
 
     /**
@@ -525,11 +543,12 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * @param prototypeInstruction Custom instructions that the client can choose to override.
      * @return An instance of AVMutableVideoComposition.
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("videoCompositionWithPropertiesOfAsset:prototypeInstruction:")
     public static native AVMutableVideoComposition videoCompositionWithPropertiesOfAssetPrototypeInstruction(
-            AVAsset asset, AVVideoCompositionInstruction prototypeInstruction);
+            @NotNull AVAsset asset, @NotNull AVVideoCompositionInstruction prototypeInstruction);
 
     /**
      * List of all track IDs for tracks from which sample data should be presented to the compositor at any point in the
@@ -539,7 +558,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      */
     @Generated
     @Selector("setSourceSampleDataTrackIDs:")
-    public native void setSourceSampleDataTrackIDs(NSArray<? extends NSNumber> value);
+    public native void setSourceSampleDataTrackIDs(@NotNull NSArray<? extends NSNumber> value);
 
     /**
      * List of all track IDs for tracks from which sample data should be presented to the compositor at any point in the
@@ -547,6 +566,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("sourceSampleDataTrackIDs")
     public native NSArray<? extends NSNumber> sourceSampleDataTrackIDs();
@@ -608,16 +628,17 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      */
     @Generated
     @Selector("videoCompositionWithAsset:applyingCIFiltersWithHandler:completionHandler:")
-    public static native void videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler(AVAsset asset,
-            @ObjCBlock(name = "call_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_1") Block_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_1 applier,
-            @ObjCBlock(name = "call_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_2") Block_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_2 completionHandler);
+    public static native void videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler(
+            @NotNull AVAsset asset,
+            @NotNull @ObjCBlock(name = "call_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_1") Block_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_1 applier,
+            @NotNull @ObjCBlock(name = "call_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_2") Block_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_2 completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_1 {
         @Generated
         void call_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_1(
-                AVAsynchronousCIImageFilteringRequest request);
+                @NotNull AVAsynchronousCIImageFilteringRequest request);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -625,7 +646,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     public interface Block_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_2 {
         @Generated
         void call_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_2(
-                AVMutableVideoComposition videoComposition, NSError error);
+                @Nullable AVMutableVideoComposition videoComposition, @Nullable NSError error);
     }
 
     /**
@@ -664,15 +685,15 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      */
     @Generated
     @Selector("videoCompositionWithPropertiesOfAsset:completionHandler:")
-    public static native void videoCompositionWithPropertiesOfAssetCompletionHandler(AVAsset asset,
-            @ObjCBlock(name = "call_videoCompositionWithPropertiesOfAssetCompletionHandler") Block_videoCompositionWithPropertiesOfAssetCompletionHandler completionHandler);
+    public static native void videoCompositionWithPropertiesOfAssetCompletionHandler(@NotNull AVAsset asset,
+            @NotNull @ObjCBlock(name = "call_videoCompositionWithPropertiesOfAssetCompletionHandler") Block_videoCompositionWithPropertiesOfAssetCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_videoCompositionWithPropertiesOfAssetCompletionHandler {
         @Generated
-        void call_videoCompositionWithPropertiesOfAssetCompletionHandler(AVMutableVideoComposition videoComposition,
-                NSError error);
+        void call_videoCompositionWithPropertiesOfAssetCompletionHandler(
+                @Nullable AVMutableVideoComposition videoComposition, @Nullable NSError error);
     }
 
     /**
@@ -715,15 +736,15 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      */
     @Generated
     @Selector("videoCompositionWithPropertiesOfAsset:prototypeInstruction:completionHandler:")
-    public static native void videoCompositionWithPropertiesOfAssetPrototypeInstructionCompletionHandler(AVAsset asset,
-            AVVideoCompositionInstruction prototypeInstruction,
-            @ObjCBlock(name = "call_videoCompositionWithPropertiesOfAssetPrototypeInstructionCompletionHandler") Block_videoCompositionWithPropertiesOfAssetPrototypeInstructionCompletionHandler completionHandler);
+    public static native void videoCompositionWithPropertiesOfAssetPrototypeInstructionCompletionHandler(
+            @NotNull AVAsset asset, @NotNull AVVideoCompositionInstruction prototypeInstruction,
+            @NotNull @ObjCBlock(name = "call_videoCompositionWithPropertiesOfAssetPrototypeInstructionCompletionHandler") Block_videoCompositionWithPropertiesOfAssetPrototypeInstructionCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_videoCompositionWithPropertiesOfAssetPrototypeInstructionCompletionHandler {
         @Generated
         void call_videoCompositionWithPropertiesOfAssetPrototypeInstructionCompletionHandler(
-                AVMutableVideoComposition videoComposition, NSError error);
+                @Nullable AVMutableVideoComposition videoComposition, @Nullable NSError error);
     }
 }

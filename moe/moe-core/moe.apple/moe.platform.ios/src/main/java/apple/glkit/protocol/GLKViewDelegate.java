@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("GLKit")
@@ -39,5 +40,5 @@ public interface GLKViewDelegate {
      */
     @Generated
     @Selector("glkView:drawInRect:")
-    void glkViewDrawInRect(GLKView view, @ByValue CGRect rect);
+    void glkViewDrawInRect(@NotNull GLKView view, @ByValue CGRect rect);
 }

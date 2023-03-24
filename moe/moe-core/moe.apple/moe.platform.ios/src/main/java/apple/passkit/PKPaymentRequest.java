@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * PKPaymentRequest defines an application's request to produce a payment instrument for the
@@ -78,31 +80,35 @@ public class PKPaymentRequest extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * The payment networks and platforms supported for in-app payment
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("availableNetworks")
     public static native NSArray<String> availableNetworks();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -137,9 +143,10 @@ public class PKPaymentRequest extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -171,6 +178,7 @@ public class PKPaymentRequest extends NSObject {
      * Optional merchant-supplied information about the payment request. Examples of this are an order
      * or cart identifier. It will be signed and included in the resulting PKPaymentToken.
      */
+    @Nullable
     @Generated
     @Selector("applicationData")
     public native NSData applicationData();
@@ -181,6 +189,7 @@ public class PKPaymentRequest extends NSObject {
      * Deprecated-Message: ABRecordRef has been deprecated, and does not support all available address properties. You
      * should migrate to billingContact.
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("billingAddress")
@@ -191,6 +200,7 @@ public class PKPaymentRequest extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("billingContact")
     public native PKContact billingContact();
@@ -198,6 +208,7 @@ public class PKPaymentRequest extends NSObject {
     /**
      * The merchant's ISO country code.
      */
+    @NotNull
     @Generated
     @Selector("countryCode")
     public native String countryCode();
@@ -205,6 +216,7 @@ public class PKPaymentRequest extends NSObject {
     /**
      * Currency code for this payment.
      */
+    @NotNull
     @Generated
     @Selector("currencyCode")
     public native String currencyCode();
@@ -225,6 +237,7 @@ public class PKPaymentRequest extends NSObject {
      * Identifies the merchant, as previously agreed with Apple. Must match one of the merchant
      * identifiers in the application's entitlement.
      */
+    @NotNull
     @Generated
     @Selector("merchantIdentifier")
     public native String merchantIdentifier();
@@ -233,6 +246,7 @@ public class PKPaymentRequest extends NSObject {
      * Array of PKPaymentSummaryItem objects which should be presented to the user.
      * The last item should be the total you wish to charge, and should not be pending
      */
+    @NotNull
     @Generated
     @Selector("paymentSummaryItems")
     public native NSArray<? extends PKPaymentSummaryItem> paymentSummaryItems();
@@ -269,7 +283,7 @@ public class PKPaymentRequest extends NSObject {
      */
     @Generated
     @Selector("setApplicationData:")
-    public native void setApplicationData(NSData value);
+    public native void setApplicationData(@Nullable NSData value);
 
     /**
      * API-Since: 8.0
@@ -280,7 +294,7 @@ public class PKPaymentRequest extends NSObject {
     @Generated
     @Deprecated
     @Selector("setBillingAddress:")
-    public native void setBillingAddress(ConstVoidPtr value);
+    public native void setBillingAddress(@Nullable ConstVoidPtr value);
 
     /**
      * If the merchant already has a billing address on file, set it here.
@@ -289,21 +303,21 @@ public class PKPaymentRequest extends NSObject {
      */
     @Generated
     @Selector("setBillingContact:")
-    public native void setBillingContact(PKContact value);
+    public native void setBillingContact(@Nullable PKContact value);
 
     /**
      * The merchant's ISO country code.
      */
     @Generated
     @Selector("setCountryCode:")
-    public native void setCountryCode(String value);
+    public native void setCountryCode(@NotNull String value);
 
     /**
      * Currency code for this payment.
      */
     @Generated
     @Selector("setCurrencyCode:")
-    public native void setCurrencyCode(String value);
+    public native void setCurrencyCode(@NotNull String value);
 
     /**
      * The payment processing capabilities of the merchant.
@@ -318,7 +332,7 @@ public class PKPaymentRequest extends NSObject {
      */
     @Generated
     @Selector("setMerchantIdentifier:")
-    public native void setMerchantIdentifier(String value);
+    public native void setMerchantIdentifier(@NotNull String value);
 
     /**
      * Array of PKPaymentSummaryItem objects which should be presented to the user.
@@ -326,7 +340,7 @@ public class PKPaymentRequest extends NSObject {
      */
     @Generated
     @Selector("setPaymentSummaryItems:")
-    public native void setPaymentSummaryItems(NSArray<? extends PKPaymentSummaryItem> value);
+    public native void setPaymentSummaryItems(@NotNull NSArray<? extends PKPaymentSummaryItem> value);
 
     /**
      * Indicates which billing address fields are required. The default is PKAddressFieldNone.
@@ -363,7 +377,7 @@ public class PKPaymentRequest extends NSObject {
     @Generated
     @Deprecated
     @Selector("setShippingAddress:")
-    public native void setShippingAddress(ConstVoidPtr value);
+    public native void setShippingAddress(@Nullable ConstVoidPtr value);
 
     /**
      * If the merchant already has a shipping address on file, set it here.
@@ -372,14 +386,14 @@ public class PKPaymentRequest extends NSObject {
      */
     @Generated
     @Selector("setShippingContact:")
-    public native void setShippingContact(PKContact value);
+    public native void setShippingContact(@Nullable PKContact value);
 
     /**
      * Shipping methods supported by the merchant.
      */
     @Generated
     @Selector("setShippingMethods:")
-    public native void setShippingMethods(NSArray<? extends PKShippingMethod> value);
+    public native void setShippingMethods(@Nullable NSArray<? extends PKShippingMethod> value);
 
     /**
      * Indicates the display mode for the shipping (e.g, "Pick Up", "Ship To", "Deliver To"). Localized.
@@ -397,7 +411,7 @@ public class PKPaymentRequest extends NSObject {
      */
     @Generated
     @Selector("setSupportedNetworks:")
-    public native void setSupportedNetworks(NSArray<String> value);
+    public native void setSupportedNetworks(@NotNull NSArray<String> value);
 
     /**
      * These properties have been deprecated and should not be used.
@@ -407,6 +421,7 @@ public class PKPaymentRequest extends NSObject {
      * Deprecated-Message: ABRecordRef has been deprecated, and does not support all available address properties. You
      * should migrate to shippingContact.
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("shippingAddress")
@@ -417,6 +432,7 @@ public class PKPaymentRequest extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("shippingContact")
     public native PKContact shippingContact();
@@ -424,6 +440,7 @@ public class PKPaymentRequest extends NSObject {
     /**
      * Shipping methods supported by the merchant.
      */
+    @Nullable
     @Generated
     @Selector("shippingMethods")
     public native NSArray<? extends PKShippingMethod> shippingMethods();
@@ -443,6 +460,7 @@ public class PKPaymentRequest extends NSObject {
      * The payment networks supported by the merchant, for example @[ PKPaymentNetworkVisa,
      * PKPaymentNetworkMasterCard ]. This property constrains payment cards that may fund the payment.
      */
+    @NotNull
     @Generated
     @Selector("supportedNetworks")
     public native NSArray<String> supportedNetworks();
@@ -452,10 +470,11 @@ public class PKPaymentRequest extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("paymentBillingAddressInvalidErrorWithKey:localizedDescription:")
-    public static native NSError paymentBillingAddressInvalidErrorWithKeyLocalizedDescription(String postalAddressKey,
-            String localizedDescription);
+    public static native NSError paymentBillingAddressInvalidErrorWithKeyLocalizedDescription(
+            @NotNull String postalAddressKey, @Nullable String localizedDescription);
 
     /**
      * Convenience method to create a payment contact error with the supplied field
@@ -464,10 +483,11 @@ public class PKPaymentRequest extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("paymentContactInvalidErrorWithContactField:localizedDescription:")
-    public static native NSError paymentContactInvalidErrorWithContactFieldLocalizedDescription(String field,
-            String localizedDescription);
+    public static native NSError paymentContactInvalidErrorWithContactFieldLocalizedDescription(@NotNull String field,
+            @Nullable String localizedDescription);
 
     /**
      * Convenience method to create a payment shipping address error with the supplied CNPostalAddressKey and
@@ -475,20 +495,22 @@ public class PKPaymentRequest extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("paymentShippingAddressInvalidErrorWithKey:localizedDescription:")
-    public static native NSError paymentShippingAddressInvalidErrorWithKeyLocalizedDescription(String postalAddressKey,
-            String localizedDescription);
+    public static native NSError paymentShippingAddressInvalidErrorWithKeyLocalizedDescription(
+            @NotNull String postalAddressKey, @Nullable String localizedDescription);
 
     /**
      * Convenience method to create a payment shipping address service error with the supplied description
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("paymentShippingAddressUnserviceableErrorWithLocalizedDescription:")
     public static native NSError paymentShippingAddressUnserviceableErrorWithLocalizedDescription(
-            String localizedDescription);
+            @Nullable String localizedDescription);
 
     /**
      * Indicates which billing contact fields the merchant requires in order to process a transaction.
@@ -497,6 +519,7 @@ public class PKPaymentRequest extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("requiredBillingContactFields")
     public native NSSet<String> requiredBillingContactFields();
@@ -507,6 +530,7 @@ public class PKPaymentRequest extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("requiredShippingContactFields")
     public native NSSet<String> requiredShippingContactFields();
@@ -520,7 +544,7 @@ public class PKPaymentRequest extends NSObject {
      */
     @Generated
     @Selector("setRequiredBillingContactFields:")
-    public native void setRequiredBillingContactFields(NSSet<String> value);
+    public native void setRequiredBillingContactFields(@NotNull NSSet<String> value);
 
     /**
      * Indicates which shipping contact fields the merchant requires in order to process a transactions
@@ -530,7 +554,7 @@ public class PKPaymentRequest extends NSObject {
      */
     @Generated
     @Selector("setRequiredShippingContactFields:")
-    public native void setRequiredShippingContactFields(NSSet<String> value);
+    public native void setRequiredShippingContactFields(@NotNull NSSet<String> value);
 
     /**
      * Set of two-letter ISO 3166 country codes. When provided will filter the selectable payment passes to those
@@ -540,7 +564,7 @@ public class PKPaymentRequest extends NSObject {
      */
     @Generated
     @Selector("setSupportedCountries:")
-    public native void setSupportedCountries(NSSet<String> value);
+    public native void setSupportedCountries(@Nullable NSSet<String> value);
 
     /**
      * Set of two-letter ISO 3166 country codes. When provided will filter the selectable payment passes to those
@@ -548,6 +572,7 @@ public class PKPaymentRequest extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("supportedCountries")
     public native NSSet<String> supportedCountries();
@@ -557,6 +582,7 @@ public class PKPaymentRequest extends NSObject {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("couponCode")
     public native String couponCode();
@@ -566,18 +592,22 @@ public class PKPaymentRequest extends NSObject {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("paymentCouponCodeExpiredErrorWithLocalizedDescription:")
-    public static native NSError paymentCouponCodeExpiredErrorWithLocalizedDescription(String localizedDescription);
+    public static native NSError paymentCouponCodeExpiredErrorWithLocalizedDescription(
+            @Nullable String localizedDescription);
 
     /**
      * Convenience method to create a payment coupon code invalid error with the supplied description.
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("paymentCouponCodeInvalidErrorWithLocalizedDescription:")
-    public static native NSError paymentCouponCodeInvalidErrorWithLocalizedDescription(String localizedDescription);
+    public static native NSError paymentCouponCodeInvalidErrorWithLocalizedDescription(
+            @Nullable String localizedDescription);
 
     /**
      * An optional coupon code that is valid and has been applied to the payment request already.
@@ -586,7 +616,7 @@ public class PKPaymentRequest extends NSObject {
      */
     @Generated
     @Selector("setCouponCode:")
-    public native void setCouponCode(String value);
+    public native void setCouponCode(@Nullable String value);
 
     /**
      * Indicates the editing mode for the shipping contact. The default is PKShippingContactEditingModeEnabled.
@@ -636,6 +666,7 @@ public class PKPaymentRequest extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("automaticReloadPaymentRequest")
     public native PKAutomaticReloadPaymentRequest automaticReloadPaymentRequest();
@@ -653,6 +684,7 @@ public class PKPaymentRequest extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("multiTokenContexts")
     public native NSArray<? extends PKPaymentTokenContext> multiTokenContexts();
@@ -668,6 +700,7 @@ public class PKPaymentRequest extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("recurringPaymentRequest")
     public native PKRecurringPaymentRequest recurringPaymentRequest();
@@ -685,7 +718,7 @@ public class PKPaymentRequest extends NSObject {
      */
     @Generated
     @Selector("setAutomaticReloadPaymentRequest:")
-    public native void setAutomaticReloadPaymentRequest(PKAutomaticReloadPaymentRequest value);
+    public native void setAutomaticReloadPaymentRequest(@Nullable PKAutomaticReloadPaymentRequest value);
 
     /**
      * Array of payment token contexts that indicates multiple payment tokens are requested, one for
@@ -702,7 +735,7 @@ public class PKPaymentRequest extends NSObject {
      */
     @Generated
     @Selector("setMultiTokenContexts:")
-    public native void setMultiTokenContexts(NSArray<? extends PKPaymentTokenContext> value);
+    public native void setMultiTokenContexts(@NotNull NSArray<? extends PKPaymentTokenContext> value);
 
     /**
      * Optional request to set up a recurring payment, typically a subscription. This payment request
@@ -717,5 +750,5 @@ public class PKPaymentRequest extends NSObject {
      */
     @Generated
     @Selector("setRecurringPaymentRequest:")
-    public native void setRecurringPaymentRequest(PKRecurringPaymentRequest value);
+    public native void setRecurringPaymentRequest(@Nullable PKRecurringPaymentRequest value);
 }

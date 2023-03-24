@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSImageGuidedFilter
@@ -81,22 +83,25 @@ public class MPSImageGuidedFilter extends MPSKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,10 +134,10 @@ public class MPSImageGuidedFilter extends MPSKernel {
     @Generated
     @Selector("encodeReconstructionToCommandBuffer:guidanceTexture:coefficientsTexture:destinationTexture:")
     public native void encodeReconstructionToCommandBufferGuidanceTextureCoefficientsTextureDestinationTexture(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture guidanceTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture coefficientsTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture guidanceTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture coefficientsTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture);
 
     /**
      * Perform Guided Filter Regression (correlation) to produce a coefficients texture
@@ -160,11 +165,11 @@ public class MPSImageGuidedFilter extends MPSKernel {
     @Generated
     @Selector("encodeRegressionToCommandBuffer:sourceTexture:guidanceTexture:weightsTexture:destinationCoefficientsTexture:")
     public native void encodeRegressionToCommandBufferSourceTextureGuidanceTextureWeightsTextureDestinationCoefficientsTexture(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture guidanceTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture weightsTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationCoefficientsTexture);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture guidanceTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture weightsTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationCoefficientsTexture);
 
     /**
      * [@property] epsilon
@@ -188,7 +193,7 @@ public class MPSImageGuidedFilter extends MPSKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSImageGuidedFilter initWithCoder(NSCoder aDecoder);
+    public native MPSImageGuidedFilter initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
@@ -205,12 +210,12 @@ public class MPSImageGuidedFilter extends MPSKernel {
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSImageGuidedFilter initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageGuidedFilter initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSImageGuidedFilter initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageGuidedFilter initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Specifies information to apply the guided filter regression.
@@ -221,8 +226,8 @@ public class MPSImageGuidedFilter extends MPSKernel {
      */
     @Generated
     @Selector("initWithDevice:kernelDiameter:")
-    public native MPSImageGuidedFilter initWithDeviceKernelDiameter(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @NUInt long kernelDiameter);
+    public native MPSImageGuidedFilter initWithDeviceKernelDiameter(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelDiameter);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -253,9 +258,10 @@ public class MPSImageGuidedFilter extends MPSKernel {
     @NUInt
     public native long kernelDiameter();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -370,11 +376,11 @@ public class MPSImageGuidedFilter extends MPSKernel {
     @Generated
     @Selector("encodeReconstructionToCommandBuffer:guidanceTexture:coefficientsTextureA:coefficientsTextureB:destinationTexture:")
     public native void encodeReconstructionToCommandBufferGuidanceTextureCoefficientsTextureACoefficientsTextureBDestinationTexture(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture guidanceTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture coefficientsTextureA,
-            @Mapped(ObjCObjectMapper.class) MTLTexture coefficientsTextureB,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture guidanceTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture coefficientsTextureA,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture coefficientsTextureB,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture);
 
     /**
      * Perform per-channel (non-color correlated) Guided Filter Regression (correlation) to produce a coefficients
@@ -405,10 +411,10 @@ public class MPSImageGuidedFilter extends MPSKernel {
     @Generated
     @Selector("encodeRegressionToCommandBuffer:sourceTexture:guidanceTexture:weightsTexture:destinationCoefficientsTextureA:destinationCoefficientsTextureB:")
     public native void encodeRegressionToCommandBufferSourceTextureGuidanceTextureWeightsTextureDestinationCoefficientsTextureADestinationCoefficientsTextureB(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture guidanceTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture weightsTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationCoefficientsTextureA,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationCoefficientsTextureB);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture guidanceTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture weightsTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationCoefficientsTextureA,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationCoefficientsTextureB);
 }

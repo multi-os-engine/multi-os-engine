@@ -41,6 +41,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Manages collection of one or more homes.
@@ -79,22 +81,25 @@ public class HMHomeManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +134,10 @@ public class HMHomeManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,12 +176,13 @@ public class HMHomeManager extends NSObject {
      */
     @Generated
     @Selector("addHomeWithName:completionHandler:")
-    public native void addHomeWithNameCompletionHandler(String homeName,
-            @ObjCBlock(name = "call_addHomeWithNameCompletionHandler") Block_addHomeWithNameCompletionHandler completion);
+    public native void addHomeWithNameCompletionHandler(@NotNull String homeName,
+            @NotNull @ObjCBlock(name = "call_addHomeWithNameCompletionHandler") Block_addHomeWithNameCompletionHandler completion);
 
     /**
      * Delegate that receives updates on the collection of homes.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -188,6 +195,7 @@ public class HMHomeManager extends NSObject {
      * not guaranteed to be filled with the list of homes, represented as HMHome objects,
      * until the homeManagerDidUpdateHomes: delegate method has been invoked.
      */
+    @NotNull
     @Generated
     @Selector("homes")
     public native NSArray<? extends HMHome> homes();
@@ -203,6 +211,7 @@ public class HMHomeManager extends NSObject {
      * Deprecated-Since: 16.1
      * Deprecated-Message: No longer supported.
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("primaryHome")
@@ -219,21 +228,21 @@ public class HMHomeManager extends NSObject {
      */
     @Generated
     @Selector("removeHome:completionHandler:")
-    public native void removeHomeCompletionHandler(HMHome home,
-            @ObjCBlock(name = "call_removeHomeCompletionHandler") Block_removeHomeCompletionHandler completion);
+    public native void removeHomeCompletionHandler(@NotNull HMHome home,
+            @NotNull @ObjCBlock(name = "call_removeHomeCompletionHandler") Block_removeHomeCompletionHandler completion);
 
     /**
      * Delegate that receives updates on the collection of homes.
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) HMHomeManagerDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) HMHomeManagerDelegate value);
 
     /**
      * Delegate that receives updates on the collection of homes.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) HMHomeManagerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) HMHomeManagerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -260,28 +269,28 @@ public class HMHomeManager extends NSObject {
     @Deprecated
     @Generated
     @Selector("updatePrimaryHome:completionHandler:")
-    public native void updatePrimaryHomeCompletionHandler(HMHome home,
-            @ObjCBlock(name = "call_updatePrimaryHomeCompletionHandler") Block_updatePrimaryHomeCompletionHandler completion);
+    public native void updatePrimaryHomeCompletionHandler(@NotNull HMHome home,
+            @NotNull @ObjCBlock(name = "call_updatePrimaryHomeCompletionHandler") Block_updatePrimaryHomeCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addHomeWithNameCompletionHandler {
         @Generated
-        void call_addHomeWithNameCompletionHandler(HMHome home, NSError error);
+        void call_addHomeWithNameCompletionHandler(@Nullable HMHome home, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeHomeCompletionHandler {
         @Generated
-        void call_removeHomeCompletionHandler(NSError error);
+        void call_removeHomeCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updatePrimaryHomeCompletionHandler {
         @Generated
-        void call_updatePrimaryHomeCompletionHandler(NSError error);
+        void call_updatePrimaryHomeCompletionHandler(@Nullable NSError error);
     }
 
     /**

@@ -36,6 +36,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSURLProtocol
@@ -77,7 +79,7 @@ public class NSURLProtocol extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * canInitWithRequest:
@@ -95,24 +97,25 @@ public class NSURLProtocol extends NSObject {
      */
     @Generated
     @Selector("canInitWithRequest:")
-    public static native boolean canInitWithRequest(NSURLRequest request);
+    public static native boolean canInitWithRequest(@NotNull NSURLRequest request);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @Selector("canInitWithTask:")
-    public static native boolean canInitWithTask(NSURLSessionTask task);
+    public static native boolean canInitWithTask(@NotNull NSURLSessionTask task);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * canonicalRequestForRequest:
@@ -134,14 +137,17 @@ public class NSURLProtocol extends NSObject {
      * @param request A request to make canonical.
      * @return The canonical form of the given request.
      */
+    @NotNull
     @Generated
     @Selector("canonicalRequestForRequest:")
-    public static native NSURLRequest canonicalRequestForRequest(NSURLRequest request);
+    public static native NSURLRequest canonicalRequestForRequest(@NotNull NSURLRequest request);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -176,9 +182,10 @@ public class NSURLProtocol extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -200,10 +207,11 @@ public class NSURLProtocol extends NSObject {
      * @return The property stored with the given key, or nil if no property
      *         had previously been stored with the given key in the given request.
      */
+    @Nullable
     @Generated
     @Selector("propertyForKey:inRequest:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object propertyForKeyInRequest(String key, NSURLRequest request);
+    public static native Object propertyForKeyInRequest(@NotNull String key, @NotNull NSURLRequest request);
 
     /**
      * registerClass:
@@ -233,7 +241,7 @@ public class NSURLProtocol extends NSObject {
      */
     @Generated
     @Selector("registerClass:")
-    public static native boolean registerClass(Class protocolClass);
+    public static native boolean registerClass(@NotNull Class protocolClass);
 
     /**
      * removePropertyForKey:inRequest:
@@ -249,7 +257,7 @@ public class NSURLProtocol extends NSObject {
      */
     @Generated
     @Selector("removePropertyForKey:inRequest:")
-    public static native void removePropertyForKeyInRequest(String key, NSMutableURLRequest request);
+    public static native void removePropertyForKeyInRequest(@NotNull String key, @NotNull NSMutableURLRequest request);
 
     /**
      * requestIsCacheEquivalent:toRequest:
@@ -265,7 +273,7 @@ public class NSURLProtocol extends NSObject {
      */
     @Generated
     @Selector("requestIsCacheEquivalent:toRequest:")
-    public static native boolean requestIsCacheEquivalentToRequest(NSURLRequest a, NSURLRequest b);
+    public static native boolean requestIsCacheEquivalentToRequest(@NotNull NSURLRequest a, @NotNull NSURLRequest b);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -291,8 +299,8 @@ public class NSURLProtocol extends NSObject {
      */
     @Generated
     @Selector("setProperty:forKey:inRequest:")
-    public static native void setPropertyForKeyInRequest(@Mapped(ObjCObjectMapper.class) Object value, String key,
-            NSMutableURLRequest request);
+    public static native void setPropertyForKeyInRequest(@NotNull @Mapped(ObjCObjectMapper.class) Object value,
+            @NotNull String key, @NotNull NSMutableURLRequest request);
 
     @Generated
     @Selector("setVersion:")
@@ -314,7 +322,7 @@ public class NSURLProtocol extends NSObject {
      */
     @Generated
     @Selector("unregisterClass:")
-    public static native void unregisterClass(Class protocolClass);
+    public static native void unregisterClass(@NotNull Class protocolClass);
 
     @Generated
     @Selector("version")
@@ -326,6 +334,7 @@ public class NSURLProtocol extends NSObject {
      * 
      * @return The NSCachedURLResponse of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("cachedResponse")
     public native NSCachedURLResponse cachedResponse();
@@ -335,6 +344,7 @@ public class NSURLProtocol extends NSObject {
      * 
      * @return The NSURLProtocolClient of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("client")
     @MappedReturn(ObjCObjectMapper.class)
@@ -361,22 +371,25 @@ public class NSURLProtocol extends NSObject {
      */
     @Generated
     @Selector("initWithRequest:cachedResponse:client:")
-    public native NSURLProtocol initWithRequestCachedResponseClient(NSURLRequest request,
-            NSCachedURLResponse cachedResponse, @Mapped(ObjCObjectMapper.class) NSURLProtocolClient client);
+    public native NSURLProtocol initWithRequestCachedResponseClient(@NotNull NSURLRequest request,
+            @Nullable NSCachedURLResponse cachedResponse,
+            @Nullable @Mapped(ObjCObjectMapper.class) NSURLProtocolClient client);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @Selector("initWithTask:cachedResponse:client:")
-    public native NSURLProtocol initWithTaskCachedResponseClient(NSURLSessionTask task,
-            NSCachedURLResponse cachedResponse, @Mapped(ObjCObjectMapper.class) NSURLProtocolClient client);
+    public native NSURLProtocol initWithTaskCachedResponseClient(@NotNull NSURLSessionTask task,
+            @Nullable NSCachedURLResponse cachedResponse,
+            @Nullable @Mapped(ObjCObjectMapper.class) NSURLProtocolClient client);
 
     /**
      * Returns the NSURLRequest of the receiver.
      * 
      * @return The NSURLRequest of the receiver.
      */
+    @NotNull
     @Generated
     @Selector("request")
     public native NSURLRequest request();
@@ -410,6 +423,7 @@ public class NSURLProtocol extends NSObject {
     /**
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("task")
     public native NSURLSessionTask task();

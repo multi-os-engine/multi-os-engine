@@ -6,6 +6,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLIOFileHandle
@@ -25,6 +26,7 @@ public interface MTLIOFileHandle {
      * 
      * An optional label for this handle.
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();
@@ -36,5 +38,5 @@ public interface MTLIOFileHandle {
      */
     @Generated
     @Selector("setLabel:")
-    void setLabel(String value);
+    void setLabel(@Nullable String value);
 }

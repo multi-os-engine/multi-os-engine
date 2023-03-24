@@ -35,6 +35,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -66,22 +68,25 @@ public class NSInvocation extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -112,17 +117,19 @@ public class NSInvocation extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    @NotNull
     @Generated
     @Selector("invocationWithMethodSignature:")
-    public static native NSInvocation invocationWithMethodSignature(NSMethodSignature sig);
+    public static native NSInvocation invocationWithMethodSignature(@NotNull NSMethodSignature sig);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,11 +163,11 @@ public class NSInvocation extends NSObject {
 
     @Generated
     @Selector("getArgument:atIndex:")
-    public native void getArgumentAtIndex(VoidPtr argumentLocation, @NInt long idx);
+    public native void getArgumentAtIndex(@NotNull VoidPtr argumentLocation, @NInt long idx);
 
     @Generated
     @Selector("getReturnValue:")
-    public native void getReturnValue(VoidPtr retLoc);
+    public native void getReturnValue(@NotNull VoidPtr retLoc);
 
     @Generated
     @Selector("init")
@@ -172,8 +179,9 @@ public class NSInvocation extends NSObject {
 
     @Generated
     @Selector("invokeWithTarget:")
-    public native void invokeWithTarget(@Mapped(ObjCObjectMapper.class) Object target);
+    public native void invokeWithTarget(@NotNull @Mapped(ObjCObjectMapper.class) Object target);
 
+    @NotNull
     @Generated
     @Selector("methodSignature")
     public native NSMethodSignature methodSignature();
@@ -182,28 +190,29 @@ public class NSInvocation extends NSObject {
     @Selector("retainArguments")
     public native void retainArguments();
 
+    @NotNull
     @Generated
     @Selector("selector")
     public native SEL selector();
 
     @Generated
     @Selector("setArgument:atIndex:")
-    public native void setArgumentAtIndex(VoidPtr argumentLocation, @NInt long idx);
+    public native void setArgumentAtIndex(@NotNull VoidPtr argumentLocation, @NInt long idx);
 
     @Generated
     @Selector("setReturnValue:")
-    public native void setReturnValue(VoidPtr retLoc);
+    public native void setReturnValue(@NotNull VoidPtr retLoc);
 
     @Generated
     @Selector("setSelector:")
-    public native void setSelector(SEL value);
+    public native void setSelector(@NotNull SEL value);
 
     @Generated
     @Selector("setTarget:")
-    public native void setTarget_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setTarget_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
-    public void setTarget(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setTarget(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = target();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -214,6 +223,7 @@ public class NSInvocation extends NSObject {
         }
     }
 
+    @Nullable
     @Generated
     @Selector("target")
     @MappedReturn(ObjCObjectMapper.class)
@@ -221,7 +231,7 @@ public class NSInvocation extends NSObject {
 
     @Generated
     @Selector("invokeUsingIMP:")
-    public native void invokeUsingIMP(@FunctionPtr(name = "call_invokeUsingIMP") Function_invokeUsingIMP imp);
+    public native void invokeUsingIMP(@NotNull @FunctionPtr(name = "call_invokeUsingIMP") Function_invokeUsingIMP imp);
 
     @Runtime(ObjCRuntime.class)
     @Generated

@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -82,29 +84,32 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -136,9 +141,10 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -171,6 +177,7 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
      * 
      * Current active conversation.
      */
+    @Nullable
     @Generated
     @Selector("activeConversation")
     public native MSConversation activeConversation();
@@ -184,7 +191,7 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
      */
     @Generated
     @Selector("didBecomeActiveWithConversation:")
-    public native void didBecomeActiveWithConversation(MSConversation conversation);
+    public native void didBecomeActiveWithConversation(@NotNull MSConversation conversation);
 
     /**
      * didCancelSendingMessage:conversation:
@@ -201,7 +208,8 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
      */
     @Generated
     @Selector("didCancelSendingMessage:conversation:")
-    public native void didCancelSendingMessageConversation(MSMessage message, MSConversation conversation);
+    public native void didCancelSendingMessageConversation(@NotNull MSMessage message,
+            @NotNull MSConversation conversation);
 
     /**
      * didReceiveMessage:conversation:
@@ -218,7 +226,7 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
      */
     @Generated
     @Selector("didReceiveMessage:conversation:")
-    public native void didReceiveMessageConversation(MSMessage message, MSConversation conversation);
+    public native void didReceiveMessageConversation(@NotNull MSMessage message, @NotNull MSConversation conversation);
 
     /**
      * didResignActiveWithConversation:
@@ -229,7 +237,7 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
      */
     @Generated
     @Selector("didResignActiveWithConversation:")
-    public native void didResignActiveWithConversation(MSConversation conversation);
+    public native void didResignActiveWithConversation(@NotNull MSConversation conversation);
 
     /**
      * didSelectMessage:conversation:
@@ -246,7 +254,7 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
      */
     @Generated
     @Selector("didSelectMessage:conversation:")
-    public native void didSelectMessageConversation(MSMessage message, MSConversation conversation);
+    public native void didSelectMessageConversation(@NotNull MSMessage message, @NotNull MSConversation conversation);
 
     /**
      * didStartSendingMessage:conversation:
@@ -265,7 +273,8 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
      */
     @Generated
     @Selector("didStartSendingMessage:conversation:")
-    public native void didStartSendingMessageConversation(MSMessage message, MSConversation conversation);
+    public native void didStartSendingMessageConversation(@NotNull MSMessage message,
+            @NotNull MSConversation conversation);
 
     /**
      * didTransitionToPresentationStyle:
@@ -301,11 +310,12 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
 
     @Generated
     @Selector("initWithCoder:")
-    public native MSMessagesAppViewController initWithCoder(NSCoder coder);
+    public native MSMessagesAppViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native MSMessagesAppViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native MSMessagesAppViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * [@property] presentationStyle
@@ -341,7 +351,7 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
      */
     @Generated
     @Selector("willBecomeActiveWithConversation:")
-    public native void willBecomeActiveWithConversation(MSConversation conversation);
+    public native void willBecomeActiveWithConversation(@NotNull MSConversation conversation);
 
     /**
      * willResignActiveWithConversation:
@@ -352,7 +362,7 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
      */
     @Generated
     @Selector("willResignActiveWithConversation:")
-    public native void willResignActiveWithConversation(MSConversation conversation);
+    public native void willResignActiveWithConversation(@NotNull MSConversation conversation);
 
     /**
      * willSelectMessage:conversation:
@@ -369,7 +379,7 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
      */
     @Generated
     @Selector("willSelectMessage:conversation:")
-    public native void willSelectMessageConversation(MSMessage message, MSConversation conversation);
+    public native void willSelectMessageConversation(@NotNull MSMessage message, @NotNull MSConversation conversation);
 
     /**
      * willTransitionToPresentationStyle:

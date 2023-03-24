@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Contexts represent activities, documents, and areas within your app.
@@ -67,7 +69,7 @@ public class CLSContext extends CLSObject {
      */
     @Generated
     @Selector("addChildContext:")
-    public native void addChildContext(CLSContext child);
+    public native void addChildContext(@NotNull CLSContext child);
 
     @Generated
     @Owned
@@ -81,7 +83,7 @@ public class CLSContext extends CLSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Marks contexts as active.
@@ -95,18 +97,21 @@ public class CLSContext extends CLSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -116,6 +121,7 @@ public class CLSContext extends CLSObject {
      * 
      * Creates a new activity and sets it as the current activity.
      */
+    @NotNull
     @Generated
     @Selector("createNewActivity")
     public native CLSActivity createNewActivity();
@@ -126,6 +132,7 @@ public class CLSContext extends CLSObject {
      * Activity associated with a context. If no activity was ever created this is nil. See: @c -[CLSContext
      * createNewActivity]; for more details.
      */
+    @Nullable
     @Generated
     @Selector("currentActivity")
     public native CLSActivity currentActivity();
@@ -146,14 +153,14 @@ public class CLSContext extends CLSObject {
      */
     @Generated
     @Selector("descendantMatchingIdentifierPath:completion:")
-    public native void descendantMatchingIdentifierPathCompletion(NSArray<String> identifierPath,
-            @ObjCBlock(name = "call_descendantMatchingIdentifierPathCompletion") Block_descendantMatchingIdentifierPathCompletion completion);
+    public native void descendantMatchingIdentifierPathCompletion(@NotNull NSArray<String> identifierPath,
+            @NotNull @ObjCBlock(name = "call_descendantMatchingIdentifierPathCompletion") Block_descendantMatchingIdentifierPathCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_descendantMatchingIdentifierPathCompletion {
         @Generated
-        void call_descendantMatchingIdentifierPathCompletion(CLSContext context, NSError error);
+        void call_descendantMatchingIdentifierPathCompletion(@Nullable CLSContext context, @Nullable NSError error);
     }
 
     @Generated
@@ -183,6 +190,7 @@ public class CLSContext extends CLSObject {
      * The identifier could be used to embed information later used for deep linking. For example: @em hydrogen-element,
      * or @em chapter-1.
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -193,7 +201,7 @@ public class CLSContext extends CLSObject {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CLSContext initWithCoder(NSCoder coder);
+    public native CLSContext initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initialize and configure the type of content this context represents.
@@ -204,7 +212,8 @@ public class CLSContext extends CLSObject {
      */
     @Generated
     @Selector("initWithType:identifier:title:")
-    public native CLSContext initWithTypeIdentifierTitle(@NInt long type, String identifier, String title);
+    public native CLSContext initWithTypeIdentifierTitle(@NInt long type, @NotNull String identifier,
+            @NotNull String title);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -230,9 +239,10 @@ public class CLSContext extends CLSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -242,6 +252,7 @@ public class CLSContext extends CLSObject {
     /**
      * Returns the parent of this context.
      */
+    @Nullable
     @Generated
     @Selector("parent")
     public native CLSContext parent();
@@ -290,7 +301,7 @@ public class CLSContext extends CLSObject {
      */
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@NotNull String value);
 
     /**
      * Topic associated with this context.
@@ -299,7 +310,7 @@ public class CLSContext extends CLSObject {
      */
     @Generated
     @Selector("setTopic:")
-    public native void setTopic(String value);
+    public native void setTopic(@Nullable String value);
 
     /**
      * Alternative deep link URL using universal links.
@@ -310,7 +321,7 @@ public class CLSContext extends CLSObject {
      */
     @Generated
     @Selector("setUniversalLinkURL:")
-    public native void setUniversalLinkURL(NSURL value);
+    public native void setUniversalLinkURL(@Nullable NSURL value);
 
     @Generated
     @Selector("setVersion:")
@@ -335,6 +346,7 @@ public class CLSContext extends CLSObject {
      * 
      * For example: @em Level 1 @em.
      */
+    @NotNull
     @Generated
     @Selector("title")
     public native String title();
@@ -344,6 +356,7 @@ public class CLSContext extends CLSObject {
      * 
      * See above for valid, predefined topics.
      */
+    @Nullable
     @Generated
     @Selector("topic")
     public native String topic();
@@ -365,6 +378,7 @@ public class CLSContext extends CLSObject {
      * 
      * API-Since: 11.4
      */
+    @Nullable
     @Generated
     @Selector("universalLinkURL")
     public native NSURL universalLinkURL();
@@ -383,6 +397,7 @@ public class CLSContext extends CLSObject {
      * 
      * API-Since: 13.4
      */
+    @Nullable
     @Generated
     @Selector("customTypeName")
     public native String customTypeName();
@@ -396,6 +411,7 @@ public class CLSContext extends CLSObject {
      * 
      * API-Since: 13.4
      */
+    @NotNull
     @Generated
     @Selector("identifierPath")
     public native NSArray<String> identifierPath();
@@ -411,7 +427,7 @@ public class CLSContext extends CLSObject {
      */
     @Generated
     @Selector("setCustomTypeName:")
-    public native void setCustomTypeName(String value);
+    public native void setCustomTypeName(@Nullable String value);
 
     /**
      * An optional user-visible summary describing the context limited to 4000 characters in length.
@@ -423,7 +439,7 @@ public class CLSContext extends CLSObject {
      */
     @Generated
     @Selector("setSummary:")
-    public native void setSummary(String value);
+    public native void setSummary(@Nullable String value);
 
     /**
      * An optional thumbnail image associated with the context.
@@ -436,7 +452,7 @@ public class CLSContext extends CLSObject {
      */
     @Generated
     @Selector("setThumbnail:")
-    public native void setThumbnail(CGImageRef value);
+    public native void setThumbnail(@Nullable CGImageRef value);
 
     /**
      * An optional user-visible summary describing the context limited to 4000 characters in length.
@@ -446,6 +462,7 @@ public class CLSContext extends CLSObject {
      * 
      * API-Since: 13.4
      */
+    @Nullable
     @Generated
     @Selector("summary")
     public native String summary();
@@ -459,6 +476,7 @@ public class CLSContext extends CLSObject {
      * 
      * API-Since: 13.4
      */
+    @Nullable
     @Generated
     @Selector("thumbnail")
     public native CGImageRef thumbnail();
@@ -476,7 +494,8 @@ public class CLSContext extends CLSObject {
      */
     @Generated
     @Selector("addProgressReportingCapabilities:")
-    public native void addProgressReportingCapabilities(NSSet<? extends CLSProgressReportingCapability> capabilities);
+    public native void addProgressReportingCapabilities(
+            @NotNull NSSet<? extends CLSProgressReportingCapability> capabilities);
 
     /**
      * This property is true if the context can be assigned as an activity.
@@ -500,6 +519,7 @@ public class CLSContext extends CLSObject {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("progressReportingCapabilities")
     public native NSSet<? extends CLSProgressReportingCapability> progressReportingCapabilities();
@@ -631,7 +651,7 @@ public class CLSContext extends CLSObject {
      */
     @Generated
     @Selector("addNavigationChildContext:")
-    public native void addNavigationChildContext(CLSContext child);
+    public native void addNavigationChildContext(@NotNull CLSContext child);
 
     /**
      * Child contexts that can be navigated to from this context.
@@ -640,6 +660,7 @@ public class CLSContext extends CLSObject {
      * 
      * API-Since: 14.5
      */
+    @NotNull
     @Generated
     @Selector("navigationChildContexts")
     public native NSArray<? extends CLSContext> navigationChildContexts();
@@ -654,5 +675,5 @@ public class CLSContext extends CLSObject {
      */
     @Generated
     @Selector("removeNavigationChildContext:")
-    public native void removeNavigationChildContext(CLSContext child);
+    public native void removeNavigationChildContext(@NotNull CLSContext child);
 }

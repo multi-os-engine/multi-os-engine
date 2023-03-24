@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEFilterControlProvider
@@ -78,22 +80,25 @@ public class NEFilterControlProvider extends NEFilterProvider {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,9 +133,10 @@ public class NEFilterControlProvider extends NEFilterProvider {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,6 +171,7 @@ public class NEFilterControlProvider extends NEFilterProvider {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("URLAppendStringMap")
     public native NSDictionary<String, String> URLAppendStringMap();
@@ -188,8 +195,8 @@ public class NEFilterControlProvider extends NEFilterProvider {
      */
     @Generated
     @Selector("handleNewFlow:completionHandler:")
-    public native void handleNewFlowCompletionHandler(NEFilterFlow flow,
-            @ObjCBlock(name = "call_handleNewFlowCompletionHandler") Block_handleNewFlowCompletionHandler completionHandler);
+    public native void handleNewFlowCompletionHandler(@NotNull NEFilterFlow flow,
+            @NotNull @ObjCBlock(name = "call_handleNewFlowCompletionHandler") Block_handleNewFlowCompletionHandler completionHandler);
 
     /**
      * handleRemediationForFlow:completionHandler:
@@ -209,8 +216,8 @@ public class NEFilterControlProvider extends NEFilterProvider {
      */
     @Generated
     @Selector("handleRemediationForFlow:completionHandler:")
-    public native void handleRemediationForFlowCompletionHandler(NEFilterFlow flow,
-            @ObjCBlock(name = "call_handleRemediationForFlowCompletionHandler") Block_handleRemediationForFlowCompletionHandler completionHandler);
+    public native void handleRemediationForFlowCompletionHandler(@NotNull NEFilterFlow flow,
+            @NotNull @ObjCBlock(name = "call_handleRemediationForFlowCompletionHandler") Block_handleRemediationForFlowCompletionHandler completionHandler);
 
     @Generated
     @Selector("init")
@@ -253,6 +260,7 @@ public class NEFilterControlProvider extends NEFilterProvider {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("remediationMap")
     public native NSDictionary<String, ? extends NSDictionary<String, ? extends NSObject>> remediationMap();
@@ -285,7 +293,7 @@ public class NEFilterControlProvider extends NEFilterProvider {
     @Generated
     @Selector("setRemediationMap:")
     public native void setRemediationMap(
-            NSDictionary<String, ? extends NSDictionary<String, ? extends NSObject>> value);
+            @Nullable NSDictionary<String, ? extends NSDictionary<String, ? extends NSObject>> value);
 
     /**
      * [@property] URLAppendStringMap
@@ -296,19 +304,19 @@ public class NEFilterControlProvider extends NEFilterProvider {
      */
     @Generated
     @Selector("setURLAppendStringMap:")
-    public native void setURLAppendStringMap(NSDictionary<String, String> value);
+    public native void setURLAppendStringMap(@Nullable NSDictionary<String, String> value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleNewFlowCompletionHandler {
         @Generated
-        void call_handleNewFlowCompletionHandler(NEFilterControlVerdict arg0);
+        void call_handleNewFlowCompletionHandler(@NotNull NEFilterControlVerdict arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleRemediationForFlowCompletionHandler {
         @Generated
-        void call_handleRemediationForFlowCompletionHandler(NEFilterControlVerdict arg0);
+        void call_handleRemediationForFlowCompletionHandler(@NotNull NEFilterControlVerdict arg0);
     }
 }

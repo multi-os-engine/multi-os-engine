@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CKNotificationInfo
@@ -85,22 +87,25 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,9 +140,10 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -172,6 +178,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     /**
      * A key for a localized string to be used as the alert action in a modal style notification.
      */
+    @Nullable
     @Generated
     @Selector("alertActionLocalizationKey")
     public native String alertActionLocalizationKey();
@@ -179,6 +186,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     /**
      * Optional alert string to display in a push notification.
      */
+    @Nullable
     @Generated
     @Selector("alertBody")
     public native String alertBody();
@@ -187,6 +195,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      * The name of an image in your app bundle to be used as the launch image when launching in response to the
      * notification.
      */
+    @Nullable
     @Generated
     @Selector("alertLaunchImage")
     public native String alertLaunchImage();
@@ -195,6 +204,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      * A list of field names to take from the matching record that is used as substitution variables in a formatted
      * alert string.
      */
+    @Nullable
     @Generated
     @Selector("alertLocalizationArgs")
     public native NSArray<String> alertLocalizationArgs();
@@ -203,6 +213,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      * Instead of a raw alert string, you may optionally specify a key for a localized string in your app's
      * Localizable.strings file.
      */
+    @Nullable
     @Generated
     @Selector("alertLocalizationKey")
     public native String alertLocalizationKey();
@@ -216,15 +227,17 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      * 
      *      API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("category")
     public native String category();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * A list of keys from the matching record to include in the notification payload.
@@ -237,13 +250,14 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      * - NSNumber
      * - NSString
      */
+    @Nullable
     @Generated
     @Selector("desiredKeys")
     public native NSArray<String> desiredKeys();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -251,21 +265,21 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKNotificationInfo initWithCoder(NSCoder coder);
+    public native CKNotificationInfo initWithCoder(@NotNull NSCoder coder);
 
     /**
      * A key for a localized string to be used as the alert action in a modal style notification.
      */
     @Generated
     @Selector("setAlertActionLocalizationKey:")
-    public native void setAlertActionLocalizationKey(String value);
+    public native void setAlertActionLocalizationKey(@Nullable String value);
 
     /**
      * Optional alert string to display in a push notification.
      */
     @Generated
     @Selector("setAlertBody:")
-    public native void setAlertBody(String value);
+    public native void setAlertBody(@Nullable String value);
 
     /**
      * The name of an image in your app bundle to be used as the launch image when launching in response to the
@@ -273,7 +287,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      */
     @Generated
     @Selector("setAlertLaunchImage:")
-    public native void setAlertLaunchImage(String value);
+    public native void setAlertLaunchImage(@Nullable String value);
 
     /**
      * A list of field names to take from the matching record that is used as substitution variables in a formatted
@@ -281,7 +295,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      */
     @Generated
     @Selector("setAlertLocalizationArgs:")
-    public native void setAlertLocalizationArgs(NSArray<String> value);
+    public native void setAlertLocalizationArgs(@Nullable NSArray<String> value);
 
     /**
      * Instead of a raw alert string, you may optionally specify a key for a localized string in your app's
@@ -289,7 +303,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      */
     @Generated
     @Selector("setAlertLocalizationKey:")
-    public native void setAlertLocalizationKey(String value);
+    public native void setAlertLocalizationKey(@Nullable String value);
 
     /**
      * Optional property for the category to be sent with the push when this subscription fires.
@@ -302,7 +316,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      */
     @Generated
     @Selector("setCategory:")
-    public native void setCategory(String value);
+    public native void setCategory(@Nullable String value);
 
     /**
      * A list of keys from the matching record to include in the notification payload.
@@ -317,7 +331,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      */
     @Generated
     @Selector("setDesiredKeys:")
-    public native void setDesiredKeys(NSArray<String> value);
+    public native void setDesiredKeys(@Nullable NSArray<String> value);
 
     /**
      * Indicates that the notification should increment the app's badge count. Default value is @c NO.
@@ -341,7 +355,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      */
     @Generated
     @Selector("setSoundName:")
-    public native void setSoundName(String value);
+    public native void setSoundName(@Nullable String value);
 
     /**
      * Indicates that the notification should increment the app's badge count. Default value is @c NO.
@@ -363,6 +377,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     /**
      * The name of a sound file in your app bundle to play upon receiving the notification.
      */
+    @Nullable
     @Generated
     @Selector("soundName")
     public native String soundName();
@@ -381,6 +396,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      * 
      *      API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("collapseIDKey")
     public native String collapseIDKey();
@@ -395,7 +411,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      */
     @Generated
     @Selector("setCollapseIDKey:")
-    public native void setCollapseIDKey(String value);
+    public native void setCollapseIDKey(@Nullable String value);
 
     /**
      * Indicates that the notification should be sent with the "mutable-content" flag to allow a Notification Service
@@ -416,7 +432,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      */
     @Generated
     @Selector("setSubtitle:")
-    public native void setSubtitle(String value);
+    public native void setSubtitle(@Nullable String value);
 
     /**
      * A list of field names to take from the matching record that is used as substitution variables in a formatted
@@ -426,7 +442,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      */
     @Generated
     @Selector("setSubtitleLocalizationArgs:")
-    public native void setSubtitleLocalizationArgs(NSArray<String> value);
+    public native void setSubtitleLocalizationArgs(@Nullable NSArray<String> value);
 
     /**
      * Instead of a raw subtitle string, you may optionally specify a key for a localized string in your app's
@@ -436,7 +452,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      */
     @Generated
     @Selector("setSubtitleLocalizationKey:")
-    public native void setSubtitleLocalizationKey(String value);
+    public native void setSubtitleLocalizationKey(@Nullable String value);
 
     /**
      * Optional title of the alert to display in a push notification.
@@ -445,7 +461,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      */
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@Nullable String value);
 
     /**
      * A list of field names to take from the matching record that is used as substitution variables in a formatted
@@ -455,7 +471,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      */
     @Generated
     @Selector("setTitleLocalizationArgs:")
-    public native void setTitleLocalizationArgs(NSArray<String> value);
+    public native void setTitleLocalizationArgs(@Nullable NSArray<String> value);
 
     /**
      * Instead of a raw title string, you may optionally specify a key for a localized string in your app's
@@ -465,7 +481,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      */
     @Generated
     @Selector("setTitleLocalizationKey:")
-    public native void setTitleLocalizationKey(String value);
+    public native void setTitleLocalizationKey(@Nullable String value);
 
     /**
      * Indicates that the notification should be sent with the "mutable-content" flag to allow a Notification Service
@@ -484,6 +500,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("subtitle")
     public native String subtitle();
@@ -494,6 +511,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("subtitleLocalizationArgs")
     public native NSArray<String> subtitleLocalizationArgs();
@@ -504,6 +522,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("subtitleLocalizationKey")
     public native String subtitleLocalizationKey();
@@ -513,6 +532,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();
@@ -523,6 +543,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("titleLocalizationArgs")
     public native NSArray<String> titleLocalizationArgs();
@@ -533,6 +554,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("titleLocalizationKey")
     public native String titleLocalizationKey();

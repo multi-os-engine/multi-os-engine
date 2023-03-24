@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -71,22 +73,25 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,52 +106,56 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("fileHandleForReadingAtPath:")
-    public static native NSFileHandle fileHandleForReadingAtPath(String path);
+    public static native NSFileHandle fileHandleForReadingAtPath(@NotNull String path);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @Selector("fileHandleForReadingFromURL:error:")
-    public static native NSFileHandle fileHandleForReadingFromURLError(NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSFileHandle fileHandleForReadingFromURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("fileHandleForUpdatingAtPath:")
-    public static native NSFileHandle fileHandleForUpdatingAtPath(String path);
+    public static native NSFileHandle fileHandleForUpdatingAtPath(@NotNull String path);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @Selector("fileHandleForUpdatingURL:error:")
-    public static native NSFileHandle fileHandleForUpdatingURLError(NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSFileHandle fileHandleForUpdatingURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("fileHandleForWritingAtPath:")
-    public static native NSFileHandle fileHandleForWritingAtPath(String path);
+    public static native NSFileHandle fileHandleForWritingAtPath(@NotNull String path);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @Selector("fileHandleForWritingToURL:error:")
-    public static native NSFileHandle fileHandleForWritingToURLError(NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSFileHandle fileHandleForWritingToURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    @NotNull
     @Generated
     @Selector("fileHandleWithNullDevice")
     public static native NSFileHandle fileHandleWithNullDevice();
 
+    @NotNull
     @Generated
     @Selector("fileHandleWithStandardError")
     public static native NSFileHandle fileHandleWithStandardError();
 
+    @NotNull
     @Generated
     @Selector("fileHandleWithStandardInput")
     public static native NSFileHandle fileHandleWithStandardInput();
 
+    @NotNull
     @Generated
     @Selector("fileHandleWithStandardOutput")
     public static native NSFileHandle fileHandleWithStandardOutput();
@@ -173,9 +182,10 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -213,8 +223,9 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("acceptConnectionInBackgroundAndNotifyForModes:")
-    public native void acceptConnectionInBackgroundAndNotifyForModes(NSArray<String> modes);
+    public native void acceptConnectionInBackgroundAndNotifyForModes(@Nullable NSArray<String> modes);
 
+    @NotNull
     @Generated
     @Selector("availableData")
     public native NSData availableData();
@@ -230,7 +241,7 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("fileDescriptor")
@@ -242,7 +253,7 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSFileHandle initWithCoder(NSCoder coder);
+    public native NSFileHandle initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithFileDescriptor:")
@@ -265,6 +276,7 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
      * API-Since: 2.0
      * Deprecated-Since: 100000.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("readDataOfLength:")
@@ -277,6 +289,7 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
      * API-Since: 2.0
      * Deprecated-Since: 100000.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("readDataToEndOfFile")
@@ -288,7 +301,7 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("readInBackgroundAndNotifyForModes:")
-    public native void readInBackgroundAndNotifyForModes(NSArray<String> modes);
+    public native void readInBackgroundAndNotifyForModes(@Nullable NSArray<String> modes);
 
     @Generated
     @Selector("readToEndOfFileInBackgroundAndNotify")
@@ -296,11 +309,12 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("readToEndOfFileInBackgroundAndNotifyForModes:")
-    public native void readToEndOfFileInBackgroundAndNotifyForModes(NSArray<String> modes);
+    public native void readToEndOfFileInBackgroundAndNotifyForModes(@Nullable NSArray<String> modes);
 
     /**
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("readabilityHandler")
     @ObjCBlock(name = "call_readabilityHandler_ret")
@@ -330,7 +344,7 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("setReadabilityHandler:")
     public native void setReadabilityHandler(
-            @ObjCBlock(name = "call_setReadabilityHandler") Block_setReadabilityHandler value);
+            @Nullable @ObjCBlock(name = "call_setReadabilityHandler") Block_setReadabilityHandler value);
 
     /**
      * API-Since: 5.0
@@ -338,7 +352,7 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("setWriteabilityHandler:")
     public native void setWriteabilityHandler(
-            @ObjCBlock(name = "call_setWriteabilityHandler") Block_setWriteabilityHandler value);
+            @Nullable @ObjCBlock(name = "call_setWriteabilityHandler") Block_setWriteabilityHandler value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -370,7 +384,7 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("waitForDataInBackgroundAndNotifyForModes:")
-    public native void waitForDataInBackgroundAndNotifyForModes(NSArray<String> modes);
+    public native void waitForDataInBackgroundAndNotifyForModes(@Nullable NSArray<String> modes);
 
     /**
      * API-Since: 2.0
@@ -379,11 +393,12 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     @Deprecated
     @Generated
     @Selector("writeData:")
-    public native void writeData(NSData data);
+    public native void writeData(@NotNull NSData data);
 
     /**
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("writeabilityHandler")
     @ObjCBlock(name = "call_writeabilityHandler_ret")
@@ -393,28 +408,28 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     @Generated
     public interface Block_readabilityHandler_ret {
         @Generated
-        void call_readabilityHandler_ret(NSFileHandle arg0);
+        void call_readabilityHandler_ret(@NotNull NSFileHandle arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setReadabilityHandler {
         @Generated
-        void call_setReadabilityHandler(NSFileHandle arg0);
+        void call_setReadabilityHandler(@NotNull NSFileHandle arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setWriteabilityHandler {
         @Generated
-        void call_setWriteabilityHandler(NSFileHandle arg0);
+        void call_setWriteabilityHandler(@NotNull NSFileHandle arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeabilityHandler_ret {
         @Generated
-        void call_writeabilityHandler_ret(NSFileHandle arg0);
+        void call_writeabilityHandler_ret(@NotNull NSFileHandle arg0);
     }
 
     /**
@@ -422,63 +437,70 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("closeAndReturnError:")
-    public native boolean closeAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean closeAndReturnError(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 13.0
      */
     @Generated
     @Selector("getOffset:error:")
-    public native boolean getOffsetError(LongPtr offsetInFile, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean getOffsetError(@NotNull LongPtr offsetInFile,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("readDataToEndOfFileAndReturnError:")
-    public native NSData readDataToEndOfFileAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSData readDataToEndOfFileAndReturnError(
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("readDataUpToLength:error:")
     public native NSData readDataUpToLengthError(@NUInt long length,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 13.0
      */
     @Generated
     @Selector("seekToEndReturningOffset:error:")
-    public native boolean seekToEndReturningOffsetError(LongPtr offsetInFile,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean seekToEndReturningOffsetError(@Nullable LongPtr offsetInFile,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 13.0
      */
     @Generated
     @Selector("seekToOffset:error:")
-    public native boolean seekToOffsetError(long offset, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean seekToOffsetError(long offset,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 13.0
      */
     @Generated
     @Selector("synchronizeAndReturnError:")
-    public native boolean synchronizeAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean synchronizeAndReturnError(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 13.0
      */
     @Generated
     @Selector("truncateAtOffset:error:")
-    public native boolean truncateAtOffsetError(long offset, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean truncateAtOffsetError(long offset,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 13.0
      */
     @Generated
     @Selector("writeData:error:")
-    public native boolean writeDataError(NSData data, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean writeDataError(@NotNull NSData data,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

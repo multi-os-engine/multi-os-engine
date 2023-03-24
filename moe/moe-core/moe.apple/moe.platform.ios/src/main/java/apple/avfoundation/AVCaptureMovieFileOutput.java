@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCaptureMovieFileOutput
@@ -85,22 +87,25 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,9 +140,10 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -176,6 +182,7 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("availableVideoCodecTypes")
     public native NSArray<String> availableVideoCodecTypes();
@@ -192,6 +199,7 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      * The value of this property is an array of AVMetadataItem objects representing the collection of top-level
      * metadata to be written in each output file.
      */
+    @Nullable
     @Generated
     @Selector("metadata")
     public native NSArray<? extends AVMetadataItem> metadata();
@@ -232,9 +240,10 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      * @return
      *         An NSDictionary of output settings.
      */
+    @NotNull
     @Generated
     @Selector("outputSettingsForConnection:")
-    public native NSDictionary<String, ?> outputSettingsForConnection(AVCaptureConnection connection);
+    public native NSDictionary<String, ?> outputSettingsForConnection(@NotNull AVCaptureConnection connection);
 
     /**
      * recordsVideoOrientationAndMirroringChangesAsMetadataTrackForConnection:
@@ -255,7 +264,7 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
     @Generated
     @Selector("recordsVideoOrientationAndMirroringChangesAsMetadataTrackForConnection:")
     public native boolean recordsVideoOrientationAndMirroringChangesAsMetadataTrackForConnection(
-            AVCaptureConnection connection);
+            @NotNull AVCaptureConnection connection);
 
     /**
      * [@property] metadata
@@ -267,7 +276,7 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      */
     @Generated
     @Selector("setMetadata:")
-    public native void setMetadata(NSArray<? extends AVMetadataItem> value);
+    public native void setMetadata(@Nullable NSArray<? extends AVMetadataItem> value);
 
     /**
      * [@property] movieFragmentInterval
@@ -320,8 +329,8 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      */
     @Generated
     @Selector("setOutputSettings:forConnection:")
-    public native void setOutputSettingsForConnection(NSDictionary<String, ?> outputSettings,
-            AVCaptureConnection connection);
+    public native void setOutputSettingsForConnection(@Nullable NSDictionary<String, ?> outputSettings,
+            @NotNull AVCaptureConnection connection);
 
     /**
      * setRecordsVideoOrientationAndMirroringChanges:asMetadataTrackForConnection:
@@ -374,7 +383,7 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
     @Generated
     @Selector("setRecordsVideoOrientationAndMirroringChanges:asMetadataTrackForConnection:")
     public native void setRecordsVideoOrientationAndMirroringChangesAsMetadataTrackForConnection(
-            boolean doRecordChanges, AVCaptureConnection connection);
+            boolean doRecordChanges, @NotNull AVCaptureConnection connection);
 
     /**
      * supportedOutputSettingsKeysForConnection:
@@ -389,9 +398,10 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      * @param connection
      *                   The connection delivering the media to be encoded.
      */
+    @NotNull
     @Generated
     @Selector("supportedOutputSettingsKeysForConnection:")
-    public native NSArray<String> supportedOutputSettingsKeysForConnection(AVCaptureConnection connection);
+    public native NSArray<String> supportedOutputSettingsKeysForConnection(@NotNull AVCaptureConnection connection);
 
     /**
      * [@property] primaryConstituentDeviceSwitchingBehaviorForRecordingEnabled

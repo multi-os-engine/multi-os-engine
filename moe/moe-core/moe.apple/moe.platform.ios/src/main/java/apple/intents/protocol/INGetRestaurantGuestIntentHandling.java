@@ -26,6 +26,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 10.0
@@ -53,8 +54,8 @@ public interface INGetRestaurantGuestIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmGetRestaurantGuest:completion:")
-    default void confirmGetRestaurantGuestCompletion(INGetRestaurantGuestIntent guestIntent,
-            @ObjCBlock(name = "call_confirmGetRestaurantGuestCompletion") Block_confirmGetRestaurantGuestCompletion completion) {
+    default void confirmGetRestaurantGuestCompletion(@NotNull INGetRestaurantGuestIntent guestIntent,
+            @NotNull @ObjCBlock(name = "call_confirmGetRestaurantGuestCompletion") Block_confirmGetRestaurantGuestCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -71,20 +72,20 @@ public interface INGetRestaurantGuestIntentHandling {
      */
     @Generated
     @Selector("handleGetRestaurantGuest:completion:")
-    void handleGetRestaurantGuestCompletion(INGetRestaurantGuestIntent intent,
-            @ObjCBlock(name = "call_handleGetRestaurantGuestCompletion") Block_handleGetRestaurantGuestCompletion completion);
+    void handleGetRestaurantGuestCompletion(@NotNull INGetRestaurantGuestIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleGetRestaurantGuestCompletion") Block_handleGetRestaurantGuestCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_confirmGetRestaurantGuestCompletion {
         @Generated
-        void call_confirmGetRestaurantGuestCompletion(INGetRestaurantGuestIntentResponse response);
+        void call_confirmGetRestaurantGuestCompletion(@NotNull INGetRestaurantGuestIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleGetRestaurantGuestCompletion {
         @Generated
-        void call_handleGetRestaurantGuestCompletion(INGetRestaurantGuestIntentResponse response);
+        void call_handleGetRestaurantGuestCompletion(@NotNull INGetRestaurantGuestIntentResponse response);
     }
 }

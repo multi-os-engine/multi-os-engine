@@ -60,6 +60,8 @@ import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
 import apple.corefoundation.struct.CGVector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -91,22 +93,25 @@ public class NSValue extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -141,9 +146,10 @@ public class NSValue extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,34 +176,44 @@ public class NSValue extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
+    @NotNull
     @Generated
     @Selector("value:withObjCType:")
-    public static native NSValue valueWithObjCType(ConstVoidPtr value, @Mapped(CStringMapper.class) String type);
+    public static native NSValue valueWithObjCType(@NotNull ConstVoidPtr value,
+            @NotNull @Mapped(CStringMapper.class) String type);
 
+    @NotNull
     @Generated
     @Selector("valueWithBytes:objCType:")
-    public static native NSValue valueWithBytesObjCType(ConstVoidPtr value, @Mapped(CStringMapper.class) String type);
+    public static native NSValue valueWithBytesObjCType(@NotNull ConstVoidPtr value,
+            @NotNull @Mapped(CStringMapper.class) String type);
 
+    @NotNull
     @Generated
     @Selector("valueWithCATransform3D:")
     public static native NSValue valueWithCATransform3D(@ByValue CATransform3D t);
 
+    @NotNull
     @Generated
     @Selector("valueWithCGAffineTransform:")
     public static native NSValue valueWithCGAffineTransform(@ByValue CGAffineTransform transform);
 
+    @NotNull
     @Generated
     @Selector("valueWithCGPoint:")
     public static native NSValue valueWithCGPoint(@ByValue CGPoint point);
 
+    @NotNull
     @Generated
     @Selector("valueWithCGRect:")
     public static native NSValue valueWithCGRect(@ByValue CGRect rect);
 
+    @NotNull
     @Generated
     @Selector("valueWithCGSize:")
     public static native NSValue valueWithCGSize(@ByValue CGSize size);
 
+    @NotNull
     @Generated
     @Selector("valueWithCGVector:")
     public static native NSValue valueWithCGVector(@ByValue CGVector vector);
@@ -205,6 +221,7 @@ public class NSValue extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Selector("valueWithCMTime:")
     public static native NSValue valueWithCMTime(@ByValue CMTime time);
@@ -212,6 +229,7 @@ public class NSValue extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Selector("valueWithCMTimeMapping:")
     public static native NSValue valueWithCMTimeMapping(@ByValue CMTimeMapping timeMapping);
@@ -219,42 +237,52 @@ public class NSValue extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Selector("valueWithCMTimeRange:")
     public static native NSValue valueWithCMTimeRange(@ByValue CMTimeRange timeRange);
 
+    @NotNull
     @Generated
     @Selector("valueWithMKCoordinate:")
     public static native NSValue valueWithMKCoordinate(@ByValue CLLocationCoordinate2D coordinate);
 
+    @NotNull
     @Generated
     @Selector("valueWithMKCoordinateSpan:")
     public static native NSValue valueWithMKCoordinateSpan(@ByValue MKCoordinateSpan span);
 
+    @NotNull
     @Generated
     @Selector("valueWithNonretainedObject:")
-    public static native NSValue valueWithNonretainedObject(@Mapped(ObjCObjectMapper.class) Object anObject);
+    public static native NSValue valueWithNonretainedObject(@Nullable @Mapped(ObjCObjectMapper.class) Object anObject);
 
+    @NotNull
     @Generated
     @Selector("valueWithPointer:")
-    public static native NSValue valueWithPointer(ConstVoidPtr pointer);
+    public static native NSValue valueWithPointer(@Nullable ConstVoidPtr pointer);
 
+    @NotNull
     @Generated
     @Selector("valueWithRange:")
     public static native NSValue valueWithRange(@ByValue NSRange range);
 
+    @NotNull
     @Generated
     @Selector("valueWithSCNMatrix4:")
     public static native NSValue valueWithSCNMatrix4(@ByValue SCNMatrix4 v);
 
+    @NotNull
     @Generated
     @Selector("valueWithSCNVector3:")
     public static native NSValue valueWithSCNVector3(@ByValue SCNVector3 v);
 
+    @NotNull
     @Generated
     @Selector("valueWithSCNVector4:")
     public static native NSValue valueWithSCNVector4(@ByValue SCNVector4 v);
 
+    @NotNull
     @Generated
     @Selector("valueWithUIEdgeInsets:")
     public static native NSValue valueWithUIEdgeInsets(@ByValue UIEdgeInsets insets);
@@ -262,6 +290,7 @@ public class NSValue extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @Selector("valueWithUIOffset:")
     public static native NSValue valueWithUIOffset(@ByValue UIOffset insets);
@@ -363,15 +392,16 @@ public class NSValue extends NSObject implements NSCopying, NSSecureCoding {
     @ByValue
     public native UIOffset UIOffsetValue();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * This method is unsafe because it could potentially cause buffer overruns. You should use -getValue:size: instead.
@@ -382,7 +412,7 @@ public class NSValue extends NSObject implements NSCopying, NSSecureCoding {
     @Deprecated
     @Generated
     @Selector("getValue:")
-    public native void getValue(VoidPtr value);
+    public native void getValue(@NotNull VoidPtr value);
 
     @Generated
     @Selector("init")
@@ -390,26 +420,30 @@ public class NSValue extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithBytes:objCType:")
-    public native NSValue initWithBytesObjCType(ConstVoidPtr value, @Mapped(CStringMapper.class) String type);
+    public native NSValue initWithBytesObjCType(@NotNull ConstVoidPtr value,
+            @NotNull @Mapped(CStringMapper.class) String type);
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSValue initWithCoder(NSCoder coder);
+    public native NSValue initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("isEqualToValue:")
-    public native boolean isEqualToValue(NSValue value);
+    public native boolean isEqualToValue(@NotNull NSValue value);
 
+    @Nullable
     @Generated
     @Selector("nonretainedObjectValue")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object nonretainedObjectValue();
 
+    @NotNull
     @Generated
     @Selector("objCType")
     @MappedReturn(CStringMapper.class)
     public native String objCType();
 
+    @Nullable
     @Generated
     @Selector("pointerValue")
     public native VoidPtr pointerValue();
@@ -438,11 +472,12 @@ public class NSValue extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("getValue:size:")
-    public native void getValueSize(VoidPtr value, @NUInt long size);
+    public native void getValueSize(@NotNull VoidPtr value, @NUInt long size);
 
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("valueWithDirectionalEdgeInsets:")
     public static native NSValue valueWithDirectionalEdgeInsets(@ByValue NSDirectionalEdgeInsets insets);

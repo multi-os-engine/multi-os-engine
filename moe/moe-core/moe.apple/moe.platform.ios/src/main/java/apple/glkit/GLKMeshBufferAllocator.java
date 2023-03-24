@@ -43,6 +43,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * GLKMeshBufferAllocator
@@ -84,22 +86,25 @@ public class GLKMeshBufferAllocator extends NSObject implements MDLMeshBufferAll
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,9 +139,10 @@ public class GLKMeshBufferAllocator extends NSObject implements MDLMeshBufferAll
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,36 +174,42 @@ public class GLKMeshBufferAllocator extends NSObject implements MDLMeshBufferAll
     @Selector("init")
     public native GLKMeshBufferAllocator init();
 
+    @NotNull
     @Generated
     @Selector("newBuffer:type:")
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLMeshBuffer newBufferType(@NUInt long length, @NUInt long type);
 
+    @Nullable
     @Generated
     @Selector("newBufferFromZone:data:type:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native MDLMeshBuffer newBufferFromZoneDataType(@Mapped(ObjCObjectMapper.class) MDLMeshBufferZone zone,
-            NSData data, @NUInt long type);
+    public native MDLMeshBuffer newBufferFromZoneDataType(
+            @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferZone zone, @NotNull NSData data, @NUInt long type);
 
+    @Nullable
     @Generated
     @Selector("newBufferFromZone:length:type:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native MDLMeshBuffer newBufferFromZoneLengthType(@Mapped(ObjCObjectMapper.class) MDLMeshBufferZone zone,
-            @NUInt long length, @NUInt long type);
+    public native MDLMeshBuffer newBufferFromZoneLengthType(
+            @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferZone zone, @NUInt long length, @NUInt long type);
 
+    @NotNull
     @Generated
     @Selector("newBufferWithData:type:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native MDLMeshBuffer newBufferWithDataType(NSData data, @NUInt long type);
+    public native MDLMeshBuffer newBufferWithDataType(@NotNull NSData data, @NUInt long type);
 
+    @NotNull
     @Generated
     @Selector("newZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLMeshBufferZone newZone(@NUInt long capacity);
 
+    @NotNull
     @Generated
     @Selector("newZoneForBuffersWithSize:andType:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native MDLMeshBufferZone newZoneForBuffersWithSizeAndType(NSArray<? extends NSNumber> sizes,
-            NSArray<? extends NSNumber> types);
+    public native MDLMeshBufferZone newZoneForBuffersWithSizeAndType(@NotNull NSArray<? extends NSNumber> sizes,
+            @NotNull NSArray<? extends NSNumber> types);
 }

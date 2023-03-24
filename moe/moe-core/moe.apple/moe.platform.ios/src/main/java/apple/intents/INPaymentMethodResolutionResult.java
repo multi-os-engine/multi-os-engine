@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -55,39 +57,44 @@ public class INPaymentMethodResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
     public static native INPaymentMethodResolutionResult confirmationRequiredWithItemToConfirmForReason(
-            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     /**
      * This resolution result is to ask Siri to confirm if this is the paymentMethod with which the user wants to
      * continue.
      */
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithPaymentMethodToConfirm:")
     public static native INPaymentMethodResolutionResult confirmationRequiredWithPaymentMethodToConfirm(
-            INPaymentMethod paymentMethodToConfirm);
+            @Nullable INPaymentMethod paymentMethodToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -100,10 +107,11 @@ public class INPaymentMethodResolutionResult extends INIntentResolutionResult {
     /**
      * This resolution result is to ask Siri to disambiguate between the provided INPaymentMethod.
      */
+    @NotNull
     @Generated
     @Selector("disambiguationWithPaymentMethodsToDisambiguate:")
     public static native INPaymentMethodResolutionResult disambiguationWithPaymentMethodsToDisambiguate(
-            NSArray<? extends INPaymentMethod> paymentMethodsToDisambiguate);
+            @NotNull NSArray<? extends INPaymentMethod> paymentMethodsToDisambiguate);
 
     @Generated
     @Selector("hash")
@@ -131,10 +139,12 @@ public class INPaymentMethodResolutionResult extends INIntentResolutionResult {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("needsValue")
     public static native INPaymentMethodResolutionResult needsValue();
@@ -144,6 +154,7 @@ public class INPaymentMethodResolutionResult extends INIntentResolutionResult {
     @Selector("new")
     public static native INPaymentMethodResolutionResult new_objc();
 
+    @NotNull
     @Generated
     @Selector("notRequired")
     public static native INPaymentMethodResolutionResult notRequired();
@@ -166,19 +177,22 @@ public class INPaymentMethodResolutionResult extends INIntentResolutionResult {
      * business logic constraints.
      * Use +notRequired to continue with a 'nil' value.
      */
+    @NotNull
     @Generated
     @Selector("successWithResolvedPaymentMethod:")
     public static native INPaymentMethodResolutionResult successWithResolvedPaymentMethod(
-            INPaymentMethod resolvedPaymentMethod);
+            @NotNull INPaymentMethod resolvedPaymentMethod);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("unsupported")
     public static native INPaymentMethodResolutionResult unsupported();
 
+    @NotNull
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INPaymentMethodResolutionResult unsupportedWithReason(@NInt long reason);

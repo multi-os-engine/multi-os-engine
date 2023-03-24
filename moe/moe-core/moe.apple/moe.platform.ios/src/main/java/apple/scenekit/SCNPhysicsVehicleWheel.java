@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNPhysicsVehicleWheel
@@ -81,22 +83,25 @@ public class SCNPhysicsVehicleWheel extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +136,10 @@ public class SCNPhysicsVehicleWheel extends NSObject implements NSCopying, NSSec
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,7 +176,7 @@ public class SCNPhysicsVehicleWheel extends NSObject implements NSCopying, NSSec
      */
     @Generated
     @Selector("wheelWithNode:")
-    public static native SCNPhysicsVehicleWheel wheelWithNode(SCNNode node);
+    public static native SCNPhysicsVehicleWheel wheelWithNode(@NotNull SCNNode node);
 
     /**
      * The wheel axle in the vehicle chassis space. Defaults to (-1,0,0).
@@ -188,15 +194,16 @@ public class SCNPhysicsVehicleWheel extends NSObject implements NSCopying, NSSec
     @ByValue
     public native SCNVector3 connectionPosition();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * The wheel friction slip coefficient. Defaults to 1.
@@ -212,7 +219,7 @@ public class SCNPhysicsVehicleWheel extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPhysicsVehicleWheel initWithCoder(NSCoder coder);
+    public native SCNPhysicsVehicleWheel initWithCoder(@NotNull NSCoder coder);
 
     /**
      * The wheel maximum suspension force in newtons. Defaults to 6000.
@@ -233,6 +240,7 @@ public class SCNPhysicsVehicleWheel extends NSObject implements NSCopying, NSSec
     /**
      * The node of the receiver.
      */
+    @NotNull
     @Generated
     @Selector("node")
     public native SCNNode node();

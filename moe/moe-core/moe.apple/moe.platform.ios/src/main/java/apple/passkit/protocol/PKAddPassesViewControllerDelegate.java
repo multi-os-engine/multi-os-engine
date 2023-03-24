@@ -24,6 +24,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("PassKit")
@@ -36,7 +37,7 @@ public interface PKAddPassesViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("addPassesViewControllerDidFinish:")
-    default void addPassesViewControllerDidFinish(PKAddPassesViewController controller) {
+    default void addPassesViewControllerDidFinish(@NotNull PKAddPassesViewController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

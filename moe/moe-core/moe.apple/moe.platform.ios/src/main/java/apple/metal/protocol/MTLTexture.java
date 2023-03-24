@@ -35,6 +35,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.metal.struct.MTLResourceID;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLTexture
@@ -77,6 +79,7 @@ public interface MTLTexture extends MTLResource {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("buffer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -125,8 +128,9 @@ public interface MTLTexture extends MTLResource {
      */
     @Generated
     @Selector("getBytes:bytesPerRow:bytesPerImage:fromRegion:mipmapLevel:slice:")
-    void getBytesBytesPerRowBytesPerImageFromRegionMipmapLevelSlice(VoidPtr pixelBytes, @NUInt long bytesPerRow,
-            @NUInt long bytesPerImage, @ByValue MTLRegion region, @NUInt long level, @NUInt long slice);
+    void getBytesBytesPerRowBytesPerImageFromRegionMipmapLevelSlice(@NotNull VoidPtr pixelBytes,
+            @NUInt long bytesPerRow, @NUInt long bytesPerImage, @ByValue MTLRegion region, @NUInt long level,
+            @NUInt long slice);
 
     /**
      * getBytes:bytesPerRow:fromRegion:mipmapLevel:
@@ -136,7 +140,7 @@ public interface MTLTexture extends MTLResource {
      */
     @Generated
     @Selector("getBytes:bytesPerRow:fromRegion:mipmapLevel:")
-    void getBytesBytesPerRowFromRegionMipmapLevel(VoidPtr pixelBytes, @NUInt long bytesPerRow,
+    void getBytesBytesPerRowFromRegionMipmapLevel(@NotNull VoidPtr pixelBytes, @NUInt long bytesPerRow,
             @ByValue MTLRegion region, @NUInt long level);
 
     /**
@@ -181,6 +185,7 @@ public interface MTLTexture extends MTLResource {
      * Create a new texture which shares the same storage as the source texture, but with a different (but compatible)
      * pixel format.
      */
+    @Nullable
     @Generated
     @Selector("newTextureViewWithPixelFormat:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -194,6 +199,7 @@ public interface MTLTexture extends MTLResource {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("newTextureViewWithPixelFormat:textureType:levels:slices:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -232,6 +238,7 @@ public interface MTLTexture extends MTLResource {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("parentTexture")
     @MappedReturn(ObjCObjectMapper.class)
@@ -255,7 +262,7 @@ public interface MTLTexture extends MTLResource {
     @Generated
     @Selector("replaceRegion:mipmapLevel:slice:withBytes:bytesPerRow:bytesPerImage:")
     void replaceRegionMipmapLevelSliceWithBytesBytesPerRowBytesPerImage(@ByValue MTLRegion region, @NUInt long level,
-            @NUInt long slice, ConstVoidPtr pixelBytes, @NUInt long bytesPerRow, @NUInt long bytesPerImage);
+            @NUInt long slice, @NotNull ConstVoidPtr pixelBytes, @NUInt long bytesPerRow, @NUInt long bytesPerImage);
 
     /**
      * replaceRegion:mipmapLevel:withBytes:bytesPerRow:
@@ -266,7 +273,7 @@ public interface MTLTexture extends MTLResource {
     @Generated
     @Selector("replaceRegion:mipmapLevel:withBytes:bytesPerRow:")
     void replaceRegionMipmapLevelWithBytesBytesPerRow(@ByValue MTLRegion region, @NUInt long level,
-            ConstVoidPtr pixelBytes, @NUInt long bytesPerRow);
+            @NotNull ConstVoidPtr pixelBytes, @NUInt long bytesPerRow);
 
     /**
      * [@property] rootResource
@@ -278,6 +285,7 @@ public interface MTLTexture extends MTLResource {
      * Deprecated-Since: 10.0
      * Deprecated-Message: Use parentTexture or buffer instead
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("rootResource")
@@ -334,6 +342,7 @@ public interface MTLTexture extends MTLResource {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("iosurface")
     IOSurfaceRef iosurface();
@@ -405,6 +414,7 @@ public interface MTLTexture extends MTLResource {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("newSharedTextureHandle")
     MTLSharedTextureHandle newSharedTextureHandle();
@@ -417,6 +427,7 @@ public interface MTLTexture extends MTLResource {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("newTextureViewWithPixelFormat:textureType:levels:slices:swizzle:")
     @MappedReturn(ObjCObjectMapper.class)

@@ -22,6 +22,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 15.0
@@ -56,35 +58,40 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("blockQuoteIntentWithIdentity:nestedInsideIntent:")
     public static native NSPresentationIntent blockQuoteIntentWithIdentityNestedInsideIntent(@NInt long identity,
-            NSPresentationIntent parent);
+            @Nullable NSPresentationIntent parent);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("codeBlockIntentWithIdentity:languageHint:nestedInsideIntent:")
     public static native NSPresentationIntent codeBlockIntentWithIdentityLanguageHintNestedInsideIntent(
-            @NInt long identity, String languageHint, NSPresentationIntent parent);
+            @NInt long identity, @Nullable String languageHint, @Nullable NSPresentationIntent parent);
 
     /**
      * The column to which this cell belongs (0-based). If the intent is not a cell, this value is 0.
@@ -97,6 +104,7 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
     /**
      * If the intent is not a table, this value is `nil`.
      */
+    @Nullable
     @Generated
     @Selector("columnAlignments")
     public native NSArray<? extends NSNumber> columnAlignments();
@@ -109,11 +117,12 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
     @NInt
     public native long columnCount();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -125,17 +134,18 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
 
+    @NotNull
     @Generated
     @Selector("headerIntentWithIdentity:level:nestedInsideIntent:")
     public static native NSPresentationIntent headerIntentWithIdentityLevelNestedInsideIntent(@NInt long identity,
-            @NInt long level, NSPresentationIntent parent);
+            @NInt long level, @Nullable NSPresentationIntent parent);
 
     /**
      * If the intent is not a header, this value is 0.
@@ -171,7 +181,7 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSPresentationIntent initWithCoder(NSCoder coder);
+    public native NSPresentationIntent initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -197,37 +207,41 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
      */
     @Generated
     @Selector("isEquivalentToPresentationIntent:")
-    public native boolean isEquivalentToPresentationIntent(NSPresentationIntent other);
+    public native boolean isEquivalentToPresentationIntent(@NotNull NSPresentationIntent other);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * If the intent is not a code block, this value is `nil`.
      */
+    @Nullable
     @Generated
     @Selector("languageHint")
     public native String languageHint();
 
+    @NotNull
     @Generated
     @Selector("listItemIntentWithIdentity:ordinal:nestedInsideIntent:")
     public static native NSPresentationIntent listItemIntentWithIdentityOrdinalNestedInsideIntent(@NInt long identity,
-            @NInt long ordinal, NSPresentationIntent parent);
+            @NInt long ordinal, @Nullable NSPresentationIntent parent);
 
     @Generated
     @Owned
     @Selector("new")
     public static native NSPresentationIntent new_objc();
 
+    @NotNull
     @Generated
     @Selector("orderedListIntentWithIdentity:nestedInsideIntent:")
     public static native NSPresentationIntent orderedListIntentWithIdentityNestedInsideIntent(@NInt long identity,
-            NSPresentationIntent parent);
+            @Nullable NSPresentationIntent parent);
 
     /**
      * If the intent is not a list, this value is 0.
@@ -237,11 +251,13 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
     @NInt
     public native long ordinal();
 
+    @NotNull
     @Generated
     @Selector("paragraphIntentWithIdentity:nestedInsideIntent:")
     public static native NSPresentationIntent paragraphIntentWithIdentityNestedInsideIntent(@NInt long identity,
-            NSPresentationIntent parent);
+            @Nullable NSPresentationIntent parent);
 
+    @Nullable
     @Generated
     @Selector("parentIntent")
     public native NSPresentationIntent parentIntent();
@@ -281,36 +297,42 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
         return supportsSecureCoding();
     }
 
+    @NotNull
     @Generated
     @Selector("tableCellIntentWithIdentity:column:nestedInsideIntent:")
     public static native NSPresentationIntent tableCellIntentWithIdentityColumnNestedInsideIntent(@NInt long identity,
-            @NInt long column, NSPresentationIntent parent);
+            @NInt long column, @Nullable NSPresentationIntent parent);
 
+    @NotNull
     @Generated
     @Selector("tableHeaderRowIntentWithIdentity:nestedInsideIntent:")
     public static native NSPresentationIntent tableHeaderRowIntentWithIdentityNestedInsideIntent(@NInt long identity,
-            NSPresentationIntent parent);
+            @Nullable NSPresentationIntent parent);
 
+    @NotNull
     @Generated
     @Selector("tableIntentWithIdentity:columnCount:alignments:nestedInsideIntent:")
     public static native NSPresentationIntent tableIntentWithIdentityColumnCountAlignmentsNestedInsideIntent(
-            @NInt long identity, @NInt long columnCount, NSArray<? extends NSNumber> alignments,
-            NSPresentationIntent parent);
+            @NInt long identity, @NInt long columnCount, @NotNull NSArray<? extends NSNumber> alignments,
+            @Nullable NSPresentationIntent parent);
 
+    @NotNull
     @Generated
     @Selector("tableRowIntentWithIdentity:row:nestedInsideIntent:")
     public static native NSPresentationIntent tableRowIntentWithIdentityRowNestedInsideIntent(@NInt long identity,
-            @NInt long row, NSPresentationIntent parent);
+            @NInt long row, @Nullable NSPresentationIntent parent);
 
+    @NotNull
     @Generated
     @Selector("thematicBreakIntentWithIdentity:nestedInsideIntent:")
     public static native NSPresentationIntent thematicBreakIntentWithIdentityNestedInsideIntent(@NInt long identity,
-            NSPresentationIntent parent);
+            @Nullable NSPresentationIntent parent);
 
+    @NotNull
     @Generated
     @Selector("unorderedListIntentWithIdentity:nestedInsideIntent:")
     public static native NSPresentationIntent unorderedListIntentWithIdentityNestedInsideIntent(@NInt long identity,
-            NSPresentationIntent parent);
+            @Nullable NSPresentationIntent parent);
 
     @Generated
     @Selector("version")

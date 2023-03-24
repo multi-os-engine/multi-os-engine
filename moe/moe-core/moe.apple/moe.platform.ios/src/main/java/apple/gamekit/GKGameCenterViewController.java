@@ -43,6 +43,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 6.0
@@ -82,29 +84,32 @@ public class GKGameCenterViewController extends UINavigationController {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -136,9 +141,10 @@ public class GKGameCenterViewController extends UINavigationController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,6 +172,7 @@ public class GKGameCenterViewController extends UINavigationController {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("gameCenterDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -177,20 +184,21 @@ public class GKGameCenterViewController extends UINavigationController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKGameCenterViewController initWithCoder(NSCoder coder);
+    public native GKGameCenterViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")
-    public native GKGameCenterViewController initWithNavigationBarClassToolbarClass(Class navigationBarClass,
-            Class toolbarClass);
+    public native GKGameCenterViewController initWithNavigationBarClassToolbarClass(@Nullable Class navigationBarClass,
+            @Nullable Class toolbarClass);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native GKGameCenterViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native GKGameCenterViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     @Generated
     @Selector("initWithRootViewController:")
-    public native GKGameCenterViewController initWithRootViewController(UIViewController rootViewController);
+    public native GKGameCenterViewController initWithRootViewController(@NotNull UIViewController rootViewController);
 
     /**
      * API-Since: 4.1
@@ -198,6 +206,7 @@ public class GKGameCenterViewController extends UINavigationController {
      * Deprecated-Message: GKGameCenterViewController's leaderboardCategory property is deprecated. Use
      * -initWithLeaderboard: instead
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("leaderboardCategory")
@@ -208,6 +217,7 @@ public class GKGameCenterViewController extends UINavigationController {
      * Deprecated-Since: 14.0
      * Deprecated-Message: Use -initWithLeaderboard: instead
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("leaderboardIdentifier")
@@ -227,10 +237,10 @@ public class GKGameCenterViewController extends UINavigationController {
     @Generated
     @Selector("setGameCenterDelegate:")
     public native void setGameCenterDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) GKGameCenterControllerDelegate value);
+            @Nullable @Mapped(ObjCObjectMapper.class) GKGameCenterControllerDelegate value);
 
     @Generated
-    public void setGameCenterDelegate(@Mapped(ObjCObjectMapper.class) GKGameCenterControllerDelegate value) {
+    public void setGameCenterDelegate(@Nullable @Mapped(ObjCObjectMapper.class) GKGameCenterControllerDelegate value) {
         Object __old = gameCenterDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -250,7 +260,7 @@ public class GKGameCenterViewController extends UINavigationController {
     @Generated
     @Deprecated
     @Selector("setLeaderboardCategory:")
-    public native void setLeaderboardCategory(String value);
+    public native void setLeaderboardCategory(@Nullable String value);
 
     /**
      * API-Since: 7.0
@@ -260,7 +270,7 @@ public class GKGameCenterViewController extends UINavigationController {
     @Deprecated
     @Generated
     @Selector("setLeaderboardIdentifier:")
-    public native void setLeaderboardIdentifier(String value);
+    public native void setLeaderboardIdentifier(@Nullable String value);
 
     /**
      * API-Since: 4.1
@@ -300,7 +310,7 @@ public class GKGameCenterViewController extends UINavigationController {
      */
     @Generated
     @Selector("initWithAchievementID:")
-    public native GKGameCenterViewController initWithAchievementID(String achievementID);
+    public native GKGameCenterViewController initWithAchievementID(@NotNull String achievementID);
 
     /**
      * Use this to display the scores for the specified leaderboard and player scope. Both classic and recurring
@@ -310,7 +320,7 @@ public class GKGameCenterViewController extends UINavigationController {
      */
     @Generated
     @Selector("initWithLeaderboard:playerScope:")
-    public native GKGameCenterViewController initWithLeaderboardPlayerScope(GKLeaderboard leaderboard,
+    public native GKGameCenterViewController initWithLeaderboardPlayerScope(@NotNull GKLeaderboard leaderboard,
             @NInt long playerScope);
 
     /**
@@ -322,7 +332,7 @@ public class GKGameCenterViewController extends UINavigationController {
      */
     @Generated
     @Selector("initWithLeaderboardID:playerScope:timeScope:")
-    public native GKGameCenterViewController initWithLeaderboardIDPlayerScopeTimeScope(String leaderboardID,
+    public native GKGameCenterViewController initWithLeaderboardIDPlayerScopeTimeScope(@NotNull String leaderboardID,
             @NInt long playerScope, @NInt long timeScope);
 
     /**

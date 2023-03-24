@@ -10,6 +10,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 15.0
@@ -23,6 +24,7 @@ public interface ASAuthorizationPublicKeyCredentialAssertionRequest extends NSSe
      * A list of credentials to allow for this request. If this list is nonempty, only credentials matching the provided
      * descriptors can be used to sign in.
      */
+    @NotNull
     @Generated
     @Selector("allowedCredentials")
     NSArray<?> allowedCredentials();
@@ -30,6 +32,7 @@ public interface ASAuthorizationPublicKeyCredentialAssertionRequest extends NSSe
     /**
      * The challenge to use when signing the request.
      */
+    @NotNull
     @Generated
     @Selector("challenge")
     NSData challenge();
@@ -37,6 +40,7 @@ public interface ASAuthorizationPublicKeyCredentialAssertionRequest extends NSSe
     /**
      * The Relying Party identifier used to scope this request.
      */
+    @NotNull
     @Generated
     @Selector("relyingPartyIdentifier")
     String relyingPartyIdentifier();
@@ -47,21 +51,21 @@ public interface ASAuthorizationPublicKeyCredentialAssertionRequest extends NSSe
      */
     @Generated
     @Selector("setAllowedCredentials:")
-    void setAllowedCredentials(NSArray<?> value);
+    void setAllowedCredentials(@NotNull NSArray<?> value);
 
     /**
      * The challenge to use when signing the request.
      */
     @Generated
     @Selector("setChallenge:")
-    void setChallenge(NSData value);
+    void setChallenge(@NotNull NSData value);
 
     /**
      * The Relying Party identifier used to scope this request.
      */
     @Generated
     @Selector("setRelyingPartyIdentifier:")
-    void setRelyingPartyIdentifier(String value);
+    void setRelyingPartyIdentifier(@NotNull String value);
 
     /**
      * A preference for whether the authenticator should attempt to verify that it is being used by its owner, such as
@@ -69,12 +73,13 @@ public interface ASAuthorizationPublicKeyCredentialAssertionRequest extends NSSe
      */
     @Generated
     @Selector("setUserVerificationPreference:")
-    void setUserVerificationPreference(String value);
+    void setUserVerificationPreference(@NotNull String value);
 
     /**
      * A preference for whether the authenticator should attempt to verify that it is being used by its owner, such as
      * through a PIN or biometrics.
      */
+    @NotNull
     @Generated
     @Selector("userVerificationPreference")
     String userVerificationPreference();

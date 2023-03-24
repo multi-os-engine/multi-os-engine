@@ -49,6 +49,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -83,22 +85,25 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +138,10 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,7 +171,7 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("uniformWithName:")
-    public static native SKUniform uniformWithName(String name);
+    public static native SKUniform uniformWithName(@NotNull String name);
 
     /**
      * Create a shader uniform with a given name, and a float value
@@ -175,7 +181,7 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("uniformWithName:float:")
-    public static native SKUniform uniformWithNameFloat(String name, float value);
+    public static native SKUniform uniformWithNameFloat(@NotNull String name, float value);
 
     /**
      * API-Since: 7.0
@@ -184,7 +190,7 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Deprecated
     @Generated
     @Selector("uniformWithName:floatMatrix2:")
-    public static native SKUniform uniformWithNameFloatMatrix2(String name, @ByValue GLKMatrix2 value);
+    public static native SKUniform uniformWithNameFloatMatrix2(@NotNull String name, @ByValue GLKMatrix2 value);
 
     /**
      * API-Since: 7.0
@@ -193,7 +199,7 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Deprecated
     @Generated
     @Selector("uniformWithName:floatMatrix3:")
-    public static native SKUniform uniformWithNameFloatMatrix3(String name, @ByValue GLKMatrix3 value);
+    public static native SKUniform uniformWithNameFloatMatrix3(@NotNull String name, @ByValue GLKMatrix3 value);
 
     /**
      * API-Since: 7.0
@@ -202,7 +208,7 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Deprecated
     @Generated
     @Selector("uniformWithName:floatMatrix4:")
-    public static native SKUniform uniformWithNameFloatMatrix4(String name, @ByValue GLKMatrix4 value);
+    public static native SKUniform uniformWithNameFloatMatrix4(@NotNull String name, @ByValue GLKMatrix4 value);
 
     /**
      * API-Since: 7.0
@@ -211,7 +217,7 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Deprecated
     @Generated
     @Selector("uniformWithName:floatVector2:")
-    public static native SKUniform uniformWithNameFloatVector2(String name, @ByValue GLKVector2 value);
+    public static native SKUniform uniformWithNameFloatVector2(@NotNull String name, @ByValue GLKVector2 value);
 
     /**
      * API-Since: 7.0
@@ -220,7 +226,7 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Deprecated
     @Generated
     @Selector("uniformWithName:floatVector3:")
-    public static native SKUniform uniformWithNameFloatVector3(String name, @ByValue GLKVector3 value);
+    public static native SKUniform uniformWithNameFloatVector3(@NotNull String name, @ByValue GLKVector3 value);
 
     /**
      * API-Since: 7.0
@@ -229,7 +235,7 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Deprecated
     @Generated
     @Selector("uniformWithName:floatVector4:")
-    public static native SKUniform uniformWithNameFloatVector4(String name, @ByValue GLKVector4 value);
+    public static native SKUniform uniformWithNameFloatVector4(@NotNull String name, @ByValue GLKVector4 value);
 
     /**
      * Create a shader uniform with a given name, and texture data
@@ -239,22 +245,23 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("uniformWithName:texture:")
-    public static native SKUniform uniformWithNameTexture(String name, SKTexture texture);
+    public static native SKUniform uniformWithNameTexture(@NotNull String name, @Nullable SKTexture texture);
 
     @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * API-Since: 7.0
@@ -329,15 +336,15 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKUniform initWithCoder(NSCoder coder);
+    public native SKUniform initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithName:")
-    public native SKUniform initWithName(String name);
+    public native SKUniform initWithName(@NotNull String name);
 
     @Generated
     @Selector("initWithName:float:")
-    public native SKUniform initWithNameFloat(String name, float value);
+    public native SKUniform initWithNameFloat(@NotNull String name, float value);
 
     /**
      * API-Since: 7.0
@@ -346,7 +353,7 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Deprecated
     @Generated
     @Selector("initWithName:floatMatrix2:")
-    public native SKUniform initWithNameFloatMatrix2(String name, @ByValue GLKMatrix2 value);
+    public native SKUniform initWithNameFloatMatrix2(@NotNull String name, @ByValue GLKMatrix2 value);
 
     /**
      * API-Since: 7.0
@@ -355,7 +362,7 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Deprecated
     @Generated
     @Selector("initWithName:floatMatrix3:")
-    public native SKUniform initWithNameFloatMatrix3(String name, @ByValue GLKMatrix3 value);
+    public native SKUniform initWithNameFloatMatrix3(@NotNull String name, @ByValue GLKMatrix3 value);
 
     /**
      * API-Since: 7.0
@@ -364,7 +371,7 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Deprecated
     @Generated
     @Selector("initWithName:floatMatrix4:")
-    public native SKUniform initWithNameFloatMatrix4(String name, @ByValue GLKMatrix4 value);
+    public native SKUniform initWithNameFloatMatrix4(@NotNull String name, @ByValue GLKMatrix4 value);
 
     /**
      * API-Since: 7.0
@@ -373,7 +380,7 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Deprecated
     @Generated
     @Selector("initWithName:floatVector2:")
-    public native SKUniform initWithNameFloatVector2(String name, @ByValue GLKVector2 value);
+    public native SKUniform initWithNameFloatVector2(@NotNull String name, @ByValue GLKVector2 value);
 
     /**
      * API-Since: 7.0
@@ -382,7 +389,7 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Deprecated
     @Generated
     @Selector("initWithName:floatVector3:")
-    public native SKUniform initWithNameFloatVector3(String name, @ByValue GLKVector3 value);
+    public native SKUniform initWithNameFloatVector3(@NotNull String name, @ByValue GLKVector3 value);
 
     /**
      * API-Since: 7.0
@@ -391,15 +398,16 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Deprecated
     @Generated
     @Selector("initWithName:floatVector4:")
-    public native SKUniform initWithNameFloatVector4(String name, @ByValue GLKVector4 value);
+    public native SKUniform initWithNameFloatVector4(@NotNull String name, @ByValue GLKVector4 value);
 
     @Generated
     @Selector("initWithName:texture:")
-    public native SKUniform initWithNameTexture(String name, SKTexture texture);
+    public native SKUniform initWithNameTexture(@NotNull String name, @Nullable SKTexture texture);
 
     /**
      * The name by which this uniform will be referenced in a shader
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -470,11 +478,12 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setTextureValue:")
-    public native void setTextureValue(SKTexture value);
+    public native void setTextureValue(@Nullable SKTexture value);
 
     /**
      * Access to the texture data associated with the current uniform
      */
+    @Nullable
     @Generated
     @Selector("textureValue")
     public native SKTexture textureValue();

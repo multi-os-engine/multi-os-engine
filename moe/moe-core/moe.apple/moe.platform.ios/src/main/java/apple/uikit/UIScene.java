@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -49,6 +51,7 @@ public class UIScene extends UIResponder {
     /**
      * use the activation conditions to influence which scene is activated for banner taps, URLs, etc.
      */
+    @NotNull
     @Generated
     @Selector("activationConditions")
     public native UISceneActivationConditions activationConditions();
@@ -73,29 +76,32 @@ public class UIScene extends UIResponder {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -106,6 +112,7 @@ public class UIScene extends UIResponder {
      * need to live for the whole lifetime of the process.
      * A strong ref here relieves clients of the responsibility of managing the delegate lifetime directly.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -129,8 +136,8 @@ public class UIScene extends UIResponder {
      */
     @Generated
     @Selector("initWithSession:connectionOptions:")
-    public native UIScene initWithSessionConnectionOptions(UISceneSession session,
-            UISceneConnectionOptions connectionOptions);
+    public native UIScene initWithSessionConnectionOptions(@NotNull UISceneSession session,
+            @NotNull UISceneConnectionOptions connectionOptions);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -149,9 +156,10 @@ public class UIScene extends UIResponder {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,8 +174,9 @@ public class UIScene extends UIResponder {
      */
     @Generated
     @Selector("openURL:options:completionHandler:")
-    public native void openURLOptionsCompletionHandler(NSURL url, UISceneOpenExternalURLOptions options,
-            @ObjCBlock(name = "call_openURLOptionsCompletionHandler") Block_openURLOptionsCompletionHandler completion);
+    public native void openURLOptionsCompletionHandler(@NotNull NSURL url,
+            @Nullable UISceneOpenExternalURLOptions options,
+            @Nullable @ObjCBlock(name = "call_openURLOptionsCompletionHandler") Block_openURLOptionsCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -187,6 +196,7 @@ public class UIScene extends UIResponder {
     /**
      * The existing representation which references this UIScene instance
      */
+    @NotNull
     @Generated
     @Selector("session")
     public native UISceneSession session();
@@ -196,7 +206,7 @@ public class UIScene extends UIResponder {
      */
     @Generated
     @Selector("setActivationConditions:")
-    public native void setActivationConditions(UISceneActivationConditions value);
+    public native void setActivationConditions(@NotNull UISceneActivationConditions value);
 
     /**
      * UIScene is strongly retained by UIKit like UIApplication, however, unlike UIApplication, the delegate may not
@@ -205,7 +215,7 @@ public class UIScene extends UIResponder {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * A title for the scene to allow the system to differentiate multiple scenes for the user.
@@ -239,6 +249,7 @@ public class UIScene extends UIResponder {
     /**
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("pointerLockState")
     public native UIPointerLockState pointerLockState();
@@ -259,7 +270,7 @@ public class UIScene extends UIResponder {
      */
     @Generated
     @Selector("setSubtitle:")
-    public native void setSubtitle(String value);
+    public native void setSubtitle(@NotNull String value);
 
     /**
      * A subtitle that may be displayed adjacent to or below the primary title on supported platforms.
@@ -267,6 +278,7 @@ public class UIScene extends UIResponder {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("subtitle")
     public native String subtitle();

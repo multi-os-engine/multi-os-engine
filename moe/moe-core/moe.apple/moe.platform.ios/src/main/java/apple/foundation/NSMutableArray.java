@@ -48,6 +48,8 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -82,54 +84,59 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
 
     @Generated
     @Selector("arrayWithArray:")
-    public static native <_ObjectType> NSMutableArray<?> arrayWithArray(NSArray<_ObjectType> array);
+    public static native <_ObjectType> NSMutableArray<?> arrayWithArray(@NotNull NSArray<_ObjectType> array);
 
     @Generated
     @Selector("arrayWithCapacity:")
     public static native <_ObjectType> NSMutableArray<?> arrayWithCapacity(@NUInt long numItems);
 
+    @Nullable
     @Generated
     @Selector("arrayWithContentsOfFile:")
-    public static native <_ObjectType> NSMutableArray<_ObjectType> arrayWithContentsOfFile(String path);
+    public static native <_ObjectType> NSMutableArray<_ObjectType> arrayWithContentsOfFile(@NotNull String path);
 
+    @Nullable
     @Generated
     @Selector("arrayWithContentsOfURL:")
-    public static native <_ObjectType> NSMutableArray<_ObjectType> arrayWithContentsOfURL(NSURL url);
+    public static native <_ObjectType> NSMutableArray<_ObjectType> arrayWithContentsOfURL(@NotNull NSURL url);
 
     @Generated
     @Selector("arrayWithObject:")
     public static native <_ObjectType> NSMutableArray<?> arrayWithObject(
-            @Mapped(ObjCObjectMapper.class) _ObjectType anObject);
+            @NotNull @Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
     @Generated
     @Variadic()
     @Selector("arrayWithObjects:")
     public static native <_ObjectType> NSMutableArray<?> arrayWithObjects(
-            @Mapped(ObjCObjectMapper.class) _ObjectType firstObj, Object... varargs);
+            @NotNull @Mapped(ObjCObjectMapper.class) _ObjectType firstObj, Object... varargs);
 
     @Generated
     @Selector("arrayWithObjects:count:")
     public static native <_ObjectType> NSMutableArray<?> arrayWithObjectsCount(
-            @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -164,9 +171,10 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -200,11 +208,11 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
 
     @Generated
     @Selector("addObject:")
-    public native void addObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
+    public native void addObject(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
     @Generated
     @Selector("addObjectsFromArray:")
-    public native void addObjectsFromArray(NSArray<_ObjectType> otherArray);
+    public native void addObjectsFromArray(@NotNull NSArray<_ObjectType> otherArray);
 
     @Generated
     @Selector("exchangeObjectAtIndex:withObjectAtIndex:")
@@ -215,7 +223,7 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
      */
     @Generated
     @Selector("filterUsingPredicate:")
-    public native void filterUsingPredicate(NSPredicate predicate);
+    public native void filterUsingPredicate(@NotNull NSPredicate predicate);
 
     @Generated
     @Selector("init")
@@ -223,11 +231,11 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
 
     @Generated
     @Selector("initWithArray:")
-    public native NSMutableArray<?> initWithArray(NSArray<_ObjectType> array);
+    public native NSMutableArray<?> initWithArray(@NotNull NSArray<_ObjectType> array);
 
     @Generated
     @Selector("initWithArray:copyItems:")
-    public native NSMutableArray<?> initWithArrayCopyItems(NSArray<_ObjectType> array, boolean flag);
+    public native NSMutableArray<?> initWithArrayCopyItems(@NotNull NSArray<_ObjectType> array, boolean flag);
 
     @Generated
     @Selector("initWithCapacity:")
@@ -235,34 +243,37 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMutableArray<?> initWithCoder(NSCoder coder);
+    public native NSMutableArray<?> initWithCoder(@NotNull NSCoder coder);
 
+    @Nullable
     @Generated
     @Selector("initWithContentsOfFile:")
-    public native NSMutableArray<_ObjectType> initWithContentsOfFile(String path);
+    public native NSMutableArray<_ObjectType> initWithContentsOfFile(@NotNull String path);
 
+    @Nullable
     @Generated
     @Selector("initWithContentsOfURL:")
-    public native NSMutableArray<_ObjectType> initWithContentsOfURL(NSURL url);
+    public native NSMutableArray<_ObjectType> initWithContentsOfURL(@NotNull NSURL url);
 
     @Generated
     @Variadic()
     @Selector("initWithObjects:")
-    public native NSMutableArray<?> initWithObjects(@Mapped(ObjCObjectMapper.class) _ObjectType firstObj,
+    public native NSMutableArray<?> initWithObjects(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType firstObj,
             Object... varargs);
 
     @Generated
     @Selector("initWithObjects:count:")
     public native NSMutableArray<?> initWithObjectsCount(
-            @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
+            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("insertObject:atIndex:")
-    public native void insertObjectAtIndex(@Mapped(ObjCObjectMapper.class) _ObjectType anObject, @NUInt long index);
+    public native void insertObjectAtIndex(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType anObject,
+            @NUInt long index);
 
     @Generated
     @Selector("insertObjects:atIndexes:")
-    public native void insertObjectsAtIndexes(NSArray<_ObjectType> objects, NSIndexSet indexes);
+    public native void insertObjectsAtIndexes(@NotNull NSArray<_ObjectType> objects, @NotNull NSIndexSet indexes);
 
     @Generated
     @Selector("removeAllObjects")
@@ -274,11 +285,11 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
 
     @Generated
     @Selector("removeObject:")
-    public native void removeObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
+    public native void removeObject(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
     @Generated
     @Selector("removeObject:inRange:")
-    public native void removeObjectInRange(@Mapped(ObjCObjectMapper.class) _ObjectType anObject,
+    public native void removeObjectInRange(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType anObject,
             @ByValue NSRange range);
 
     @Generated
@@ -287,16 +298,16 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
 
     @Generated
     @Selector("removeObjectIdenticalTo:")
-    public native void removeObjectIdenticalTo(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
+    public native void removeObjectIdenticalTo(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
     @Generated
     @Selector("removeObjectIdenticalTo:inRange:")
-    public native void removeObjectIdenticalToInRange(@Mapped(ObjCObjectMapper.class) _ObjectType anObject,
+    public native void removeObjectIdenticalToInRange(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType anObject,
             @ByValue NSRange range);
 
     @Generated
     @Selector("removeObjectsAtIndexes:")
-    public native void removeObjectsAtIndexes(NSIndexSet indexes);
+    public native void removeObjectsAtIndexes(@NotNull NSIndexSet indexes);
 
     /**
      * API-Since: 2.0
@@ -306,11 +317,11 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @Generated
     @Deprecated
     @Selector("removeObjectsFromIndices:numIndices:")
-    public native void removeObjectsFromIndicesNumIndices(NUIntPtr indices, @NUInt long cnt);
+    public native void removeObjectsFromIndicesNumIndices(@NotNull NUIntPtr indices, @NUInt long cnt);
 
     @Generated
     @Selector("removeObjectsInArray:")
-    public native void removeObjectsInArray(NSArray<_ObjectType> otherArray);
+    public native void removeObjectsInArray(@NotNull NSArray<_ObjectType> otherArray);
 
     @Generated
     @Selector("removeObjectsInRange:")
@@ -319,32 +330,34 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @Generated
     @Selector("replaceObjectAtIndex:withObject:")
     public native void replaceObjectAtIndexWithObject(@NUInt long index,
-            @Mapped(ObjCObjectMapper.class) _ObjectType anObject);
+            @NotNull @Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
     @Generated
     @Selector("replaceObjectsAtIndexes:withObjects:")
-    public native void replaceObjectsAtIndexesWithObjects(NSIndexSet indexes, NSArray<_ObjectType> objects);
+    public native void replaceObjectsAtIndexesWithObjects(@NotNull NSIndexSet indexes,
+            @NotNull NSArray<_ObjectType> objects);
 
     @Generated
     @Selector("replaceObjectsInRange:withObjectsFromArray:")
     public native void replaceObjectsInRangeWithObjectsFromArray(@ByValue NSRange range,
-            NSArray<_ObjectType> otherArray);
+            @NotNull NSArray<_ObjectType> otherArray);
 
     @Generated
     @Selector("replaceObjectsInRange:withObjectsFromArray:range:")
     public native void replaceObjectsInRangeWithObjectsFromArrayRange(@ByValue NSRange range,
-            NSArray<_ObjectType> otherArray, @ByValue NSRange otherRange);
+            @NotNull NSArray<_ObjectType> otherArray, @ByValue NSRange otherRange);
 
     @Generated
     @Selector("setArray:")
-    public native void setArray(NSArray<_ObjectType> otherArray);
+    public native void setArray(@NotNull NSArray<_ObjectType> otherArray);
 
     /**
      * API-Since: 6.0
      */
     @Generated
     @Selector("setObject:atIndexedSubscript:")
-    public native void setObjectAtIndexedSubscript(@Mapped(ObjCObjectMapper.class) _ObjectType obj, @NUInt long idx);
+    public native void setObjectAtIndexedSubscript(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType obj,
+            @NUInt long idx);
 
     /**
      * API-Since: 4.0
@@ -352,24 +365,24 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @Generated
     @Selector("sortUsingComparator:")
     public native void sortUsingComparator(
-            @ObjCBlock(name = "call_sortUsingComparator") Block_sortUsingComparator cmptr);
+            @NotNull @ObjCBlock(name = "call_sortUsingComparator") Block_sortUsingComparator cmptr);
 
     /**
      * sorts the array itself
      */
     @Generated
     @Selector("sortUsingDescriptors:")
-    public native void sortUsingDescriptors(NSArray<? extends NSSortDescriptor> sortDescriptors);
+    public native void sortUsingDescriptors(@NotNull NSArray<? extends NSSortDescriptor> sortDescriptors);
 
     @Generated
     @Selector("sortUsingFunction:context:")
     public native void sortUsingFunctionContext(
-            @FunctionPtr(name = "call_sortUsingFunctionContext") Function_sortUsingFunctionContext compare,
-            VoidPtr context);
+            @NotNull @FunctionPtr(name = "call_sortUsingFunctionContext") Function_sortUsingFunctionContext compare,
+            @Nullable VoidPtr context);
 
     @Generated
     @Selector("sortUsingSelector:")
-    public native void sortUsingSelector(SEL comparator);
+    public native void sortUsingSelector(@NotNull SEL comparator);
 
     /**
      * API-Since: 4.0
@@ -377,7 +390,7 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @Generated
     @Selector("sortWithOptions:usingComparator:")
     public native void sortWithOptionsUsingComparator(@NUInt long opts,
-            @ObjCBlock(name = "call_sortWithOptionsUsingComparator") Block_sortWithOptionsUsingComparator cmptr);
+            @NotNull @ObjCBlock(name = "call_sortWithOptionsUsingComparator") Block_sortWithOptionsUsingComparator cmptr);
 
     @Override
     public boolean add(_ObjectType e) {
@@ -561,8 +574,8 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     public interface Block_sortUsingComparator {
         @Generated
         @NInt
-        long call_sortUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
-                @Mapped(ObjCObjectMapper.class) Object obj2);
+        long call_sortUsingComparator(@NotNull @Mapped(ObjCObjectMapper.class) Object obj1,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -570,8 +583,8 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     public interface Function_sortUsingFunctionContext {
         @Generated
         @NInt
-        long call_sortUsingFunctionContext(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, VoidPtr arg2);
+        long call_sortUsingFunctionContext(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, @Nullable VoidPtr arg2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -579,8 +592,8 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     public interface Block_sortWithOptionsUsingComparator {
         @Generated
         @NInt
-        long call_sortWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
-                @Mapped(ObjCObjectMapper.class) Object obj2);
+        long call_sortWithOptionsUsingComparator(@NotNull @Mapped(ObjCObjectMapper.class) Object obj1,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     private final static class NSMutableArrayIterator<_ObjectType> implements Iterator<_ObjectType> {
@@ -700,17 +713,19 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
 
     }
 
+    @Nullable
     @Generated
     @Selector("arrayWithContentsOfURL:error:")
-    public static native <_ObjectType> NSArray<_ObjectType> arrayWithContentsOfURLError(NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native <_ObjectType> NSArray<_ObjectType> arrayWithContentsOfURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    @Nullable
     @Generated
     @Selector("initWithContentsOfURL:error:")
-    public native NSArray<_ObjectType> initWithContentsOfURLError(NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSArray<_ObjectType> initWithContentsOfURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("applyDifference:")
-    public native void applyDifference(NSOrderedCollectionDifference<_ObjectType> difference);
+    public native void applyDifference(@NotNull NSOrderedCollectionDifference<_ObjectType> difference);
 }

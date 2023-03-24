@@ -13,6 +13,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("Accessibility")
@@ -31,10 +32,11 @@ public final class Accessibility {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
-    public static native String AXNameFromColor(CGColorRef color);
+    public static native String AXNameFromColor(@NotNull CGColorRef color);
 
     /**
      * API-Since: 15.0
@@ -58,6 +60,7 @@ public final class Accessibility {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSArray<? extends NSUUID> AXMFiHearingDevicePairedUUIDs();
@@ -65,6 +68,7 @@ public final class Accessibility {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -73,6 +77,7 @@ public final class Accessibility {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

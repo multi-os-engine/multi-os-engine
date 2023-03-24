@@ -67,6 +67,8 @@ import apple.uikit.protocol.UIEditMenuInteractionAnimating;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 2.0
@@ -94,7 +96,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Selector("addKeyframeWithRelativeStartTime:relativeDuration:animations:")
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
-            @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
 
     @Generated
     @Owned
@@ -110,64 +112,70 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
     public static native void animateKeyframesWithDurationDelayOptionsAnimationsCompletion(double duration,
             double delay, @NUInt long options,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:animations:")
     public static native void animateWithDurationAnimations(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
 
     @Generated
     @Selector("animateWithDuration:animations:completion:")
     public static native void animateWithDurationAnimationsCompletion(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:options:animations:completion:")
     public static native void animateWithDurationDelayOptionsAnimationsCompletion(double duration, double delay,
             @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:")
     public static native void animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion(
             double duration, double delay, @NFloat double dampingRatio, @NFloat double velocity, @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
 
+    @NotNull
     @Generated
     @Selector("appearance")
     public static native UITextField appearance();
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:")
-    public static native UITextField appearanceForTraitCollection(UITraitCollection trait);
+    public static native UITextField appearanceForTraitCollection(@NotNull UITraitCollection trait);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    public static native UITextField appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native UITextField appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     public static native UITextField appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            UITraitCollection trait, NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     public static native UITextField appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    public static native UITextField appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native UITextField appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes);
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -175,34 +183,37 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
-    public static native void beginAnimationsContext(String animationID, VoidPtr context);
+    public static native void beginAnimationsContext(@Nullable String animationID, @Nullable VoidPtr context);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Deprecated
     @Generated
@@ -243,10 +254,12 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("layerClass")
     public static native Class layerClass();
@@ -259,14 +272,14 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")
     public static native void performSystemAnimationOnViewsOptionsAnimationsCompletion(@NUInt long animation,
-            NSArray<? extends UIView> views, @NUInt long options,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
+            @NotNull NSArray<? extends UIView> views, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("performWithoutAnimation:")
     public static native void performWithoutAnimation(
-            @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
+            @NotNull @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
 
     @Generated
     @Selector("requiresConstraintBasedLayout")
@@ -298,12 +311,12 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
-    public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
+    public static native void setAnimationDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object delegate);
 
     @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
-    public static native void setAnimationDidStopSelector(SEL selector);
+    public static native void setAnimationDidStopSelector(@Nullable SEL selector);
 
     @Deprecated
     @Generated
@@ -323,17 +336,18 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
-    public static native void setAnimationStartDate(NSDate startDate);
+    public static native void setAnimationStartDate(@NotNull NSDate startDate);
 
     @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
-    public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
+    public static native void setAnimationTransitionForViewCache(@NInt long transition, @NotNull UIView view,
+            boolean cache);
 
     @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
-    public static native void setAnimationWillStartSelector(SEL selector);
+    public static native void setAnimationWillStartSelector(@Nullable SEL selector);
 
     @Generated
     @Selector("setAnimationsEnabled:")
@@ -349,16 +363,16 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     @Generated
     @Selector("transitionFromView:toView:duration:options:completion:")
-    public static native void transitionFromViewToViewDurationOptionsCompletion(UIView fromView, UIView toView,
-            double duration, @NUInt long options,
-            @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
+    public static native void transitionFromViewToViewDurationOptionsCompletion(@NotNull UIView fromView,
+            @NotNull UIView toView, double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
 
     @Generated
     @Selector("transitionWithView:duration:options:animations:completion:")
-    public static native void transitionWithViewDurationOptionsAnimationsCompletion(UIView view, double duration,
-            @NUInt long options,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
+    public static native void transitionWithViewDurationOptionsAnimationsCompletion(@NotNull UIView view,
+            double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:")
@@ -396,44 +410,50 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Selector("allowsEditingTextAttributes")
     public native boolean allowsEditingTextAttributes();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearance")
     public UITextField _appearance() {
         return appearance();
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    public UITextField _appearanceForTraitCollection(UITraitCollection trait) {
+    public UITextField _appearanceForTraitCollection(@NotNull UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    public UITextField _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public UITextField _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    public UITextField _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
+    public UITextField _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(@NotNull UITraitCollection trait,
+            @NotNull NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    public UITextField _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
-            Object... varargs) {
+    public UITextField _appearanceWhenContainedIn(
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    public UITextField _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public UITextField _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -442,6 +462,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("attributedPlaceholder")
     public native NSAttributedString attributedPlaceholder();
@@ -451,6 +472,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("attributedText")
     public native NSAttributedString attributedText();
@@ -470,6 +492,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     /**
      * default is nil. draw in border rect. image should be stretchable
      */
+    @Nullable
     @Generated
     @Selector("background")
     public native UIImage background();
@@ -477,13 +500,15 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Generated
     @Selector("baseWritingDirectionForPosition:inDirection:")
     @NInt
-    public native long baseWritingDirectionForPositionInDirection(UITextPosition position, @NInt long direction);
+    public native long baseWritingDirectionForPositionInDirection(@NotNull UITextPosition position,
+            @NInt long direction);
 
     @Generated
     @IsOptional
     @Selector("beginFloatingCursorAtPoint:")
     public native void beginFloatingCursorAtPoint(@ByValue CGPoint point);
 
+    @NotNull
     @Generated
     @Selector("beginningOfDocument")
     public native UITextPosition beginningOfDocument();
@@ -507,21 +532,24 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Generated
     @Selector("caretRectForPosition:")
     @ByValue
-    public native CGRect caretRectForPosition(UITextPosition position);
+    public native CGRect caretRectForPosition(@NotNull UITextPosition position);
 
     @Generated
     @IsOptional
     @Selector("characterOffsetOfPosition:withinRange:")
     @NInt
-    public native long characterOffsetOfPositionWithinRange(UITextPosition position, UITextRange range);
+    public native long characterOffsetOfPositionWithinRange(@NotNull UITextPosition position,
+            @NotNull UITextRange range);
 
+    @Nullable
     @Generated
     @Selector("characterRangeAtPoint:")
     public native UITextRange characterRangeAtPoint(@ByValue CGPoint point);
 
+    @Nullable
     @Generated
     @Selector("characterRangeByExtendingPosition:inDirection:")
-    public native UITextRange characterRangeByExtendingPositionInDirection(UITextPosition position,
+    public native UITextRange characterRangeByExtendingPositionInDirection(@NotNull UITextPosition position,
             @NInt long direction);
 
     /**
@@ -554,24 +582,27 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Selector("clearsOnInsertion")
     public native boolean clearsOnInsertion();
 
+    @Nullable
     @Generated
     @Selector("closestPositionToPoint:")
     public native UITextPosition closestPositionToPoint(@ByValue CGPoint point);
 
+    @Nullable
     @Generated
     @Selector("closestPositionToPoint:withinRange:")
-    public native UITextPosition closestPositionToPointWithinRange(@ByValue CGPoint point, UITextRange range);
+    public native UITextPosition closestPositionToPointWithinRange(@ByValue CGPoint point, @NotNull UITextRange range);
 
     @Generated
     @Selector("comparePosition:toPosition:")
     @NInt
-    public native long comparePositionToPosition(UITextPosition position, UITextPosition other);
+    public native long comparePositionToPosition(@NotNull UITextPosition position, @NotNull UITextPosition other);
 
     /**
      * applies attributes to the full range of text. Unset attributes act like default values.
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("defaultTextAttributes")
     public native NSDictionary<String, ?> defaultTextAttributes();
@@ -579,6 +610,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     /**
      * default is nil. weak reference
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -601,6 +633,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     /**
      * default is nil. ignored if background not set. image should be stretchable
      */
+    @Nullable
     @Generated
     @Selector("disabledBackground")
     public native UIImage disabledBackground();
@@ -631,13 +664,14 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @IsOptional
     @Selector("endFloatingCursor")
     public native void endFloatingCursor();
 
+    @NotNull
     @Generated
     @Selector("endOfDocument")
     public native UITextPosition endOfDocument();
@@ -645,11 +679,12 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Generated
     @Selector("firstRectForRange:")
     @ByValue
-    public native CGRect firstRectForRange(UITextRange range);
+    public native CGRect firstRectForRange(@NotNull UITextRange range);
 
     /**
      * default is nil. use system font 12 pt
      */
+    @Nullable
     @Generated
     @Selector("font")
     public native UIFont font();
@@ -658,7 +693,8 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @IsOptional
     @Selector("frameForDictationResultPlaceholder:")
     @ByValue
-    public native CGRect frameForDictationResultPlaceholder(@Mapped(ObjCObjectMapper.class) Object placeholder);
+    public native CGRect frameForDictationResultPlaceholder(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object placeholder);
 
     @Generated
     @Selector("hasText")
@@ -670,16 +706,18 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     @Generated
     @Selector("initWithCoder:")
-    public native UITextField initWithCoder(NSCoder coder);
+    public native UITextField initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
     public native UITextField initWithFrame(@ByValue CGRect frame);
 
+    @Nullable
     @Generated
     @Selector("inputAccessoryView")
     public native UIView inputAccessoryView();
 
+    @Nullable
     @Generated
     @Selector("inputDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -689,6 +727,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
      * Presented when object becomes first responder. If set to nil, reverts to following responder chain. If
      * set while first responder, will not take effect until reloadInputViews is called.
      */
+    @Nullable
     @Generated
     @Selector("inputView")
     public native UIView inputView();
@@ -696,8 +735,9 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Generated
     @IsOptional
     @Selector("insertDictationResult:")
-    public native void insertDictationResult(NSArray<? extends UIDictationPhrase> dictationResult);
+    public native void insertDictationResult(@NotNull NSArray<? extends UIDictationPhrase> dictationResult);
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("insertDictationResultPlaceholder")
@@ -706,7 +746,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     @Generated
     @Selector("insertText:")
-    public native void insertText(String text);
+    public native void insertText(@NotNull String text);
 
     @Generated
     @Selector("isEditing")
@@ -737,6 +777,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     /**
      * e.g. magnifying glass
      */
+    @Nullable
     @Generated
     @Selector("leftView")
     public native UIView leftView();
@@ -754,10 +795,12 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @ByValue
     public native CGRect leftViewRectForBounds(@ByValue CGRect bounds);
 
+    @Nullable
     @Generated
     @Selector("markedTextRange")
     public native UITextRange markedTextRange();
 
+    @Nullable
     @Generated
     @Selector("markedTextStyle")
     public native NSDictionary<String, ?> markedTextStyle();
@@ -773,11 +816,12 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Generated
     @Selector("offsetFromPosition:toPosition:")
     @NInt
-    public native long offsetFromPositionToPosition(UITextPosition from, UITextPosition toPosition);
+    public native long offsetFromPositionToPosition(@NotNull UITextPosition from, @NotNull UITextPosition toPosition);
 
     /**
      * default is nil. string is drawn 70% gray
      */
+    @Nullable
     @Generated
     @Selector("placeholder")
     public native String placeholder();
@@ -787,33 +831,38 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @ByValue
     public native CGRect placeholderRectForBounds(@ByValue CGRect bounds);
 
+    @Nullable
     @Generated
     @Selector("positionFromPosition:inDirection:offset:")
-    public native UITextPosition positionFromPositionInDirectionOffset(UITextPosition position, @NInt long direction,
-            @NInt long offset);
+    public native UITextPosition positionFromPositionInDirectionOffset(@NotNull UITextPosition position,
+            @NInt long direction, @NInt long offset);
 
+    @Nullable
     @Generated
     @Selector("positionFromPosition:offset:")
-    public native UITextPosition positionFromPositionOffset(UITextPosition position, @NInt long offset);
+    public native UITextPosition positionFromPositionOffset(@NotNull UITextPosition position, @NInt long offset);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("positionWithinRange:atCharacterOffset:")
-    public native UITextPosition positionWithinRangeAtCharacterOffset(UITextRange range, @NInt long offset);
+    public native UITextPosition positionWithinRangeAtCharacterOffset(@NotNull UITextRange range, @NInt long offset);
 
+    @Nullable
     @Generated
     @Selector("positionWithinRange:farthestInDirection:")
-    public native UITextPosition positionWithinRangeFarthestInDirection(UITextRange range, @NInt long direction);
+    public native UITextPosition positionWithinRangeFarthestInDirection(@NotNull UITextRange range,
+            @NInt long direction);
 
     @Generated
     @IsOptional
     @Selector("removeDictationResultPlaceholder:willInsertResult:")
     public native void removeDictationResultPlaceholderWillInsertResult(
-            @Mapped(ObjCObjectMapper.class) Object placeholder, boolean willInsertResult);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object placeholder, boolean willInsertResult);
 
     @Generated
     @Selector("replaceRange:withText:")
-    public native void replaceRangeWithText(UITextRange range, String text);
+    public native void replaceRangeWithText(@NotNull UITextRange range, @NotNull String text);
 
     @Generated
     @IsOptional
@@ -824,6 +873,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     /**
      * e.g. bookmarks button
      */
+    @Nullable
     @Generated
     @Selector("rightView")
     public native UIView rightView();
@@ -841,6 +891,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @ByValue
     public native CGRect rightViewRectForBounds(@ByValue CGRect bounds);
 
+    @Nullable
     @Generated
     @Selector("selectedTextRange")
     public native UITextRange selectedTextRange();
@@ -851,9 +902,10 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @NInt
     public native long selectionAffinity();
 
+    @NotNull
     @Generated
     @Selector("selectionRectsForRange:")
-    public native NSArray<? extends UITextSelectionRect> selectionRectsForRange(UITextRange range);
+    public native NSArray<? extends UITextSelectionRect> selectionRectsForRange(@NotNull UITextRange range);
 
     @Generated
     @Selector("setAdjustsFontForContentSizeCategory:")
@@ -882,7 +934,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
      */
     @Generated
     @Selector("setAttributedPlaceholder:")
-    public native void setAttributedPlaceholder(NSAttributedString value);
+    public native void setAttributedPlaceholder(@Nullable NSAttributedString value);
 
     /**
      * default is nil
@@ -891,7 +943,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
      */
     @Generated
     @Selector("setAttributedText:")
-    public native void setAttributedText(NSAttributedString value);
+    public native void setAttributedText(@Nullable NSAttributedString value);
 
     @Generated
     @IsOptional
@@ -908,11 +960,11 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
      */
     @Generated
     @Selector("setBackground:")
-    public native void setBackground(UIImage value);
+    public native void setBackground(@Nullable UIImage value);
 
     @Generated
     @Selector("setBaseWritingDirection:forRange:")
-    public native void setBaseWritingDirectionForRange(@NInt long writingDirection, UITextRange range);
+    public native void setBaseWritingDirectionForRange(@NInt long writingDirection, @NotNull UITextRange range);
 
     /**
      * default is UITextBorderStyleNone. If set to UITextBorderStyleRoundedRect, custom background images are ignored.
@@ -952,20 +1004,20 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
      */
     @Generated
     @Selector("setDefaultTextAttributes:")
-    public native void setDefaultTextAttributes(NSDictionary<String, ?> value);
+    public native void setDefaultTextAttributes(@NotNull NSDictionary<String, ?> value);
 
     /**
      * default is nil. weak reference
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextFieldDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UITextFieldDelegate value);
 
     /**
      * default is nil. weak reference
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UITextFieldDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UITextFieldDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -981,7 +1033,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
      */
     @Generated
     @Selector("setDisabledBackground:")
-    public native void setDisabledBackground(UIImage value);
+    public native void setDisabledBackground(@Nullable UIImage value);
 
     @Generated
     @IsOptional
@@ -993,18 +1045,18 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
      */
     @Generated
     @Selector("setFont:")
-    public native void setFont(UIFont value);
+    public native void setFont(@Nullable UIFont value);
 
     @Generated
     @Selector("setInputAccessoryView:")
-    public native void setInputAccessoryView(UIView value);
+    public native void setInputAccessoryView(@Nullable UIView value);
 
     @Generated
     @Selector("setInputDelegate:")
-    public native void setInputDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextInputDelegate value);
+    public native void setInputDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UITextInputDelegate value);
 
     @Generated
-    public void setInputDelegate(@Mapped(ObjCObjectMapper.class) UITextInputDelegate value) {
+    public void setInputDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UITextInputDelegate value) {
         Object __old = inputDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -1021,7 +1073,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
      */
     @Generated
     @Selector("setInputView:")
-    public native void setInputView(UIView value);
+    public native void setInputView(@Nullable UIView value);
 
     @Generated
     @IsOptional
@@ -1038,7 +1090,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
      */
     @Generated
     @Selector("setLeftView:")
-    public native void setLeftView(UIView value);
+    public native void setLeftView(@Nullable UIView value);
 
     /**
      * sets when the left view shows up. default is UITextFieldViewModeNever
@@ -1049,11 +1101,11 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     @Generated
     @Selector("setMarkedText:selectedRange:")
-    public native void setMarkedTextSelectedRange(String markedText, @ByValue NSRange selectedRange);
+    public native void setMarkedTextSelectedRange(@Nullable String markedText, @ByValue NSRange selectedRange);
 
     @Generated
     @Selector("setMarkedTextStyle:")
-    public native void setMarkedTextStyle(NSDictionary<String, ?> value);
+    public native void setMarkedTextStyle(@Nullable NSDictionary<String, ?> value);
 
     /**
      * default is 0.0. actual min may be pinned to something readable. used if adjustsFontSizeToFitWidth is YES
@@ -1067,7 +1119,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
      */
     @Generated
     @Selector("setPlaceholder:")
-    public native void setPlaceholder(String value);
+    public native void setPlaceholder(@Nullable String value);
 
     @Generated
     @IsOptional
@@ -1079,7 +1131,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
      */
     @Generated
     @Selector("setRightView:")
-    public native void setRightView(UIView value);
+    public native void setRightView(@Nullable UIView value);
 
     /**
      * sets when the right view shows up. default is UITextFieldViewModeNever
@@ -1090,7 +1142,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     @Generated
     @Selector("setSelectedTextRange:")
-    public native void setSelectedTextRange(UITextRange value);
+    public native void setSelectedTextRange(@Nullable UITextRange value);
 
     @Generated
     @IsOptional
@@ -1107,7 +1159,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
      */
     @Generated
     @Selector("setText:")
-    public native void setText(String value);
+    public native void setText(@Nullable String value);
 
     /**
      * default is NSLeftTextAlignment
@@ -1121,7 +1173,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
      */
     @Generated
     @Selector("setTextColor:")
-    public native void setTextColor(UIColor value);
+    public native void setTextColor(@Nullable UIColor value);
 
     @Generated
     @IsOptional
@@ -1135,12 +1187,12 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
      */
     @Generated
     @Selector("setTypingAttributes:")
-    public native void setTypingAttributes(NSDictionary<String, ?> value);
+    public native void setTypingAttributes(@Nullable NSDictionary<String, ?> value);
 
     @Generated
     @IsOptional
     @Selector("shouldChangeTextInRange:replacementText:")
-    public native boolean shouldChangeTextInRangeReplacementText(UITextRange range, String text);
+    public native boolean shouldChangeTextInRangeReplacementText(@NotNull UITextRange range, @NotNull String text);
 
     @Generated
     @IsOptional
@@ -1151,6 +1203,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     /**
      * default is nil
      */
+    @Nullable
     @Generated
     @Selector("text")
     public native String text();
@@ -1166,6 +1219,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     /**
      * default is nil. use opaque black
      */
+    @Nullable
     @Generated
     @Selector("textColor")
     public native UIColor textColor();
@@ -1175,30 +1229,36 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Selector("textContentType")
     public native String textContentType();
 
+    @Nullable
     @Generated
     @Selector("textInRange:")
-    public native String textInRange(UITextRange range);
+    public native String textInRange(@NotNull UITextRange range);
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("textInputView")
     public native UIView textInputView();
 
+    @Nullable
     @Generated
     @Selector("textRangeFromPosition:toPosition:")
-    public native UITextRange textRangeFromPositionToPosition(UITextPosition fromPosition, UITextPosition toPosition);
+    public native UITextRange textRangeFromPositionToPosition(@NotNull UITextPosition fromPosition,
+            @NotNull UITextPosition toPosition);
 
     @Generated
     @Selector("textRectForBounds:")
     @ByValue
     public native CGRect textRectForBounds(@ByValue CGRect bounds);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("textStylingAtPosition:inDirection:")
-    public native NSDictionary<String, ?> textStylingAtPositionInDirection(UITextPosition position,
+    public native NSDictionary<String, ?> textStylingAtPositionInDirection(@NotNull UITextPosition position,
             @NInt long direction);
 
+    @NotNull
     @Generated
     @Selector("tokenizer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -1209,6 +1269,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("typingAttributes")
     public native NSDictionary<String, ?> typingAttributes();
@@ -1225,7 +1286,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Generated
     @IsOptional
     @Selector("canPasteItemProviders:")
-    public native boolean canPasteItemProviders(NSArray<? extends NSItemProvider> itemProviders);
+    public native boolean canPasteItemProviders(@NotNull NSArray<? extends NSItemProvider> itemProviders);
 
     @Generated
     @Selector("isTextDragActive")
@@ -1235,10 +1296,12 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Selector("isTextDropActive")
     public native boolean isTextDropActive();
 
+    @Nullable
     @Generated
     @Selector("pasteConfiguration")
     public native UIPasteConfiguration pasteConfiguration();
 
+    @Nullable
     @Generated
     @Selector("pasteDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -1247,18 +1310,18 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Generated
     @IsOptional
     @Selector("pasteItemProviders:")
-    public native void pasteItemProviders(NSArray<? extends NSItemProvider> itemProviders);
+    public native void pasteItemProviders(@NotNull NSArray<? extends NSItemProvider> itemProviders);
 
     @Generated
     @Selector("setPasteConfiguration:")
-    public native void setPasteConfiguration(UIPasteConfiguration value);
+    public native void setPasteConfiguration(@Nullable UIPasteConfiguration value);
 
     @Generated
     @Selector("setPasteDelegate:")
-    public native void setPasteDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextPasteDelegate value);
+    public native void setPasteDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UITextPasteDelegate value);
 
     @Generated
-    public void setPasteDelegate(@Mapped(ObjCObjectMapper.class) UITextPasteDelegate value) {
+    public void setPasteDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UITextPasteDelegate value) {
         Object __old = pasteDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -1286,10 +1349,10 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     @Generated
     @Selector("setTextDragDelegate:")
-    public native void setTextDragDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextDragDelegate value);
+    public native void setTextDragDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UITextDragDelegate value);
 
     @Generated
-    public void setTextDragDelegate(@Mapped(ObjCObjectMapper.class) UITextDragDelegate value) {
+    public void setTextDragDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UITextDragDelegate value) {
         Object __old = textDragDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -1306,10 +1369,10 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
 
     @Generated
     @Selector("setTextDropDelegate:")
-    public native void setTextDropDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextDropDelegate value);
+    public native void setTextDropDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UITextDropDelegate value);
 
     @Generated
-    public void setTextDropDelegate(@Mapped(ObjCObjectMapper.class) UITextDropDelegate value) {
+    public void setTextDropDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UITextDropDelegate value) {
         Object __old = textDropDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -1338,11 +1401,13 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @NInt
     public native long smartQuotesType();
 
+    @Nullable
     @Generated
     @Selector("textDragDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native UITextDragDelegate textDragDelegate();
 
+    @Nullable
     @Generated
     @Selector("textDragInteraction")
     public native UIDragInteraction textDragInteraction();
@@ -1352,11 +1417,13 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @NInt
     public native long textDragOptions();
 
+    @Nullable
     @Generated
     @Selector("textDropDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native UITextDropDelegate textDropDelegate();
 
+    @Nullable
     @Generated
     @Selector("textDropInteraction")
     public native UIDropInteraction textDropInteraction();
@@ -1364,8 +1431,10 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Generated
     @IsOptional
     @Selector("insertText:alternatives:style:")
-    public native void insertTextAlternativesStyle(String text, NSArray<String> alternatives, @NInt long style);
+    public native void insertTextAlternativesStyle(@NotNull String text, @NotNull NSArray<String> alternatives,
+            @NInt long style);
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("insertTextPlaceholderWithSize:")
@@ -1375,8 +1444,9 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
-            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+            @NotNull @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("passwordRules")
@@ -1385,22 +1455,22 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Generated
     @IsOptional
     @Selector("removeTextPlaceholder:")
-    public native void removeTextPlaceholder(UITextPlaceholder textPlaceholder);
+    public native void removeTextPlaceholder(@NotNull UITextPlaceholder textPlaceholder);
 
     @Generated
     @IsOptional
     @Selector("setAttributedMarkedText:selectedRange:")
-    public native void setAttributedMarkedTextSelectedRange(NSAttributedString markedText,
+    public native void setAttributedMarkedTextSelectedRange(@Nullable NSAttributedString markedText,
             @ByValue NSRange selectedRange);
 
     @Generated
     @IsOptional
     @Selector("setPasswordRules:")
-    public native void setPasswordRules(UITextInputPasswordRules value);
+    public native void setPasswordRules(@Nullable UITextInputPasswordRules value);
 
     @Generated
     @Selector("initWithFrame:primaryAction:")
-    public native UITextField initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
+    public native UITextField initWithFramePrimaryAction(@ByValue CGRect frame, @Nullable UIAction primaryAction);
 
     /**
      * Note that the interaction state of a UITextField does _not_ encode the
@@ -1413,6 +1483,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("interactionState")
     @MappedReturn(ObjCObjectMapper.class)
@@ -1431,23 +1502,24 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
      */
     @Generated
     @Selector("setInteractionState:")
-    public native void setInteractionState(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setInteractionState(@NotNull @Mapped(ObjCObjectMapper.class) Object value);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("editMenuForTextRange:suggestedActions:")
-    public native UIMenu editMenuForTextRangeSuggestedActions(UITextRange textRange,
-            NSArray<? extends UIMenuElement> suggestedActions);
+    public native UIMenu editMenuForTextRangeSuggestedActions(@NotNull UITextRange textRange,
+            @NotNull NSArray<? extends UIMenuElement> suggestedActions);
 
     @Generated
     @IsOptional
     @Selector("willDismissEditMenuWithAnimator:")
     public native void willDismissEditMenuWithAnimator(
-            @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator);
 
     @Generated
     @IsOptional
     @Selector("willPresentEditMenuWithAnimator:")
     public native void willPresentEditMenuWithAnimator(
-            @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator);
 }

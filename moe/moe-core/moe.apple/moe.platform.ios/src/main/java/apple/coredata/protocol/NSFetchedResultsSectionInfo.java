@@ -24,6 +24,8 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * ================== PROTOCOLS ==================
@@ -36,6 +38,7 @@ public interface NSFetchedResultsSectionInfo {
     /**
      * Title of the section (used when displaying the index)
      */
+    @Nullable
     @Generated
     @Selector("indexTitle")
     String indexTitle();
@@ -43,6 +46,7 @@ public interface NSFetchedResultsSectionInfo {
     /**
      * Name of the section
      */
+    @NotNull
     @Generated
     @Selector("name")
     String name();
@@ -58,6 +62,7 @@ public interface NSFetchedResultsSectionInfo {
     /**
      * Returns the array of objects in the section.
      */
+    @Nullable
     @Generated
     @Selector("objects")
     NSArray<?> objects();

@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MTLMeshRenderPipelineDescriptor
@@ -63,22 +65,25 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -88,15 +93,17 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * 
      * Describes the color attachments of the render pass in which this pipeline will be used.
      */
+    @NotNull
     @Generated
     @Selector("colorAttachments")
     public native MTLRenderPipelineColorAttachmentDescriptorArray colorAttachments();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -125,6 +132,7 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * 
      * Specifying these values is optional; it may be used to optimize the shader code.
      */
+    @NotNull
     @Generated
     @Selector("fragmentBuffers")
     public native MTLPipelineBufferDescriptorArray fragmentBuffers();
@@ -137,6 +145,7 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * The default value is nil. To create a pipeline, you must either set fragmentFunction to non-nil, or set
      * rasterizationEnabled to NO.
      */
+    @Nullable
     @Generated
     @Selector("fragmentFunction")
     @MappedReturn(ObjCObjectMapper.class)
@@ -203,9 +212,10 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] label
@@ -213,6 +223,7 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * A name or description provided by the application that will be displayed in debugging tools.
      * The default value is nil.
      */
+    @Nullable
     @Generated
     @Selector("label")
     public native String label();
@@ -292,6 +303,7 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * 
      * Specifying these values is optional; it may be used to optimize the shader code.
      */
+    @NotNull
     @Generated
     @Selector("meshBuffers")
     public native MTLPipelineBufferDescriptorArray meshBuffers();
@@ -302,6 +314,7 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * Shader function responsible for exporting a chunk of geometry per threadgroup for the rasterizer.
      * The default value is nil.
      */
+    @Nullable
     @Generated
     @Selector("meshFunction")
     @MappedReturn(ObjCObjectMapper.class)
@@ -331,6 +344,7 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * 
      * Specifying these values is optional; it may be used to optimize the shader code.
      */
+    @NotNull
     @Generated
     @Selector("objectBuffers")
     public native MTLPipelineBufferDescriptorArray objectBuffers();
@@ -344,6 +358,7 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      * threadgroups of the mesh stage to run.
      * The default value is nil.
      */
+    @Nullable
     @Generated
     @Selector("objectFunction")
     @MappedReturn(ObjCObjectMapper.class)
@@ -446,7 +461,7 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      */
     @Generated
     @Selector("setFragmentFunction:")
-    public native void setFragmentFunction(@Mapped(ObjCObjectMapper.class) MTLFunction value);
+    public native void setFragmentFunction(@Nullable @Mapped(ObjCObjectMapper.class) MTLFunction value);
 
     /**
      * [@property] label
@@ -456,7 +471,7 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      */
     @Generated
     @Selector("setLabel:")
-    public native void setLabel(String value);
+    public native void setLabel(@Nullable String value);
 
     /**
      * [@property] maxTotalThreadgroupsPerMeshGrid
@@ -530,7 +545,7 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      */
     @Generated
     @Selector("setMeshFunction:")
-    public native void setMeshFunction(@Mapped(ObjCObjectMapper.class) MTLFunction value);
+    public native void setMeshFunction(@Nullable @Mapped(ObjCObjectMapper.class) MTLFunction value);
 
     /**
      * [@property] meshThreadgroupSizeIsMultipleOfThreadExecutionWidth
@@ -555,7 +570,7 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
      */
     @Generated
     @Selector("setObjectFunction:")
-    public native void setObjectFunction(@Mapped(ObjCObjectMapper.class) MTLFunction value);
+    public native void setObjectFunction(@Nullable @Mapped(ObjCObjectMapper.class) MTLFunction value);
 
     /**
      * [@property] objectThreadgroupSizeIsMultipleOfThreadExecutionWidth

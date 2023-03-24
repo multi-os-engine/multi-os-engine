@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -50,6 +52,7 @@ public class CPContact extends NSObject implements NSSecureCoding {
     /**
      * Action buttons that will be displayed when this @c CPContact is displayed in a @c CPContactTemplate.
      */
+    @Nullable
     @Generated
     @Selector("actions")
     public native NSArray<? extends CPButton> actions();
@@ -66,22 +69,25 @@ public class CPContact extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,7 +102,7 @@ public class CPContact extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -106,6 +112,7 @@ public class CPContact extends NSObject implements NSSecureCoding {
     /**
      * An image representing the contact.
      */
+    @NotNull
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -113,6 +120,7 @@ public class CPContact extends NSObject implements NSSecureCoding {
     /**
      * Optional text that will be displayed in addition to the contact name
      */
+    @Nullable
     @Generated
     @Selector("informativeText")
     public native String informativeText();
@@ -123,7 +131,7 @@ public class CPContact extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CPContact initWithCoder(NSCoder coder);
+    public native CPContact initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initializes a new contact to be used with @c CPContactTemplate, with a name and image
@@ -145,7 +153,7 @@ public class CPContact extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("initWithName:image:")
-    public native CPContact initWithNameImage(String name, UIImage image);
+    public native CPContact initWithNameImage(@NotNull String name, @NotNull UIImage image);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -164,13 +172,15 @@ public class CPContact extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The name that will be displayed for this contact.
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -193,35 +203,35 @@ public class CPContact extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setActions:")
-    public native void setActions(NSArray<? extends CPButton> value);
+    public native void setActions(@Nullable NSArray<? extends CPButton> value);
 
     /**
      * An image representing the contact.
      */
     @Generated
     @Selector("setImage:")
-    public native void setImage(UIImage value);
+    public native void setImage(@NotNull UIImage value);
 
     /**
      * Optional text that will be displayed in addition to the contact name
      */
     @Generated
     @Selector("setInformativeText:")
-    public native void setInformativeText(String value);
+    public native void setInformativeText(@Nullable String value);
 
     /**
      * The name that will be displayed for this contact.
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@NotNull String value);
 
     /**
      * Optional text that will be displayed in addition to the contact name
      */
     @Generated
     @Selector("setSubtitle:")
-    public native void setSubtitle(String value);
+    public native void setSubtitle(@Nullable String value);
 
     @Generated
     @Selector("setVersion:")
@@ -230,6 +240,7 @@ public class CPContact extends NSObject implements NSSecureCoding {
     /**
      * Optional text that will be displayed in addition to the contact name
      */
+    @Nullable
     @Generated
     @Selector("subtitle")
     public native String subtitle();

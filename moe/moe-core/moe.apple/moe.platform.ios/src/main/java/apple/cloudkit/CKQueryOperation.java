@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -73,22 +75,25 @@ public class CKQueryOperation extends CKDatabaseOperation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +128,10 @@ public class CKQueryOperation extends CKDatabaseOperation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -153,6 +159,7 @@ public class CKQueryOperation extends CKDatabaseOperation {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("cursor")
     public native CKQueryCursor cursor();
@@ -164,6 +171,7 @@ public class CKQueryOperation extends CKDatabaseOperation {
      * should be downloaded.
      * Defaults to @c nil.
      */
+    @Nullable
     @Generated
     @Selector("desiredKeys")
     public native NSArray<String> desiredKeys();
@@ -178,12 +186,13 @@ public class CKQueryOperation extends CKDatabaseOperation {
 
     @Generated
     @Selector("initWithCursor:")
-    public native CKQueryOperation initWithCursor(CKQueryCursor cursor);
+    public native CKQueryOperation initWithCursor(@NotNull CKQueryCursor cursor);
 
     @Generated
     @Selector("initWithQuery:")
-    public native CKQueryOperation initWithQuery(CKQuery query);
+    public native CKQueryOperation initWithQuery(@NotNull CKQuery query);
 
+    @Nullable
     @Generated
     @Selector("query")
     public native CKQuery query();
@@ -197,6 +206,7 @@ public class CKQueryOperation extends CKDatabaseOperation {
      * recordMatchedBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
+    @Nullable
     @Generated
     @Selector("queryCompletionBlock")
     @ObjCBlock(name = "call_queryCompletionBlock_ret")
@@ -213,6 +223,7 @@ public class CKQueryOperation extends CKDatabaseOperation {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use recordMatchedBlock instead, which surfaces per-record errors
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("recordFetchedBlock")
@@ -236,7 +247,7 @@ public class CKQueryOperation extends CKDatabaseOperation {
 
     @Generated
     @Selector("setCursor:")
-    public native void setCursor(CKQueryCursor value);
+    public native void setCursor(@Nullable CKQueryCursor value);
 
     /**
      * Declares which user-defined keys should be fetched and added to the resulting CKRecords.
@@ -247,11 +258,11 @@ public class CKQueryOperation extends CKDatabaseOperation {
      */
     @Generated
     @Selector("setDesiredKeys:")
-    public native void setDesiredKeys(NSArray<String> value);
+    public native void setDesiredKeys(@Nullable NSArray<String> value);
 
     @Generated
     @Selector("setQuery:")
-    public native void setQuery(CKQuery value);
+    public native void setQuery(@Nullable CKQuery value);
 
     /**
      * This block is called when the operation completes.
@@ -265,7 +276,7 @@ public class CKQueryOperation extends CKDatabaseOperation {
     @Generated
     @Selector("setQueryCompletionBlock:")
     public native void setQueryCompletionBlock(
-            @ObjCBlock(name = "call_setQueryCompletionBlock") Block_setQueryCompletionBlock value);
+            @Nullable @ObjCBlock(name = "call_setQueryCompletionBlock") Block_setQueryCompletionBlock value);
 
     /**
      * This block will be called once for every record that is returned as a result of the query.
@@ -282,7 +293,7 @@ public class CKQueryOperation extends CKDatabaseOperation {
     @Generated
     @Selector("setRecordFetchedBlock:")
     public native void setRecordFetchedBlock(
-            @ObjCBlock(name = "call_setRecordFetchedBlock") Block_setRecordFetchedBlock value);
+            @Nullable @ObjCBlock(name = "call_setRecordFetchedBlock") Block_setRecordFetchedBlock value);
 
     /**
      * Defaults to @c CKQueryOperationMaximumResults.
@@ -307,7 +318,7 @@ public class CKQueryOperation extends CKDatabaseOperation {
      */
     @Generated
     @Selector("setZoneID:")
-    public native void setZoneID(CKRecordZoneID value);
+    public native void setZoneID(@Nullable CKRecordZoneID value);
 
     /**
      * Indicates which record zone to query.
@@ -316,6 +327,7 @@ public class CKQueryOperation extends CKDatabaseOperation {
      * record zone in which the cursor was originally created.
      * Queries that do not specify a @c zoneID will perform a query across all zones in the database.
      */
+    @Nullable
     @Generated
     @Selector("zoneID")
     public native CKRecordZoneID zoneID();
@@ -324,28 +336,28 @@ public class CKQueryOperation extends CKDatabaseOperation {
     @Generated
     public interface Block_queryCompletionBlock_ret {
         @Generated
-        void call_queryCompletionBlock_ret(CKQueryCursor arg0, NSError arg1);
+        void call_queryCompletionBlock_ret(@Nullable CKQueryCursor arg0, @Nullable NSError arg1);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_recordFetchedBlock_ret {
         @Generated
-        void call_recordFetchedBlock_ret(CKRecord arg0);
+        void call_recordFetchedBlock_ret(@NotNull CKRecord arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setQueryCompletionBlock {
         @Generated
-        void call_setQueryCompletionBlock(CKQueryCursor arg0, NSError arg1);
+        void call_setQueryCompletionBlock(@Nullable CKQueryCursor arg0, @Nullable NSError arg1);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setRecordFetchedBlock {
         @Generated
-        void call_setRecordFetchedBlock(CKRecord arg0);
+        void call_setRecordFetchedBlock(@NotNull CKRecord arg0);
     }
 
     /**
@@ -357,6 +369,7 @@ public class CKQueryOperation extends CKDatabaseOperation {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("recordMatchedBlock")
     @ObjCBlock(name = "call_recordMatchedBlock_ret")
@@ -366,7 +379,7 @@ public class CKQueryOperation extends CKDatabaseOperation {
     @Generated
     public interface Block_recordMatchedBlock_ret {
         @Generated
-        void call_recordMatchedBlock_ret(CKRecordID arg0, CKRecord arg1, NSError arg2);
+        void call_recordMatchedBlock_ret(@NotNull CKRecordID arg0, @Nullable CKRecord arg1, @Nullable NSError arg2);
     }
 
     /**
@@ -381,12 +394,12 @@ public class CKQueryOperation extends CKDatabaseOperation {
     @Generated
     @Selector("setRecordMatchedBlock:")
     public native void setRecordMatchedBlock(
-            @ObjCBlock(name = "call_setRecordMatchedBlock") Block_setRecordMatchedBlock value);
+            @Nullable @ObjCBlock(name = "call_setRecordMatchedBlock") Block_setRecordMatchedBlock value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setRecordMatchedBlock {
         @Generated
-        void call_setRecordMatchedBlock(CKRecordID arg0, CKRecord arg1, NSError arg2);
+        void call_setRecordMatchedBlock(@NotNull CKRecordID arg0, @Nullable CKRecord arg1, @Nullable NSError arg2);
     }
 }

@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INSetMessageAttributeIntent. By implementing this protocol, a class can
@@ -61,8 +62,8 @@ public interface INSetMessageAttributeIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmSetMessageAttribute:completion:")
-    default void confirmSetMessageAttributeCompletion(INSetMessageAttributeIntent intent,
-            @ObjCBlock(name = "call_confirmSetMessageAttributeCompletion") Block_confirmSetMessageAttributeCompletion completion) {
+    default void confirmSetMessageAttributeCompletion(@NotNull INSetMessageAttributeIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmSetMessageAttributeCompletion") Block_confirmSetMessageAttributeCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,8 +80,8 @@ public interface INSetMessageAttributeIntentHandling {
      */
     @Generated
     @Selector("handleSetMessageAttribute:completion:")
-    void handleSetMessageAttributeCompletion(INSetMessageAttributeIntent intent,
-            @ObjCBlock(name = "call_handleSetMessageAttributeCompletion") Block_handleSetMessageAttributeCompletion completion);
+    void handleSetMessageAttributeCompletion(@NotNull INSetMessageAttributeIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleSetMessageAttributeCompletion") Block_handleSetMessageAttributeCompletion completion);
 
     /**
      * Resolution methods - Determine if this intent is ready for the next step (confirmation)
@@ -96,8 +97,8 @@ public interface INSetMessageAttributeIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveAttributeForSetMessageAttribute:withCompletion:")
-    default void resolveAttributeForSetMessageAttributeWithCompletion(INSetMessageAttributeIntent intent,
-            @ObjCBlock(name = "call_resolveAttributeForSetMessageAttributeWithCompletion") Block_resolveAttributeForSetMessageAttributeWithCompletion completion) {
+    default void resolveAttributeForSetMessageAttributeWithCompletion(@NotNull INSetMessageAttributeIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveAttributeForSetMessageAttributeWithCompletion") Block_resolveAttributeForSetMessageAttributeWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -105,14 +106,14 @@ public interface INSetMessageAttributeIntentHandling {
     @Generated
     public interface Block_confirmSetMessageAttributeCompletion {
         @Generated
-        void call_confirmSetMessageAttributeCompletion(INSetMessageAttributeIntentResponse response);
+        void call_confirmSetMessageAttributeCompletion(@NotNull INSetMessageAttributeIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSetMessageAttributeCompletion {
         @Generated
-        void call_handleSetMessageAttributeCompletion(INSetMessageAttributeIntentResponse response);
+        void call_handleSetMessageAttributeCompletion(@NotNull INSetMessageAttributeIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -120,6 +121,6 @@ public interface INSetMessageAttributeIntentHandling {
     public interface Block_resolveAttributeForSetMessageAttributeWithCompletion {
         @Generated
         void call_resolveAttributeForSetMessageAttributeWithCompletion(
-                INMessageAttributeResolutionResult resolutionResult);
+                @NotNull INMessageAttributeResolutionResult resolutionResult);
     }
 }

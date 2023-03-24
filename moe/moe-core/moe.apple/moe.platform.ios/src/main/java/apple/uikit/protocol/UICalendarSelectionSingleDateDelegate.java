@@ -9,6 +9,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -30,8 +32,8 @@ public interface UICalendarSelectionSingleDateDelegate {
     @Generated
     @IsOptional
     @Selector("dateSelection:canSelectDate:")
-    default boolean dateSelectionCanSelectDate(UICalendarSelectionSingleDate selection,
-            NSDateComponents dateComponents) {
+    default boolean dateSelectionCanSelectDate(@NotNull UICalendarSelectionSingleDate selection,
+            @Nullable NSDateComponents dateComponents) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -44,5 +46,6 @@ public interface UICalendarSelectionSingleDateDelegate {
      */
     @Generated
     @Selector("dateSelection:didSelectDate:")
-    void dateSelectionDidSelectDate(UICalendarSelectionSingleDate selection, NSDateComponents dateComponents);
+    void dateSelectionDidSelectDate(@NotNull UICalendarSelectionSingleDate selection,
+            @Nullable NSDateComponents dateComponents);
 }

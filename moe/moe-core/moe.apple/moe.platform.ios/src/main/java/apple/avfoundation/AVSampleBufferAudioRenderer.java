@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVSampleBufferAudioRenderer
@@ -84,28 +86,32 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
      * 
      * Modifying this property while the timebase's rate is not 0.0 may cause the rate to briefly change to 0.0.
      */
+    @NotNull
     @Generated
     @Selector("audioTimePitchAlgorithm")
     public native String audioTimePitchAlgorithm();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,7 +126,7 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
 
     @Generated
     @Selector("enqueueSampleBuffer:")
-    public native void enqueueSampleBuffer(CMSampleBufferRef sampleBuffer);
+    public native void enqueueSampleBuffer(@NotNull CMSampleBufferRef sampleBuffer);
 
     /**
      * [@property] error
@@ -132,6 +138,7 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
      * sample buffers. The value of this property is nil unless the value of status is
      * AVQueuedSampleBufferRenderingStatusFailed.
      */
+    @Nullable
     @Generated
     @Selector("error")
     public native NSError error();
@@ -163,7 +170,7 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
     @Generated
     @Selector("flushFromSourceTime:completionHandler:")
     public native void flushFromSourceTimeCompletionHandler(@ByValue CMTime time,
-            @ObjCBlock(name = "call_flushFromSourceTimeCompletionHandler") Block_flushFromSourceTimeCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_flushFromSourceTimeCompletionHandler") Block_flushFromSourceTimeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -213,9 +220,10 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -224,8 +232,8 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
 
     @Generated
     @Selector("requestMediaDataWhenReadyOnQueue:usingBlock:")
-    public native void requestMediaDataWhenReadyOnQueueUsingBlock(NSObject queue,
-            @ObjCBlock(name = "call_requestMediaDataWhenReadyOnQueueUsingBlock") AVQueuedSampleBufferRendering.Block_requestMediaDataWhenReadyOnQueueUsingBlock block);
+    public native void requestMediaDataWhenReadyOnQueueUsingBlock(@NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_requestMediaDataWhenReadyOnQueueUsingBlock") AVQueuedSampleBufferRendering.Block_requestMediaDataWhenReadyOnQueueUsingBlock block);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -254,7 +262,7 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
      */
     @Generated
     @Selector("setAudioTimePitchAlgorithm:")
-    public native void setAudioTimePitchAlgorithm(String value);
+    public native void setAudioTimePitchAlgorithm(@NotNull String value);
 
     /**
      * [@property] muted
@@ -315,6 +323,7 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("timebase")
     public native CMTimebaseRef timebase();

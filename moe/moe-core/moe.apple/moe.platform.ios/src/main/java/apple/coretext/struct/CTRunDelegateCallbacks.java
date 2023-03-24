@@ -28,6 +28,7 @@ import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Structure()
@@ -57,6 +58,7 @@ public final class CTRunDelegateCallbacks extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setVersion(@NInt long value);
 
+    @NotNull
     @Generated
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_dealloc")
@@ -64,8 +66,9 @@ public final class CTRunDelegateCallbacks extends StructObject {
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setDealloc(@FunctionPtr(name = "call_dealloc") Function_dealloc value);
+    public native void setDealloc(@NotNull @FunctionPtr(name = "call_dealloc") Function_dealloc value);
 
+    @NotNull
     @Generated
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call_getAscent")
@@ -73,8 +76,9 @@ public final class CTRunDelegateCallbacks extends StructObject {
 
     @Generated
     @StructureField(order = 2, isGetter = false)
-    public native void setGetAscent(@FunctionPtr(name = "call_getAscent") Function_getAscent value);
+    public native void setGetAscent(@NotNull @FunctionPtr(name = "call_getAscent") Function_getAscent value);
 
+    @NotNull
     @Generated
     @StructureField(order = 3, isGetter = true)
     @FunctionPtr(name = "call_getDescent")
@@ -82,8 +86,9 @@ public final class CTRunDelegateCallbacks extends StructObject {
 
     @Generated
     @StructureField(order = 3, isGetter = false)
-    public native void setGetDescent(@FunctionPtr(name = "call_getDescent") Function_getDescent value);
+    public native void setGetDescent(@NotNull @FunctionPtr(name = "call_getDescent") Function_getDescent value);
 
+    @NotNull
     @Generated
     @StructureField(order = 4, isGetter = true)
     @FunctionPtr(name = "call_getWidth")
@@ -91,13 +96,13 @@ public final class CTRunDelegateCallbacks extends StructObject {
 
     @Generated
     @StructureField(order = 4, isGetter = false)
-    public native void setGetWidth(@FunctionPtr(name = "call_getWidth") Function_getWidth value);
+    public native void setGetWidth(@NotNull @FunctionPtr(name = "call_getWidth") Function_getWidth value);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_dealloc {
         @Generated
-        void call_dealloc(VoidPtr arg0);
+        void call_dealloc(@NotNull VoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
@@ -105,7 +110,7 @@ public final class CTRunDelegateCallbacks extends StructObject {
     public interface Function_getAscent {
         @Generated
         @NFloat
-        double call_getAscent(VoidPtr arg0);
+        double call_getAscent(@NotNull VoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
@@ -113,7 +118,7 @@ public final class CTRunDelegateCallbacks extends StructObject {
     public interface Function_getDescent {
         @Generated
         @NFloat
-        double call_getDescent(VoidPtr arg0);
+        double call_getDescent(@NotNull VoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
@@ -121,6 +126,6 @@ public final class CTRunDelegateCallbacks extends StructObject {
     public interface Function_getWidth {
         @Generated
         @NFloat
-        double call_getWidth(VoidPtr arg0);
+        double call_getWidth(@NotNull VoidPtr arg0);
     }
 }

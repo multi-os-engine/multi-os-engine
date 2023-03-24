@@ -28,6 +28,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -50,7 +52,8 @@ public final class CVFillExtendedPixelsCallBackData extends StructObject {
 
     @Generated
     public CVFillExtendedPixelsCallBackData(@NInt long version,
-            @FunctionPtr(name = "call_fillCallBack") Function_fillCallBack fillCallBack, VoidPtr refCon) {
+            @FunctionPtr(name = "call_fillCallBack") @Nullable Function_fillCallBack fillCallBack,
+            @Nullable VoidPtr refCon) {
         super(CVFillExtendedPixelsCallBackData.class);
         setVersion(version);
         setFillCallBack(fillCallBack);
@@ -66,6 +69,7 @@ public final class CVFillExtendedPixelsCallBackData extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setVersion(@NInt long value);
 
+    @Nullable
     @Generated
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_fillCallBack")
@@ -73,20 +77,21 @@ public final class CVFillExtendedPixelsCallBackData extends StructObject {
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setFillCallBack(@FunctionPtr(name = "call_fillCallBack") Function_fillCallBack value);
+    public native void setFillCallBack(@Nullable @FunctionPtr(name = "call_fillCallBack") Function_fillCallBack value);
 
+    @Nullable
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native VoidPtr refCon();
 
     @Generated
     @StructureField(order = 2, isGetter = false)
-    public native void setRefCon(VoidPtr value);
+    public native void setRefCon(@Nullable VoidPtr value);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_fillCallBack {
         @Generated
-        byte call_fillCallBack(CVBufferRef arg0, VoidPtr arg1);
+        byte call_fillCallBack(@NotNull CVBufferRef arg0, @Nullable VoidPtr arg1);
     }
 }

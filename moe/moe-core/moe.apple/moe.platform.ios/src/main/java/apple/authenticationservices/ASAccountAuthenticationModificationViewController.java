@@ -25,6 +25,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -64,17 +66,18 @@ public class ASAccountAuthenticationModificationViewController extends UIViewCon
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * This method will be called when the user taps the system-provided "Cancel" button shown above extension UI.
@@ -110,20 +113,22 @@ public class ASAccountAuthenticationModificationViewController extends UIViewCon
     @Generated
     @Selector("changePasswordWithoutUserInteractionForServiceIdentifier:existingCredential:newPassword:userInfo:")
     public native void changePasswordWithoutUserInteractionForServiceIdentifierExistingCredentialNewPasswordUserInfo(
-            ASCredentialServiceIdentifier serviceIdentifier, ASPasswordCredential existingCredential,
-            String newPassword, NSDictionary<?, ?> userInfo);
+            @NotNull ASCredentialServiceIdentifier serviceIdentifier, @NotNull ASPasswordCredential existingCredential,
+            @NotNull String newPassword, @Nullable NSDictionary<?, ?> userInfo);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     /**
      * This method will be called when a user initiates a Sign in with Apple upgrade request.
@@ -143,8 +148,8 @@ public class ASAccountAuthenticationModificationViewController extends UIViewCon
     @Generated
     @Selector("convertAccountToSignInWithAppleWithoutUserInteractionForServiceIdentifier:existingCredential:userInfo:")
     public native void convertAccountToSignInWithAppleWithoutUserInteractionForServiceIdentifierExistingCredentialUserInfo(
-            ASCredentialServiceIdentifier serviceIdentifier, ASPasswordCredential existingCredential,
-            NSDictionary<?, ?> userInfo);
+            @NotNull ASCredentialServiceIdentifier serviceIdentifier, @NotNull ASPasswordCredential existingCredential,
+            @Nullable NSDictionary<?, ?> userInfo);
 
     @Generated
     @Selector("debugDescription")
@@ -154,6 +159,7 @@ public class ASAccountAuthenticationModificationViewController extends UIViewCon
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("extensionContext")
     public native ASAccountAuthenticationModificationExtensionContext extensionContext();
@@ -169,12 +175,12 @@ public class ASAccountAuthenticationModificationViewController extends UIViewCon
 
     @Generated
     @Selector("initWithCoder:")
-    public native ASAccountAuthenticationModificationViewController initWithCoder(NSCoder coder);
+    public native ASAccountAuthenticationModificationViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native ASAccountAuthenticationModificationViewController initWithNibNameBundle(String nibNameOrNil,
-            NSBundle nibBundleOrNil);
+    public native ASAccountAuthenticationModificationViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -193,9 +199,10 @@ public class ASAccountAuthenticationModificationViewController extends UIViewCon
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -224,8 +231,8 @@ public class ASAccountAuthenticationModificationViewController extends UIViewCon
     @Generated
     @Selector("prepareInterfaceToChangePasswordForServiceIdentifier:existingCredential:newPassword:userInfo:")
     public native void prepareInterfaceToChangePasswordForServiceIdentifierExistingCredentialNewPasswordUserInfo(
-            ASCredentialServiceIdentifier serviceIdentifier, ASPasswordCredential existingCredential,
-            String newPassword, NSDictionary<?, ?> userInfo);
+            @NotNull ASCredentialServiceIdentifier serviceIdentifier, @NotNull ASPasswordCredential existingCredential,
+            @NotNull String newPassword, @Nullable NSDictionary<?, ?> userInfo);
 
     /**
      * This method will be called when a Sign in with Apple upgrade request requires user interaction.
@@ -246,8 +253,8 @@ public class ASAccountAuthenticationModificationViewController extends UIViewCon
     @Generated
     @Selector("prepareInterfaceToConvertAccountToSignInWithAppleForServiceIdentifier:existingCredential:userInfo:")
     public native void prepareInterfaceToConvertAccountToSignInWithAppleForServiceIdentifierExistingCredentialUserInfo(
-            ASCredentialServiceIdentifier serviceIdentifier, ASPasswordCredential existingCredential,
-            NSDictionary<?, ?> userInfo);
+            @NotNull ASCredentialServiceIdentifier serviceIdentifier, @NotNull ASPasswordCredential existingCredential,
+            @Nullable NSDictionary<?, ?> userInfo);
 
     @Generated
     @Selector("resolveClassMethod:")

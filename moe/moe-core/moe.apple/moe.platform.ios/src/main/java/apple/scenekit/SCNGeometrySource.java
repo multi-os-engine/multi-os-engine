@@ -46,6 +46,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNGeometrySource
@@ -82,22 +84,25 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -150,8 +155,8 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("geometrySourceWithBuffer:vertexFormat:semantic:vertexCount:dataOffset:dataStride:")
     public static native SCNGeometrySource geometrySourceWithBufferVertexFormatSemanticVertexCountDataOffsetDataStride(
-            @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long vertexFormat, String semantic,
-            @NInt long vertexCount, @NInt long offset, @NInt long stride);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long vertexFormat,
+            @NotNull String semantic, @NInt long vertexCount, @NInt long offset, @NInt long stride);
 
     /**
      * geometrySourceWithData:semantic:vectorCount:floatComponents:componentsPerVector:bytesPerComponent:dataOffset:dataStride:
@@ -170,7 +175,7 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("geometrySourceWithData:semantic:vectorCount:floatComponents:componentsPerVector:bytesPerComponent:dataOffset:dataStride:")
     public static native SCNGeometrySource geometrySourceWithDataSemanticVectorCountFloatComponentsComponentsPerVectorBytesPerComponentDataOffsetDataStride(
-            NSData data, String semantic, @NInt long vectorCount, boolean floatComponents,
+            @NotNull NSData data, @NotNull String semantic, @NInt long vectorCount, boolean floatComponents,
             @NInt long componentsPerVector, @NInt long bytesPerComponent, @NInt long offset, @NInt long stride);
 
     /**
@@ -187,7 +192,7 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("geometrySourceWithNormals:count:")
     public static native SCNGeometrySource geometrySourceWithNormalsCount(
-            @ReferenceInfo(type = SCNVector3.class) ConstPtr<SCNVector3> normals, @NInt long count);
+            @NotNull @ReferenceInfo(type = SCNVector3.class) ConstPtr<SCNVector3> normals, @NInt long count);
 
     /**
      * geometrySourceWithTextureCoordinates:count:
@@ -203,7 +208,7 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("geometrySourceWithTextureCoordinates:count:")
     public static native SCNGeometrySource geometrySourceWithTextureCoordinatesCount(
-            @ReferenceInfo(type = CGPoint.class) ConstPtr<CGPoint> texcoord, @NInt long count);
+            @NotNull @ReferenceInfo(type = CGPoint.class) ConstPtr<CGPoint> texcoord, @NInt long count);
 
     /**
      * geometrySourceWithVertices:count:
@@ -219,7 +224,7 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("geometrySourceWithVertices:count:")
     public static native SCNGeometrySource geometrySourceWithVerticesCount(
-            @ReferenceInfo(type = SCNVector3.class) ConstPtr<SCNVector3> vertices, @NInt long count);
+            @NotNull @ReferenceInfo(type = SCNVector3.class) ConstPtr<SCNVector3> vertices, @NInt long count);
 
     @Generated
     @Selector("hash")
@@ -243,9 +248,10 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -302,6 +308,7 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
      * 
      * The data for the geometry source
      */
+    @NotNull
     @Generated
     @Selector("data")
     public native NSData data();
@@ -328,7 +335,7 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] floatComponents
@@ -345,13 +352,14 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNGeometrySource initWithCoder(NSCoder coder);
+    public native SCNGeometrySource initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] semantic
      * 
      * The semantic of the geometry source
      */
+    @NotNull
     @Generated
     @Selector("semantic")
     public native String semantic();

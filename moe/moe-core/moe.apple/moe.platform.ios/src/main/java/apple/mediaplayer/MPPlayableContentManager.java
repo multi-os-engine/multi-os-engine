@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPPlayableContentManager is a class that manages the interactions between a
@@ -83,22 +85,25 @@ public class MPPlayableContentManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +138,10 @@ public class MPPlayableContentManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,6 +163,7 @@ public class MPPlayableContentManager extends NSObject {
     /**
      * Returns the application's instance of the content manager.
      */
+    @NotNull
     @Generated
     @Selector("sharedContentManager")
     public static native MPPlayableContentManager sharedContentManager();
@@ -182,16 +189,19 @@ public class MPPlayableContentManager extends NSObject {
      * Deprecated-Since: 14.0
      * Deprecated-Message: Use CarPlay framework
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("context")
     public native MPPlayableContentManagerContext context();
 
+    @Nullable
     @Generated
     @Selector("dataSource")
     @MappedReturn(ObjCObjectMapper.class)
     public native MPPlayableContentDataSource dataSource();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -215,6 +225,7 @@ public class MPPlayableContentManager extends NSObject {
      * Deprecated-Since: 14.0
      * Deprecated-Message: Use CarPlay framework
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("nowPlayingIdentifiers")
@@ -230,10 +241,11 @@ public class MPPlayableContentManager extends NSObject {
 
     @Generated
     @Selector("setDataSource:")
-    public native void setDataSource_unsafe(@Mapped(ObjCObjectMapper.class) MPPlayableContentDataSource value);
+    public native void setDataSource_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPPlayableContentDataSource value);
 
     @Generated
-    public void setDataSource(@Mapped(ObjCObjectMapper.class) MPPlayableContentDataSource value) {
+    public void setDataSource(@Nullable @Mapped(ObjCObjectMapper.class) MPPlayableContentDataSource value) {
         Object __old = dataSource();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -246,10 +258,10 @@ public class MPPlayableContentManager extends NSObject {
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MPPlayableContentDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) MPPlayableContentDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) MPPlayableContentDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) MPPlayableContentDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -270,5 +282,5 @@ public class MPPlayableContentManager extends NSObject {
     @Deprecated
     @Generated
     @Selector("setNowPlayingIdentifiers:")
-    public native void setNowPlayingIdentifiers(NSArray<String> value);
+    public native void setNowPlayingIdentifiers(@NotNull NSArray<String> value);
 }

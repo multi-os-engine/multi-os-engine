@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.0
@@ -78,22 +80,25 @@ public class AVMutableMetadataItem extends AVMetadataItem {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -111,9 +116,11 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     @NUInt
     public static native long hash_static();
 
+    @Nullable
     @Generated
     @Selector("identifierForKey:keySpace:")
-    public static native String identifierForKeyKeySpace(@Mapped(ObjCObjectMapper.class) Object key, String keySpace);
+    public static native String identifierForKeyKeySpace(@NotNull @Mapped(ObjCObjectMapper.class) Object key,
+            @NotNull String keySpace);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -132,59 +139,69 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @Nullable
     @Generated
     @Selector("keyForIdentifier:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object keyForIdentifier(String identifier);
+    public static native Object keyForIdentifier(@NotNull String identifier);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("keySpaceForIdentifier:")
-    public static native String keySpaceForIdentifier(String identifier);
+    public static native String keySpaceForIdentifier(@NotNull String identifier);
 
     /**
      * metadataItem
      * 
      * Returns an instance of AVMutableMetadataItem.
      */
+    @NotNull
     @Generated
     @Selector("metadataItem")
     public static native AVMutableMetadataItem metadataItem();
 
+    @NotNull
     @Generated
     @Selector("metadataItemWithPropertiesOfMetadataItem:valueLoadingHandler:")
     public static native AVMetadataItem metadataItemWithPropertiesOfMetadataItemValueLoadingHandler(
-            AVMetadataItem metadataItem,
-            @ObjCBlock(name = "call_metadataItemWithPropertiesOfMetadataItemValueLoadingHandler") AVMetadataItem.Block_metadataItemWithPropertiesOfMetadataItemValueLoadingHandler handler);
+            @NotNull AVMetadataItem metadataItem,
+            @NotNull @ObjCBlock(name = "call_metadataItemWithPropertiesOfMetadataItemValueLoadingHandler") AVMetadataItem.Block_metadataItemWithPropertiesOfMetadataItemValueLoadingHandler handler);
 
+    @NotNull
     @Generated
     @Selector("metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:")
     public static native NSArray<? extends AVMetadataItem> metadataItemsFromArrayFilteredAndSortedAccordingToPreferredLanguages(
-            NSArray<? extends AVMetadataItem> metadataItems, NSArray<String> preferredLanguages);
+            @NotNull NSArray<? extends AVMetadataItem> metadataItems, @NotNull NSArray<String> preferredLanguages);
 
+    @NotNull
     @Generated
     @Selector("metadataItemsFromArray:filteredByIdentifier:")
     public static native NSArray<? extends AVMetadataItem> metadataItemsFromArrayFilteredByIdentifier(
-            NSArray<? extends AVMetadataItem> metadataItems, String identifier);
+            @NotNull NSArray<? extends AVMetadataItem> metadataItems, @NotNull String identifier);
 
+    @NotNull
     @Generated
     @Selector("metadataItemsFromArray:filteredByMetadataItemFilter:")
     public static native NSArray<? extends AVMetadataItem> metadataItemsFromArrayFilteredByMetadataItemFilter(
-            NSArray<? extends AVMetadataItem> metadataItems, AVMetadataItemFilter metadataItemFilter);
+            @NotNull NSArray<? extends AVMetadataItem> metadataItems, @NotNull AVMetadataItemFilter metadataItemFilter);
 
+    @NotNull
     @Generated
     @Selector("metadataItemsFromArray:withKey:keySpace:")
     public static native NSArray<? extends AVMetadataItem> metadataItemsFromArrayWithKeyKeySpace(
-            NSArray<? extends AVMetadataItem> metadataItems, @Mapped(ObjCObjectMapper.class) Object key,
-            String keySpace);
+            @NotNull NSArray<? extends AVMetadataItem> metadataItems,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object key, @Nullable String keySpace);
 
+    @NotNull
     @Generated
     @Selector("metadataItemsFromArray:withLocale:")
     public static native NSArray<? extends AVMetadataItem> metadataItemsFromArrayWithLocale(
-            NSArray<? extends AVMetadataItem> metadataItems, NSLocale locale);
+            @NotNull NSArray<? extends AVMetadataItem> metadataItems, @NotNull NSLocale locale);
 
     @Generated
     @Owned
@@ -218,6 +235,7 @@ public class AVMutableMetadataItem extends AVMetadataItem {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("dataType")
     public native String dataType();
@@ -238,6 +256,7 @@ public class AVMutableMetadataItem extends AVMetadataItem {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("extendedLanguageTag")
     public native String extendedLanguageTag();
@@ -246,6 +265,7 @@ public class AVMutableMetadataItem extends AVMetadataItem {
      * Provides a dictionary of the additional attributes. Extra attributes of metadata items are related to specifics
      * of their carriage in their container format. Keys for extra attributes are declared in AVMetadataFormat.h.
      */
+    @Nullable
     @Generated
     @Selector("extraAttributes")
     public native NSDictionary<String, ?> extraAttributes();
@@ -256,6 +276,7 @@ public class AVMutableMetadataItem extends AVMetadataItem {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -269,6 +290,7 @@ public class AVMutableMetadataItem extends AVMetadataItem {
      * cannot be converted to metadata identifiers; they also cannot be written to media resources via
      * AVAssetExportSession or AVAssetWriter.
      */
+    @Nullable
     @Generated
     @Selector("key")
     @MappedReturn(ObjCObjectMapper.class)
@@ -278,6 +300,7 @@ public class AVMutableMetadataItem extends AVMetadataItem {
      * Indicates the keyspace of the metadata item's key; this will typically be the default keyspace for the metadata
      * container in which the metadata item is stored.
      */
+    @Nullable
     @Generated
     @Selector("keySpace")
     public native String keySpace();
@@ -285,6 +308,7 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     /**
      * indicates the locale of the metadata item; may be nil if no locale information is available for the metadata item
      */
+    @Nullable
     @Generated
     @Selector("locale")
     public native NSLocale locale();
@@ -297,7 +321,7 @@ public class AVMutableMetadataItem extends AVMetadataItem {
      */
     @Generated
     @Selector("setDataType:")
-    public native void setDataType(String value);
+    public native void setDataType(@Nullable String value);
 
     /**
      * indicates the duration of the metadata item
@@ -316,7 +340,7 @@ public class AVMutableMetadataItem extends AVMetadataItem {
      */
     @Generated
     @Selector("setExtendedLanguageTag:")
-    public native void setExtendedLanguageTag(String value);
+    public native void setExtendedLanguageTag(@Nullable String value);
 
     /**
      * Provides a dictionary of the additional attributes. Extra attributes of metadata items are related to specifics
@@ -324,7 +348,7 @@ public class AVMutableMetadataItem extends AVMetadataItem {
      */
     @Generated
     @Selector("setExtraAttributes:")
-    public native void setExtraAttributes(NSDictionary<String, ?> value);
+    public native void setExtraAttributes(@Nullable NSDictionary<String, ?> value);
 
     /**
      * Indicates the identifier of the metadata item. Publicly defined identifiers are declared in
@@ -334,7 +358,7 @@ public class AVMutableMetadataItem extends AVMetadataItem {
      */
     @Generated
     @Selector("setIdentifier:")
-    public native void setIdentifier(String value);
+    public native void setIdentifier(@Nullable String value);
 
     /**
      * Indicates the key of the metadata item. Metadata item keys that are not instances NSString, NSNumber, or NSData
@@ -343,7 +367,7 @@ public class AVMutableMetadataItem extends AVMetadataItem {
      */
     @Generated
     @Selector("setKey:")
-    public native void setKey(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setKey(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * Indicates the keyspace of the metadata item's key; this will typically be the default keyspace for the metadata
@@ -351,14 +375,14 @@ public class AVMutableMetadataItem extends AVMetadataItem {
      */
     @Generated
     @Selector("setKeySpace:")
-    public native void setKeySpace(String value);
+    public native void setKeySpace(@Nullable String value);
 
     /**
      * indicates the locale of the metadata item; may be nil if no locale information is available for the metadata item
      */
     @Generated
     @Selector("setLocale:")
-    public native void setLocale(NSLocale value);
+    public native void setLocale(@Nullable NSLocale value);
 
     /**
      * indicates the start date of the timed metadata; nil if no date is indicated
@@ -367,7 +391,7 @@ public class AVMutableMetadataItem extends AVMetadataItem {
      */
     @Generated
     @Selector("setStartDate:")
-    public native void setStartDate(NSDate value);
+    public native void setStartDate(@Nullable NSDate value);
 
     /**
      * indicates the timestamp of the metadata item.
@@ -381,13 +405,14 @@ public class AVMutableMetadataItem extends AVMetadataItem {
      */
     @Generated
     @Selector("setValue:")
-    public native void setValue(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setValue(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * indicates the start date of the timed metadata; nil if no date is indicated
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("startDate")
     public native NSDate startDate();
@@ -403,6 +428,7 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     /**
      * provides the value of the metadata item
      */
+    @Nullable
     @Generated
     @Selector("value")
     @MappedReturn(ObjCObjectMapper.class)

@@ -12,6 +12,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] AVPlaybackCoordinatorPlaybackControlDelegate
@@ -51,9 +52,10 @@ public interface AVPlaybackCoordinatorPlaybackControlDelegate {
      */
     @Generated
     @Selector("playbackCoordinator:didIssueBufferingCommand:completionHandler:")
-    void playbackCoordinatorDidIssueBufferingCommandCompletionHandler(AVDelegatingPlaybackCoordinator coordinator,
-            AVDelegatingPlaybackCoordinatorBufferingCommand bufferingCommand,
-            @ObjCBlock(name = "call_playbackCoordinatorDidIssueBufferingCommandCompletionHandler") Block_playbackCoordinatorDidIssueBufferingCommandCompletionHandler completionHandler);
+    void playbackCoordinatorDidIssueBufferingCommandCompletionHandler(
+            @NotNull AVDelegatingPlaybackCoordinator coordinator,
+            @NotNull AVDelegatingPlaybackCoordinatorBufferingCommand bufferingCommand,
+            @NotNull @ObjCBlock(name = "call_playbackCoordinatorDidIssueBufferingCommandCompletionHandler") Block_playbackCoordinatorDidIssueBufferingCommandCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -83,9 +85,9 @@ public interface AVPlaybackCoordinatorPlaybackControlDelegate {
      */
     @Generated
     @Selector("playbackCoordinator:didIssuePauseCommand:completionHandler:")
-    void playbackCoordinatorDidIssuePauseCommandCompletionHandler(AVDelegatingPlaybackCoordinator coordinator,
-            AVDelegatingPlaybackCoordinatorPauseCommand pauseCommand,
-            @ObjCBlock(name = "call_playbackCoordinatorDidIssuePauseCommandCompletionHandler") Block_playbackCoordinatorDidIssuePauseCommandCompletionHandler completionHandler);
+    void playbackCoordinatorDidIssuePauseCommandCompletionHandler(@NotNull AVDelegatingPlaybackCoordinator coordinator,
+            @NotNull AVDelegatingPlaybackCoordinatorPauseCommand pauseCommand,
+            @NotNull @ObjCBlock(name = "call_playbackCoordinatorDidIssuePauseCommandCompletionHandler") Block_playbackCoordinatorDidIssuePauseCommandCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -117,9 +119,9 @@ public interface AVPlaybackCoordinatorPlaybackControlDelegate {
      */
     @Generated
     @Selector("playbackCoordinator:didIssuePlayCommand:completionHandler:")
-    void playbackCoordinatorDidIssuePlayCommandCompletionHandler(AVDelegatingPlaybackCoordinator coordinator,
-            AVDelegatingPlaybackCoordinatorPlayCommand playCommand,
-            @ObjCBlock(name = "call_playbackCoordinatorDidIssuePlayCommandCompletionHandler") Block_playbackCoordinatorDidIssuePlayCommandCompletionHandler completionHandler);
+    void playbackCoordinatorDidIssuePlayCommandCompletionHandler(@NotNull AVDelegatingPlaybackCoordinator coordinator,
+            @NotNull AVDelegatingPlaybackCoordinatorPlayCommand playCommand,
+            @NotNull @ObjCBlock(name = "call_playbackCoordinatorDidIssuePlayCommandCompletionHandler") Block_playbackCoordinatorDidIssuePlayCommandCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -152,9 +154,9 @@ public interface AVPlaybackCoordinatorPlaybackControlDelegate {
      */
     @Generated
     @Selector("playbackCoordinator:didIssueSeekCommand:completionHandler:")
-    void playbackCoordinatorDidIssueSeekCommandCompletionHandler(AVDelegatingPlaybackCoordinator coordinator,
-            AVDelegatingPlaybackCoordinatorSeekCommand seekCommand,
-            @ObjCBlock(name = "call_playbackCoordinatorDidIssueSeekCommandCompletionHandler") Block_playbackCoordinatorDidIssueSeekCommandCompletionHandler completionHandler);
+    void playbackCoordinatorDidIssueSeekCommandCompletionHandler(@NotNull AVDelegatingPlaybackCoordinator coordinator,
+            @NotNull AVDelegatingPlaybackCoordinatorSeekCommand seekCommand,
+            @NotNull @ObjCBlock(name = "call_playbackCoordinatorDidIssueSeekCommandCompletionHandler") Block_playbackCoordinatorDidIssueSeekCommandCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated

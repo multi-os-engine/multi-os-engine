@@ -35,6 +35,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSURLCredentialStorage
@@ -76,22 +78,25 @@ public class NSURLCredentialStorage extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +131,10 @@ public class NSURLCredentialStorage extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -154,6 +160,7 @@ public class NSURLCredentialStorage extends NSObject {
      * 
      * @return the shared authentication storage
      */
+    @NotNull
     @Generated
     @Selector("sharedCredentialStorage")
     public static native NSURLCredentialStorage sharedCredentialStorage();
@@ -174,6 +181,7 @@ public class NSURLCredentialStorage extends NSObject {
      *         and the values are dictionaries, in which the keys are usernames
      *         and the values are NSURLCredentials
      */
+    @NotNull
     @Generated
     @Selector("allCredentials")
     public native NSDictionary<? extends NSURLProtectionSpace, ? extends NSDictionary<String, ? extends NSURLCredential>> allCredentials();
@@ -186,10 +194,11 @@ public class NSURLCredentialStorage extends NSObject {
      * @param space An NSURLProtectionSpace indicating the protection space for which to get credentials
      * @return A dictionary where the keys are usernames and the values are the corresponding NSURLCredentials.
      */
+    @Nullable
     @Generated
     @Selector("credentialsForProtectionSpace:")
     public native NSDictionary<String, ? extends NSURLCredential> credentialsForProtectionSpace(
-            NSURLProtectionSpace space);
+            @NotNull NSURLProtectionSpace space);
 
     /**
      * defaultCredentialForProtectionSpace:
@@ -198,27 +207,28 @@ public class NSURLCredentialStorage extends NSObject {
      * 
      * @param space The protection space for which to get the default credential.
      */
+    @Nullable
     @Generated
     @Selector("defaultCredentialForProtectionSpace:")
-    public native NSURLCredential defaultCredentialForProtectionSpace(NSURLProtectionSpace space);
+    public native NSURLCredential defaultCredentialForProtectionSpace(@NotNull NSURLProtectionSpace space);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @Selector("getCredentialsForProtectionSpace:task:completionHandler:")
-    public native void getCredentialsForProtectionSpaceTaskCompletionHandler(NSURLProtectionSpace protectionSpace,
-            NSURLSessionTask task,
-            @ObjCBlock(name = "call_getCredentialsForProtectionSpaceTaskCompletionHandler") Block_getCredentialsForProtectionSpaceTaskCompletionHandler completionHandler);
+    public native void getCredentialsForProtectionSpaceTaskCompletionHandler(
+            @NotNull NSURLProtectionSpace protectionSpace, @NotNull NSURLSessionTask task,
+            @NotNull @ObjCBlock(name = "call_getCredentialsForProtectionSpaceTaskCompletionHandler") Block_getCredentialsForProtectionSpaceTaskCompletionHandler completionHandler);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @Selector("getDefaultCredentialForProtectionSpace:task:completionHandler:")
-    public native void getDefaultCredentialForProtectionSpaceTaskCompletionHandler(NSURLProtectionSpace space,
-            NSURLSessionTask task,
-            @ObjCBlock(name = "call_getDefaultCredentialForProtectionSpaceTaskCompletionHandler") Block_getDefaultCredentialForProtectionSpaceTaskCompletionHandler completionHandler);
+    public native void getDefaultCredentialForProtectionSpaceTaskCompletionHandler(@NotNull NSURLProtectionSpace space,
+            @NotNull NSURLSessionTask task,
+            @NotNull @ObjCBlock(name = "call_getDefaultCredentialForProtectionSpaceTaskCompletionHandler") Block_getDefaultCredentialForProtectionSpaceTaskCompletionHandler completionHandler);
 
     @Generated
     @Selector("init")
@@ -238,7 +248,8 @@ public class NSURLCredentialStorage extends NSObject {
      */
     @Generated
     @Selector("removeCredential:forProtectionSpace:")
-    public native void removeCredentialForProtectionSpace(NSURLCredential credential, NSURLProtectionSpace space);
+    public native void removeCredentialForProtectionSpace(@NotNull NSURLCredential credential,
+            @NotNull NSURLProtectionSpace space);
 
     /**
      * removeCredential:forProtectionSpace:options
@@ -260,16 +271,17 @@ public class NSURLCredentialStorage extends NSObject {
      */
     @Generated
     @Selector("removeCredential:forProtectionSpace:options:")
-    public native void removeCredentialForProtectionSpaceOptions(NSURLCredential credential, NSURLProtectionSpace space,
-            NSDictionary<String, ?> options);
+    public native void removeCredentialForProtectionSpaceOptions(@NotNull NSURLCredential credential,
+            @NotNull NSURLProtectionSpace space, @Nullable NSDictionary<String, ?> options);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @Selector("removeCredential:forProtectionSpace:options:task:")
-    public native void removeCredentialForProtectionSpaceOptionsTask(NSURLCredential credential,
-            NSURLProtectionSpace protectionSpace, NSDictionary<String, ?> options, NSURLSessionTask task);
+    public native void removeCredentialForProtectionSpaceOptionsTask(@NotNull NSURLCredential credential,
+            @NotNull NSURLProtectionSpace protectionSpace, @Nullable NSDictionary<String, ?> options,
+            @NotNull NSURLSessionTask task);
 
     /**
      * setCredential:forProtectionSpace:
@@ -285,15 +297,16 @@ public class NSURLCredentialStorage extends NSObject {
      */
     @Generated
     @Selector("setCredential:forProtectionSpace:")
-    public native void setCredentialForProtectionSpace(NSURLCredential credential, NSURLProtectionSpace space);
+    public native void setCredentialForProtectionSpace(@NotNull NSURLCredential credential,
+            @NotNull NSURLProtectionSpace space);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @Selector("setCredential:forProtectionSpace:task:")
-    public native void setCredentialForProtectionSpaceTask(NSURLCredential credential,
-            NSURLProtectionSpace protectionSpace, NSURLSessionTask task);
+    public native void setCredentialForProtectionSpaceTask(@NotNull NSURLCredential credential,
+            @NotNull NSURLProtectionSpace protectionSpace, @NotNull NSURLSessionTask task);
 
     /**
      * setDefaultCredential:forProtectionSpace:
@@ -307,28 +320,29 @@ public class NSURLCredentialStorage extends NSObject {
      */
     @Generated
     @Selector("setDefaultCredential:forProtectionSpace:")
-    public native void setDefaultCredentialForProtectionSpace(NSURLCredential credential, NSURLProtectionSpace space);
+    public native void setDefaultCredentialForProtectionSpace(@NotNull NSURLCredential credential,
+            @NotNull NSURLProtectionSpace space);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @Selector("setDefaultCredential:forProtectionSpace:task:")
-    public native void setDefaultCredentialForProtectionSpaceTask(NSURLCredential credential,
-            NSURLProtectionSpace protectionSpace, NSURLSessionTask task);
+    public native void setDefaultCredentialForProtectionSpaceTask(@NotNull NSURLCredential credential,
+            @NotNull NSURLProtectionSpace protectionSpace, @NotNull NSURLSessionTask task);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getCredentialsForProtectionSpaceTaskCompletionHandler {
         @Generated
         void call_getCredentialsForProtectionSpaceTaskCompletionHandler(
-                NSDictionary<String, ? extends NSURLCredential> credentials);
+                @Nullable NSDictionary<String, ? extends NSURLCredential> credentials);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getDefaultCredentialForProtectionSpaceTaskCompletionHandler {
         @Generated
-        void call_getDefaultCredentialForProtectionSpaceTaskCompletionHandler(NSURLCredential credential);
+        void call_getDefaultCredentialForProtectionSpaceTaskCompletionHandler(@Nullable NSURLCredential credential);
     }
 }

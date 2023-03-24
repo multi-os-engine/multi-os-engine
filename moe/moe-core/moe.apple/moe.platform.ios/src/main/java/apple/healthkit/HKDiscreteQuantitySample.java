@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * HKDiscreteQuantitySample
@@ -65,31 +67,35 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] averageQuantity
      * 
      * The average of the receiver's quantities
      */
+    @NotNull
     @Generated
     @Selector("averageQuantity")
     public native HKQuantity averageQuantity();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -113,7 +119,7 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKDiscreteQuantitySample initWithCoder(NSCoder coder);
+    public native HKDiscreteQuantitySample initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -132,15 +138,17 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] maximumQuantity
      * 
      * The maximum of the receiver's quantities
      */
+    @NotNull
     @Generated
     @Selector("maximumQuantity")
     public native HKQuantity maximumQuantity();
@@ -150,6 +158,7 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
      * 
      * The minimum of the receiver's quantities
      */
+    @NotNull
     @Generated
     @Selector("minimumQuantity")
     public native HKQuantity minimumQuantity();
@@ -159,6 +168,7 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
      * 
      * The receiver's quantity with most recent date interval
      */
+    @NotNull
     @Generated
     @Selector("mostRecentQuantity")
     public native HKQuantity mostRecentQuantity();
@@ -168,6 +178,7 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
      * 
      * The date interval for the receiver's most recent quantity
      */
+    @NotNull
     @Generated
     @Selector("mostRecentQuantityDateInterval")
     public native NSDateInterval mostRecentQuantityDateInterval();
@@ -180,19 +191,20 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
     @Generated
     @Selector("quantitySampleWithType:quantity:startDate:endDate:")
     public static native HKDiscreteQuantitySample quantitySampleWithTypeQuantityStartDateEndDate(
-            HKQuantityType quantityType, HKQuantity quantity, NSDate startDate, NSDate endDate);
+            @NotNull HKQuantityType quantityType, @NotNull HKQuantity quantity, @NotNull NSDate startDate,
+            @NotNull NSDate endDate);
 
     @Generated
     @Selector("quantitySampleWithType:quantity:startDate:endDate:device:metadata:")
     public static native HKDiscreteQuantitySample quantitySampleWithTypeQuantityStartDateEndDateDeviceMetadata(
-            HKQuantityType quantityType, HKQuantity quantity, NSDate startDate, NSDate endDate, HKDevice device,
-            NSDictionary<String, ?> metadata);
+            @NotNull HKQuantityType quantityType, @NotNull HKQuantity quantity, @NotNull NSDate startDate,
+            @NotNull NSDate endDate, @Nullable HKDevice device, @Nullable NSDictionary<String, ?> metadata);
 
     @Generated
     @Selector("quantitySampleWithType:quantity:startDate:endDate:metadata:")
     public static native HKDiscreteQuantitySample quantitySampleWithTypeQuantityStartDateEndDateMetadata(
-            HKQuantityType quantityType, HKQuantity quantity, NSDate startDate, NSDate endDate,
-            NSDictionary<String, ?> metadata);
+            @NotNull HKQuantityType quantityType, @NotNull HKQuantity quantity, @NotNull NSDate startDate,
+            @NotNull NSDate endDate, @Nullable NSDictionary<String, ?> metadata);
 
     @Generated
     @Selector("resolveClassMethod:")

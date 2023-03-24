@@ -37,6 +37,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Specifies the changes to save.
@@ -87,22 +89,25 @@ public class CNSaveRequest extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -137,9 +142,10 @@ public class CNSaveRequest extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -178,7 +184,8 @@ public class CNSaveRequest extends NSObject {
      */
     @Generated
     @Selector("addContact:toContainerWithIdentifier:")
-    public native void addContactToContainerWithIdentifier(CNMutableContact contact, String identifier);
+    public native void addContactToContainerWithIdentifier(@NotNull CNMutableContact contact,
+            @Nullable String identifier);
 
     /**
      * Add a new group to the contact store.
@@ -190,7 +197,7 @@ public class CNSaveRequest extends NSObject {
      */
     @Generated
     @Selector("addGroup:toContainerWithIdentifier:")
-    public native void addGroupToContainerWithIdentifier(CNMutableGroup group, String identifier);
+    public native void addGroupToContainerWithIdentifier(@NotNull CNMutableGroup group, @Nullable String identifier);
 
     /**
      * Add a new member to a group.
@@ -202,7 +209,7 @@ public class CNSaveRequest extends NSObject {
      */
     @Generated
     @Selector("addMember:toGroup:")
-    public native void addMemberToGroup(CNContact contact, CNGroup group);
+    public native void addMemberToGroup(@NotNull CNContact contact, @NotNull CNGroup group);
 
     /**
      * Delete a contact from the contact store.
@@ -211,7 +218,7 @@ public class CNSaveRequest extends NSObject {
      */
     @Generated
     @Selector("deleteContact:")
-    public native void deleteContact(CNMutableContact contact);
+    public native void deleteContact(@NotNull CNMutableContact contact);
 
     /**
      * Delete a group from the contact store.
@@ -221,7 +228,7 @@ public class CNSaveRequest extends NSObject {
      */
     @Generated
     @Selector("deleteGroup:")
-    public native void deleteGroup(CNMutableGroup group);
+    public native void deleteGroup(@NotNull CNMutableGroup group);
 
     @Generated
     @Selector("init")
@@ -238,7 +245,7 @@ public class CNSaveRequest extends NSObject {
      */
     @Generated
     @Selector("removeMember:fromGroup:")
-    public native void removeMemberFromGroup(CNContact contact, CNGroup group);
+    public native void removeMemberFromGroup(@NotNull CNContact contact, @NotNull CNGroup group);
 
     /**
      * Update an existing contact in the contact store.
@@ -247,7 +254,7 @@ public class CNSaveRequest extends NSObject {
      */
     @Generated
     @Selector("updateContact:")
-    public native void updateContact(CNMutableContact contact);
+    public native void updateContact(@NotNull CNMutableContact contact);
 
     /**
      * Update an existing group in the contact store.
@@ -256,7 +263,7 @@ public class CNSaveRequest extends NSObject {
      */
     @Generated
     @Selector("updateGroup:")
-    public native void updateGroup(CNMutableGroup group);
+    public native void updateGroup(@NotNull CNMutableGroup group);
 
     /**
      * The author of this transaction.
@@ -268,7 +275,7 @@ public class CNSaveRequest extends NSObject {
      */
     @Generated
     @Selector("setTransactionAuthor:")
-    public native void setTransactionAuthor(String value);
+    public native void setTransactionAuthor(@Nullable String value);
 
     /**
      * The author of this transaction.
@@ -278,6 +285,7 @@ public class CNSaveRequest extends NSObject {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("transactionAuthor")
     public native String transactionAuthor();

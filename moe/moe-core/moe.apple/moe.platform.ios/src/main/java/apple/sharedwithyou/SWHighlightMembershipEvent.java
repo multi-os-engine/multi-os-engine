@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SWHighlightMembershipEvent
@@ -64,31 +66,35 @@ public class SWHighlightMembershipEvent extends NSObject implements SWHighlightE
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -100,13 +106,14 @@ public class SWHighlightMembershipEvent extends NSObject implements SWHighlightE
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
 
+    @NotNull
     @Generated
     @Selector("highlightURL")
     public native NSURL highlightURL();
@@ -117,7 +124,7 @@ public class SWHighlightMembershipEvent extends NSObject implements SWHighlightE
 
     @Generated
     @Selector("initWithCoder:")
-    public native SWHighlightMembershipEvent initWithCoder(NSCoder coder);
+    public native SWHighlightMembershipEvent initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initializes a highlight membership event object to represent changes to a highlight membership.
@@ -127,7 +134,8 @@ public class SWHighlightMembershipEvent extends NSObject implements SWHighlightE
      */
     @Generated
     @Selector("initWithHighlight:trigger:")
-    public native SWHighlightMembershipEvent initWithHighlightTrigger(SWHighlight highlight, @NInt long trigger);
+    public native SWHighlightMembershipEvent initWithHighlightTrigger(@NotNull SWHighlight highlight,
+            @NInt long trigger);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -146,9 +154,10 @@ public class SWHighlightMembershipEvent extends NSObject implements SWHighlightE
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The type of membership event for the highlight.

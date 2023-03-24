@@ -19,6 +19,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -64,17 +66,18 @@ public class NSOrderedCollectionChange<_ObjectType> extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * The change type: insert or remove
@@ -84,21 +87,25 @@ public class NSOrderedCollectionChange<_ObjectType> extends NSObject {
     @NInt
     public native long changeType();
 
+    @NotNull
     @Generated
     @Selector("changeWithObject:type:index:")
     public static native <_ObjectType> NSOrderedCollectionChange<_ObjectType> changeWithObjectTypeIndex(
-            @Mapped(ObjCObjectMapper.class) _ObjectType anObject, @NInt long type, @NUInt long index);
+            @Nullable @Mapped(ObjCObjectMapper.class) _ObjectType anObject, @NInt long type, @NUInt long index);
 
+    @NotNull
     @Generated
     @Selector("changeWithObject:type:index:associatedIndex:")
     public static native <_ObjectType> NSOrderedCollectionChange<_ObjectType> changeWithObjectTypeIndexAssociatedIndex(
-            @Mapped(ObjCObjectMapper.class) _ObjectType anObject, @NInt long type, @NUInt long index,
+            @Nullable @Mapped(ObjCObjectMapper.class) _ObjectType anObject, @NInt long type, @NUInt long index,
             @NUInt long associatedIndex);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -132,12 +139,12 @@ public class NSOrderedCollectionChange<_ObjectType> extends NSObject {
     @Generated
     @Selector("initWithObject:type:index:")
     public native NSOrderedCollectionChange<?> initWithObjectTypeIndex(
-            @Mapped(ObjCObjectMapper.class) _ObjectType anObject, @NInt long type, @NUInt long index);
+            @Nullable @Mapped(ObjCObjectMapper.class) _ObjectType anObject, @NInt long type, @NUInt long index);
 
     @Generated
     @Selector("initWithObject:type:index:associatedIndex:")
     public native NSOrderedCollectionChange<?> initWithObjectTypeIndexAssociatedIndex(
-            @Mapped(ObjCObjectMapper.class) _ObjectType anObject, @NInt long type, @NUInt long index,
+            @Nullable @Mapped(ObjCObjectMapper.class) _ObjectType anObject, @NInt long type, @NUInt long index,
             @NUInt long associatedIndex);
 
     @Generated
@@ -157,9 +164,10 @@ public class NSOrderedCollectionChange<_ObjectType> extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -169,6 +177,7 @@ public class NSOrderedCollectionChange<_ObjectType> extends NSObject {
     /**
      * The object that was inserted or removed, if recorded
      */
+    @Nullable
     @Generated
     @Selector("object")
     @MappedReturn(ObjCObjectMapper.class)

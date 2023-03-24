@@ -11,6 +11,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 11.0
@@ -29,7 +30,7 @@ public interface ARSessionDelegate extends ARSessionObserver {
     @Generated
     @IsOptional
     @Selector("session:didAddAnchors:")
-    default void sessionDidAddAnchors(ARSession session, NSArray<? extends ARAnchor> anchors) {
+    default void sessionDidAddAnchors(@NotNull ARSession session, @NotNull NSArray<? extends ARAnchor> anchors) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -42,7 +43,7 @@ public interface ARSessionDelegate extends ARSessionObserver {
     @Generated
     @IsOptional
     @Selector("session:didRemoveAnchors:")
-    default void sessionDidRemoveAnchors(ARSession session, NSArray<? extends ARAnchor> anchors) {
+    default void sessionDidRemoveAnchors(@NotNull ARSession session, @NotNull NSArray<? extends ARAnchor> anchors) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -55,7 +56,7 @@ public interface ARSessionDelegate extends ARSessionObserver {
     @Generated
     @IsOptional
     @Selector("session:didUpdateAnchors:")
-    default void sessionDidUpdateAnchors(ARSession session, NSArray<? extends ARAnchor> anchors) {
+    default void sessionDidUpdateAnchors(@NotNull ARSession session, @NotNull NSArray<? extends ARAnchor> anchors) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,7 +69,7 @@ public interface ARSessionDelegate extends ARSessionObserver {
     @Generated
     @IsOptional
     @Selector("session:didUpdateFrame:")
-    default void sessionDidUpdateFrame(ARSession session, ARFrame frame) {
+    default void sessionDidUpdateFrame(@NotNull ARSession session, @NotNull ARFrame frame) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

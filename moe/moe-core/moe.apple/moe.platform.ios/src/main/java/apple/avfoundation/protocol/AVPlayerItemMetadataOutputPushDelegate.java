@@ -27,6 +27,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] AVPlayerItemMetadataOutputPushDelegate
@@ -68,8 +70,9 @@ public interface AVPlayerItemMetadataOutputPushDelegate extends AVPlayerItemOutp
     @Generated
     @IsOptional
     @Selector("metadataOutput:didOutputTimedMetadataGroups:fromPlayerItemTrack:")
-    default void metadataOutputDidOutputTimedMetadataGroupsFromPlayerItemTrack(AVPlayerItemMetadataOutput output,
-            NSArray<? extends AVTimedMetadataGroup> groups, AVPlayerItemTrack track) {
+    default void metadataOutputDidOutputTimedMetadataGroupsFromPlayerItemTrack(
+            @NotNull AVPlayerItemMetadataOutput output, @NotNull NSArray<? extends AVTimedMetadataGroup> groups,
+            @Nullable AVPlayerItemTrack track) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

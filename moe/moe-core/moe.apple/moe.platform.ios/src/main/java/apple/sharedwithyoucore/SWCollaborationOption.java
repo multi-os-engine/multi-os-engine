@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SWCollaborationOption
@@ -67,31 +69,35 @@ public class SWCollaborationOption extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -103,7 +109,7 @@ public class SWCollaborationOption extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -113,6 +119,7 @@ public class SWCollaborationOption extends NSObject implements NSCopying, NSSecu
     /**
      * Unique identifier
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -123,7 +130,7 @@ public class SWCollaborationOption extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("initWithCoder:")
-    public native SWCollaborationOption initWithCoder(NSCoder coder);
+    public native SWCollaborationOption initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initializes a collaboration option object with a title and unique identifier
@@ -133,7 +140,7 @@ public class SWCollaborationOption extends NSObject implements NSCopying, NSSecu
      */
     @Generated
     @Selector("initWithTitle:identifier:")
-    public native SWCollaborationOption initWithTitleIdentifier(String title, String identifier);
+    public native SWCollaborationOption initWithTitleIdentifier(@NotNull String title, @NotNull String identifier);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -161,9 +168,10 @@ public class SWCollaborationOption extends NSObject implements NSCopying, NSSecu
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -176,13 +184,16 @@ public class SWCollaborationOption extends NSObject implements NSCopying, NSSecu
      * @param title      A localized title string to be used when displaying the option
      * @param identifier The unique identifier for the option
      */
+    @NotNull
     @Generated
     @Selector("optionWithTitle:identifier:")
-    public static native SWCollaborationOption optionWithTitleIdentifier(String title, String identifier);
+    public static native SWCollaborationOption optionWithTitleIdentifier(@NotNull String title,
+            @NotNull String identifier);
 
     /**
      * An array of option identifiers that must already be selected in order to be interacted with
      */
+    @NotNull
     @Generated
     @Selector("requiredOptionsIdentifiers")
     public native NSArray<String> requiredOptionsIdentifiers();
@@ -200,7 +211,7 @@ public class SWCollaborationOption extends NSObject implements NSCopying, NSSecu
      */
     @Generated
     @Selector("setRequiredOptionsIdentifiers:")
-    public native void setRequiredOptionsIdentifiers(NSArray<String> value);
+    public native void setRequiredOptionsIdentifiers(@NotNull NSArray<String> value);
 
     /**
      * A flag that indicates whether the option is selected.
@@ -216,14 +227,14 @@ public class SWCollaborationOption extends NSObject implements NSCopying, NSSecu
      */
     @Generated
     @Selector("setSubtitle:")
-    public native void setSubtitle(String value);
+    public native void setSubtitle(@NotNull String value);
 
     /**
      * A localized title string to be used when displaying the option
      */
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@NotNull String value);
 
     @Generated
     @Selector("setVersion:")
@@ -232,6 +243,7 @@ public class SWCollaborationOption extends NSObject implements NSCopying, NSSecu
     /**
      * A localized subtitle string to be used when displaying the option
      */
+    @NotNull
     @Generated
     @Selector("subtitle")
     public native String subtitle();
@@ -253,6 +265,7 @@ public class SWCollaborationOption extends NSObject implements NSCopying, NSSecu
     /**
      * A localized title string to be used when displaying the option
      */
+    @NotNull
     @Generated
     @Selector("title")
     public native String title();

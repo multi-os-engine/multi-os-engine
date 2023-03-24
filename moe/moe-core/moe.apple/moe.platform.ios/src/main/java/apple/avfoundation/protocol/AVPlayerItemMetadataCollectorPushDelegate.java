@@ -26,6 +26,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("AVFoundation")
@@ -56,6 +57,7 @@ public interface AVPlayerItemMetadataCollectorPushDelegate {
     @Generated
     @Selector("metadataCollector:didCollectDateRangeMetadataGroups:indexesOfNewGroups:indexesOfModifiedGroups:")
     void metadataCollectorDidCollectDateRangeMetadataGroupsIndexesOfNewGroupsIndexesOfModifiedGroups(
-            AVPlayerItemMetadataCollector metadataCollector, NSArray<? extends AVDateRangeMetadataGroup> metadataGroups,
-            NSIndexSet indexesOfNewGroups, NSIndexSet indexesOfModifiedGroups);
+            @NotNull AVPlayerItemMetadataCollector metadataCollector,
+            @NotNull NSArray<? extends AVDateRangeMetadataGroup> metadataGroups, @NotNull NSIndexSet indexesOfNewGroups,
+            @NotNull NSIndexSet indexesOfModifiedGroups);
 }

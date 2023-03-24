@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * VNFaceObservation
@@ -74,22 +76,25 @@ public class VNFaceObservation extends VNDetectedObjectObservation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -113,7 +118,7 @@ public class VNFaceObservation extends VNDetectedObjectObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNFaceObservation initWithCoder(NSCoder coder);
+    public native VNFaceObservation initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -132,14 +137,16 @@ public class VNFaceObservation extends VNDetectedObjectObservation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The face landmarks populated by the VNDetectFaceLandmarksRequest. This is set to nil if only a
      * VNDetectFaceRectanglesRequest was performed.
      */
+    @Nullable
     @Generated
     @Selector("landmarks")
     public native VNFaceLandmarks2D landmarks();
@@ -191,6 +198,7 @@ public class VNFaceObservation extends VNDetectedObjectObservation {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("faceCaptureQuality")
     public native NSNumber faceCaptureQuality();
@@ -218,7 +226,7 @@ public class VNFaceObservation extends VNDetectedObjectObservation {
     @Generated
     @Selector("faceObservationWithRequestRevision:boundingBox:roll:yaw:")
     public static native VNFaceObservation faceObservationWithRequestRevisionBoundingBoxRollYaw(
-            @NUInt long requestRevision, @ByValue CGRect boundingBox, NSNumber roll, NSNumber yaw);
+            @NUInt long requestRevision, @ByValue CGRect boundingBox, @Nullable NSNumber roll, @Nullable NSNumber yaw);
 
     @Generated
     @Selector("observationWithRequestRevision:boundingBox:")
@@ -232,6 +240,7 @@ public class VNFaceObservation extends VNDetectedObjectObservation {
      * 
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("roll")
     public native NSNumber roll();
@@ -243,6 +252,7 @@ public class VNFaceObservation extends VNDetectedObjectObservation {
      * 
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("yaw")
     public native NSNumber yaw();
@@ -253,7 +263,8 @@ public class VNFaceObservation extends VNDetectedObjectObservation {
     @Generated
     @Selector("faceObservationWithRequestRevision:boundingBox:roll:yaw:pitch:")
     public static native VNFaceObservation faceObservationWithRequestRevisionBoundingBoxRollYawPitch(
-            @NUInt long requestRevision, @ByValue CGRect boundingBox, NSNumber roll, NSNumber yaw, NSNumber pitch);
+            @NUInt long requestRevision, @ByValue CGRect boundingBox, @Nullable NSNumber roll, @Nullable NSNumber yaw,
+            @Nullable NSNumber pitch);
 
     /**
      * Face pitch angle populated by VNDetectFaceRectanglesRequest. The pitch is reported in radians, positive angle
@@ -262,6 +273,7 @@ public class VNFaceObservation extends VNDetectedObjectObservation {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("pitch")
     public native NSNumber pitch();

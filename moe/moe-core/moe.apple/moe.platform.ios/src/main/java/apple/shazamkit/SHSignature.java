@@ -30,6 +30,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The @c SHSignature class is an opaque data container that can be used to store recognition data.
@@ -82,35 +84,40 @@ public class SHSignature extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * The raw data that comprises this signature, this is not audio data
      */
+    @NotNull
     @Generated
     @Selector("dataRepresentation")
     public native NSData dataRepresentation();
@@ -135,7 +142,7 @@ public class SHSignature extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -148,7 +155,7 @@ public class SHSignature extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SHSignature initWithCoder(NSCoder coder);
+    public native SHSignature initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Create a Signature from Signature data
@@ -159,8 +166,8 @@ public class SHSignature extends NSObject implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("initWithDataRepresentation:error:")
-    public native SHSignature initWithDataRepresentationError(NSData dataRepresentation,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native SHSignature initWithDataRepresentationError(@NotNull NSData dataRepresentation,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -179,9 +186,10 @@ public class SHSignature extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -207,10 +215,11 @@ public class SHSignature extends NSObject implements NSSecureCoding, NSCopying {
      * @param error              Error if the data was invalid
      * @return A signature if the data contained a valid signature, nil otherwise
      */
+    @Nullable
     @Generated
     @Selector("signatureWithDataRepresentation:error:")
-    public static native SHSignature signatureWithDataRepresentationError(NSData dataRepresentation,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native SHSignature signatureWithDataRepresentationError(@NotNull NSData dataRepresentation,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("superclass")

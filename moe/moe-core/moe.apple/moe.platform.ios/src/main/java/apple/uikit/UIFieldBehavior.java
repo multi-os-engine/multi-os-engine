@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGVector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.0
@@ -77,22 +79,25 @@ public class UIFieldBehavior extends UIDynamicBehavior {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -109,6 +114,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * Slows an object proportionally to the object’s velocity.
      * Use this to simulate effects such as friction from motion through the air.
      */
+    @NotNull
     @Generated
     @Selector("dragField")
     public static native UIFieldBehavior dragField();
@@ -120,6 +126,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * from one another when they enter a region, or to make an object's behavior different than its mass based behavior
      * This field models the first part of the Lorentz equation, F = qE
      */
+    @NotNull
     @Generated
     @Selector("electricField")
     public static native UIFieldBehavior electricField();
@@ -134,10 +141,11 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * @param charge    The charge to be taken into account during force evaluation
      * @param deltaTime The current time step
      */
+    @NotNull
     @Generated
     @Selector("fieldWithEvaluationBlock:")
     public static native UIFieldBehavior fieldWithEvaluationBlock(
-            @ObjCBlock(name = "call_fieldWithEvaluationBlock") Block_fieldWithEvaluationBlock block);
+            @NotNull @ObjCBlock(name = "call_fieldWithEvaluationBlock") Block_fieldWithEvaluationBlock block);
 
     @Generated
     @Selector("hash")
@@ -161,9 +169,10 @@ public class UIFieldBehavior extends UIDynamicBehavior {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Applies a force in the direction of the vector in the local space. To repel objects, use a negative strength.
@@ -175,6 +184,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      *                  vector are used to calculate the length.
      * @see direction
      */
+    @NotNull
     @Generated
     @Selector("linearGravityFieldWithVector:")
     public static native UIFieldBehavior linearGravityFieldWithVector(@ByValue CGVector direction);
@@ -189,6 +199,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * objects behavior differently from one another when they enter a region, or to make an object's behavior different
      * than its mass based behavior. This field models the second part of the Lorentz equation, F = qvB
      */
+    @NotNull
     @Generated
     @Selector("magneticField")
     public static native UIFieldBehavior magneticField();
@@ -207,6 +218,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * @see smoothness
      * @see animationSpeed
      */
+    @NotNull
     @Generated
     @Selector("noiseFieldWithSmoothness:animationSpeed:")
     public static native UIFieldBehavior noiseFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness,
@@ -221,6 +233,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * @param position the origin of the field
      * @see position
      */
+    @NotNull
     @Generated
     @Selector("radialGravityFieldWithPosition:")
     public static native UIFieldBehavior radialGravityFieldWithPosition(@ByValue CGPoint position);
@@ -242,6 +255,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * field will oscillate with a period proportional to the inverse of the mass.
      * An example use is to keep objects confined to a particular region.
      */
+    @NotNull
     @Generated
     @Selector("springField")
     public static native UIFieldBehavior springField();
@@ -258,6 +272,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * @see smoothness
      * @see animationSpeed
      */
+    @NotNull
     @Generated
     @Selector("turbulenceFieldWithSmoothness:animationSpeed:")
     public static native UIFieldBehavior turbulenceFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness,
@@ -270,6 +285,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * @param direction The directed velocity that will be applied to the body.
      * @see direction
      */
+    @NotNull
     @Generated
     @Selector("velocityFieldWithVector:")
     public static native UIFieldBehavior velocityFieldWithVector(@ByValue CGVector direction);
@@ -285,13 +301,14 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * Amount is proportional to distance from center and the object's mass. This can be used to create rotational
      * effects.
      */
+    @NotNull
     @Generated
     @Selector("vortexField")
     public static native UIFieldBehavior vortexField();
 
     @Generated
     @Selector("addItem:")
-    public native void addItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
+    public native void addItem(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
     /**
      * Fields that can be animated can have non zero values. A value of 2 will animate twice as fast as a value of 1.
@@ -332,6 +349,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
     @Selector("init")
     public native UIFieldBehavior init();
 
+    @NotNull
     @Generated
     @Selector("items")
     public native NSArray<?> items();
@@ -356,13 +374,14 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * The region property is the domain of the field's effect. No force is applied to objects outside the region.
      * The default region is the infiniteRegion
      */
+    @NotNull
     @Generated
     @Selector("region")
     public native UIRegion region();
 
     @Generated
     @Selector("removeItem:")
-    public native void removeItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
+    public native void removeItem(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
     /**
      * Fields that can be animated can have non zero values. A value of 2 will animate twice as fast as a value of 1.
@@ -416,7 +435,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      */
     @Generated
     @Selector("setRegion:")
-    public native void setRegion(UIRegion value);
+    public native void setRegion(@NotNull UIRegion value);
 
     /**
      * Fields without a smoothness component will return 0
@@ -459,7 +478,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
     public interface Block_fieldWithEvaluationBlock {
         @Generated
         @ByValue
-        CGVector call_fieldWithEvaluationBlock(UIFieldBehavior field, @ByValue CGPoint position,
+        CGVector call_fieldWithEvaluationBlock(@NotNull UIFieldBehavior field, @ByValue CGPoint position,
                 @ByValue CGVector velocity, @NFloat double mass, @NFloat double charge, double deltaTime);
     }
 }

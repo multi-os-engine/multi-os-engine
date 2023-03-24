@@ -10,6 +10,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A protocol for delegates of AVAudioRecorder
@@ -32,7 +34,7 @@ public interface AVAudioRecorderDelegate {
     @IsOptional
     @Deprecated
     @Selector("audioRecorderBeginInterruption:")
-    default void audioRecorderBeginInterruption(AVAudioRecorder recorder) {
+    default void audioRecorderBeginInterruption(@NotNull AVAudioRecorder recorder) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -43,7 +45,7 @@ public interface AVAudioRecorderDelegate {
     @Generated
     @IsOptional
     @Selector("audioRecorderDidFinishRecording:successfully:")
-    default void audioRecorderDidFinishRecordingSuccessfully(AVAudioRecorder recorder, boolean flag) {
+    default void audioRecorderDidFinishRecordingSuccessfully(@NotNull AVAudioRecorder recorder, boolean flag) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -53,7 +55,7 @@ public interface AVAudioRecorderDelegate {
     @Generated
     @IsOptional
     @Selector("audioRecorderEncodeErrorDidOccur:error:")
-    default void audioRecorderEncodeErrorDidOccurError(AVAudioRecorder recorder, NSError error) {
+    default void audioRecorderEncodeErrorDidOccurError(@NotNull AVAudioRecorder recorder, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,7 +70,7 @@ public interface AVAudioRecorderDelegate {
     @IsOptional
     @Deprecated
     @Selector("audioRecorderEndInterruption:")
-    default void audioRecorderEndInterruption(AVAudioRecorder recorder) {
+    default void audioRecorderEndInterruption(@NotNull AVAudioRecorder recorder) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -80,7 +82,7 @@ public interface AVAudioRecorderDelegate {
     @IsOptional
     @Deprecated
     @Selector("audioRecorderEndInterruption:withFlags:")
-    default void audioRecorderEndInterruptionWithFlags(AVAudioRecorder recorder, @NUInt long flags) {
+    default void audioRecorderEndInterruptionWithFlags(@NotNull AVAudioRecorder recorder, @NUInt long flags) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -96,7 +98,7 @@ public interface AVAudioRecorderDelegate {
     @IsOptional
     @Deprecated
     @Selector("audioRecorderEndInterruption:withOptions:")
-    default void audioRecorderEndInterruptionWithOptions(AVAudioRecorder recorder, @NUInt long flags) {
+    default void audioRecorderEndInterruptionWithOptions(@NotNull AVAudioRecorder recorder, @NUInt long flags) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

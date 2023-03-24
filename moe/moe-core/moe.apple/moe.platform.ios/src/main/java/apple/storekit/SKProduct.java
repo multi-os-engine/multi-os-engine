@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.0
@@ -74,22 +76,25 @@ public class SKProduct extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +129,10 @@ public class SKProduct extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,6 +163,7 @@ public class SKProduct extends NSObject {
     /**
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("downloadContentLengths")
     public native NSArray<? extends NSNumber> downloadContentLengths();
@@ -164,6 +171,7 @@ public class SKProduct extends NSObject {
     /**
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("downloadContentVersion")
     public native String downloadContentVersion();
@@ -184,6 +192,7 @@ public class SKProduct extends NSObject {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
@@ -191,6 +200,7 @@ public class SKProduct extends NSObject {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("localizedTitle")
     public native String localizedTitle();
@@ -198,6 +208,7 @@ public class SKProduct extends NSObject {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("price")
     public native NSDecimalNumber price();
@@ -205,6 +216,7 @@ public class SKProduct extends NSObject {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("priceLocale")
     public native NSLocale priceLocale();
@@ -212,6 +224,7 @@ public class SKProduct extends NSObject {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("productIdentifier")
     public native String productIdentifier();
@@ -219,6 +232,7 @@ public class SKProduct extends NSObject {
     /**
      * Version of the downloadable content
      */
+    @NotNull
     @Generated
     @Selector("contentVersion")
     public native String contentVersion();
@@ -226,6 +240,7 @@ public class SKProduct extends NSObject {
     /**
      * API-Since: 12.2
      */
+    @NotNull
     @Generated
     @Selector("discounts")
     public native NSArray<? extends SKProductDiscount> discounts();
@@ -233,6 +248,7 @@ public class SKProduct extends NSObject {
     /**
      * API-Since: 11.2
      */
+    @Nullable
     @Generated
     @Selector("introductoryPrice")
     public native SKProductDiscount introductoryPrice();
@@ -240,6 +256,7 @@ public class SKProduct extends NSObject {
     /**
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("subscriptionGroupIdentifier")
     public native String subscriptionGroupIdentifier();
@@ -247,6 +264,7 @@ public class SKProduct extends NSObject {
     /**
      * API-Since: 11.2
      */
+    @Nullable
     @Generated
     @Selector("subscriptionPeriod")
     public native SKProductSubscriptionPeriod subscriptionPeriod();

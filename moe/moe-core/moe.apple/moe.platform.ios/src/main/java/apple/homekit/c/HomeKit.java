@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("HomeKit")
@@ -48,6 +49,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -58,6 +60,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -68,6 +71,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -78,6 +82,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -88,6 +93,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -98,6 +104,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -108,6 +115,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -118,6 +126,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -128,6 +137,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -138,6 +148,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -148,6 +159,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -158,6 +170,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -168,6 +181,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -178,6 +192,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -188,6 +203,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -198,6 +214,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -208,6 +225,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -218,6 +236,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -228,6 +247,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -238,6 +258,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -248,6 +269,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -258,6 +280,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -268,6 +291,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -278,6 +302,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -288,6 +313,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -298,6 +324,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -308,6 +335,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -318,6 +346,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -328,6 +357,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -338,6 +368,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -348,6 +379,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -358,6 +390,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -368,6 +401,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -378,6 +412,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -388,6 +423,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -398,6 +434,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -408,6 +445,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -418,6 +456,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -428,6 +467,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -441,6 +481,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -451,6 +492,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -461,6 +503,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -471,6 +514,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -481,6 +525,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -491,6 +536,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -501,6 +547,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -511,6 +558,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -522,6 +570,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -532,6 +581,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -542,6 +592,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -553,6 +604,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -564,6 +616,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -574,6 +627,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -584,6 +638,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -594,6 +649,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -604,6 +660,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -615,6 +672,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -626,6 +684,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -636,6 +695,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -646,6 +706,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -657,6 +718,7 @@ public final class HomeKit {
      * API-Since: 8.0
      * Deprecated-Since: 11.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -669,6 +731,7 @@ public final class HomeKit {
      * API-Since: 8.0
      * Deprecated-Since: 11.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -682,6 +745,7 @@ public final class HomeKit {
      * Deprecated-Since: 11.0
      * Deprecated-Message: No longer supported
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -693,6 +757,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -704,6 +769,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -714,6 +780,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -725,6 +792,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -735,6 +803,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -745,6 +814,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -755,6 +825,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -765,6 +836,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -777,6 +849,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -787,6 +860,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -798,6 +872,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -809,6 +884,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -821,6 +897,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -832,6 +909,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -844,6 +922,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -855,6 +934,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -866,6 +946,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -877,6 +958,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -887,6 +969,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -898,6 +981,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -909,6 +993,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -920,6 +1005,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -931,6 +1017,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -942,6 +1029,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -953,6 +1041,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -964,6 +1053,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -975,6 +1065,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -986,6 +1077,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -996,6 +1088,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1008,6 +1101,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1019,6 +1113,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1029,6 +1124,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1040,6 +1136,7 @@ public final class HomeKit {
      * API-Since: 8.0
      * Deprecated-Since: 11.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1051,6 +1148,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1062,6 +1160,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1073,6 +1172,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1084,6 +1184,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1095,6 +1196,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1106,6 +1208,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1117,6 +1220,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1128,6 +1232,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1138,6 +1243,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1148,6 +1254,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1158,6 +1265,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1169,6 +1277,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1180,6 +1289,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1192,6 +1302,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1202,6 +1313,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1213,6 +1325,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1225,6 +1338,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1235,6 +1349,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1245,6 +1360,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1255,6 +1371,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1265,6 +1382,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1276,6 +1394,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1286,6 +1405,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1296,6 +1416,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1306,6 +1427,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1316,6 +1438,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1326,6 +1449,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1336,6 +1460,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1346,6 +1471,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1356,6 +1482,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1366,6 +1493,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1377,6 +1505,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1388,6 +1517,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1399,6 +1529,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1410,6 +1541,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1421,6 +1553,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1432,6 +1565,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1443,6 +1577,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1453,6 +1588,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1464,6 +1600,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1474,6 +1611,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1485,6 +1623,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1496,6 +1635,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1507,6 +1647,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1518,6 +1659,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1529,6 +1671,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1540,6 +1683,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1551,6 +1695,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1561,6 +1706,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1571,6 +1717,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1582,6 +1729,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1593,6 +1741,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1604,6 +1753,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1615,6 +1765,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1626,6 +1777,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1637,6 +1789,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1647,6 +1800,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1657,6 +1811,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1669,6 +1824,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1681,6 +1837,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1693,6 +1850,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1705,6 +1863,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1717,6 +1876,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1729,6 +1889,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1741,6 +1902,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1753,6 +1915,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1765,6 +1928,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1777,6 +1941,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1789,6 +1954,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1802,6 +1968,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1812,6 +1979,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1822,6 +1990,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1832,6 +2001,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1842,6 +2012,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1852,6 +2023,7 @@ public final class HomeKit {
      * 
      * API-Since: 8.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1862,6 +2034,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1872,6 +2045,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1882,6 +2056,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1892,6 +2067,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1902,6 +2078,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1912,6 +2089,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1922,6 +2100,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1932,6 +2111,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1946,6 +2126,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2186,6 +2367,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2196,6 +2378,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2204,6 +2387,7 @@ public final class HomeKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2214,6 +2398,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2224,6 +2409,7 @@ public final class HomeKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2234,6 +2420,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2246,6 +2433,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2261,6 +2449,7 @@ public final class HomeKit {
      * 
      * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2271,6 +2460,7 @@ public final class HomeKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2281,6 +2471,7 @@ public final class HomeKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2291,6 +2482,7 @@ public final class HomeKit {
      * 
      * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2301,6 +2493,7 @@ public final class HomeKit {
      * 
      * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2311,6 +2504,7 @@ public final class HomeKit {
      * 
      * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2322,6 +2516,7 @@ public final class HomeKit {
      * 
      * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2333,6 +2528,7 @@ public final class HomeKit {
      * 
      * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2344,6 +2540,7 @@ public final class HomeKit {
      * 
      * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2355,6 +2552,7 @@ public final class HomeKit {
      * 
      * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2366,6 +2564,7 @@ public final class HomeKit {
      * 
      * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2377,6 +2576,7 @@ public final class HomeKit {
      * 
      * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

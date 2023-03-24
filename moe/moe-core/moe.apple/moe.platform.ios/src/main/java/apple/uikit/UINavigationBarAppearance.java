@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -60,11 +62,12 @@ public class UINavigationBarAppearance extends UIBarAppearance {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * The appearance for back buttons. Defaults are drawn from buttonAppearance when appropriate.
      */
+    @NotNull
     @Generated
     @Selector("backButtonAppearance")
     public native UIBarButtonItemAppearance backButtonAppearance();
@@ -72,6 +75,7 @@ public class UINavigationBarAppearance extends UIBarAppearance {
     /**
      * The image shown on the leading edge of the back button.
      */
+    @NotNull
     @Generated
     @Selector("backIndicatorImage")
     public native UIImage backIndicatorImage();
@@ -79,6 +83,7 @@ public class UINavigationBarAppearance extends UIBarAppearance {
     /**
      * This image is used to mask content flowing underneath the backIndicatorImage during push & pop transitions
      */
+    @NotNull
     @Generated
     @Selector("backIndicatorTransitionMaskImage")
     public native UIImage backIndicatorTransitionMaskImage();
@@ -86,24 +91,28 @@ public class UINavigationBarAppearance extends UIBarAppearance {
     /**
      * The appearance for plain-style bar button items
      */
+    @NotNull
     @Generated
     @Selector("buttonAppearance")
     public native UIBarButtonItemAppearance buttonAppearance();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -119,6 +128,7 @@ public class UINavigationBarAppearance extends UIBarAppearance {
     /**
      * The appearance for done-style bar button items
      */
+    @NotNull
     @Generated
     @Selector("doneButtonAppearance")
     public native UIBarButtonItemAppearance doneButtonAppearance();
@@ -134,11 +144,11 @@ public class UINavigationBarAppearance extends UIBarAppearance {
 
     @Generated
     @Selector("initWithBarAppearance:")
-    public native UINavigationBarAppearance initWithBarAppearance(UIBarAppearance barAppearance);
+    public native UINavigationBarAppearance initWithBarAppearance(@NotNull UIBarAppearance barAppearance);
 
     @Generated
     @Selector("initWithCoder:")
-    public native UINavigationBarAppearance initWithCoder(NSCoder coder);
+    public native UINavigationBarAppearance initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithIdiom:")
@@ -161,13 +171,15 @@ public class UINavigationBarAppearance extends UIBarAppearance {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Large Title text attributes. If the font or color are unspecified, appropriate defaults are supplied.
      */
+    @NotNull
     @Generated
     @Selector("largeTitleTextAttributes")
     public native NSDictionary<String, ?> largeTitleTextAttributes();
@@ -190,7 +202,7 @@ public class UINavigationBarAppearance extends UIBarAppearance {
      */
     @Generated
     @Selector("setBackButtonAppearance:")
-    public native void setBackButtonAppearance(UIBarButtonItemAppearance value);
+    public native void setBackButtonAppearance(@NotNull UIBarButtonItemAppearance value);
 
     /**
      * Set the backIndicatorImage & backIndicatorTransitionMaskImage images. If either image is nil, then both images
@@ -198,29 +210,29 @@ public class UINavigationBarAppearance extends UIBarAppearance {
      */
     @Generated
     @Selector("setBackIndicatorImage:transitionMaskImage:")
-    public native void setBackIndicatorImageTransitionMaskImage(UIImage backIndicatorImage,
-            UIImage backIndicatorTransitionMaskImage);
+    public native void setBackIndicatorImageTransitionMaskImage(@Nullable UIImage backIndicatorImage,
+            @Nullable UIImage backIndicatorTransitionMaskImage);
 
     /**
      * The appearance for plain-style bar button items
      */
     @Generated
     @Selector("setButtonAppearance:")
-    public native void setButtonAppearance(UIBarButtonItemAppearance value);
+    public native void setButtonAppearance(@NotNull UIBarButtonItemAppearance value);
 
     /**
      * The appearance for done-style bar button items
      */
     @Generated
     @Selector("setDoneButtonAppearance:")
-    public native void setDoneButtonAppearance(UIBarButtonItemAppearance value);
+    public native void setDoneButtonAppearance(@NotNull UIBarButtonItemAppearance value);
 
     /**
      * Large Title text attributes. If the font or color are unspecified, appropriate defaults are supplied.
      */
     @Generated
     @Selector("setLargeTitleTextAttributes:")
-    public native void setLargeTitleTextAttributes(NSDictionary<String, ?> value);
+    public native void setLargeTitleTextAttributes(@NotNull NSDictionary<String, ?> value);
 
     /**
      * An additional adjustment to the inline title's position.
@@ -234,7 +246,7 @@ public class UINavigationBarAppearance extends UIBarAppearance {
      */
     @Generated
     @Selector("setTitleTextAttributes:")
-    public native void setTitleTextAttributes(NSDictionary<String, ?> value);
+    public native void setTitleTextAttributes(@NotNull NSDictionary<String, ?> value);
 
     @Generated
     @Selector("setVersion:")
@@ -265,6 +277,7 @@ public class UINavigationBarAppearance extends UIBarAppearance {
     /**
      * Inline Title text attributes. If the font or color are unspecified, appropriate defaults are supplied.
      */
+    @NotNull
     @Generated
     @Selector("titleTextAttributes")
     public native NSDictionary<String, ?> titleTextAttributes();

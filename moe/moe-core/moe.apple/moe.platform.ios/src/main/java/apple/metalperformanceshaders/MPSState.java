@@ -28,6 +28,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSState
@@ -128,22 +130,25 @@ public class MPSState extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -201,15 +206,17 @@ public class MPSState extends NSObject {
     @Selector("isTemporary")
     public native boolean isTemporary();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] label
      * 
      * A string to help identify this object.
      */
+    @Nullable
     @Generated
     @Selector("label")
     public native String label();
@@ -278,7 +285,7 @@ public class MPSState extends NSObject {
      */
     @Generated
     @Selector("setLabel:")
-    public native void setLabel(String value);
+    public native void setLabel(@Nullable String value);
 
     /**
      * The number of times temporary data may be read by a MPSCNNKernel
@@ -429,15 +436,16 @@ public class MPSState extends NSObject {
      *         The MPSImageDescriptor is assumed to be on an autoreleasepool. Your method must also set the
      *         kernel.offset property.
      */
+    @NotNull
     @Generated
     @Selector("destinationImageDescriptorForSourceImages:sourceStates:forKernel:suggestedDescriptor:")
     public native MPSImageDescriptor destinationImageDescriptorForSourceImagesSourceStatesForKernelSuggestedDescriptor(
-            NSArray<? extends MPSImage> sourceImages, NSArray<? extends MPSState> sourceStates, MPSKernel kernel,
-            MPSImageDescriptor inDescriptor);
+            @NotNull NSArray<? extends MPSImage> sourceImages, @Nullable NSArray<? extends MPSState> sourceStates,
+            @NotNull MPSKernel kernel, @NotNull MPSImageDescriptor inDescriptor);
 
     @Generated
     @Selector("initWithDevice:bufferSize:")
-    public native MPSState initWithDeviceBufferSize(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+    public native MPSState initWithDeviceBufferSize(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
             @NUInt long bufferSize);
 
     /**
@@ -452,13 +460,13 @@ public class MPSState extends NSObject {
      */
     @Generated
     @Selector("initWithDevice:resourceList:")
-    public native MPSState initWithDeviceResourceList(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            MPSStateResourceList resourceList);
+    public native MPSState initWithDeviceResourceList(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull MPSStateResourceList resourceList);
 
     @Generated
     @Selector("initWithDevice:textureDescriptor:")
-    public native MPSState initWithDeviceTextureDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            MTLTextureDescriptor descriptor);
+    public native MPSState initWithDeviceTextureDescriptor(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull MTLTextureDescriptor descriptor);
 
     /**
      * Create a MPSState with a non-temporary MTLResource
@@ -467,7 +475,7 @@ public class MPSState extends NSObject {
      */
     @Generated
     @Selector("initWithResource:")
-    public native MPSState initWithResource(@Mapped(ObjCObjectMapper.class) MTLResource resource);
+    public native MPSState initWithResource(@Nullable @Mapped(ObjCObjectMapper.class) MTLResource resource);
 
     /**
      * Create a state object with a list of MTLResources
@@ -479,7 +487,7 @@ public class MPSState extends NSObject {
      */
     @Generated
     @Selector("initWithResources:")
-    public native MPSState initWithResources(NSArray<?> resources);
+    public native MPSState initWithResources(@Nullable NSArray<?> resources);
 
     /**
      * Get the private MTLResource underlying the MPSState
@@ -508,6 +516,7 @@ public class MPSState extends NSObject {
      * API-Since: 11.0
      * Deprecated-Since: 12.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("resource")
@@ -540,6 +549,7 @@ public class MPSState extends NSObject {
      *                       -bufferSizeAtIndex: or -textureInfoAtIndex: instead, as these will
      *                       not force the creation of the MTLResource.
      */
+    @Nullable
     @Generated
     @Selector("resourceAtIndex:allocateMemory:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -606,17 +616,19 @@ public class MPSState extends NSObject {
      */
     @Generated
     @Selector("synchronizeOnCommandBuffer:")
-    public native void synchronizeOnCommandBuffer(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
+    public native void synchronizeOnCommandBuffer(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
 
     /**
      * Create a new autoreleased temporary state object without underlying resource
      * 
      * @param cmdBuf The command buffer with which the temporary resource is associated
      */
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:")
     public static native MPSState temporaryStateWithCommandBuffer(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
 
     /**
      * Create a MPSState holding a temporary MTLBuffer
@@ -624,10 +636,11 @@ public class MPSState extends NSObject {
      * @param cmdBuf     The command buffer against which the temporary resource is allocated
      * @param bufferSize The size of the buffer in bytes
      */
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:bufferSize:")
     public static native MPSState temporaryStateWithCommandBufferBufferSize(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
 
     /**
      * Initialize a temporary state to hold a number of textures and buffers
@@ -636,10 +649,12 @@ public class MPSState extends NSObject {
      * 
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:resourceList:")
     public static native MPSState temporaryStateWithCommandBufferResourceList(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSStateResourceList resourceList);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSStateResourceList resourceList);
 
     /**
      * Create a MPSState holding a temporary MTLTexture
@@ -647,10 +662,11 @@ public class MPSState extends NSObject {
      * @param cmdBuf     The command buffer against which the temporary resource is allocated
      * @param descriptor A descriptor for the new temporary texture
      */
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:textureDescriptor:")
     public static native MPSState temporaryStateWithCommandBufferTextureDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MTLTextureDescriptor descriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NotNull MTLTextureDescriptor descriptor);
 
     /**
      * Return the texture size {width,height,depth} or {0,0,0} if it is not a MTLTexture

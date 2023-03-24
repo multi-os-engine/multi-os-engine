@@ -39,6 +39,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Defines a spatial directive.
@@ -76,22 +78,25 @@ public class GKGoal extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -113,7 +118,7 @@ public class GKGoal extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("goalToAlignWithAgents:maxDistance:maxAngle:")
-    public static native GKGoal goalToAlignWithAgentsMaxDistanceMaxAngle(NSArray<? extends GKAgent> agents,
+    public static native GKGoal goalToAlignWithAgentsMaxDistanceMaxAngle(@NotNull NSArray<? extends GKAgent> agents,
             float maxDistance, float maxAngle);
 
     /**
@@ -123,7 +128,7 @@ public class GKGoal extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("goalToAvoidAgents:maxPredictionTime:")
-    public static native GKGoal goalToAvoidAgentsMaxPredictionTime(NSArray<? extends GKAgent> agents,
+    public static native GKGoal goalToAvoidAgentsMaxPredictionTime(@NotNull NSArray<? extends GKAgent> agents,
             double maxPredictionTime);
 
     /**
@@ -133,7 +138,7 @@ public class GKGoal extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("goalToAvoidObstacles:maxPredictionTime:")
-    public static native GKGoal goalToAvoidObstaclesMaxPredictionTime(NSArray<? extends GKObstacle> obstacles,
+    public static native GKGoal goalToAvoidObstaclesMaxPredictionTime(@NotNull NSArray<? extends GKObstacle> obstacles,
             double maxPredictionTime);
 
     /**
@@ -145,7 +150,7 @@ public class GKGoal extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("goalToCohereWithAgents:maxDistance:maxAngle:")
-    public static native GKGoal goalToCohereWithAgentsMaxDistanceMaxAngle(NSArray<? extends GKAgent> agents,
+    public static native GKGoal goalToCohereWithAgentsMaxDistanceMaxAngle(@NotNull NSArray<? extends GKAgent> agents,
             float maxDistance, float maxAngle);
 
     /**
@@ -155,7 +160,7 @@ public class GKGoal extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("goalToFleeAgent:")
-    public static native GKGoal goalToFleeAgent(GKAgent agent);
+    public static native GKGoal goalToFleeAgent(@NotNull GKAgent agent);
 
     /**
      * Creates a goal that will attempt to follow the given path
@@ -166,7 +171,7 @@ public class GKGoal extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("goalToFollowPath:maxPredictionTime:forward:")
-    public static native GKGoal goalToFollowPathMaxPredictionTimeForward(GKPath path, double maxPredictionTime,
+    public static native GKGoal goalToFollowPathMaxPredictionTimeForward(@NotNull GKPath path, double maxPredictionTime,
             boolean forward);
 
     /**
@@ -177,7 +182,8 @@ public class GKGoal extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("goalToInterceptAgent:maxPredictionTime:")
-    public static native GKGoal goalToInterceptAgentMaxPredictionTime(GKAgent target, double maxPredictionTime);
+    public static native GKGoal goalToInterceptAgentMaxPredictionTime(@NotNull GKAgent target,
+            double maxPredictionTime);
 
     /**
      * Creates a goal that attempts to change our momentum to reach the target speed
@@ -195,7 +201,7 @@ public class GKGoal extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("goalToSeekAgent:")
-    public static native GKGoal goalToSeekAgent(GKAgent agent);
+    public static native GKGoal goalToSeekAgent(@NotNull GKAgent agent);
 
     /**
      * Creates a goal that tries to repel this agent away from the other agents and attempts to prevent overlap
@@ -206,7 +212,7 @@ public class GKGoal extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("goalToSeparateFromAgents:maxDistance:maxAngle:")
-    public static native GKGoal goalToSeparateFromAgentsMaxDistanceMaxAngle(NSArray<? extends GKAgent> agents,
+    public static native GKGoal goalToSeparateFromAgentsMaxDistanceMaxAngle(@NotNull NSArray<? extends GKAgent> agents,
             float maxDistance, float maxAngle);
 
     /**
@@ -217,7 +223,7 @@ public class GKGoal extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("goalToStayOnPath:maxPredictionTime:")
-    public static native GKGoal goalToStayOnPathMaxPredictionTime(GKPath path, double maxPredictionTime);
+    public static native GKGoal goalToStayOnPathMaxPredictionTime(@NotNull GKPath path, double maxPredictionTime);
 
     /**
      * Creates a goal that will make the agent appear to wander, aimlessly moving forward and turning randomly
@@ -250,9 +256,10 @@ public class GKGoal extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -280,11 +287,12 @@ public class GKGoal extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("init")

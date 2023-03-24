@@ -14,6 +14,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MPSNNPadding
@@ -105,18 +107,20 @@ public interface MPSNNPadding extends NSSecureCoding {
      *         The MPSImageDescriptor is assumed to be on an autoreleasepool. Your method must also set the
      *         kernel.offset property.
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("destinationImageDescriptorForSourceImages:sourceStates:forKernel:suggestedDescriptor:")
     default MPSImageDescriptor destinationImageDescriptorForSourceImagesSourceStatesForKernelSuggestedDescriptor(
-            NSArray<? extends MPSImage> sourceImages, NSArray<? extends MPSState> sourceStates, MPSKernel kernel,
-            MPSImageDescriptor inDescriptor) {
+            @NotNull NSArray<? extends MPSImage> sourceImages, @Nullable NSArray<? extends MPSState> sourceStates,
+            @NotNull MPSKernel kernel, @NotNull MPSImageDescriptor inDescriptor) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * FIXME: to be made @required
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("label")
@@ -137,6 +141,7 @@ public interface MPSNNPadding extends NSSecureCoding {
      * 
      * API-Since: 11.3
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("inverse")

@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSGRUDescriptor
@@ -111,22 +113,25 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -140,6 +145,7 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * 
      *         API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("createGRUDescriptorWithInputFeatureChannels:outputFeatureChannels:")
     public static native MPSGRUDescriptor createGRUDescriptorWithInputFeatureChannelsOutputFeatureChannels(
@@ -188,6 +194,7 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * Contains weights 'Wz_ij', bias 'bz_i' and neuron 'gz' from the GRU formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("inputGateInputWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -199,6 +206,7 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * Contains weights 'Uz_ij' from the GRU formula.
      * If nil then assumed zero weights. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("inputGateRecurrentWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -221,9 +229,10 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -236,6 +245,7 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * Contains weights 'Vh_ij' - can be used to implement the "Minimally Gated Unit".
      * If nil then assumed zero weights. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("outputGateInputGateWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -247,6 +257,7 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * Contains weights 'Wh_ij', bias 'bh_i' and neuron 'gh' from the GRU formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping).Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("outputGateInputWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -258,6 +269,7 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * Contains weights 'Uh_ij' from the GRU formula.
      * If nil then assumed zero weights. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("outputGateRecurrentWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -269,6 +281,7 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * Contains weights 'Wr_ij', bias 'br_i' and neuron 'gr' from the GRU formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping).Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("recurrentGateInputWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -280,6 +293,7 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      * Contains weights 'Ur_ij' from the GRU formula.
      * If nil then assumed zero weights.Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("recurrentGateRecurrentWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -321,7 +335,8 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      */
     @Generated
     @Selector("setInputGateInputWeights:")
-    public native void setInputGateInputWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setInputGateInputWeights(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
      * [@property] inputGateRecurrentWeights
@@ -331,7 +346,8 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      */
     @Generated
     @Selector("setInputGateRecurrentWeights:")
-    public native void setInputGateRecurrentWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setInputGateRecurrentWeights(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
      * [@property] outputGateInputGateWeights
@@ -341,7 +357,8 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      */
     @Generated
     @Selector("setOutputGateInputGateWeights:")
-    public native void setOutputGateInputGateWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setOutputGateInputGateWeights(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
      * [@property] outputGateInputWeights
@@ -351,7 +368,8 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      */
     @Generated
     @Selector("setOutputGateInputWeights:")
-    public native void setOutputGateInputWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setOutputGateInputWeights(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
      * [@property] outputGateRecurrentWeights
@@ -361,7 +379,8 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      */
     @Generated
     @Selector("setOutputGateRecurrentWeights:")
-    public native void setOutputGateRecurrentWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setOutputGateRecurrentWeights(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
      * [@property] recurrentGateInputWeights
@@ -371,7 +390,8 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      */
     @Generated
     @Selector("setRecurrentGateInputWeights:")
-    public native void setRecurrentGateInputWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setRecurrentGateInputWeights(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
      * [@property] recurrentGateRecurrentWeights
@@ -382,7 +402,7 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
     @Generated
     @Selector("setRecurrentGateRecurrentWeights:")
     public native void setRecurrentGateRecurrentWeights(
-            @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     @Generated
     @Selector("setVersion:")

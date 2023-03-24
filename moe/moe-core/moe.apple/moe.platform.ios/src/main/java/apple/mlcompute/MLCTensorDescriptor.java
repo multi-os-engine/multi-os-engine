@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCTensorDescriptor
@@ -62,7 +64,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] batchSizePerSequenceStep
@@ -72,24 +74,28 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * We populate this only when sequenceLengths is valid. The length of this array should be
      * the maximum sequence length in sequenceLengths (i.e sequenceLengths[0]).
      */
+    @Nullable
     @Generated
     @Selector("batchSizePerSequenceStep")
     public native NSArray<? extends NSNumber> batchSizePerSequenceStep();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -103,6 +109,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * @param dataType            The tensor data type
      * @return A new MLCTensorDescriptor object or nil if failure.
      */
+    @Nullable
     @Generated
     @Selector("convolutionBiasesDescriptorWithFeatureChannelCount:dataType:")
     public static native MLCTensorDescriptor convolutionBiasesDescriptorWithFeatureChannelCountDataType(
@@ -118,6 +125,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * @param dataType                  The tensor data type
      * @return A new MLCTensorDescriptor object or nil if failure.
      */
+    @Nullable
     @Generated
     @Selector("convolutionWeightsDescriptorWithInputFeatureChannelCount:outputFeatureChannelCount:dataType:")
     public static native MLCTensorDescriptor convolutionWeightsDescriptorWithInputFeatureChannelCountOutputFeatureChannelCountDataType(
@@ -135,17 +143,19 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * @param dataType                  The tensor data type
      * @return A new MLCTensorDescriptor object or nil if failure.
      */
+    @Nullable
     @Generated
     @Selector("convolutionWeightsDescriptorWithWidth:height:inputFeatureChannelCount:outputFeatureChannelCount:dataType:")
     public static native MLCTensorDescriptor convolutionWeightsDescriptorWithWidthHeightInputFeatureChannelCountOutputFeatureChannelCountDataType(
             @NUInt long width, @NUInt long height, @NUInt long inputFeatureChannelCount,
             @NUInt long outputFeatureChannelCount, int dataType);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] dataType
@@ -173,7 +183,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("descriptorWithShape:dataType:")
-    public static native MLCTensorDescriptor descriptorWithShapeDataType(NSArray<? extends NSNumber> shape,
+    public static native MLCTensorDescriptor descriptorWithShapeDataType(@NotNull NSArray<? extends NSNumber> shape,
             int dataType);
 
     /**
@@ -190,8 +200,8 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("descriptorWithShape:sequenceLengths:sortedSequences:dataType:")
     public static native MLCTensorDescriptor descriptorWithShapeSequenceLengthsSortedSequencesDataType(
-            NSArray<? extends NSNumber> shape, NSArray<? extends NSNumber> sequenceLengths, boolean sortedSequences,
-            int dataType);
+            @NotNull NSArray<? extends NSNumber> shape, @NotNull NSArray<? extends NSNumber> sequenceLengths,
+            boolean sortedSequences, int dataType);
 
     /**
      * Create a MLCTensorDescriptor object
@@ -263,9 +273,10 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] maxTensorDimensions
@@ -295,6 +306,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * 
      * TODO
      */
+    @Nullable
     @Generated
     @Selector("sequenceLengths")
     public native NSArray<? extends NSNumber> sequenceLengths();
@@ -308,6 +320,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * 
      * The size in each dimension
      */
+    @NotNull
     @Generated
     @Selector("shape")
     public native NSArray<? extends NSNumber> shape();
@@ -326,6 +339,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * 
      * The stride in bytes in each dimension
      */
+    @NotNull
     @Generated
     @Selector("stride")
     public native NSArray<? extends NSNumber> stride();

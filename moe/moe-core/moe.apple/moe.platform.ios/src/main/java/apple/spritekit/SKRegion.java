@@ -46,6 +46,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -80,22 +82,25 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -116,6 +121,7 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * A shared infinite region
      */
+    @NotNull
     @Generated
     @Selector("infiniteRegion")
     public static native SKRegion infiniteRegion();
@@ -137,9 +143,10 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -174,15 +181,16 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("containsPoint:")
     public native boolean containsPoint(@ByValue CGPoint point);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -190,7 +198,7 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKRegion initWithCoder(NSCoder coder);
+    public native SKRegion initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Create a region bounded by a CGPath. Note that this option can be
@@ -198,7 +206,7 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("initWithPath:")
-    public native SKRegion initWithPath(CGPathRef path);
+    public native SKRegion initWithPath(@NotNull CGPathRef path);
 
     /**
      * Create a circular region with radius
@@ -219,10 +227,12 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
      * The inverse of the infiniteRegion is an empty region.
      * Subclasses of SKRegion need to provide an implementation of inverseRegion.
      */
+    @NotNull
     @Generated
     @Selector("inverseRegion")
     public native SKRegion inverseRegion();
 
+    @Nullable
     @Generated
     @Selector("path")
     public native CGPathRef path();
@@ -230,23 +240,26 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Create a new region that is the original region minus the supplied region
      */
+    @NotNull
     @Generated
     @Selector("regionByDifferenceFromRegion:")
-    public native SKRegion regionByDifferenceFromRegion(SKRegion region);
+    public native SKRegion regionByDifferenceFromRegion(@NotNull SKRegion region);
 
     /**
      * Create a new region that is the region covered by the original region and the supplied region
      */
+    @NotNull
     @Generated
     @Selector("regionByIntersectionWithRegion:")
-    public native SKRegion regionByIntersectionWithRegion(SKRegion region);
+    public native SKRegion regionByIntersectionWithRegion(@NotNull SKRegion region);
 
     /**
      * Create a new region that is the original region plus the supplied region
      */
+    @NotNull
     @Generated
     @Selector("regionByUnionWithRegion:")
-    public native SKRegion regionByUnionWithRegion(SKRegion region);
+    public native SKRegion regionByUnionWithRegion(@NotNull SKRegion region);
 
     @Generated
     @Selector("supportsSecureCoding")

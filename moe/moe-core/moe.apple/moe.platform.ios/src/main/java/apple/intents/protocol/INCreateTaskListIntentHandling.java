@@ -12,6 +12,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INCreateTaskListIntent. By implementing this protocol, a class can
@@ -48,8 +49,8 @@ public interface INCreateTaskListIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmCreateTaskList:completion:")
-    default void confirmCreateTaskListCompletion(INCreateTaskListIntent intent,
-            @ObjCBlock(name = "call_confirmCreateTaskListCompletion") Block_confirmCreateTaskListCompletion completion) {
+    default void confirmCreateTaskListCompletion(@NotNull INCreateTaskListIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmCreateTaskListCompletion") Block_confirmCreateTaskListCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -57,7 +58,7 @@ public interface INCreateTaskListIntentHandling {
     @Generated
     public interface Block_confirmCreateTaskListCompletion {
         @Generated
-        void call_confirmCreateTaskListCompletion(INCreateTaskListIntentResponse response);
+        void call_confirmCreateTaskListCompletion(@NotNull INCreateTaskListIntentResponse response);
     }
 
     /**
@@ -73,21 +74,21 @@ public interface INCreateTaskListIntentHandling {
      */
     @Generated
     @Selector("handleCreateTaskList:completion:")
-    void handleCreateTaskListCompletion(INCreateTaskListIntent intent,
-            @ObjCBlock(name = "call_handleCreateTaskListCompletion") Block_handleCreateTaskListCompletion completion);
+    void handleCreateTaskListCompletion(@NotNull INCreateTaskListIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleCreateTaskListCompletion") Block_handleCreateTaskListCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleCreateTaskListCompletion {
         @Generated
-        void call_handleCreateTaskListCompletion(INCreateTaskListIntentResponse response);
+        void call_handleCreateTaskListCompletion(@NotNull INCreateTaskListIntentResponse response);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveGroupNameForCreateTaskList:withCompletion:")
-    default void resolveGroupNameForCreateTaskListWithCompletion(INCreateTaskListIntent intent,
-            @ObjCBlock(name = "call_resolveGroupNameForCreateTaskListWithCompletion") Block_resolveGroupNameForCreateTaskListWithCompletion completion) {
+    default void resolveGroupNameForCreateTaskListWithCompletion(@NotNull INCreateTaskListIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveGroupNameForCreateTaskListWithCompletion") Block_resolveGroupNameForCreateTaskListWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -95,14 +96,15 @@ public interface INCreateTaskListIntentHandling {
     @Generated
     public interface Block_resolveGroupNameForCreateTaskListWithCompletion {
         @Generated
-        void call_resolveGroupNameForCreateTaskListWithCompletion(INSpeakableStringResolutionResult resolutionResult);
+        void call_resolveGroupNameForCreateTaskListWithCompletion(
+                @NotNull INSpeakableStringResolutionResult resolutionResult);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveTaskTitlesForCreateTaskList:withCompletion:")
-    default void resolveTaskTitlesForCreateTaskListWithCompletion(INCreateTaskListIntent intent,
-            @ObjCBlock(name = "call_resolveTaskTitlesForCreateTaskListWithCompletion") Block_resolveTaskTitlesForCreateTaskListWithCompletion completion) {
+    default void resolveTaskTitlesForCreateTaskListWithCompletion(@NotNull INCreateTaskListIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveTaskTitlesForCreateTaskListWithCompletion") Block_resolveTaskTitlesForCreateTaskListWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -111,7 +113,7 @@ public interface INCreateTaskListIntentHandling {
     public interface Block_resolveTaskTitlesForCreateTaskListWithCompletion {
         @Generated
         void call_resolveTaskTitlesForCreateTaskListWithCompletion(
-                NSArray<? extends INSpeakableStringResolutionResult> resolutionResults);
+                @NotNull NSArray<? extends INSpeakableStringResolutionResult> resolutionResults);
     }
 
     /**
@@ -128,8 +130,8 @@ public interface INCreateTaskListIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveTitleForCreateTaskList:withCompletion:")
-    default void resolveTitleForCreateTaskListWithCompletion(INCreateTaskListIntent intent,
-            @ObjCBlock(name = "call_resolveTitleForCreateTaskListWithCompletion") Block_resolveTitleForCreateTaskListWithCompletion completion) {
+    default void resolveTitleForCreateTaskListWithCompletion(@NotNull INCreateTaskListIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveTitleForCreateTaskListWithCompletion") Block_resolveTitleForCreateTaskListWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -137,6 +139,7 @@ public interface INCreateTaskListIntentHandling {
     @Generated
     public interface Block_resolveTitleForCreateTaskListWithCompletion {
         @Generated
-        void call_resolveTitleForCreateTaskListWithCompletion(INSpeakableStringResolutionResult resolutionResult);
+        void call_resolveTitleForCreateTaskListWithCompletion(
+                @NotNull INSpeakableStringResolutionResult resolutionResult);
     }
 }

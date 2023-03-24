@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -76,22 +78,25 @@ public class PHAsset extends PHObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -107,10 +112,11 @@ public class PHAsset extends PHObject {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("fetchAssetsInAssetCollection:options:")
     public static native PHFetchResult<? extends PHAsset> fetchAssetsInAssetCollectionOptions(
-            PHAssetCollection assetCollection, PHFetchOptions options);
+            @NotNull PHAssetCollection assetCollection, @Nullable PHFetchOptions options);
 
     /**
      * assetURLs are URLs retrieved from ALAsset's ALAssetPropertyAssetURL
@@ -119,54 +125,60 @@ public class PHAsset extends PHObject {
      * Deprecated-Since: 11.0
      * Deprecated-Message: Will be removed in a future release
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("fetchAssetsWithALAssetURLs:options:")
     public static native PHFetchResult<? extends PHAsset> fetchAssetsWithALAssetURLsOptions(
-            NSArray<? extends NSURL> assetURLs, PHFetchOptions options);
+            @NotNull NSArray<? extends NSURL> assetURLs, @Nullable PHFetchOptions options);
 
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("fetchAssetsWithBurstIdentifier:options:")
-    public static native PHFetchResult<? extends PHAsset> fetchAssetsWithBurstIdentifierOptions(String burstIdentifier,
-            PHFetchOptions options);
+    public static native PHFetchResult<? extends PHAsset> fetchAssetsWithBurstIdentifierOptions(
+            @NotNull String burstIdentifier, @Nullable PHFetchOptions options);
 
     /**
      * includes hidden assets by default
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("fetchAssetsWithLocalIdentifiers:options:")
     public static native PHFetchResult<? extends PHAsset> fetchAssetsWithLocalIdentifiersOptions(
-            NSArray<String> identifiers, PHFetchOptions options);
+            @NotNull NSArray<String> identifiers, @Nullable PHFetchOptions options);
 
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("fetchAssetsWithMediaType:options:")
     public static native PHFetchResult<? extends PHAsset> fetchAssetsWithMediaTypeOptions(@NInt long mediaType,
-            PHFetchOptions options);
+            @Nullable PHFetchOptions options);
 
     /**
      * Fetches PHAssetSourceTypeUserLibrary assets by default (use includeAssetSourceTypes option to override)
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("fetchAssetsWithOptions:")
-    public static native PHFetchResult<? extends PHAsset> fetchAssetsWithOptions(PHFetchOptions options);
+    public static native PHFetchResult<? extends PHAsset> fetchAssetsWithOptions(@Nullable PHFetchOptions options);
 
     /**
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("fetchKeyAssetsInAssetCollection:options:")
     public static native PHFetchResult<? extends PHAsset> fetchKeyAssetsInAssetCollectionOptions(
-            PHAssetCollection assetCollection, PHFetchOptions options);
+            @NotNull PHAssetCollection assetCollection, @Nullable PHFetchOptions options);
 
     @Generated
     @Selector("hash")
@@ -190,9 +202,10 @@ public class PHAsset extends PHObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -223,6 +236,7 @@ public class PHAsset extends PHObject {
     /**
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("burstIdentifier")
     public native String burstIdentifier();
@@ -252,6 +266,7 @@ public class PHAsset extends PHObject {
     /**
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("creationDate")
     public native NSDate creationDate();
@@ -287,6 +302,7 @@ public class PHAsset extends PHObject {
     /**
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("location")
     public native CLLocation location();
@@ -310,6 +326,7 @@ public class PHAsset extends PHObject {
     /**
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("modificationDate")
     public native NSDate modificationDate();
@@ -346,8 +363,8 @@ public class PHAsset extends PHObject {
     @Selector("requestContentEditingInputWithOptions:completionHandler:")
     @NUInt
     public native long requestContentEditingInputWithOptionsCompletionHandler(
-            PHContentEditingInputRequestOptions options,
-            @ObjCBlock(name = "call_requestContentEditingInputWithOptionsCompletionHandler") Block_requestContentEditingInputWithOptionsCompletionHandler completionHandler);
+            @Nullable PHContentEditingInputRequestOptions options,
+            @NotNull @ObjCBlock(name = "call_requestContentEditingInputWithOptionsCompletionHandler") Block_requestContentEditingInputWithOptionsCompletionHandler completionHandler);
 
     /**
      * API-Since: 9.0
@@ -361,8 +378,8 @@ public class PHAsset extends PHObject {
     @Generated
     public interface Block_requestContentEditingInputWithOptionsCompletionHandler {
         @Generated
-        void call_requestContentEditingInputWithOptionsCompletionHandler(PHContentEditingInput contentEditingInput,
-                NSDictionary<?, ?> info);
+        void call_requestContentEditingInputWithOptionsCompletionHandler(
+                @Nullable PHContentEditingInput contentEditingInput, @NotNull NSDictionary<?, ?> info);
     }
 
     /**
@@ -382,6 +399,7 @@ public class PHAsset extends PHObject {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("adjustmentFormatIdentifier")
     public native String adjustmentFormatIdentifier();

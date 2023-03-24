@@ -28,6 +28,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * NSTextStorage delegate methods ***
@@ -45,8 +46,8 @@ public interface NSTextStorageDelegate {
     @Generated
     @IsOptional
     @Selector("textStorage:didProcessEditing:range:changeInLength:")
-    default void textStorageDidProcessEditingRangeChangeInLength(NSTextStorage textStorage, @NUInt long editedMask,
-            @ByValue NSRange editedRange, @NInt long delta) {
+    default void textStorageDidProcessEditingRangeChangeInLength(@NotNull NSTextStorage textStorage,
+            @NUInt long editedMask, @ByValue NSRange editedRange, @NInt long delta) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -58,8 +59,8 @@ public interface NSTextStorageDelegate {
     @Generated
     @IsOptional
     @Selector("textStorage:willProcessEditing:range:changeInLength:")
-    default void textStorageWillProcessEditingRangeChangeInLength(NSTextStorage textStorage, @NUInt long editedMask,
-            @ByValue NSRange editedRange, @NInt long delta) {
+    default void textStorageWillProcessEditingRangeChangeInLength(@NotNull NSTextStorage textStorage,
+            @NUInt long editedMask, @ByValue NSRange editedRange, @NInt long delta) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

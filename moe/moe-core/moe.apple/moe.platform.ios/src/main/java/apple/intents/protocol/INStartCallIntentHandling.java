@@ -15,6 +15,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INStartCallIntent. By implementing this protocol, a class can provide
@@ -48,8 +49,8 @@ public interface INStartCallIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmStartCall:completion:")
-    default void confirmStartCallCompletion(INStartCallIntent intent,
-            @ObjCBlock(name = "call_confirmStartCallCompletion") Block_confirmStartCallCompletion completion) {
+    default void confirmStartCallCompletion(@NotNull INStartCallIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmStartCallCompletion") Block_confirmStartCallCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -57,7 +58,7 @@ public interface INStartCallIntentHandling {
     @Generated
     public interface Block_confirmStartCallCompletion {
         @Generated
-        void call_confirmStartCallCompletion(INStartCallIntentResponse response);
+        void call_confirmStartCallCompletion(@NotNull INStartCallIntentResponse response);
     }
 
     /**
@@ -73,21 +74,21 @@ public interface INStartCallIntentHandling {
      */
     @Generated
     @Selector("handleStartCall:completion:")
-    void handleStartCallCompletion(INStartCallIntent intent,
-            @ObjCBlock(name = "call_handleStartCallCompletion") Block_handleStartCallCompletion completion);
+    void handleStartCallCompletion(@NotNull INStartCallIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleStartCallCompletion") Block_handleStartCallCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleStartCallCompletion {
         @Generated
-        void call_handleStartCallCompletion(INStartCallIntentResponse response);
+        void call_handleStartCallCompletion(@NotNull INStartCallIntentResponse response);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveCallCapabilityForStartCall:withCompletion:")
-    default void resolveCallCapabilityForStartCallWithCompletion(INStartCallIntent intent,
-            @ObjCBlock(name = "call_resolveCallCapabilityForStartCallWithCompletion") Block_resolveCallCapabilityForStartCallWithCompletion completion) {
+    default void resolveCallCapabilityForStartCallWithCompletion(@NotNull INStartCallIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveCallCapabilityForStartCallWithCompletion") Block_resolveCallCapabilityForStartCallWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -96,14 +97,14 @@ public interface INStartCallIntentHandling {
     public interface Block_resolveCallCapabilityForStartCallWithCompletion {
         @Generated
         void call_resolveCallCapabilityForStartCallWithCompletion(
-                INStartCallCallCapabilityResolutionResult resolutionResult);
+                @NotNull INStartCallCallCapabilityResolutionResult resolutionResult);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveContactsForStartCall:withCompletion:")
-    default void resolveContactsForStartCallWithCompletion(INStartCallIntent intent,
-            @ObjCBlock(name = "call_resolveContactsForStartCallWithCompletion") Block_resolveContactsForStartCallWithCompletion completion) {
+    default void resolveContactsForStartCallWithCompletion(@NotNull INStartCallIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveContactsForStartCallWithCompletion") Block_resolveContactsForStartCallWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -112,14 +113,14 @@ public interface INStartCallIntentHandling {
     public interface Block_resolveContactsForStartCallWithCompletion {
         @Generated
         void call_resolveContactsForStartCallWithCompletion(
-                NSArray<? extends INStartCallContactResolutionResult> resolutionResults);
+                @NotNull NSArray<? extends INStartCallContactResolutionResult> resolutionResults);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveDestinationTypeForStartCall:withCompletion:")
-    default void resolveDestinationTypeForStartCallWithCompletion(INStartCallIntent intent,
-            @ObjCBlock(name = "call_resolveDestinationTypeForStartCallWithCompletion") Block_resolveDestinationTypeForStartCallWithCompletion completion) {
+    default void resolveDestinationTypeForStartCallWithCompletion(@NotNull INStartCallIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveDestinationTypeForStartCallWithCompletion") Block_resolveDestinationTypeForStartCallWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -128,7 +129,7 @@ public interface INStartCallIntentHandling {
     public interface Block_resolveDestinationTypeForStartCallWithCompletion {
         @Generated
         void call_resolveDestinationTypeForStartCallWithCompletion(
-                INCallDestinationTypeResolutionResult resolutionResult);
+                @NotNull INCallDestinationTypeResolutionResult resolutionResult);
     }
 
     /**
@@ -147,8 +148,8 @@ public interface INStartCallIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveCallRecordToCallBackForStartCall:withCompletion:")
-    default void resolveCallRecordToCallBackForStartCallWithCompletion(INStartCallIntent intent,
-            @ObjCBlock(name = "call_resolveCallRecordToCallBackForStartCallWithCompletion") Block_resolveCallRecordToCallBackForStartCallWithCompletion completion) {
+    default void resolveCallRecordToCallBackForStartCallWithCompletion(@NotNull INStartCallIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveCallRecordToCallBackForStartCallWithCompletion") Block_resolveCallRecordToCallBackForStartCallWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -156,6 +157,7 @@ public interface INStartCallIntentHandling {
     @Generated
     public interface Block_resolveCallRecordToCallBackForStartCallWithCompletion {
         @Generated
-        void call_resolveCallRecordToCallBackForStartCallWithCompletion(INCallRecordResolutionResult resolutionResult);
+        void call_resolveCallRecordToCallBackForStartCallWithCompletion(
+                @NotNull INCallRecordResolutionResult resolutionResult);
     }
 }

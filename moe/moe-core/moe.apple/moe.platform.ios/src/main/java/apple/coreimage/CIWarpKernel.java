@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CIWarpKernel is an object that encapsulates a Core Image Kernel Language
@@ -89,22 +91,25 @@ public class CIWarpKernel extends CIKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -153,16 +158,18 @@ public class CIWarpKernel extends CIKernel {
     @Deprecated
     @Generated
     @Selector("kernelWithString:")
-    public static native CIWarpKernel kernelWithString(String string);
+    public static native CIWarpKernel kernelWithString(@NotNull String string);
 
+    @Nullable
     @Deprecated
     @Generated
     @Selector("kernelsWithString:")
-    public static native NSArray<? extends CIKernel> kernelsWithString(String string);
+    public static native NSArray<? extends CIKernel> kernelsWithString(@NotNull String string);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -207,11 +214,12 @@ public class CIWarpKernel extends CIKernel {
      * kernel function. For example, if the first argument in the kernel is a vec3,
      * then the first object in the array must be a CIVector of count 3.
      */
+    @Nullable
     @Generated
     @Selector("applyWithExtent:roiCallback:inputImage:arguments:")
     public native CIImage applyWithExtentRoiCallbackInputImageArguments(@ByValue CGRect extent,
-            @ObjCBlock(name = "call_applyWithExtentRoiCallbackInputImageArguments") Block_applyWithExtentRoiCallbackInputImageArguments callback,
-            CIImage image, NSArray<?> args);
+            @NotNull @ObjCBlock(name = "call_applyWithExtentRoiCallbackInputImageArguments") Block_applyWithExtentRoiCallbackInputImageArguments callback,
+            @NotNull CIImage image, @Nullable NSArray<?> args);
 
     @Generated
     @Selector("init")
@@ -227,20 +235,23 @@ public class CIWarpKernel extends CIKernel {
 
     @Generated
     @Selector("kernelWithFunctionName:fromMetalLibraryData:error:")
-    public static native CIWarpKernel kernelWithFunctionNameFromMetalLibraryDataError(String name, NSData data,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native CIWarpKernel kernelWithFunctionNameFromMetalLibraryDataError(@NotNull String name,
+            @NotNull NSData data, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("kernelWithFunctionName:fromMetalLibraryData:outputPixelFormat:error:")
-    public static native CIWarpKernel kernelWithFunctionNameFromMetalLibraryDataOutputPixelFormatError(String name,
-            NSData data, int format, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native CIWarpKernel kernelWithFunctionNameFromMetalLibraryDataOutputPixelFormatError(
+            @NotNull String name, @NotNull NSData data, int format,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    @NotNull
     @Generated
     @Selector("kernelNamesFromMetalLibraryData:")
-    public static native NSArray<String> kernelNamesFromMetalLibraryData(NSData data);
+    public static native NSArray<String> kernelNamesFromMetalLibraryData(@NotNull NSData data);
 
+    @Nullable
     @Generated
     @Selector("kernelsWithMetalString:error:")
-    public static native NSArray<? extends CIKernel> kernelsWithMetalStringError(String source,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSArray<? extends CIKernel> kernelsWithMetalStringError(@NotNull String source,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

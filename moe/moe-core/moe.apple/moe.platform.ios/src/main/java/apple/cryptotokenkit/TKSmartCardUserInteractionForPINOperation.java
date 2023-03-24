@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * User interaction for the secure PIN operations on the SmartCard reader.
@@ -60,6 +62,7 @@ public class TKSmartCardUserInteractionForPINOperation extends TKSmartCardUserIn
      * PIN modification 1-3 messages.
      * [@note] Default value: nil
      */
+    @Nullable
     @Generated
     @Selector("PINMessageIndices")
     public native NSArray<? extends NSNumber> PINMessageIndices();
@@ -80,22 +83,25 @@ public class TKSmartCardUserInteractionForPINOperation extends TKSmartCardUserIn
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,9 +140,10 @@ public class TKSmartCardUserInteractionForPINOperation extends TKSmartCardUserIn
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Locale defining the language of displayed messages. If set to nil, the user's current locale is used.
@@ -162,6 +169,7 @@ public class TKSmartCardUserInteractionForPINOperation extends TKSmartCardUserIn
     /**
      * Optional block of returned data (without SW1SW2 bytes).
      */
+    @Nullable
     @Generated
     @Selector("resultData")
     public native NSData resultData();
@@ -199,14 +207,14 @@ public class TKSmartCardUserInteractionForPINOperation extends TKSmartCardUserIn
      */
     @Generated
     @Selector("setPINMessageIndices:")
-    public native void setPINMessageIndices(NSArray<? extends NSNumber> value);
+    public native void setPINMessageIndices(@Nullable NSArray<? extends NSNumber> value);
 
     /**
      * Optional block of returned data (without SW1SW2 bytes).
      */
     @Generated
     @Selector("setResultData:")
-    public native void setResultData(NSData value);
+    public native void setResultData(@Nullable NSData value);
 
     /**
      * SW1SW2 result code.

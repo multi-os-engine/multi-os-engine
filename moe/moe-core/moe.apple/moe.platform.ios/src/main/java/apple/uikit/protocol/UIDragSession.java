@@ -9,6 +9,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -22,6 +23,7 @@ public interface UIDragSession extends UIDragDropSession {
      * Use `localContext` to attach additional information to this drag session,
      * visible only inside the app that started the drag.
      */
+    @Nullable
     @Generated
     @Selector("localContext")
     @MappedReturn(ObjCObjectMapper.class)
@@ -33,5 +35,5 @@ public interface UIDragSession extends UIDragDropSession {
      */
     @Generated
     @Selector("setLocalContext:")
-    void setLocalContext(@Mapped(ObjCObjectMapper.class) Object value);
+    void setLocalContext(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 }

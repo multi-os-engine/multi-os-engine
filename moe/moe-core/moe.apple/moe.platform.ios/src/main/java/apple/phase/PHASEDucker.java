@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] PHASEDucker
@@ -89,22 +91,25 @@ public class PHASEDucker extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -147,6 +152,7 @@ public class PHASEDucker extends NSObject {
      * 
      * The identifier that uniquely represents this ducker.
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -196,8 +202,9 @@ public class PHASEDucker extends NSObject {
     @Generated
     @Selector("initWithEngine:sourceGroups:targetGroups:gain:attackTime:releaseTime:attackCurve:releaseCurve:")
     public native PHASEDucker initWithEngineSourceGroupsTargetGroupsGainAttackTimeReleaseTimeAttackCurveReleaseCurve(
-            PHASEEngine engine, NSSet<? extends PHASEGroup> sourceGroups, NSSet<? extends PHASEGroup> targetGroups,
-            double gain, double attackTime, double releaseTime, @NInt long attackCurve, @NInt long releaseCurve);
+            @NotNull PHASEEngine engine, @NotNull NSSet<? extends PHASEGroup> sourceGroups,
+            @NotNull NSSet<? extends PHASEGroup> targetGroups, double gain, double attackTime, double releaseTime,
+            @NInt long attackCurve, @NInt long releaseCurve);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -225,9 +232,10 @@ public class PHASEDucker extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -272,6 +280,7 @@ public class PHASEDucker extends NSObject {
      * 
      * The source groups that will trigger the ducker when a sound in one of the source groups starts playback.
      */
+    @NotNull
     @Generated
     @Selector("sourceGroups")
     public native NSSet<? extends PHASEGroup> sourceGroups();
@@ -285,6 +294,7 @@ public class PHASEDucker extends NSObject {
      * 
      * The target groups that will be ducked when a sound in one of the source groups triggers the ducker.
      */
+    @NotNull
     @Generated
     @Selector("targetGroups")
     public native NSSet<? extends PHASEGroup> targetGroups();

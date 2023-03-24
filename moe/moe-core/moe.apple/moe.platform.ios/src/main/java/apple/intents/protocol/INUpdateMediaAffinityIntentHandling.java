@@ -13,6 +13,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INUpdateMediaAffinityIntent. By implementing this protocol, a class can
@@ -47,8 +48,8 @@ public interface INUpdateMediaAffinityIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmUpdateMediaAffinity:completion:")
-    default void confirmUpdateMediaAffinityCompletion(INUpdateMediaAffinityIntent intent,
-            @ObjCBlock(name = "call_confirmUpdateMediaAffinityCompletion") Block_confirmUpdateMediaAffinityCompletion completion) {
+    default void confirmUpdateMediaAffinityCompletion(@NotNull INUpdateMediaAffinityIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmUpdateMediaAffinityCompletion") Block_confirmUpdateMediaAffinityCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -56,7 +57,7 @@ public interface INUpdateMediaAffinityIntentHandling {
     @Generated
     public interface Block_confirmUpdateMediaAffinityCompletion {
         @Generated
-        void call_confirmUpdateMediaAffinityCompletion(INUpdateMediaAffinityIntentResponse response);
+        void call_confirmUpdateMediaAffinityCompletion(@NotNull INUpdateMediaAffinityIntentResponse response);
     }
 
     /**
@@ -72,21 +73,21 @@ public interface INUpdateMediaAffinityIntentHandling {
      */
     @Generated
     @Selector("handleUpdateMediaAffinity:completion:")
-    void handleUpdateMediaAffinityCompletion(INUpdateMediaAffinityIntent intent,
-            @ObjCBlock(name = "call_handleUpdateMediaAffinityCompletion") Block_handleUpdateMediaAffinityCompletion completion);
+    void handleUpdateMediaAffinityCompletion(@NotNull INUpdateMediaAffinityIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleUpdateMediaAffinityCompletion") Block_handleUpdateMediaAffinityCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleUpdateMediaAffinityCompletion {
         @Generated
-        void call_handleUpdateMediaAffinityCompletion(INUpdateMediaAffinityIntentResponse response);
+        void call_handleUpdateMediaAffinityCompletion(@NotNull INUpdateMediaAffinityIntentResponse response);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveAffinityTypeForUpdateMediaAffinity:withCompletion:")
-    default void resolveAffinityTypeForUpdateMediaAffinityWithCompletion(INUpdateMediaAffinityIntent intent,
-            @ObjCBlock(name = "call_resolveAffinityTypeForUpdateMediaAffinityWithCompletion") Block_resolveAffinityTypeForUpdateMediaAffinityWithCompletion completion) {
+    default void resolveAffinityTypeForUpdateMediaAffinityWithCompletion(@NotNull INUpdateMediaAffinityIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveAffinityTypeForUpdateMediaAffinityWithCompletion") Block_resolveAffinityTypeForUpdateMediaAffinityWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -95,7 +96,7 @@ public interface INUpdateMediaAffinityIntentHandling {
     public interface Block_resolveAffinityTypeForUpdateMediaAffinityWithCompletion {
         @Generated
         void call_resolveAffinityTypeForUpdateMediaAffinityWithCompletion(
-                INMediaAffinityTypeResolutionResult resolutionResult);
+                @NotNull INMediaAffinityTypeResolutionResult resolutionResult);
     }
 
     /**
@@ -112,8 +113,8 @@ public interface INUpdateMediaAffinityIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveMediaItemsForUpdateMediaAffinity:withCompletion:")
-    default void resolveMediaItemsForUpdateMediaAffinityWithCompletion(INUpdateMediaAffinityIntent intent,
-            @ObjCBlock(name = "call_resolveMediaItemsForUpdateMediaAffinityWithCompletion") Block_resolveMediaItemsForUpdateMediaAffinityWithCompletion completion) {
+    default void resolveMediaItemsForUpdateMediaAffinityWithCompletion(@NotNull INUpdateMediaAffinityIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveMediaItemsForUpdateMediaAffinityWithCompletion") Block_resolveMediaItemsForUpdateMediaAffinityWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -122,6 +123,6 @@ public interface INUpdateMediaAffinityIntentHandling {
     public interface Block_resolveMediaItemsForUpdateMediaAffinityWithCompletion {
         @Generated
         void call_resolveMediaItemsForUpdateMediaAffinityWithCompletion(
-                NSArray<? extends INUpdateMediaAffinityMediaItemResolutionResult> resolutionResults);
+                @NotNull NSArray<? extends INUpdateMediaAffinityMediaItemResolutionResult> resolutionResults);
     }
 }

@@ -35,6 +35,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 2.0
@@ -69,22 +71,25 @@ public class NSOperation extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -119,9 +124,10 @@ public class NSOperation extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -151,7 +157,7 @@ public class NSOperation extends NSObject {
 
     @Generated
     @Selector("addDependency:")
-    public native void addDependency(NSOperation op);
+    public native void addDependency(@NotNull NSOperation op);
 
     @Generated
     @Selector("cancel")
@@ -160,11 +166,13 @@ public class NSOperation extends NSObject {
     /**
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("completionBlock")
     @ObjCBlock(name = "call_completionBlock_ret")
     public native Block_completionBlock_ret completionBlock();
 
+    @NotNull
     @Generated
     @Selector("dependencies")
     public native NSArray<? extends NSOperation> dependencies();
@@ -210,6 +218,7 @@ public class NSOperation extends NSObject {
     /**
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -229,21 +238,22 @@ public class NSOperation extends NSObject {
 
     @Generated
     @Selector("removeDependency:")
-    public native void removeDependency(NSOperation op);
+    public native void removeDependency(@NotNull NSOperation op);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @Selector("setCompletionBlock:")
-    public native void setCompletionBlock(@ObjCBlock(name = "call_setCompletionBlock") Block_setCompletionBlock value);
+    public native void setCompletionBlock(
+            @Nullable @ObjCBlock(name = "call_setCompletionBlock") Block_setCompletionBlock value);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
     /**
      * API-Since: 8.0

@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 6.0
@@ -81,29 +83,32 @@ public class UIActivityViewController extends UIViewController {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -135,9 +140,10 @@ public class UIActivityViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -171,6 +177,7 @@ public class UIActivityViewController extends UIViewController {
      * API-Since: 6.0
      * Deprecated-Since: 8.0
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("completionHandler")
@@ -182,6 +189,7 @@ public class UIActivityViewController extends UIViewController {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("completionWithItemsHandler")
     @ObjCBlock(name = "call_completionWithItemsHandler_ret")
@@ -190,6 +198,7 @@ public class UIActivityViewController extends UIViewController {
     /**
      * default is nil. activity types listed will not be displayed
      */
+    @Nullable
     @Generated
     @Selector("excludedActivityTypes")
     public native NSArray<String> excludedActivityTypes();
@@ -200,16 +209,17 @@ public class UIActivityViewController extends UIViewController {
 
     @Generated
     @Selector("initWithActivityItems:applicationActivities:")
-    public native UIActivityViewController initWithActivityItemsApplicationActivities(NSArray<?> activityItems,
-            NSArray<? extends UIActivity> applicationActivities);
+    public native UIActivityViewController initWithActivityItemsApplicationActivities(@NotNull NSArray<?> activityItems,
+            @Nullable NSArray<? extends UIActivity> applicationActivities);
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIActivityViewController initWithCoder(NSCoder coder);
+    public native UIActivityViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native UIActivityViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native UIActivityViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * set to nil after activity performs or view controller is dismissed
@@ -221,7 +231,7 @@ public class UIActivityViewController extends UIViewController {
     @Deprecated
     @Selector("setCompletionHandler:")
     public native void setCompletionHandler(
-            @ObjCBlock(name = "call_setCompletionHandler") Block_setCompletionHandler value);
+            @Nullable @ObjCBlock(name = "call_setCompletionHandler") Block_setCompletionHandler value);
 
     /**
      * set to nil after activity performs or view controller is dismissed
@@ -231,43 +241,43 @@ public class UIActivityViewController extends UIViewController {
     @Generated
     @Selector("setCompletionWithItemsHandler:")
     public native void setCompletionWithItemsHandler(
-            @ObjCBlock(name = "call_setCompletionWithItemsHandler") Block_setCompletionWithItemsHandler value);
+            @Nullable @ObjCBlock(name = "call_setCompletionWithItemsHandler") Block_setCompletionWithItemsHandler value);
 
     /**
      * default is nil. activity types listed will not be displayed
      */
     @Generated
     @Selector("setExcludedActivityTypes:")
-    public native void setExcludedActivityTypes(NSArray<String> value);
+    public native void setExcludedActivityTypes(@Nullable NSArray<String> value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_completionHandler_ret {
         @Generated
-        void call_completionHandler_ret(String activityType, boolean completed);
+        void call_completionHandler_ret(@Nullable String activityType, boolean completed);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_completionWithItemsHandler_ret {
         @Generated
-        void call_completionWithItemsHandler_ret(String activityType, boolean completed, NSArray<?> returnedItems,
-                NSError activityError);
+        void call_completionWithItemsHandler_ret(@Nullable String activityType, boolean completed,
+                @Nullable NSArray<?> returnedItems, @Nullable NSError activityError);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setCompletionHandler {
         @Generated
-        void call_setCompletionHandler(String activityType, boolean completed);
+        void call_setCompletionHandler(@Nullable String activityType, boolean completed);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setCompletionWithItemsHandler {
         @Generated
-        void call_setCompletionWithItemsHandler(String activityType, boolean completed, NSArray<?> returnedItems,
-                NSError activityError);
+        void call_setCompletionWithItemsHandler(@Nullable String activityType, boolean completed,
+                @Nullable NSArray<?> returnedItems, @Nullable NSError activityError);
     }
 
     /**
@@ -276,7 +286,7 @@ public class UIActivityViewController extends UIViewController {
     @Generated
     @Selector("initWithActivityItemsConfiguration:")
     public native UIActivityViewController initWithActivityItemsConfiguration(
-            @Mapped(ObjCObjectMapper.class) UIActivityItemsConfigurationReading activityItemsConfiguration);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIActivityItemsConfigurationReading activityItemsConfiguration);
 
     /**
      * In some contexts, the activity view controller can elevate a specific activity in the header view to enhance it.

@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.foundation.NSError;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ptr.Ptr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MXMetricManager
@@ -70,7 +72,7 @@ public class MXMetricManager extends NSObject {
      */
     @Generated
     @Selector("addSubscriber:")
-    public native void addSubscriber(@Mapped(ObjCObjectMapper.class) MXMetricManagerSubscriber subscriber);
+    public native void addSubscriber(@NotNull @Mapped(ObjCObjectMapper.class) MXMetricManagerSubscriber subscriber);
 
     @Generated
     @Owned
@@ -84,22 +86,25 @@ public class MXMetricManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -138,9 +143,10 @@ public class MXMetricManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * makeLogHandleWithCategory:category
@@ -152,9 +158,10 @@ public class MXMetricManager extends NSObject {
      * @param category A string used to define a log category
      * @return A log handle that can be used with the logging framework.
      */
+    @NotNull
     @Generated
     @Selector("makeLogHandleWithCategory:")
-    public static native NSObject makeLogHandleWithCategory(String category);
+    public static native NSObject makeLogHandleWithCategory(@NotNull String category);
 
     @Generated
     @Owned
@@ -166,6 +173,7 @@ public class MXMetricManager extends NSObject {
      * 
      * A list of past metric payloads received.
      */
+    @NotNull
     @Generated
     @Selector("pastPayloads")
     public native NSArray<? extends MXMetricPayload> pastPayloads();
@@ -181,7 +189,7 @@ public class MXMetricManager extends NSObject {
      */
     @Generated
     @Selector("removeSubscriber:")
-    public native void removeSubscriber(@Mapped(ObjCObjectMapper.class) MXMetricManagerSubscriber subscriber);
+    public native void removeSubscriber(@NotNull @Mapped(ObjCObjectMapper.class) MXMetricManagerSubscriber subscriber);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -200,6 +208,7 @@ public class MXMetricManager extends NSObject {
      * 
      * Singleton instance of MXMetricManager.
      */
+    @NotNull
     @Generated
     @Selector("sharedManager")
     public static native MXMetricManager sharedManager();
@@ -220,6 +229,7 @@ public class MXMetricManager extends NSObject {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("pastDiagnosticPayloads")
     public native NSArray<? extends MXDiagnosticPayload> pastDiagnosticPayloads();
@@ -249,8 +259,8 @@ public class MXMetricManager extends NSObject {
      */
     @Generated
     @Selector("extendLaunchMeasurementForTaskID:error:")
-    public static native boolean extendLaunchMeasurementForTaskIDError(String taskID,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native boolean extendLaunchMeasurementForTaskIDError(@NotNull String taskID,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * finishExtendedLaunchMeasurementForTaskID:error:
@@ -268,6 +278,6 @@ public class MXMetricManager extends NSObject {
      */
     @Generated
     @Selector("finishExtendedLaunchMeasurementForTaskID:error:")
-    public static native boolean finishExtendedLaunchMeasurementForTaskIDError(String taskID,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native boolean finishExtendedLaunchMeasurementForTaskIDError(@NotNull String taskID,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

@@ -35,6 +35,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSUserDefaults is a hierarchical persistent interprocess (optionally distributed) key-value store, optimized for
@@ -113,22 +115,25 @@ public class NSUserDefaults extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -163,9 +168,10 @@ public class NSUserDefaults extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -197,6 +203,7 @@ public class NSUserDefaults extends NSObject {
      * +standardUserDefaults returns a global instance of NSUserDefaults configured to search the current application's
      * search list.
      */
+    @NotNull
     @Generated
     @Selector("standardUserDefaults")
     public static native NSUserDefaults standardUserDefaults();
@@ -218,9 +225,10 @@ public class NSUserDefaults extends NSObject {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("URLForKey:")
-    public native NSURL URLForKey(String defaultName);
+    public native NSURL URLForKey(@NotNull String defaultName);
 
     /**
      * -addSuiteNamed: adds the full search list for 'suiteName' as a sub-search-list of the receiver's. The additional
@@ -229,14 +237,15 @@ public class NSUserDefaults extends NSObject {
      */
     @Generated
     @Selector("addSuiteNamed:")
-    public native void addSuiteNamed(String suiteName);
+    public native void addSuiteNamed(@NotNull String suiteName);
 
     /**
      * -arrayForKey: is equivalent to -objectForKey:, except that it will return nil if the value is not an NSArray.
      */
+    @Nullable
     @Generated
     @Selector("arrayForKey:")
-    public native NSArray<?> arrayForKey(String defaultName);
+    public native NSArray<?> arrayForKey(@NotNull String defaultName);
 
     /**
      * -boolForKey: is equivalent to -objectForKey:, except that it converts the returned value to a BOOL. If the value
@@ -246,27 +255,30 @@ public class NSUserDefaults extends NSObject {
      */
     @Generated
     @Selector("boolForKey:")
-    public native boolean boolForKey(String defaultName);
+    public native boolean boolForKey(@NotNull String defaultName);
 
     /**
      * -dataForKey: is equivalent to -objectForKey:, except that it will return nil if the value is not an NSData.
      */
+    @Nullable
     @Generated
     @Selector("dataForKey:")
-    public native NSData dataForKey(String defaultName);
+    public native NSData dataForKey(@NotNull String defaultName);
 
     /**
      * -dictionaryForKey: is equivalent to -objectForKey:, except that it will return nil if the value is not an
      * NSDictionary.
      */
+    @Nullable
     @Generated
     @Selector("dictionaryForKey:")
-    public native NSDictionary<String, ?> dictionaryForKey(String defaultName);
+    public native NSDictionary<String, ?> dictionaryForKey(@NotNull String defaultName);
 
     /**
      * -dictionaryRepresentation returns a composite snapshot of the values in the receiver's search list, such that
      * [[receiver dictionaryRepresentation] objectForKey:x] will return the same thing as [receiver objectForKey:x].
      */
+    @NotNull
     @Generated
     @Selector("dictionaryRepresentation")
     public native NSDictionary<String, ?> dictionaryRepresentation();
@@ -277,7 +289,7 @@ public class NSUserDefaults extends NSObject {
      */
     @Generated
     @Selector("doubleForKey:")
-    public native double doubleForKey(String defaultName);
+    public native double doubleForKey(@NotNull String defaultName);
 
     /**
      * -floatForKey: is similar to -integerForKey:, except that it returns a float, and boolean values will not be
@@ -285,7 +297,7 @@ public class NSUserDefaults extends NSObject {
      */
     @Generated
     @Selector("floatForKey:")
-    public native float floatForKey(String defaultName);
+    public native float floatForKey(@NotNull String defaultName);
 
     /**
      * -init is equivalent to -initWithSuiteName:nil
@@ -304,7 +316,7 @@ public class NSUserDefaults extends NSObject {
      */
     @Generated
     @Selector("initWithSuiteName:")
-    public native NSUserDefaults initWithSuiteName(String suitename);
+    public native NSUserDefaults initWithSuiteName(@Nullable String suitename);
 
     /**
      * -initWithUser: is equivalent to -init
@@ -316,7 +328,7 @@ public class NSUserDefaults extends NSObject {
     @Generated
     @Deprecated
     @Selector("initWithUser:")
-    public native NSUserDefaults initWithUser(String username);
+    public native NSUserDefaults initWithUser(@NotNull String username);
 
     /**
      * -integerForKey: is equivalent to -objectForKey:, except that it converts the returned value to an NSInteger. If
@@ -327,7 +339,7 @@ public class NSUserDefaults extends NSObject {
     @Generated
     @Selector("integerForKey:")
     @NInt
-    public native long integerForKey(String defaultName);
+    public native long integerForKey(@NotNull String defaultName);
 
     /**
      * -objectForKey: will search the receiver's search list for a default with the key 'defaultName' and return it. If
@@ -335,10 +347,11 @@ public class NSUserDefaults extends NSObject {
      * values. If the key in question has been marked as ubiquitous via a Defaults Configuration File, the latest value
      * may not be immediately available, and the registered value will be returned instead.
      */
+    @Nullable
     @Generated
     @Selector("objectForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object objectForKey(String defaultName);
+    public native Object objectForKey(@NotNull String defaultName);
 
     /**
      * -objectIsForcedForKey: returns YES if the value for 'key' is provided by managed preferences (a configuration
@@ -346,7 +359,7 @@ public class NSUserDefaults extends NSObject {
      */
     @Generated
     @Selector("objectIsForcedForKey:")
-    public native boolean objectIsForcedForKey(String key);
+    public native boolean objectIsForcedForKey(@NotNull String key);
 
     /**
      * -objectIsForcedForKey:inDomain: returns YES if the value for 'key' is provided by managed preferences (a
@@ -354,15 +367,16 @@ public class NSUserDefaults extends NSObject {
      */
     @Generated
     @Selector("objectIsForcedForKey:inDomain:")
-    public native boolean objectIsForcedForKeyInDomain(String key, String domain);
+    public native boolean objectIsForcedForKeyInDomain(@NotNull String key, @NotNull String domain);
 
     /**
      * -persistentDomainForName: returns a dictionary representation of the search list entry specified by 'domainName',
      * the current user, and any host.
      */
+    @Nullable
     @Generated
     @Selector("persistentDomainForName:")
-    public native NSDictionary<String, ?> persistentDomainForName(String domainName);
+    public native NSDictionary<String, ?> persistentDomainForName(@NotNull String domainName);
 
     /**
      * -persistentDomainNames returns an incomplete list of domains that have preferences stored in them.
@@ -371,6 +385,7 @@ public class NSUserDefaults extends NSObject {
      * Deprecated-Since: 7.0
      * Deprecated-Message: Not recommended
      */
+    @NotNull
     @Generated
     @Deprecated
     @Selector("persistentDomainNames")
@@ -386,14 +401,14 @@ public class NSUserDefaults extends NSObject {
      */
     @Generated
     @Selector("registerDefaults:")
-    public native void registerDefaults(NSDictionary<String, ?> registrationDictionary);
+    public native void registerDefaults(@NotNull NSDictionary<String, ?> registrationDictionary);
 
     /**
      * -removeObjectForKey: is equivalent to -[... setObject:nil forKey:defaultName]
      */
     @Generated
     @Selector("removeObjectForKey:")
-    public native void removeObjectForKey(String defaultName);
+    public native void removeObjectForKey(@NotNull String defaultName);
 
     /**
      * -removePersistentDomainForName: removes all values from the search list entry specified by 'domainName', the
@@ -401,18 +416,18 @@ public class NSUserDefaults extends NSObject {
      */
     @Generated
     @Selector("removePersistentDomainForName:")
-    public native void removePersistentDomainForName(String domainName);
+    public native void removePersistentDomainForName(@NotNull String domainName);
 
     /**
      * -removeSuiteNamed: removes a sub-searchlist added via -addSuiteNamed:.
      */
     @Generated
     @Selector("removeSuiteNamed:")
-    public native void removeSuiteNamed(String suiteName);
+    public native void removeSuiteNamed(@NotNull String suiteName);
 
     @Generated
     @Selector("removeVolatileDomainForName:")
-    public native void removeVolatileDomainForName(String domainName);
+    public native void removeVolatileDomainForName(@NotNull String domainName);
 
     /**
      * -setBool:forKey: is equivalent to -setObject:forKey: except that the value is converted from a BOOL to an
@@ -420,7 +435,7 @@ public class NSUserDefaults extends NSObject {
      */
     @Generated
     @Selector("setBool:forKey:")
-    public native void setBoolForKey(boolean value, String defaultName);
+    public native void setBoolForKey(boolean value, @NotNull String defaultName);
 
     /**
      * -setDouble:forKey: is equivalent to -setObject:forKey: except that the value is converted from a double to an
@@ -428,7 +443,7 @@ public class NSUserDefaults extends NSObject {
      */
     @Generated
     @Selector("setDouble:forKey:")
-    public native void setDoubleForKey(double value, String defaultName);
+    public native void setDoubleForKey(double value, @NotNull String defaultName);
 
     /**
      * -setFloat:forKey: is equivalent to -setObject:forKey: except that the value is converted from a float to an
@@ -436,7 +451,7 @@ public class NSUserDefaults extends NSObject {
      */
     @Generated
     @Selector("setFloat:forKey:")
-    public native void setFloatForKey(float value, String defaultName);
+    public native void setFloatForKey(float value, @NotNull String defaultName);
 
     /**
      * -setInteger:forKey: is equivalent to -setObject:forKey: except that the value is converted from an NSInteger to
@@ -444,7 +459,7 @@ public class NSUserDefaults extends NSObject {
      */
     @Generated
     @Selector("setInteger:forKey:")
-    public native void setIntegerForKey(@NInt long value, String defaultName);
+    public native void setIntegerForKey(@NInt long value, @NotNull String defaultName);
 
     /**
      * -setObject:forKey: immediately stores a value (or removes the value if nil is passed as the value) for the
@@ -453,7 +468,8 @@ public class NSUserDefaults extends NSObject {
      */
     @Generated
     @Selector("setObject:forKey:")
-    public native void setObjectForKey(@Mapped(ObjCObjectMapper.class) Object value, String defaultName);
+    public native void setObjectForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object value,
+            @NotNull String defaultName);
 
     /**
      * -setPersistentDomain:forName: replaces all values in the search list entry specified by 'domainName', the current
@@ -461,7 +477,7 @@ public class NSUserDefaults extends NSObject {
      */
     @Generated
     @Selector("setPersistentDomain:forName:")
-    public native void setPersistentDomainForName(NSDictionary<String, ?> domain, String domainName);
+    public native void setPersistentDomainForName(@NotNull NSDictionary<String, ?> domain, @NotNull String domainName);
 
     /**
      * -setURL:forKey is equivalent to -setObject:forKey: except that the value is archived to an NSData. Use
@@ -471,27 +487,29 @@ public class NSUserDefaults extends NSObject {
      */
     @Generated
     @Selector("setURL:forKey:")
-    public native void setURLForKey(NSURL url, String defaultName);
+    public native void setURLForKey(@Nullable NSURL url, @NotNull String defaultName);
 
     @Generated
     @Selector("setVolatileDomain:forName:")
-    public native void setVolatileDomainForName(NSDictionary<String, ?> domain, String domainName);
+    public native void setVolatileDomainForName(@NotNull NSDictionary<String, ?> domain, @NotNull String domainName);
 
     /**
      * -stringForKey: is equivalent to -objectForKey:, except that it will return nil if the value is not an
      * NSArray<NSString *>. Note that unlike -stringForKey:, NSNumbers are not converted to NSStrings.
      */
+    @Nullable
     @Generated
     @Selector("stringArrayForKey:")
-    public native NSArray<String> stringArrayForKey(String defaultName);
+    public native NSArray<String> stringArrayForKey(@NotNull String defaultName);
 
     /**
      * -stringForKey: is equivalent to -objectForKey:, except that it will convert NSNumber values to their NSString
      * representation. If a non-string non-number value is found, nil will be returned.
      */
+    @Nullable
     @Generated
     @Selector("stringForKey:")
-    public native String stringForKey(String defaultName);
+    public native String stringForKey(@NotNull String defaultName);
 
     /**
      * -synchronize is deprecated and will be marked with the API_DEPRECATED macro in a future release.
@@ -510,14 +528,16 @@ public class NSUserDefaults extends NSObject {
     @Selector("synchronize")
     public native boolean synchronize();
 
+    @NotNull
     @Generated
     @Selector("volatileDomainForName:")
-    public native NSDictionary<String, ?> volatileDomainForName(String domainName);
+    public native NSDictionary<String, ?> volatileDomainForName(@NotNull String domainName);
 
     /**
      * Volatile domains are not added to any search list, are not persisted, and are not visible to other applications.
      * Using them is not recommended.
      */
+    @NotNull
     @Generated
     @Selector("volatileDomainNames")
     public native NSArray<String> volatileDomainNames();

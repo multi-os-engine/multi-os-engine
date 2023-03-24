@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 15.0
@@ -58,22 +60,25 @@ public class THClient extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -97,14 +102,14 @@ public class THClient extends NSObject {
      */
     @Generated
     @Selector("deleteCredentialsForBorderAgent:completion:")
-    public native void deleteCredentialsForBorderAgentCompletion(NSData borderAgentID,
-            @ObjCBlock(name = "call_deleteCredentialsForBorderAgentCompletion") Block_deleteCredentialsForBorderAgentCompletion completion);
+    public native void deleteCredentialsForBorderAgentCompletion(@NotNull NSData borderAgentID,
+            @NotNull @ObjCBlock(name = "call_deleteCredentialsForBorderAgentCompletion") Block_deleteCredentialsForBorderAgentCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteCredentialsForBorderAgentCompletion {
         @Generated
-        void call_deleteCredentialsForBorderAgentCompletion(NSError error);
+        void call_deleteCredentialsForBorderAgentCompletion(@Nullable NSError error);
     }
 
     @Generated
@@ -147,9 +152,10 @@ public class THClient extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -178,13 +184,13 @@ public class THClient extends NSObject {
     @Generated
     @Selector("retrieveAllCredentials:")
     public native void retrieveAllCredentials(
-            @ObjCBlock(name = "call_retrieveAllCredentials") Block_retrieveAllCredentials completion);
+            @NotNull @ObjCBlock(name = "call_retrieveAllCredentials") Block_retrieveAllCredentials completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_retrieveAllCredentials {
         @Generated
-        void call_retrieveAllCredentials(NSSet<? extends THCredentials> credentials, NSError error);
+        void call_retrieveAllCredentials(@Nullable NSSet<? extends THCredentials> credentials, @Nullable NSError error);
     }
 
     /**
@@ -200,14 +206,15 @@ public class THClient extends NSObject {
      */
     @Generated
     @Selector("retrieveCredentialsForBorderAgent:completion:")
-    public native void retrieveCredentialsForBorderAgentCompletion(NSData borderAgentID,
-            @ObjCBlock(name = "call_retrieveCredentialsForBorderAgentCompletion") Block_retrieveCredentialsForBorderAgentCompletion completion);
+    public native void retrieveCredentialsForBorderAgentCompletion(@NotNull NSData borderAgentID,
+            @NotNull @ObjCBlock(name = "call_retrieveCredentialsForBorderAgentCompletion") Block_retrieveCredentialsForBorderAgentCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_retrieveCredentialsForBorderAgentCompletion {
         @Generated
-        void call_retrieveCredentialsForBorderAgentCompletion(THCredentials credentials, NSError error);
+        void call_retrieveCredentialsForBorderAgentCompletion(@Nullable THCredentials credentials,
+                @Nullable NSError error);
     }
 
     /**
@@ -225,14 +232,15 @@ public class THClient extends NSObject {
      */
     @Generated
     @Selector("retrieveCredentialsForExtendedPANID:completion:")
-    public native void retrieveCredentialsForExtendedPANIDCompletion(NSData extendedPANID,
-            @ObjCBlock(name = "call_retrieveCredentialsForExtendedPANIDCompletion") Block_retrieveCredentialsForExtendedPANIDCompletion completion);
+    public native void retrieveCredentialsForExtendedPANIDCompletion(@NotNull NSData extendedPANID,
+            @NotNull @ObjCBlock(name = "call_retrieveCredentialsForExtendedPANIDCompletion") Block_retrieveCredentialsForExtendedPANIDCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_retrieveCredentialsForExtendedPANIDCompletion {
         @Generated
-        void call_retrieveCredentialsForExtendedPANIDCompletion(THCredentials credentials, NSError error);
+        void call_retrieveCredentialsForExtendedPANIDCompletion(@Nullable THCredentials credentials,
+                @Nullable NSError error);
     }
 
     /**
@@ -250,13 +258,13 @@ public class THClient extends NSObject {
     @Generated
     @Selector("retrievePreferredCredentials:")
     public native void retrievePreferredCredentials(
-            @ObjCBlock(name = "call_retrievePreferredCredentials") Block_retrievePreferredCredentials completion);
+            @NotNull @ObjCBlock(name = "call_retrievePreferredCredentials") Block_retrievePreferredCredentials completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_retrievePreferredCredentials {
         @Generated
-        void call_retrievePreferredCredentials(THCredentials credentials, NSError error);
+        void call_retrievePreferredCredentials(@Nullable THCredentials credentials, @Nullable NSError error);
     }
 
     @Generated
@@ -278,15 +286,15 @@ public class THClient extends NSObject {
      */
     @Generated
     @Selector("storeCredentialsForBorderAgent:activeOperationalDataSet:completion:")
-    public native void storeCredentialsForBorderAgentActiveOperationalDataSetCompletion(NSData borderAgentID,
-            NSData activeOperationalDataSet,
-            @ObjCBlock(name = "call_storeCredentialsForBorderAgentActiveOperationalDataSetCompletion") Block_storeCredentialsForBorderAgentActiveOperationalDataSetCompletion completion);
+    public native void storeCredentialsForBorderAgentActiveOperationalDataSetCompletion(@NotNull NSData borderAgentID,
+            @NotNull NSData activeOperationalDataSet,
+            @NotNull @ObjCBlock(name = "call_storeCredentialsForBorderAgentActiveOperationalDataSetCompletion") Block_storeCredentialsForBorderAgentActiveOperationalDataSetCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_storeCredentialsForBorderAgentActiveOperationalDataSetCompletion {
         @Generated
-        void call_storeCredentialsForBorderAgentActiveOperationalDataSetCompletion(NSError error);
+        void call_storeCredentialsForBorderAgentActiveOperationalDataSetCompletion(@Nullable NSError error);
     }
 
     @Generated
@@ -312,8 +320,9 @@ public class THClient extends NSObject {
      */
     @Generated
     @Selector("checkPreferredNetworkForActiveOperationalDataset:completion:")
-    public native void checkPreferredNetworkForActiveOperationalDatasetCompletion(NSData activeOperationalDataSet,
-            @ObjCBlock(name = "call_checkPreferredNetworkForActiveOperationalDatasetCompletion") Block_checkPreferredNetworkForActiveOperationalDatasetCompletion completion);
+    public native void checkPreferredNetworkForActiveOperationalDatasetCompletion(
+            @NotNull NSData activeOperationalDataSet,
+            @NotNull @ObjCBlock(name = "call_checkPreferredNetworkForActiveOperationalDatasetCompletion") Block_checkPreferredNetworkForActiveOperationalDatasetCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated

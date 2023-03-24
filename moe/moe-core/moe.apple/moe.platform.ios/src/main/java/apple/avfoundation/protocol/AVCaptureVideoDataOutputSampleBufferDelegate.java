@@ -26,6 +26,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] AVCaptureVideoDataOutputSampleBufferDelegate
@@ -67,8 +68,8 @@ public interface AVCaptureVideoDataOutputSampleBufferDelegate {
     @Generated
     @IsOptional
     @Selector("captureOutput:didDropSampleBuffer:fromConnection:")
-    default void captureOutputDidDropSampleBufferFromConnection(AVCaptureOutput output, CMSampleBufferRef sampleBuffer,
-            AVCaptureConnection connection) {
+    default void captureOutputDidDropSampleBufferFromConnection(@NotNull AVCaptureOutput output,
+            @NotNull CMSampleBufferRef sampleBuffer, @NotNull AVCaptureConnection connection) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -106,8 +107,8 @@ public interface AVCaptureVideoDataOutputSampleBufferDelegate {
     @Generated
     @IsOptional
     @Selector("captureOutput:didOutputSampleBuffer:fromConnection:")
-    default void captureOutputDidOutputSampleBufferFromConnection(AVCaptureOutput output,
-            CMSampleBufferRef sampleBuffer, AVCaptureConnection connection) {
+    default void captureOutputDidOutputSampleBufferFromConnection(@NotNull AVCaptureOutput output,
+            @NotNull CMSampleBufferRef sampleBuffer, @NotNull AVCaptureConnection connection) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

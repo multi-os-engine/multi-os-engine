@@ -41,6 +41,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -65,8 +67,8 @@ public class UIAlertController extends UIViewController implements UISpringLoade
 
     @Generated
     @Selector("alertControllerWithTitle:message:preferredStyle:")
-    public static native UIAlertController alertControllerWithTitleMessagePreferredStyle(String title, String message,
-            @NInt long preferredStyle);
+    public static native UIAlertController alertControllerWithTitleMessagePreferredStyle(@Nullable String title,
+            @Nullable String message, @NInt long preferredStyle);
 
     @Generated
     @Owned
@@ -85,29 +87,32 @@ public class UIAlertController extends UIViewController implements UISpringLoade
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -139,9 +144,10 @@ public class UIAlertController extends UIViewController implements UISpringLoade
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -169,18 +175,19 @@ public class UIAlertController extends UIViewController implements UISpringLoade
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("actions")
     public native NSArray<? extends UIAlertAction> actions();
 
     @Generated
     @Selector("addAction:")
-    public native void addAction(UIAlertAction action);
+    public native void addAction(@NotNull UIAlertAction action);
 
     @Generated
     @Selector("addTextFieldWithConfigurationHandler:")
     public native void addTextFieldWithConfigurationHandler(
-            @ObjCBlock(name = "call_addTextFieldWithConfigurationHandler") Block_addTextFieldWithConfigurationHandler configurationHandler);
+            @Nullable @ObjCBlock(name = "call_addTextFieldWithConfigurationHandler") Block_addTextFieldWithConfigurationHandler configurationHandler);
 
     @Generated
     @Selector("init")
@@ -188,12 +195,14 @@ public class UIAlertController extends UIViewController implements UISpringLoade
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIAlertController initWithCoder(NSCoder coder);
+    public native UIAlertController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native UIAlertController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native UIAlertController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
+    @Nullable
     @Generated
     @Selector("message")
     public native String message();
@@ -201,6 +210,7 @@ public class UIAlertController extends UIViewController implements UISpringLoade
     /**
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("preferredAction")
     public native UIAlertAction preferredAction();
@@ -212,23 +222,25 @@ public class UIAlertController extends UIViewController implements UISpringLoade
 
     @Generated
     @Selector("setMessage:")
-    public native void setMessage(String value);
+    public native void setMessage(@Nullable String value);
 
     /**
      * API-Since: 9.0
      */
     @Generated
     @Selector("setPreferredAction:")
-    public native void setPreferredAction(UIAlertAction value);
+    public native void setPreferredAction(@Nullable UIAlertAction value);
 
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@Nullable String value);
 
+    @Nullable
     @Generated
     @Selector("textFields")
     public native NSArray<? extends UITextField> textFields();
 
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();
@@ -237,7 +249,7 @@ public class UIAlertController extends UIViewController implements UISpringLoade
     @Generated
     public interface Block_addTextFieldWithConfigurationHandler {
         @Generated
-        void call_addTextFieldWithConfigurationHandler(UITextField textField);
+        void call_addTextFieldWithConfigurationHandler(@NotNull UITextField textField);
     }
 
     @Generated

@@ -9,6 +9,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This operation causes the system to ingest a change.
@@ -27,6 +29,7 @@ public interface NSFileProviderTestingIngestion extends NSFileProviderTestingOpe
      * 
      * This will be nil if the item is being deleted.
      */
+    @Nullable
     @Generated
     @Selector("item")
     @MappedReturn(ObjCObjectMapper.class)
@@ -35,6 +38,7 @@ public interface NSFileProviderTestingIngestion extends NSFileProviderTestingOpe
     /**
      * Identifier of the affected item.
      */
+    @NotNull
     @Generated
     @Selector("itemIdentifier")
     String itemIdentifier();

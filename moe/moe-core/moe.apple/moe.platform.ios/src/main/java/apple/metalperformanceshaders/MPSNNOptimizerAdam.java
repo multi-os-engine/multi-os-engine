@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNOptimizerAdam
@@ -84,7 +86,7 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] beta1
@@ -110,18 +112,21 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -178,11 +183,13 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:batchNormalizationGradientState:batchNormalizationSourceState:inputMomentumVectors:inputVelocityVectors:maximumVelocityVectors:resultState:")
     public native void encodeToCommandBufferBatchNormalizationGradientStateBatchNormalizationSourceStateInputMomentumVectorsInputVelocityVectorsMaximumVelocityVectorsResultState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNBatchNormalizationState batchNormalizationGradientState,
-            MPSCNNBatchNormalizationState batchNormalizationSourceState,
-            NSArray<? extends MPSVector> inputMomentumVectors, NSArray<? extends MPSVector> inputVelocityVectors,
-            NSArray<? extends MPSVector> maximumVelocityVectors, MPSCNNNormalizationGammaAndBetaState resultState);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNBatchNormalizationState batchNormalizationGradientState,
+            @NotNull MPSCNNBatchNormalizationState batchNormalizationSourceState,
+            @NotNull NSArray<? extends MPSVector> inputMomentumVectors,
+            @NotNull NSArray<? extends MPSVector> inputVelocityVectors,
+            @Nullable NSArray<? extends MPSVector> maximumVelocityVectors,
+            @NotNull MPSCNNNormalizationGammaAndBetaState resultState);
 
     /**
      * Encode an MPSNNOptimizerAdam object to a command buffer to perform out of place update
@@ -218,11 +225,12 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:batchNormalizationGradientState:batchNormalizationSourceState:inputMomentumVectors:inputVelocityVectors:resultState:")
     public native void encodeToCommandBufferBatchNormalizationGradientStateBatchNormalizationSourceStateInputMomentumVectorsInputVelocityVectorsResultState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNBatchNormalizationState batchNormalizationGradientState,
-            MPSCNNBatchNormalizationState batchNormalizationSourceState,
-            NSArray<? extends MPSVector> inputMomentumVectors, NSArray<? extends MPSVector> inputVelocityVectors,
-            MPSCNNNormalizationGammaAndBetaState resultState);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNBatchNormalizationState batchNormalizationGradientState,
+            @NotNull MPSCNNBatchNormalizationState batchNormalizationSourceState,
+            @Nullable NSArray<? extends MPSVector> inputMomentumVectors,
+            @Nullable NSArray<? extends MPSVector> inputVelocityVectors,
+            @NotNull MPSCNNNormalizationGammaAndBetaState resultState);
 
     /**
      * Encode an AMSGrad variant of MPSNNOptimizerAdam object to a command buffer to perform out of place update
@@ -262,10 +270,12 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:batchNormalizationState:inputMomentumVectors:inputVelocityVectors:maximumVelocityVectors:resultState:")
     public native void encodeToCommandBufferBatchNormalizationStateInputMomentumVectorsInputVelocityVectorsMaximumVelocityVectorsResultState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNBatchNormalizationState batchNormalizationState, NSArray<? extends MPSVector> inputMomentumVectors,
-            NSArray<? extends MPSVector> inputVelocityVectors, NSArray<? extends MPSVector> maximumVelocityVectors,
-            MPSCNNNormalizationGammaAndBetaState resultState);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNBatchNormalizationState batchNormalizationState,
+            @NotNull NSArray<? extends MPSVector> inputMomentumVectors,
+            @NotNull NSArray<? extends MPSVector> inputVelocityVectors,
+            @Nullable NSArray<? extends MPSVector> maximumVelocityVectors,
+            @NotNull MPSCNNNormalizationGammaAndBetaState resultState);
 
     /**
      * Encode an MPSNNOptimizerAdam object to a command buffer to perform out of place update
@@ -297,9 +307,11 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:batchNormalizationState:inputMomentumVectors:inputVelocityVectors:resultState:")
     public native void encodeToCommandBufferBatchNormalizationStateInputMomentumVectorsInputVelocityVectorsResultState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNBatchNormalizationState batchNormalizationState, NSArray<? extends MPSVector> inputMomentumVectors,
-            NSArray<? extends MPSVector> inputVelocityVectors, MPSCNNNormalizationGammaAndBetaState resultState);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNBatchNormalizationState batchNormalizationState,
+            @Nullable NSArray<? extends MPSVector> inputMomentumVectors,
+            @Nullable NSArray<? extends MPSVector> inputVelocityVectors,
+            @NotNull MPSCNNNormalizationGammaAndBetaState resultState);
 
     /**
      * Encode an AMSGrad variant of MPSNNOptimizerAdam object to a command buffer to perform out of place update
@@ -344,11 +356,13 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:convolutionGradientState:convolutionSourceState:inputMomentumVectors:inputVelocityVectors:maximumVelocityVectors:resultState:")
     public native void encodeToCommandBufferConvolutionGradientStateConvolutionSourceStateInputMomentumVectorsInputVelocityVectorsMaximumVelocityVectorsResultState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNConvolutionGradientState convolutionGradientState,
-            MPSCNNConvolutionWeightsAndBiasesState convolutionSourceState,
-            NSArray<? extends MPSVector> inputMomentumVectors, NSArray<? extends MPSVector> inputVelocityVectors,
-            NSArray<? extends MPSVector> maximumVelocityVectors, MPSCNNConvolutionWeightsAndBiasesState resultState);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNConvolutionGradientState convolutionGradientState,
+            @NotNull MPSCNNConvolutionWeightsAndBiasesState convolutionSourceState,
+            @NotNull NSArray<? extends MPSVector> inputMomentumVectors,
+            @NotNull NSArray<? extends MPSVector> inputVelocityVectors,
+            @Nullable NSArray<? extends MPSVector> maximumVelocityVectors,
+            @NotNull MPSCNNConvolutionWeightsAndBiasesState resultState);
 
     /**
      * Encode an MPSNNOptimizerAdam object to a command buffer to perform out of place update
@@ -384,11 +398,12 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:convolutionGradientState:convolutionSourceState:inputMomentumVectors:inputVelocityVectors:resultState:")
     public native void encodeToCommandBufferConvolutionGradientStateConvolutionSourceStateInputMomentumVectorsInputVelocityVectorsResultState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNConvolutionGradientState convolutionGradientState,
-            MPSCNNConvolutionWeightsAndBiasesState convolutionSourceState,
-            NSArray<? extends MPSVector> inputMomentumVectors, NSArray<? extends MPSVector> inputVelocityVectors,
-            MPSCNNConvolutionWeightsAndBiasesState resultState);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNConvolutionGradientState convolutionGradientState,
+            @NotNull MPSCNNConvolutionWeightsAndBiasesState convolutionSourceState,
+            @Nullable NSArray<? extends MPSVector> inputMomentumVectors,
+            @Nullable NSArray<? extends MPSVector> inputVelocityVectors,
+            @NotNull MPSCNNConvolutionWeightsAndBiasesState resultState);
 
     /**
      * API-Since: 13.0
@@ -396,9 +411,10 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:inputGradientMatrix:inputValuesMatrix:inputMomentumMatrix:inputVelocityMatrix:maximumVelocityMatrix:resultValuesMatrix:")
     public native void encodeToCommandBufferInputGradientMatrixInputValuesMatrixInputMomentumMatrixInputVelocityMatrixMaximumVelocityMatrixResultValuesMatrix(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSMatrix inputGradientMatrix,
-            MPSMatrix inputValuesMatrix, MPSMatrix inputMomentumMatrix, MPSMatrix inputVelocityMatrix,
-            MPSMatrix maximumVelocityMatrix, MPSMatrix resultValuesMatrix);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSMatrix inputGradientMatrix, @NotNull MPSMatrix inputValuesMatrix,
+            @NotNull MPSMatrix inputMomentumMatrix, @NotNull MPSMatrix inputVelocityMatrix,
+            @Nullable MPSMatrix maximumVelocityMatrix, @NotNull MPSMatrix resultValuesMatrix);
 
     /**
      * API-Since: 13.0
@@ -406,9 +422,10 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:inputGradientMatrix:inputValuesMatrix:inputMomentumMatrix:inputVelocityMatrix:resultValuesMatrix:")
     public native void encodeToCommandBufferInputGradientMatrixInputValuesMatrixInputMomentumMatrixInputVelocityMatrixResultValuesMatrix(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSMatrix inputGradientMatrix,
-            MPSMatrix inputValuesMatrix, MPSMatrix inputMomentumMatrix, MPSMatrix inputVelocityMatrix,
-            MPSMatrix resultValuesMatrix);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSMatrix inputGradientMatrix, @NotNull MPSMatrix inputValuesMatrix,
+            @NotNull MPSMatrix inputMomentumMatrix, @NotNull MPSMatrix inputVelocityMatrix,
+            @NotNull MPSMatrix resultValuesMatrix);
 
     /**
      * Encode an AMSGrad variant of MPSNNOptimizerAdam object to a command buffer to perform out of place update
@@ -444,9 +461,10 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:inputGradientVector:inputValuesVector:inputMomentumVector:inputVelocityVector:maximumVelocityVector:resultValuesVector:")
     public native void encodeToCommandBufferInputGradientVectorInputValuesVectorInputMomentumVectorInputVelocityVectorMaximumVelocityVectorResultValuesVector(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSVector inputGradientVector,
-            MPSVector inputValuesVector, MPSVector inputMomentumVector, MPSVector inputVelocityVector,
-            MPSVector maximumVelocityVector, MPSVector resultValuesVector);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSVector inputGradientVector, @NotNull MPSVector inputValuesVector,
+            @NotNull MPSVector inputMomentumVector, @NotNull MPSVector inputVelocityVector,
+            @Nullable MPSVector maximumVelocityVector, @NotNull MPSVector resultValuesVector);
 
     /**
      * Encode an MPSNNOptimizerAdam object to a command buffer to perform out of place update
@@ -474,9 +492,10 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:inputGradientVector:inputValuesVector:inputMomentumVector:inputVelocityVector:resultValuesVector:")
     public native void encodeToCommandBufferInputGradientVectorInputValuesVectorInputMomentumVectorInputVelocityVectorResultValuesVector(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSVector inputGradientVector,
-            MPSVector inputValuesVector, MPSVector inputMomentumVector, MPSVector inputVelocityVector,
-            MPSVector resultValuesVector);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSVector inputGradientVector, @NotNull MPSVector inputValuesVector,
+            @NotNull MPSVector inputMomentumVector, @NotNull MPSVector inputVelocityVector,
+            @NotNull MPSVector resultValuesVector);
 
     /**
      * [@property] epsilon
@@ -500,16 +519,16 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNOptimizerAdam initWithCoder(NSCoder aDecoder);
+    public native MPSNNOptimizerAdam initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNNOptimizerAdam initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNOptimizerAdam initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNNOptimizerAdam initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNOptimizerAdam initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Full initialization for the adam update
@@ -527,8 +546,8 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     @Generated
     @Selector("initWithDevice:beta1:beta2:epsilon:timeStep:optimizerDescriptor:")
     public native MPSNNOptimizerAdam initWithDeviceBeta1Beta2EpsilonTimeStepOptimizerDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, double beta1, double beta2, float epsilon,
-            @NUInt long timeStep, MPSNNOptimizerDescriptor optimizerDescriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, double beta1, double beta2, float epsilon,
+            @NUInt long timeStep, @NotNull MPSNNOptimizerDescriptor optimizerDescriptor);
 
     /**
      * Convenience initialization for the adam update
@@ -540,8 +559,8 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      */
     @Generated
     @Selector("initWithDevice:learningRate:")
-    public native MPSNNOptimizerAdam initWithDeviceLearningRate(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            float learningRate);
+    public native MPSNNOptimizerAdam initWithDeviceLearningRate(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, float learningRate);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -560,9 +579,10 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

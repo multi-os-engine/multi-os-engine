@@ -32,6 +32,7 @@ tasks.classes.dependsOn ':ext_natj_api'
 
 dependencies {
     compile files(rootProject.external.natj.jar)
+    compileOnly 'org.jetbrains:annotations:23.0.0'
 }
 
 tasks.javadoc {

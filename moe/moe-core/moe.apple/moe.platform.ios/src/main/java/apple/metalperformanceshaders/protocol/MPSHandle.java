@@ -7,6 +7,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MPSHandle
@@ -98,6 +99,7 @@ public interface MPSHandle extends NSSecureCoding {
      * 
      * @return A human readable string for debugging purposes
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();

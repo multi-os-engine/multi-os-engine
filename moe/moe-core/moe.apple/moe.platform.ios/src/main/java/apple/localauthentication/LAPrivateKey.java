@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Managed Private Key.
@@ -62,7 +64,7 @@ public class LAPrivateKey extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Checks if the the provided algorithm can be used for decryption
@@ -72,7 +74,7 @@ public class LAPrivateKey extends NSObject {
      */
     @Generated
     @Selector("canDecryptUsingSecKeyAlgorithm:")
-    public native boolean canDecryptUsingSecKeyAlgorithm(CFStringRef algorithm);
+    public native boolean canDecryptUsingSecKeyAlgorithm(@NotNull CFStringRef algorithm);
 
     /**
      * Checks if the the provided algorithm can be used for performing key exchanges
@@ -82,7 +84,7 @@ public class LAPrivateKey extends NSObject {
      */
     @Generated
     @Selector("canExchangeKeysUsingSecKeyAlgorithm:")
-    public native boolean canExchangeKeysUsingSecKeyAlgorithm(CFStringRef algorithm);
+    public native boolean canExchangeKeysUsingSecKeyAlgorithm(@NotNull CFStringRef algorithm);
 
     /**
      * Checks if the the provided algorithm can be used for signing data
@@ -92,22 +94,25 @@ public class LAPrivateKey extends NSObject {
      */
     @Generated
     @Selector("canSignUsingSecKeyAlgorithm:")
-    public native boolean canSignUsingSecKeyAlgorithm(CFStringRef algorithm);
+    public native boolean canSignUsingSecKeyAlgorithm(@NotNull CFStringRef algorithm);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,14 +132,14 @@ public class LAPrivateKey extends NSObject {
      */
     @Generated
     @Selector("decryptData:secKeyAlgorithm:completion:")
-    public native void decryptDataSecKeyAlgorithmCompletion(NSData data, CFStringRef algorithm,
-            @ObjCBlock(name = "call_decryptDataSecKeyAlgorithmCompletion") Block_decryptDataSecKeyAlgorithmCompletion handler);
+    public native void decryptDataSecKeyAlgorithmCompletion(@NotNull NSData data, @NotNull CFStringRef algorithm,
+            @NotNull @ObjCBlock(name = "call_decryptDataSecKeyAlgorithmCompletion") Block_decryptDataSecKeyAlgorithmCompletion handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_decryptDataSecKeyAlgorithmCompletion {
         @Generated
-        void call_decryptDataSecKeyAlgorithmCompletion(NSData arg0, NSError arg1);
+        void call_decryptDataSecKeyAlgorithmCompletion(@Nullable NSData arg0, @Nullable NSError arg1);
     }
 
     @Generated
@@ -153,15 +158,16 @@ public class LAPrivateKey extends NSObject {
      */
     @Generated
     @Selector("exchangeKeysWithPublicKey:secKeyAlgorithm:secKeyParameters:completion:")
-    public native void exchangeKeysWithPublicKeySecKeyAlgorithmSecKeyParametersCompletion(NSData publicKey,
-            CFStringRef algorithm, NSDictionary<?, ?> parameters,
-            @ObjCBlock(name = "call_exchangeKeysWithPublicKeySecKeyAlgorithmSecKeyParametersCompletion") Block_exchangeKeysWithPublicKeySecKeyAlgorithmSecKeyParametersCompletion handler);
+    public native void exchangeKeysWithPublicKeySecKeyAlgorithmSecKeyParametersCompletion(@NotNull NSData publicKey,
+            @NotNull CFStringRef algorithm, @NotNull NSDictionary<?, ?> parameters,
+            @NotNull @ObjCBlock(name = "call_exchangeKeysWithPublicKeySecKeyAlgorithmSecKeyParametersCompletion") Block_exchangeKeysWithPublicKeySecKeyAlgorithmSecKeyParametersCompletion handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_exchangeKeysWithPublicKeySecKeyAlgorithmSecKeyParametersCompletion {
         @Generated
-        void call_exchangeKeysWithPublicKeySecKeyAlgorithmSecKeyParametersCompletion(NSData arg0, NSError arg1);
+        void call_exchangeKeysWithPublicKeySecKeyAlgorithmSecKeyParametersCompletion(@Nullable NSData arg0,
+                @Nullable NSError arg1);
     }
 
     @Generated
@@ -190,9 +196,10 @@ public class LAPrivateKey extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -202,6 +209,7 @@ public class LAPrivateKey extends NSObject {
     /**
      * Offers the public key counterpart of a @c LAPrivateKey instance
      */
+    @NotNull
     @Generated
     @Selector("publicKey")
     public native LAPublicKey publicKey();
@@ -228,14 +236,14 @@ public class LAPrivateKey extends NSObject {
      */
     @Generated
     @Selector("signData:secKeyAlgorithm:completion:")
-    public native void signDataSecKeyAlgorithmCompletion(NSData data, CFStringRef algorithm,
-            @ObjCBlock(name = "call_signDataSecKeyAlgorithmCompletion") Block_signDataSecKeyAlgorithmCompletion handler);
+    public native void signDataSecKeyAlgorithmCompletion(@NotNull NSData data, @NotNull CFStringRef algorithm,
+            @NotNull @ObjCBlock(name = "call_signDataSecKeyAlgorithmCompletion") Block_signDataSecKeyAlgorithmCompletion handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_signDataSecKeyAlgorithmCompletion {
         @Generated
-        void call_signDataSecKeyAlgorithmCompletion(NSData arg0, NSError arg1);
+        void call_signDataSecKeyAlgorithmCompletion(@Nullable NSData arg0, @Nullable NSError arg1);
     }
 
     @Generated

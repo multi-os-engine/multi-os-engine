@@ -35,6 +35,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -66,26 +68,30 @@ public class NSAssertionHandler extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("currentHandler")
     public static native NSAssertionHandler currentHandler();
@@ -120,9 +126,10 @@ public class NSAssertionHandler extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -153,15 +160,15 @@ public class NSAssertionHandler extends NSObject {
     @Generated
     @Variadic()
     @Selector("handleFailureInFunction:file:lineNumber:description:")
-    public native void handleFailureInFunctionFileLineNumberDescription(String functionName, String fileName,
-            @NInt long line, String format, Object... varargs);
+    public native void handleFailureInFunctionFileLineNumberDescription(@NotNull String functionName,
+            @NotNull String fileName, @NInt long line, @Nullable String format, Object... varargs);
 
     @Generated
     @Variadic()
     @Selector("handleFailureInMethod:object:file:lineNumber:description:")
-    public native void handleFailureInMethodObjectFileLineNumberDescription(SEL selector,
-            @Mapped(ObjCObjectMapper.class) Object object, String fileName, @NInt long line, String format,
-            Object... varargs);
+    public native void handleFailureInMethodObjectFileLineNumberDescription(@NotNull SEL selector,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object object, @NotNull String fileName, @NInt long line,
+            @Nullable String format, Object... varargs);
 
     @Generated
     @Selector("init")

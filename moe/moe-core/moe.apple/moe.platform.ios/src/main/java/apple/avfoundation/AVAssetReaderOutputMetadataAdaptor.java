@@ -37,6 +37,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAssetReaderOutputMetadataAdaptor
@@ -100,26 +102,29 @@ public class AVAssetReaderOutputMetadataAdaptor extends NSObject {
     @Generated
     @Selector("assetReaderOutputMetadataAdaptorWithAssetReaderTrackOutput:")
     public static native AVAssetReaderOutputMetadataAdaptor assetReaderOutputMetadataAdaptorWithAssetReaderTrackOutput(
-            AVAssetReaderTrackOutput trackOutput);
+            @NotNull AVAssetReaderTrackOutput trackOutput);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -154,9 +159,10 @@ public class AVAssetReaderOutputMetadataAdaptor extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -189,6 +195,7 @@ public class AVAssetReaderOutputMetadataAdaptor extends NSObject {
      * 
      * The asset reader track output from which the receiver pulls timed metadata groups.
      */
+    @NotNull
     @Generated
     @Selector("assetReaderTrackOutput")
     public native AVAssetReaderTrackOutput assetReaderTrackOutput();
@@ -226,7 +233,7 @@ public class AVAssetReaderOutputMetadataAdaptor extends NSObject {
     @Generated
     @Selector("initWithAssetReaderTrackOutput:")
     public native AVAssetReaderOutputMetadataAdaptor initWithAssetReaderTrackOutput(
-            AVAssetReaderTrackOutput trackOutput);
+            @NotNull AVAssetReaderTrackOutput trackOutput);
 
     /**
      * nextTimedMetadataGroup
@@ -249,6 +256,7 @@ public class AVAssetReaderOutputMetadataAdaptor extends NSObject {
      *         An instance of AVTimedMetadataGroup, representing the next logical segment of metadata coming from the
      *         source asset reader output.
      */
+    @Nullable
     @Generated
     @Selector("nextTimedMetadataGroup")
     public native AVTimedMetadataGroup nextTimedMetadataGroup();

@@ -10,6 +10,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -33,16 +35,17 @@ public interface NSFileProviderCustomAction {
      * call the completion handler with (NSUserCancelledError) in the NSProgress
      * cancellation handler.
      */
+    @NotNull
     @Generated
     @Selector("performActionWithIdentifier:onItemsWithIdentifiers:completionHandler:")
-    NSProgress performActionWithIdentifierOnItemsWithIdentifiersCompletionHandler(String actionIdentifier,
-            NSArray<String> itemIdentifiers,
-            @ObjCBlock(name = "call_performActionWithIdentifierOnItemsWithIdentifiersCompletionHandler") Block_performActionWithIdentifierOnItemsWithIdentifiersCompletionHandler completionHandler);
+    NSProgress performActionWithIdentifierOnItemsWithIdentifiersCompletionHandler(@NotNull String actionIdentifier,
+            @NotNull NSArray<String> itemIdentifiers,
+            @NotNull @ObjCBlock(name = "call_performActionWithIdentifierOnItemsWithIdentifiersCompletionHandler") Block_performActionWithIdentifierOnItemsWithIdentifiersCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_performActionWithIdentifierOnItemsWithIdentifiersCompletionHandler {
         @Generated
-        void call_performActionWithIdentifierOnItemsWithIdentifiersCompletionHandler(NSError error);
+        void call_performActionWithIdentifierOnItemsWithIdentifiersCompletionHandler(@Nullable NSError error);
     }
 }

@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -60,26 +62,30 @@ public class UISceneSession extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("configuration")
     public native UISceneConfiguration configuration();
@@ -94,7 +100,7 @@ public class UISceneSession extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -107,7 +113,7 @@ public class UISceneSession extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UISceneSession initWithCoder(NSCoder coder);
+    public native UISceneSession initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -126,15 +132,17 @@ public class UISceneSession extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native UISceneSession new_objc();
 
+    @NotNull
     @Generated
     @Selector("persistentIdentifier")
     public native String persistentIdentifier();
@@ -147,6 +155,7 @@ public class UISceneSession extends NSObject implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @NotNull
     @Generated
     @Selector("role")
     public native String role();
@@ -154,6 +163,7 @@ public class UISceneSession extends NSObject implements NSSecureCoding {
     /**
      * If already instantiated, the UIScene instance that is represented by this definition.
      */
+    @Nullable
     @Generated
     @Selector("scene")
     public native UIScene scene();
@@ -164,14 +174,14 @@ public class UISceneSession extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setStateRestorationActivity:")
-    public native void setStateRestorationActivity(NSUserActivity value);
+    public native void setStateRestorationActivity(@Nullable NSUserActivity value);
 
     /**
      * objects must be plist types
      */
     @Generated
     @Selector("setUserInfo:")
-    public native void setUserInfo(NSDictionary<String, ?> value);
+    public native void setUserInfo(@Nullable NSDictionary<String, ?> value);
 
     @Generated
     @Selector("setVersion:")
@@ -181,6 +191,7 @@ public class UISceneSession extends NSObject implements NSSecureCoding {
      * The initial value of stateRestorationActivity may not be immediately available when the scene
      * is connected, depending on the app's default protection class and the lock state of the device.
      */
+    @Nullable
     @Generated
     @Selector("stateRestorationActivity")
     public native NSUserActivity stateRestorationActivity();
@@ -202,6 +213,7 @@ public class UISceneSession extends NSObject implements NSSecureCoding {
     /**
      * objects must be plist types
      */
+    @Nullable
     @Generated
     @Selector("userInfo")
     public native NSDictionary<String, ?> userInfo();

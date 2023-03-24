@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -70,22 +72,25 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,9 +125,10 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -146,23 +152,24 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
      */
     @Generated
     @Selector("sortDescriptorWithKey:ascending:")
-    public static native NSSortDescriptor sortDescriptorWithKeyAscending(String key, boolean ascending);
+    public static native NSSortDescriptor sortDescriptorWithKeyAscending(@Nullable String key, boolean ascending);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @Selector("sortDescriptorWithKey:ascending:comparator:")
-    public static native NSSortDescriptor sortDescriptorWithKeyAscendingComparator(String key, boolean ascending,
-            @ObjCBlock(name = "call_sortDescriptorWithKeyAscendingComparator") Block_sortDescriptorWithKeyAscendingComparator cmptr);
+    public static native NSSortDescriptor sortDescriptorWithKeyAscendingComparator(@Nullable String key,
+            boolean ascending,
+            @NotNull @ObjCBlock(name = "call_sortDescriptorWithKeyAscendingComparator") Block_sortDescriptorWithKeyAscendingComparator cmptr);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @Selector("sortDescriptorWithKey:ascending:selector:")
-    public static native NSSortDescriptor sortDescriptorWithKeyAscendingSelector(String key, boolean ascending,
-            SEL selector);
+    public static native NSSortDescriptor sortDescriptorWithKeyAscendingSelector(@Nullable String key,
+            boolean ascending, @Nullable SEL selector);
 
     @Generated
     @Selector("superclass")
@@ -193,6 +200,7 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Selector("comparator")
     @ObjCBlock(name = "call_comparator_ret")
@@ -204,18 +212,19 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
     @Generated
     @Selector("compareObject:toObject:")
     @NInt
-    public native long compareObjectToObject(@Mapped(ObjCObjectMapper.class) Object object1,
-            @Mapped(ObjCObjectMapper.class) Object object2);
+    public native long compareObjectToObject(@NotNull @Mapped(ObjCObjectMapper.class) Object object1,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object object2);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -223,27 +232,29 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSSortDescriptor initWithCoder(NSCoder coder);
+    public native NSSortDescriptor initWithCoder(@NotNull NSCoder coder);
 
     /**
      * keys may be key paths
      */
     @Generated
     @Selector("initWithKey:ascending:")
-    public native NSSortDescriptor initWithKeyAscending(String key, boolean ascending);
+    public native NSSortDescriptor initWithKeyAscending(@Nullable String key, boolean ascending);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @Selector("initWithKey:ascending:comparator:")
-    public native NSSortDescriptor initWithKeyAscendingComparator(String key, boolean ascending,
-            @ObjCBlock(name = "call_initWithKeyAscendingComparator") Block_initWithKeyAscendingComparator cmptr);
+    public native NSSortDescriptor initWithKeyAscendingComparator(@Nullable String key, boolean ascending,
+            @NotNull @ObjCBlock(name = "call_initWithKeyAscendingComparator") Block_initWithKeyAscendingComparator cmptr);
 
     @Generated
     @Selector("initWithKey:ascending:selector:")
-    public native NSSortDescriptor initWithKeyAscendingSelector(String key, boolean ascending, SEL selector);
+    public native NSSortDescriptor initWithKeyAscendingSelector(@Nullable String key, boolean ascending,
+            @Nullable SEL selector);
 
+    @Nullable
     @Generated
     @Selector("key")
     public native String key();
@@ -251,11 +262,13 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
     /**
      * primitive - override this method to return a sort descriptor instance with reversed sort order
      */
+    @NotNull
     @Generated
     @Selector("reversedSortDescriptor")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object reversedSortDescriptor();
 
+    @Nullable
     @Generated
     @Selector("selector")
     public native SEL selector();
@@ -271,8 +284,8 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
     public interface Block_comparator_ret {
         @Generated
         @NInt
-        long call_comparator_ret(@Mapped(ObjCObjectMapper.class) Object obj1,
-                @Mapped(ObjCObjectMapper.class) Object obj2);
+        long call_comparator_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object obj1,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -280,8 +293,8 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
     public interface Block_initWithKeyAscendingComparator {
         @Generated
         @NInt
-        long call_initWithKeyAscendingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
-                @Mapped(ObjCObjectMapper.class) Object obj2);
+        long call_initWithKeyAscendingComparator(@NotNull @Mapped(ObjCObjectMapper.class) Object obj1,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -289,7 +302,7 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
     public interface Block_sortDescriptorWithKeyAscendingComparator {
         @Generated
         @NInt
-        long call_sortDescriptorWithKeyAscendingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
-                @Mapped(ObjCObjectMapper.class) Object obj2);
+        long call_sortDescriptorWithKeyAscendingComparator(@NotNull @Mapped(ObjCObjectMapper.class) Object obj1,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 }

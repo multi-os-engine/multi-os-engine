@@ -25,6 +25,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * -----------------------------------------------------------------------------------------------------------------
@@ -59,6 +61,7 @@ public class ICCameraItem extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("UTI")
     public native String UTI();
@@ -79,22 +82,25 @@ public class ICCameraItem extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,6 +112,7 @@ public class ICCameraItem extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("creationDate")
     public native NSDate creationDate();
@@ -125,6 +132,7 @@ public class ICCameraItem extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("device")
     public native ICCameraDevice device();
@@ -211,13 +219,15 @@ public class ICCameraItem extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] largeThumbnailIfAvailable
      */
+    @Nullable
     @Generated
     @Selector("largeThumbnailIfAvailable")
     public native CGImageRef largeThumbnailIfAvailable();
@@ -230,6 +240,7 @@ public class ICCameraItem extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("metadata")
     public native NSDictionary<?, ?> metadata();
@@ -237,6 +248,7 @@ public class ICCameraItem extends NSObject {
     /**
      * [@property] metadataIfAvailable
      */
+    @Nullable
     @Generated
     @Selector("metadataIfAvailable")
     public native NSDictionary<String, ?> metadataIfAvailable();
@@ -248,6 +260,7 @@ public class ICCameraItem extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("modificationDate")
     public native NSDate modificationDate();
@@ -259,6 +272,7 @@ public class ICCameraItem extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -275,6 +289,7 @@ public class ICCameraItem extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("parentFolder")
     public native ICCameraFolder parentFolder();
@@ -343,6 +358,7 @@ public class ICCameraItem extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("thumbnail")
     public native CGImageRef thumbnail();
@@ -350,6 +366,7 @@ public class ICCameraItem extends NSObject {
     /**
      * [@property] thumbnailIfAvailable
      */
+    @Nullable
     @Generated
     @Selector("thumbnailIfAvailable")
     public native CGImageRef thumbnailIfAvailable();
@@ -363,6 +380,7 @@ public class ICCameraItem extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("userData")
     public native NSMutableDictionary<?, ?> userData();

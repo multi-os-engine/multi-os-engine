@@ -52,6 +52,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A texture to be mapped onto SKSpriteNode instances.
@@ -86,22 +88,25 @@ public class SKTexture extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -136,9 +141,10 @@ public class SKTexture extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -153,8 +159,8 @@ public class SKTexture extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("preloadTextures:withCompletionHandler:")
-    public static native void preloadTexturesWithCompletionHandler(NSArray<? extends SKTexture> textures,
-            @ObjCBlock(name = "call_preloadTexturesWithCompletionHandler") Block_preloadTexturesWithCompletionHandler completionHandler);
+    public static native void preloadTexturesWithCompletionHandler(@NotNull NSArray<? extends SKTexture> textures,
+            @NotNull @ObjCBlock(name = "call_preloadTexturesWithCompletionHandler") Block_preloadTexturesWithCompletionHandler completionHandler);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -211,7 +217,7 @@ public class SKTexture extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("textureWithCGImage:")
-    public static native SKTexture textureWithCGImage(CGImageRef image);
+    public static native SKTexture textureWithCGImage(@NotNull CGImageRef image);
 
     /**
      * Create new texture with bitmap RGBA data in unsigned bytes. Data is copied once, additional changes to the data
@@ -222,11 +228,12 @@ public class SKTexture extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("textureWithData:size:")
-    public static native SKTexture textureWithDataSize(NSData pixelData, @ByValue CGSize size);
+    public static native SKTexture textureWithDataSize(@NotNull NSData pixelData, @ByValue CGSize size);
 
     @Generated
     @Selector("textureWithData:size:flipped:")
-    public static native SKTexture textureWithDataSizeFlipped(NSData pixelData, @ByValue CGSize size, boolean flipped);
+    public static native SKTexture textureWithDataSizeFlipped(@NotNull NSData pixelData, @ByValue CGSize size,
+            boolean flipped);
 
     /**
      * Create new texture with bitmap RGBA data in unsigned bytes using a custom row length and row alignment. Data is
@@ -241,12 +248,12 @@ public class SKTexture extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("textureWithData:size:rowLength:alignment:")
-    public static native SKTexture textureWithDataSizeRowLengthAlignment(NSData pixelData, @ByValue CGSize size,
-            int rowLength, int alignment);
+    public static native SKTexture textureWithDataSizeRowLengthAlignment(@NotNull NSData pixelData,
+            @ByValue CGSize size, int rowLength, int alignment);
 
     @Generated
     @Selector("textureWithImage:")
-    public static native SKTexture textureWithImage(UIImage image);
+    public static native SKTexture textureWithImage(@NotNull UIImage image);
 
     /**
      * Create a texture from an image file. Behaves similar to imageNamed: in UIImage or NSImage
@@ -255,7 +262,7 @@ public class SKTexture extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("textureWithImageNamed:")
-    public static native SKTexture textureWithImageNamed(String name);
+    public static native SKTexture textureWithImageNamed(@NotNull String name);
 
     /**
      * Create a texture from a GKNoiseMap.
@@ -266,7 +273,7 @@ public class SKTexture extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("textureWithNoiseMap:")
-    public static native SKTexture textureWithNoiseMap(GKNoiseMap noiseMap);
+    public static native SKTexture textureWithNoiseMap(@NotNull GKNoiseMap noiseMap);
 
     /**
      * Create a texture that is a subrect of an existing texture. See textureRect property for details.
@@ -276,7 +283,7 @@ public class SKTexture extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("textureWithRect:inTexture:")
-    public static native SKTexture textureWithRectInTexture(@ByValue CGRect rect, SKTexture texture);
+    public static native SKTexture textureWithRectInTexture(@ByValue CGRect rect, @NotNull SKTexture texture);
 
     @Generated
     @Selector("version")
@@ -288,19 +295,21 @@ public class SKTexture extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("CGImage")
     public native CGImageRef CGImage();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * The filtering mode the texture should use when not drawn at native size. Defaults to SKTextureFilteringLinear.
@@ -316,7 +325,7 @@ public class SKTexture extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKTexture initWithCoder(NSCoder coder);
+    public native SKTexture initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Request that this texture be loaded into vram on the next render update, with a callback handler.
@@ -324,7 +333,7 @@ public class SKTexture extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("preloadWithCompletionHandler:")
     public native void preloadWithCompletionHandler(
-            @ObjCBlock(name = "call_preloadWithCompletionHandler") Block_preloadWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_preloadWithCompletionHandler") Block_preloadWithCompletionHandler completionHandler);
 
     /**
      * The filtering mode the texture should use when not drawn at native size. Defaults to SKTextureFilteringLinear.
@@ -354,15 +363,17 @@ public class SKTexture extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * @param filter the CI filter to apply in the copy.
      */
+    @NotNull
     @Generated
     @Selector("textureByApplyingCIFilter:")
-    public native SKTexture textureByApplyingCIFilter(CIFilter filter);
+    public native SKTexture textureByApplyingCIFilter(@NotNull CIFilter filter);
 
     /**
      * Create new texture by generating a normal map texture.
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("textureByGeneratingNormalMap")
     public native SKTexture textureByGeneratingNormalMap();
@@ -375,6 +386,7 @@ public class SKTexture extends NSObject implements NSCopying, NSSecureCoding {
      * 
      *                   API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("textureByGeneratingNormalMapWithSmoothness:contrast:")
     public native SKTexture textureByGeneratingNormalMapWithSmoothnessContrast(@NFloat double smoothness,

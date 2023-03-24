@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -40,7 +41,7 @@ public interface UIPreviewInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("previewInteraction:didUpdateCommitTransition:ended:")
-    default void previewInteractionDidUpdateCommitTransitionEnded(UIPreviewInteraction previewInteraction,
+    default void previewInteractionDidUpdateCommitTransitionEnded(@NotNull UIPreviewInteraction previewInteraction,
             @NFloat double transitionProgress, boolean ended) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -52,7 +53,7 @@ public interface UIPreviewInteractionDelegate {
      */
     @Generated
     @Selector("previewInteraction:didUpdatePreviewTransition:ended:")
-    void previewInteractionDidUpdatePreviewTransitionEnded(UIPreviewInteraction previewInteraction,
+    void previewInteractionDidUpdatePreviewTransitionEnded(@NotNull UIPreviewInteraction previewInteraction,
             @NFloat double transitionProgress, boolean ended);
 
     /**
@@ -60,7 +61,7 @@ public interface UIPreviewInteractionDelegate {
      */
     @Generated
     @Selector("previewInteractionDidCancel:")
-    void previewInteractionDidCancel(UIPreviewInteraction previewInteraction);
+    void previewInteractionDidCancel(@NotNull UIPreviewInteraction previewInteraction);
 
     /**
      * API-Since: 10.0
@@ -68,7 +69,7 @@ public interface UIPreviewInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("previewInteractionShouldBegin:")
-    default boolean previewInteractionShouldBegin(UIPreviewInteraction previewInteraction) {
+    default boolean previewInteractionShouldBegin(@NotNull UIPreviewInteraction previewInteraction) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

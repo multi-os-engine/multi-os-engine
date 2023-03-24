@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Object representing a physical location and orientation in 3D space.
@@ -63,31 +65,35 @@ public class ARAnchor extends NSObject implements ARAnchorCopying, NSSecureCodin
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -105,6 +111,7 @@ public class ARAnchor extends NSObject implements ARAnchorCopying, NSSecureCodin
     /**
      * Unique identifier of the anchor.
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native NSUUID identifier();
@@ -130,9 +137,10 @@ public class ARAnchor extends NSObject implements ARAnchorCopying, NSSecureCodin
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,21 +170,22 @@ public class ARAnchor extends NSObject implements ARAnchorCopying, NSSecureCodin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithAnchor:")
-    public native ARAnchor initWithAnchor(ARAnchor anchor);
+    public native ARAnchor initWithAnchor(@NotNull ARAnchor anchor);
 
     @Generated
     @Selector("initWithCoder:")
-    public native ARAnchor initWithCoder(NSCoder coder);
+    public native ARAnchor initWithCoder(@NotNull NSCoder coder);
 
     /**
      * An optional name used to associate with the anchor.
      * 
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -188,6 +197,7 @@ public class ARAnchor extends NSObject implements ARAnchorCopying, NSSecureCodin
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("sessionIdentifier")
     public native NSUUID sessionIdentifier();

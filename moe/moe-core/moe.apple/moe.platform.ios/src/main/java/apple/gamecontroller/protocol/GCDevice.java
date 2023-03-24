@@ -8,6 +8,8 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -32,6 +34,7 @@ public interface GCDevice {
      * 
      *      API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("handlerQueue")
     NSObject handlerQueue();
@@ -49,6 +52,7 @@ public interface GCDevice {
      *      Deprecated-Message: Use the physicalInputProfile property on GCController instead. For GCKeyboard, use the
      *      keyboardInput property. For GCMouse, use the mouseInput property.
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("physicalInputProfile")
@@ -62,6 +66,7 @@ public interface GCDevice {
      * 
      *      API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("productCategory")
     String productCategory();
@@ -83,7 +88,7 @@ public interface GCDevice {
      */
     @Generated
     @Selector("setHandlerQueue:")
-    void setHandlerQueue(NSObject value);
+    void setHandlerQueue(@NotNull NSObject value);
 
     /**
      * A vendor supplied name. May be nil, and is not guaranteed to be unique. This should not be used as a key in a
@@ -92,6 +97,7 @@ public interface GCDevice {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("vendorName")
     String vendorName();

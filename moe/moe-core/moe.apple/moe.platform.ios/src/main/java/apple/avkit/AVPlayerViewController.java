@@ -47,6 +47,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVPlayerViewController
@@ -91,29 +93,32 @@ public class AVPlayerViewController extends UIViewController {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -145,9 +150,10 @@ public class AVPlayerViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -191,6 +197,7 @@ public class AVPlayerViewController extends UIViewController {
      * 
      * Use the content overlay view to add additional custom views between the video content and the controls.
      */
+    @Nullable
     @Generated
     @Selector("contentOverlayView")
     public native UIView contentOverlayView();
@@ -202,6 +209,7 @@ public class AVPlayerViewController extends UIViewController {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -213,11 +221,12 @@ public class AVPlayerViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVPlayerViewController initWithCoder(NSCoder coder);
+    public native AVPlayerViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native AVPlayerViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native AVPlayerViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * [@property] readyForDisplay
@@ -234,6 +243,7 @@ public class AVPlayerViewController extends UIViewController {
      * 
      * The player from which to source the media content for the view controller.
      */
+    @Nullable
     @Generated
     @Selector("player")
     public native AVPlayer player();
@@ -258,7 +268,8 @@ public class AVPlayerViewController extends UIViewController {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) AVPlayerViewControllerDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) AVPlayerViewControllerDelegate value);
 
     /**
      * [@property] delegate
@@ -268,7 +279,7 @@ public class AVPlayerViewController extends UIViewController {
      * API-Since: 9.0
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) AVPlayerViewControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) AVPlayerViewControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -286,7 +297,7 @@ public class AVPlayerViewController extends UIViewController {
      */
     @Generated
     @Selector("setPlayer:")
-    public native void setPlayer(AVPlayer value);
+    public native void setPlayer(@Nullable AVPlayer value);
 
     /**
      * [@property] showsPlaybackControls
@@ -321,7 +332,7 @@ public class AVPlayerViewController extends UIViewController {
      */
     @Generated
     @Selector("setVideoGravity:")
-    public native void setVideoGravity(String value);
+    public native void setVideoGravity(@NotNull String value);
 
     /**
      * [@property] showsPlaybackControls
@@ -364,6 +375,7 @@ public class AVPlayerViewController extends UIViewController {
      * Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill and AVLayerVideoGravityResize.
      * AVLayerVideoGravityResizeAspect is default.
      */
+    @NotNull
     @Generated
     @Selector("videoGravity")
     public native String videoGravity();
@@ -431,6 +443,7 @@ public class AVPlayerViewController extends UIViewController {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("pixelBufferAttributes")
     public native NSDictionary<String, ?> pixelBufferAttributes();
@@ -446,7 +459,7 @@ public class AVPlayerViewController extends UIViewController {
      */
     @Generated
     @Selector("setPixelBufferAttributes:")
-    public native void setPixelBufferAttributes(NSDictionary<String, ?> value);
+    public native void setPixelBufferAttributes(@Nullable NSDictionary<String, ?> value);
 
     /**
      * [@property] requiresLinearPlayback
@@ -553,7 +566,7 @@ public class AVPlayerViewController extends UIViewController {
      */
     @Generated
     @Selector("selectSpeed:")
-    public native void selectSpeed(AVPlaybackSpeed speed);
+    public native void selectSpeed(@NotNull AVPlaybackSpeed speed);
 
     /**
      * [@property] selectedSpeed
@@ -566,6 +579,7 @@ public class AVPlayerViewController extends UIViewController {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("selectedSpeed")
     public native AVPlaybackSpeed selectedSpeed();
@@ -598,7 +612,7 @@ public class AVPlayerViewController extends UIViewController {
      */
     @Generated
     @Selector("setSpeeds:")
-    public native void setSpeeds(NSArray<? extends AVPlaybackSpeed> value);
+    public native void setSpeeds(@NotNull NSArray<? extends AVPlaybackSpeed> value);
 
     /**
      * [@property] speeds
@@ -613,6 +627,7 @@ public class AVPlayerViewController extends UIViewController {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("speeds")
     public native NSArray<? extends AVPlaybackSpeed> speeds();

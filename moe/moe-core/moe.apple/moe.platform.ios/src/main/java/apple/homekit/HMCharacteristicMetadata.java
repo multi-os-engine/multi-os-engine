@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This class defines the metadata for a characteristic. Metadata provides
@@ -76,22 +78,25 @@ public class HMCharacteristicMetadata extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +131,10 @@ public class HMCharacteristicMetadata extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,6 +165,7 @@ public class HMCharacteristicMetadata extends NSObject {
     /**
      * The format of the value. Refer to HMCharacteristicMetadataFormat constants for supported units.
      */
+    @Nullable
     @Generated
     @Selector("format")
     public native String format();
@@ -170,6 +177,7 @@ public class HMCharacteristicMetadata extends NSObject {
     /**
      * Manufacturer provided description for the characteristic to present to the user.
      */
+    @Nullable
     @Generated
     @Selector("manufacturerDescription")
     public native String manufacturerDescription();
@@ -178,6 +186,7 @@ public class HMCharacteristicMetadata extends NSObject {
      * Max length value for the characteristic that indicates the maximum number of UTF-8 characters allowed if it has a
      * format of "string".
      */
+    @Nullable
     @Generated
     @Selector("maxLength")
     public native NSNumber maxLength();
@@ -185,6 +194,7 @@ public class HMCharacteristicMetadata extends NSObject {
     /**
      * The maximum value for the characteristic if it has a format of "int" or "float".
      */
+    @Nullable
     @Generated
     @Selector("maximumValue")
     public native NSNumber maximumValue();
@@ -192,6 +202,7 @@ public class HMCharacteristicMetadata extends NSObject {
     /**
      * The minimum value for the characteristic if it has a format of "int" or "float".
      */
+    @Nullable
     @Generated
     @Selector("minimumValue")
     public native NSNumber minimumValue();
@@ -200,6 +211,7 @@ public class HMCharacteristicMetadata extends NSObject {
      * Step value for the characteristic that indicates the minimum step value allowed if it has a format of "int" or
      * "float".
      */
+    @Nullable
     @Generated
     @Selector("stepValue")
     public native NSNumber stepValue();
@@ -207,6 +219,7 @@ public class HMCharacteristicMetadata extends NSObject {
     /**
      * The units of the value. Refer to HMCharacteristicMetadataUnits constants for supported units.
      */
+    @Nullable
     @Generated
     @Selector("units")
     public native String units();
@@ -216,6 +229,7 @@ public class HMCharacteristicMetadata extends NSObject {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("validValues")
     public native NSArray<? extends NSNumber> validValues();

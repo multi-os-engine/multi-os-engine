@@ -48,6 +48,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -79,26 +81,30 @@ public class NSConstantString extends NSSimpleCString {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("availableStringEncodings")
     public static native ConstNUIntPtr availableStringEncodings();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -138,31 +144,37 @@ public class NSConstantString extends NSSimpleCString {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("localizedNameOfStringEncoding:")
     public static native String localizedNameOfStringEncoding(@NUInt long encoding);
 
+    @NotNull
     @Generated
     @Variadic()
     @Selector("localizedStringWithFormat:")
-    public static native NSConstantString localizedStringWithFormat(String format, Object... varargs);
+    public static native NSConstantString localizedStringWithFormat(@NotNull String format, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("localizedUserNotificationStringForKey:arguments:")
-    public static native String localizedUserNotificationStringForKeyArguments(String key, NSArray<?> arguments);
+    public static native String localizedUserNotificationStringForKeyArguments(@NotNull String key,
+            @Nullable NSArray<?> arguments);
 
     @Generated
     @Owned
     @Selector("new")
     public static native NSConstantString new_objc();
 
+    @NotNull
     @Generated
     @Selector("pathWithComponents:")
-    public static native String pathWithComponents(NSArray<String> components);
+    public static native String pathWithComponents(@NotNull NSArray<String> components);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -183,70 +195,72 @@ public class NSConstantString extends NSSimpleCString {
     @Generated
     @Selector("stringEncodingForData:encodingOptions:convertedString:usedLossyConversion:")
     @NUInt
-    public static native long stringEncodingForDataEncodingOptionsConvertedStringUsedLossyConversion(NSData data,
-            NSDictionary<String, ?> opts, @ReferenceInfo(type = NSString.class) Ptr<NSString> string,
-            BoolPtr usedLossyConversion);
+    public static native long stringEncodingForDataEncodingOptionsConvertedStringUsedLossyConversion(
+            @NotNull NSData data, @Nullable NSDictionary<String, ?> opts,
+            @Nullable @ReferenceInfo(type = NSString.class) Ptr<NSString> string,
+            @Nullable BoolPtr usedLossyConversion);
 
     @Generated
     @Deprecated
     @Selector("stringWithCString:")
-    public static native NSConstantString stringWithCString(ConstBytePtr bytes);
+    public static native NSConstantString stringWithCString(@NotNull ConstBytePtr bytes);
 
     @Generated
     @Selector("stringWithCString:encoding:")
-    public static native NSConstantString stringWithCStringEncoding(ConstBytePtr cString, @NUInt long enc);
+    public static native NSConstantString stringWithCStringEncoding(@NotNull ConstBytePtr cString, @NUInt long enc);
 
     @Generated
     @Deprecated
     @Selector("stringWithCString:length:")
-    public static native NSConstantString stringWithCStringLength(ConstBytePtr bytes, @NUInt long length);
+    public static native NSConstantString stringWithCStringLength(@NotNull ConstBytePtr bytes, @NUInt long length);
 
     @Generated
     @Selector("stringWithCharacters:length:")
-    public static native NSConstantString stringWithCharactersLength(ConstCharPtr characters, @NUInt long length);
+    public static native NSConstantString stringWithCharactersLength(@NotNull ConstCharPtr characters,
+            @NUInt long length);
 
     @Generated
     @Deprecated
     @Selector("stringWithContentsOfFile:")
-    public static native NSConstantString stringWithContentsOfFile(String path);
+    public static native NSConstantString stringWithContentsOfFile(@NotNull String path);
 
     @Generated
     @Selector("stringWithContentsOfFile:encoding:error:")
-    public static native NSConstantString stringWithContentsOfFileEncodingError(String path, @NUInt long enc,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSConstantString stringWithContentsOfFileEncodingError(@NotNull String path, @NUInt long enc,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("stringWithContentsOfFile:usedEncoding:error:")
-    public static native NSConstantString stringWithContentsOfFileUsedEncodingError(String path, NUIntPtr enc,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSConstantString stringWithContentsOfFileUsedEncodingError(@NotNull String path,
+            @Nullable NUIntPtr enc, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Deprecated
     @Selector("stringWithContentsOfURL:")
-    public static native NSConstantString stringWithContentsOfURL(NSURL url);
+    public static native NSConstantString stringWithContentsOfURL(@NotNull NSURL url);
 
     @Generated
     @Selector("stringWithContentsOfURL:encoding:error:")
-    public static native NSConstantString stringWithContentsOfURLEncodingError(NSURL url, @NUInt long enc,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSConstantString stringWithContentsOfURLEncodingError(@NotNull NSURL url, @NUInt long enc,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("stringWithContentsOfURL:usedEncoding:error:")
-    public static native NSConstantString stringWithContentsOfURLUsedEncodingError(NSURL url, NUIntPtr enc,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSConstantString stringWithContentsOfURLUsedEncodingError(@NotNull NSURL url,
+            @Nullable NUIntPtr enc, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Variadic()
     @Selector("stringWithFormat:")
-    public static native NSConstantString stringWithFormat(String format, Object... varargs);
+    public static native NSConstantString stringWithFormat(@NotNull String format, Object... varargs);
 
     @Generated
     @Selector("stringWithString:")
-    public static native NSConstantString stringWithString(String string);
+    public static native NSConstantString stringWithString(@NotNull String string);
 
     @Generated
     @Selector("stringWithUTF8String:")
-    public static native NSConstantString stringWithUTF8String(ConstBytePtr nullTerminatedCString);
+    public static native NSConstantString stringWithUTF8String(@NotNull ConstBytePtr nullTerminatedCString);
 
     @Generated
     @Selector("superclass")
@@ -267,108 +281,109 @@ public class NSConstantString extends NSSimpleCString {
 
     @Generated
     @Selector("initWithBytes:length:encoding:")
-    public native NSConstantString initWithBytesLengthEncoding(ConstVoidPtr bytes, @NUInt long len,
+    public native NSConstantString initWithBytesLengthEncoding(@NotNull ConstVoidPtr bytes, @NUInt long len,
             @NUInt long encoding);
 
     @Generated
     @Selector("initWithBytesNoCopy:length:encoding:freeWhenDone:")
-    public native NSConstantString initWithBytesNoCopyLengthEncodingFreeWhenDone(VoidPtr bytes, @NUInt long len,
-            @NUInt long encoding, boolean freeBuffer);
+    public native NSConstantString initWithBytesNoCopyLengthEncodingFreeWhenDone(@NotNull VoidPtr bytes,
+            @NUInt long len, @NUInt long encoding, boolean freeBuffer);
 
     @Generated
     @Deprecated
     @Selector("initWithCString:")
-    public native NSConstantString initWithCString(ConstBytePtr bytes);
+    public native NSConstantString initWithCString(@NotNull ConstBytePtr bytes);
 
     @Generated
     @Selector("initWithCString:encoding:")
-    public native NSConstantString initWithCStringEncoding(ConstBytePtr nullTerminatedCString, @NUInt long encoding);
+    public native NSConstantString initWithCStringEncoding(@NotNull ConstBytePtr nullTerminatedCString,
+            @NUInt long encoding);
 
     @Generated
     @Deprecated
     @Selector("initWithCString:length:")
-    public native NSConstantString initWithCStringLength(ConstBytePtr bytes, @NUInt long length);
+    public native NSConstantString initWithCStringLength(@NotNull ConstBytePtr bytes, @NUInt long length);
 
     @Generated
     @Deprecated
     @Selector("initWithCStringNoCopy:length:freeWhenDone:")
-    public native NSConstantString initWithCStringNoCopyLengthFreeWhenDone(BytePtr bytes, @NUInt long length,
+    public native NSConstantString initWithCStringNoCopyLengthFreeWhenDone(@NotNull BytePtr bytes, @NUInt long length,
             boolean freeBuffer);
 
     @Generated
     @Selector("initWithCharacters:length:")
-    public native NSConstantString initWithCharactersLength(ConstCharPtr characters, @NUInt long length);
+    public native NSConstantString initWithCharactersLength(@NotNull ConstCharPtr characters, @NUInt long length);
 
     @Generated
     @Selector("initWithCharactersNoCopy:length:freeWhenDone:")
-    public native NSConstantString initWithCharactersNoCopyLengthFreeWhenDone(CharPtr characters, @NUInt long length,
-            boolean freeBuffer);
+    public native NSConstantString initWithCharactersNoCopyLengthFreeWhenDone(@NotNull CharPtr characters,
+            @NUInt long length, boolean freeBuffer);
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSConstantString initWithCoder(NSCoder coder);
+    public native NSConstantString initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Deprecated
     @Selector("initWithContentsOfFile:")
-    public native NSConstantString initWithContentsOfFile(String path);
+    public native NSConstantString initWithContentsOfFile(@NotNull String path);
 
     @Generated
     @Selector("initWithContentsOfFile:encoding:error:")
-    public native NSConstantString initWithContentsOfFileEncodingError(String path, @NUInt long enc,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSConstantString initWithContentsOfFileEncodingError(@NotNull String path, @NUInt long enc,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("initWithContentsOfFile:usedEncoding:error:")
-    public native NSConstantString initWithContentsOfFileUsedEncodingError(String path, NUIntPtr enc,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSConstantString initWithContentsOfFileUsedEncodingError(@NotNull String path, @Nullable NUIntPtr enc,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Deprecated
     @Selector("initWithContentsOfURL:")
-    public native NSConstantString initWithContentsOfURL(NSURL url);
+    public native NSConstantString initWithContentsOfURL(@NotNull NSURL url);
 
     @Generated
     @Selector("initWithContentsOfURL:encoding:error:")
-    public native NSConstantString initWithContentsOfURLEncodingError(NSURL url, @NUInt long enc,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSConstantString initWithContentsOfURLEncodingError(@NotNull NSURL url, @NUInt long enc,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("initWithContentsOfURL:usedEncoding:error:")
-    public native NSConstantString initWithContentsOfURLUsedEncodingError(NSURL url, NUIntPtr enc,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSConstantString initWithContentsOfURLUsedEncodingError(@NotNull NSURL url, @Nullable NUIntPtr enc,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("initWithData:encoding:")
-    public native NSConstantString initWithDataEncoding(NSData data, @NUInt long encoding);
+    public native NSConstantString initWithDataEncoding(@NotNull NSData data, @NUInt long encoding);
 
     @Generated
     @Variadic()
     @Selector("initWithFormat:")
-    public native NSConstantString initWithFormat(String format, Object... varargs);
+    public native NSConstantString initWithFormat(@NotNull String format, Object... varargs);
 
     @Generated
     @Selector("initWithFormat:arguments:")
-    public native NSConstantString initWithFormatArguments(String format, BytePtr argList);
+    public native NSConstantString initWithFormatArguments(@NotNull String format, BytePtr argList);
 
     @Generated
     @Variadic()
     @Selector("initWithFormat:locale:")
-    public native NSConstantString initWithFormatLocale(String format, @Mapped(ObjCObjectMapper.class) Object locale,
-            Object... varargs);
+    public native NSConstantString initWithFormatLocale(@NotNull String format,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object locale, Object... varargs);
 
     @Generated
     @Selector("initWithFormat:locale:arguments:")
-    public native NSConstantString initWithFormatLocaleArguments(String format,
-            @Mapped(ObjCObjectMapper.class) Object locale, BytePtr argList);
+    public native NSConstantString initWithFormatLocaleArguments(@NotNull String format,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object locale, BytePtr argList);
 
     @Generated
     @Selector("initWithString:")
-    public native NSConstantString initWithString(String aString);
+    public native NSConstantString initWithString(@NotNull String aString);
 
     @Generated
     @Selector("initWithUTF8String:")
-    public native NSConstantString initWithUTF8String(ConstBytePtr nullTerminatedCString);
+    public native NSConstantString initWithUTF8String(@NotNull ConstBytePtr nullTerminatedCString);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -380,108 +395,124 @@ public class NSConstantString extends NSSimpleCString {
     @IsOptional
     @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
     @NInt
-    public static native long itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier);
+    public static native long itemProviderVisibilityForRepresentationWithTypeIdentifier_static(
+            @NotNull String typeIdentifier);
 
     @Generated
     @IsOptional
     @ProtocolClassMethod("itemProviderVisibilityForRepresentationWithTypeIdentifier_static")
     @NInt
-    public long _itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier) {
+    public long _itemProviderVisibilityForRepresentationWithTypeIdentifier_static(@NotNull String typeIdentifier) {
         return itemProviderVisibilityForRepresentationWithTypeIdentifier_static(typeIdentifier);
     }
 
+    @Nullable
     @Generated
     @Selector("objectWithItemProviderData:typeIdentifier:error:")
-    public static native NSConstantString objectWithItemProviderDataTypeIdentifierError(NSData data,
-            String typeIdentifier, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public static native NSConstantString objectWithItemProviderDataTypeIdentifierError(@NotNull NSData data,
+            @NotNull String typeIdentifier, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    @Nullable
     @Generated
     @ProtocolClassMethod("objectWithItemProviderDataTypeIdentifierError")
-    public NSConstantString _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
+    public NSConstantString _objectWithItemProviderDataTypeIdentifierError(@NotNull NSData data,
+            @NotNull String typeIdentifier, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
         return objectWithItemProviderDataTypeIdentifierError(data, typeIdentifier, outError);
     }
 
+    @NotNull
     @Generated
     @Selector("readableTypeIdentifiersForItemProvider")
     public static native NSArray<String> readableTypeIdentifiersForItemProvider();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("readableTypeIdentifiersForItemProvider")
     public NSArray<String> _readableTypeIdentifiersForItemProvider() {
         return readableTypeIdentifiersForItemProvider();
     }
 
+    @NotNull
     @Generated
     @Selector("writableTypeIdentifiersForItemProvider")
     public static native NSArray<String> writableTypeIdentifiersForItemProvider_static();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("writableTypeIdentifiersForItemProvider_static")
     public NSArray<String> _writableTypeIdentifiersForItemProvider_static() {
         return writableTypeIdentifiersForItemProvider_static();
     }
 
+    @NotNull
     @Generated
     @Variadic()
     @Selector("deferredLocalizedIntentsStringWithFormat:")
-    public static native String deferredLocalizedIntentsStringWithFormat(String format, Object... varargs);
+    public static native String deferredLocalizedIntentsStringWithFormat(@NotNull String format, Object... varargs);
 
+    @NotNull
     @Generated
     @Variadic()
     @Selector("deferredLocalizedIntentsStringWithFormat:fromTable:")
-    public static native String deferredLocalizedIntentsStringWithFormatFromTable(String format, String table,
-            Object... varargs);
+    public static native String deferredLocalizedIntentsStringWithFormatFromTable(@NotNull String format,
+            @Nullable String table, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("deferredLocalizedIntentsStringWithFormat:fromTable:arguments:")
-    public static native String deferredLocalizedIntentsStringWithFormatFromTableArguments(String format, String table,
-            BytePtr arguments);
+    public static native String deferredLocalizedIntentsStringWithFormatFromTableArguments(@NotNull String format,
+            @Nullable String table, BytePtr arguments);
 
     @Generated
     @Selector("initWithBytesNoCopy:length:encoding:deallocator:")
-    public native NSConstantString initWithBytesNoCopyLengthEncodingDeallocator(VoidPtr bytes, @NUInt long len,
+    public native NSConstantString initWithBytesNoCopyLengthEncodingDeallocator(@NotNull VoidPtr bytes, @NUInt long len,
             @NUInt long encoding,
-            @ObjCBlock(name = "call_initWithBytesNoCopyLengthEncodingDeallocator") NSString.Block_initWithBytesNoCopyLengthEncodingDeallocator deallocator);
+            @Nullable @ObjCBlock(name = "call_initWithBytesNoCopyLengthEncodingDeallocator") NSString.Block_initWithBytesNoCopyLengthEncodingDeallocator deallocator);
 
     @Generated
     @Selector("initWithCharactersNoCopy:length:deallocator:")
-    public native NSConstantString initWithCharactersNoCopyLengthDeallocator(CharPtr chars, @NUInt long len,
-            @ObjCBlock(name = "call_initWithCharactersNoCopyLengthDeallocator") NSString.Block_initWithCharactersNoCopyLengthDeallocator deallocator);
+    public native NSConstantString initWithCharactersNoCopyLengthDeallocator(@NotNull CharPtr chars, @NUInt long len,
+            @Nullable @ObjCBlock(name = "call_initWithCharactersNoCopyLengthDeallocator") NSString.Block_initWithCharactersNoCopyLengthDeallocator deallocator);
 
     @Generated
     @Selector("initWithValidatedFormat:validFormatSpecifiers:arguments:error:")
-    public native NSConstantString initWithValidatedFormatValidFormatSpecifiersArgumentsError(String format,
-            String validFormatSpecifiers, BytePtr argList, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSConstantString initWithValidatedFormatValidFormatSpecifiersArgumentsError(@NotNull String format,
+            @NotNull String validFormatSpecifiers, BytePtr argList,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Variadic()
     @Selector("initWithValidatedFormat:validFormatSpecifiers:error:")
-    public native NSConstantString initWithValidatedFormatValidFormatSpecifiersError(String format,
-            String validFormatSpecifiers, @ReferenceInfo(type = NSError.class) Ptr<NSError> error, Object... varargs);
+    public native NSConstantString initWithValidatedFormatValidFormatSpecifiersError(@NotNull String format,
+            @NotNull String validFormatSpecifiers, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error,
+            Object... varargs);
 
     @Generated
     @Selector("initWithValidatedFormat:validFormatSpecifiers:locale:arguments:error:")
-    public native NSConstantString initWithValidatedFormatValidFormatSpecifiersLocaleArgumentsError(String format,
-            String validFormatSpecifiers, @Mapped(ObjCObjectMapper.class) Object locale, BytePtr argList,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSConstantString initWithValidatedFormatValidFormatSpecifiersLocaleArgumentsError(
+            @NotNull String format, @NotNull String validFormatSpecifiers,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object locale, BytePtr argList,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Variadic()
     @Selector("initWithValidatedFormat:validFormatSpecifiers:locale:error:")
-    public native NSConstantString initWithValidatedFormatValidFormatSpecifiersLocaleError(String format,
-            String validFormatSpecifiers, @Mapped(ObjCObjectMapper.class) Object locale,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error, Object... varargs);
+    public native NSConstantString initWithValidatedFormatValidFormatSpecifiersLocaleError(@NotNull String format,
+            @NotNull String validFormatSpecifiers, @Nullable @Mapped(ObjCObjectMapper.class) Object locale,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error, Object... varargs);
 
+    @Nullable
     @Generated
     @Variadic()
     @Selector("localizedStringWithValidatedFormat:validFormatSpecifiers:error:")
-    public static native NSConstantString localizedStringWithValidatedFormatValidFormatSpecifiersError(String format,
-            String validFormatSpecifiers, @ReferenceInfo(type = NSError.class) Ptr<NSError> error, Object... varargs);
+    public static native NSConstantString localizedStringWithValidatedFormatValidFormatSpecifiersError(
+            @NotNull String format, @NotNull String validFormatSpecifiers,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error, Object... varargs);
 
     @Generated
     @Variadic()
     @Selector("stringWithValidatedFormat:validFormatSpecifiers:error:")
-    public static native NSConstantString stringWithValidatedFormatValidFormatSpecifiersError(String format,
-            String validFormatSpecifiers, @ReferenceInfo(type = NSError.class) Ptr<NSError> error, Object... varargs);
+    public static native NSConstantString stringWithValidatedFormatValidFormatSpecifiersError(@NotNull String format,
+            @NotNull String validFormatSpecifiers, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error,
+            Object... varargs);
 }

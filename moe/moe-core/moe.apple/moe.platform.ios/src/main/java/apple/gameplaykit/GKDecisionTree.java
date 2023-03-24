@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -78,22 +80,25 @@ public class GKDecisionTree extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,9 +133,10 @@ public class GKDecisionTree extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,7 +170,7 @@ public class GKDecisionTree extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Will branch down from the root node to find the correct action attribute for the given collection of results and
@@ -173,10 +179,11 @@ public class GKDecisionTree extends NSObject implements NSSecureCoding {
      * @param answers The dictionary of attributes (keys) and their answers (values)
      * @return The attribute found by traversing the tree given the provided answers
      */
+    @Nullable
     @Generated
     @Selector("findActionForAnswers:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native apple.protocol.NSObject findActionForAnswers(NSDictionary<?, ?> answers);
+    public native apple.protocol.NSObject findActionForAnswers(@NotNull NSDictionary<?, ?> answers);
 
     @Generated
     @Selector("init")
@@ -190,11 +197,12 @@ public class GKDecisionTree extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("initWithAttribute:")
-    public native GKDecisionTree initWithAttribute(@Mapped(ObjCObjectMapper.class) apple.protocol.NSObject attribute);
+    public native GKDecisionTree initWithAttribute(
+            @NotNull @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject attribute);
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKDecisionTree initWithCoder(NSCoder coder);
+    public native GKDecisionTree initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initializes and constructs a decision tree by learning from the provided examples & attributes
@@ -223,8 +231,8 @@ public class GKDecisionTree extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("initWithExamples:actions:attributes:")
-    public native GKDecisionTree initWithExamplesActionsAttributes(NSArray<? extends NSArray<?>> examples,
-            NSArray<?> actions, NSArray<?> attributes);
+    public native GKDecisionTree initWithExamplesActionsAttributes(@NotNull NSArray<? extends NSArray<?>> examples,
+            @NotNull NSArray<?> actions, @NotNull NSArray<?> attributes);
 
     /**
      * The random source used by the decision tree when descending on a random branch
@@ -232,6 +240,7 @@ public class GKDecisionTree extends NSObject implements NSSecureCoding {
      * 
      * @see GKDecisionNode
      */
+    @NotNull
     @Generated
     @Selector("randomSource")
     public native GKRandomSource randomSource();
@@ -239,6 +248,7 @@ public class GKDecisionTree extends NSObject implements NSSecureCoding {
     /**
      * The node for the decision tree that all other nodes descend from
      */
+    @Nullable
     @Generated
     @Selector("rootNode")
     public native GKDecisionNode rootNode();
@@ -251,7 +261,7 @@ public class GKDecisionTree extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setRandomSource:")
-    public native void setRandomSource(GKRandomSource value);
+    public native void setRandomSource(@NotNull GKRandomSource value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -267,7 +277,7 @@ public class GKDecisionTree extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("exportToURL:error:")
-    public native boolean exportToURLError(NSURL url, NSError error);
+    public native boolean exportToURLError(@NotNull NSURL url, @Nullable NSError error);
 
     /**
      * Initializes a decision tree from the contents of a file
@@ -277,5 +287,5 @@ public class GKDecisionTree extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("initWithURL:error:")
-    public native GKDecisionTree initWithURLError(NSURL url, NSError error);
+    public native GKDecisionTree initWithURLError(@NotNull NSURL url, @Nullable NSError error);
 }

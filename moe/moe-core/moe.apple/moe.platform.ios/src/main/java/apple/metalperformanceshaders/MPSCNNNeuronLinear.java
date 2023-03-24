@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNNeuronLinear
@@ -79,22 +81,25 @@ public class MPSCNNNeuronLinear extends MPSCNNNeuron {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +134,10 @@ public class MPSCNNNeuronLinear extends MPSCNNNeuron {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,7 +171,7 @@ public class MPSCNNNeuronLinear extends MPSCNNNeuron {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNNeuronLinear initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNNeuronLinear initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize the linear neuron filter
@@ -181,17 +187,17 @@ public class MPSCNNNeuronLinear extends MPSCNNNeuron {
     @Deprecated
     @Generated
     @Selector("initWithDevice:a:b:")
-    public native MPSCNNNeuronLinear initWithDeviceAB(@Mapped(ObjCObjectMapper.class) MTLDevice device, float a,
-            float b);
+    public native MPSCNNNeuronLinear initWithDeviceAB(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            float a, float b);
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNNeuronLinear initWithCoder(NSCoder aDecoder);
+    public native MPSCNNNeuronLinear initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNNeuronLinear initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNNeuronLinear initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("supportsSecureCoding")
@@ -205,6 +211,6 @@ public class MPSCNNNeuronLinear extends MPSCNNNeuron {
 
     @Generated
     @Selector("initWithDevice:neuronDescriptor:")
-    public native MPSCNNNeuronLinear initWithDeviceNeuronDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            MPSNNNeuronDescriptor neuronDescriptor);
+    public native MPSCNNNeuronLinear initWithDeviceNeuronDescriptor(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MPSNNNeuronDescriptor neuronDescriptor);
 }

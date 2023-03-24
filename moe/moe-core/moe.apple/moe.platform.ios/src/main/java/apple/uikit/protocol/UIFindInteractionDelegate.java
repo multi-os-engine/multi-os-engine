@@ -10,6 +10,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -27,7 +29,8 @@ public interface UIFindInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("findInteraction:didBeginFindSession:")
-    default void findInteractionDidBeginFindSession(UIFindInteraction interaction, UIFindSession session) {
+    default void findInteractionDidBeginFindSession(@NotNull UIFindInteraction interaction,
+            @NotNull UIFindSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -39,7 +42,8 @@ public interface UIFindInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("findInteraction:didEndFindSession:")
-    default void findInteractionDidEndFindSession(UIFindInteraction interaction, UIFindSession session) {
+    default void findInteractionDidEndFindSession(@NotNull UIFindInteraction interaction,
+            @NotNull UIFindSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -48,7 +52,8 @@ public interface UIFindInteractionDelegate {
      * implementation to allow the
      * find session to begin, otherwise return nil to prevent the system find panel from appearing.
      */
+    @Nullable
     @Generated
     @Selector("findInteraction:sessionForView:")
-    UIFindSession findInteractionSessionForView(UIFindInteraction interaction, UIView view);
+    UIFindSession findInteractionSessionForView(@NotNull UIFindInteraction interaction, @NotNull UIView view);
 }

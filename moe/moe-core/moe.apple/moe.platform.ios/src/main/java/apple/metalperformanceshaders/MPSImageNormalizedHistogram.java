@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSImageNormalizedHistogram
@@ -71,22 +73,25 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -141,9 +146,10 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
     @Generated
     @Selector("encodeToCommandBuffer:sourceTexture:minmaxTexture:histogram:histogramOffset:")
     public native void encodeToCommandBufferSourceTextureMinmaxTextureHistogramHistogramOffset(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture source, @Mapped(ObjCObjectMapper.class) MTLTexture minmaxTexture,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer histogram, @NUInt long histogramOffset);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture source,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture minmaxTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer histogram, @NUInt long histogramOffset);
 
     @Generated
     @Selector("hash")
@@ -173,7 +179,7 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSImageNormalizedHistogram initWithCoder(NSCoder aDecoder);
+    public native MPSImageNormalizedHistogram initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
@@ -192,12 +198,12 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSImageNormalizedHistogram initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageNormalizedHistogram initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSImageNormalizedHistogram initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageNormalizedHistogram initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Specifies information to compute the histogram for channels of an image.
@@ -209,7 +215,7 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
     @Generated
     @Selector("initWithDevice:histogramInfo:")
     public native MPSImageNormalizedHistogram initWithDeviceHistogramInfo(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, VoidPtr histogramInfo);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull VoidPtr histogramInfo);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -228,9 +234,10 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

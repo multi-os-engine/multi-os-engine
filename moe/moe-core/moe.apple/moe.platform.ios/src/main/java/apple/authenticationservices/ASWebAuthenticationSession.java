@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * ASWebAuthenticationSession
@@ -92,7 +94,7 @@ public class ASWebAuthenticationSession extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Cancel an ASWebAuthenticationSession. If the view controller is already presented to load the webpage for
@@ -104,18 +106,21 @@ public class ASWebAuthenticationSession extends NSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -148,15 +153,15 @@ public class ASWebAuthenticationSession extends NSObject {
      */
     @Generated
     @Selector("initWithURL:callbackURLScheme:completionHandler:")
-    public native ASWebAuthenticationSession initWithURLCallbackURLSchemeCompletionHandler(NSURL URL,
-            String callbackURLScheme,
-            @ObjCBlock(name = "call_initWithURLCallbackURLSchemeCompletionHandler") Block_initWithURLCallbackURLSchemeCompletionHandler completionHandler);
+    public native ASWebAuthenticationSession initWithURLCallbackURLSchemeCompletionHandler(@NotNull NSURL URL,
+            @Nullable String callbackURLScheme,
+            @NotNull @ObjCBlock(name = "call_initWithURLCallbackURLSchemeCompletionHandler") Block_initWithURLCallbackURLSchemeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithURLCallbackURLSchemeCompletionHandler {
         @Generated
-        void call_initWithURLCallbackURLSchemeCompletionHandler(NSURL callbackURL, NSError error);
+        void call_initWithURLCallbackURLSchemeCompletionHandler(@Nullable NSURL callbackURL, @Nullable NSError error);
     }
 
     @Generated
@@ -176,9 +181,10 @@ public class ASWebAuthenticationSession extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -207,6 +213,7 @@ public class ASWebAuthenticationSession extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("presentationContextProvider")
     @MappedReturn(ObjCObjectMapper.class)
@@ -245,7 +252,7 @@ public class ASWebAuthenticationSession extends NSObject {
     @Generated
     @Selector("setPresentationContextProvider:")
     public native void setPresentationContextProvider_unsafe(
-            @Mapped(ObjCObjectMapper.class) ASWebAuthenticationPresentationContextProviding value);
+            @Nullable @Mapped(ObjCObjectMapper.class) ASWebAuthenticationPresentationContextProviding value);
 
     /**
      * Provides context to target where in an application's UI the authorization view should be shown. A provider
@@ -257,7 +264,7 @@ public class ASWebAuthenticationSession extends NSObject {
      */
     @Generated
     public void setPresentationContextProvider(
-            @Mapped(ObjCObjectMapper.class) ASWebAuthenticationPresentationContextProviding value) {
+            @Nullable @Mapped(ObjCObjectMapper.class) ASWebAuthenticationPresentationContextProviding value) {
         Object __old = presentationContextProvider();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

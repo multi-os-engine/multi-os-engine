@@ -47,6 +47,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSImage
@@ -164,22 +166,25 @@ public class MPSImage extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -214,9 +219,10 @@ public class MPSImage extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -249,6 +255,7 @@ public class MPSImage extends NSObject {
      * 
      * The device on which the MPSImage will be used
      */
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -290,8 +297,8 @@ public class MPSImage extends NSObject {
      */
     @Generated
     @Selector("initWithDevice:imageDescriptor:")
-    public native MPSImage initWithDeviceImageDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            MPSImageDescriptor imageDescriptor);
+    public native MPSImage initWithDeviceImageDescriptor(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull MPSImageDescriptor imageDescriptor);
 
     /**
      * Initialize an MPSImage object using Metal texture. Metal texture has been created by
@@ -322,7 +329,7 @@ public class MPSImage extends NSObject {
      */
     @Generated
     @Selector("initWithTexture:featureChannels:")
-    public native MPSImage initWithTextureFeatureChannels(@Mapped(ObjCObjectMapper.class) MTLTexture texture,
+    public native MPSImage initWithTextureFeatureChannels(@NotNull @Mapped(ObjCObjectMapper.class) MTLTexture texture,
             @NUInt long featureChannels);
 
     /**
@@ -330,6 +337,7 @@ public class MPSImage extends NSObject {
      * 
      * A string to help identify this object.
      */
+    @Nullable
     @Generated
     @Selector("label")
     public native String label();
@@ -392,7 +400,7 @@ public class MPSImage extends NSObject {
      */
     @Generated
     @Selector("setLabel:")
-    public native void setLabel(String value);
+    public native void setLabel(@Nullable String value);
 
     /**
      * Set (or query) the purgeability state of a MPSImage
@@ -418,6 +426,7 @@ public class MPSImage extends NSObject {
      * their arguments to become allocated. Likewise, MPSImages initialized with -initWithTexture:
      * featureChannels: have already been allocated.
      */
+    @NotNull
     @Generated
     @Selector("texture")
     @MappedReturn(ObjCObjectMapper.class)
@@ -457,6 +466,7 @@ public class MPSImage extends NSObject {
     /**
      * Get a well known MPSImageAllocator that makes MPSImages
      */
+    @NotNull
     @Generated
     @Selector("defaultAllocator")
     @MappedReturn(ObjCObjectMapper.class)
@@ -490,7 +500,7 @@ public class MPSImage extends NSObject {
      */
     @Generated
     @Selector("readBytes:dataLayout:bytesPerRow:region:featureChannelInfo:imageIndex:")
-    public native void readBytesDataLayoutBytesPerRowRegionFeatureChannelInfoImageIndex(VoidPtr dataBytes,
+    public native void readBytesDataLayoutBytesPerRowRegionFeatureChannelInfoImageIndex(@NotNull VoidPtr dataBytes,
             @NUInt long dataLayout, @NUInt long bytesPerRow, @ByValue MTLRegion region,
             @ByValue MPSImageReadWriteParams featureChannelInfo, @NUInt long imageIndex);
 
@@ -514,7 +524,8 @@ public class MPSImage extends NSObject {
      */
     @Generated
     @Selector("readBytes:dataLayout:imageIndex:")
-    public native void readBytesDataLayoutImageIndex(VoidPtr dataBytes, @NUInt long dataLayout, @NUInt long imageIndex);
+    public native void readBytesDataLayoutImageIndex(@NotNull VoidPtr dataBytes, @NUInt long dataLayout,
+            @NUInt long imageIndex);
 
     /**
      * Set the values inside MPSImage with the Buffer passed in.
@@ -546,8 +557,8 @@ public class MPSImage extends NSObject {
      */
     @Generated
     @Selector("writeBytes:dataLayout:bytesPerRow:region:featureChannelInfo:imageIndex:")
-    public native void writeBytesDataLayoutBytesPerRowRegionFeatureChannelInfoImageIndex(ConstVoidPtr dataBytes,
-            @NUInt long dataLayout, @NUInt long bytesPerRow, @ByValue MTLRegion region,
+    public native void writeBytesDataLayoutBytesPerRowRegionFeatureChannelInfoImageIndex(
+            @NotNull ConstVoidPtr dataBytes, @NUInt long dataLayout, @NUInt long bytesPerRow, @ByValue MTLRegion region,
             @ByValue MPSImageReadWriteParams featureChannelInfo, @NUInt long imageIndex);
 
     /**
@@ -570,7 +581,7 @@ public class MPSImage extends NSObject {
      */
     @Generated
     @Selector("writeBytes:dataLayout:imageIndex:")
-    public native void writeBytesDataLayoutImageIndex(ConstVoidPtr dataBytes, @NUInt long dataLayout,
+    public native void writeBytesDataLayoutImageIndex(@NotNull ConstVoidPtr dataBytes, @NUInt long dataLayout,
             @NUInt long imageIndex);
 
     /**
@@ -599,8 +610,8 @@ public class MPSImage extends NSObject {
      */
     @Generated
     @Selector("initWithParentImage:sliceRange:featureChannels:")
-    public native MPSImage initWithParentImageSliceRangeFeatureChannels(MPSImage parent, @ByValue NSRange sliceRange,
-            @NUInt long featureChannels);
+    public native MPSImage initWithParentImageSliceRangeFeatureChannels(@NotNull MPSImage parent,
+            @ByValue NSRange sliceRange, @NUInt long featureChannels);
 
     /**
      * The MPSImage from which this MPSImage was derived. Otherwise nil.
@@ -609,6 +620,7 @@ public class MPSImage extends NSObject {
      * -batchRepresentation, -batchRepresentationWithRange: or
      * -subImageWithFeatureChannelRange:.
      */
+    @Nullable
     @Generated
     @Selector("parent")
     public native MPSImage parent();
@@ -655,9 +667,9 @@ public class MPSImage extends NSObject {
      */
     @Generated
     @Selector("readBytes:dataLayout:bytesPerRow:bytesPerImage:region:featureChannelInfo:imageIndex:")
-    public native void readBytesDataLayoutBytesPerRowBytesPerImageRegionFeatureChannelInfoImageIndex(VoidPtr dataBytes,
-            @NUInt long dataLayout, @NUInt long bytesPerRow, @NUInt long bytesPerImage, @ByValue MTLRegion region,
-            @ByValue MPSImageReadWriteParams featureChannelInfo, @NUInt long imageIndex);
+    public native void readBytesDataLayoutBytesPerRowBytesPerImageRegionFeatureChannelInfoImageIndex(
+            @NotNull VoidPtr dataBytes, @NUInt long dataLayout, @NUInt long bytesPerRow, @NUInt long bytesPerImage,
+            @ByValue MTLRegion region, @ByValue MPSImageReadWriteParams featureChannelInfo, @NUInt long imageIndex);
 
     /**
      * Get the number of bytes used to allocate underyling MTLResources
@@ -707,6 +719,7 @@ public class MPSImage extends NSObject {
      *              must be multiples of 4. If the length is too big, it
      *              will be reduced to fit in the image.
      */
+    @NotNull
     @Generated
     @Selector("subImageWithFeatureChannelRange:")
     public native MPSImage subImageWithFeatureChannelRange(@ByValue NSRange range);
@@ -725,7 +738,8 @@ public class MPSImage extends NSObject {
      */
     @Generated
     @Selector("synchronizeOnCommandBuffer:")
-    public native void synchronizeOnCommandBuffer(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
+    public native void synchronizeOnCommandBuffer(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
 
     /**
      * Set the values inside MPSImage with the Buffer passed in.
@@ -763,9 +777,9 @@ public class MPSImage extends NSObject {
     @Generated
     @Selector("writeBytes:dataLayout:bytesPerColumn:bytesPerRow:bytesPerImage:region:featureChannelInfo:imageIndex:")
     public native void writeBytesDataLayoutBytesPerColumnBytesPerRowBytesPerImageRegionFeatureChannelInfoImageIndex(
-            ConstVoidPtr dataBytes, @NUInt long dataLayout, @NUInt long bytesPerColumn, @NUInt long bytesPerRow,
-            @NUInt long bytesPerImage, @ByValue MTLRegion region, @ByValue MPSImageReadWriteParams featureChannelInfo,
-            @NUInt long imageIndex);
+            @NotNull ConstVoidPtr dataBytes, @NUInt long dataLayout, @NUInt long bytesPerColumn,
+            @NUInt long bytesPerRow, @NUInt long bytesPerImage, @ByValue MTLRegion region,
+            @ByValue MPSImageReadWriteParams featureChannelInfo, @NUInt long imageIndex);
 
     /**
      * writeBytes
@@ -806,6 +820,6 @@ public class MPSImage extends NSObject {
     @Generated
     @Selector("writeBytes:dataLayout:bytesPerRow:bytesPerImage:region:featureChannelInfo:imageIndex:")
     public native void writeBytesDataLayoutBytesPerRowBytesPerImageRegionFeatureChannelInfoImageIndex(
-            ConstVoidPtr dataBytes, @NUInt long dataLayout, @NUInt long bytesPerRow, @NUInt long bytesPerImage,
+            @NotNull ConstVoidPtr dataBytes, @NUInt long dataLayout, @NUInt long bytesPerRow, @NUInt long bytesPerImage,
             @ByValue MTLRegion region, @ByValue MPSImageReadWriteParams featureChannelInfo, @NUInt long imageIndex);
 }

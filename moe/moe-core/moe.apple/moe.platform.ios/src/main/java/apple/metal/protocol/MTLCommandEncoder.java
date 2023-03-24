@@ -24,6 +24,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLCommandEncoder
@@ -42,6 +44,7 @@ public interface MTLCommandEncoder {
      * 
      * The device this resource was created against.
      */
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -64,13 +67,14 @@ public interface MTLCommandEncoder {
      */
     @Generated
     @Selector("insertDebugSignpost:")
-    void insertDebugSignpost(String string);
+    void insertDebugSignpost(@NotNull String string);
 
     /**
      * [@property] label
      * 
      * A string to help identify this object.
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();
@@ -91,7 +95,7 @@ public interface MTLCommandEncoder {
      */
     @Generated
     @Selector("pushDebugGroup:")
-    void pushDebugGroup(String string);
+    void pushDebugGroup(@NotNull String string);
 
     /**
      * [@property] label
@@ -100,5 +104,5 @@ public interface MTLCommandEncoder {
      */
     @Generated
     @Selector("setLabel:")
-    void setLabel(String value);
+    void setLabel(@Nullable String value);
 }

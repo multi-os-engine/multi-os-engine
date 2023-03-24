@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 9.3
@@ -37,14 +38,14 @@ public interface MKLocalSearchCompleterDelegate {
     @Generated
     @IsOptional
     @Selector("completer:didFailWithError:")
-    default void completerDidFailWithError(MKLocalSearchCompleter completer, NSError error) {
+    default void completerDidFailWithError(@NotNull MKLocalSearchCompleter completer, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("completerDidUpdateResults:")
-    default void completerDidUpdateResults(MKLocalSearchCompleter completer) {
+    default void completerDidUpdateResults(@NotNull MKLocalSearchCompleter completer) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SWCollaborationShareOptions
@@ -67,31 +69,35 @@ public class SWCollaborationShareOptions extends NSObject implements NSCopying, 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -103,7 +109,7 @@ public class SWCollaborationShareOptions extends NSObject implements NSCopying, 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -116,7 +122,7 @@ public class SWCollaborationShareOptions extends NSObject implements NSCopying, 
 
     @Generated
     @Selector("initWithCoder:")
-    public native SWCollaborationShareOptions initWithCoder(NSCoder coder);
+    public native SWCollaborationShareOptions initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initializes a shareOptions object to represent the available collaboration options for the document and the
@@ -127,7 +133,7 @@ public class SWCollaborationShareOptions extends NSObject implements NSCopying, 
     @Generated
     @Selector("initWithOptionsGroups:")
     public native SWCollaborationShareOptions initWithOptionsGroups(
-            NSArray<? extends SWCollaborationOptionsGroup> optionsGroups);
+            @NotNull NSArray<? extends SWCollaborationOptionsGroup> optionsGroups);
 
     /**
      * Initializes a shareOptions object to represent the available collaboration options for the document and a summary
@@ -139,7 +145,7 @@ public class SWCollaborationShareOptions extends NSObject implements NSCopying, 
     @Generated
     @Selector("initWithOptionsGroups:summary:")
     public native SWCollaborationShareOptions initWithOptionsGroupsSummary(
-            NSArray<? extends SWCollaborationOptionsGroup> optionsGroups, String summary);
+            @NotNull NSArray<? extends SWCollaborationOptionsGroup> optionsGroups, @NotNull String summary);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -158,9 +164,10 @@ public class SWCollaborationShareOptions extends NSObject implements NSCopying, 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,6 +177,7 @@ public class SWCollaborationShareOptions extends NSObject implements NSCopying, 
     /**
      * SWCollaborationOptionsGroups to customize how the collaboration will be shared
      */
+    @NotNull
     @Generated
     @Selector("optionsGroups")
     public native NSArray<? extends SWCollaborationOptionsGroup> optionsGroups();
@@ -187,7 +195,7 @@ public class SWCollaborationShareOptions extends NSObject implements NSCopying, 
      */
     @Generated
     @Selector("setOptionsGroups:")
-    public native void setOptionsGroups(NSArray<? extends SWCollaborationOptionsGroup> value);
+    public native void setOptionsGroups(@NotNull NSArray<? extends SWCollaborationOptionsGroup> value);
 
     /**
      * Localized string to summarize the selected collaboration options. If nil, "Share Options" will be displayed by
@@ -195,7 +203,7 @@ public class SWCollaborationShareOptions extends NSObject implements NSCopying, 
      */
     @Generated
     @Selector("setSummary:")
-    public native void setSummary(String value);
+    public native void setSummary(@NotNull String value);
 
     @Generated
     @Selector("setVersion:")
@@ -207,10 +215,11 @@ public class SWCollaborationShareOptions extends NSObject implements NSCopying, 
      * 
      * @param optionsGroups SWCollaborationOptionsGroups to customize how the collaboration will be shared
      */
+    @NotNull
     @Generated
     @Selector("shareOptionsWithOptionsGroups:")
     public static native SWCollaborationShareOptions shareOptionsWithOptionsGroups(
-            NSArray<? extends SWCollaborationOptionsGroup> optionsGroups);
+            @NotNull NSArray<? extends SWCollaborationOptionsGroup> optionsGroups);
 
     /**
      * Creates a shareOptions object to represent the available collaboration options for the document and a summary of
@@ -219,15 +228,17 @@ public class SWCollaborationShareOptions extends NSObject implements NSCopying, 
      * @param optionsGroups SWCollaborationOptionsGroups to customize how the collaboration will be shared
      * @param summary       localized string to summarize the selected collaboration options
      */
+    @NotNull
     @Generated
     @Selector("shareOptionsWithOptionsGroups:summary:")
     public static native SWCollaborationShareOptions shareOptionsWithOptionsGroupsSummary(
-            NSArray<? extends SWCollaborationOptionsGroup> optionsGroups, String summary);
+            @NotNull NSArray<? extends SWCollaborationOptionsGroup> optionsGroups, @NotNull String summary);
 
     /**
      * Localized string to summarize the selected collaboration options. If nil, "Share Options" will be displayed by
      * default.
      */
+    @NotNull
     @Generated
     @Selector("summary")
     public native String summary();

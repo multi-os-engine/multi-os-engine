@@ -41,6 +41,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CMMotionActivityManager
@@ -87,22 +89,25 @@ public class CMMotionActivityManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -147,9 +152,10 @@ public class CMMotionActivityManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -195,9 +201,9 @@ public class CMMotionActivityManager extends NSObject {
      */
     @Generated
     @Selector("queryActivityStartingFromDate:toDate:toQueue:withHandler:")
-    public native void queryActivityStartingFromDateToDateToQueueWithHandler(NSDate start, NSDate end,
-            NSOperationQueue queue,
-            @ObjCBlock(name = "call_queryActivityStartingFromDateToDateToQueueWithHandler") Block_queryActivityStartingFromDateToDateToQueueWithHandler handler);
+    public native void queryActivityStartingFromDateToDateToQueueWithHandler(@NotNull NSDate start, @NotNull NSDate end,
+            @NotNull NSOperationQueue queue,
+            @NotNull @ObjCBlock(name = "call_queryActivityStartingFromDateToDateToQueueWithHandler") Block_queryActivityStartingFromDateToDateToQueueWithHandler handler);
 
     /**
      * startActivityUpdatesToQueue:withHandler
@@ -219,8 +225,8 @@ public class CMMotionActivityManager extends NSObject {
      */
     @Generated
     @Selector("startActivityUpdatesToQueue:withHandler:")
-    public native void startActivityUpdatesToQueueWithHandler(NSOperationQueue queue,
-            @ObjCBlock(name = "call_startActivityUpdatesToQueueWithHandler") Block_startActivityUpdatesToQueueWithHandler handler);
+    public native void startActivityUpdatesToQueueWithHandler(@NotNull NSOperationQueue queue,
+            @NotNull @ObjCBlock(name = "call_startActivityUpdatesToQueueWithHandler") Block_startActivityUpdatesToQueueWithHandler handler);
 
     /**
      * stopActivityUpdates
@@ -236,15 +242,15 @@ public class CMMotionActivityManager extends NSObject {
     @Generated
     public interface Block_queryActivityStartingFromDateToDateToQueueWithHandler {
         @Generated
-        void call_queryActivityStartingFromDateToDateToQueueWithHandler(NSArray<? extends CMMotionActivity> activities,
-                NSError error);
+        void call_queryActivityStartingFromDateToDateToQueueWithHandler(
+                @Nullable NSArray<? extends CMMotionActivity> activities, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startActivityUpdatesToQueueWithHandler {
         @Generated
-        void call_startActivityUpdatesToQueueWithHandler(CMMotionActivity activity);
+        void call_startActivityUpdatesToQueueWithHandler(@Nullable CMMotionActivity activity);
     }
 
     /**

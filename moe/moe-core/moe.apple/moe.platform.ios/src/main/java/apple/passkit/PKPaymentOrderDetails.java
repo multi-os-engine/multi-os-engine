@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -54,28 +56,32 @@ public class PKPaymentOrderDetails extends NSObject {
     @Selector("allocWithZone:")
     public static native PKPaymentOrderDetails allocWithZone(VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("authenticationToken")
     public native String authenticationToken();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -100,7 +106,8 @@ public class PKPaymentOrderDetails extends NSObject {
     @Generated
     @Selector("initWithOrderTypeIdentifier:orderIdentifier:webServiceURL:authenticationToken:")
     public native PKPaymentOrderDetails initWithOrderTypeIdentifierOrderIdentifierWebServiceURLAuthenticationToken(
-            String orderTypeIdentifier, String orderIdentifier, NSURL webServiceURL, String authenticationToken);
+            @NotNull String orderTypeIdentifier, @NotNull String orderIdentifier, @NotNull NSURL webServiceURL,
+            @NotNull String authenticationToken);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -119,19 +126,22 @@ public class PKPaymentOrderDetails extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native PKPaymentOrderDetails new_objc();
 
+    @NotNull
     @Generated
     @Selector("orderIdentifier")
     public native String orderIdentifier();
 
+    @NotNull
     @Generated
     @Selector("orderTypeIdentifier")
     public native String orderTypeIdentifier();
@@ -146,15 +156,15 @@ public class PKPaymentOrderDetails extends NSObject {
 
     @Generated
     @Selector("setAuthenticationToken:")
-    public native void setAuthenticationToken(String value);
+    public native void setAuthenticationToken(@NotNull String value);
 
     @Generated
     @Selector("setOrderIdentifier:")
-    public native void setOrderIdentifier(String value);
+    public native void setOrderIdentifier(@NotNull String value);
 
     @Generated
     @Selector("setOrderTypeIdentifier:")
-    public native void setOrderTypeIdentifier(String value);
+    public native void setOrderTypeIdentifier(@NotNull String value);
 
     @Generated
     @Selector("setVersion:")
@@ -162,7 +172,7 @@ public class PKPaymentOrderDetails extends NSObject {
 
     @Generated
     @Selector("setWebServiceURL:")
-    public native void setWebServiceURL(NSURL value);
+    public native void setWebServiceURL(@NotNull NSURL value);
 
     @Generated
     @Selector("superclass")
@@ -173,6 +183,7 @@ public class PKPaymentOrderDetails extends NSObject {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("webServiceURL")
     public native NSURL webServiceURL();

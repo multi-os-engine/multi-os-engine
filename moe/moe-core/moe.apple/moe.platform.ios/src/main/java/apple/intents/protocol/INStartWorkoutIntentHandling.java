@@ -31,6 +31,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INStartWorkoutIntent. By implementing this protocol, a class can provide
@@ -64,8 +65,8 @@ public interface INStartWorkoutIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmStartWorkout:completion:")
-    default void confirmStartWorkoutCompletion(INStartWorkoutIntent intent,
-            @ObjCBlock(name = "call_confirmStartWorkoutCompletion") Block_confirmStartWorkoutCompletion completion) {
+    default void confirmStartWorkoutCompletion(@NotNull INStartWorkoutIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmStartWorkoutCompletion") Block_confirmStartWorkoutCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -82,38 +83,38 @@ public interface INStartWorkoutIntentHandling {
      */
     @Generated
     @Selector("handleStartWorkout:completion:")
-    void handleStartWorkoutCompletion(INStartWorkoutIntent intent,
-            @ObjCBlock(name = "call_handleStartWorkoutCompletion") Block_handleStartWorkoutCompletion completion);
+    void handleStartWorkoutCompletion(@NotNull INStartWorkoutIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleStartWorkoutCompletion") Block_handleStartWorkoutCompletion completion);
 
     @Generated
     @IsOptional
     @Selector("resolveGoalValueForStartWorkout:withCompletion:")
-    default void resolveGoalValueForStartWorkoutWithCompletion(INStartWorkoutIntent intent,
-            @ObjCBlock(name = "call_resolveGoalValueForStartWorkoutWithCompletion") Block_resolveGoalValueForStartWorkoutWithCompletion completion) {
+    default void resolveGoalValueForStartWorkoutWithCompletion(@NotNull INStartWorkoutIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveGoalValueForStartWorkoutWithCompletion") Block_resolveGoalValueForStartWorkoutWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("resolveIsOpenEndedForStartWorkout:withCompletion:")
-    default void resolveIsOpenEndedForStartWorkoutWithCompletion(INStartWorkoutIntent intent,
-            @ObjCBlock(name = "call_resolveIsOpenEndedForStartWorkoutWithCompletion") Block_resolveIsOpenEndedForStartWorkoutWithCompletion completion) {
+    default void resolveIsOpenEndedForStartWorkoutWithCompletion(@NotNull INStartWorkoutIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveIsOpenEndedForStartWorkoutWithCompletion") Block_resolveIsOpenEndedForStartWorkoutWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("resolveWorkoutGoalUnitTypeForStartWorkout:withCompletion:")
-    default void resolveWorkoutGoalUnitTypeForStartWorkoutWithCompletion(INStartWorkoutIntent intent,
-            @ObjCBlock(name = "call_resolveWorkoutGoalUnitTypeForStartWorkoutWithCompletion") Block_resolveWorkoutGoalUnitTypeForStartWorkoutWithCompletion completion) {
+    default void resolveWorkoutGoalUnitTypeForStartWorkoutWithCompletion(@NotNull INStartWorkoutIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveWorkoutGoalUnitTypeForStartWorkoutWithCompletion") Block_resolveWorkoutGoalUnitTypeForStartWorkoutWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("resolveWorkoutLocationTypeForStartWorkout:withCompletion:")
-    default void resolveWorkoutLocationTypeForStartWorkoutWithCompletion(INStartWorkoutIntent intent,
-            @ObjCBlock(name = "call_resolveWorkoutLocationTypeForStartWorkoutWithCompletion") Block_resolveWorkoutLocationTypeForStartWorkoutWithCompletion completion) {
+    default void resolveWorkoutLocationTypeForStartWorkoutWithCompletion(@NotNull INStartWorkoutIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveWorkoutLocationTypeForStartWorkoutWithCompletion") Block_resolveWorkoutLocationTypeForStartWorkoutWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -131,8 +132,8 @@ public interface INStartWorkoutIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveWorkoutNameForStartWorkout:withCompletion:")
-    default void resolveWorkoutNameForStartWorkoutWithCompletion(INStartWorkoutIntent intent,
-            @ObjCBlock(name = "call_resolveWorkoutNameForStartWorkoutWithCompletion") Block_resolveWorkoutNameForStartWorkoutWithCompletion completion) {
+    default void resolveWorkoutNameForStartWorkoutWithCompletion(@NotNull INStartWorkoutIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveWorkoutNameForStartWorkoutWithCompletion") Block_resolveWorkoutNameForStartWorkoutWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -140,28 +141,28 @@ public interface INStartWorkoutIntentHandling {
     @Generated
     public interface Block_confirmStartWorkoutCompletion {
         @Generated
-        void call_confirmStartWorkoutCompletion(INStartWorkoutIntentResponse response);
+        void call_confirmStartWorkoutCompletion(@NotNull INStartWorkoutIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleStartWorkoutCompletion {
         @Generated
-        void call_handleStartWorkoutCompletion(INStartWorkoutIntentResponse response);
+        void call_handleStartWorkoutCompletion(@NotNull INStartWorkoutIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveGoalValueForStartWorkoutWithCompletion {
         @Generated
-        void call_resolveGoalValueForStartWorkoutWithCompletion(INDoubleResolutionResult resolutionResult);
+        void call_resolveGoalValueForStartWorkoutWithCompletion(@NotNull INDoubleResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveIsOpenEndedForStartWorkoutWithCompletion {
         @Generated
-        void call_resolveIsOpenEndedForStartWorkoutWithCompletion(INBooleanResolutionResult resolutionResult);
+        void call_resolveIsOpenEndedForStartWorkoutWithCompletion(@NotNull INBooleanResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -169,7 +170,7 @@ public interface INStartWorkoutIntentHandling {
     public interface Block_resolveWorkoutGoalUnitTypeForStartWorkoutWithCompletion {
         @Generated
         void call_resolveWorkoutGoalUnitTypeForStartWorkoutWithCompletion(
-                INWorkoutGoalUnitTypeResolutionResult resolutionResult);
+                @NotNull INWorkoutGoalUnitTypeResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -177,13 +178,14 @@ public interface INStartWorkoutIntentHandling {
     public interface Block_resolveWorkoutLocationTypeForStartWorkoutWithCompletion {
         @Generated
         void call_resolveWorkoutLocationTypeForStartWorkoutWithCompletion(
-                INWorkoutLocationTypeResolutionResult resolutionResult);
+                @NotNull INWorkoutLocationTypeResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveWorkoutNameForStartWorkoutWithCompletion {
         @Generated
-        void call_resolveWorkoutNameForStartWorkoutWithCompletion(INSpeakableStringResolutionResult resolutionResult);
+        void call_resolveWorkoutNameForStartWorkoutWithCompletion(
+                @NotNull INSpeakableStringResolutionResult resolutionResult);
     }
 }

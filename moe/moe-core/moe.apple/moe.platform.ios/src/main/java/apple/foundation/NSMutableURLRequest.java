@@ -36,6 +36,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSMutableURLRequest
@@ -98,22 +100,25 @@ public class NSMutableURLRequest extends NSURLRequest {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -148,9 +153,10 @@ public class NSMutableURLRequest extends NSURLRequest {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,11 +165,11 @@ public class NSMutableURLRequest extends NSURLRequest {
 
     @Generated
     @Selector("requestWithURL:")
-    public static native NSMutableURLRequest requestWithURL(NSURL URL);
+    public static native NSMutableURLRequest requestWithURL(@NotNull NSURL URL);
 
     @Generated
     @Selector("requestWithURL:cachePolicy:timeoutInterval:")
-    public static native NSMutableURLRequest requestWithURLCachePolicyTimeoutInterval(NSURL URL,
+    public static native NSMutableURLRequest requestWithURLCachePolicyTimeoutInterval(@NotNull NSURL URL,
             @NUInt long cachePolicy, double timeoutInterval);
 
     @Generated
@@ -197,6 +203,7 @@ public class NSMutableURLRequest extends NSURLRequest {
      * This data is sent as the message body of the request, as
      * in done in an HTTP POST request.
      */
+    @Nullable
     @Generated
     @Selector("HTTPBody")
     public native NSData HTTPBody();
@@ -210,6 +217,7 @@ public class NSMutableURLRequest extends NSURLRequest {
      * and the body data (set by setHTTPBody:, above) are mutually exclusive
      * - setting one will clear the other.
      */
+    @Nullable
     @Generated
     @Selector("HTTPBodyStream")
     public native NSInputStream HTTPBodyStream();
@@ -217,6 +225,7 @@ public class NSMutableURLRequest extends NSURLRequest {
     /**
      * Sets the HTTP request method of the receiver.
      */
+    @NotNull
     @Generated
     @Selector("HTTPMethod")
     public native String HTTPMethod();
@@ -260,6 +269,7 @@ public class NSMutableURLRequest extends NSURLRequest {
     /**
      * The URL of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -283,7 +293,7 @@ public class NSMutableURLRequest extends NSURLRequest {
      */
     @Generated
     @Selector("addValue:forHTTPHeaderField:")
-    public native void addValueForHTTPHeaderField(String value, String field);
+    public native void addValueForHTTPHeaderField(@NotNull String value, @NotNull String field);
 
     /**
      * Sets the HTTP header fields of the receiver to the given
@@ -297,6 +307,7 @@ public class NSMutableURLRequest extends NSURLRequest {
      * the key or value for a key-value pair answers NO when sent this
      * message, the key-value pair is skipped.
      */
+    @Nullable
     @Generated
     @Selector("allHTTPHeaderFields")
     public native NSDictionary<String, String> allHTTPHeaderFields();
@@ -324,7 +335,7 @@ public class NSMutableURLRequest extends NSURLRequest {
      */
     @Generated
     @Selector("bindToHotspotHelperCommand:")
-    public native void bindToHotspotHelperCommand(NEHotspotHelperCommand command);
+    public native void bindToHotspotHelperCommand(@NotNull NEHotspotHelperCommand command);
 
     /**
      * The cache policy of the receiver.
@@ -340,15 +351,15 @@ public class NSMutableURLRequest extends NSURLRequest {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMutableURLRequest initWithCoder(NSCoder coder);
+    public native NSMutableURLRequest initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithURL:")
-    public native NSMutableURLRequest initWithURL(NSURL URL);
+    public native NSMutableURLRequest initWithURL(@NotNull NSURL URL);
 
     @Generated
     @Selector("initWithURL:cachePolicy:timeoutInterval:")
-    public native NSMutableURLRequest initWithURLCachePolicyTimeoutInterval(NSURL URL, @NUInt long cachePolicy,
+    public native NSMutableURLRequest initWithURLCachePolicyTimeoutInterval(@NotNull NSURL URL, @NUInt long cachePolicy,
             double timeoutInterval);
 
     /**
@@ -362,6 +373,7 @@ public class NSMutableURLRequest extends NSURLRequest {
      * as a sub-resource of a user-specified URL, and possibly other things
      * in the future.
      */
+    @Nullable
     @Generated
     @Selector("mainDocumentURL")
     public native NSURL mainDocumentURL();
@@ -393,7 +405,7 @@ public class NSMutableURLRequest extends NSURLRequest {
      */
     @Generated
     @Selector("setAllHTTPHeaderFields:")
-    public native void setAllHTTPHeaderFields(NSDictionary<String, String> value);
+    public native void setAllHTTPHeaderFields(@Nullable NSDictionary<String, String> value);
 
     /**
      * sets whether a connection created with this request is allowed to use
@@ -423,7 +435,7 @@ public class NSMutableURLRequest extends NSURLRequest {
      */
     @Generated
     @Selector("setHTTPBody:")
-    public native void setHTTPBody(NSData value);
+    public native void setHTTPBody(@Nullable NSData value);
 
     /**
      * Sets the request body to be the contents of the given stream.
@@ -436,14 +448,14 @@ public class NSMutableURLRequest extends NSURLRequest {
      */
     @Generated
     @Selector("setHTTPBodyStream:")
-    public native void setHTTPBodyStream(NSInputStream value);
+    public native void setHTTPBodyStream(@Nullable NSInputStream value);
 
     /**
      * Sets the HTTP request method of the receiver.
      */
     @Generated
     @Selector("setHTTPMethod:")
-    public native void setHTTPMethod(String value);
+    public native void setHTTPMethod(@NotNull String value);
 
     /**
      * Decide whether default cookie handling will happen for
@@ -494,7 +506,7 @@ public class NSMutableURLRequest extends NSURLRequest {
      */
     @Generated
     @Selector("setMainDocumentURL:")
-    public native void setMainDocumentURL(NSURL value);
+    public native void setMainDocumentURL(@Nullable NSURL value);
 
     /**
      * Sets the NSURLRequestNetworkServiceType to associate with this request
@@ -531,7 +543,7 @@ public class NSMutableURLRequest extends NSURLRequest {
      */
     @Generated
     @Selector("setURL:")
-    public native void setURL(NSURL value);
+    public native void setURL(@Nullable NSURL value);
 
     /**
      * setValue:forHTTPHeaderField:
@@ -548,7 +560,7 @@ public class NSMutableURLRequest extends NSURLRequest {
      */
     @Generated
     @Selector("setValue:forHTTPHeaderField:")
-    public native void setValueForHTTPHeaderField(String value, String field);
+    public native void setValueForHTTPHeaderField(@Nullable String value, @NotNull String field);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

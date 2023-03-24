@@ -30,6 +30,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSRayIntersector
@@ -450,7 +452,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Ray/bounding box intersection test type. Defaults to
@@ -463,27 +465,31 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Copy the raytracer with a Metal device
@@ -493,10 +499,12 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * 
      * @return A pointer to a copy of this MPSRayIntersector
      */
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:device:")
-    public native MPSRayIntersector copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSRayIntersector copyWithZoneDevice(@Nullable VoidPtr zone,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     /**
      * Whether to ignore intersections between rays and back-facing or front-facing triangles
@@ -547,10 +555,10 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     @Generated
     @Selector("encodeIntersectionToCommandBuffer:intersectionType:rayBuffer:rayBufferOffset:intersectionBuffer:intersectionBufferOffset:rayCount:accelerationStructure:")
     public native void encodeIntersectionToCommandBufferIntersectionTypeRayBufferRayBufferOffsetIntersectionBufferIntersectionBufferOffsetRayCountAccelerationStructure(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NUInt long intersectionType,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer rayBuffer, @NUInt long rayBufferOffset,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer intersectionBuffer, @NUInt long intersectionBufferOffset,
-            @NUInt long rayCount, MPSAccelerationStructure accelerationStructure);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NUInt long intersectionType,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer rayBuffer, @NUInt long rayBufferOffset,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer intersectionBuffer, @NUInt long intersectionBufferOffset,
+            @NUInt long rayCount, @NotNull MPSAccelerationStructure accelerationStructure);
 
     /**
      * Schedule intersection tests between rays and an acceleration structure with a ray count
@@ -577,11 +585,11 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     @Generated
     @Selector("encodeIntersectionToCommandBuffer:intersectionType:rayBuffer:rayBufferOffset:intersectionBuffer:intersectionBufferOffset:rayCountBuffer:rayCountBufferOffset:accelerationStructure:")
     public native void encodeIntersectionToCommandBufferIntersectionTypeRayBufferRayBufferOffsetIntersectionBufferIntersectionBufferOffsetRayCountBufferRayCountBufferOffsetAccelerationStructure(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NUInt long intersectionType,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer rayBuffer, @NUInt long rayBufferOffset,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer intersectionBuffer, @NUInt long intersectionBufferOffset,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer rayCountBuffer, @NUInt long rayCountBufferOffset,
-            MPSAccelerationStructure accelerationStructure);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NUInt long intersectionType,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer rayBuffer, @NUInt long rayBufferOffset,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer intersectionBuffer, @NUInt long intersectionBufferOffset,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer rayCountBuffer, @NUInt long rayCountBufferOffset,
+            @NotNull MPSAccelerationStructure accelerationStructure);
 
     /**
      * Schedule intersection tests between rays and an acceleration structure
@@ -612,11 +620,11 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     @Generated
     @Selector("encodeIntersectionToCommandBuffer:intersectionType:rayBuffer:rayBufferOffset:rayIndexBuffer:rayIndexBufferOffset:intersectionBuffer:intersectionBufferOffset:rayIndexCount:accelerationStructure:")
     public native void encodeIntersectionToCommandBufferIntersectionTypeRayBufferRayBufferOffsetRayIndexBufferRayIndexBufferOffsetIntersectionBufferIntersectionBufferOffsetRayIndexCountAccelerationStructure(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NUInt long intersectionType,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer rayBuffer, @NUInt long rayBufferOffset,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer rayIndexBuffer, @NUInt long rayIndexBufferOffset,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer intersectionBuffer, @NUInt long intersectionBufferOffset,
-            @NUInt long rayIndexCount, MPSAccelerationStructure accelerationStructure);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NUInt long intersectionType,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer rayBuffer, @NUInt long rayBufferOffset,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer rayIndexBuffer, @NUInt long rayIndexBufferOffset,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer intersectionBuffer, @NUInt long intersectionBufferOffset,
+            @NUInt long rayIndexCount, @NotNull MPSAccelerationStructure accelerationStructure);
 
     /**
      * Schedule intersection tests between rays and an acceleration structure with a ray count
@@ -650,12 +658,12 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     @Generated
     @Selector("encodeIntersectionToCommandBuffer:intersectionType:rayBuffer:rayBufferOffset:rayIndexBuffer:rayIndexBufferOffset:intersectionBuffer:intersectionBufferOffset:rayIndexCountBuffer:rayIndexCountBufferOffset:accelerationStructure:")
     public native void encodeIntersectionToCommandBufferIntersectionTypeRayBufferRayBufferOffsetRayIndexBufferRayIndexBufferOffsetIntersectionBufferIntersectionBufferOffsetRayIndexCountBufferRayIndexCountBufferOffsetAccelerationStructure(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NUInt long intersectionType,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer rayBuffer, @NUInt long rayBufferOffset,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer rayIndexBuffer, @NUInt long rayIndexBufferOffset,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer intersectionBuffer, @NUInt long intersectionBufferOffset,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer rayIndexCountBuffer, @NUInt long rayIndexCountBufferOffset,
-            MPSAccelerationStructure accelerationStructure);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NUInt long intersectionType,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer rayBuffer, @NUInt long rayBufferOffset,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer rayIndexBuffer, @NUInt long rayIndexBufferOffset,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer intersectionBuffer, @NUInt long intersectionBufferOffset,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer rayIndexCountBuffer,
+            @NUInt long rayIndexCountBufferOffset, @NotNull MPSAccelerationStructure accelerationStructure);
 
     /**
      * Schedule intersection tests between rays and an acceleration structure, where rays and
@@ -717,14 +725,14 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     @Generated
     @Selector("encodeIntersectionToCommandBuffer:intersectionType:rayTexture:intersectionTexture:accelerationStructure:")
     public native void encodeIntersectionToCommandBufferIntersectionTypeRayTextureIntersectionTextureAccelerationStructure(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NUInt long intersectionType,
-            @Mapped(ObjCObjectMapper.class) MTLTexture rayTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture intersectionTexture,
-            MPSAccelerationStructure accelerationStructure);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NUInt long intersectionType,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture rayTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture intersectionTexture,
+            @NotNull MPSAccelerationStructure accelerationStructure);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Winding order used to determine which direction a triangle or quadrilateral's normal
@@ -752,22 +760,22 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSRayIntersector initWithCoder(NSCoder coder);
+    public native MPSRayIntersector initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initialize the raytracer with an NSCoder and a Metal device
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSRayIntersector initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSRayIntersector initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize the raytracer with a Metal device
      */
     @Generated
     @Selector("initWithDevice:")
-    public native MPSRayIntersector initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSRayIntersector initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -808,9 +816,10 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

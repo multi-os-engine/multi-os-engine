@@ -44,6 +44,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Properties describe values within a managed object. There are different types of properties, each of them represented
@@ -81,22 +83,25 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +136,10 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,16 +167,18 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    @NotNull
     @Generated
     @Selector("entity")
     public native NSEntityDescription entity();
@@ -181,7 +189,7 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSPropertyDescription initWithCoder(NSCoder coder);
+    public native NSPropertyDescription initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Returns a boolean value indicating if the property is important for searching. NSPersistentStores can optionally
@@ -281,6 +289,7 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
     @Selector("setTransient:")
     public native void setTransient(boolean value);
 
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -288,29 +297,31 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
     /**
      * API-Since: 3.0
      */
+    @Nullable
     @Generated
     @Selector("renamingIdentifier")
     public native String renamingIdentifier();
 
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@NotNull String value);
 
     /**
      * API-Since: 3.0
      */
     @Generated
     @Selector("setRenamingIdentifier:")
-    public native void setRenamingIdentifier(String value);
+    public native void setRenamingIdentifier(@Nullable String value);
 
     @Generated
     @Selector("setUserInfo:")
-    public native void setUserInfo(NSDictionary<?, ?> value);
+    public native void setUserInfo(@Nullable NSDictionary<?, ?> value);
 
     @Generated
     @Selector("setValidationPredicates:withValidationWarnings:")
     public native void setValidationPredicatesWithValidationWarnings(
-            NSArray<? extends NSPredicate> validationPredicates, NSArray<String> validationWarnings);
+            @Nullable NSArray<? extends NSPredicate> validationPredicates,
+            @Nullable NSArray<String> validationWarnings);
 
     /**
      * Returns/sets the version hash modifier for the property. This value is included in the version hash for the
@@ -322,8 +333,9 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
      */
     @Generated
     @Selector("setVersionHashModifier:")
-    public native void setVersionHashModifier(String value);
+    public native void setVersionHashModifier(@Nullable String value);
 
+    @Nullable
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();
@@ -333,10 +345,12 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
      * list of predicates evaluated against the managed objects and corresponding error messages (which can be
      * localized).
      */
+    @NotNull
     @Generated
     @Selector("validationPredicates")
     public native NSArray<? extends NSPredicate> validationPredicates();
 
+    @NotNull
     @Generated
     @Selector("validationWarnings")
     public native NSArray<?> validationWarnings();
@@ -350,6 +364,7 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("versionHash")
     public native NSData versionHash();
@@ -362,6 +377,7 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
      * 
      * API-Since: 3.0
      */
+    @Nullable
     @Generated
     @Selector("versionHashModifier")
     public native String versionHashModifier();

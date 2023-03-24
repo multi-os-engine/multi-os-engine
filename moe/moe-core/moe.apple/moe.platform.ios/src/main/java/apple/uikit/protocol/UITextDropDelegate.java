@@ -13,6 +13,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -28,8 +30,8 @@ public interface UITextDropDelegate {
     @Generated
     @IsOptional
     @Selector("textDroppableView:dropSessionDidEnd:")
-    default void textDroppableViewDropSessionDidEnd(UIView textDroppableView,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default void textDroppableViewDropSessionDidEnd(@NotNull UIView textDroppableView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -39,8 +41,8 @@ public interface UITextDropDelegate {
     @Generated
     @IsOptional
     @Selector("textDroppableView:dropSessionDidEnter:")
-    default void textDroppableViewDropSessionDidEnter(UIView textDroppableView,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default void textDroppableViewDropSessionDidEnter(@NotNull UIView textDroppableView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -50,8 +52,8 @@ public interface UITextDropDelegate {
     @Generated
     @IsOptional
     @Selector("textDroppableView:dropSessionDidExit:")
-    default void textDroppableViewDropSessionDidExit(UIView textDroppableView,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default void textDroppableViewDropSessionDidExit(@NotNull UIView textDroppableView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -64,8 +66,8 @@ public interface UITextDropDelegate {
     @Generated
     @IsOptional
     @Selector("textDroppableView:dropSessionDidUpdate:")
-    default void textDroppableViewDropSessionDidUpdate(UIView textDroppableView,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default void textDroppableViewDropSessionDidUpdate(@NotNull UIView textDroppableView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -86,11 +88,12 @@ public interface UITextDropDelegate {
      * 
      * Return nil to use the default preview of the underlying drop interaction.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("textDroppableView:previewForDroppingAllItemsWithDefault:")
-    default UITargetedDragPreview textDroppableViewPreviewForDroppingAllItemsWithDefault(UIView textDroppableView,
-            UITargetedDragPreview defaultPreview) {
+    default UITargetedDragPreview textDroppableViewPreviewForDroppingAllItemsWithDefault(
+            @NotNull UIView textDroppableView, @NotNull UITargetedDragPreview defaultPreview) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,11 +107,12 @@ public interface UITextDropDelegate {
      * 
      * Note: this is called frequently, so try to do minimal work.
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("textDroppableView:proposalForDrop:")
-    default UITextDropProposal textDroppableViewProposalForDrop(UIView textDroppableView,
-            @Mapped(ObjCObjectMapper.class) UITextDropRequest drop) {
+    default UITextDropProposal textDroppableViewProposalForDrop(@NotNull UIView textDroppableView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UITextDropRequest drop) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -122,8 +126,8 @@ public interface UITextDropDelegate {
     @IsOptional
     @Selector("textDroppableView:willBecomeEditableForDrop:")
     @NUInt
-    default long textDroppableViewWillBecomeEditableForDrop(UIView textDroppableView,
-            @Mapped(ObjCObjectMapper.class) UITextDropRequest drop) {
+    default long textDroppableViewWillBecomeEditableForDrop(@NotNull UIView textDroppableView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UITextDropRequest drop) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -135,8 +139,8 @@ public interface UITextDropDelegate {
     @Generated
     @IsOptional
     @Selector("textDroppableView:willPerformDrop:")
-    default void textDroppableViewWillPerformDrop(UIView textDroppableView,
-            @Mapped(ObjCObjectMapper.class) UITextDropRequest drop) {
+    default void textDroppableViewWillPerformDrop(@NotNull UIView textDroppableView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UITextDropRequest drop) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

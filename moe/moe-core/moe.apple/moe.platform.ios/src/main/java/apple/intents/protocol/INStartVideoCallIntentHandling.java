@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INStartVideoCallIntent. By implementing this protocol, a class can
@@ -64,8 +65,8 @@ public interface INStartVideoCallIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmStartVideoCall:completion:")
-    default void confirmStartVideoCallCompletion(INStartVideoCallIntent intent,
-            @ObjCBlock(name = "call_confirmStartVideoCallCompletion") Block_confirmStartVideoCallCompletion completion) {
+    default void confirmStartVideoCallCompletion(@NotNull INStartVideoCallIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmStartVideoCallCompletion") Block_confirmStartVideoCallCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -82,8 +83,8 @@ public interface INStartVideoCallIntentHandling {
      */
     @Generated
     @Selector("handleStartVideoCall:completion:")
-    void handleStartVideoCallCompletion(INStartVideoCallIntent intent,
-            @ObjCBlock(name = "call_handleStartVideoCallCompletion") Block_handleStartVideoCallCompletion completion);
+    void handleStartVideoCallCompletion(@NotNull INStartVideoCallIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleStartVideoCallCompletion") Block_handleStartVideoCallCompletion completion);
 
     /**
      * Resolution methods - Determine if this intent is ready for the next step (confirmation)
@@ -99,8 +100,8 @@ public interface INStartVideoCallIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveContactsForStartVideoCall:withCompletion:")
-    default void resolveContactsForStartVideoCallWithCompletion(INStartVideoCallIntent intent,
-            @ObjCBlock(name = "call_resolveContactsForStartVideoCallWithCompletion") Block_resolveContactsForStartVideoCallWithCompletion completion) {
+    default void resolveContactsForStartVideoCallWithCompletion(@NotNull INStartVideoCallIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveContactsForStartVideoCallWithCompletion") Block_resolveContactsForStartVideoCallWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -108,14 +109,14 @@ public interface INStartVideoCallIntentHandling {
     @Generated
     public interface Block_confirmStartVideoCallCompletion {
         @Generated
-        void call_confirmStartVideoCallCompletion(INStartVideoCallIntentResponse response);
+        void call_confirmStartVideoCallCompletion(@NotNull INStartVideoCallIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleStartVideoCallCompletion {
         @Generated
-        void call_handleStartVideoCallCompletion(INStartVideoCallIntentResponse response);
+        void call_handleStartVideoCallCompletion(@NotNull INStartVideoCallIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -123,6 +124,6 @@ public interface INStartVideoCallIntentHandling {
     public interface Block_resolveContactsForStartVideoCallWithCompletion {
         @Generated
         void call_resolveContactsForStartVideoCallWithCompletion(
-                NSArray<? extends INPersonResolutionResult> resolutionResults);
+                @NotNull NSArray<? extends INPersonResolutionResult> resolutionResults);
     }
 }

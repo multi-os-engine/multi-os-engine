@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Provides context for the update process when the progress or completion handlers are invoked.
@@ -58,22 +60,25 @@ public class MLUpdateContext extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,13 +126,15 @@ public class MLUpdateContext extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Metrics computed on the training input during the update process.
      */
+    @NotNull
     @Generated
     @Selector("metrics")
     public native NSDictionary<? extends MLMetricKey, ?> metrics();
@@ -135,6 +142,7 @@ public class MLUpdateContext extends NSObject {
     /**
      * Reference to the updated model that can be used for additional validation or evaluation.
      */
+    @NotNull
     @Generated
     @Selector("model")
     public native MLModel model();
@@ -147,6 +155,7 @@ public class MLUpdateContext extends NSObject {
     /**
      * A snapshot of parameters (including their values) used during the update process.
      */
+    @NotNull
     @Generated
     @Selector("parameters")
     public native NSDictionary<? extends MLParameterKey, ?> parameters();
@@ -170,6 +179,7 @@ public class MLUpdateContext extends NSObject {
     /**
      * Reference to the update task that invokved the progress or completion handlers.
      */
+    @NotNull
     @Generated
     @Selector("task")
     public native MLUpdateTask task();

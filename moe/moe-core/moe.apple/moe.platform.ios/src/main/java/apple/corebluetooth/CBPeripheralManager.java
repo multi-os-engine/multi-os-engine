@@ -41,6 +41,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CBPeripheralManager
@@ -120,22 +122,25 @@ public class CBPeripheralManager extends CBManager {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -170,9 +175,10 @@ public class CBPeripheralManager extends CBManager {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -213,13 +219,14 @@ public class CBPeripheralManager extends CBManager {
      */
     @Generated
     @Selector("addService:")
-    public native void addService(CBMutableService service);
+    public native void addService(@NotNull CBMutableService service);
 
     /**
      * [@property] delegate
      * 
      * The delegate object that will receive peripheral events.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -241,7 +248,7 @@ public class CBPeripheralManager extends CBManager {
     @Generated
     @Selector("initWithDelegate:queue:")
     public native CBPeripheralManager initWithDelegateQueue(
-            @Mapped(ObjCObjectMapper.class) CBPeripheralManagerDelegate delegate, NSObject queue);
+            @Nullable @Mapped(ObjCObjectMapper.class) CBPeripheralManagerDelegate delegate, @Nullable NSObject queue);
 
     /**
      * initWithDelegate:queue:options:
@@ -262,8 +269,8 @@ public class CBPeripheralManager extends CBManager {
     @Generated
     @Selector("initWithDelegate:queue:options:")
     public native CBPeripheralManager initWithDelegateQueueOptions(
-            @Mapped(ObjCObjectMapper.class) CBPeripheralManagerDelegate delegate, NSObject queue,
-            NSDictionary<String, ?> options);
+            @Nullable @Mapped(ObjCObjectMapper.class) CBPeripheralManagerDelegate delegate, @Nullable NSObject queue,
+            @Nullable NSDictionary<String, ?> options);
 
     /**
      * [@property] isAdvertising
@@ -294,7 +301,7 @@ public class CBPeripheralManager extends CBManager {
      */
     @Generated
     @Selector("removeService:")
-    public native void removeService(CBMutableService service);
+    public native void removeService(@NotNull CBMutableService service);
 
     /**
      * respondToRequest:withResult:
@@ -310,7 +317,7 @@ public class CBPeripheralManager extends CBManager {
      */
     @Generated
     @Selector("respondToRequest:withResult:")
-    public native void respondToRequestWithResult(CBATTRequest request, @NInt long result);
+    public native void respondToRequestWithResult(@NotNull CBATTRequest request, @NInt long result);
 
     /**
      * [@property] delegate
@@ -319,7 +326,7 @@ public class CBPeripheralManager extends CBManager {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CBPeripheralManagerDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) CBPeripheralManagerDelegate value);
 
     /**
      * [@property] delegate
@@ -327,7 +334,7 @@ public class CBPeripheralManager extends CBManager {
      * The delegate object that will receive peripheral events.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) CBPeripheralManagerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CBPeripheralManagerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -354,7 +361,7 @@ public class CBPeripheralManager extends CBManager {
      */
     @Generated
     @Selector("setDesiredConnectionLatency:forCentral:")
-    public native void setDesiredConnectionLatencyForCentral(@NInt long latency, CBCentral central);
+    public native void setDesiredConnectionLatencyForCentral(@NInt long latency, @NotNull CBCentral central);
 
     /**
      * startAdvertising:
@@ -384,7 +391,7 @@ public class CBPeripheralManager extends CBManager {
      */
     @Generated
     @Selector("startAdvertising:")
-    public native void startAdvertising(NSDictionary<String, ?> advertisementData);
+    public native void startAdvertising(@Nullable NSDictionary<String, ?> advertisementData);
 
     /**
      * stopAdvertising
@@ -422,8 +429,8 @@ public class CBPeripheralManager extends CBManager {
      */
     @Generated
     @Selector("updateValue:forCharacteristic:onSubscribedCentrals:")
-    public native boolean updateValueForCharacteristicOnSubscribedCentrals(NSData value,
-            CBMutableCharacteristic characteristic, NSArray<? extends CBCentral> centrals);
+    public native boolean updateValueForCharacteristicOnSubscribedCentrals(@NotNull NSData value,
+            @NotNull CBMutableCharacteristic characteristic, @Nullable NSArray<? extends CBCentral> centrals);
 
     /**
      * publishL2CAPChannelWithEncryption:

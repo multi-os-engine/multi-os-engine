@@ -26,16 +26,19 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPageViewControllerDataSource")
 public interface UIPageViewControllerDataSource {
+    @Nullable
     @Generated
     @Selector("pageViewController:viewControllerAfterViewController:")
-    UIViewController pageViewControllerViewControllerAfterViewController(UIPageViewController pageViewController,
-            UIViewController viewController);
+    UIViewController pageViewControllerViewControllerAfterViewController(
+            @NotNull UIPageViewController pageViewController, @NotNull UIViewController viewController);
 
     /**
      * In terms of navigation direction. For example, for 'UIPageViewControllerNavigationOrientationHorizontal', view
@@ -45,10 +48,11 @@ public interface UIPageViewControllerDataSource {
      * For gesture-initiated transitions, the page view controller obtains view controllers via these methods, so use of
      * setViewControllers:direction:animated:completion: is not required.
      */
+    @Nullable
     @Generated
     @Selector("pageViewController:viewControllerBeforeViewController:")
-    UIViewController pageViewControllerViewControllerBeforeViewController(UIPageViewController pageViewController,
-            UIViewController viewController);
+    UIViewController pageViewControllerViewControllerBeforeViewController(
+            @NotNull UIPageViewController pageViewController, @NotNull UIViewController viewController);
 
     /**
      * The number of items reflected in the page indicator.
@@ -59,7 +63,7 @@ public interface UIPageViewControllerDataSource {
     @IsOptional
     @Selector("presentationCountForPageViewController:")
     @NInt
-    default long presentationCountForPageViewController(UIPageViewController pageViewController) {
+    default long presentationCountForPageViewController(@NotNull UIPageViewController pageViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -72,7 +76,7 @@ public interface UIPageViewControllerDataSource {
     @IsOptional
     @Selector("presentationIndexForPageViewController:")
     @NInt
-    default long presentationIndexForPageViewController(UIPageViewController pageViewController) {
+    default long presentationIndexForPageViewController(@NotNull UIPageViewController pageViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

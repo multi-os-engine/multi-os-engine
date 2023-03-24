@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Descriptor for motion triangle geometry
@@ -60,22 +62,25 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -100,6 +105,7 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
     /**
      * Optional index buffer containing references to vertices in the vertex buffer. May be nil.
      */
+    @Nullable
     @Generated
     @Selector("indexBuffer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -143,9 +149,10 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,7 +172,7 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
      */
     @Generated
     @Selector("setIndexBuffer:")
-    public native void setIndexBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
+    public native void setIndexBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
      * Index buffer offset. Must be a multiple of the index data type size and must be aligned to both
@@ -199,7 +206,7 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
      */
     @Generated
     @Selector("setVertexBuffers:")
-    public native void setVertexBuffers(NSArray<? extends MTLMotionKeyframeData> value);
+    public native void setVertexBuffers(@NotNull NSArray<? extends MTLMotionKeyframeData> value);
 
     /**
      * Stride, in bytes, between vertices in each keyframe's vertex buffer. Must be a multiple of the vertex format data
@@ -232,6 +239,7 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
      * Vertex buffer containing triangle vertices similar to what MTLAccelerationStructureTriangleGeometryDescriptor has
      * but array of the values.
      */
+    @NotNull
     @Generated
     @Selector("vertexBuffers")
     public native NSArray<? extends MTLMotionKeyframeData> vertexBuffers();
@@ -257,7 +265,7 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
      */
     @Generated
     @Selector("setTransformationMatrixBuffer:")
-    public native void setTransformationMatrixBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
+    public native void setTransformationMatrixBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
      * Transformation matrix buffer offset. Must be a multiple of 4 bytes. Defaults to 0.
@@ -286,6 +294,7 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("transformationMatrixBuffer")
     @MappedReturn(ObjCObjectMapper.class)

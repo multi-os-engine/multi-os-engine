@@ -24,6 +24,7 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -52,13 +53,14 @@ public final class AudioFileMarker extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setMFramePosition(double value);
 
+    @Nullable
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native CFStringRef mName();
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setMName(CFStringRef value);
+    public native void setMName(@Nullable CFStringRef value);
 
     @Generated
     @StructureField(order = 2, isGetter = true)

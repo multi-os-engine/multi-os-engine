@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSGraph
@@ -53,34 +55,40 @@ public class MPSGraph extends NSObject {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("L2NormPooling4DGradientWithGradientTensor:sourceTensor:descriptor:name:")
     public native MPSGraphTensor L2NormPooling4DGradientWithGradientTensorSourceTensorDescriptorName(
-            MPSGraphTensor gradient, MPSGraphTensor source, MPSGraphPooling4DOpDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor gradient, @NotNull MPSGraphTensor source,
+            @NotNull MPSGraphPooling4DOpDescriptor descriptor, @Nullable String name);
 
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("L2NormPooling4DWithSourceTensor:descriptor:name:")
-    public native MPSGraphTensor L2NormPooling4DWithSourceTensorDescriptorName(MPSGraphTensor source,
-            MPSGraphPooling4DOpDescriptor descriptor, String name);
+    public native MPSGraphTensor L2NormPooling4DWithSourceTensorDescriptorName(@NotNull MPSGraphTensor source,
+            @NotNull MPSGraphPooling4DOpDescriptor descriptor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("absoluteWithTensor:name:")
-    public native MPSGraphTensor absoluteWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor absoluteWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    @NotNull
     @Generated
     @Selector("acosWithTensor:name:")
-    public native MPSGraphTensor acosWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor acosWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("acoshWithTensor:name:")
-    public native MPSGraphTensor acoshWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor acoshWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
      * Create Add op and return the result tensor, it supports broadcasting as well
@@ -95,10 +103,11 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("additionWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor additionWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor additionWithPrimaryTensorSecondaryTensorName(@NotNull MPSGraphTensor primaryTensor,
+            @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
     @Generated
     @Owned
@@ -110,18 +119,22 @@ public class MPSGraph extends NSObject {
     @Selector("allocWithZone:")
     public static native MPSGraph allocWithZone(VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("applyStochasticGradientDescentWithLearningRateTensor:variable:gradientTensor:name:")
     public native MPSGraphOperation applyStochasticGradientDescentWithLearningRateTensorVariableGradientTensorName(
-            MPSGraphTensor learningRateTensor, MPSGraphVariableOp variable, MPSGraphTensor gradientTensor, String name);
+            @NotNull MPSGraphTensor learningRateTensor, @NotNull MPSGraphVariableOp variable,
+            @NotNull MPSGraphTensor gradientTensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("asinWithTensor:name:")
-    public native MPSGraphTensor asinWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor asinWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("asinhWithTensor:name:")
-    public native MPSGraphTensor asinhWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor asinhWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
      * Create a read op which reads at this point of execution of the graph and return the result tensor
@@ -132,53 +145,63 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("assignVariable:withValueOfTensor:name:")
-    public native MPSGraphOperation assignVariableWithValueOfTensorName(MPSGraphTensor variable, MPSGraphTensor tensor,
-            String name);
+    public native MPSGraphOperation assignVariableWithValueOfTensorName(@NotNull MPSGraphTensor variable,
+            @NotNull MPSGraphTensor tensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("atan2WithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor atan2WithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor atan2WithPrimaryTensorSecondaryTensorName(@NotNull MPSGraphTensor primaryTensor,
+            @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("atanWithTensor:name:")
-    public native MPSGraphTensor atanWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor atanWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("atanhWithTensor:name:")
-    public native MPSGraphTensor atanhWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor atanhWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("avgPooling2DGradientWithGradientTensor:sourceTensor:descriptor:name:")
     public native MPSGraphTensor avgPooling2DGradientWithGradientTensorSourceTensorDescriptorName(
-            MPSGraphTensor gradient, MPSGraphTensor source, MPSGraphPooling2DOpDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor gradient, @NotNull MPSGraphTensor source,
+            @NotNull MPSGraphPooling2DOpDescriptor descriptor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("avgPooling2DWithSourceTensor:descriptor:name:")
-    public native MPSGraphTensor avgPooling2DWithSourceTensorDescriptorName(MPSGraphTensor source,
-            MPSGraphPooling2DOpDescriptor descriptor, String name);
+    public native MPSGraphTensor avgPooling2DWithSourceTensorDescriptorName(@NotNull MPSGraphTensor source,
+            @NotNull MPSGraphPooling2DOpDescriptor descriptor, @Nullable String name);
 
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("avgPooling4DGradientWithGradientTensor:sourceTensor:descriptor:name:")
     public native MPSGraphTensor avgPooling4DGradientWithGradientTensorSourceTensorDescriptorName(
-            MPSGraphTensor gradient, MPSGraphTensor source, MPSGraphPooling4DOpDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor gradient, @NotNull MPSGraphTensor source,
+            @NotNull MPSGraphPooling4DOpDescriptor descriptor, @Nullable String name);
 
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("avgPooling4DWithSourceTensor:descriptor:name:")
-    public native MPSGraphTensor avgPooling4DWithSourceTensorDescriptorName(MPSGraphTensor source,
-            MPSGraphPooling4DOpDescriptor descriptor, String name);
+    public native MPSGraphTensor avgPooling4DWithSourceTensorDescriptorName(@NotNull MPSGraphTensor source,
+            @NotNull MPSGraphPooling4DOpDescriptor descriptor, @Nullable String name);
 
     /**
      * Create broadcast op and return the result tensor
@@ -194,20 +217,22 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("broadcastTensor:toShapeTensor:name:")
-    public native MPSGraphTensor broadcastTensorToShapeTensorName(MPSGraphTensor tensor, MPSGraphTensor shapeTensor,
-            String name);
+    public native MPSGraphTensor broadcastTensorToShapeTensorName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor shapeTensor, @Nullable String name);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Create cast op and return the result tensor
@@ -222,23 +247,28 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("castTensor:toType:name:")
-    public native MPSGraphTensor castTensorToTypeName(MPSGraphTensor tensor, int type, String name);
+    public native MPSGraphTensor castTensorToTypeName(@NotNull MPSGraphTensor tensor, int type, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("ceilWithTensor:name:")
-    public native MPSGraphTensor ceilWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor ceilWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("clampWithTensor:minValueTensor:maxValueTensor:name:")
-    public native MPSGraphTensor clampWithTensorMinValueTensorMaxValueTensorName(MPSGraphTensor tensor,
-            MPSGraphTensor minValueTensor, MPSGraphTensor maxValueTensor, String name);
+    public native MPSGraphTensor clampWithTensorMinValueTensorMaxValueTensorName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor minValueTensor, @NotNull MPSGraphTensor maxValueTensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -256,10 +286,11 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object
      */
+    @NotNull
     @Generated
     @Selector("concatTensor:withTensor:dimension:name:")
-    public native MPSGraphTensor concatTensorWithTensorDimensionName(MPSGraphTensor tensor, MPSGraphTensor tensor2,
-            @NInt long dimensionIndex, String name);
+    public native MPSGraphTensor concatTensorWithTensorDimensionName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor tensor2, @NInt long dimensionIndex, @Nullable String name);
 
     /**
      * Create concat op and return the result tensor
@@ -282,10 +313,12 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object
      */
+    @NotNull
     @Generated
     @Selector("concatTensors:dimension:interleave:name:")
-    public native MPSGraphTensor concatTensorsDimensionInterleaveName(NSArray<? extends MPSGraphTensor> tensors,
-            @NInt long dimensionIndex, boolean interleave, String name);
+    public native MPSGraphTensor concatTensorsDimensionInterleaveName(
+            @NotNull NSArray<? extends MPSGraphTensor> tensors, @NInt long dimensionIndex, boolean interleave,
+            @Nullable String name);
 
     /**
      * Create concat op and return the result tensor
@@ -299,10 +332,11 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object
      */
+    @NotNull
     @Generated
     @Selector("concatTensors:dimension:name:")
-    public native MPSGraphTensor concatTensorsDimensionName(NSArray<? extends MPSGraphTensor> tensors,
-            @NInt long dimensionIndex, String name);
+    public native MPSGraphTensor concatTensorsDimensionName(@NotNull NSArray<? extends MPSGraphTensor> tensors,
+            @NInt long dimensionIndex, @Nullable String name);
 
     /**
      * Create a constant op and return the result tensor
@@ -312,6 +346,7 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("constantWithScalar:dataType:")
     public native MPSGraphTensor constantWithScalarDataType(double scalar, int dataType);
@@ -326,16 +361,18 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor array with results returned from dependentBlock forwarded
      */
+    @NotNull
     @Generated
     @Selector("controlDependencyWithOperations:dependentBlock:name:")
     public native NSArray<? extends MPSGraphTensor> controlDependencyWithOperationsDependentBlockName(
-            NSArray<? extends MPSGraphOperation> operations,
-            @ObjCBlock(name = "call_controlDependencyWithOperationsDependentBlockName") Block_controlDependencyWithOperationsDependentBlockName dependentBlock,
-            String name);
+            @NotNull NSArray<? extends MPSGraphOperation> operations,
+            @NotNull @ObjCBlock(name = "call_controlDependencyWithOperationsDependentBlockName") Block_controlDependencyWithOperationsDependentBlockName dependentBlock,
+            @Nullable String name);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_controlDependencyWithOperationsDependentBlockName {
+        @NotNull
         @Generated
         NSArray<? extends MPSGraphTensor> call_controlDependencyWithOperationsDependentBlockName();
     }
@@ -356,11 +393,13 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("convolution2DDataGradientWithIncomingGradientTensor:weightsTensor:outputShapeTensor:forwardConvolutionDescriptor:name:")
     public native MPSGraphTensor convolution2DDataGradientWithIncomingGradientTensorWeightsTensorOutputShapeTensorForwardConvolutionDescriptorName(
-            MPSGraphTensor gradient, MPSGraphTensor weights, MPSGraphTensor outputShapeTensor,
-            MPSGraphConvolution2DOpDescriptor forwardConvolutionDescriptor, String name);
+            @NotNull MPSGraphTensor gradient, @NotNull MPSGraphTensor weights,
+            @NotNull MPSGraphTensor outputShapeTensor,
+            @NotNull MPSGraphConvolution2DOpDescriptor forwardConvolutionDescriptor, @Nullable String name);
 
     /**
      * Create Convolution gradient op and return the result tensor
@@ -378,16 +417,19 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("convolution2DWeightsGradientWithIncomingGradientTensor:sourceTensor:outputShapeTensor:forwardConvolutionDescriptor:name:")
     public native MPSGraphTensor convolution2DWeightsGradientWithIncomingGradientTensorSourceTensorOutputShapeTensorForwardConvolutionDescriptorName(
-            MPSGraphTensor gradient, MPSGraphTensor source, MPSGraphTensor outputShapeTensor,
-            MPSGraphConvolution2DOpDescriptor forwardConvolutionDescriptor, String name);
+            @NotNull MPSGraphTensor gradient, @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor outputShapeTensor,
+            @NotNull MPSGraphConvolution2DOpDescriptor forwardConvolutionDescriptor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("convolution2DWithSourceTensor:weightsTensor:descriptor:name:")
-    public native MPSGraphTensor convolution2DWithSourceTensorWeightsTensorDescriptorName(MPSGraphTensor source,
-            MPSGraphTensor weights, MPSGraphConvolution2DOpDescriptor descriptor, String name);
+    public native MPSGraphTensor convolution2DWithSourceTensorWeightsTensorDescriptorName(
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor weights,
+            @NotNull MPSGraphConvolution2DOpDescriptor descriptor, @Nullable String name);
 
     /**
      * Create ConvolutionTranspose gradient op and return the result tensor
@@ -405,11 +447,13 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("convolutionTranspose2DDataGradientWithIncomingGradientTensor:weightsTensor:outputShapeTensor:forwardConvolutionDescriptor:name:")
     public native MPSGraphTensor convolutionTranspose2DDataGradientWithIncomingGradientTensorWeightsTensorOutputShapeTensorForwardConvolutionDescriptorName(
-            MPSGraphTensor incomingGradient, MPSGraphTensor weights, MPSGraphTensor outputShape,
-            MPSGraphConvolution2DOpDescriptor forwardConvolutionDescriptor, String name);
+            @NotNull MPSGraphTensor incomingGradient, @NotNull MPSGraphTensor weights,
+            @NotNull MPSGraphTensor outputShape,
+            @NotNull MPSGraphConvolution2DOpDescriptor forwardConvolutionDescriptor, @Nullable String name);
 
     /**
      * Create ConvolutionTranspose gradient op and return the result tensor
@@ -427,11 +471,13 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("convolutionTranspose2DWeightsGradientWithIncomingGradientTensor:sourceTensor:outputShapeTensor:forwardConvolutionDescriptor:name:")
     public native MPSGraphTensor convolutionTranspose2DWeightsGradientWithIncomingGradientTensorSourceTensorOutputShapeTensorForwardConvolutionDescriptorName(
-            MPSGraphTensor incomingGradientTensor, MPSGraphTensor source, MPSGraphTensor outputShape,
-            MPSGraphConvolution2DOpDescriptor forwardConvolutionDescriptor, String name);
+            @NotNull MPSGraphTensor incomingGradientTensor, @NotNull MPSGraphTensor source,
+            @NotNull MPSGraphTensor outputShape,
+            @NotNull MPSGraphConvolution2DOpDescriptor forwardConvolutionDescriptor, @Nullable String name);
 
     /**
      * Create ConvolutionTranspose op and return the result tensor
@@ -470,19 +516,22 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("convolutionTranspose2DWithSourceTensor:weightsTensor:outputShapeTensor:descriptor:name:")
     public native MPSGraphTensor convolutionTranspose2DWithSourceTensorWeightsTensorOutputShapeTensorDescriptorName(
-            MPSGraphTensor source, MPSGraphTensor weights, MPSGraphTensor outputShape,
-            MPSGraphConvolution2DOpDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor weights, @NotNull MPSGraphTensor outputShape,
+            @NotNull MPSGraphConvolution2DOpDescriptor descriptor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("cosWithTensor:name:")
-    public native MPSGraphTensor cosWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor cosWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("coshWithTensor:name:")
-    public native MPSGraphTensor coshWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor coshWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     @Generated
     @Selector("debugDescription")
@@ -513,26 +562,30 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("depthToSpace2DTensor:widthAxis:heightAxis:depthAxis:blockSize:usePixelShuffleOrder:name:")
     public native MPSGraphTensor depthToSpace2DTensorWidthAxisHeightAxisDepthAxisBlockSizeUsePixelShuffleOrderName(
-            MPSGraphTensor tensor, @NUInt long widthAxis, @NUInt long heightAxis, @NUInt long depthAxis,
-            @NUInt long blockSize, boolean usePixelShuffleOrder, String name);
+            @NotNull MPSGraphTensor tensor, @NUInt long widthAxis, @NUInt long heightAxis, @NUInt long depthAxis,
+            @NUInt long blockSize, boolean usePixelShuffleOrder, @Nullable String name);
 
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("depthToSpace2DTensor:widthAxisTensor:heightAxisTensor:depthAxisTensor:blockSize:usePixelShuffleOrder:name:")
     public native MPSGraphTensor depthToSpace2DTensorWidthAxisTensorHeightAxisTensorDepthAxisTensorBlockSizeUsePixelShuffleOrderName(
-            MPSGraphTensor tensor, MPSGraphTensor widthAxisTensor, MPSGraphTensor heightAxisTensor,
-            MPSGraphTensor depthAxisTensor, @NUInt long blockSize, boolean usePixelShuffleOrder, String name);
+            @NotNull MPSGraphTensor tensor, @NotNull MPSGraphTensor widthAxisTensor,
+            @NotNull MPSGraphTensor heightAxisTensor, @NotNull MPSGraphTensor depthAxisTensor, @NUInt long blockSize,
+            boolean usePixelShuffleOrder, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("depthwiseConvolution2DWithSourceTensor:weightsTensor:descriptor:name:")
     public native MPSGraphTensor depthwiseConvolution2DWithSourceTensorWeightsTensorDescriptorName(
-            MPSGraphTensor source, MPSGraphTensor weights, MPSGraphDepthwiseConvolution2DOpDescriptor descriptor,
-            String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor weights,
+            @NotNull MPSGraphDepthwiseConvolution2DOpDescriptor descriptor, @Nullable String name);
 
     /**
      * * @abstract Create 3d depthwise convolution operation and return the result tensor.
@@ -550,20 +603,22 @@ public class MPSGraph extends NSObject {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("depthwiseConvolution3DWithSourceTensor:weightsTensor:descriptor:name:")
     public native MPSGraphTensor depthwiseConvolution3DWithSourceTensorWeightsTensorDescriptorName(
-            MPSGraphTensor source, MPSGraphTensor weights, MPSGraphDepthwiseConvolution3DOpDescriptor descriptor,
-            String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor weights,
+            @NotNull MPSGraphDepthwiseConvolution3DOpDescriptor descriptor, @Nullable String name);
 
     @Generated
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("divisionNoNaNWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor divisionNoNaNWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor divisionNoNaNWithPrimaryTensorSecondaryTensorName(
+            @NotNull MPSGraphTensor primaryTensor, @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
     /**
      * Create Divide op and return the result tensor, it supports broadcasting as well
@@ -578,39 +633,49 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("divisionWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor divisionWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor divisionWithPrimaryTensorSecondaryTensorName(@NotNull MPSGraphTensor primaryTensor,
+            @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("dropoutTensor:rate:name:")
-    public native MPSGraphTensor dropoutTensorRateName(MPSGraphTensor tensor, double rate, String name);
+    public native MPSGraphTensor dropoutTensorRateName(@NotNull MPSGraphTensor tensor, double rate,
+            @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("dropoutTensor:rateTensor:name:")
-    public native MPSGraphTensor dropoutTensorRateTensorName(MPSGraphTensor tensor, MPSGraphTensor rate, String name);
+    public native MPSGraphTensor dropoutTensorRateTensorName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor rate, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("equalWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor equalWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor equalWithPrimaryTensorSecondaryTensorName(@NotNull MPSGraphTensor primaryTensor,
+            @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("erfWithTensor:name:")
-    public native MPSGraphTensor erfWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor erfWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("exponentBase10WithTensor:name:")
-    public native MPSGraphTensor exponentBase10WithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor exponentBase10WithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("exponentBase2WithTensor:name:")
-    public native MPSGraphTensor exponentBase2WithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor exponentBase2WithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("exponentWithTensor:name:")
-    public native MPSGraphTensor exponentWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor exponentWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
      * Create flatten2d op and return the result tensor
@@ -626,9 +691,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("flatten2DTensor:axis:name:")
-    public native MPSGraphTensor flatten2DTensorAxisName(MPSGraphTensor tensor, @NInt long axis, String name);
+    public native MPSGraphTensor flatten2DTensorAxisName(@NotNull MPSGraphTensor tensor, @NInt long axis,
+            @Nullable String name);
 
     /**
      * Create flatten2d op and return the result tensor
@@ -644,19 +711,22 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("flatten2DTensor:axisTensor:name:")
-    public native MPSGraphTensor flatten2DTensorAxisTensorName(MPSGraphTensor tensor, MPSGraphTensor axisTensor,
-            String name);
+    public native MPSGraphTensor flatten2DTensorAxisTensorName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor axisTensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("floorModuloWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor floorModuloWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor floorModuloWithPrimaryTensorSecondaryTensorName(@NotNull MPSGraphTensor primaryTensor,
+            @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("floorWithTensor:name:")
-    public native MPSGraphTensor floorWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor floorWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
      * Adds a forLoop operation, The lower and upper bounds specify a half-open range: the range includes the lower
@@ -673,20 +743,22 @@ public class MPSGraph extends NSObject {
      * @return A valid MPSGraphTensor array with same count and corresponding elementTypes as initialIterationArguments
      *         and return types of the forLoop
      */
+    @NotNull
     @Generated
     @Selector("forLoopWithLowerBound:upperBound:step:initialBodyArguments:body:name:")
     public native NSArray<? extends MPSGraphTensor> forLoopWithLowerBoundUpperBoundStepInitialBodyArgumentsBodyName(
-            MPSGraphTensor lowerBound, MPSGraphTensor upperBound, MPSGraphTensor step,
-            NSArray<? extends MPSGraphTensor> initialBodyArguments,
-            @ObjCBlock(name = "call_forLoopWithLowerBoundUpperBoundStepInitialBodyArgumentsBodyName") Block_forLoopWithLowerBoundUpperBoundStepInitialBodyArgumentsBodyName body,
-            String name);
+            @NotNull MPSGraphTensor lowerBound, @NotNull MPSGraphTensor upperBound, @NotNull MPSGraphTensor step,
+            @NotNull NSArray<? extends MPSGraphTensor> initialBodyArguments,
+            @NotNull @ObjCBlock(name = "call_forLoopWithLowerBoundUpperBoundStepInitialBodyArgumentsBodyName") Block_forLoopWithLowerBoundUpperBoundStepInitialBodyArgumentsBodyName body,
+            @Nullable String name);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_forLoopWithLowerBoundUpperBoundStepInitialBodyArgumentsBodyName {
+        @NotNull
         @Generated
         NSArray<? extends MPSGraphTensor> call_forLoopWithLowerBoundUpperBoundStepInitialBodyArgumentsBodyName(
-                MPSGraphTensor index, NSArray<? extends MPSGraphTensor> iterationArguments);
+                @NotNull MPSGraphTensor index, @NotNull NSArray<? extends MPSGraphTensor> iterationArguments);
     }
 
     /**
@@ -701,19 +773,21 @@ public class MPSGraph extends NSObject {
      * @return A valid MPSGraphTensor array with same count and corresponding elementTypes as initialIterationArguments
      *         and return types of the forLoop
      */
+    @NotNull
     @Generated
     @Selector("forLoopWithNumberOfIterations:initialBodyArguments:body:name:")
     public native NSArray<? extends MPSGraphTensor> forLoopWithNumberOfIterationsInitialBodyArgumentsBodyName(
-            MPSGraphTensor numberOfIterations, NSArray<? extends MPSGraphTensor> initialBodyArguments,
-            @ObjCBlock(name = "call_forLoopWithNumberOfIterationsInitialBodyArgumentsBodyName") Block_forLoopWithNumberOfIterationsInitialBodyArgumentsBodyName body,
-            String name);
+            @NotNull MPSGraphTensor numberOfIterations, @NotNull NSArray<? extends MPSGraphTensor> initialBodyArguments,
+            @NotNull @ObjCBlock(name = "call_forLoopWithNumberOfIterationsInitialBodyArgumentsBodyName") Block_forLoopWithNumberOfIterationsInitialBodyArgumentsBodyName body,
+            @Nullable String name);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_forLoopWithNumberOfIterationsInitialBodyArgumentsBodyName {
+        @NotNull
         @Generated
         NSArray<? extends MPSGraphTensor> call_forLoopWithNumberOfIterationsInitialBodyArgumentsBodyName(
-                MPSGraphTensor index, NSArray<? extends MPSGraphTensor> iterationArguments);
+                @NotNull MPSGraphTensor index, @NotNull NSArray<? extends MPSGraphTensor> iterationArguments);
     }
 
     /**
@@ -746,10 +820,12 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object
      */
+    @NotNull
     @Generated
     @Selector("gatherNDWithUpdatesTensor:indicesTensor:batchDimensions:name:")
-    public native MPSGraphTensor gatherNDWithUpdatesTensorIndicesTensorBatchDimensionsName(MPSGraphTensor updatesTensor,
-            MPSGraphTensor indicesTensor, @NUInt long batchDimensions, String name);
+    public native MPSGraphTensor gatherNDWithUpdatesTensorIndicesTensorBatchDimensionsName(
+            @NotNull MPSGraphTensor updatesTensor, @NotNull MPSGraphTensor indicesTensor, @NUInt long batchDimensions,
+            @Nullable String name);
 
     /**
      * Create Gather op and return the result tensor
@@ -783,11 +859,12 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object
      */
+    @NotNull
     @Generated
     @Selector("gatherWithUpdatesTensor:indicesTensor:axis:batchDimensions:name:")
     public native MPSGraphTensor gatherWithUpdatesTensorIndicesTensorAxisBatchDimensionsName(
-            MPSGraphTensor updatesTensor, MPSGraphTensor indicesTensor, @NUInt long axis, @NUInt long batchDimensions,
-            String name);
+            @NotNull MPSGraphTensor updatesTensor, @NotNull MPSGraphTensor indicesTensor, @NUInt long axis,
+            @NUInt long batchDimensions, @Nullable String name);
 
     /**
      * Calculates partial derviative of primaryTensor wrt secondaryTensor
@@ -799,29 +876,34 @@ public class MPSGraph extends NSObject {
      * @return A valid MPSGraphTensor dictionary object containing partial derivative
      *         d(primaryTensor)/d(secondaryTensor) for each tensor as key
      */
+    @NotNull
     @Generated
     @Selector("gradientForPrimaryTensor:withTensors:name:")
     public native NSDictionary<? extends MPSGraphTensor, ? extends MPSGraphTensor> gradientForPrimaryTensorWithTensorsName(
-            MPSGraphTensor primaryTensor, NSArray<? extends MPSGraphTensor> tensors, String name);
+            @NotNull MPSGraphTensor primaryTensor, @NotNull NSArray<? extends MPSGraphTensor> tensors,
+            @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("greaterThanOrEqualToWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor greaterThanOrEqualToWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor greaterThanOrEqualToWithPrimaryTensorSecondaryTensorName(
+            @NotNull MPSGraphTensor primaryTensor, @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("greaterThanWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor greaterThanWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor greaterThanWithPrimaryTensorSecondaryTensorName(@NotNull MPSGraphTensor primaryTensor,
+            @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
     @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
 
+    @NotNull
     @Generated
     @Selector("identityWithTensor:name:")
-    public native MPSGraphTensor identityWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor identityWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
      * Add an if/then/else op to the graph
@@ -834,17 +916,19 @@ public class MPSGraph extends NSObject {
      * @return results If no error, the tensors returned by user. If not empty, user must define both then/else block,
      *         both should have same number of arguments and each corresponding argument should have same elementTypes.
      */
+    @NotNull
     @Generated
     @Selector("ifWithPredicateTensor:thenBlock:elseBlock:name:")
     public native NSArray<? extends MPSGraphTensor> ifWithPredicateTensorThenBlockElseBlockName(
-            MPSGraphTensor predicateTensor,
-            @ObjCBlock(name = "call_ifWithPredicateTensorThenBlockElseBlockName_1") Block_ifWithPredicateTensorThenBlockElseBlockName_1 thenBlock,
-            @ObjCBlock(name = "call_ifWithPredicateTensorThenBlockElseBlockName_2") Block_ifWithPredicateTensorThenBlockElseBlockName_2 elseBlock,
-            String name);
+            @NotNull MPSGraphTensor predicateTensor,
+            @NotNull @ObjCBlock(name = "call_ifWithPredicateTensorThenBlockElseBlockName_1") Block_ifWithPredicateTensorThenBlockElseBlockName_1 thenBlock,
+            @Nullable @ObjCBlock(name = "call_ifWithPredicateTensorThenBlockElseBlockName_2") Block_ifWithPredicateTensorThenBlockElseBlockName_2 elseBlock,
+            @Nullable String name);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_ifWithPredicateTensorThenBlockElseBlockName_1 {
+        @NotNull
         @Generated
         NSArray<? extends MPSGraphTensor> call_ifWithPredicateTensorThenBlockElseBlockName_1();
     }
@@ -852,6 +936,7 @@ public class MPSGraph extends NSObject {
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_ifWithPredicateTensorThenBlockElseBlockName_2 {
+        @NotNull
         @Generated
         NSArray<? extends MPSGraphTensor> call_ifWithPredicateTensorThenBlockElseBlockName_2();
     }
@@ -876,33 +961,39 @@ public class MPSGraph extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    @NotNull
     @Generated
     @Selector("isFiniteWithTensor:name:")
-    public native MPSGraphTensor isFiniteWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor isFiniteWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("isInfiniteWithTensor:name:")
-    public native MPSGraphTensor isInfiniteWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor isInfiniteWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("isNaNWithTensor:name:")
-    public native MPSGraphTensor isNaNWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor isNaNWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("leakyReLUGradientWithIncomingGradient:sourceTensor:alphaTensor:name:")
     public native MPSGraphTensor leakyReLUGradientWithIncomingGradientSourceTensorAlphaTensorName(
-            MPSGraphTensor gradient, MPSGraphTensor source, MPSGraphTensor alphaTensor, String name);
+            @NotNull MPSGraphTensor gradient, @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor alphaTensor,
+            @Nullable String name);
 
     /**
      * Leaky ReLU activation tensor
@@ -912,69 +1003,83 @@ public class MPSGraph extends NSObject {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("leakyReLUWithTensor:alpha:name:")
-    public native MPSGraphTensor leakyReLUWithTensorAlphaName(MPSGraphTensor tensor, double alpha, String name);
+    public native MPSGraphTensor leakyReLUWithTensorAlphaName(@NotNull MPSGraphTensor tensor, double alpha,
+            @Nullable String name);
 
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("leakyReLUWithTensor:alphaTensor:name:")
-    public native MPSGraphTensor leakyReLUWithTensorAlphaTensorName(MPSGraphTensor tensor, MPSGraphTensor alphaTensor,
-            String name);
+    public native MPSGraphTensor leakyReLUWithTensorAlphaTensorName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor alphaTensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("lessThanOrEqualToWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor lessThanOrEqualToWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor lessThanOrEqualToWithPrimaryTensorSecondaryTensorName(
+            @NotNull MPSGraphTensor primaryTensor, @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("lessThanWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor lessThanWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor lessThanWithPrimaryTensorSecondaryTensorName(@NotNull MPSGraphTensor primaryTensor,
+            @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("logarithmBase10WithTensor:name:")
-    public native MPSGraphTensor logarithmBase10WithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor logarithmBase10WithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("logarithmBase2WithTensor:name:")
-    public native MPSGraphTensor logarithmBase2WithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor logarithmBase2WithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("logarithmWithTensor:name:")
-    public native MPSGraphTensor logarithmWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor logarithmWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("logicalANDWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor logicalANDWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor logicalANDWithPrimaryTensorSecondaryTensorName(@NotNull MPSGraphTensor primaryTensor,
+            @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("logicalNANDWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor logicalNANDWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor logicalNANDWithPrimaryTensorSecondaryTensorName(@NotNull MPSGraphTensor primaryTensor,
+            @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("logicalNORWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor logicalNORWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor logicalNORWithPrimaryTensorSecondaryTensorName(@NotNull MPSGraphTensor primaryTensor,
+            @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("logicalORWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor logicalORWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor logicalORWithPrimaryTensorSecondaryTensorName(@NotNull MPSGraphTensor primaryTensor,
+            @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("logicalXNORWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor logicalXNORWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor logicalXNORWithPrimaryTensorSecondaryTensorName(@NotNull MPSGraphTensor primaryTensor,
+            @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("logicalXORWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor logicalXORWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor logicalXORWithPrimaryTensorSecondaryTensorName(@NotNull MPSGraphTensor primaryTensor,
+            @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
     /**
      * Create MatMul op and return the result tensor, it supports broadcasting as well
@@ -989,36 +1094,43 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("matrixMultiplicationWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor matrixMultiplicationWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor matrixMultiplicationWithPrimaryTensorSecondaryTensorName(
+            @NotNull MPSGraphTensor primaryTensor, @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("maxPooling2DGradientWithGradientTensor:sourceTensor:descriptor:name:")
     public native MPSGraphTensor maxPooling2DGradientWithGradientTensorSourceTensorDescriptorName(
-            MPSGraphTensor gradient, MPSGraphTensor source, MPSGraphPooling2DOpDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor gradient, @NotNull MPSGraphTensor source,
+            @NotNull MPSGraphPooling2DOpDescriptor descriptor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("maxPooling2DWithSourceTensor:descriptor:name:")
-    public native MPSGraphTensor maxPooling2DWithSourceTensorDescriptorName(MPSGraphTensor source,
-            MPSGraphPooling2DOpDescriptor descriptor, String name);
+    public native MPSGraphTensor maxPooling2DWithSourceTensorDescriptorName(@NotNull MPSGraphTensor source,
+            @NotNull MPSGraphPooling2DOpDescriptor descriptor, @Nullable String name);
 
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("maxPooling4DGradientWithGradientTensor:sourceTensor:descriptor:name:")
     public native MPSGraphTensor maxPooling4DGradientWithGradientTensorSourceTensorDescriptorName(
-            MPSGraphTensor gradient, MPSGraphTensor source, MPSGraphPooling4DOpDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor gradient, @NotNull MPSGraphTensor source,
+            @NotNull MPSGraphPooling4DOpDescriptor descriptor, @Nullable String name);
 
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("maxPooling4DWithSourceTensor:descriptor:name:")
-    public native MPSGraphTensor maxPooling4DWithSourceTensorDescriptorName(MPSGraphTensor source,
-            MPSGraphPooling4DOpDescriptor descriptor, String name);
+    public native MPSGraphTensor maxPooling4DWithSourceTensorDescriptorName(@NotNull MPSGraphTensor source,
+            @NotNull MPSGraphPooling4DOpDescriptor descriptor, @Nullable String name);
 
     /**
      * Create Maximum op and return the result tensor, it supports broadcasting as well. If any of the operands is NaN,
@@ -1036,15 +1148,17 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("maximumWithNaNPropagationWithPrimaryTensor:secondaryTensor:name:")
     public native MPSGraphTensor maximumWithNaNPropagationWithPrimaryTensorSecondaryTensorName(
-            MPSGraphTensor primaryTensor, MPSGraphTensor secondaryTensor, String name);
+            @NotNull MPSGraphTensor primaryTensor, @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("maximumWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor maximumWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor maximumWithPrimaryTensorSecondaryTensorName(@NotNull MPSGraphTensor primaryTensor,
+            @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
     /**
      * Create a mean op and return the result tensor
@@ -1055,10 +1169,11 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("meanOfTensor:axes:name:")
-    public native MPSGraphTensor meanOfTensorAxesName(MPSGraphTensor tensor, NSArray<? extends NSNumber> axes,
-            String name);
+    public native MPSGraphTensor meanOfTensorAxesName(@NotNull MPSGraphTensor tensor,
+            @NotNull NSArray<? extends NSNumber> axes, @Nullable String name);
 
     /**
      * Create Minimum op and return the result tensor, it supports broadcasting as well. If any of the operands is NaN,
@@ -1076,20 +1191,23 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("minimumWithNaNPropagationWithPrimaryTensor:secondaryTensor:name:")
     public native MPSGraphTensor minimumWithNaNPropagationWithPrimaryTensorSecondaryTensorName(
-            MPSGraphTensor primaryTensor, MPSGraphTensor secondaryTensor, String name);
+            @NotNull MPSGraphTensor primaryTensor, @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("minimumWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor minimumWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor minimumWithPrimaryTensorSecondaryTensorName(@NotNull MPSGraphTensor primaryTensor,
+            @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("moduloWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor moduloWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor moduloWithPrimaryTensorSecondaryTensorName(@NotNull MPSGraphTensor primaryTensor,
+            @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
     /**
      * Create Multiply op and return the result tensor, it supports broadcasting as well
@@ -1104,14 +1222,16 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("multiplicationWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor multiplicationWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor multiplicationWithPrimaryTensorSecondaryTensorName(
+            @NotNull MPSGraphTensor primaryTensor, @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("negativeWithTensor:name:")
-    public native MPSGraphTensor negativeWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor negativeWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
      * Create a new MPSGraph to insert nodes in
@@ -1121,24 +1241,29 @@ public class MPSGraph extends NSObject {
     @Selector("new")
     public static native MPSGraph new_objc();
 
+    @NotNull
     @Generated
     @Selector("normalizationBetaGradientWithIncomingGradientTensor:sourceTensor:reductionAxes:name:")
     public native MPSGraphTensor normalizationBetaGradientWithIncomingGradientTensorSourceTensorReductionAxesName(
-            MPSGraphTensor incomingGradientTensor, MPSGraphTensor sourceTensor, NSArray<? extends NSNumber> axes,
-            String name);
+            @NotNull MPSGraphTensor incomingGradientTensor, @NotNull MPSGraphTensor sourceTensor,
+            @NotNull NSArray<? extends NSNumber> axes, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("normalizationGammaGradientWithIncomingGradientTensor:sourceTensor:meanTensor:varianceTensor:reductionAxes:epsilon:name:")
     public native MPSGraphTensor normalizationGammaGradientWithIncomingGradientTensorSourceTensorMeanTensorVarianceTensorReductionAxesEpsilonName(
-            MPSGraphTensor incomingGradientTensor, MPSGraphTensor sourceTensor, MPSGraphTensor meanTensor,
-            MPSGraphTensor varianceTensor, NSArray<? extends NSNumber> axes, float epsilon, String name);
+            @NotNull MPSGraphTensor incomingGradientTensor, @NotNull MPSGraphTensor sourceTensor,
+            @NotNull MPSGraphTensor meanTensor, @NotNull MPSGraphTensor varianceTensor,
+            @NotNull NSArray<? extends NSNumber> axes, float epsilon, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("normalizationGradientWithIncomingGradientTensor:sourceTensor:meanTensor:varianceTensor:gammaTensor:gammaGradientTensor:betaGradientTensor:reductionAxes:epsilon:name:")
     public native MPSGraphTensor normalizationGradientWithIncomingGradientTensorSourceTensorMeanTensorVarianceTensorGammaTensorGammaGradientTensorBetaGradientTensorReductionAxesEpsilonName(
-            MPSGraphTensor incomingGradientTensor, MPSGraphTensor sourceTensor, MPSGraphTensor meanTensor,
-            MPSGraphTensor varianceTensor, MPSGraphTensor gamma, MPSGraphTensor gammaGradient,
-            MPSGraphTensor betaGradient, NSArray<? extends NSNumber> axes, float epsilon, String name);
+            @NotNull MPSGraphTensor incomingGradientTensor, @NotNull MPSGraphTensor sourceTensor,
+            @NotNull MPSGraphTensor meanTensor, @NotNull MPSGraphTensor varianceTensor, @Nullable MPSGraphTensor gamma,
+            @Nullable MPSGraphTensor gammaGradient, @Nullable MPSGraphTensor betaGradient,
+            @NotNull NSArray<? extends NSNumber> axes, float epsilon, @Nullable String name);
 
     /**
      * Create a batch normalization op and return the result tensor
@@ -1162,25 +1287,29 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("normalizationWithTensor:meanTensor:varianceTensor:gammaTensor:betaTensor:epsilon:name:")
     public native MPSGraphTensor normalizationWithTensorMeanTensorVarianceTensorGammaTensorBetaTensorEpsilonName(
-            MPSGraphTensor tensor, MPSGraphTensor mean, MPSGraphTensor variance, MPSGraphTensor gamma,
-            MPSGraphTensor beta, float epsilon, String name);
+            @NotNull MPSGraphTensor tensor, @NotNull MPSGraphTensor mean, @NotNull MPSGraphTensor variance,
+            @Nullable MPSGraphTensor gamma, @Nullable MPSGraphTensor beta, float epsilon, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("notEqualWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor notEqualWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor notEqualWithPrimaryTensorSecondaryTensorName(@NotNull MPSGraphTensor primaryTensor,
+            @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("notWithTensor:name:")
-    public native MPSGraphTensor notWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor notWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("oneHotWithIndicesTensor:depth:axis:dataType:name:")
-    public native MPSGraphTensor oneHotWithIndicesTensorDepthAxisDataTypeName(MPSGraphTensor indicesTensor,
-            @NUInt long depth, @NUInt long axis, int dataType, String name);
+    public native MPSGraphTensor oneHotWithIndicesTensorDepthAxisDataTypeName(@NotNull MPSGraphTensor indicesTensor,
+            @NUInt long depth, @NUInt long axis, int dataType, @Nullable String name);
 
     /**
      * Create oneHot op and return the result tensor
@@ -1206,31 +1335,37 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("oneHotWithIndicesTensor:depth:axis:dataType:onValue:offValue:name:")
     public native MPSGraphTensor oneHotWithIndicesTensorDepthAxisDataTypeOnValueOffValueName(
-            MPSGraphTensor indicesTensor, @NUInt long depth, @NUInt long axis, int dataType, double onValue,
-            double offValue, String name);
+            @NotNull MPSGraphTensor indicesTensor, @NUInt long depth, @NUInt long axis, int dataType, double onValue,
+            double offValue, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("oneHotWithIndicesTensor:depth:axis:name:")
-    public native MPSGraphTensor oneHotWithIndicesTensorDepthAxisName(MPSGraphTensor indicesTensor, @NUInt long depth,
-            @NUInt long axis, String name);
+    public native MPSGraphTensor oneHotWithIndicesTensorDepthAxisName(@NotNull MPSGraphTensor indicesTensor,
+            @NUInt long depth, @NUInt long axis, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("oneHotWithIndicesTensor:depth:dataType:name:")
-    public native MPSGraphTensor oneHotWithIndicesTensorDepthDataTypeName(MPSGraphTensor indicesTensor,
-            @NUInt long depth, int dataType, String name);
+    public native MPSGraphTensor oneHotWithIndicesTensorDepthDataTypeName(@NotNull MPSGraphTensor indicesTensor,
+            @NUInt long depth, int dataType, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("oneHotWithIndicesTensor:depth:dataType:onValue:offValue:name:")
-    public native MPSGraphTensor oneHotWithIndicesTensorDepthDataTypeOnValueOffValueName(MPSGraphTensor indicesTensor,
-            @NUInt long depth, int dataType, double onValue, double offValue, String name);
+    public native MPSGraphTensor oneHotWithIndicesTensorDepthDataTypeOnValueOffValueName(
+            @NotNull MPSGraphTensor indicesTensor, @NUInt long depth, int dataType, double onValue, double offValue,
+            @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("oneHotWithIndicesTensor:depth:name:")
-    public native MPSGraphTensor oneHotWithIndicesTensorDepthName(MPSGraphTensor indicesTensor, @NUInt long depth,
-            String name);
+    public native MPSGraphTensor oneHotWithIndicesTensorDepthName(@NotNull MPSGraphTensor indicesTensor,
+            @NUInt long depth, @Nullable String name);
 
     /**
      * [@property] options
@@ -1246,23 +1381,27 @@ public class MPSGraph extends NSObject {
      * 
      * an array of all the placeholderTensors
      */
+    @NotNull
     @Generated
     @Selector("placeholderTensors")
     public native NSArray<? extends MPSGraphTensor> placeholderTensors();
 
+    @NotNull
     @Generated
     @Selector("powerWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor powerWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor powerWithPrimaryTensorSecondaryTensorName(@NotNull MPSGraphTensor primaryTensor,
+            @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("reLUGradientWithIncomingGradient:sourceTensor:name:")
-    public native MPSGraphTensor reLUGradientWithIncomingGradientSourceTensorName(MPSGraphTensor gradient,
-            MPSGraphTensor source, String name);
+    public native MPSGraphTensor reLUGradientWithIncomingGradientSourceTensorName(@NotNull MPSGraphTensor gradient,
+            @NotNull MPSGraphTensor source, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("reLUWithTensor:name:")
-    public native MPSGraphTensor reLUWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor reLUWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
      * Create a read op which reads at this point of execution of the graph and return the result tensor
@@ -1272,13 +1411,15 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("readVariable:name:")
-    public native MPSGraphTensor readVariableName(MPSGraphTensor variable, String name);
+    public native MPSGraphTensor readVariableName(@NotNull MPSGraphTensor variable, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("reciprocalWithTensor:name:")
-    public native MPSGraphTensor reciprocalWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor reciprocalWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
      * Create reduction argMax op and return the result tensor.
@@ -1291,10 +1432,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("reductionArgMaximumWithTensor:axis:name:")
-    public native MPSGraphTensor reductionArgMaximumWithTensorAxisName(MPSGraphTensor tensor, @NInt long axis,
-            String name);
+    public native MPSGraphTensor reductionArgMaximumWithTensorAxisName(@NotNull MPSGraphTensor tensor, @NInt long axis,
+            @Nullable String name);
 
     /**
      * Create reduction argMin op and return the result tensor.
@@ -1307,10 +1449,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("reductionArgMinimumWithTensor:axis:name:")
-    public native MPSGraphTensor reductionArgMinimumWithTensorAxisName(MPSGraphTensor tensor, @NInt long axis,
-            String name);
+    public native MPSGraphTensor reductionArgMinimumWithTensorAxisName(@NotNull MPSGraphTensor tensor, @NInt long axis,
+            @Nullable String name);
 
     /**
      * Create reduction max op and return the result tensor.
@@ -1321,10 +1464,11 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("reductionMaximumWithTensor:axes:name:")
-    public native MPSGraphTensor reductionMaximumWithTensorAxesName(MPSGraphTensor tensor,
-            NSArray<? extends NSNumber> axes, String name);
+    public native MPSGraphTensor reductionMaximumWithTensorAxesName(@NotNull MPSGraphTensor tensor,
+            @Nullable NSArray<? extends NSNumber> axes, @Nullable String name);
 
     /**
      * Create reduction max op and return the result tensor.
@@ -1335,10 +1479,11 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("reductionMaximumWithTensor:axis:name:")
-    public native MPSGraphTensor reductionMaximumWithTensorAxisName(MPSGraphTensor tensor, @NInt long axis,
-            String name);
+    public native MPSGraphTensor reductionMaximumWithTensorAxisName(@NotNull MPSGraphTensor tensor, @NInt long axis,
+            @Nullable String name);
 
     /**
      * Create reduction min op and return the result tensor.
@@ -1349,10 +1494,11 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("reductionMinimumWithTensor:axes:name:")
-    public native MPSGraphTensor reductionMinimumWithTensorAxesName(MPSGraphTensor tensor,
-            NSArray<? extends NSNumber> axes, String name);
+    public native MPSGraphTensor reductionMinimumWithTensorAxesName(@NotNull MPSGraphTensor tensor,
+            @Nullable NSArray<? extends NSNumber> axes, @Nullable String name);
 
     /**
      * Create reduction minimum op and return the result tensor.
@@ -1363,10 +1509,11 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("reductionMinimumWithTensor:axis:name:")
-    public native MPSGraphTensor reductionMinimumWithTensorAxisName(MPSGraphTensor tensor, @NInt long axis,
-            String name);
+    public native MPSGraphTensor reductionMinimumWithTensorAxisName(@NotNull MPSGraphTensor tensor, @NInt long axis,
+            @Nullable String name);
 
     /**
      * Create reduction product op and return the result tensor.
@@ -1377,10 +1524,11 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("reductionProductWithTensor:axes:name:")
-    public native MPSGraphTensor reductionProductWithTensorAxesName(MPSGraphTensor tensor,
-            NSArray<? extends NSNumber> axes, String name);
+    public native MPSGraphTensor reductionProductWithTensorAxesName(@NotNull MPSGraphTensor tensor,
+            @Nullable NSArray<? extends NSNumber> axes, @Nullable String name);
 
     /**
      * Create reduction product op and return the result tensor.
@@ -1391,10 +1539,11 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("reductionProductWithTensor:axis:name:")
-    public native MPSGraphTensor reductionProductWithTensorAxisName(MPSGraphTensor tensor, @NInt long axis,
-            String name);
+    public native MPSGraphTensor reductionProductWithTensorAxisName(@NotNull MPSGraphTensor tensor, @NInt long axis,
+            @Nullable String name);
 
     /**
      * Create reduction sum op and return the result tensor.
@@ -1405,10 +1554,11 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("reductionSumWithTensor:axes:name:")
-    public native MPSGraphTensor reductionSumWithTensorAxesName(MPSGraphTensor tensor, NSArray<? extends NSNumber> axes,
-            String name);
+    public native MPSGraphTensor reductionSumWithTensorAxesName(@NotNull MPSGraphTensor tensor,
+            @Nullable NSArray<? extends NSNumber> axes, @Nullable String name);
 
     /**
      * Create reduction sum op and return the result tensor.
@@ -1419,9 +1569,11 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("reductionSumWithTensor:axis:name:")
-    public native MPSGraphTensor reductionSumWithTensorAxisName(MPSGraphTensor tensor, @NInt long axis, String name);
+    public native MPSGraphTensor reductionSumWithTensorAxisName(@NotNull MPSGraphTensor tensor, @NInt long axis,
+            @Nullable String name);
 
     /**
      * Create Reshape op and return the result tensor
@@ -1438,10 +1590,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("reshapeTensor:withShapeTensor:name:")
-    public native MPSGraphTensor reshapeTensorWithShapeTensorName(MPSGraphTensor tensor, MPSGraphTensor shapeTensor,
-            String name);
+    public native MPSGraphTensor reshapeTensorWithShapeTensorName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor shapeTensor, @Nullable String name);
 
     /**
      * Create Resize op and return the result tensor
@@ -1485,11 +1638,12 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("resizeTensor:sizeTensor:mode:centerResult:alignCorners:layout:name:")
     public native MPSGraphTensor resizeTensorSizeTensorModeCenterResultAlignCornersLayoutName(
-            MPSGraphTensor imagesTensor, MPSGraphTensor size, @NUInt long mode, boolean centerResult,
-            boolean alignCorners, @NUInt long layout, String name);
+            @NotNull MPSGraphTensor imagesTensor, @NotNull MPSGraphTensor size, @NUInt long mode, boolean centerResult,
+            boolean alignCorners, @NUInt long layout, @Nullable String name);
 
     /**
      * Create Resize gradient op and return the result tensor
@@ -1511,11 +1665,12 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object
      */
+    @NotNull
     @Generated
     @Selector("resizeWithGradientTensor:input:mode:centerResult:alignCorners:layout:name:")
     public native MPSGraphTensor resizeWithGradientTensorInputModeCenterResultAlignCornersLayoutName(
-            MPSGraphTensor gradient, MPSGraphTensor input, @NUInt long mode, boolean centerResult, boolean alignCorners,
-            @NUInt long layout, String name);
+            @NotNull MPSGraphTensor gradient, @NotNull MPSGraphTensor input, @NUInt long mode, boolean centerResult,
+            boolean alignCorners, @NUInt long layout, @Nullable String name);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -1525,9 +1680,10 @@ public class MPSGraph extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @NotNull
     @Generated
     @Selector("reverseSquareRootWithTensor:name:")
-    public native MPSGraphTensor reverseSquareRootWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor reverseSquareRootWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
      * Create reverse op and return the result tensor
@@ -1543,10 +1699,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("reverseTensor:axes:name:")
-    public native MPSGraphTensor reverseTensorAxesName(MPSGraphTensor tensor, NSArray<? extends NSNumber> axes,
-            String name);
+    public native MPSGraphTensor reverseTensorAxesName(@NotNull MPSGraphTensor tensor,
+            @NotNull NSArray<? extends NSNumber> axes, @Nullable String name);
 
     /**
      * Create reverse op and return the result tensor
@@ -1562,10 +1719,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("reverseTensor:axesTensor:name:")
-    public native MPSGraphTensor reverseTensorAxesTensorName(MPSGraphTensor tensor, MPSGraphTensor axesTensor,
-            String name);
+    public native MPSGraphTensor reverseTensorAxesTensorName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor axesTensor, @Nullable String name);
 
     /**
      * Create reverse op and return the result tensor
@@ -1580,17 +1738,20 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("reverseTensor:name:")
-    public native MPSGraphTensor reverseTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor reverseTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("rintWithTensor:name:")
-    public native MPSGraphTensor rintWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor rintWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("roundWithTensor:name:")
-    public native MPSGraphTensor roundWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor roundWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
      * Create ScatterND op and return the result tensor
@@ -1630,11 +1791,12 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("scatterNDWithDataTensor:updatesTensor:indicesTensor:batchDimensions:mode:name:")
     public native MPSGraphTensor scatterNDWithDataTensorUpdatesTensorIndicesTensorBatchDimensionsModeName(
-            MPSGraphTensor dataTensor, MPSGraphTensor updatesTensor, MPSGraphTensor indicesTensor,
-            @NUInt long batchDimensions, @NInt long mode, String name);
+            @NotNull MPSGraphTensor dataTensor, @NotNull MPSGraphTensor updatesTensor,
+            @NotNull MPSGraphTensor indicesTensor, @NUInt long batchDimensions, @NInt long mode, @Nullable String name);
 
     /**
      * Create Scatter op and return the result tensor
@@ -1670,16 +1832,19 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("scatterWithDataTensor:updatesTensor:indicesTensor:axis:mode:name:")
-    public native MPSGraphTensor scatterWithDataTensorUpdatesTensorIndicesTensorAxisModeName(MPSGraphTensor dataTensor,
-            MPSGraphTensor updatesTensor, MPSGraphTensor indicesTensor, @NInt long axis, @NInt long mode, String name);
+    public native MPSGraphTensor scatterWithDataTensorUpdatesTensorIndicesTensorAxisModeName(
+            @NotNull MPSGraphTensor dataTensor, @NotNull MPSGraphTensor updatesTensor,
+            @NotNull MPSGraphTensor indicesTensor, @NInt long axis, @NInt long mode, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("selectWithPredicateTensor:truePredicateTensor:falsePredicateTensor:name:")
     public native MPSGraphTensor selectWithPredicateTensorTruePredicateTensorFalsePredicateTensorName(
-            MPSGraphTensor predicateTensor, MPSGraphTensor truePredicateTensor, MPSGraphTensor falseSelectTensor,
-            String name);
+            @NotNull MPSGraphTensor predicateTensor, @NotNull MPSGraphTensor truePredicateTensor,
+            @NotNull MPSGraphTensor falseSelectTensor, @Nullable String name);
 
     /**
      * [@property] options
@@ -1706,34 +1871,41 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("shapeOfTensor:name:")
-    public native MPSGraphTensor shapeOfTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor shapeOfTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("sigmoidGradientWithIncomingGradient:sourceTensor:name:")
-    public native MPSGraphTensor sigmoidGradientWithIncomingGradientSourceTensorName(MPSGraphTensor gradient,
-            MPSGraphTensor source, String name);
+    public native MPSGraphTensor sigmoidGradientWithIncomingGradientSourceTensorName(@NotNull MPSGraphTensor gradient,
+            @NotNull MPSGraphTensor source, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("sigmoidWithTensor:name:")
-    public native MPSGraphTensor sigmoidWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor sigmoidWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("signWithTensor:name:")
-    public native MPSGraphTensor signWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor signWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("signbitWithTensor:name:")
-    public native MPSGraphTensor signbitWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor signbitWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("sinWithTensor:name:")
-    public native MPSGraphTensor sinWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor sinWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("sinhWithTensor:name:")
-    public native MPSGraphTensor sinhWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor sinhWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
      * Create strided slice gradient op and return the result tensor
@@ -1747,11 +1919,13 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object
      */
+    @NotNull
     @Generated
     @Selector("sliceGradientTensor:fwdInShapeTensor:starts:ends:strides:name:")
     public native MPSGraphTensor sliceGradientTensorFwdInShapeTensorStartsEndsStridesName(
-            MPSGraphTensor inputGradientTensor, MPSGraphTensor fwdInShapeTensor, NSArray<? extends NSNumber> starts,
-            NSArray<? extends NSNumber> ends, NSArray<? extends NSNumber> strides, String name);
+            @NotNull MPSGraphTensor inputGradientTensor, @NotNull MPSGraphTensor fwdInShapeTensor,
+            @NotNull NSArray<? extends NSNumber> starts, @NotNull NSArray<? extends NSNumber> ends,
+            @NotNull NSArray<? extends NSNumber> strides, @Nullable String name);
 
     /**
      * Create strided slice gradient op and return the result tensor
@@ -1768,17 +1942,20 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object
      */
+    @NotNull
     @Generated
     @Selector("sliceGradientTensor:fwdInShapeTensor:starts:ends:strides:startMask:endMask:squeezeMask:name:")
     public native MPSGraphTensor sliceGradientTensorFwdInShapeTensorStartsEndsStridesStartMaskEndMaskSqueezeMaskName(
-            MPSGraphTensor inputGradientTensor, MPSGraphTensor fwdInShapeTensor, NSArray<? extends NSNumber> starts,
-            NSArray<? extends NSNumber> ends, NSArray<? extends NSNumber> strides, int startMask, int endMask,
-            int squeezeMask, String name);
+            @NotNull MPSGraphTensor inputGradientTensor, @NotNull MPSGraphTensor fwdInShapeTensor,
+            @NotNull NSArray<? extends NSNumber> starts, @NotNull NSArray<? extends NSNumber> ends,
+            @NotNull NSArray<? extends NSNumber> strides, int startMask, int endMask, int squeezeMask,
+            @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("sliceTensor:dimension:start:length:name:")
-    public native MPSGraphTensor sliceTensorDimensionStartLengthName(MPSGraphTensor tensor, @NUInt long dimensionIndex,
-            @NInt long start, @NInt long length, String name);
+    public native MPSGraphTensor sliceTensorDimensionStartLengthName(@NotNull MPSGraphTensor tensor,
+            @NUInt long dimensionIndex, @NInt long start, @NInt long length, @Nullable String name);
 
     /**
      * Create strided slice op and return the result tensor
@@ -1795,11 +1972,12 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object
      */
+    @NotNull
     @Generated
     @Selector("sliceTensor:starts:ends:strides:name:")
-    public native MPSGraphTensor sliceTensorStartsEndsStridesName(MPSGraphTensor tensor,
-            NSArray<? extends NSNumber> starts, NSArray<? extends NSNumber> ends, NSArray<? extends NSNumber> strides,
-            String name);
+    public native MPSGraphTensor sliceTensorStartsEndsStridesName(@NotNull MPSGraphTensor tensor,
+            @NotNull NSArray<? extends NSNumber> starts, @NotNull NSArray<? extends NSNumber> ends,
+            @NotNull NSArray<? extends NSNumber> strides, @Nullable String name);
 
     /**
      * Create strided slice op and return the result tensor
@@ -1819,11 +1997,13 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object
      */
+    @NotNull
     @Generated
     @Selector("sliceTensor:starts:ends:strides:startMask:endMask:squeezeMask:name:")
-    public native MPSGraphTensor sliceTensorStartsEndsStridesStartMaskEndMaskSqueezeMaskName(MPSGraphTensor tensor,
-            NSArray<? extends NSNumber> starts, NSArray<? extends NSNumber> ends, NSArray<? extends NSNumber> strides,
-            int startMask, int endMask, int squeezeMask, String name);
+    public native MPSGraphTensor sliceTensorStartsEndsStridesStartMaskEndMaskSqueezeMaskName(
+            @NotNull MPSGraphTensor tensor, @NotNull NSArray<? extends NSNumber> starts,
+            @NotNull NSArray<? extends NSNumber> ends, @NotNull NSArray<? extends NSNumber> strides, int startMask,
+            int endMask, int squeezeMask, @Nullable String name);
 
     /**
      * Create a softmax cross entropy loss op and return the result tensor
@@ -1837,11 +2017,12 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("softMaxCrossEntropyGradientWithIncomingGradientTensor:sourceTensor:labelsTensor:axis:reductionType:name:")
     public native MPSGraphTensor softMaxCrossEntropyGradientWithIncomingGradientTensorSourceTensorLabelsTensorAxisReductionTypeName(
-            MPSGraphTensor gradientTensor, MPSGraphTensor sourceTensor, MPSGraphTensor labelsTensor, @NInt long axis,
-            long reductionType, String name);
+            @NotNull MPSGraphTensor gradientTensor, @NotNull MPSGraphTensor sourceTensor,
+            @NotNull MPSGraphTensor labelsTensor, @NInt long axis, long reductionType, @Nullable String name);
 
     /**
      * Create a softmax cross entropy loss op and return the result tensor
@@ -1854,19 +2035,24 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("softMaxCrossEntropyWithSourceTensor:labelsTensor:axis:reductionType:name:")
     public native MPSGraphTensor softMaxCrossEntropyWithSourceTensorLabelsTensorAxisReductionTypeName(
-            MPSGraphTensor sourceTensor, MPSGraphTensor labelsTensor, @NInt long axis, long reductionType, String name);
+            @NotNull MPSGraphTensor sourceTensor, @NotNull MPSGraphTensor labelsTensor, @NInt long axis,
+            long reductionType, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("softMaxGradientWithIncomingGradient:sourceTensor:axis:name:")
-    public native MPSGraphTensor softMaxGradientWithIncomingGradientSourceTensorAxisName(MPSGraphTensor gradient,
-            MPSGraphTensor source, @NInt long axis, String name);
+    public native MPSGraphTensor softMaxGradientWithIncomingGradientSourceTensorAxisName(
+            @NotNull MPSGraphTensor gradient, @NotNull MPSGraphTensor source, @NInt long axis, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("softMaxWithTensor:axis:name:")
-    public native MPSGraphTensor softMaxWithTensorAxisName(MPSGraphTensor tensor, @NInt long axis, String name);
+    public native MPSGraphTensor softMaxWithTensorAxisName(@NotNull MPSGraphTensor tensor, @NInt long axis,
+            @Nullable String name);
 
     /**
      * Create space-to-depth2d op and return the result tensor
@@ -1893,28 +2079,33 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("spaceToDepth2DTensor:widthAxis:heightAxis:depthAxis:blockSize:usePixelShuffleOrder:name:")
     public native MPSGraphTensor spaceToDepth2DTensorWidthAxisHeightAxisDepthAxisBlockSizeUsePixelShuffleOrderName(
-            MPSGraphTensor tensor, @NUInt long widthAxis, @NUInt long heightAxis, @NUInt long depthAxis,
-            @NUInt long blockSize, boolean usePixelShuffleOrder, String name);
+            @NotNull MPSGraphTensor tensor, @NUInt long widthAxis, @NUInt long heightAxis, @NUInt long depthAxis,
+            @NUInt long blockSize, boolean usePixelShuffleOrder, @Nullable String name);
 
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("spaceToDepth2DTensor:widthAxisTensor:heightAxisTensor:depthAxisTensor:blockSize:usePixelShuffleOrder:name:")
     public native MPSGraphTensor spaceToDepth2DTensorWidthAxisTensorHeightAxisTensorDepthAxisTensorBlockSizeUsePixelShuffleOrderName(
-            MPSGraphTensor tensor, MPSGraphTensor widthAxisTensor, MPSGraphTensor heightAxisTensor,
-            MPSGraphTensor depthAxisTensor, @NUInt long blockSize, boolean usePixelShuffleOrder, String name);
+            @NotNull MPSGraphTensor tensor, @NotNull MPSGraphTensor widthAxisTensor,
+            @NotNull MPSGraphTensor heightAxisTensor, @NotNull MPSGraphTensor depthAxisTensor, @NUInt long blockSize,
+            boolean usePixelShuffleOrder, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("squareRootWithTensor:name:")
-    public native MPSGraphTensor squareRootWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor squareRootWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("squareWithTensor:name:")
-    public native MPSGraphTensor squareWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor squareWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
      * stencil operation
@@ -1933,10 +2124,11 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object
      */
+    @NotNull
     @Generated
     @Selector("stencilWithSourceTensor:weightsTensor:descriptor:name:")
-    public native MPSGraphTensor stencilWithSourceTensorWeightsTensorDescriptorName(MPSGraphTensor source,
-            MPSGraphTensor weights, MPSGraphStencilOpDescriptor descriptor, String name);
+    public native MPSGraphTensor stencilWithSourceTensorWeightsTensorDescriptorName(@NotNull MPSGraphTensor source,
+            @NotNull MPSGraphTensor weights, @NotNull MPSGraphStencilOpDescriptor descriptor, @Nullable String name);
 
     /**
      * StochasticGradientDescent
@@ -1948,10 +2140,12 @@ public class MPSGraph extends NSObject {
      * where,
      * g is gradient of error wrt variable
      */
+    @NotNull
     @Generated
     @Selector("stochasticGradientDescentWithLearningRateTensor:valuesTensor:gradientTensor:name:")
     public native MPSGraphTensor stochasticGradientDescentWithLearningRateTensorValuesTensorGradientTensorName(
-            MPSGraphTensor learningRateTensor, MPSGraphTensor valuesTensor, MPSGraphTensor gradientTensor, String name);
+            @NotNull MPSGraphTensor learningRateTensor, @NotNull MPSGraphTensor valuesTensor,
+            @NotNull MPSGraphTensor gradientTensor, @Nullable String name);
 
     /**
      * Create Subtract op and return the result tensor, it supports broadcasting as well
@@ -1966,22 +2160,25 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("subtractionWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor subtractionWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor subtractionWithPrimaryTensorSecondaryTensorName(@NotNull MPSGraphTensor primaryTensor,
+            @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("tanWithTensor:name:")
-    public native MPSGraphTensor tanWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor tanWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("tanhWithTensor:name:")
-    public native MPSGraphTensor tanhWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor tanhWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
      * Create TopKGradient op and return the result tensor
@@ -1998,10 +2195,11 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object
      */
+    @NotNull
     @Generated
     @Selector("topKWithGradientTensor:source:k:name:")
-    public native MPSGraphTensor topKWithGradientTensorSourceKName(MPSGraphTensor gradient, MPSGraphTensor source,
-            @NUInt long k, String name);
+    public native MPSGraphTensor topKWithGradientTensorSourceKName(@NotNull MPSGraphTensor gradient,
+            @NotNull MPSGraphTensor source, @NUInt long k, @Nullable String name);
 
     /**
      * Create TopKGradient op and return the result tensor
@@ -2018,10 +2216,11 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object
      */
+    @NotNull
     @Generated
     @Selector("topKWithGradientTensor:source:kTensor:name:")
-    public native MPSGraphTensor topKWithGradientTensorSourceKTensorName(MPSGraphTensor gradient, MPSGraphTensor source,
-            MPSGraphTensor kTensor, String name);
+    public native MPSGraphTensor topKWithGradientTensorSourceKTensorName(@NotNull MPSGraphTensor gradient,
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor kTensor, @Nullable String name);
 
     /**
      * Create TopK op and return the value and indices tensors
@@ -2039,10 +2238,11 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor array of size 2
      */
+    @NotNull
     @Generated
     @Selector("topKWithSourceTensor:k:name:")
-    public native NSArray<? extends MPSGraphTensor> topKWithSourceTensorKName(MPSGraphTensor source, @NUInt long k,
-            String name);
+    public native NSArray<? extends MPSGraphTensor> topKWithSourceTensorKName(@NotNull MPSGraphTensor source,
+            @NUInt long k, @Nullable String name);
 
     /**
      * Create TopK op and return the result tensor
@@ -2060,15 +2260,17 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor array of size 2
      */
+    @NotNull
     @Generated
     @Selector("topKWithSourceTensor:kTensor:name:")
-    public native NSArray<? extends MPSGraphTensor> topKWithSourceTensorKTensorName(MPSGraphTensor source,
-            MPSGraphTensor kTensor, String name);
+    public native NSArray<? extends MPSGraphTensor> topKWithSourceTensorKTensorName(@NotNull MPSGraphTensor source,
+            @NotNull MPSGraphTensor kTensor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("transposeTensor:dimension:withDimension:name:")
-    public native MPSGraphTensor transposeTensorDimensionWithDimensionName(MPSGraphTensor tensor,
-            @NUInt long dimensionIndex, @NUInt long dimensionIndex2, String name);
+    public native MPSGraphTensor transposeTensorDimensionWithDimensionName(@NotNull MPSGraphTensor tensor,
+            @NUInt long dimensionIndex, @NUInt long dimensionIndex2, @Nullable String name);
 
     /**
      * Create a variance op and return the result tensor
@@ -2079,10 +2281,11 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("varianceOfTensor:axes:name:")
-    public native MPSGraphTensor varianceOfTensorAxesName(MPSGraphTensor tensor, NSArray<? extends NSNumber> axes,
-            String name);
+    public native MPSGraphTensor varianceOfTensorAxesName(@NotNull MPSGraphTensor tensor,
+            @NotNull NSArray<? extends NSNumber> axes, @Nullable String name);
 
     /**
      * Create a variance op when you already have a precomputed mean and return the result tensor
@@ -2093,10 +2296,11 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("varianceOfTensor:meanTensor:axes:name:")
-    public native MPSGraphTensor varianceOfTensorMeanTensorAxesName(MPSGraphTensor tensor, MPSGraphTensor meanTensor,
-            NSArray<? extends NSNumber> axes, String name);
+    public native MPSGraphTensor varianceOfTensorMeanTensorAxesName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor meanTensor, @NotNull NSArray<? extends NSNumber> axes, @Nullable String name);
 
     @Generated
     @Selector("version")
@@ -2116,28 +2320,32 @@ public class MPSGraph extends NSObject {
      * @return A valid MPSGraphTensor array with results returned from the conditionBlock depending on the
      *         predicateTensor
      */
+    @NotNull
     @Generated
     @Selector("whileWithInitialInputs:before:after:name:")
     public native NSArray<? extends MPSGraphTensor> whileWithInitialInputsBeforeAfterName(
-            NSArray<? extends MPSGraphTensor> initialInputs,
-            @ObjCBlock(name = "call_whileWithInitialInputsBeforeAfterName_1") Block_whileWithInitialInputsBeforeAfterName_1 before,
-            @ObjCBlock(name = "call_whileWithInitialInputsBeforeAfterName_2") Block_whileWithInitialInputsBeforeAfterName_2 after,
-            String name);
+            @NotNull NSArray<? extends MPSGraphTensor> initialInputs,
+            @NotNull @ObjCBlock(name = "call_whileWithInitialInputsBeforeAfterName_1") Block_whileWithInitialInputsBeforeAfterName_1 before,
+            @NotNull @ObjCBlock(name = "call_whileWithInitialInputsBeforeAfterName_2") Block_whileWithInitialInputsBeforeAfterName_2 after,
+            @Nullable String name);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_whileWithInitialInputsBeforeAfterName_1 {
+        @NotNull
         @Generated
-        MPSGraphTensor call_whileWithInitialInputsBeforeAfterName_1(NSArray<? extends MPSGraphTensor> inputTensors,
-                NSMutableArray<MPSGraphTensor> resultTensors);
+        MPSGraphTensor call_whileWithInitialInputsBeforeAfterName_1(
+                @NotNull NSArray<? extends MPSGraphTensor> inputTensors,
+                @NotNull NSMutableArray<MPSGraphTensor> resultTensors);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_whileWithInitialInputsBeforeAfterName_2 {
+        @NotNull
         @Generated
         NSArray<? extends MPSGraphTensor> call_whileWithInitialInputsBeforeAfterName_2(
-                NSArray<? extends MPSGraphTensor> bodyBlockArguments);
+                @NotNull NSArray<? extends MPSGraphTensor> bodyBlockArguments);
     }
 
     /**
@@ -2151,10 +2359,11 @@ public class MPSGraph extends NSObject {
      * 
      * @return An MPSGraphTensor representing a random state, to be passed as an input to a random op.
      */
+    @NotNull
     @Generated
     @Selector("randomPhiloxStateTensorWithCounterLow:counterHigh:key:name:")
     public native MPSGraphTensor randomPhiloxStateTensorWithCounterLowCounterHighKeyName(@NUInt long counterLow,
-            @NUInt long counterHigh, @NUInt long key, String name);
+            @NUInt long counterHigh, @NUInt long key, @Nullable String name);
 
     /**
      * Creates an MPSGraphTensor representing state using the Philox algorithm with given counter and key values.
@@ -2189,38 +2398,47 @@ public class MPSGraph extends NSObject {
      * 
      * @return An MPSGraphTensor representing a random state, to be passed as an input to a random op.
      */
+    @NotNull
     @Generated
     @Selector("randomPhiloxStateTensorWithSeed:name:")
-    public native MPSGraphTensor randomPhiloxStateTensorWithSeedName(@NUInt long seed, String name);
+    public native MPSGraphTensor randomPhiloxStateTensorWithSeedName(@NUInt long seed, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("randomTensorWithShapeTensor:descriptor:name:")
-    public native MPSGraphTensor randomTensorWithShapeTensorDescriptorName(MPSGraphTensor shapeTensor,
-            MPSGraphRandomOpDescriptor descriptor, String name);
+    public native MPSGraphTensor randomTensorWithShapeTensorDescriptorName(@NotNull MPSGraphTensor shapeTensor,
+            @NotNull MPSGraphRandomOpDescriptor descriptor, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("randomTensorWithShapeTensor:descriptor:seed:name:")
-    public native MPSGraphTensor randomTensorWithShapeTensorDescriptorSeedName(MPSGraphTensor shapeTensor,
-            MPSGraphRandomOpDescriptor descriptor, @NUInt long seed, String name);
+    public native MPSGraphTensor randomTensorWithShapeTensorDescriptorSeedName(@NotNull MPSGraphTensor shapeTensor,
+            @NotNull MPSGraphRandomOpDescriptor descriptor, @NUInt long seed, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("randomTensorWithShapeTensor:descriptor:stateTensor:name:")
     public native NSArray<? extends MPSGraphTensor> randomTensorWithShapeTensorDescriptorStateTensorName(
-            MPSGraphTensor shapeTensor, MPSGraphRandomOpDescriptor descriptor, MPSGraphTensor state, String name);
+            @NotNull MPSGraphTensor shapeTensor, @NotNull MPSGraphRandomOpDescriptor descriptor,
+            @NotNull MPSGraphTensor state, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("randomUniformTensorWithShapeTensor:name:")
-    public native MPSGraphTensor randomUniformTensorWithShapeTensorName(MPSGraphTensor shapeTensor, String name);
+    public native MPSGraphTensor randomUniformTensorWithShapeTensorName(@NotNull MPSGraphTensor shapeTensor,
+            @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("randomUniformTensorWithShapeTensor:seed:name:")
-    public native MPSGraphTensor randomUniformTensorWithShapeTensorSeedName(MPSGraphTensor shapeTensor,
-            @NUInt long seed, String name);
+    public native MPSGraphTensor randomUniformTensorWithShapeTensorSeedName(@NotNull MPSGraphTensor shapeTensor,
+            @NUInt long seed, @Nullable String name);
 
+    @NotNull
     @Generated
     @Selector("randomUniformTensorWithShapeTensor:stateTensor:name:")
     public native NSArray<? extends MPSGraphTensor> randomUniformTensorWithShapeTensorStateTensorName(
-            MPSGraphTensor shapeTensor, MPSGraphTensor state, String name);
+            @NotNull MPSGraphTensor shapeTensor, @NotNull MPSGraphTensor state, @Nullable String name);
 
     /**
      * Create reduction max propagate NaN op and return the result tensor.
@@ -2231,10 +2449,11 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("reductionMaximumPropagateNaNWithTensor:axes:name:")
-    public native MPSGraphTensor reductionMaximumPropagateNaNWithTensorAxesName(MPSGraphTensor tensor,
-            NSArray<? extends NSNumber> axes, String name);
+    public native MPSGraphTensor reductionMaximumPropagateNaNWithTensorAxesName(@NotNull MPSGraphTensor tensor,
+            @Nullable NSArray<? extends NSNumber> axes, @Nullable String name);
 
     /**
      * Create reduction max propagate NaN op and return the result tensor.
@@ -2245,10 +2464,11 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("reductionMaximumPropagateNaNWithTensor:axis:name:")
-    public native MPSGraphTensor reductionMaximumPropagateNaNWithTensorAxisName(MPSGraphTensor tensor, @NInt long axis,
-            String name);
+    public native MPSGraphTensor reductionMaximumPropagateNaNWithTensorAxisName(@NotNull MPSGraphTensor tensor,
+            @NInt long axis, @Nullable String name);
 
     /**
      * Create reduction min propagate NaN op and return the result tensor.
@@ -2259,10 +2479,11 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("reductionMinimumPropagateNaNWithTensor:axes:name:")
-    public native MPSGraphTensor reductionMinimumPropagateNaNWithTensorAxesName(MPSGraphTensor tensor,
-            NSArray<? extends NSNumber> axes, String name);
+    public native MPSGraphTensor reductionMinimumPropagateNaNWithTensorAxesName(@NotNull MPSGraphTensor tensor,
+            @Nullable NSArray<? extends NSNumber> axes, @Nullable String name);
 
     /**
      * Create reduction min propagate NaN op and return the result tensor.
@@ -2273,30 +2494,35 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object.
      */
+    @NotNull
     @Generated
     @Selector("reductionMinimumPropagateNaNWithTensor:axis:name:")
-    public native MPSGraphTensor reductionMinimumPropagateNaNWithTensorAxisName(MPSGraphTensor tensor, @NInt long axis,
-            String name);
+    public native MPSGraphTensor reductionMinimumPropagateNaNWithTensorAxisName(@NotNull MPSGraphTensor tensor,
+            @NInt long axis, @Nullable String name);
 
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("GRUGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:outputFwd:inputWeight:bias:descriptor:name:")
     public native NSArray<? extends MPSGraphTensor> GRUGradientsWithSourceTensorRecurrentWeightSourceGradientZStateOutputFwdInputWeightBiasDescriptorName(
-            MPSGraphTensor source, MPSGraphTensor recurrentWeight, MPSGraphTensor sourceGradient, MPSGraphTensor zState,
-            MPSGraphTensor outputFwd, MPSGraphTensor inputWeight, MPSGraphTensor bias, MPSGraphGRUDescriptor descriptor,
-            String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor recurrentWeight,
+            @NotNull MPSGraphTensor sourceGradient, @NotNull MPSGraphTensor zState, @NotNull MPSGraphTensor outputFwd,
+            @Nullable MPSGraphTensor inputWeight, @Nullable MPSGraphTensor bias,
+            @NotNull MPSGraphGRUDescriptor descriptor, @Nullable String name);
 
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("GRUGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:outputFwd:inputWeight:bias:initState:descriptor:name:")
     public native NSArray<? extends MPSGraphTensor> GRUGradientsWithSourceTensorRecurrentWeightSourceGradientZStateOutputFwdInputWeightBiasInitStateDescriptorName(
-            MPSGraphTensor source, MPSGraphTensor recurrentWeight, MPSGraphTensor sourceGradient, MPSGraphTensor zState,
-            MPSGraphTensor outputFwd, MPSGraphTensor inputWeight, MPSGraphTensor bias, MPSGraphTensor initState,
-            MPSGraphGRUDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor recurrentWeight,
+            @NotNull MPSGraphTensor sourceGradient, @NotNull MPSGraphTensor zState, @NotNull MPSGraphTensor outputFwd,
+            @Nullable MPSGraphTensor inputWeight, @Nullable MPSGraphTensor bias, @Nullable MPSGraphTensor initState,
+            @NotNull MPSGraphGRUDescriptor descriptor, @Nullable String name);
 
     /**
      * Create a GRU gradient op and return the gradient tensor values.
@@ -2333,31 +2559,37 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("GRUGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:outputFwd:stateGradient:inputWeight:bias:initState:mask:secondaryBias:descriptor:name:")
     public native NSArray<? extends MPSGraphTensor> GRUGradientsWithSourceTensorRecurrentWeightSourceGradientZStateOutputFwdStateGradientInputWeightBiasInitStateMaskSecondaryBiasDescriptorName(
-            MPSGraphTensor source, MPSGraphTensor recurrentWeight, MPSGraphTensor sourceGradient, MPSGraphTensor zState,
-            MPSGraphTensor outputFwd, MPSGraphTensor stateGradient, MPSGraphTensor inputWeight, MPSGraphTensor bias,
-            MPSGraphTensor initState, MPSGraphTensor mask, MPSGraphTensor secondaryBias,
-            MPSGraphGRUDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor recurrentWeight,
+            @NotNull MPSGraphTensor sourceGradient, @NotNull MPSGraphTensor zState, @NotNull MPSGraphTensor outputFwd,
+            @Nullable MPSGraphTensor stateGradient, @Nullable MPSGraphTensor inputWeight, @Nullable MPSGraphTensor bias,
+            @Nullable MPSGraphTensor initState, @Nullable MPSGraphTensor mask, @Nullable MPSGraphTensor secondaryBias,
+            @NotNull MPSGraphGRUDescriptor descriptor, @Nullable String name);
 
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("GRUWithSourceTensor:recurrentWeight:inputWeight:bias:descriptor:name:")
     public native NSArray<? extends MPSGraphTensor> GRUWithSourceTensorRecurrentWeightInputWeightBiasDescriptorName(
-            MPSGraphTensor source, MPSGraphTensor recurrentWeight, MPSGraphTensor inputWeight, MPSGraphTensor bias,
-            MPSGraphGRUDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor recurrentWeight,
+            @Nullable MPSGraphTensor inputWeight, @Nullable MPSGraphTensor bias,
+            @NotNull MPSGraphGRUDescriptor descriptor, @Nullable String name);
 
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("GRUWithSourceTensor:recurrentWeight:inputWeight:bias:initState:descriptor:name:")
     public native NSArray<? extends MPSGraphTensor> GRUWithSourceTensorRecurrentWeightInputWeightBiasInitStateDescriptorName(
-            MPSGraphTensor source, MPSGraphTensor recurrentWeight, MPSGraphTensor inputWeight, MPSGraphTensor bias,
-            MPSGraphTensor initState, MPSGraphGRUDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor recurrentWeight,
+            @Nullable MPSGraphTensor inputWeight, @Nullable MPSGraphTensor bias, @Nullable MPSGraphTensor initState,
+            @NotNull MPSGraphGRUDescriptor descriptor, @Nullable String name);
 
     /**
      * Create a GRU op and return the value and optionally the training state tensor.
@@ -2410,12 +2642,14 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("GRUWithSourceTensor:recurrentWeight:inputWeight:bias:initState:mask:secondaryBias:descriptor:name:")
     public native NSArray<? extends MPSGraphTensor> GRUWithSourceTensorRecurrentWeightInputWeightBiasInitStateMaskSecondaryBiasDescriptorName(
-            MPSGraphTensor source, MPSGraphTensor recurrentWeight, MPSGraphTensor inputWeight, MPSGraphTensor bias,
-            MPSGraphTensor initState, MPSGraphTensor mask, MPSGraphTensor secondaryBias,
-            MPSGraphGRUDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor recurrentWeight,
+            @Nullable MPSGraphTensor inputWeight, @Nullable MPSGraphTensor bias, @Nullable MPSGraphTensor initState,
+            @Nullable MPSGraphTensor mask, @Nullable MPSGraphTensor secondaryBias,
+            @NotNull MPSGraphGRUDescriptor descriptor, @Nullable String name);
 
     /**
      * Create a Hamming Distance op and return the result tensor, it supports broadcasting as well.
@@ -2435,39 +2669,49 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("HammingDistanceWithPrimaryTensor:secondaryTensor:resultDataType:name:")
     public native MPSGraphTensor HammingDistanceWithPrimaryTensorSecondaryTensorResultDataTypeName(
-            MPSGraphTensor primaryTensor, MPSGraphTensor secondaryTensor, int resultDataType, String name);
+            @NotNull MPSGraphTensor primaryTensor, @NotNull MPSGraphTensor secondaryTensor, int resultDataType,
+            @Nullable String name);
 
     /**
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("LSTMGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:cellOutputFwd:descriptor:name:")
     public native NSArray<? extends MPSGraphTensor> LSTMGradientsWithSourceTensorRecurrentWeightSourceGradientZStateCellOutputFwdDescriptorName(
-            MPSGraphTensor source, MPSGraphTensor recurrentWeight, MPSGraphTensor sourceGradient, MPSGraphTensor zState,
-            MPSGraphTensor cellOutputFwd, MPSGraphLSTMDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor recurrentWeight,
+            @NotNull MPSGraphTensor sourceGradient, @NotNull MPSGraphTensor zState,
+            @NotNull MPSGraphTensor cellOutputFwd, @NotNull MPSGraphLSTMDescriptor descriptor, @Nullable String name);
 
     /**
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("LSTMGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:cellOutputFwd:inputWeight:bias:initState:initCell:descriptor:name:")
     public native NSArray<? extends MPSGraphTensor> LSTMGradientsWithSourceTensorRecurrentWeightSourceGradientZStateCellOutputFwdInputWeightBiasInitStateInitCellDescriptorName(
-            MPSGraphTensor source, MPSGraphTensor recurrentWeight, MPSGraphTensor sourceGradient, MPSGraphTensor zState,
-            MPSGraphTensor cellOutputFwd, MPSGraphTensor inputWeight, MPSGraphTensor bias, MPSGraphTensor initState,
-            MPSGraphTensor initCell, MPSGraphLSTMDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor recurrentWeight,
+            @NotNull MPSGraphTensor sourceGradient, @NotNull MPSGraphTensor zState,
+            @NotNull MPSGraphTensor cellOutputFwd, @Nullable MPSGraphTensor inputWeight, @Nullable MPSGraphTensor bias,
+            @Nullable MPSGraphTensor initState, @Nullable MPSGraphTensor initCell,
+            @NotNull MPSGraphLSTMDescriptor descriptor, @Nullable String name);
 
     /**
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("LSTMGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:cellOutputFwd:inputWeight:bias:initState:initCell:mask:descriptor:name:")
     public native NSArray<? extends MPSGraphTensor> LSTMGradientsWithSourceTensorRecurrentWeightSourceGradientZStateCellOutputFwdInputWeightBiasInitStateInitCellMaskDescriptorName(
-            MPSGraphTensor source, MPSGraphTensor recurrentWeight, MPSGraphTensor sourceGradient, MPSGraphTensor zState,
-            MPSGraphTensor cellOutputFwd, MPSGraphTensor inputWeight, MPSGraphTensor bias, MPSGraphTensor initState,
-            MPSGraphTensor initCell, MPSGraphTensor mask, MPSGraphLSTMDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor recurrentWeight,
+            @NotNull MPSGraphTensor sourceGradient, @NotNull MPSGraphTensor zState,
+            @NotNull MPSGraphTensor cellOutputFwd, @Nullable MPSGraphTensor inputWeight, @Nullable MPSGraphTensor bias,
+            @Nullable MPSGraphTensor initState, @Nullable MPSGraphTensor initCell, @Nullable MPSGraphTensor mask,
+            @NotNull MPSGraphLSTMDescriptor descriptor, @Nullable String name);
 
     /**
      * Create a LSTM gradient op and return the gradient tensor values.
@@ -2508,31 +2752,37 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("LSTMGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:cellOutputFwd:stateGradient:cellGradient:inputWeight:bias:initState:initCell:mask:peephole:descriptor:name:")
     public native NSArray<? extends MPSGraphTensor> LSTMGradientsWithSourceTensorRecurrentWeightSourceGradientZStateCellOutputFwdStateGradientCellGradientInputWeightBiasInitStateInitCellMaskPeepholeDescriptorName(
-            MPSGraphTensor source, MPSGraphTensor recurrentWeight, MPSGraphTensor sourceGradient, MPSGraphTensor zState,
-            MPSGraphTensor cellOutputFwd, MPSGraphTensor stateGradient, MPSGraphTensor cellGradient,
-            MPSGraphTensor inputWeight, MPSGraphTensor bias, MPSGraphTensor initState, MPSGraphTensor initCell,
-            MPSGraphTensor mask, MPSGraphTensor peephole, MPSGraphLSTMDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor recurrentWeight,
+            @NotNull MPSGraphTensor sourceGradient, @NotNull MPSGraphTensor zState,
+            @NotNull MPSGraphTensor cellOutputFwd, @Nullable MPSGraphTensor stateGradient,
+            @Nullable MPSGraphTensor cellGradient, @Nullable MPSGraphTensor inputWeight, @Nullable MPSGraphTensor bias,
+            @Nullable MPSGraphTensor initState, @Nullable MPSGraphTensor initCell, @Nullable MPSGraphTensor mask,
+            @Nullable MPSGraphTensor peephole, @NotNull MPSGraphLSTMDescriptor descriptor, @Nullable String name);
 
     /**
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("LSTMWithSourceTensor:recurrentWeight:initState:initCell:descriptor:name:")
     public native NSArray<? extends MPSGraphTensor> LSTMWithSourceTensorRecurrentWeightInitStateInitCellDescriptorName(
-            MPSGraphTensor source, MPSGraphTensor recurrentWeight, MPSGraphTensor initState, MPSGraphTensor initCell,
-            MPSGraphLSTMDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor recurrentWeight, @Nullable MPSGraphTensor initState,
+            @Nullable MPSGraphTensor initCell, @NotNull MPSGraphLSTMDescriptor descriptor, @Nullable String name);
 
     /**
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("LSTMWithSourceTensor:recurrentWeight:inputWeight:bias:initState:initCell:descriptor:name:")
     public native NSArray<? extends MPSGraphTensor> LSTMWithSourceTensorRecurrentWeightInputWeightBiasInitStateInitCellDescriptorName(
-            MPSGraphTensor source, MPSGraphTensor recurrentWeight, MPSGraphTensor inputWeight, MPSGraphTensor bias,
-            MPSGraphTensor initState, MPSGraphTensor initCell, MPSGraphLSTMDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor recurrentWeight,
+            @Nullable MPSGraphTensor inputWeight, @Nullable MPSGraphTensor bias, @Nullable MPSGraphTensor initState,
+            @Nullable MPSGraphTensor initCell, @NotNull MPSGraphLSTMDescriptor descriptor, @Nullable String name);
 
     /**
      * Create a LSTM op and return the value and optionally the cell state and optionally the training state tensor.
@@ -2578,12 +2828,14 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("LSTMWithSourceTensor:recurrentWeight:inputWeight:bias:initState:initCell:mask:peephole:descriptor:name:")
     public native NSArray<? extends MPSGraphTensor> LSTMWithSourceTensorRecurrentWeightInputWeightBiasInitStateInitCellMaskPeepholeDescriptorName(
-            MPSGraphTensor source, MPSGraphTensor recurrentWeight, MPSGraphTensor inputWeight, MPSGraphTensor bias,
-            MPSGraphTensor initState, MPSGraphTensor initCell, MPSGraphTensor mask, MPSGraphTensor peephole,
-            MPSGraphLSTMDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor recurrentWeight,
+            @Nullable MPSGraphTensor inputWeight, @Nullable MPSGraphTensor bias, @Nullable MPSGraphTensor initState,
+            @Nullable MPSGraphTensor initCell, @Nullable MPSGraphTensor mask, @Nullable MPSGraphTensor peephole,
+            @NotNull MPSGraphLSTMDescriptor descriptor, @Nullable String name);
 
     /**
      * Adam
@@ -2598,13 +2850,15 @@ public class MPSGraph extends NSObject {
      * @return if maximumVelocity is nil array of 3 tensors (update, newMomentum, newVelocity) else array of 4 tensors
      *         (update, newMomentum, newVelocity, newMaximumVelocity)
      */
+    @NotNull
     @Generated
     @Selector("adamWithCurrentLearningRateTensor:beta1Tensor:beta2Tensor:epsilonTensor:valuesTensor:momentumTensor:velocityTensor:maximumVelocityTensor:gradientTensor:name:")
     public native NSArray<? extends MPSGraphTensor> adamWithCurrentLearningRateTensorBeta1TensorBeta2TensorEpsilonTensorValuesTensorMomentumTensorVelocityTensorMaximumVelocityTensorGradientTensorName(
-            MPSGraphTensor currentLearningRateTensor, MPSGraphTensor beta1Tensor, MPSGraphTensor beta2Tensor,
-            MPSGraphTensor epsilonTensor, MPSGraphTensor valuesTensor, MPSGraphTensor momentumTensor,
-            MPSGraphTensor velocityTensor, MPSGraphTensor maximumVelocityTensor, MPSGraphTensor gradientTensor,
-            String name);
+            @NotNull MPSGraphTensor currentLearningRateTensor, @NotNull MPSGraphTensor beta1Tensor,
+            @NotNull MPSGraphTensor beta2Tensor, @NotNull MPSGraphTensor epsilonTensor,
+            @NotNull MPSGraphTensor valuesTensor, @NotNull MPSGraphTensor momentumTensor,
+            @NotNull MPSGraphTensor velocityTensor, @Nullable MPSGraphTensor maximumVelocityTensor,
+            @NotNull MPSGraphTensor gradientTensor, @Nullable String name);
 
     /**
      * Adam
@@ -2622,13 +2876,16 @@ public class MPSGraph extends NSObject {
      * @return if maximumVelocity is nil array of 3 tensors (update, newMomentum, newVelocity) else array of 4 tensors
      *         (update, newMomentum, newVelocity, newMaximumVelocity)
      */
+    @NotNull
     @Generated
     @Selector("adamWithLearningRateTensor:beta1Tensor:beta2Tensor:epsilonTensor:beta1PowerTensor:beta2PowerTensor:valuesTensor:momentumTensor:velocityTensor:maximumVelocityTensor:gradientTensor:name:")
     public native NSArray<? extends MPSGraphTensor> adamWithLearningRateTensorBeta1TensorBeta2TensorEpsilonTensorBeta1PowerTensorBeta2PowerTensorValuesTensorMomentumTensorVelocityTensorMaximumVelocityTensorGradientTensorName(
-            MPSGraphTensor learningRateTensor, MPSGraphTensor beta1Tensor, MPSGraphTensor beta2Tensor,
-            MPSGraphTensor epsilonTensor, MPSGraphTensor beta1PowerTensor, MPSGraphTensor beta2PowerTensor,
-            MPSGraphTensor valuesTensor, MPSGraphTensor momentumTensor, MPSGraphTensor velocityTensor,
-            MPSGraphTensor maximumVelocityTensor, MPSGraphTensor gradientTensor, String name);
+            @NotNull MPSGraphTensor learningRateTensor, @NotNull MPSGraphTensor beta1Tensor,
+            @NotNull MPSGraphTensor beta2Tensor, @NotNull MPSGraphTensor epsilonTensor,
+            @NotNull MPSGraphTensor beta1PowerTensor, @NotNull MPSGraphTensor beta2PowerTensor,
+            @NotNull MPSGraphTensor valuesTensor, @NotNull MPSGraphTensor momentumTensor,
+            @NotNull MPSGraphTensor velocityTensor, @Nullable MPSGraphTensor maximumVelocityTensor,
+            @NotNull MPSGraphTensor gradientTensor, @Nullable String name);
 
     /**
      * Create an argSort operation and return the result tensor of signed
@@ -2643,10 +2900,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.1
      */
+    @NotNull
     @Generated
     @Selector("argSortWithTensor:axis:descending:name:")
-    public native MPSGraphTensor argSortWithTensorAxisDescendingName(MPSGraphTensor tensor, @NInt long axis,
-            boolean descending, String name);
+    public native MPSGraphTensor argSortWithTensorAxisDescendingName(@NotNull MPSGraphTensor tensor, @NInt long axis,
+            boolean descending, @Nullable String name);
 
     /**
      * Create an argSort operation and return the result tensor of signed
@@ -2660,9 +2918,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.1
      */
+    @NotNull
     @Generated
     @Selector("argSortWithTensor:axis:name:")
-    public native MPSGraphTensor argSortWithTensorAxisName(MPSGraphTensor tensor, @NInt long axis, String name);
+    public native MPSGraphTensor argSortWithTensorAxisName(@NotNull MPSGraphTensor tensor, @NInt long axis,
+            @Nullable String name);
 
     /**
      * Create an argSort operation and return the result tensor of signed
@@ -2677,10 +2937,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.1
      */
+    @NotNull
     @Generated
     @Selector("argSortWithTensor:axisTensor:descending:name:")
-    public native MPSGraphTensor argSortWithTensorAxisTensorDescendingName(MPSGraphTensor tensor,
-            MPSGraphTensor axisTensor, boolean descending, String name);
+    public native MPSGraphTensor argSortWithTensorAxisTensorDescendingName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor axisTensor, boolean descending, @Nullable String name);
 
     /**
      * Create an argSort operation and return the result tensor of signed
@@ -2694,10 +2955,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.1
      */
+    @NotNull
     @Generated
     @Selector("argSortWithTensor:axisTensor:name:")
-    public native MPSGraphTensor argSortWithTensorAxisTensorName(MPSGraphTensor tensor, MPSGraphTensor axisTensor,
-            String name);
+    public native MPSGraphTensor argSortWithTensorAxisTensorName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor axisTensor, @Nullable String name);
 
     /**
      * Create band part op and return the result
@@ -2716,10 +2978,11 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object
      */
+    @NotNull
     @Generated
     @Selector("bandPartWithTensor:numLower:numUpper:name:")
-    public native MPSGraphTensor bandPartWithTensorNumLowerNumUpperName(MPSGraphTensor inputTensor, @NInt long numLower,
-            @NInt long numUpper, String name);
+    public native MPSGraphTensor bandPartWithTensorNumLowerNumUpperName(@NotNull MPSGraphTensor inputTensor,
+            @NInt long numLower, @NInt long numUpper, @Nullable String name);
 
     /**
      * Create band part op and return the result
@@ -2735,10 +2998,11 @@ public class MPSGraph extends NSObject {
      * 
      * @return A valid MPSGraphTensor object
      */
+    @NotNull
     @Generated
     @Selector("bandPartWithTensor:numLowerTensor:numUpperTensor:name:")
-    public native MPSGraphTensor bandPartWithTensorNumLowerTensorNumUpperTensorName(MPSGraphTensor inputTensor,
-            MPSGraphTensor numLowerTensor, MPSGraphTensor numUpperTensor, String name);
+    public native MPSGraphTensor bandPartWithTensorNumLowerTensorNumUpperTensorName(@NotNull MPSGraphTensor inputTensor,
+            @NotNull MPSGraphTensor numLowerTensor, @NotNull MPSGraphTensor numUpperTensor, @Nullable String name);
 
     /**
      * Create a batch-to-space3d op and return the result tensor.
@@ -2766,20 +3030,23 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.1
      */
+    @NotNull
     @Generated
     @Selector("batchToSpaceTensor:spatialAxes:batchAxis:blockDimensions:usePixelShuffleOrder:name:")
     public native MPSGraphTensor batchToSpaceTensorSpatialAxesBatchAxisBlockDimensionsUsePixelShuffleOrderName(
-            MPSGraphTensor tensor, NSArray<? extends NSNumber> spatialAxes, @NInt long batchAxis,
-            NSArray<? extends NSNumber> blockDimensions, boolean usePixelShuffleOrder, String name);
+            @NotNull MPSGraphTensor tensor, @NotNull NSArray<? extends NSNumber> spatialAxes, @NInt long batchAxis,
+            @NotNull NSArray<? extends NSNumber> blockDimensions, boolean usePixelShuffleOrder, @Nullable String name);
 
     /**
      * API-Since: 16.1
      */
+    @NotNull
     @Generated
     @Selector("batchToSpaceTensor:spatialAxesTensor:batchAxisTensor:blockDimensionsTensor:usePixelShuffleOrder:name:")
     public native MPSGraphTensor batchToSpaceTensorSpatialAxesTensorBatchAxisTensorBlockDimensionsTensorUsePixelShuffleOrderName(
-            MPSGraphTensor tensor, MPSGraphTensor spatialAxesTensor, MPSGraphTensor batchAxisTensor,
-            MPSGraphTensor blockDimensionsTensor, boolean usePixelShuffleOrder, String name);
+            @NotNull MPSGraphTensor tensor, @NotNull MPSGraphTensor spatialAxesTensor,
+            @NotNull MPSGraphTensor batchAxisTensor, @NotNull MPSGraphTensor blockDimensionsTensor,
+            boolean usePixelShuffleOrder, @Nullable String name);
 
     /**
      * Return bitwise AND of binary representations of 2 integer tensors
@@ -2792,10 +3059,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.1
      */
+    @NotNull
     @Generated
     @Selector("bitwiseANDWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor bitwiseANDWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor bitwiseANDWithPrimaryTensorSecondaryTensorName(@NotNull MPSGraphTensor primaryTensor,
+            @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
     /**
      * Return bitwise left shifted binary representations of primary integer tensor by secondary tensor amount
@@ -2808,10 +3076,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.1
      */
+    @NotNull
     @Generated
     @Selector("bitwiseLeftShiftWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor bitwiseLeftShiftWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor bitwiseLeftShiftWithPrimaryTensorSecondaryTensorName(
+            @NotNull MPSGraphTensor primaryTensor, @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
     /**
      * Return bitwise not of tensor, takes in only integer dataTypes
@@ -2823,9 +3092,10 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.1
      */
+    @NotNull
     @Generated
     @Selector("bitwiseNOTWithTensor:name:")
-    public native MPSGraphTensor bitwiseNOTWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor bitwiseNOTWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
      * Return bitwise OR of binary representations of 2 integer tensors
@@ -2838,10 +3108,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.1
      */
+    @NotNull
     @Generated
     @Selector("bitwiseORWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor bitwiseORWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor bitwiseORWithPrimaryTensorSecondaryTensorName(@NotNull MPSGraphTensor primaryTensor,
+            @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
     /**
      * Return population count of a tensor, takes in only integer dataTypes
@@ -2853,9 +3124,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.1
      */
+    @NotNull
     @Generated
     @Selector("bitwisePopulationCountWithTensor:name:")
-    public native MPSGraphTensor bitwisePopulationCountWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor bitwisePopulationCountWithTensorName(@NotNull MPSGraphTensor tensor,
+            @Nullable String name);
 
     /**
      * Return bitwise right shifted binary representations of primary integer tensor by secondary tensor amount
@@ -2868,10 +3141,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.1
      */
+    @NotNull
     @Generated
     @Selector("bitwiseRightShiftWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor bitwiseRightShiftWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor bitwiseRightShiftWithPrimaryTensorSecondaryTensorName(
+            @NotNull MPSGraphTensor primaryTensor, @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
     /**
      * Return bitwise XOR of binary representations of 2 integer tensors
@@ -2884,10 +3158,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.1
      */
+    @NotNull
     @Generated
     @Selector("bitwiseXORWithPrimaryTensor:secondaryTensor:name:")
-    public native MPSGraphTensor bitwiseXORWithPrimaryTensorSecondaryTensorName(MPSGraphTensor primaryTensor,
-            MPSGraphTensor secondaryTensor, String name);
+    public native MPSGraphTensor bitwiseXORWithPrimaryTensorSecondaryTensorName(@NotNull MPSGraphTensor primaryTensor,
+            @NotNull MPSGraphTensor secondaryTensor, @Nullable String name);
 
     /**
      * Create get coord op and return the result
@@ -2902,10 +3177,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("coordinateAlongAxis:withShapeTensor:name:")
-    public native MPSGraphTensor coordinateAlongAxisWithShapeTensorName(@NInt long axis, MPSGraphTensor shapeTensor,
-            String name);
+    public native MPSGraphTensor coordinateAlongAxisWithShapeTensorName(@NInt long axis,
+            @NotNull MPSGraphTensor shapeTensor, @Nullable String name);
 
     /**
      * Create get coord op and return the result
@@ -2921,10 +3197,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("coordinateAlongAxisTensor:withShapeTensor:name:")
-    public native MPSGraphTensor coordinateAlongAxisTensorWithShapeTensorName(MPSGraphTensor axisTensor,
-            MPSGraphTensor shapeTensor, String name);
+    public native MPSGraphTensor coordinateAlongAxisTensorWithShapeTensorName(@NotNull MPSGraphTensor axisTensor,
+            @NotNull MPSGraphTensor shapeTensor, @Nullable String name);
 
     /**
      * Create the cumulative maximum op and return the result tensor.
@@ -2940,10 +3217,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("cumulativeMaximumWithTensor:axis:exclusive:reverse:name:")
-    public native MPSGraphTensor cumulativeMaximumWithTensorAxisExclusiveReverseName(MPSGraphTensor tensor,
-            @NInt long axis, boolean exclusive, boolean reverse, String name);
+    public native MPSGraphTensor cumulativeMaximumWithTensorAxisExclusiveReverseName(@NotNull MPSGraphTensor tensor,
+            @NInt long axis, boolean exclusive, boolean reverse, @Nullable String name);
 
     /**
      * Create the inclusive cumulative maximum op and return the result tensor.
@@ -2956,10 +3234,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("cumulativeMaximumWithTensor:axis:name:")
-    public native MPSGraphTensor cumulativeMaximumWithTensorAxisName(MPSGraphTensor tensor, @NInt long axis,
-            String name);
+    public native MPSGraphTensor cumulativeMaximumWithTensorAxisName(@NotNull MPSGraphTensor tensor, @NInt long axis,
+            @Nullable String name);
 
     /**
      * Create the cumulative maximum op and return the result tensor.
@@ -2975,10 +3254,12 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("cumulativeMaximumWithTensor:axisTensor:exclusive:reverse:name:")
-    public native MPSGraphTensor cumulativeMaximumWithTensorAxisTensorExclusiveReverseName(MPSGraphTensor tensor,
-            MPSGraphTensor axisTensor, boolean exclusive, boolean reverse, String name);
+    public native MPSGraphTensor cumulativeMaximumWithTensorAxisTensorExclusiveReverseName(
+            @NotNull MPSGraphTensor tensor, @NotNull MPSGraphTensor axisTensor, boolean exclusive, boolean reverse,
+            @Nullable String name);
 
     /**
      * Create the inclusive cumulative maximum op and return the result tensor.
@@ -2991,10 +3272,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("cumulativeMaximumWithTensor:axisTensor:name:")
-    public native MPSGraphTensor cumulativeMaximumWithTensorAxisTensorName(MPSGraphTensor tensor,
-            MPSGraphTensor axisTensor, String name);
+    public native MPSGraphTensor cumulativeMaximumWithTensorAxisTensorName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor axisTensor, @Nullable String name);
 
     /**
      * Create the cumulative minimum op and return the result tensor.
@@ -3010,10 +3292,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("cumulativeMinimumWithTensor:axis:exclusive:reverse:name:")
-    public native MPSGraphTensor cumulativeMinimumWithTensorAxisExclusiveReverseName(MPSGraphTensor tensor,
-            @NInt long axis, boolean exclusive, boolean reverse, String name);
+    public native MPSGraphTensor cumulativeMinimumWithTensorAxisExclusiveReverseName(@NotNull MPSGraphTensor tensor,
+            @NInt long axis, boolean exclusive, boolean reverse, @Nullable String name);
 
     /**
      * Create the inclusive cumulative minimum op and return the result tensor.
@@ -3026,10 +3309,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("cumulativeMinimumWithTensor:axis:name:")
-    public native MPSGraphTensor cumulativeMinimumWithTensorAxisName(MPSGraphTensor tensor, @NInt long axis,
-            String name);
+    public native MPSGraphTensor cumulativeMinimumWithTensorAxisName(@NotNull MPSGraphTensor tensor, @NInt long axis,
+            @Nullable String name);
 
     /**
      * Create the cumulative minimum op and return the result tensor.
@@ -3045,10 +3329,12 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("cumulativeMinimumWithTensor:axisTensor:exclusive:reverse:name:")
-    public native MPSGraphTensor cumulativeMinimumWithTensorAxisTensorExclusiveReverseName(MPSGraphTensor tensor,
-            MPSGraphTensor axisTensor, boolean exclusive, boolean reverse, String name);
+    public native MPSGraphTensor cumulativeMinimumWithTensorAxisTensorExclusiveReverseName(
+            @NotNull MPSGraphTensor tensor, @NotNull MPSGraphTensor axisTensor, boolean exclusive, boolean reverse,
+            @Nullable String name);
 
     /**
      * Create the inclusive cumulative minimum op and return the result tensor.
@@ -3061,10 +3347,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("cumulativeMinimumWithTensor:axisTensor:name:")
-    public native MPSGraphTensor cumulativeMinimumWithTensorAxisTensorName(MPSGraphTensor tensor,
-            MPSGraphTensor axisTensor, String name);
+    public native MPSGraphTensor cumulativeMinimumWithTensorAxisTensorName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor axisTensor, @Nullable String name);
 
     /**
      * Create the cumulative product op and return the result tensor.
@@ -3080,10 +3367,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("cumulativeProductWithTensor:axis:exclusive:reverse:name:")
-    public native MPSGraphTensor cumulativeProductWithTensorAxisExclusiveReverseName(MPSGraphTensor tensor,
-            @NInt long axis, boolean exclusive, boolean reverse, String name);
+    public native MPSGraphTensor cumulativeProductWithTensorAxisExclusiveReverseName(@NotNull MPSGraphTensor tensor,
+            @NInt long axis, boolean exclusive, boolean reverse, @Nullable String name);
 
     /**
      * Create the inclusive cumulative product op and return the result tensor.
@@ -3096,10 +3384,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("cumulativeProductWithTensor:axis:name:")
-    public native MPSGraphTensor cumulativeProductWithTensorAxisName(MPSGraphTensor tensor, @NInt long axis,
-            String name);
+    public native MPSGraphTensor cumulativeProductWithTensorAxisName(@NotNull MPSGraphTensor tensor, @NInt long axis,
+            @Nullable String name);
 
     /**
      * Create the cumulative product op and return the result tensor.
@@ -3115,10 +3404,12 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("cumulativeProductWithTensor:axisTensor:exclusive:reverse:name:")
-    public native MPSGraphTensor cumulativeProductWithTensorAxisTensorExclusiveReverseName(MPSGraphTensor tensor,
-            MPSGraphTensor axisTensor, boolean exclusive, boolean reverse, String name);
+    public native MPSGraphTensor cumulativeProductWithTensorAxisTensorExclusiveReverseName(
+            @NotNull MPSGraphTensor tensor, @NotNull MPSGraphTensor axisTensor, boolean exclusive, boolean reverse,
+            @Nullable String name);
 
     /**
      * Create the inclusive cumulative product op and return the result tensor.
@@ -3131,10 +3422,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("cumulativeProductWithTensor:axisTensor:name:")
-    public native MPSGraphTensor cumulativeProductWithTensorAxisTensorName(MPSGraphTensor tensor,
-            MPSGraphTensor axisTensor, String name);
+    public native MPSGraphTensor cumulativeProductWithTensorAxisTensorName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor axisTensor, @Nullable String name);
 
     /**
      * Create the cumulative sum op and return the result tensor.
@@ -3150,10 +3442,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("cumulativeSumWithTensor:axis:exclusive:reverse:name:")
-    public native MPSGraphTensor cumulativeSumWithTensorAxisExclusiveReverseName(MPSGraphTensor tensor, @NInt long axis,
-            boolean exclusive, boolean reverse, String name);
+    public native MPSGraphTensor cumulativeSumWithTensorAxisExclusiveReverseName(@NotNull MPSGraphTensor tensor,
+            @NInt long axis, boolean exclusive, boolean reverse, @Nullable String name);
 
     /**
      * Create the inclusive cumulative sum op and return the result tensor.
@@ -3166,9 +3459,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("cumulativeSumWithTensor:axis:name:")
-    public native MPSGraphTensor cumulativeSumWithTensorAxisName(MPSGraphTensor tensor, @NInt long axis, String name);
+    public native MPSGraphTensor cumulativeSumWithTensorAxisName(@NotNull MPSGraphTensor tensor, @NInt long axis,
+            @Nullable String name);
 
     /**
      * Create the cumulative sum op and return the result tensor.
@@ -3184,10 +3479,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("cumulativeSumWithTensor:axisTensor:exclusive:reverse:name:")
-    public native MPSGraphTensor cumulativeSumWithTensorAxisTensorExclusiveReverseName(MPSGraphTensor tensor,
-            MPSGraphTensor axisTensor, boolean exclusive, boolean reverse, String name);
+    public native MPSGraphTensor cumulativeSumWithTensorAxisTensorExclusiveReverseName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor axisTensor, boolean exclusive, boolean reverse, @Nullable String name);
 
     /**
      * Create the inclusive cumulative sum op and return the result tensor.
@@ -3200,10 +3496,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("cumulativeSumWithTensor:axisTensor:name:")
-    public native MPSGraphTensor cumulativeSumWithTensorAxisTensorName(MPSGraphTensor tensor, MPSGraphTensor axisTensor,
-            String name);
+    public native MPSGraphTensor cumulativeSumWithTensorAxisTensorName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor axisTensor, @Nullable String name);
 
     /**
      * Create Dequantize op and return the result tensor
@@ -3221,10 +3518,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.2
      */
+    @NotNull
     @Generated
     @Selector("dequantizeTensor:scale:zeroPoint:dataType:name:")
-    public native MPSGraphTensor dequantizeTensorScaleZeroPointDataTypeName(MPSGraphTensor tensor, double scale,
-            double zeroPoint, int dataType, String name);
+    public native MPSGraphTensor dequantizeTensorScaleZeroPointDataTypeName(@NotNull MPSGraphTensor tensor,
+            double scale, double zeroPoint, int dataType, @Nullable String name);
 
     /**
      * Create Dequantize op and return the result tensor
@@ -3243,10 +3541,12 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.2
      */
+    @NotNull
     @Generated
     @Selector("dequantizeTensor:scaleTensor:zeroPoint:dataType:axis:name:")
-    public native MPSGraphTensor dequantizeTensorScaleTensorZeroPointDataTypeAxisName(MPSGraphTensor tensor,
-            MPSGraphTensor scaleTensor, double zeroPoint, int dataType, @NInt long axis, String name);
+    public native MPSGraphTensor dequantizeTensorScaleTensorZeroPointDataTypeAxisName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor scaleTensor, double zeroPoint, int dataType, @NInt long axis,
+            @Nullable String name);
 
     /**
      * Create Dequantize op and return the result tensor
@@ -3265,10 +3565,12 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.2
      */
+    @NotNull
     @Generated
     @Selector("dequantizeTensor:scaleTensor:zeroPointTensor:dataType:axis:name:")
-    public native MPSGraphTensor dequantizeTensorScaleTensorZeroPointTensorDataTypeAxisName(MPSGraphTensor tensor,
-            MPSGraphTensor scaleTensor, MPSGraphTensor zeroPointTensor, int dataType, @NInt long axis, String name);
+    public native MPSGraphTensor dequantizeTensorScaleTensorZeroPointTensorDataTypeAxisName(
+            @NotNull MPSGraphTensor tensor, @NotNull MPSGraphTensor scaleTensor,
+            @NotNull MPSGraphTensor zeroPointTensor, int dataType, @NInt long axis, @Nullable String name);
 
     /**
      * Create expand_dims op and return the result
@@ -3283,18 +3585,20 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("expandDimsOfTensor:axes:name:")
-    public native MPSGraphTensor expandDimsOfTensorAxesName(MPSGraphTensor tensor, NSArray<? extends NSNumber> axes,
-            String name);
+    public native MPSGraphTensor expandDimsOfTensorAxesName(@NotNull MPSGraphTensor tensor,
+            @NotNull NSArray<? extends NSNumber> axes, @Nullable String name);
 
     /**
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("expandDimsOfTensor:axesTensor:name:")
-    public native MPSGraphTensor expandDimsOfTensorAxesTensorName(MPSGraphTensor tensor, MPSGraphTensor axesTensor,
-            String name);
+    public native MPSGraphTensor expandDimsOfTensorAxesTensorName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor axesTensor, @Nullable String name);
 
     /**
      * Create expand_dims op and return the result
@@ -3309,9 +3613,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("expandDimsOfTensor:axis:name:")
-    public native MPSGraphTensor expandDimsOfTensorAxisName(MPSGraphTensor tensor, @NInt long axis, String name);
+    public native MPSGraphTensor expandDimsOfTensorAxisName(@NotNull MPSGraphTensor tensor, @NInt long axis,
+            @Nullable String name);
 
     /**
      * Create GatherAlongAxis op and return the result tensor
@@ -3330,10 +3636,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("gatherAlongAxis:withUpdatesTensor:indicesTensor:name:")
     public native MPSGraphTensor gatherAlongAxisWithUpdatesTensorIndicesTensorName(@NInt long axis,
-            MPSGraphTensor updatesTensor, MPSGraphTensor indicesTensor, String name);
+            @NotNull MPSGraphTensor updatesTensor, @NotNull MPSGraphTensor indicesTensor, @Nullable String name);
 
     /**
      * Create GatherAlongAxis op and return the result tensor
@@ -3349,10 +3656,12 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("gatherAlongAxisTensor:withUpdatesTensor:indicesTensor:name:")
-    public native MPSGraphTensor gatherAlongAxisTensorWithUpdatesTensorIndicesTensorName(MPSGraphTensor axisTensor,
-            MPSGraphTensor updatesTensor, MPSGraphTensor indicesTensor, String name);
+    public native MPSGraphTensor gatherAlongAxisTensorWithUpdatesTensorIndicesTensorName(
+            @NotNull MPSGraphTensor axisTensor, @NotNull MPSGraphTensor updatesTensor,
+            @NotNull MPSGraphTensor indicesTensor, @Nullable String name);
 
     /**
      * Create Matrix inverse op and return the result tensor
@@ -3368,9 +3677,10 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.1
      */
+    @NotNull
     @Generated
     @Selector("inverseOfTensor:name:")
-    public native MPSGraphTensor inverseOfTensorName(MPSGraphTensor inputTensor, String name);
+    public native MPSGraphTensor inverseOfTensorName(@NotNull MPSGraphTensor inputTensor, @Nullable String name);
 
     /**
      * MaxPool2D Gradient API
@@ -3386,11 +3696,12 @@ public class MPSGraph extends NSObject {
      * @param descriptor  See corresponding property above.
      * @return Destination gradient tensor
      */
+    @NotNull
     @Generated
     @Selector("maxPooling2DGradientWithGradientTensor:indicesTensor:outputShapeTensor:descriptor:name:")
     public native MPSGraphTensor maxPooling2DGradientWithGradientTensorIndicesTensorOutputShapeTensorDescriptorName(
-            MPSGraphTensor gradient, MPSGraphTensor indices, MPSGraphTensor outputShape,
-            MPSGraphPooling2DOpDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor gradient, @NotNull MPSGraphTensor indices, @NotNull MPSGraphTensor outputShape,
+            @NotNull MPSGraphPooling2DOpDescriptor descriptor, @Nullable String name);
 
     /**
      * MaxPool2D API that returns max pool result and corresponding indices
@@ -3408,10 +3719,11 @@ public class MPSGraph extends NSObject {
      * @return NSArray of 2 MPSGraphTensors. The first tensor holds the result of max pool and the second tensor holds
      *         the corresponding indices
      */
+    @NotNull
     @Generated
     @Selector("maxPooling2DReturnIndicesWithSourceTensor:descriptor:name:")
     public native NSArray<? extends MPSGraphTensor> maxPooling2DReturnIndicesWithSourceTensorDescriptorName(
-            MPSGraphTensor source, MPSGraphPooling2DOpDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphPooling2DOpDescriptor descriptor, @Nullable String name);
 
     /**
      * MaxPool4D Gradient API
@@ -3428,11 +3740,12 @@ public class MPSGraph extends NSObject {
      * @param descriptor  See corresponding property above.
      * @return Destination gradient tensor
      */
+    @NotNull
     @Generated
     @Selector("maxPooling4DGradientWithGradientTensor:indicesTensor:outputShapeTensor:descriptor:name:")
     public native MPSGraphTensor maxPooling4DGradientWithGradientTensorIndicesTensorOutputShapeTensorDescriptorName(
-            MPSGraphTensor gradient, MPSGraphTensor indices, MPSGraphTensor outputShape,
-            MPSGraphPooling4DOpDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor gradient, @NotNull MPSGraphTensor indices, @NotNull MPSGraphTensor outputShape,
+            @NotNull MPSGraphPooling4DOpDescriptor descriptor, @Nullable String name);
 
     /**
      * MaxPool4D API that returns max pool result and corresponding indices
@@ -3450,10 +3763,11 @@ public class MPSGraph extends NSObject {
      * @return NSArray of 2 MPSGraphTensors. The first tensor holds the result of max pool and the second tensor holds
      *         the corresponding indices
      */
+    @NotNull
     @Generated
     @Selector("maxPooling4DReturnIndicesWithSourceTensor:descriptor:name:")
     public native NSArray<? extends MPSGraphTensor> maxPooling4DReturnIndicesWithSourceTensorDescriptorName(
-            MPSGraphTensor source, MPSGraphPooling4DOpDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphPooling4DOpDescriptor descriptor, @Nullable String name);
 
     /**
      * Create Quantize op and return the result tensor
@@ -3471,10 +3785,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.2
      */
+    @NotNull
     @Generated
     @Selector("quantizeTensor:scale:zeroPoint:dataType:name:")
-    public native MPSGraphTensor quantizeTensorScaleZeroPointDataTypeName(MPSGraphTensor tensor, double scale,
-            double zeroPoint, int dataType, String name);
+    public native MPSGraphTensor quantizeTensorScaleZeroPointDataTypeName(@NotNull MPSGraphTensor tensor, double scale,
+            double zeroPoint, int dataType, @Nullable String name);
 
     /**
      * Create Quantize op and return the result tensor
@@ -3493,10 +3808,12 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.2
      */
+    @NotNull
     @Generated
     @Selector("quantizeTensor:scaleTensor:zeroPoint:dataType:axis:name:")
-    public native MPSGraphTensor quantizeTensorScaleTensorZeroPointDataTypeAxisName(MPSGraphTensor tensor,
-            MPSGraphTensor scaleTensor, double zeroPoint, int dataType, @NInt long axis, String name);
+    public native MPSGraphTensor quantizeTensorScaleTensorZeroPointDataTypeAxisName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor scaleTensor, double zeroPoint, int dataType, @NInt long axis,
+            @Nullable String name);
 
     /**
      * Create Quantize op and return the result tensor
@@ -3515,10 +3832,12 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.2
      */
+    @NotNull
     @Generated
     @Selector("quantizeTensor:scaleTensor:zeroPointTensor:dataType:axis:name:")
-    public native MPSGraphTensor quantizeTensorScaleTensorZeroPointTensorDataTypeAxisName(MPSGraphTensor tensor,
-            MPSGraphTensor scaleTensor, MPSGraphTensor zeroPointTensor, int dataType, @NInt long axis, String name);
+    public native MPSGraphTensor quantizeTensorScaleTensorZeroPointTensorDataTypeAxisName(
+            @NotNull MPSGraphTensor tensor, @NotNull MPSGraphTensor scaleTensor,
+            @NotNull MPSGraphTensor zeroPointTensor, int dataType, @NInt long axis, @Nullable String name);
 
     /**
      * Create reduction and op and return the result tensor.
@@ -3531,10 +3850,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.3
      */
+    @NotNull
     @Generated
     @Selector("reductionAndWithTensor:axes:name:")
-    public native MPSGraphTensor reductionAndWithTensorAxesName(MPSGraphTensor tensor, NSArray<? extends NSNumber> axes,
-            String name);
+    public native MPSGraphTensor reductionAndWithTensorAxesName(@NotNull MPSGraphTensor tensor,
+            @Nullable NSArray<? extends NSNumber> axes, @Nullable String name);
 
     /**
      * Create reduction and op and return the result tensor.
@@ -3547,9 +3867,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.3
      */
+    @NotNull
     @Generated
     @Selector("reductionAndWithTensor:axis:name:")
-    public native MPSGraphTensor reductionAndWithTensorAxisName(MPSGraphTensor tensor, @NInt long axis, String name);
+    public native MPSGraphTensor reductionAndWithTensorAxisName(@NotNull MPSGraphTensor tensor, @NInt long axis,
+            @Nullable String name);
 
     /**
      * Create reduction or op and return the result tensor.
@@ -3562,10 +3884,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.3
      */
+    @NotNull
     @Generated
     @Selector("reductionOrWithTensor:axes:name:")
-    public native MPSGraphTensor reductionOrWithTensorAxesName(MPSGraphTensor tensor, NSArray<? extends NSNumber> axes,
-            String name);
+    public native MPSGraphTensor reductionOrWithTensorAxesName(@NotNull MPSGraphTensor tensor,
+            @Nullable NSArray<? extends NSNumber> axes, @Nullable String name);
 
     /**
      * Create reduction or op and return the result tensor.
@@ -3578,9 +3901,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.3
      */
+    @NotNull
     @Generated
     @Selector("reductionOrWithTensor:axis:name:")
-    public native MPSGraphTensor reductionOrWithTensorAxisName(MPSGraphTensor tensor, @NInt long axis, String name);
+    public native MPSGraphTensor reductionOrWithTensorAxisName(@NotNull MPSGraphTensor tensor, @NInt long axis,
+            @Nullable String name);
 
     /**
      * Create Resize gradient op and return the result tensor
@@ -3602,11 +3927,12 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("resizeBilinearWithGradientTensor:input:centerResult:alignCorners:layout:name:")
     public native MPSGraphTensor resizeBilinearWithGradientTensorInputCenterResultAlignCornersLayoutName(
-            MPSGraphTensor gradient, MPSGraphTensor input, boolean centerResult, boolean alignCorners,
-            @NUInt long layout, String name);
+            @NotNull MPSGraphTensor gradient, @NotNull MPSGraphTensor input, boolean centerResult, boolean alignCorners,
+            @NUInt long layout, @Nullable String name);
 
     /**
      * Create Resize gradient op and return the result tensor
@@ -3627,10 +3953,12 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("resizeBilinearWithGradientTensor:input:scaleOffsetTensor:layout:name:")
     public native MPSGraphTensor resizeBilinearWithGradientTensorInputScaleOffsetTensorLayoutName(
-            MPSGraphTensor gradient, MPSGraphTensor input, MPSGraphTensor scaleOffset, @NUInt long layout, String name);
+            @NotNull MPSGraphTensor gradient, @NotNull MPSGraphTensor input, @NotNull MPSGraphTensor scaleOffset,
+            @NUInt long layout, @Nullable String name);
 
     /**
      * Create Resize op and return the result tensor
@@ -3652,11 +3980,12 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("resizeBilinearWithTensor:sizeTensor:centerResult:alignCorners:layout:name:")
     public native MPSGraphTensor resizeBilinearWithTensorSizeTensorCenterResultAlignCornersLayoutName(
-            MPSGraphTensor imagesTensor, MPSGraphTensor size, boolean centerResult, boolean alignCorners,
-            @NUInt long layout, String name);
+            @NotNull MPSGraphTensor imagesTensor, @NotNull MPSGraphTensor size, boolean centerResult,
+            boolean alignCorners, @NUInt long layout, @Nullable String name);
 
     /**
      * Create Resize op and return the result tensor
@@ -3677,11 +4006,12 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("resizeBilinearWithTensor:sizeTensor:scaleOffsetTensor:layout:name:")
     public native MPSGraphTensor resizeBilinearWithTensorSizeTensorScaleOffsetTensorLayoutName(
-            MPSGraphTensor imagesTensor, MPSGraphTensor size, MPSGraphTensor scaleOffset, @NUInt long layout,
-            String name);
+            @NotNull MPSGraphTensor imagesTensor, @NotNull MPSGraphTensor size, @NotNull MPSGraphTensor scaleOffset,
+            @NUInt long layout, @Nullable String name);
 
     /**
      * Create Resize gradient op and return the result tensor
@@ -3704,11 +4034,12 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("resizeNearestWithGradientTensor:input:nearestRoundingMode:centerResult:alignCorners:layout:name:")
     public native MPSGraphTensor resizeNearestWithGradientTensorInputNearestRoundingModeCenterResultAlignCornersLayoutName(
-            MPSGraphTensor gradient, MPSGraphTensor input, @NUInt long nearestRoundingMode, boolean centerResult,
-            boolean alignCorners, @NUInt long layout, String name);
+            @NotNull MPSGraphTensor gradient, @NotNull MPSGraphTensor input, @NUInt long nearestRoundingMode,
+            boolean centerResult, boolean alignCorners, @NUInt long layout, @Nullable String name);
 
     /**
      * Create Resize gradient op and return the result tensor
@@ -3729,11 +4060,12 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("resizeNearestWithGradientTensor:input:scaleOffsetTensor:nearestRoundingMode:layout:name:")
     public native MPSGraphTensor resizeNearestWithGradientTensorInputScaleOffsetTensorNearestRoundingModeLayoutName(
-            MPSGraphTensor gradient, MPSGraphTensor input, MPSGraphTensor scaleOffset, @NUInt long nearestRoundingMode,
-            @NUInt long layout, String name);
+            @NotNull MPSGraphTensor gradient, @NotNull MPSGraphTensor input, @NotNull MPSGraphTensor scaleOffset,
+            @NUInt long nearestRoundingMode, @NUInt long layout, @Nullable String name);
 
     /**
      * Create Resize op and return the result tensor
@@ -3757,11 +4089,12 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("resizeNearestWithTensor:sizeTensor:nearestRoundingMode:centerResult:alignCorners:layout:name:")
     public native MPSGraphTensor resizeNearestWithTensorSizeTensorNearestRoundingModeCenterResultAlignCornersLayoutName(
-            MPSGraphTensor imagesTensor, MPSGraphTensor size, @NUInt long nearestRoundingMode, boolean centerResult,
-            boolean alignCorners, @NUInt long layout, String name);
+            @NotNull MPSGraphTensor imagesTensor, @NotNull MPSGraphTensor size, @NUInt long nearestRoundingMode,
+            boolean centerResult, boolean alignCorners, @NUInt long layout, @Nullable String name);
 
     /**
      * Create Resize op and return the result tensor
@@ -3782,11 +4115,12 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("resizeNearestWithTensor:sizeTensor:scaleOffsetTensor:nearestRoundingMode:layout:name:")
     public native MPSGraphTensor resizeNearestWithTensorSizeTensorScaleOffsetTensorNearestRoundingModeLayoutName(
-            MPSGraphTensor imagesTensor, MPSGraphTensor size, MPSGraphTensor scaleOffset,
-            @NUInt long nearestRoundingMode, @NUInt long layout, String name);
+            @NotNull MPSGraphTensor imagesTensor, @NotNull MPSGraphTensor size, @NotNull MPSGraphTensor scaleOffset,
+            @NUInt long nearestRoundingMode, @NUInt long layout, @Nullable String name);
 
     /**
      * Create Resize op and return the result tensor
@@ -3813,10 +4147,12 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("resizeTensor:sizeTensor:scaleOffsetTensor:mode:layout:name:")
-    public native MPSGraphTensor resizeTensorSizeTensorScaleOffsetTensorModeLayoutName(MPSGraphTensor imagesTensor,
-            MPSGraphTensor size, MPSGraphTensor scaleOffset, @NUInt long mode, @NUInt long layout, String name);
+    public native MPSGraphTensor resizeTensorSizeTensorScaleOffsetTensorModeLayoutName(
+            @NotNull MPSGraphTensor imagesTensor, @NotNull MPSGraphTensor size, @NotNull MPSGraphTensor scaleOffset,
+            @NUInt long mode, @NUInt long layout, @Nullable String name);
 
     /**
      * Create Resize gradient op and return the result tensor
@@ -3838,10 +4174,12 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("resizeWithGradientTensor:input:scaleOffsetTensor:mode:layout:name:")
-    public native MPSGraphTensor resizeWithGradientTensorInputScaleOffsetTensorModeLayoutName(MPSGraphTensor gradient,
-            MPSGraphTensor input, MPSGraphTensor scaleOffset, @NUInt long mode, @NUInt long layout, String name);
+    public native MPSGraphTensor resizeWithGradientTensorInputScaleOffsetTensorModeLayoutName(
+            @NotNull MPSGraphTensor gradient, @NotNull MPSGraphTensor input, @NotNull MPSGraphTensor scaleOffset,
+            @NUInt long mode, @NUInt long layout, @Nullable String name);
 
     /**
      * Samples a tensor using the coordinates provided, using nearest neighbor sampling with specified rounding mode.
@@ -3877,12 +4215,13 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.2
      */
+    @NotNull
     @Generated
     @Selector("sampleGridWithSourceTensor:coordinateTensor:layout:normalizeCoordinates:relativeCoordinates:alignCorners:paddingMode:nearestRoundingMode:constantValue:name:")
     public native MPSGraphTensor sampleGridWithSourceTensorCoordinateTensorLayoutNormalizeCoordinatesRelativeCoordinatesAlignCornersPaddingModeNearestRoundingModeConstantValueName(
-            MPSGraphTensor source, MPSGraphTensor coordinates, @NUInt long layout, boolean normalizeCoordinates,
-            boolean relativeCoordinates, boolean alignCorners, @NInt long paddingMode, @NUInt long nearestRoundingMode,
-            double constantValue, String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor coordinates, @NUInt long layout,
+            boolean normalizeCoordinates, boolean relativeCoordinates, boolean alignCorners, @NInt long paddingMode,
+            @NUInt long nearestRoundingMode, double constantValue, @Nullable String name);
 
     /**
      * Samples a tensor using the coordinates provided.
@@ -3918,12 +4257,13 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.2
      */
+    @NotNull
     @Generated
     @Selector("sampleGridWithSourceTensor:coordinateTensor:layout:normalizeCoordinates:relativeCoordinates:alignCorners:paddingMode:samplingMode:constantValue:name:")
     public native MPSGraphTensor sampleGridWithSourceTensorCoordinateTensorLayoutNormalizeCoordinatesRelativeCoordinatesAlignCornersPaddingModeSamplingModeConstantValueName(
-            MPSGraphTensor source, MPSGraphTensor coordinates, @NUInt long layout, boolean normalizeCoordinates,
-            boolean relativeCoordinates, boolean alignCorners, @NInt long paddingMode, @NUInt long samplingMode,
-            double constantValue, String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor coordinates, @NUInt long layout,
+            boolean normalizeCoordinates, boolean relativeCoordinates, boolean alignCorners, @NInt long paddingMode,
+            @NUInt long samplingMode, double constantValue, @Nullable String name);
 
     /**
      * Create ScatterAlongAxis op and return the result tensor
@@ -3963,11 +4303,12 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("scatterAlongAxis:withDataTensor:updatesTensor:indicesTensor:mode:name:")
     public native MPSGraphTensor scatterAlongAxisWithDataTensorUpdatesTensorIndicesTensorModeName(@NInt long axis,
-            MPSGraphTensor dataTensor, MPSGraphTensor updatesTensor, MPSGraphTensor indicesTensor, @NInt long mode,
-            String name);
+            @NotNull MPSGraphTensor dataTensor, @NotNull MPSGraphTensor updatesTensor,
+            @NotNull MPSGraphTensor indicesTensor, @NInt long mode, @Nullable String name);
 
     /**
      * Create ScatterAlongAxis op and return the result tensor
@@ -3985,40 +4326,48 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("scatterAlongAxisTensor:withDataTensor:updatesTensor:indicesTensor:mode:name:")
     public native MPSGraphTensor scatterAlongAxisTensorWithDataTensorUpdatesTensorIndicesTensorModeName(
-            MPSGraphTensor axisTensor, MPSGraphTensor dataTensor, MPSGraphTensor updatesTensor,
-            MPSGraphTensor indicesTensor, @NInt long mode, String name);
+            @NotNull MPSGraphTensor axisTensor, @NotNull MPSGraphTensor dataTensor,
+            @NotNull MPSGraphTensor updatesTensor, @NotNull MPSGraphTensor indicesTensor, @NInt long mode,
+            @Nullable String name);
 
     /**
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("singleGateRNNGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:initState:descriptor:name:")
     public native NSArray<? extends MPSGraphTensor> singleGateRNNGradientsWithSourceTensorRecurrentWeightSourceGradientZStateInitStateDescriptorName(
-            MPSGraphTensor source, MPSGraphTensor recurrentWeight, MPSGraphTensor sourceGradient, MPSGraphTensor zState,
-            MPSGraphTensor initState, MPSGraphSingleGateRNNDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor recurrentWeight,
+            @NotNull MPSGraphTensor sourceGradient, @NotNull MPSGraphTensor zState, @Nullable MPSGraphTensor initState,
+            @NotNull MPSGraphSingleGateRNNDescriptor descriptor, @Nullable String name);
 
     /**
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("singleGateRNNGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:inputWeight:bias:initState:descriptor:name:")
     public native NSArray<? extends MPSGraphTensor> singleGateRNNGradientsWithSourceTensorRecurrentWeightSourceGradientZStateInputWeightBiasInitStateDescriptorName(
-            MPSGraphTensor source, MPSGraphTensor recurrentWeight, MPSGraphTensor sourceGradient, MPSGraphTensor zState,
-            MPSGraphTensor inputWeight, MPSGraphTensor bias, MPSGraphTensor initState,
-            MPSGraphSingleGateRNNDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor recurrentWeight,
+            @NotNull MPSGraphTensor sourceGradient, @NotNull MPSGraphTensor zState,
+            @Nullable MPSGraphTensor inputWeight, @Nullable MPSGraphTensor bias, @Nullable MPSGraphTensor initState,
+            @NotNull MPSGraphSingleGateRNNDescriptor descriptor, @Nullable String name);
 
     /**
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("singleGateRNNGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:inputWeight:bias:initState:mask:descriptor:name:")
     public native NSArray<? extends MPSGraphTensor> singleGateRNNGradientsWithSourceTensorRecurrentWeightSourceGradientZStateInputWeightBiasInitStateMaskDescriptorName(
-            MPSGraphTensor source, MPSGraphTensor recurrentWeight, MPSGraphTensor sourceGradient, MPSGraphTensor zState,
-            MPSGraphTensor inputWeight, MPSGraphTensor bias, MPSGraphTensor initState, MPSGraphTensor mask,
-            MPSGraphSingleGateRNNDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor recurrentWeight,
+            @NotNull MPSGraphTensor sourceGradient, @NotNull MPSGraphTensor zState,
+            @Nullable MPSGraphTensor inputWeight, @Nullable MPSGraphTensor bias, @Nullable MPSGraphTensor initState,
+            @Nullable MPSGraphTensor mask, @NotNull MPSGraphSingleGateRNNDescriptor descriptor, @Nullable String name);
 
     /**
      * Create a single-gate RNN gradient op and return the gradient tensor values.
@@ -4052,30 +4401,36 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("singleGateRNNGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:stateGradient:inputWeight:bias:initState:mask:descriptor:name:")
     public native NSArray<? extends MPSGraphTensor> singleGateRNNGradientsWithSourceTensorRecurrentWeightSourceGradientZStateStateGradientInputWeightBiasInitStateMaskDescriptorName(
-            MPSGraphTensor source, MPSGraphTensor recurrentWeight, MPSGraphTensor sourceGradient, MPSGraphTensor zState,
-            MPSGraphTensor stateGradient, MPSGraphTensor inputWeight, MPSGraphTensor bias, MPSGraphTensor initState,
-            MPSGraphTensor mask, MPSGraphSingleGateRNNDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor recurrentWeight,
+            @NotNull MPSGraphTensor sourceGradient, @NotNull MPSGraphTensor zState,
+            @Nullable MPSGraphTensor stateGradient, @Nullable MPSGraphTensor inputWeight, @Nullable MPSGraphTensor bias,
+            @Nullable MPSGraphTensor initState, @Nullable MPSGraphTensor mask,
+            @NotNull MPSGraphSingleGateRNNDescriptor descriptor, @Nullable String name);
 
     /**
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("singleGateRNNWithSourceTensor:recurrentWeight:initState:descriptor:name:")
     public native NSArray<? extends MPSGraphTensor> singleGateRNNWithSourceTensorRecurrentWeightInitStateDescriptorName(
-            MPSGraphTensor source, MPSGraphTensor recurrentWeight, MPSGraphTensor initState,
-            MPSGraphSingleGateRNNDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor recurrentWeight, @Nullable MPSGraphTensor initState,
+            @NotNull MPSGraphSingleGateRNNDescriptor descriptor, @Nullable String name);
 
     /**
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("singleGateRNNWithSourceTensor:recurrentWeight:inputWeight:bias:initState:descriptor:name:")
     public native NSArray<? extends MPSGraphTensor> singleGateRNNWithSourceTensorRecurrentWeightInputWeightBiasInitStateDescriptorName(
-            MPSGraphTensor source, MPSGraphTensor recurrentWeight, MPSGraphTensor inputWeight, MPSGraphTensor bias,
-            MPSGraphTensor initState, MPSGraphSingleGateRNNDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor recurrentWeight,
+            @Nullable MPSGraphTensor inputWeight, @Nullable MPSGraphTensor bias, @Nullable MPSGraphTensor initState,
+            @NotNull MPSGraphSingleGateRNNDescriptor descriptor, @Nullable String name);
 
     /**
      * Create a single-gate RNN op and return the value and optionally training state tensor.
@@ -4112,11 +4467,13 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("singleGateRNNWithSourceTensor:recurrentWeight:inputWeight:bias:initState:mask:descriptor:name:")
     public native NSArray<? extends MPSGraphTensor> singleGateRNNWithSourceTensorRecurrentWeightInputWeightBiasInitStateMaskDescriptorName(
-            MPSGraphTensor source, MPSGraphTensor recurrentWeight, MPSGraphTensor inputWeight, MPSGraphTensor bias,
-            MPSGraphTensor initState, MPSGraphTensor mask, MPSGraphSingleGateRNNDescriptor descriptor, String name);
+            @NotNull MPSGraphTensor source, @NotNull MPSGraphTensor recurrentWeight,
+            @Nullable MPSGraphTensor inputWeight, @Nullable MPSGraphTensor bias, @Nullable MPSGraphTensor initState,
+            @Nullable MPSGraphTensor mask, @NotNull MPSGraphSingleGateRNNDescriptor descriptor, @Nullable String name);
 
     /**
      * Create a sort operation and return the result tensor.
@@ -4130,10 +4487,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("sortWithTensor:axis:descending:name:")
-    public native MPSGraphTensor sortWithTensorAxisDescendingName(MPSGraphTensor tensor, @NInt long axis,
-            boolean descending, String name);
+    public native MPSGraphTensor sortWithTensorAxisDescendingName(@NotNull MPSGraphTensor tensor, @NInt long axis,
+            boolean descending, @Nullable String name);
 
     /**
      * Create an ascending sort operation and return the result tensor.
@@ -4146,9 +4504,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("sortWithTensor:axis:name:")
-    public native MPSGraphTensor sortWithTensorAxisName(MPSGraphTensor tensor, @NInt long axis, String name);
+    public native MPSGraphTensor sortWithTensorAxisName(@NotNull MPSGraphTensor tensor, @NInt long axis,
+            @Nullable String name);
 
     /**
      * Create a sort operation and return the result tensor.
@@ -4162,10 +4522,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("sortWithTensor:axisTensor:descending:name:")
-    public native MPSGraphTensor sortWithTensorAxisTensorDescendingName(MPSGraphTensor tensor,
-            MPSGraphTensor axisTensor, boolean descending, String name);
+    public native MPSGraphTensor sortWithTensorAxisTensorDescendingName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor axisTensor, boolean descending, @Nullable String name);
 
     /**
      * Create an ascending sort operation and return the result tensor.
@@ -4178,10 +4539,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("sortWithTensor:axisTensor:name:")
-    public native MPSGraphTensor sortWithTensorAxisTensorName(MPSGraphTensor tensor, MPSGraphTensor axisTensor,
-            String name);
+    public native MPSGraphTensor sortWithTensorAxisTensorName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor axisTensor, @Nullable String name);
 
     /**
      * Create space-to-batch op and return the result tensor.
@@ -4209,20 +4571,23 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.1
      */
+    @NotNull
     @Generated
     @Selector("spaceToBatchTensor:spatialAxes:batchAxis:blockDimensions:usePixelShuffleOrder:name:")
     public native MPSGraphTensor spaceToBatchTensorSpatialAxesBatchAxisBlockDimensionsUsePixelShuffleOrderName(
-            MPSGraphTensor tensor, NSArray<? extends NSNumber> spatialAxes, @NInt long batchAxis,
-            NSArray<? extends NSNumber> blockDimensions, boolean usePixelShuffleOrder, String name);
+            @NotNull MPSGraphTensor tensor, @NotNull NSArray<? extends NSNumber> spatialAxes, @NInt long batchAxis,
+            @NotNull NSArray<? extends NSNumber> blockDimensions, boolean usePixelShuffleOrder, @Nullable String name);
 
     /**
      * API-Since: 16.1
      */
+    @NotNull
     @Generated
     @Selector("spaceToBatchTensor:spatialAxesTensor:batchAxisTensor:blockDimensionsTensor:usePixelShuffleOrder:name:")
     public native MPSGraphTensor spaceToBatchTensorSpatialAxesTensorBatchAxisTensorBlockDimensionsTensorUsePixelShuffleOrderName(
-            MPSGraphTensor tensor, MPSGraphTensor spatialAxesTensor, MPSGraphTensor batchAxisTensor,
-            MPSGraphTensor blockDimensionsTensor, boolean usePixelShuffleOrder, String name);
+            @NotNull MPSGraphTensor tensor, @NotNull MPSGraphTensor spatialAxesTensor,
+            @NotNull MPSGraphTensor batchAxisTensor, @NotNull MPSGraphTensor blockDimensionsTensor,
+            boolean usePixelShuffleOrder, @Nullable String name);
 
     /**
      * Create split op and return the result
@@ -4239,10 +4604,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("splitTensor:numSplits:axis:name:")
-    public native NSArray<? extends MPSGraphTensor> splitTensorNumSplitsAxisName(MPSGraphTensor tensor,
-            @NUInt long numSplits, @NInt long axis, String name);
+    public native NSArray<? extends MPSGraphTensor> splitTensorNumSplitsAxisName(@NotNull MPSGraphTensor tensor,
+            @NUInt long numSplits, @NInt long axis, @Nullable String name);
 
     /**
      * Create split op and return the result
@@ -4259,10 +4625,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("splitTensor:splitSizes:axis:name:")
-    public native NSArray<? extends MPSGraphTensor> splitTensorSplitSizesAxisName(MPSGraphTensor tensor,
-            NSArray<? extends NSNumber> splitSizes, @NInt long axis, String name);
+    public native NSArray<? extends MPSGraphTensor> splitTensorSplitSizesAxisName(@NotNull MPSGraphTensor tensor,
+            @NotNull NSArray<? extends NSNumber> splitSizes, @NInt long axis, @Nullable String name);
 
     /**
      * Create split op and return the result
@@ -4279,10 +4646,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("splitTensor:splitSizesTensor:axis:name:")
-    public native NSArray<? extends MPSGraphTensor> splitTensorSplitSizesTensorAxisName(MPSGraphTensor tensor,
-            MPSGraphTensor splitSizesTensor, @NInt long axis, String name);
+    public native NSArray<? extends MPSGraphTensor> splitTensorSplitSizesTensorAxisName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor splitSizesTensor, @NInt long axis, @Nullable String name);
 
     /**
      * Create squeeze op and return the result
@@ -4298,18 +4666,20 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("squeezeTensor:axes:name:")
-    public native MPSGraphTensor squeezeTensorAxesName(MPSGraphTensor tensor, NSArray<? extends NSNumber> axes,
-            String name);
+    public native MPSGraphTensor squeezeTensorAxesName(@NotNull MPSGraphTensor tensor,
+            @NotNull NSArray<? extends NSNumber> axes, @Nullable String name);
 
     /**
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("squeezeTensor:axesTensor:name:")
-    public native MPSGraphTensor squeezeTensorAxesTensorName(MPSGraphTensor tensor, MPSGraphTensor axesTensor,
-            String name);
+    public native MPSGraphTensor squeezeTensorAxesTensorName(@NotNull MPSGraphTensor tensor,
+            @NotNull MPSGraphTensor axesTensor, @Nullable String name);
 
     /**
      * Create squeeze op and return the result
@@ -4325,9 +4695,11 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("squeezeTensor:axis:name:")
-    public native MPSGraphTensor squeezeTensorAxisName(MPSGraphTensor tensor, @NInt long axis, String name);
+    public native MPSGraphTensor squeezeTensorAxisName(@NotNull MPSGraphTensor tensor, @NInt long axis,
+            @Nullable String name);
 
     /**
      * Create squeeze op and return the result
@@ -4341,9 +4713,10 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("squeezeTensor:name:")
-    public native MPSGraphTensor squeezeTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor squeezeTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 
     /**
      * Create stack op and return the result
@@ -4360,18 +4733,20 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 15.4
      */
+    @NotNull
     @Generated
     @Selector("stackTensors:axis:name:")
-    public native MPSGraphTensor stackTensorsAxisName(NSArray<? extends MPSGraphTensor> inputTensors, @NInt long axis,
-            String name);
+    public native MPSGraphTensor stackTensorsAxisName(@NotNull NSArray<? extends MPSGraphTensor> inputTensors,
+            @NInt long axis, @Nullable String name);
 
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("transposeTensor:permutation:name:")
-    public native MPSGraphTensor transposeTensorPermutationName(MPSGraphTensor tensor,
-            NSArray<? extends NSNumber> permutation, String name);
+    public native MPSGraphTensor transposeTensorPermutationName(@NotNull MPSGraphTensor tensor,
+            @NotNull NSArray<? extends NSNumber> permutation, @Nullable String name);
 
     /**
      * Truncate op - floor for positive inputs, ceil for negative.
@@ -4382,7 +4757,8 @@ public class MPSGraph extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("truncateWithTensor:name:")
-    public native MPSGraphTensor truncateWithTensorName(MPSGraphTensor tensor, String name);
+    public native MPSGraphTensor truncateWithTensorName(@NotNull MPSGraphTensor tensor, @Nullable String name);
 }

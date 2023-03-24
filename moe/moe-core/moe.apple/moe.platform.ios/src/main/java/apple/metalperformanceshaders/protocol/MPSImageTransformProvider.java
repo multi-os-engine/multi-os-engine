@@ -12,6 +12,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("MetalPerformanceShaders")
@@ -21,5 +23,6 @@ public interface MPSImageTransformProvider extends NSSecureCoding {
     @Generated
     @Selector("transformForSourceImage:handle:")
     @ByValue
-    MPSScaleTransform transformForSourceImageHandle(MPSImage image, @Mapped(ObjCObjectMapper.class) MPSHandle handle);
+    MPSScaleTransform transformForSourceImageHandle(@NotNull MPSImage image,
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSHandle handle);
 }

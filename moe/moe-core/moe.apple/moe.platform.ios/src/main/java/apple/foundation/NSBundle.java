@@ -37,6 +37,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Because NSBundle caches allocated instances, subclasses should be prepared
@@ -69,27 +71,31 @@ public class NSBundle extends NSObject {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("URLForResource:withExtension:subdirectory:inBundleWithURL:")
-    public static native NSURL URLForResourceWithExtensionSubdirectoryInBundleWithURL(String name, String ext,
-            String subpath, NSURL bundleURL);
+    public static native NSURL URLForResourceWithExtensionSubdirectoryInBundleWithURL(@Nullable String name,
+            @Nullable String ext, @Nullable String subpath, @NotNull NSURL bundleURL);
 
     /**
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("URLsForResourcesWithExtension:subdirectory:inBundleWithURL:")
-    public static native NSArray<? extends NSURL> URLsForResourcesWithExtensionSubdirectoryInBundleWithURL(String ext,
-            String subpath, NSURL bundleURL);
+    public static native NSArray<? extends NSURL> URLsForResourcesWithExtensionSubdirectoryInBundleWithURL(
+            @Nullable String ext, @Nullable String subpath, @NotNull NSURL bundleURL);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    @NotNull
     @Generated
     @Selector("allBundles")
     public static native NSArray<? extends NSBundle> allBundles();
 
+    @NotNull
     @Generated
     @Selector("allFrameworks")
     public static native NSArray<? extends NSBundle> allFrameworks();
@@ -106,41 +112,46 @@ public class NSBundle extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("bundleForClass:")
-    public static native NSBundle bundleForClass(Class aClass);
+    public static native NSBundle bundleForClass(@NotNull Class aClass);
 
+    @Nullable
     @Generated
     @Selector("bundleWithIdentifier:")
-    public static native NSBundle bundleWithIdentifier(String identifier);
+    public static native NSBundle bundleWithIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("bundleWithPath:")
-    public static native NSBundle bundleWithPath(String path);
+    public static native NSBundle bundleWithPath(@NotNull String path);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @Selector("bundleWithURL:")
-    public static native NSBundle bundleWithURL(NSURL url);
+    public static native NSBundle bundleWithURL(@NotNull NSURL url);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -175,13 +186,15 @@ public class NSBundle extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Methods for creating or retrieving bundle instances.
      */
+    @NotNull
     @Generated
     @Selector("mainBundle")
     public static native NSBundle mainBundle();
@@ -191,22 +204,28 @@ public class NSBundle extends NSObject {
     @Selector("new")
     public static native NSBundle new_objc();
 
+    @Nullable
     @Generated
     @Selector("pathForResource:ofType:inDirectory:")
-    public static native String pathForResourceOfTypeInDirectory_static(String name, String ext, String bundlePath);
+    public static native String pathForResourceOfTypeInDirectory_static(@Nullable String name, @Nullable String ext,
+            @NotNull String bundlePath);
 
+    @NotNull
     @Generated
     @Selector("pathsForResourcesOfType:inDirectory:")
-    public static native NSArray<String> pathsForResourcesOfTypeInDirectory_static(String ext, String bundlePath);
+    public static native NSArray<String> pathsForResourcesOfTypeInDirectory_static(@Nullable String ext,
+            @NotNull String bundlePath);
 
+    @NotNull
     @Generated
     @Selector("preferredLocalizationsFromArray:")
-    public static native NSArray<String> preferredLocalizationsFromArray(NSArray<String> localizationsArray);
+    public static native NSArray<String> preferredLocalizationsFromArray(@NotNull NSArray<String> localizationsArray);
 
+    @NotNull
     @Generated
     @Selector("preferredLocalizationsFromArray:forPreferences:")
     public static native NSArray<String> preferredLocalizationsFromArrayForPreferences(
-            NSArray<String> localizationsArray, NSArray<String> preferencesArray);
+            @NotNull NSArray<String> localizationsArray, @Nullable NSArray<String> preferencesArray);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -232,54 +251,64 @@ public class NSBundle extends NSObject {
     /**
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("URLForAuxiliaryExecutable:")
-    public native NSURL URLForAuxiliaryExecutable(String executableName);
+    public native NSURL URLForAuxiliaryExecutable(@NotNull String executableName);
 
     /**
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("URLForResource:withExtension:")
-    public native NSURL URLForResourceWithExtension(String name, String ext);
+    public native NSURL URLForResourceWithExtension(@Nullable String name, @Nullable String ext);
 
     /**
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("URLForResource:withExtension:subdirectory:")
-    public native NSURL URLForResourceWithExtensionSubdirectory(String name, String ext, String subpath);
+    public native NSURL URLForResourceWithExtensionSubdirectory(@Nullable String name, @Nullable String ext,
+            @Nullable String subpath);
 
     /**
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("URLForResource:withExtension:subdirectory:localization:")
-    public native NSURL URLForResourceWithExtensionSubdirectoryLocalization(String name, String ext, String subpath,
-            String localizationName);
+    public native NSURL URLForResourceWithExtensionSubdirectoryLocalization(@Nullable String name, @Nullable String ext,
+            @Nullable String subpath, @Nullable String localizationName);
 
     /**
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("URLsForResourcesWithExtension:subdirectory:")
-    public native NSArray<? extends NSURL> URLsForResourcesWithExtensionSubdirectory(String ext, String subpath);
+    public native NSArray<? extends NSURL> URLsForResourcesWithExtensionSubdirectory(@Nullable String ext,
+            @Nullable String subpath);
 
     /**
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("URLsForResourcesWithExtension:subdirectory:localization:")
-    public native NSArray<? extends NSURL> URLsForResourcesWithExtensionSubdirectoryLocalization(String ext,
-            String subpath, String localizationName);
+    public native NSArray<? extends NSURL> URLsForResourcesWithExtensionSubdirectoryLocalization(@Nullable String ext,
+            @Nullable String subpath, @Nullable String localizationName);
 
     /**
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("appStoreReceiptURL")
     public native NSURL appStoreReceiptURL();
 
+    @Nullable
     @Generated
     @Selector("builtInPlugInsPath")
     public native String builtInPlugInsPath();
@@ -287,6 +316,7 @@ public class NSBundle extends NSObject {
     /**
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("builtInPlugInsURL")
     public native NSURL builtInPlugInsURL();
@@ -294,10 +324,12 @@ public class NSBundle extends NSObject {
     /**
      * Methods for obtaining various information about a bundle.
      */
+    @Nullable
     @Generated
     @Selector("bundleIdentifier")
     public native String bundleIdentifier();
 
+    @NotNull
     @Generated
     @Selector("bundlePath")
     public native String bundlePath();
@@ -307,14 +339,17 @@ public class NSBundle extends NSObject {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Selector("bundleURL")
     public native NSURL bundleURL();
 
+    @Nullable
     @Generated
     @Selector("classNamed:")
-    public native Class classNamed(String className);
+    public native Class classNamed(@NotNull String className);
 
+    @Nullable
     @Generated
     @Selector("developmentLocalization")
     public native String developmentLocalization();
@@ -322,10 +357,12 @@ public class NSBundle extends NSObject {
     /**
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @Selector("executableArchitectures")
     public native NSArray<? extends NSNumber> executableArchitectures();
 
+    @Nullable
     @Generated
     @Selector("executablePath")
     public native String executablePath();
@@ -333,10 +370,12 @@ public class NSBundle extends NSObject {
     /**
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("executableURL")
     public native NSURL executableURL();
 
+    @Nullable
     @Generated
     @Selector("infoDictionary")
     public native NSDictionary<String, ?> infoDictionary();
@@ -347,14 +386,14 @@ public class NSBundle extends NSObject {
 
     @Generated
     @Selector("initWithPath:")
-    public native NSBundle initWithPath(String path);
+    public native NSBundle initWithPath(@NotNull String path);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @Selector("initWithURL:")
-    public native NSBundle initWithURL(NSURL url);
+    public native NSBundle initWithURL(@NotNull NSURL url);
 
     @Generated
     @Selector("isLoaded")
@@ -372,20 +411,23 @@ public class NSBundle extends NSObject {
      */
     @Generated
     @Selector("loadAndReturnError:")
-    public native boolean loadAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean loadAndReturnError(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    @Nullable
     @Generated
     @Selector("loadNibNamed:owner:options:")
-    public native NSArray<?> loadNibNamedOwnerOptions(String name, @Mapped(ObjCObjectMapper.class) Object owner,
-            NSDictionary<String, ?> options);
+    public native NSArray<?> loadNibNamedOwnerOptions(@NotNull String name,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object owner, @Nullable NSDictionary<String, ?> options);
 
     /**
      * list of language names this bundle appears to be localized to
      */
+    @NotNull
     @Generated
     @Selector("localizations")
     public native NSArray<String> localizations();
 
+    @Nullable
     @Generated
     @Selector("localizedInfoDictionary")
     public native NSDictionary<String, ?> localizedInfoDictionary();
@@ -393,46 +435,57 @@ public class NSBundle extends NSObject {
     /**
      * Methods for retrieving localized strings.
      */
+    @NotNull
     @Generated
     @Selector("localizedStringForKey:value:table:")
-    public native String localizedStringForKeyValueTable(String key, String value, String tableName);
+    public native String localizedStringForKeyValueTable(@NotNull String key, @Nullable String value,
+            @Nullable String tableName);
 
+    @Nullable
     @Generated
     @Selector("objectForInfoDictionaryKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object objectForInfoDictionaryKey(String key);
+    public native Object objectForInfoDictionaryKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("pathForAuxiliaryExecutable:")
-    public native String pathForAuxiliaryExecutable(String executableName);
+    public native String pathForAuxiliaryExecutable(@NotNull String executableName);
 
+    @Nullable
     @Generated
     @Selector("pathForResource:ofType:")
-    public native String pathForResourceOfType(String name, String ext);
+    public native String pathForResourceOfType(@Nullable String name, @Nullable String ext);
 
+    @Nullable
     @Generated
     @Selector("pathForResource:ofType:inDirectory:")
-    public native String pathForResourceOfTypeInDirectory(String name, String ext, String subpath);
+    public native String pathForResourceOfTypeInDirectory(@Nullable String name, @Nullable String ext,
+            @Nullable String subpath);
 
+    @Nullable
     @Generated
     @Selector("pathForResource:ofType:inDirectory:forLocalization:")
-    public native String pathForResourceOfTypeInDirectoryForLocalization(String name, String ext, String subpath,
-            String localizationName);
+    public native String pathForResourceOfTypeInDirectoryForLocalization(@Nullable String name, @Nullable String ext,
+            @Nullable String subpath, @Nullable String localizationName);
 
+    @NotNull
     @Generated
     @Selector("pathsForResourcesOfType:inDirectory:")
-    public native NSArray<String> pathsForResourcesOfTypeInDirectory(String ext, String subpath);
+    public native NSArray<String> pathsForResourcesOfTypeInDirectory(@Nullable String ext, @Nullable String subpath);
 
+    @NotNull
     @Generated
     @Selector("pathsForResourcesOfType:inDirectory:forLocalization:")
-    public native NSArray<String> pathsForResourcesOfTypeInDirectoryForLocalization(String ext, String subpath,
-            String localizationName);
+    public native NSArray<String> pathsForResourcesOfTypeInDirectoryForLocalization(@Nullable String ext,
+            @Nullable String subpath, @Nullable String localizationName);
 
     /**
      * a subset of this bundle's localizations, re-ordered into the preferred order for this process's current execution
      * environment; the main bundle's preferred localizations indicate the language (of text) the user is most likely
      * seeing in the UI
      */
+    @NotNull
     @Generated
     @Selector("preferredLocalizations")
     public native NSArray<String> preferredLocalizations();
@@ -442,19 +495,21 @@ public class NSBundle extends NSObject {
      */
     @Generated
     @Selector("preflightAndReturnError:")
-    public native boolean preflightAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean preflightAndReturnError(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 9.0
      */
     @Generated
     @Selector("preservationPriorityForTag:")
-    public native double preservationPriorityForTag(String tag);
+    public native double preservationPriorityForTag(@NotNull String tag);
 
+    @Nullable
     @Generated
     @Selector("principalClass")
     public native Class principalClass();
 
+    @Nullable
     @Generated
     @Selector("privateFrameworksPath")
     public native String privateFrameworksPath();
@@ -462,10 +517,12 @@ public class NSBundle extends NSObject {
     /**
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("privateFrameworksURL")
     public native NSURL privateFrameworksURL();
 
+    @Nullable
     @Generated
     @Selector("resourcePath")
     public native String resourcePath();
@@ -473,6 +530,7 @@ public class NSBundle extends NSObject {
     /**
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("resourceURL")
     public native NSURL resourceURL();
@@ -491,8 +549,9 @@ public class NSBundle extends NSObject {
      */
     @Generated
     @Selector("setPreservationPriority:forTags:")
-    public native void setPreservationPriorityForTags(double priority, NSSet<String> tags);
+    public native void setPreservationPriorityForTags(double priority, @NotNull NSSet<String> tags);
 
+    @Nullable
     @Generated
     @Selector("sharedFrameworksPath")
     public native String sharedFrameworksPath();
@@ -500,10 +559,12 @@ public class NSBundle extends NSObject {
     /**
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("sharedFrameworksURL")
     public native NSURL sharedFrameworksURL();
 
+    @Nullable
     @Generated
     @Selector("sharedSupportPath")
     public native String sharedSupportPath();
@@ -511,6 +572,7 @@ public class NSBundle extends NSObject {
     /**
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("sharedSupportURL")
     public native NSURL sharedSupportURL();
@@ -522,8 +584,9 @@ public class NSBundle extends NSObject {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("localizedAttributedStringForKey:value:table:")
-    public native NSAttributedString localizedAttributedStringForKeyValueTable(String key, String value,
-            String tableName);
+    public native NSAttributedString localizedAttributedStringForKeyValueTable(@NotNull String key,
+            @Nullable String value, @Nullable String tableName);
 }

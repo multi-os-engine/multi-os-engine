@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * VNBarcodeObservation
@@ -66,29 +68,33 @@ public class VNBarcodeObservation extends VNRectangleObservation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * An object that provides symbology-specific data for the barcode.
      */
+    @Nullable
     @Generated
     @Selector("barcodeDescriptor")
     public native CIBarcodeDescriptor barcodeDescriptor();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -112,7 +118,7 @@ public class VNBarcodeObservation extends VNRectangleObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNBarcodeObservation initWithCoder(NSCoder coder);
+    public native VNBarcodeObservation initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -131,9 +137,10 @@ public class VNBarcodeObservation extends VNRectangleObservation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -148,6 +155,7 @@ public class VNBarcodeObservation extends VNRectangleObservation {
      * The string representation of the barcode's payload. Depending on the symbology of the barcode and/or the payload
      * data itself, a string representation of the payload may not be available.
      */
+    @Nullable
     @Generated
     @Selector("payloadStringValue")
     public native String payloadStringValue();
@@ -181,6 +189,7 @@ public class VNBarcodeObservation extends VNRectangleObservation {
     /**
      * The symbology of the detected barcode.
      */
+    @NotNull
     @Generated
     @Selector("symbology")
     public native String symbology();

@@ -14,6 +14,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("MetalPerformanceShaders")
@@ -36,8 +37,10 @@ public interface MPSNDArrayAllocator extends NSSecureCoding, NSCopying {
      * @return A valid MPSNDArray or MPSTemporaryNDArray. It will be automatically released when the command buffer
      *         completes.
      */
+    @NotNull
     @Generated
     @Selector("arrayForCommandBuffer:arrayDescriptor:kernel:")
-    MPSNDArray arrayForCommandBufferArrayDescriptorKernel(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf,
-            MPSNDArrayDescriptor descriptor, MPSKernel kernel);
+    MPSNDArray arrayForCommandBufferArrayDescriptorKernel(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NotNull MPSNDArrayDescriptor descriptor,
+            @NotNull MPSKernel kernel);
 }

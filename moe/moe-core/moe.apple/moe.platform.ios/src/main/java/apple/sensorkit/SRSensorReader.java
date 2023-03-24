@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -67,22 +69,25 @@ public class SRSensorReader extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -91,6 +96,7 @@ public class SRSensorReader extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -118,7 +124,7 @@ public class SRSensorReader extends NSObject {
      */
     @Generated
     @Selector("fetch:")
-    public native void fetch(SRFetchRequest request);
+    public native void fetch(@NotNull SRFetchRequest request);
 
     /**
      * Fetches device information for all devices that have stored data for
@@ -149,7 +155,7 @@ public class SRSensorReader extends NSObject {
      */
     @Generated
     @Selector("initWithSensor:")
-    public native SRSensorReader initWithSensor(String sensor);
+    public native SRSensorReader initWithSensor(@NotNull String sensor);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -168,9 +174,10 @@ public class SRSensorReader extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -203,14 +210,14 @@ public class SRSensorReader extends NSObject {
      */
     @Generated
     @Selector("requestAuthorizationForSensors:completion:")
-    public static native void requestAuthorizationForSensorsCompletion(NSSet<String> sensors,
-            @ObjCBlock(name = "call_requestAuthorizationForSensorsCompletion") Block_requestAuthorizationForSensorsCompletion completion);
+    public static native void requestAuthorizationForSensorsCompletion(@NotNull NSSet<String> sensors,
+            @NotNull @ObjCBlock(name = "call_requestAuthorizationForSensorsCompletion") Block_requestAuthorizationForSensorsCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestAuthorizationForSensorsCompletion {
         @Generated
-        void call_requestAuthorizationForSensorsCompletion(NSError error);
+        void call_requestAuthorizationForSensorsCompletion(@Nullable NSError error);
     }
 
     @Generated
@@ -224,16 +231,17 @@ public class SRSensorReader extends NSObject {
     /**
      * the sensor this reader was initialized with
      */
+    @NotNull
     @Generated
     @Selector("sensor")
     public native String sensor();
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SRSensorReaderDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) SRSensorReaderDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) SRSensorReaderDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SRSensorReaderDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

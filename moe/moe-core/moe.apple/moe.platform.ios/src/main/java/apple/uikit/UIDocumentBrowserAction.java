@@ -23,6 +23,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * UIDocumentBrowserAction instances are custom, contextual actions that are presented to the user by a
@@ -60,7 +62,7 @@ public class UIDocumentBrowserAction extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("availability")
@@ -69,18 +71,21 @@ public class UIDocumentBrowserAction extends NSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -98,10 +103,12 @@ public class UIDocumentBrowserAction extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
 
+    @Nullable
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -112,15 +119,15 @@ public class UIDocumentBrowserAction extends NSObject {
 
     @Generated
     @Selector("initWithIdentifier:localizedTitle:availability:handler:")
-    public native UIDocumentBrowserAction initWithIdentifierLocalizedTitleAvailabilityHandler(String identifier,
-            String localizedTitle, @NInt long availability,
-            @ObjCBlock(name = "call_initWithIdentifierLocalizedTitleAvailabilityHandler") Block_initWithIdentifierLocalizedTitleAvailabilityHandler handler);
+    public native UIDocumentBrowserAction initWithIdentifierLocalizedTitleAvailabilityHandler(
+            @NotNull String identifier, @NotNull String localizedTitle, @NInt long availability,
+            @NotNull @ObjCBlock(name = "call_initWithIdentifierLocalizedTitleAvailabilityHandler") Block_initWithIdentifierLocalizedTitleAvailabilityHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithIdentifierLocalizedTitleAvailabilityHandler {
         @Generated
-        void call_initWithIdentifierLocalizedTitleAvailabilityHandler(NSArray<? extends NSURL> arg0);
+        void call_initWithIdentifierLocalizedTitleAvailabilityHandler(@NotNull NSArray<? extends NSURL> arg0);
     }
 
     @Generated
@@ -140,10 +147,12 @@ public class UIDocumentBrowserAction extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("localizedTitle")
     public native String localizedTitle();
@@ -163,14 +172,14 @@ public class UIDocumentBrowserAction extends NSObject {
 
     @Generated
     @Selector("setImage:")
-    public native void setImage(UIImage value);
+    public native void setImage(@Nullable UIImage value);
 
     /**
      * Allows clients to restrict the action to only a specific set of content types. Default: [UTTypeItem.identifier]
      */
     @Generated
     @Selector("setSupportedContentTypes:")
-    public native void setSupportedContentTypes(NSArray<String> value);
+    public native void setSupportedContentTypes(@NotNull NSArray<String> value);
 
     /**
      * If NO, the action is only available, if there is only one item selected. Default: YES.
@@ -190,6 +199,7 @@ public class UIDocumentBrowserAction extends NSObject {
     /**
      * Allows clients to restrict the action to only a specific set of content types. Default: [UTTypeItem.identifier]
      */
+    @NotNull
     @Generated
     @Selector("supportedContentTypes")
     public native NSArray<String> supportedContentTypes();

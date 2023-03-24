@@ -11,6 +11,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] NFCTag
@@ -32,6 +33,7 @@ public interface NFCTag extends NSSecureCoding, NSCopying {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("asNFCFeliCaTag")
     @MappedReturn(ObjCObjectMapper.class)
@@ -44,6 +46,7 @@ public interface NFCTag extends NSSecureCoding, NSCopying {
      * 
      *         API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("asNFCISO15693Tag")
     @MappedReturn(ObjCObjectMapper.class)
@@ -56,6 +59,7 @@ public interface NFCTag extends NSSecureCoding, NSCopying {
      * 
      *         API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("asNFCISO7816Tag")
     @MappedReturn(ObjCObjectMapper.class)
@@ -68,6 +72,7 @@ public interface NFCTag extends NSSecureCoding, NSCopying {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("asNFCMiFareTag")
     @MappedReturn(ObjCObjectMapper.class)
@@ -94,6 +99,7 @@ public interface NFCTag extends NSSecureCoding, NSCopying {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("session")
     @MappedReturn(ObjCObjectMapper.class)

@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Purgeable Data ***************
@@ -76,22 +78,25 @@ public class NSPurgeableData extends NSMutableData implements NSDiscardableConte
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,16 +107,16 @@ public class NSPurgeableData extends NSMutableData implements NSDiscardableConte
 
     @Generated
     @Selector("dataWithBytes:length:")
-    public static native NSPurgeableData dataWithBytesLength(ConstVoidPtr bytes, @NUInt long length);
+    public static native NSPurgeableData dataWithBytesLength(@Nullable ConstVoidPtr bytes, @NUInt long length);
 
     @Generated
     @Selector("dataWithBytesNoCopy:length:")
-    public static native NSPurgeableData dataWithBytesNoCopyLength(VoidPtr bytes, @NUInt long length);
+    public static native NSPurgeableData dataWithBytesNoCopyLength(@NotNull VoidPtr bytes, @NUInt long length);
 
     @Generated
     @Selector("dataWithBytesNoCopy:length:freeWhenDone:")
-    public static native NSPurgeableData dataWithBytesNoCopyLengthFreeWhenDone(VoidPtr bytes, @NUInt long length,
-            boolean b);
+    public static native NSPurgeableData dataWithBytesNoCopyLengthFreeWhenDone(@NotNull VoidPtr bytes,
+            @NUInt long length, boolean b);
 
     @Generated
     @Selector("dataWithCapacity:")
@@ -119,30 +124,30 @@ public class NSPurgeableData extends NSMutableData implements NSDiscardableConte
 
     @Generated
     @Selector("dataWithContentsOfFile:")
-    public static native NSPurgeableData dataWithContentsOfFile(String path);
+    public static native NSPurgeableData dataWithContentsOfFile(@NotNull String path);
 
     @Generated
     @Selector("dataWithContentsOfFile:options:error:")
-    public static native NSPurgeableData dataWithContentsOfFileOptionsError(String path, @NUInt long readOptionsMask,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
+    public static native NSPurgeableData dataWithContentsOfFileOptionsError(@NotNull String path,
+            @NUInt long readOptionsMask, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Deprecated
     @Selector("dataWithContentsOfMappedFile:")
-    public static native NSPurgeableData dataWithContentsOfMappedFile(String path);
+    public static native NSPurgeableData dataWithContentsOfMappedFile(@NotNull String path);
 
     @Generated
     @Selector("dataWithContentsOfURL:")
-    public static native NSPurgeableData dataWithContentsOfURL(NSURL url);
+    public static native NSPurgeableData dataWithContentsOfURL(@NotNull NSURL url);
 
     @Generated
     @Selector("dataWithContentsOfURL:options:error:")
-    public static native NSPurgeableData dataWithContentsOfURLOptionsError(NSURL url, @NUInt long readOptionsMask,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
+    public static native NSPurgeableData dataWithContentsOfURLOptionsError(@NotNull NSURL url,
+            @NUInt long readOptionsMask, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Selector("dataWithData:")
-    public static native NSPurgeableData dataWithData(NSData data);
+    public static native NSPurgeableData dataWithData(@NotNull NSData data);
 
     @Generated
     @Selector("dataWithLength:")
@@ -178,9 +183,10 @@ public class NSPurgeableData extends NSMutableData implements NSDiscardableConte
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -230,33 +236,34 @@ public class NSPurgeableData extends NSMutableData implements NSDiscardableConte
 
     @Generated
     @Selector("initWithBase64EncodedData:options:")
-    public native NSPurgeableData initWithBase64EncodedDataOptions(NSData base64Data, @NUInt long options);
+    public native NSPurgeableData initWithBase64EncodedDataOptions(@NotNull NSData base64Data, @NUInt long options);
 
     @Generated
     @Selector("initWithBase64EncodedString:options:")
-    public native NSPurgeableData initWithBase64EncodedStringOptions(String base64String, @NUInt long options);
+    public native NSPurgeableData initWithBase64EncodedStringOptions(@NotNull String base64String, @NUInt long options);
 
     @Generated
     @Deprecated
     @Selector("initWithBase64Encoding:")
-    public native NSPurgeableData initWithBase64Encoding(String base64String);
+    public native NSPurgeableData initWithBase64Encoding(@NotNull String base64String);
 
     @Generated
     @Selector("initWithBytes:length:")
-    public native NSPurgeableData initWithBytesLength(ConstVoidPtr bytes, @NUInt long length);
+    public native NSPurgeableData initWithBytesLength(@Nullable ConstVoidPtr bytes, @NUInt long length);
 
     @Generated
     @Selector("initWithBytesNoCopy:length:")
-    public native NSPurgeableData initWithBytesNoCopyLength(VoidPtr bytes, @NUInt long length);
+    public native NSPurgeableData initWithBytesNoCopyLength(@NotNull VoidPtr bytes, @NUInt long length);
 
     @Generated
     @Selector("initWithBytesNoCopy:length:deallocator:")
-    public native NSPurgeableData initWithBytesNoCopyLengthDeallocator(VoidPtr bytes, @NUInt long length,
-            @ObjCBlock(name = "call_initWithBytesNoCopyLengthDeallocator") NSData.Block_initWithBytesNoCopyLengthDeallocator deallocator);
+    public native NSPurgeableData initWithBytesNoCopyLengthDeallocator(@NotNull VoidPtr bytes, @NUInt long length,
+            @Nullable @ObjCBlock(name = "call_initWithBytesNoCopyLengthDeallocator") NSData.Block_initWithBytesNoCopyLengthDeallocator deallocator);
 
     @Generated
     @Selector("initWithBytesNoCopy:length:freeWhenDone:")
-    public native NSPurgeableData initWithBytesNoCopyLengthFreeWhenDone(VoidPtr bytes, @NUInt long length, boolean b);
+    public native NSPurgeableData initWithBytesNoCopyLengthFreeWhenDone(@NotNull VoidPtr bytes, @NUInt long length,
+            boolean b);
 
     @Generated
     @Selector("initWithCapacity:")
@@ -264,34 +271,34 @@ public class NSPurgeableData extends NSMutableData implements NSDiscardableConte
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSPurgeableData initWithCoder(NSCoder coder);
+    public native NSPurgeableData initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithContentsOfFile:")
-    public native NSPurgeableData initWithContentsOfFile(String path);
+    public native NSPurgeableData initWithContentsOfFile(@NotNull String path);
 
     @Generated
     @Selector("initWithContentsOfFile:options:error:")
-    public native NSPurgeableData initWithContentsOfFileOptionsError(String path, @NUInt long readOptionsMask,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
+    public native NSPurgeableData initWithContentsOfFileOptionsError(@NotNull String path, @NUInt long readOptionsMask,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Deprecated
     @Selector("initWithContentsOfMappedFile:")
-    public native NSPurgeableData initWithContentsOfMappedFile(String path);
+    public native NSPurgeableData initWithContentsOfMappedFile(@NotNull String path);
 
     @Generated
     @Selector("initWithContentsOfURL:")
-    public native NSPurgeableData initWithContentsOfURL(NSURL url);
+    public native NSPurgeableData initWithContentsOfURL(@NotNull NSURL url);
 
     @Generated
     @Selector("initWithContentsOfURL:options:error:")
-    public native NSPurgeableData initWithContentsOfURLOptionsError(NSURL url, @NUInt long readOptionsMask,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
+    public native NSPurgeableData initWithContentsOfURLOptionsError(@NotNull NSURL url, @NUInt long readOptionsMask,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Selector("initWithData:")
-    public native NSPurgeableData initWithData(NSData data);
+    public native NSPurgeableData initWithData(@NotNull NSData data);
 
     @Generated
     @Selector("initWithLength:")

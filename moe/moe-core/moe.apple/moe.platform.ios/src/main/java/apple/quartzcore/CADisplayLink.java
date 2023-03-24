@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Class representing a timer bound to the display vsync. *
@@ -76,22 +78,25 @@ public class CADisplayLink extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -109,10 +114,11 @@ public class CADisplayLink extends NSObject {
      * invoke the method called 'sel' on 'target', the method has the
      * signature '(void)selector:(CADisplayLink *)sender'.
      */
+    @NotNull
     @Generated
     @Selector("displayLinkWithTarget:selector:")
-    public static native CADisplayLink displayLinkWithTargetSelector(@Mapped(ObjCObjectMapper.class) Object target,
-            SEL sel);
+    public static native CADisplayLink displayLinkWithTargetSelector(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object target, @NotNull SEL sel);
 
     @Generated
     @Selector("hash")
@@ -136,9 +142,10 @@ public class CADisplayLink extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -174,7 +181,7 @@ public class CADisplayLink extends NSObject {
      */
     @Generated
     @Selector("addToRunLoop:forMode:")
-    public native void addToRunLoopForMode(NSRunLoop runloop, String mode);
+    public native void addToRunLoopForMode(@NotNull NSRunLoop runloop, @NotNull String mode);
 
     @Generated
     @Selector("duration")
@@ -248,7 +255,7 @@ public class CADisplayLink extends NSObject {
      */
     @Generated
     @Selector("removeFromRunLoop:forMode:")
-    public native void removeFromRunLoopForMode(NSRunLoop runloop, String mode);
+    public native void removeFromRunLoopForMode(@NotNull NSRunLoop runloop, @NotNull String mode);
 
     /**
      * Defines how many display frames must pass between each time the

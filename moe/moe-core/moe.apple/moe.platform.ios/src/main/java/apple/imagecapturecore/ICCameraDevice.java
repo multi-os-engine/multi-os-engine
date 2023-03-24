@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * ---------------------------------------------------------------------------------------------------------------
@@ -68,7 +70,7 @@ public class ICCameraDevice extends ICDevice {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] batteryLevel
@@ -91,18 +93,21 @@ public class ICCameraDevice extends ICDevice {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,6 +132,7 @@ public class ICCameraDevice extends ICDevice {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("contents")
     public native NSArray<? extends ICCameraItem> contents();
@@ -149,9 +155,10 @@ public class ICCameraDevice extends ICDevice {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("filesOfType:")
-    public native NSArray<String> filesOfType(String fileUTType);
+    public native NSArray<String> filesOfType(@NotNull String fileUTType);
 
     @Generated
     @Selector("hash")
@@ -223,9 +230,10 @@ public class ICCameraDevice extends ICDevice {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] mediaFiles
@@ -235,6 +243,7 @@ public class ICCameraDevice extends ICDevice {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("mediaFiles")
     public native NSArray<? extends ICCameraItem> mediaFiles();
@@ -253,6 +262,7 @@ public class ICCameraDevice extends ICDevice {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("ptpEventHandler")
     @ObjCBlock(name = "call_ptpEventHandler_ret")
@@ -262,7 +272,7 @@ public class ICCameraDevice extends ICDevice {
     @Generated
     public interface Block_ptpEventHandler_ret {
         @Generated
-        void call_ptpEventHandler_ret(NSData arg0);
+        void call_ptpEventHandler_ret(@NotNull NSData arg0);
     }
 
     /**
@@ -274,7 +284,7 @@ public class ICCameraDevice extends ICDevice {
      */
     @Generated
     @Selector("requestDeleteFiles:")
-    public native void requestDeleteFiles(NSArray<? extends ICCameraItem> files);
+    public native void requestDeleteFiles(@NotNull NSArray<? extends ICCameraItem> files);
 
     /**
      * requestDeleteFiles:deleteFailed:completion
@@ -297,17 +307,19 @@ public class ICCameraDevice extends ICDevice {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("requestDeleteFiles:deleteFailed:completion:")
-    public native NSProgress requestDeleteFilesDeleteFailedCompletion(NSArray<? extends ICCameraItem> files,
-            @ObjCBlock(name = "call_requestDeleteFilesDeleteFailedCompletion_1") Block_requestDeleteFilesDeleteFailedCompletion_1 deleteFailed,
-            @ObjCBlock(name = "call_requestDeleteFilesDeleteFailedCompletion_2") Block_requestDeleteFilesDeleteFailedCompletion_2 completion);
+    public native NSProgress requestDeleteFilesDeleteFailedCompletion(@NotNull NSArray<? extends ICCameraItem> files,
+            @NotNull @ObjCBlock(name = "call_requestDeleteFilesDeleteFailedCompletion_1") Block_requestDeleteFilesDeleteFailedCompletion_1 deleteFailed,
+            @NotNull @ObjCBlock(name = "call_requestDeleteFilesDeleteFailedCompletion_2") Block_requestDeleteFilesDeleteFailedCompletion_2 completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestDeleteFilesDeleteFailedCompletion_1 {
         @Generated
-        void call_requestDeleteFilesDeleteFailedCompletion_1(NSDictionary<String, ? extends ICCameraItem> arg0);
+        void call_requestDeleteFilesDeleteFailedCompletion_1(
+                @NotNull NSDictionary<String, ? extends ICCameraItem> arg0);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -315,7 +327,8 @@ public class ICCameraDevice extends ICDevice {
     public interface Block_requestDeleteFilesDeleteFailedCompletion_2 {
         @Generated
         void call_requestDeleteFilesDeleteFailedCompletion_2(
-                NSDictionary<String, ? extends NSArray<? extends ICCameraItem>> result, NSError error);
+                @NotNull NSDictionary<String, ? extends NSArray<? extends ICCameraItem>> result,
+                @Nullable NSError error);
     }
 
     /**
@@ -333,10 +346,10 @@ public class ICCameraDevice extends ICDevice {
      */
     @Generated
     @Selector("requestDownloadFile:options:downloadDelegate:didDownloadSelector:contextInfo:")
-    public native void requestDownloadFileOptionsDownloadDelegateDidDownloadSelectorContextInfo(ICCameraFile file,
-            NSDictionary<String, ?> options,
-            @Mapped(ObjCObjectMapper.class) ICCameraDeviceDownloadDelegate downloadDelegate, SEL selector,
-            VoidPtr contextInfo);
+    public native void requestDownloadFileOptionsDownloadDelegateDidDownloadSelectorContextInfo(
+            @NotNull ICCameraFile file, @NotNull NSDictionary<String, ?> options,
+            @NotNull @Mapped(ObjCObjectMapper.class) ICCameraDeviceDownloadDelegate downloadDelegate,
+            @NotNull SEL selector, @Nullable VoidPtr contextInfo);
 
     /**
      * requestSendPTPCommand:outData:completion
@@ -349,14 +362,15 @@ public class ICCameraDevice extends ICDevice {
      */
     @Generated
     @Selector("requestSendPTPCommand:outData:completion:")
-    public native void requestSendPTPCommandOutDataCompletion(NSData ptpCommand, NSData ptpData,
-            @ObjCBlock(name = "call_requestSendPTPCommandOutDataCompletion") Block_requestSendPTPCommandOutDataCompletion completion);
+    public native void requestSendPTPCommandOutDataCompletion(@NotNull NSData ptpCommand, @Nullable NSData ptpData,
+            @NotNull @ObjCBlock(name = "call_requestSendPTPCommandOutDataCompletion") Block_requestSendPTPCommandOutDataCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestSendPTPCommandOutDataCompletion {
         @Generated
-        void call_requestSendPTPCommandOutDataCompletion(NSData responseData, NSData ptpResponseData, NSError error);
+        void call_requestSendPTPCommandOutDataCompletion(@NotNull NSData responseData, @NotNull NSData ptpResponseData,
+                @Nullable NSError error);
     }
 
     @Generated
@@ -378,13 +392,14 @@ public class ICCameraDevice extends ICDevice {
      */
     @Generated
     @Selector("setPtpEventHandler:")
-    public native void setPtpEventHandler(@ObjCBlock(name = "call_setPtpEventHandler") Block_setPtpEventHandler value);
+    public native void setPtpEventHandler(
+            @NotNull @ObjCBlock(name = "call_setPtpEventHandler") Block_setPtpEventHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setPtpEventHandler {
         @Generated
-        void call_setPtpEventHandler(NSData arg0);
+        void call_setPtpEventHandler(@NotNull NSData arg0);
     }
 
     @Generated
@@ -482,8 +497,9 @@ public class ICCameraDevice extends ICDevice {
     @Generated
     @Selector("requestReadDataFromFile:atOffset:length:readDelegate:didReadDataSelector:contextInfo:")
     public native void requestReadDataFromFileAtOffsetLengthReadDelegateDidReadDataSelectorContextInfo(
-            ICCameraFile file, long offset, long length, @Mapped(ObjCObjectMapper.class) Object readDelegate,
-            SEL selector, VoidPtr contextInfo);
+            @NotNull ICCameraFile file, long offset, long length,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object readDelegate, @NotNull SEL selector,
+            @Nullable VoidPtr contextInfo);
 
     /**
      * requestSendPTPCommand:outData:sendCommandDelegate:sendCommandDelegate:contextInfo:
@@ -501,6 +517,8 @@ public class ICCameraDevice extends ICDevice {
      */
     @Generated
     @Selector("requestSendPTPCommand:outData:sendCommandDelegate:didSendCommandSelector:contextInfo:")
-    public native void requestSendPTPCommandOutDataSendCommandDelegateDidSendCommandSelectorContextInfo(NSData command,
-            NSData data, @Mapped(ObjCObjectMapper.class) Object sendCommandDelegate, SEL selector, VoidPtr contextInfo);
+    public native void requestSendPTPCommandOutDataSendCommandDelegateDidSendCommandSelectorContextInfo(
+            @NotNull NSData command, @Nullable NSData data,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object sendCommandDelegate, @NotNull SEL selector,
+            @Nullable VoidPtr contextInfo);
 }

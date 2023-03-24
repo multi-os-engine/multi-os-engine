@@ -51,6 +51,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A SpriteKit Node used to stroke or fill a shape. CGPaths are used to supply the path.
@@ -89,29 +91,32 @@ public class SKShapeNode extends SKNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -143,9 +148,10 @@ public class SKShapeNode extends SKNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,21 +164,25 @@ public class SKShapeNode extends SKNode {
 
     @Generated
     @Selector("nodeWithFileNamed:")
-    public static native SKShapeNode nodeWithFileNamed(String filename);
+    public static native SKShapeNode nodeWithFileNamed(@NotNull String filename);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodeBounds:")
-    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
+    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodePhysicsBodies:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodePhysicsBodies(
-            NSArray<? extends SKNode> nodes);
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromSpriteTextures:accuracy:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromSpriteTexturesAccuracy(
-            NSArray<? extends SKNode> sprites, float accuracy);
+            @NotNull NSArray<? extends SKNode> sprites, float accuracy);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -220,14 +230,14 @@ public class SKShapeNode extends SKNode {
      */
     @Generated
     @Selector("shapeNodeWithPath:")
-    public static native SKShapeNode shapeNodeWithPath(CGPathRef path);
+    public static native SKShapeNode shapeNodeWithPath(@NotNull CGPathRef path);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @Selector("shapeNodeWithPath:centered:")
-    public static native SKShapeNode shapeNodeWithPathCentered(CGPathRef path, boolean centered);
+    public static native SKShapeNode shapeNodeWithPathCentered(@NotNull CGPathRef path, boolean centered);
 
     /**
      * Create a Shape Node representing an a series of Points interpreted as line segments
@@ -236,8 +246,8 @@ public class SKShapeNode extends SKNode {
      */
     @Generated
     @Selector("shapeNodeWithPoints:count:")
-    public static native SKShapeNode shapeNodeWithPointsCount(@ReferenceInfo(type = CGPoint.class) Ptr<CGPoint> points,
-            @NUInt long numPoints);
+    public static native SKShapeNode shapeNodeWithPointsCount(
+            @NotNull @ReferenceInfo(type = CGPoint.class) Ptr<CGPoint> points, @NUInt long numPoints);
 
     /**
      * Create a Shape Node representing a Rect.
@@ -284,7 +294,7 @@ public class SKShapeNode extends SKNode {
     @Generated
     @Selector("shapeNodeWithSplinePoints:count:")
     public static native SKShapeNode shapeNodeWithSplinePointsCount(
-            @ReferenceInfo(type = CGPoint.class) Ptr<CGPoint> points, @NUInt long numPoints);
+            @NotNull @ReferenceInfo(type = CGPoint.class) Ptr<CGPoint> points, @NUInt long numPoints);
 
     @Generated
     @Selector("superclass")
@@ -301,6 +311,7 @@ public class SKShapeNode extends SKNode {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("attributeValues")
     public native NSDictionary<String, ? extends SKAttributeValue> attributeValues();
@@ -318,6 +329,7 @@ public class SKShapeNode extends SKNode {
     /**
      * The color to fill the path with. Defaults to [SKColor clearColor] (no fill).
      */
+    @NotNull
     @Generated
     @Selector("fillColor")
     public native UIColor fillColor();
@@ -327,6 +339,7 @@ public class SKShapeNode extends SKNode {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("fillShader")
     public native SKShader fillShader();
@@ -336,6 +349,7 @@ public class SKShapeNode extends SKNode {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("fillTexture")
     public native SKTexture fillTexture();
@@ -354,7 +368,7 @@ public class SKShapeNode extends SKNode {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKShapeNode initWithCoder(NSCoder aDecoder);
+    public native SKShapeNode initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * If set to YES, the path stroke edges and caps is smoothed (antialiased) when drawn.
@@ -411,6 +425,7 @@ public class SKShapeNode extends SKNode {
     /**
      * The CGPath to be drawn (in the Node's coordinate space)
      */
+    @Nullable
     @Generated
     @Selector("path")
     public native CGPathRef path();
@@ -423,7 +438,7 @@ public class SKShapeNode extends SKNode {
      */
     @Generated
     @Selector("setAttributeValues:")
-    public native void setAttributeValues(NSDictionary<String, ? extends SKAttributeValue> value);
+    public native void setAttributeValues(@NotNull NSDictionary<String, ? extends SKAttributeValue> value);
 
     /**
      * Sets the blend mode to use when composing the shape with the final framebuffer.
@@ -439,7 +454,7 @@ public class SKShapeNode extends SKNode {
      */
     @Generated
     @Selector("setFillColor:")
-    public native void setFillColor(UIColor value);
+    public native void setFillColor(@NotNull UIColor value);
 
     /**
      * An optional SKShader used for the filling the Shape
@@ -448,7 +463,7 @@ public class SKShapeNode extends SKNode {
      */
     @Generated
     @Selector("setFillShader:")
-    public native void setFillShader(SKShader value);
+    public native void setFillShader(@Nullable SKShader value);
 
     /**
      * An optional Texture used for the filling the Shape
@@ -457,7 +472,7 @@ public class SKShapeNode extends SKNode {
      */
     @Generated
     @Selector("setFillTexture:")
-    public native void setFillTexture(SKTexture value);
+    public native void setFillTexture(@Nullable SKTexture value);
 
     /**
      * Add a glow to the path stroke of the specified width. Defaults to 0.0 (no glow)
@@ -499,14 +514,14 @@ public class SKShapeNode extends SKNode {
      */
     @Generated
     @Selector("setPath:")
-    public native void setPath(CGPathRef value);
+    public native void setPath(@Nullable CGPathRef value);
 
     /**
      * The color to draw the path with. (for no stroke use [SKColor clearColor]). Defaults to [SKColor whiteColor].
      */
     @Generated
     @Selector("setStrokeColor:")
-    public native void setStrokeColor(UIColor value);
+    public native void setStrokeColor(@NotNull UIColor value);
 
     /**
      * An optional SKShader used for the Shape's Stroke.
@@ -515,7 +530,7 @@ public class SKShapeNode extends SKNode {
      */
     @Generated
     @Selector("setStrokeShader:")
-    public native void setStrokeShader(SKShader value);
+    public native void setStrokeShader(@Nullable SKShader value);
 
     /**
      * An optional Texture used for the Shape's stroke.
@@ -524,18 +539,19 @@ public class SKShapeNode extends SKNode {
      */
     @Generated
     @Selector("setStrokeTexture:")
-    public native void setStrokeTexture(SKTexture value);
+    public native void setStrokeTexture(@Nullable SKTexture value);
 
     /**
      * API-Since: 10.0
      */
     @Generated
     @Selector("setValue:forAttributeNamed:")
-    public native void setValueForAttributeNamed(SKAttributeValue value, String key);
+    public native void setValueForAttributeNamed(@NotNull SKAttributeValue value, @NotNull String key);
 
     /**
      * The color to draw the path with. (for no stroke use [SKColor clearColor]). Defaults to [SKColor whiteColor].
      */
+    @NotNull
     @Generated
     @Selector("strokeColor")
     public native UIColor strokeColor();
@@ -545,6 +561,7 @@ public class SKShapeNode extends SKNode {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("strokeShader")
     public native SKShader strokeShader();
@@ -554,6 +571,7 @@ public class SKShapeNode extends SKNode {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("strokeTexture")
     public native SKTexture strokeTexture();
@@ -561,14 +579,15 @@ public class SKShapeNode extends SKNode {
     /**
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("valueForAttributeNamed:")
-    public native SKAttributeValue valueForAttributeNamed(String key);
+    public native SKAttributeValue valueForAttributeNamed(@NotNull String key);
 
     @Generated
     @Selector("nodeWithFileNamed:securelyWithClasses:andError:")
-    public static native SKShapeNode nodeWithFileNamedSecurelyWithClassesAndError(String filename,
-            NSSet<? extends Class> classes, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native SKShapeNode nodeWithFileNamedSecurelyWithClassesAndError(@NotNull String filename,
+            @NotNull NSSet<? extends Class> classes, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("supportsSecureCoding")

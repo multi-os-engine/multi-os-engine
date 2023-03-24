@@ -55,6 +55,8 @@ import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
 import apple.corefoundation.struct.CGVector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -86,22 +88,25 @@ public class NSCoder extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -136,9 +141,10 @@ public class NSCoder extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -171,6 +177,7 @@ public class NSCoder extends NSObject {
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("allowedClasses")
     public native NSSet<? extends Class> allowedClasses();
@@ -181,52 +188,54 @@ public class NSCoder extends NSObject {
 
     @Generated
     @Selector("containsValueForKey:")
-    public native boolean containsValueForKey(String key);
+    public native boolean containsValueForKey(@NotNull String key);
 
     @Generated
     @Selector("decodeArrayOfObjCType:count:at:")
-    public native void decodeArrayOfObjCTypeCountAt(@Mapped(CStringMapper.class) String itemType, @NUInt long count,
-            VoidPtr array);
+    public native void decodeArrayOfObjCTypeCountAt(@NotNull @Mapped(CStringMapper.class) String itemType,
+            @NUInt long count, @NotNull VoidPtr array);
 
     @Generated
     @Selector("decodeBoolForKey:")
-    public native boolean decodeBoolForKey(String key);
+    public native boolean decodeBoolForKey(@NotNull String key);
 
     /**
      * returned bytes immutable!
      */
+    @Nullable
     @Generated
     @Selector("decodeBytesForKey:returnedLength:")
-    public native ConstBytePtr decodeBytesForKeyReturnedLength(String key, NUIntPtr lengthp);
+    public native ConstBytePtr decodeBytesForKeyReturnedLength(@NotNull String key, @Nullable NUIntPtr lengthp);
 
+    @Nullable
     @Generated
     @Selector("decodeBytesWithReturnedLength:")
-    public native VoidPtr decodeBytesWithReturnedLength(NUIntPtr lengthp);
+    public native VoidPtr decodeBytesWithReturnedLength(@NotNull NUIntPtr lengthp);
 
     @Generated
     @Selector("decodeCGAffineTransformForKey:")
     @ByValue
-    public native CGAffineTransform decodeCGAffineTransformForKey(String key);
+    public native CGAffineTransform decodeCGAffineTransformForKey(@NotNull String key);
 
     @Generated
     @Selector("decodeCGPointForKey:")
     @ByValue
-    public native CGPoint decodeCGPointForKey(String key);
+    public native CGPoint decodeCGPointForKey(@NotNull String key);
 
     @Generated
     @Selector("decodeCGRectForKey:")
     @ByValue
-    public native CGRect decodeCGRectForKey(String key);
+    public native CGRect decodeCGRectForKey(@NotNull String key);
 
     @Generated
     @Selector("decodeCGSizeForKey:")
     @ByValue
-    public native CGSize decodeCGSizeForKey(String key);
+    public native CGSize decodeCGSizeForKey(@NotNull String key);
 
     @Generated
     @Selector("decodeCGVectorForKey:")
     @ByValue
-    public native CGVector decodeCGVectorForKey(String key);
+    public native CGVector decodeCGVectorForKey(@NotNull String key);
 
     /**
      * API-Since: 4.0
@@ -234,7 +243,7 @@ public class NSCoder extends NSObject {
     @Generated
     @Selector("decodeCMTimeForKey:")
     @ByValue
-    public native CMTime decodeCMTimeForKey(String key);
+    public native CMTime decodeCMTimeForKey(@NotNull String key);
 
     /**
      * API-Since: 4.0
@@ -242,7 +251,7 @@ public class NSCoder extends NSObject {
     @Generated
     @Selector("decodeCMTimeMappingForKey:")
     @ByValue
-    public native CMTimeMapping decodeCMTimeMappingForKey(String key);
+    public native CMTimeMapping decodeCMTimeMappingForKey(@NotNull String key);
 
     /**
      * API-Since: 4.0
@@ -250,31 +259,32 @@ public class NSCoder extends NSObject {
     @Generated
     @Selector("decodeCMTimeRangeForKey:")
     @ByValue
-    public native CMTimeRange decodeCMTimeRangeForKey(String key);
+    public native CMTimeRange decodeCMTimeRangeForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("decodeDataObject")
     public native NSData decodeDataObject();
 
     @Generated
     @Selector("decodeDoubleForKey:")
-    public native double decodeDoubleForKey(String key);
+    public native double decodeDoubleForKey(@NotNull String key);
 
     @Generated
     @Selector("decodeFloatForKey:")
-    public native float decodeFloatForKey(String key);
+    public native float decodeFloatForKey(@NotNull String key);
 
     @Generated
     @Selector("decodeInt32ForKey:")
-    public native int decodeInt32ForKey(String key);
+    public native int decodeInt32ForKey(@NotNull String key);
 
     @Generated
     @Selector("decodeInt64ForKey:")
-    public native long decodeInt64ForKey(String key);
+    public native long decodeInt64ForKey(@NotNull String key);
 
     @Generated
     @Selector("decodeIntForKey:")
-    public native int decodeIntForKey(String key);
+    public native int decodeIntForKey(@NotNull String key);
 
     /**
      * API-Since: 2.0
@@ -282,17 +292,19 @@ public class NSCoder extends NSObject {
     @Generated
     @Selector("decodeIntegerForKey:")
     @NInt
-    public native long decodeIntegerForKey(String key);
+    public native long decodeIntegerForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("decodeObject")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object decodeObject();
 
+    @Nullable
     @Generated
     @Selector("decodeObjectForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object decodeObjectForKey(String key);
+    public native Object decodeObjectForKey(@NotNull String key);
 
     /**
      * Specify what the expected class of the allocated object is. If the coder responds YES to -requiresSecureCoding,
@@ -303,10 +315,11 @@ public class NSCoder extends NSObject {
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("decodeObjectOfClass:forKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object decodeObjectOfClassForKey(Class aClass, String key);
+    public native Object decodeObjectOfClassForKey(@NotNull Class aClass, @NotNull String key);
 
     /**
      * The class of the object may be any class in the provided NSSet, or a subclass of any class in the set. Otherwise,
@@ -314,60 +327,67 @@ public class NSCoder extends NSObject {
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("decodeObjectOfClasses:forKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object decodeObjectOfClassesForKey(NSSet<? extends Class> classes, String key);
+    public native Object decodeObjectOfClassesForKey(@Nullable NSSet<? extends Class> classes, @NotNull String key);
 
     /**
      * Calls -decodeObjectOfClasses:forKey: with a set allowing only property list types.
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("decodePropertyListForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object decodePropertyListForKey(String key);
+    public native Object decodePropertyListForKey(@NotNull String key);
 
     /**
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("decodeTopLevelObjectAndReturnError:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object decodeTopLevelObjectAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native Object decodeTopLevelObjectAndReturnError(
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("decodeTopLevelObjectForKey:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object decodeTopLevelObjectForKeyError(String key,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native Object decodeTopLevelObjectForKeyError(@NotNull String key,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("decodeTopLevelObjectOfClass:forKey:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object decodeTopLevelObjectOfClassForKeyError(Class aClass, String key,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native Object decodeTopLevelObjectOfClassForKeyError(@NotNull Class aClass, @NotNull String key,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("decodeTopLevelObjectOfClasses:forKey:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object decodeTopLevelObjectOfClassesForKeyError(NSSet<? extends Class> classes, String key,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native Object decodeTopLevelObjectOfClassesForKeyError(@Nullable NSSet<? extends Class> classes,
+            @NotNull String key, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("decodeUIEdgeInsetsForKey:")
     @ByValue
-    public native UIEdgeInsets decodeUIEdgeInsetsForKey(String key);
+    public native UIEdgeInsets decodeUIEdgeInsetsForKey(@NotNull String key);
 
     /**
      * API-Since: 5.0
@@ -375,7 +395,7 @@ public class NSCoder extends NSObject {
     @Generated
     @Selector("decodeUIOffsetForKey:")
     @ByValue
-    public native UIOffset decodeUIOffsetForKey(String key);
+    public native UIOffset decodeUIOffsetForKey(@NotNull String key);
 
     /**
      * This method is unsafe because it could potentially cause buffer overruns. You should use
@@ -387,12 +407,13 @@ public class NSCoder extends NSObject {
     @Deprecated
     @Generated
     @Selector("decodeValueOfObjCType:at:")
-    public native void decodeValueOfObjCTypeAt(@Mapped(CStringMapper.class) String type, VoidPtr data);
+    public native void decodeValueOfObjCTypeAt(@NotNull @Mapped(CStringMapper.class) String type,
+            @NotNull VoidPtr data);
 
     @Generated
     @Variadic()
     @Selector("decodeValuesOfObjCTypes:")
-    public native void decodeValuesOfObjCTypes(@Mapped(CStringMapper.class) String types, Object... varargs);
+    public native void decodeValuesOfObjCTypes(@NotNull @Mapped(CStringMapper.class) String types, Object... varargs);
 
     /**
      * Defines the behavior this NSCoder should take on decode failure (i.e. corrupt archive, invalid data, etc.).
@@ -409,140 +430,142 @@ public class NSCoder extends NSObject {
 
     @Generated
     @Selector("encodeArrayOfObjCType:count:at:")
-    public native void encodeArrayOfObjCTypeCountAt(@Mapped(CStringMapper.class) String type, @NUInt long count,
-            ConstVoidPtr array);
+    public native void encodeArrayOfObjCTypeCountAt(@NotNull @Mapped(CStringMapper.class) String type,
+            @NUInt long count, @NotNull ConstVoidPtr array);
 
     @Generated
     @Selector("encodeBool:forKey:")
-    public native void encodeBoolForKey(boolean value, String key);
+    public native void encodeBoolForKey(boolean value, @NotNull String key);
 
     @Generated
     @Selector("encodeBycopyObject:")
-    public native void encodeBycopyObject(@Mapped(ObjCObjectMapper.class) Object anObject);
+    public native void encodeBycopyObject(@Nullable @Mapped(ObjCObjectMapper.class) Object anObject);
 
     @Generated
     @Selector("encodeByrefObject:")
-    public native void encodeByrefObject(@Mapped(ObjCObjectMapper.class) Object anObject);
+    public native void encodeByrefObject(@Nullable @Mapped(ObjCObjectMapper.class) Object anObject);
 
     @Generated
     @Selector("encodeBytes:length:")
-    public native void encodeBytesLength(ConstVoidPtr byteaddr, @NUInt long length);
+    public native void encodeBytesLength(@Nullable ConstVoidPtr byteaddr, @NUInt long length);
 
     @Generated
     @Selector("encodeBytes:length:forKey:")
-    public native void encodeBytesLengthForKey(ConstBytePtr bytes, @NUInt long length, String key);
+    public native void encodeBytesLengthForKey(@Nullable ConstBytePtr bytes, @NUInt long length, @NotNull String key);
 
     @Generated
     @Selector("encodeCGAffineTransform:forKey:")
-    public native void encodeCGAffineTransformForKey(@ByValue CGAffineTransform transform, String key);
+    public native void encodeCGAffineTransformForKey(@ByValue CGAffineTransform transform, @NotNull String key);
 
     @Generated
     @Selector("encodeCGPoint:forKey:")
-    public native void encodeCGPointForKey(@ByValue CGPoint point, String key);
+    public native void encodeCGPointForKey(@ByValue CGPoint point, @NotNull String key);
 
     @Generated
     @Selector("encodeCGRect:forKey:")
-    public native void encodeCGRectForKey(@ByValue CGRect rect, String key);
+    public native void encodeCGRectForKey(@ByValue CGRect rect, @NotNull String key);
 
     @Generated
     @Selector("encodeCGSize:forKey:")
-    public native void encodeCGSizeForKey(@ByValue CGSize size, String key);
+    public native void encodeCGSizeForKey(@ByValue CGSize size, @NotNull String key);
 
     @Generated
     @Selector("encodeCGVector:forKey:")
-    public native void encodeCGVectorForKey(@ByValue CGVector vector, String key);
+    public native void encodeCGVectorForKey(@ByValue CGVector vector, @NotNull String key);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @Selector("encodeCMTime:forKey:")
-    public native void encodeCMTimeForKey(@ByValue CMTime time, String key);
+    public native void encodeCMTimeForKey(@ByValue CMTime time, @NotNull String key);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @Selector("encodeCMTimeMapping:forKey:")
-    public native void encodeCMTimeMappingForKey(@ByValue CMTimeMapping timeMapping, String key);
+    public native void encodeCMTimeMappingForKey(@ByValue CMTimeMapping timeMapping, @NotNull String key);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @Selector("encodeCMTimeRange:forKey:")
-    public native void encodeCMTimeRangeForKey(@ByValue CMTimeRange timeRange, String key);
+    public native void encodeCMTimeRangeForKey(@ByValue CMTimeRange timeRange, @NotNull String key);
 
     @Generated
     @Selector("encodeConditionalObject:")
-    public native void encodeConditionalObject(@Mapped(ObjCObjectMapper.class) Object object);
+    public native void encodeConditionalObject(@Nullable @Mapped(ObjCObjectMapper.class) Object object);
 
     @Generated
     @Selector("encodeConditionalObject:forKey:")
-    public native void encodeConditionalObjectForKey(@Mapped(ObjCObjectMapper.class) Object object, String key);
+    public native void encodeConditionalObjectForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object object,
+            @NotNull String key);
 
     @Generated
     @Selector("encodeDataObject:")
-    public native void encodeDataObject(NSData data);
+    public native void encodeDataObject(@NotNull NSData data);
 
     @Generated
     @Selector("encodeDouble:forKey:")
-    public native void encodeDoubleForKey(double value, String key);
+    public native void encodeDoubleForKey(double value, @NotNull String key);
 
     @Generated
     @Selector("encodeFloat:forKey:")
-    public native void encodeFloatForKey(float value, String key);
+    public native void encodeFloatForKey(float value, @NotNull String key);
 
     @Generated
     @Selector("encodeInt32:forKey:")
-    public native void encodeInt32ForKey(int value, String key);
+    public native void encodeInt32ForKey(int value, @NotNull String key);
 
     @Generated
     @Selector("encodeInt64:forKey:")
-    public native void encodeInt64ForKey(long value, String key);
+    public native void encodeInt64ForKey(long value, @NotNull String key);
 
     @Generated
     @Selector("encodeInt:forKey:")
-    public native void encodeIntForKey(int value, String key);
+    public native void encodeIntForKey(int value, @NotNull String key);
 
     /**
      * API-Since: 2.0
      */
     @Generated
     @Selector("encodeInteger:forKey:")
-    public native void encodeIntegerForKey(@NInt long value, String key);
+    public native void encodeIntegerForKey(@NInt long value, @NotNull String key);
 
     @Generated
     @Selector("encodeObject:")
-    public native void encodeObject(@Mapped(ObjCObjectMapper.class) Object object);
+    public native void encodeObject(@Nullable @Mapped(ObjCObjectMapper.class) Object object);
 
     @Generated
     @Selector("encodeObject:forKey:")
-    public native void encodeObjectForKey(@Mapped(ObjCObjectMapper.class) Object object, String key);
+    public native void encodeObjectForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object object, @NotNull String key);
 
     @Generated
     @Selector("encodeRootObject:")
-    public native void encodeRootObject(@Mapped(ObjCObjectMapper.class) Object rootObject);
+    public native void encodeRootObject(@NotNull @Mapped(ObjCObjectMapper.class) Object rootObject);
 
     @Generated
     @Selector("encodeUIEdgeInsets:forKey:")
-    public native void encodeUIEdgeInsetsForKey(@ByValue UIEdgeInsets insets, String key);
+    public native void encodeUIEdgeInsetsForKey(@ByValue UIEdgeInsets insets, @NotNull String key);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @Selector("encodeUIOffset:forKey:")
-    public native void encodeUIOffsetForKey(@ByValue UIOffset offset, String key);
+    public native void encodeUIOffsetForKey(@ByValue UIOffset offset, @NotNull String key);
 
     @Generated
     @Selector("encodeValueOfObjCType:at:")
-    public native void encodeValueOfObjCTypeAt(@Mapped(CStringMapper.class) String type, ConstVoidPtr addr);
+    public native void encodeValueOfObjCTypeAt(@NotNull @Mapped(CStringMapper.class) String type,
+            @NotNull ConstVoidPtr addr);
 
     @Generated
     @Variadic()
     @Selector("encodeValuesOfObjCTypes:")
-    public native void encodeValuesOfObjCTypes(@Mapped(CStringMapper.class) String types, Object... varargs);
+    public native void encodeValuesOfObjCTypes(@NotNull @Mapped(CStringMapper.class) String types, Object... varargs);
 
     /**
      * The current error (if there is one) for the current TopLevel decode.
@@ -559,6 +582,7 @@ public class NSCoder extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("error")
     public native NSError error();
@@ -604,7 +628,7 @@ public class NSCoder extends NSObject {
      */
     @Generated
     @Selector("failWithError:")
-    public native void failWithError(NSError error);
+    public native void failWithError(@NotNull NSError error);
 
     @Generated
     @Selector("init")
@@ -627,7 +651,7 @@ public class NSCoder extends NSObject {
     @Generated
     @Selector("versionForClassName:")
     @NInt
-    public native long versionForClassName(String className);
+    public native long versionForClassName(@NotNull String className);
 
     /**
      * API-Since: 11.0
@@ -635,7 +659,7 @@ public class NSCoder extends NSObject {
     @Generated
     @Selector("decodeDirectionalEdgeInsetsForKey:")
     @ByValue
-    public native NSDirectionalEdgeInsets decodeDirectionalEdgeInsetsForKey(String key);
+    public native NSDirectionalEdgeInsets decodeDirectionalEdgeInsetsForKey(@NotNull String key);
 
     /**
      * API-Since: 11.0
@@ -643,15 +667,15 @@ public class NSCoder extends NSObject {
     @Generated
     @Selector("decodeValueOfObjCType:at:size:")
     public native void decodeValueOfObjCTypeAtSize(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String type,
-            VoidPtr data, @NUInt long size);
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String type,
+            @NotNull VoidPtr data, @NUInt long size);
 
     /**
      * API-Since: 11.0
      */
     @Generated
     @Selector("encodeDirectionalEdgeInsets:forKey:")
-    public native void encodeDirectionalEdgeInsetsForKey(@ByValue NSDirectionalEdgeInsets insets, String key);
+    public native void encodeDirectionalEdgeInsetsForKey(@ByValue NSDirectionalEdgeInsets insets, @NotNull String key);
 
     /**
      * Decodes the \c NSArray object for the given \c key, which should be an \c NSArray<cls>, containing the given
@@ -665,9 +689,10 @@ public class NSCoder extends NSObject {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("decodeArrayOfObjectsOfClass:forKey:")
-    public native NSArray<?> decodeArrayOfObjectsOfClassForKey(Class cls, String key);
+    public native NSArray<?> decodeArrayOfObjectsOfClassForKey(@NotNull Class cls, @NotNull String key);
 
     /**
      * Decodes the \c NSArray object for the given \c key, which should be an \c NSArray, containing the given
@@ -681,9 +706,11 @@ public class NSCoder extends NSObject {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("decodeArrayOfObjectsOfClasses:forKey:")
-    public native NSArray<?> decodeArrayOfObjectsOfClassesForKey(NSSet<? extends Class> classes, String key);
+    public native NSArray<?> decodeArrayOfObjectsOfClassesForKey(@NotNull NSSet<? extends Class> classes,
+            @NotNull String key);
 
     /**
      * Decodes the \c NSDictionary object for the given \c key, which should be an \c NSDictionary<keyCls,objectCls> ,
@@ -698,10 +725,11 @@ public class NSCoder extends NSObject {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("decodeDictionaryWithKeysOfClass:objectsOfClass:forKey:")
-    public native NSDictionary<?, ?> decodeDictionaryWithKeysOfClassObjectsOfClassForKey(Class keyCls, Class objectCls,
-            String key);
+    public native NSDictionary<?, ?> decodeDictionaryWithKeysOfClassObjectsOfClassForKey(@NotNull Class keyCls,
+            @NotNull Class objectCls, @NotNull String key);
 
     /**
      * Decodes the \c NSDictionary object for the given \c key, which should be an \c NSDictionary, with keys of the
@@ -716,8 +744,10 @@ public class NSCoder extends NSObject {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("decodeDictionaryWithKeysOfClasses:objectsOfClasses:forKey:")
     public native NSDictionary<?, ?> decodeDictionaryWithKeysOfClassesObjectsOfClassesForKey(
-            NSSet<? extends Class> keyClasses, NSSet<? extends Class> objectClasses, String key);
+            @NotNull NSSet<? extends Class> keyClasses, @NotNull NSSet<? extends Class> objectClasses,
+            @NotNull String key);
 }

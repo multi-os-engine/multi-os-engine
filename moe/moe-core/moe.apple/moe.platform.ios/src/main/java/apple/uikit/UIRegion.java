@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.0
@@ -79,22 +81,25 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -115,6 +120,7 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
     /**
      * A shared infinite region
      */
+    @NotNull
     @Generated
     @Selector("infiniteRegion")
     public static native UIRegion infiniteRegion();
@@ -136,9 +142,10 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -173,15 +180,16 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
     @Selector("containsPoint:")
     public native boolean containsPoint(@ByValue CGPoint point);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -189,7 +197,7 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIRegion initWithCoder(NSCoder coder);
+    public native UIRegion initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Create a circular region with radius
@@ -210,6 +218,7 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
      * The inverse of the infiniteRegion is an empty region.
      * Subclasses of UIRegion need to provide an implementation of inverseRegion.
      */
+    @NotNull
     @Generated
     @Selector("inverseRegion")
     public native UIRegion inverseRegion();
@@ -217,21 +226,24 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
     /**
      * Create a new region that is the original region minus the supplied region
      */
+    @NotNull
     @Generated
     @Selector("regionByDifferenceFromRegion:")
-    public native UIRegion regionByDifferenceFromRegion(UIRegion region);
+    public native UIRegion regionByDifferenceFromRegion(@NotNull UIRegion region);
 
     /**
      * Create a new region that is the region covered by the original region and the supplied region
      */
+    @NotNull
     @Generated
     @Selector("regionByIntersectionWithRegion:")
-    public native UIRegion regionByIntersectionWithRegion(UIRegion region);
+    public native UIRegion regionByIntersectionWithRegion(@NotNull UIRegion region);
 
     /**
      * Create a new region that is the original region plus the supplied region
      */
+    @NotNull
     @Generated
     @Selector("regionByUnionWithRegion:")
-    public native UIRegion regionByUnionWithRegion(UIRegion region);
+    public native UIRegion regionByUnionWithRegion(@NotNull UIRegion region);
 }

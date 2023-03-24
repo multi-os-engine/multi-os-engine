@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioInputNode
@@ -83,22 +85,25 @@ public class AVAudioInputNode extends AVAudioIONode implements AVAudioMixing {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -111,9 +116,10 @@ public class AVAudioInputNode extends AVAudioIONode implements AVAudioMixing {
     @Selector("description")
     public static native String description_static();
 
+    @Nullable
     @Generated
     @Selector("destinationForMixer:bus:")
-    public native AVAudioMixingDestination destinationForMixerBus(AVAudioNode mixer, @NUInt long bus);
+    public native AVAudioMixingDestination destinationForMixerBus(@NotNull AVAudioNode mixer, @NUInt long bus);
 
     @Generated
     @Selector("hash")
@@ -181,9 +187,10 @@ public class AVAudioInputNode extends AVAudioIONode implements AVAudioMixing {
     @Selector("isVoiceProcessingInputMuted")
     public native boolean isVoiceProcessingInputMuted();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -255,12 +262,13 @@ public class AVAudioInputNode extends AVAudioIONode implements AVAudioMixing {
      */
     @Generated
     @Selector("setManualRenderingInputPCMFormat:inputBlock:")
-    public native boolean setManualRenderingInputPCMFormatInputBlock(AVAudioFormat format,
-            @ObjCBlock(name = "call_setManualRenderingInputPCMFormatInputBlock") Block_setManualRenderingInputPCMFormatInputBlock block);
+    public native boolean setManualRenderingInputPCMFormatInputBlock(@NotNull AVAudioFormat format,
+            @NotNull @ObjCBlock(name = "call_setManualRenderingInputPCMFormatInputBlock") Block_setManualRenderingInputPCMFormatInputBlock block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setManualRenderingInputPCMFormatInputBlock {
+        @Nullable
         @Generated
         @UncertainReturn("Options: reference, array Fallback: reference")
         AudioBufferList call_setManualRenderingInputPCMFormatInputBlock(int inNumberOfFrames);

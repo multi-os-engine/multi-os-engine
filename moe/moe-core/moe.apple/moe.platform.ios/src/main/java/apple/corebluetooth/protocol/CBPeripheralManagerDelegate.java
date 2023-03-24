@@ -32,6 +32,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] CBPeripheralManagerDelegate
@@ -60,8 +62,8 @@ public interface CBPeripheralManagerDelegate {
     @Generated
     @IsOptional
     @Selector("peripheralManager:central:didSubscribeToCharacteristic:")
-    default void peripheralManagerCentralDidSubscribeToCharacteristic(CBPeripheralManager peripheral, CBCentral central,
-            CBCharacteristic characteristic) {
+    default void peripheralManagerCentralDidSubscribeToCharacteristic(@NotNull CBPeripheralManager peripheral,
+            @NotNull CBCentral central, @NotNull CBCharacteristic characteristic) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -77,8 +79,8 @@ public interface CBPeripheralManagerDelegate {
     @Generated
     @IsOptional
     @Selector("peripheralManager:central:didUnsubscribeFromCharacteristic:")
-    default void peripheralManagerCentralDidUnsubscribeFromCharacteristic(CBPeripheralManager peripheral,
-            CBCentral central, CBCharacteristic characteristic) {
+    default void peripheralManagerCentralDidUnsubscribeFromCharacteristic(@NotNull CBPeripheralManager peripheral,
+            @NotNull CBCentral central, @NotNull CBCharacteristic characteristic) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -95,7 +97,8 @@ public interface CBPeripheralManagerDelegate {
     @Generated
     @IsOptional
     @Selector("peripheralManager:didAddService:error:")
-    default void peripheralManagerDidAddServiceError(CBPeripheralManager peripheral, CBService service, NSError error) {
+    default void peripheralManagerDidAddServiceError(@NotNull CBPeripheralManager peripheral,
+            @NotNull CBService service, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -113,7 +116,8 @@ public interface CBPeripheralManagerDelegate {
     @Generated
     @IsOptional
     @Selector("peripheralManager:didReceiveReadRequest:")
-    default void peripheralManagerDidReceiveReadRequest(CBPeripheralManager peripheral, CBATTRequest request) {
+    default void peripheralManagerDidReceiveReadRequest(@NotNull CBPeripheralManager peripheral,
+            @NotNull CBATTRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -137,8 +141,8 @@ public interface CBPeripheralManagerDelegate {
     @Generated
     @IsOptional
     @Selector("peripheralManager:didReceiveWriteRequests:")
-    default void peripheralManagerDidReceiveWriteRequests(CBPeripheralManager peripheral,
-            NSArray<? extends CBATTRequest> requests) {
+    default void peripheralManagerDidReceiveWriteRequests(@NotNull CBPeripheralManager peripheral,
+            @NotNull NSArray<? extends CBATTRequest> requests) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -161,7 +165,8 @@ public interface CBPeripheralManagerDelegate {
     @Generated
     @IsOptional
     @Selector("peripheralManager:willRestoreState:")
-    default void peripheralManagerWillRestoreState(CBPeripheralManager peripheral, NSDictionary<String, ?> dict) {
+    default void peripheralManagerWillRestoreState(@NotNull CBPeripheralManager peripheral,
+            @NotNull NSDictionary<String, ?> dict) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -177,7 +182,8 @@ public interface CBPeripheralManagerDelegate {
     @Generated
     @IsOptional
     @Selector("peripheralManagerDidStartAdvertising:error:")
-    default void peripheralManagerDidStartAdvertisingError(CBPeripheralManager peripheral, NSError error) {
+    default void peripheralManagerDidStartAdvertisingError(@NotNull CBPeripheralManager peripheral,
+            @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -198,7 +204,7 @@ public interface CBPeripheralManagerDelegate {
      */
     @Generated
     @Selector("peripheralManagerDidUpdateState:")
-    void peripheralManagerDidUpdateState(CBPeripheralManager peripheral);
+    void peripheralManagerDidUpdateState(@NotNull CBPeripheralManager peripheral);
 
     /**
      * peripheralManagerIsReadyToUpdateSubscribers:
@@ -212,7 +218,7 @@ public interface CBPeripheralManagerDelegate {
     @Generated
     @IsOptional
     @Selector("peripheralManagerIsReadyToUpdateSubscribers:")
-    default void peripheralManagerIsReadyToUpdateSubscribers(CBPeripheralManager peripheral) {
+    default void peripheralManagerIsReadyToUpdateSubscribers(@NotNull CBPeripheralManager peripheral) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -229,8 +235,8 @@ public interface CBPeripheralManagerDelegate {
     @Generated
     @IsOptional
     @Selector("peripheralManager:didOpenL2CAPChannel:error:")
-    default void peripheralManagerDidOpenL2CAPChannelError(CBPeripheralManager peripheral, CBL2CAPChannel channel,
-            NSError error) {
+    default void peripheralManagerDidOpenL2CAPChannelError(@NotNull CBPeripheralManager peripheral,
+            @Nullable CBL2CAPChannel channel, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -248,7 +254,8 @@ public interface CBPeripheralManagerDelegate {
     @Generated
     @IsOptional
     @Selector("peripheralManager:didPublishL2CAPChannel:error:")
-    default void peripheralManagerDidPublishL2CAPChannelError(CBPeripheralManager peripheral, char PSM, NSError error) {
+    default void peripheralManagerDidPublishL2CAPChannelError(@NotNull CBPeripheralManager peripheral, char PSM,
+            @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -264,8 +271,8 @@ public interface CBPeripheralManagerDelegate {
     @Generated
     @IsOptional
     @Selector("peripheralManager:didUnpublishL2CAPChannel:error:")
-    default void peripheralManagerDidUnpublishL2CAPChannelError(CBPeripheralManager peripheral, char PSM,
-            NSError error) {
+    default void peripheralManagerDidUnpublishL2CAPChannelError(@NotNull CBPeripheralManager peripheral, char PSM,
+            @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

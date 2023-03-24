@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] SCNPhysicsContactDelegate
@@ -40,21 +41,21 @@ public interface SCNPhysicsContactDelegate {
     @Generated
     @IsOptional
     @Selector("physicsWorld:didBeginContact:")
-    default void physicsWorldDidBeginContact(SCNPhysicsWorld world, SCNPhysicsContact contact) {
+    default void physicsWorldDidBeginContact(@NotNull SCNPhysicsWorld world, @NotNull SCNPhysicsContact contact) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("physicsWorld:didEndContact:")
-    default void physicsWorldDidEndContact(SCNPhysicsWorld world, SCNPhysicsContact contact) {
+    default void physicsWorldDidEndContact(@NotNull SCNPhysicsWorld world, @NotNull SCNPhysicsContact contact) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("physicsWorld:didUpdateContact:")
-    default void physicsWorldDidUpdateContact(SCNPhysicsWorld world, SCNPhysicsContact contact) {
+    default void physicsWorldDidUpdateContact(@NotNull SCNPhysicsWorld world, @NotNull SCNPhysicsContact contact) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

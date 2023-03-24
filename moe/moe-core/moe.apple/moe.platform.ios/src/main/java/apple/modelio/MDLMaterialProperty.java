@@ -42,6 +42,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * If a color is encoded in a floatN property, it is to be interpreted as
@@ -79,22 +81,25 @@ public class MDLMaterialProperty extends NSObject implements MDLNamed, NSCopying
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +134,10 @@ public class MDLMaterialProperty extends NSObject implements MDLNamed, NSCopying
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,19 +165,22 @@ public class MDLMaterialProperty extends NSObject implements MDLNamed, NSCopying
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("URLValue")
     public native NSURL URLValue();
 
+    @Nullable
     @Generated
     @Selector("color")
     public native CGColorRef color();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("floatValue")
@@ -183,33 +192,38 @@ public class MDLMaterialProperty extends NSObject implements MDLNamed, NSCopying
 
     @Generated
     @Selector("initWithName:semantic:")
-    public native MDLMaterialProperty initWithNameSemantic(String name, @NUInt long semantic);
+    public native MDLMaterialProperty initWithNameSemantic(@NotNull String name, @NUInt long semantic);
 
     @Generated
     @Selector("initWithName:semantic:URL:")
-    public native MDLMaterialProperty initWithNameSemanticURL(String name, @NUInt long semantic, NSURL URL);
+    public native MDLMaterialProperty initWithNameSemanticURL(@NotNull String name, @NUInt long semantic,
+            @Nullable NSURL URL);
 
     @Generated
     @Selector("initWithName:semantic:color:")
-    public native MDLMaterialProperty initWithNameSemanticColor(String name, @NUInt long semantic, CGColorRef color);
+    public native MDLMaterialProperty initWithNameSemanticColor(@NotNull String name, @NUInt long semantic,
+            @NotNull CGColorRef color);
 
     @Generated
     @Selector("initWithName:semantic:float:")
-    public native MDLMaterialProperty initWithNameSemanticFloat(String name, @NUInt long semantic, float value);
+    public native MDLMaterialProperty initWithNameSemanticFloat(@NotNull String name, @NUInt long semantic,
+            float value);
 
     @Generated
     @Selector("initWithName:semantic:string:")
-    public native MDLMaterialProperty initWithNameSemanticString(String name, @NUInt long semantic, String string);
+    public native MDLMaterialProperty initWithNameSemanticString(@NotNull String name, @NUInt long semantic,
+            @Nullable String string);
 
     @Generated
     @Selector("initWithName:semantic:textureSampler:")
-    public native MDLMaterialProperty initWithNameSemanticTextureSampler(String name, @NUInt long semantic,
-            MDLTextureSampler textureSampler);
+    public native MDLMaterialProperty initWithNameSemanticTextureSampler(@NotNull String name, @NUInt long semantic,
+            @Nullable MDLTextureSampler textureSampler);
 
     @Generated
     @Selector("luminance")
     public native float luminance();
 
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -221,7 +235,7 @@ public class MDLMaterialProperty extends NSObject implements MDLNamed, NSCopying
 
     @Generated
     @Selector("setColor:")
-    public native void setColor(CGColorRef value);
+    public native void setColor(@Nullable CGColorRef value);
 
     @Generated
     @Selector("setFloatValue:")
@@ -233,11 +247,11 @@ public class MDLMaterialProperty extends NSObject implements MDLNamed, NSCopying
 
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@NotNull String value);
 
     @Generated
     @Selector("setProperties:")
-    public native void setProperties(MDLMaterialProperty property);
+    public native void setProperties(@NotNull MDLMaterialProperty property);
 
     @Generated
     @Selector("setSemantic:")
@@ -245,20 +259,22 @@ public class MDLMaterialProperty extends NSObject implements MDLNamed, NSCopying
 
     @Generated
     @Selector("setStringValue:")
-    public native void setStringValue(String value);
+    public native void setStringValue(@Nullable String value);
 
     @Generated
     @Selector("setTextureSamplerValue:")
-    public native void setTextureSamplerValue(MDLTextureSampler value);
+    public native void setTextureSamplerValue(@Nullable MDLTextureSampler value);
 
     @Generated
     @Selector("setURLValue:")
-    public native void setURLValue(NSURL value);
+    public native void setURLValue(@Nullable NSURL value);
 
+    @Nullable
     @Generated
     @Selector("stringValue")
     public native String stringValue();
 
+    @Nullable
     @Generated
     @Selector("textureSamplerValue")
     public native MDLTextureSampler textureSamplerValue();

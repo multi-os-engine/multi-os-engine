@@ -29,6 +29,7 @@ import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure(alignment = 4)
@@ -51,13 +52,14 @@ public final class VTDecompressionOutputCallbackRecord extends StructObject {
 
     @Generated
     public VTDecompressionOutputCallbackRecord(
-            @FunctionPtr(name = "call_decompressionOutputCallback") Function_decompressionOutputCallback decompressionOutputCallback,
-            VoidPtr decompressionOutputRefCon) {
+            @FunctionPtr(name = "call_decompressionOutputCallback") @Nullable Function_decompressionOutputCallback decompressionOutputCallback,
+            @Nullable VoidPtr decompressionOutputRefCon) {
         super(VTDecompressionOutputCallbackRecord.class);
         setDecompressionOutputCallback(decompressionOutputCallback);
         setDecompressionOutputRefCon(decompressionOutputRefCon);
     }
 
+    @Nullable
     @Generated
     @StructureField(order = 0, isGetter = true)
     @FunctionPtr(name = "call_decompressionOutputCallback")
@@ -66,21 +68,22 @@ public final class VTDecompressionOutputCallbackRecord extends StructObject {
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setDecompressionOutputCallback(
-            @FunctionPtr(name = "call_decompressionOutputCallback") Function_decompressionOutputCallback value);
+            @Nullable @FunctionPtr(name = "call_decompressionOutputCallback") Function_decompressionOutputCallback value);
 
+    @Nullable
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native VoidPtr decompressionOutputRefCon();
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setDecompressionOutputRefCon(VoidPtr value);
+    public native void setDecompressionOutputRefCon(@Nullable VoidPtr value);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_decompressionOutputCallback {
         @Generated
-        void call_decompressionOutputCallback(VoidPtr arg0, VoidPtr arg1, int arg2, int arg3, CVBufferRef arg4,
-                @ByValue CMTime arg5, @ByValue CMTime arg6);
+        void call_decompressionOutputCallback(@Nullable VoidPtr arg0, @Nullable VoidPtr arg1, int arg2, int arg3,
+                @Nullable CVBufferRef arg4, @ByValue CMTime arg5, @ByValue CMTime arg6);
     }
 }

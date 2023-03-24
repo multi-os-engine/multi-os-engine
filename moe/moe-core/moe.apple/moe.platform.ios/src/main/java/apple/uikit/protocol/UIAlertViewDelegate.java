@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -42,7 +43,7 @@ public interface UIAlertViewDelegate {
     @IsOptional
     @Deprecated
     @Selector("alertView:clickedButtonAtIndex:")
-    default void alertViewClickedButtonAtIndex(UIAlertView alertView, @NInt long buttonIndex) {
+    default void alertViewClickedButtonAtIndex(@NotNull UIAlertView alertView, @NInt long buttonIndex) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -57,7 +58,7 @@ public interface UIAlertViewDelegate {
     @IsOptional
     @Deprecated
     @Selector("alertView:didDismissWithButtonIndex:")
-    default void alertViewDidDismissWithButtonIndex(UIAlertView alertView, @NInt long buttonIndex) {
+    default void alertViewDidDismissWithButtonIndex(@NotNull UIAlertView alertView, @NInt long buttonIndex) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -72,7 +73,7 @@ public interface UIAlertViewDelegate {
     @IsOptional
     @Deprecated
     @Selector("alertView:willDismissWithButtonIndex:")
-    default void alertViewWillDismissWithButtonIndex(UIAlertView alertView, @NInt long buttonIndex) {
+    default void alertViewWillDismissWithButtonIndex(@NotNull UIAlertView alertView, @NInt long buttonIndex) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -89,7 +90,7 @@ public interface UIAlertViewDelegate {
     @IsOptional
     @Deprecated
     @Selector("alertViewCancel:")
-    default void alertViewCancel(UIAlertView alertView) {
+    default void alertViewCancel(@NotNull UIAlertView alertView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,7 +105,7 @@ public interface UIAlertViewDelegate {
     @IsOptional
     @Deprecated
     @Selector("alertViewShouldEnableFirstOtherButton:")
-    default boolean alertViewShouldEnableFirstOtherButton(UIAlertView alertView) {
+    default boolean alertViewShouldEnableFirstOtherButton(@NotNull UIAlertView alertView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -119,7 +120,7 @@ public interface UIAlertViewDelegate {
     @IsOptional
     @Deprecated
     @Selector("didPresentAlertView:")
-    default void didPresentAlertView(UIAlertView alertView) {
+    default void didPresentAlertView(@NotNull UIAlertView alertView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -134,7 +135,7 @@ public interface UIAlertViewDelegate {
     @IsOptional
     @Deprecated
     @Selector("willPresentAlertView:")
-    default void willPresentAlertView(UIAlertView alertView) {
+    default void willPresentAlertView(@NotNull UIAlertView alertView) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

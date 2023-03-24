@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 12.0
@@ -59,37 +61,42 @@ public class INObject extends NSObject implements INSpeakable, NSCopying, NSSecu
     @Selector("allocWithZone:")
     public static native INObject allocWithZone(VoidPtr zone);
 
+    @Nullable
     @Generated
     @Selector("alternativeSpeakableMatches")
     public native NSArray<? extends INSpeakableString> alternativeSpeakableMatches();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -99,19 +106,21 @@ public class INObject extends NSObject implements INSpeakable, NSCopying, NSSecu
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("displayString")
     public native String displayString();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
 
+    @Nullable
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -122,16 +131,16 @@ public class INObject extends NSObject implements INSpeakable, NSCopying, NSSecu
 
     @Generated
     @Selector("initWithCoder:")
-    public native INObject initWithCoder(NSCoder coder);
+    public native INObject initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithIdentifier:displayString:")
-    public native INObject initWithIdentifierDisplayString(String identifier, String displayString);
+    public native INObject initWithIdentifierDisplayString(@Nullable String identifier, @NotNull String displayString);
 
     @Generated
     @Selector("initWithIdentifier:displayString:pronunciationHint:")
-    public native INObject initWithIdentifierDisplayStringPronunciationHint(String identifier, String displayString,
-            String pronunciationHint);
+    public native INObject initWithIdentifierDisplayStringPronunciationHint(@Nullable String identifier,
+            @NotNull String displayString, @Nullable String pronunciationHint);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -150,15 +159,17 @@ public class INObject extends NSObject implements INSpeakable, NSCopying, NSSecu
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native INObject new_objc();
 
+    @Nullable
     @Generated
     @Selector("pronunciationHint")
     public native String pronunciationHint();
@@ -176,12 +187,13 @@ public class INObject extends NSObject implements INSpeakable, NSCopying, NSSecu
      */
     @Generated
     @Selector("setAlternativeSpeakableMatches:")
-    public native void setAlternativeSpeakableMatches(NSArray<? extends INSpeakableString> value);
+    public native void setAlternativeSpeakableMatches(@Nullable NSArray<? extends INSpeakableString> value);
 
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("spokenPhrase")
     public native String spokenPhrase();
@@ -205,6 +217,7 @@ public class INObject extends NSObject implements INSpeakable, NSCopying, NSSecu
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("vocabularyIdentifier")
     public native String vocabularyIdentifier();
@@ -212,6 +225,7 @@ public class INObject extends NSObject implements INSpeakable, NSCopying, NSSecu
     /**
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("displayImage")
     public native INImage displayImage();
@@ -221,34 +235,36 @@ public class INObject extends NSObject implements INSpeakable, NSCopying, NSSecu
      */
     @Generated
     @Selector("initWithIdentifier:displayString:pronunciationHint:subtitleString:displayImage:")
-    public native INObject initWithIdentifierDisplayStringPronunciationHintSubtitleStringDisplayImage(String identifier,
-            String displayString, String pronunciationHint, String subtitleString, INImage displayImage);
+    public native INObject initWithIdentifierDisplayStringPronunciationHintSubtitleStringDisplayImage(
+            @Nullable String identifier, @NotNull String displayString, @Nullable String pronunciationHint,
+            @Nullable String subtitleString, @Nullable INImage displayImage);
 
     /**
      * API-Since: 14.0
      */
     @Generated
     @Selector("initWithIdentifier:displayString:subtitleString:displayImage:")
-    public native INObject initWithIdentifierDisplayStringSubtitleStringDisplayImage(String identifier,
-            String displayString, String subtitleString, INImage displayImage);
+    public native INObject initWithIdentifierDisplayStringSubtitleStringDisplayImage(@Nullable String identifier,
+            @NotNull String displayString, @Nullable String subtitleString, @Nullable INImage displayImage);
 
     /**
      * API-Since: 14.0
      */
     @Generated
     @Selector("setDisplayImage:")
-    public native void setDisplayImage(INImage value);
+    public native void setDisplayImage(@Nullable INImage value);
 
     /**
      * API-Since: 14.0
      */
     @Generated
     @Selector("setSubtitleString:")
-    public native void setSubtitleString(String value);
+    public native void setSubtitleString(@Nullable String value);
 
     /**
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("subtitleString")
     public native String subtitleString();

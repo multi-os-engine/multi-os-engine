@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Request for information from an identity document stored as a Wallet pass.
@@ -60,22 +62,25 @@ public class PKIdentityRequest extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -91,6 +96,7 @@ public class PKIdentityRequest extends NSObject {
     /**
      * A descriptor describing the identity document to request.
      */
+    @Nullable
     @Generated
     @Selector("descriptor")
     @MappedReturn(ObjCObjectMapper.class)
@@ -122,15 +128,17 @@ public class PKIdentityRequest extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Identifies the merchant making the request, as previously agreed with Apple.
      * This must match one of the merchant identifiers in the application's entitlement.
      * This property must be set when requestDocument is invoked.
      */
+    @Nullable
     @Generated
     @Selector("merchantIdentifier")
     public native String merchantIdentifier();
@@ -145,6 +153,7 @@ public class PKIdentityRequest extends NSObject {
      * This is treated as opaque by the PKIdentityAuthorizationController, and has a
      * maximum allowed size of 64 bytes.
      */
+    @Nullable
     @Generated
     @Selector("nonce")
     public native NSData nonce();
@@ -162,7 +171,7 @@ public class PKIdentityRequest extends NSObject {
      */
     @Generated
     @Selector("setDescriptor:")
-    public native void setDescriptor(@Mapped(ObjCObjectMapper.class) PKIdentityDocumentDescriptor value);
+    public native void setDescriptor(@Nullable @Mapped(ObjCObjectMapper.class) PKIdentityDocumentDescriptor value);
 
     /**
      * Identifies the merchant making the request, as previously agreed with Apple.
@@ -171,7 +180,7 @@ public class PKIdentityRequest extends NSObject {
      */
     @Generated
     @Selector("setMerchantIdentifier:")
-    public native void setMerchantIdentifier(String value);
+    public native void setMerchantIdentifier(@Nullable String value);
 
     /**
      * A caller-specified nonce that will be included in the signed response payload.
@@ -180,7 +189,7 @@ public class PKIdentityRequest extends NSObject {
      */
     @Generated
     @Selector("setNonce:")
-    public native void setNonce(NSData value);
+    public native void setNonce(@Nullable NSData value);
 
     @Generated
     @Selector("setVersion:")

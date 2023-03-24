@@ -29,6 +29,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INStartAudioCallIntent. By implementing this protocol, a class can
@@ -65,8 +66,8 @@ public interface INStartAudioCallIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmStartAudioCall:completion:")
-    default void confirmStartAudioCallCompletion(INStartAudioCallIntent intent,
-            @ObjCBlock(name = "call_confirmStartAudioCallCompletion") Block_confirmStartAudioCallCompletion completion) {
+    default void confirmStartAudioCallCompletion(@NotNull INStartAudioCallIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmStartAudioCallCompletion") Block_confirmStartAudioCallCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -83,14 +84,14 @@ public interface INStartAudioCallIntentHandling {
      */
     @Generated
     @Selector("handleStartAudioCall:completion:")
-    void handleStartAudioCallCompletion(INStartAudioCallIntent intent,
-            @ObjCBlock(name = "call_handleStartAudioCallCompletion") Block_handleStartAudioCallCompletion completion);
+    void handleStartAudioCallCompletion(@NotNull INStartAudioCallIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleStartAudioCallCompletion") Block_handleStartAudioCallCompletion completion);
 
     @Generated
     @IsOptional
     @Selector("resolveContactsForStartAudioCall:withCompletion:")
-    default void resolveContactsForStartAudioCallWithCompletion(INStartAudioCallIntent intent,
-            @ObjCBlock(name = "call_resolveContactsForStartAudioCallWithCompletion") Block_resolveContactsForStartAudioCallWithCompletion completion) {
+    default void resolveContactsForStartAudioCallWithCompletion(@NotNull INStartAudioCallIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveContactsForStartAudioCallWithCompletion") Block_resolveContactsForStartAudioCallWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -98,14 +99,14 @@ public interface INStartAudioCallIntentHandling {
     @Generated
     public interface Block_confirmStartAudioCallCompletion {
         @Generated
-        void call_confirmStartAudioCallCompletion(INStartAudioCallIntentResponse response);
+        void call_confirmStartAudioCallCompletion(@NotNull INStartAudioCallIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleStartAudioCallCompletion {
         @Generated
-        void call_handleStartAudioCallCompletion(INStartAudioCallIntentResponse response);
+        void call_handleStartAudioCallCompletion(@NotNull INStartAudioCallIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -113,7 +114,7 @@ public interface INStartAudioCallIntentHandling {
     public interface Block_resolveContactsForStartAudioCallWithCompletion {
         @Generated
         void call_resolveContactsForStartAudioCallWithCompletion(
-                NSArray<? extends INPersonResolutionResult> resolutionResults);
+                @NotNull NSArray<? extends INPersonResolutionResult> resolutionResults);
     }
 
     /**
@@ -132,8 +133,8 @@ public interface INStartAudioCallIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveDestinationTypeForStartAudioCall:withCompletion:")
-    default void resolveDestinationTypeForStartAudioCallWithCompletion(INStartAudioCallIntent intent,
-            @ObjCBlock(name = "call_resolveDestinationTypeForStartAudioCallWithCompletion") Block_resolveDestinationTypeForStartAudioCallWithCompletion completion) {
+    default void resolveDestinationTypeForStartAudioCallWithCompletion(@NotNull INStartAudioCallIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveDestinationTypeForStartAudioCallWithCompletion") Block_resolveDestinationTypeForStartAudioCallWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -142,6 +143,6 @@ public interface INStartAudioCallIntentHandling {
     public interface Block_resolveDestinationTypeForStartAudioCallWithCompletion {
         @Generated
         void call_resolveDestinationTypeForStartAudioCallWithCompletion(
-                INCallDestinationTypeResolutionResult resolutionResult);
+                @NotNull INCallDestinationTypeResolutionResult resolutionResult);
     }
 }

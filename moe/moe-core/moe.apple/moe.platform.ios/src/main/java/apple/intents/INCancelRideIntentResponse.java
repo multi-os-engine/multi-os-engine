@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -59,21 +61,23 @@ public class INCancelRideIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Used during confirmation to warn the user about any cancellation fees
      */
+    @Nullable
     @Generated
     @Selector("cancellationFee")
     public native INCurrencyAmount cancellationFee();
@@ -81,14 +85,17 @@ public class INCancelRideIntentResponse extends INIntentResponse {
     /**
      * The time after which canceling the ride will incur the cancellation fee
      */
+    @Nullable
     @Generated
     @Selector("cancellationFeeThreshold")
     public native NSDateComponents cancellationFeeThreshold();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,11 +133,12 @@ public class INCancelRideIntentResponse extends INIntentResponse {
      */
     @Generated
     @Selector("initWithCode:userActivity:")
-    public native INCancelRideIntentResponse initWithCodeUserActivity(@NInt long code, NSUserActivity userActivity);
+    public native INCancelRideIntentResponse initWithCodeUserActivity(@NInt long code,
+            @Nullable NSUserActivity userActivity);
 
     @Generated
     @Selector("initWithCoder:")
-    public native INCancelRideIntentResponse initWithCoder(NSCoder coder);
+    public native INCancelRideIntentResponse initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -149,9 +157,10 @@ public class INCancelRideIntentResponse extends INIntentResponse {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -171,14 +180,14 @@ public class INCancelRideIntentResponse extends INIntentResponse {
      */
     @Generated
     @Selector("setCancellationFee:")
-    public native void setCancellationFee(INCurrencyAmount value);
+    public native void setCancellationFee(@Nullable INCurrencyAmount value);
 
     /**
      * The time after which canceling the ride will incur the cancellation fee
      */
     @Generated
     @Selector("setCancellationFeeThreshold:")
-    public native void setCancellationFeeThreshold(NSDateComponents value);
+    public native void setCancellationFeeThreshold(@Nullable NSDateComponents value);
 
     @Generated
     @Selector("setVersion:")

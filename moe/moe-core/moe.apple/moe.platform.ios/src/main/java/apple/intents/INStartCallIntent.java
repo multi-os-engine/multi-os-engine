@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -63,7 +65,7 @@ public class INStartCallIntent extends INIntent implements UNNotificationContent
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("callCapability")
@@ -72,22 +74,26 @@ public class INStartCallIntent extends INIntent implements UNNotificationContent
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @Nullable
     @Generated
     @Selector("contacts")
     public native NSArray<? extends INPerson> contacts();
@@ -122,12 +128,12 @@ public class INStartCallIntent extends INIntent implements UNNotificationContent
     @Generated
     @Selector("initWithAudioRoute:destinationType:contacts:recordTypeForRedialing:callCapability:")
     public native INStartCallIntent initWithAudioRouteDestinationTypeContactsRecordTypeForRedialingCallCapability(
-            @NInt long audioRoute, @NInt long destinationType, NSArray<? extends INPerson> contacts,
+            @NInt long audioRoute, @NInt long destinationType, @Nullable NSArray<? extends INPerson> contacts,
             @NInt long recordTypeForRedialing, @NInt long callCapability);
 
     @Generated
     @Selector("initWithCoder:")
-    public native INStartCallIntent initWithCoder(NSCoder coder);
+    public native INStartCallIntent initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -146,9 +152,10 @@ public class INStartCallIntent extends INIntent implements UNNotificationContent
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -199,6 +206,7 @@ public class INStartCallIntent extends INIntent implements UNNotificationContent
     /**
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("callRecordFilter")
     public native INCallRecordFilter callRecordFilter();
@@ -206,6 +214,7 @@ public class INStartCallIntent extends INIntent implements UNNotificationContent
     /**
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("callRecordToCallBack")
     public native INCallRecord callRecordToCallBack();
@@ -216,6 +225,7 @@ public class INStartCallIntent extends INIntent implements UNNotificationContent
     @Generated
     @Selector("initWithCallRecordFilter:callRecordToCallBack:audioRoute:destinationType:contacts:callCapability:")
     public native INStartCallIntent initWithCallRecordFilterCallRecordToCallBackAudioRouteDestinationTypeContactsCallCapability(
-            INCallRecordFilter callRecordFilter, INCallRecord callRecordToCallBack, @NInt long audioRoute,
-            @NInt long destinationType, NSArray<? extends INPerson> contacts, @NInt long callCapability);
+            @Nullable INCallRecordFilter callRecordFilter, @Nullable INCallRecord callRecordToCallBack,
+            @NInt long audioRoute, @NInt long destinationType, @Nullable NSArray<? extends INPerson> contacts,
+            @NInt long callCapability);
 }

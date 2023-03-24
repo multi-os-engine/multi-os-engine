@@ -25,6 +25,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A @c SHSession matches instances of @c SHSignature against a @c SHCatalog
@@ -74,29 +76,33 @@ public class SHSession extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * The @c SHCatalog used to initialize this session and which all matches will be made against
      */
+    @NotNull
     @Generated
     @Selector("catalog")
     public native SHCatalog catalog();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -108,6 +114,7 @@ public class SHSession extends NSObject {
     /**
      * A delegate for communicating the results of matching
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -136,7 +143,7 @@ public class SHSession extends NSObject {
      */
     @Generated
     @Selector("initWithCatalog:")
-    public native SHSession initWithCatalog(SHCatalog catalog);
+    public native SHSession initWithCatalog(@NotNull SHCatalog catalog);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -155,9 +162,10 @@ public class SHSession extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Match the @c SHSignature against the provided @c SHCatalog
@@ -166,7 +174,7 @@ public class SHSession extends NSObject {
      */
     @Generated
     @Selector("matchSignature:")
-    public native void matchSignature(SHSignature signature);
+    public native void matchSignature(@NotNull SHSignature signature);
 
     /**
      * Flow audio buffers for matching into the session
@@ -189,7 +197,7 @@ public class SHSession extends NSObject {
      */
     @Generated
     @Selector("matchStreamingBuffer:atTime:")
-    public native void matchStreamingBufferAtTime(AVAudioPCMBuffer buffer, AVAudioTime time);
+    public native void matchStreamingBufferAtTime(@NotNull AVAudioPCMBuffer buffer, @Nullable AVAudioTime time);
 
     @Generated
     @Owned
@@ -209,13 +217,13 @@ public class SHSession extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SHSessionDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) SHSessionDelegate value);
 
     /**
      * A delegate for communicating the results of matching
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) SHSessionDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SHSessionDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

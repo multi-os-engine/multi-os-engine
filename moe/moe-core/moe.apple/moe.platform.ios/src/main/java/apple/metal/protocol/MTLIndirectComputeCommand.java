@@ -12,6 +12,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 13.0
@@ -48,11 +49,11 @@ public interface MTLIndirectComputeCommand {
      */
     @Generated
     @Selector("setComputePipelineState:")
-    void setComputePipelineState(@Mapped(ObjCObjectMapper.class) MTLComputePipelineState pipelineState);
+    void setComputePipelineState(@NotNull @Mapped(ObjCObjectMapper.class) MTLComputePipelineState pipelineState);
 
     @Generated
     @Selector("setKernelBuffer:offset:atIndex:")
-    void setKernelBufferOffsetAtIndex(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
+    void setKernelBufferOffsetAtIndex(@NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
             @NUInt long index);
 
     @Generated

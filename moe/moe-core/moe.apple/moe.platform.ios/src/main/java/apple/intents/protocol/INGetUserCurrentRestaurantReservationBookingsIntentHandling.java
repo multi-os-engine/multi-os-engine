@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 10.0
@@ -55,8 +56,8 @@ public interface INGetUserCurrentRestaurantReservationBookingsIntentHandling {
     @IsOptional
     @Selector("confirmGetUserCurrentRestaurantReservationBookings:completion:")
     default void confirmGetUserCurrentRestaurantReservationBookingsCompletion(
-            INGetUserCurrentRestaurantReservationBookingsIntent intent,
-            @ObjCBlock(name = "call_confirmGetUserCurrentRestaurantReservationBookingsCompletion") Block_confirmGetUserCurrentRestaurantReservationBookingsCompletion completion) {
+            @NotNull INGetUserCurrentRestaurantReservationBookingsIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmGetUserCurrentRestaurantReservationBookingsCompletion") Block_confirmGetUserCurrentRestaurantReservationBookingsCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -75,8 +76,8 @@ public interface INGetUserCurrentRestaurantReservationBookingsIntentHandling {
     @Generated
     @Selector("handleGetUserCurrentRestaurantReservationBookings:completion:")
     void handleGetUserCurrentRestaurantReservationBookingsCompletion(
-            INGetUserCurrentRestaurantReservationBookingsIntent intent,
-            @ObjCBlock(name = "call_handleGetUserCurrentRestaurantReservationBookingsCompletion") Block_handleGetUserCurrentRestaurantReservationBookingsCompletion completion);
+            @NotNull INGetUserCurrentRestaurantReservationBookingsIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleGetUserCurrentRestaurantReservationBookingsCompletion") Block_handleGetUserCurrentRestaurantReservationBookingsCompletion completion);
 
     /**
      * Resolution methods - Determine if this intent is ready for the next step (confirmation)
@@ -93,8 +94,8 @@ public interface INGetUserCurrentRestaurantReservationBookingsIntentHandling {
     @IsOptional
     @Selector("resolveRestaurantForGetUserCurrentRestaurantReservationBookings:withCompletion:")
     default void resolveRestaurantForGetUserCurrentRestaurantReservationBookingsWithCompletion(
-            INGetUserCurrentRestaurantReservationBookingsIntent intent,
-            @ObjCBlock(name = "call_resolveRestaurantForGetUserCurrentRestaurantReservationBookingsWithCompletion") Block_resolveRestaurantForGetUserCurrentRestaurantReservationBookingsWithCompletion completion) {
+            @NotNull INGetUserCurrentRestaurantReservationBookingsIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveRestaurantForGetUserCurrentRestaurantReservationBookingsWithCompletion") Block_resolveRestaurantForGetUserCurrentRestaurantReservationBookingsWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -103,7 +104,7 @@ public interface INGetUserCurrentRestaurantReservationBookingsIntentHandling {
     public interface Block_confirmGetUserCurrentRestaurantReservationBookingsCompletion {
         @Generated
         void call_confirmGetUserCurrentRestaurantReservationBookingsCompletion(
-                INGetUserCurrentRestaurantReservationBookingsIntentResponse response);
+                @NotNull INGetUserCurrentRestaurantReservationBookingsIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -111,7 +112,7 @@ public interface INGetUserCurrentRestaurantReservationBookingsIntentHandling {
     public interface Block_handleGetUserCurrentRestaurantReservationBookingsCompletion {
         @Generated
         void call_handleGetUserCurrentRestaurantReservationBookingsCompletion(
-                INGetUserCurrentRestaurantReservationBookingsIntentResponse response);
+                @NotNull INGetUserCurrentRestaurantReservationBookingsIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -119,6 +120,6 @@ public interface INGetUserCurrentRestaurantReservationBookingsIntentHandling {
     public interface Block_resolveRestaurantForGetUserCurrentRestaurantReservationBookingsWithCompletion {
         @Generated
         void call_resolveRestaurantForGetUserCurrentRestaurantReservationBookingsWithCompletion(
-                INRestaurantResolutionResult resolutionResult);
+                @NotNull INRestaurantResolutionResult resolutionResult);
     }
 }

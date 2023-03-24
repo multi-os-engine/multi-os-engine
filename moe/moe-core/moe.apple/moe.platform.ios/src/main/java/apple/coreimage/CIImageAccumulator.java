@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.0
@@ -74,22 +76,25 @@ public class CIImageAccumulator extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,7 +129,7 @@ public class CIImageAccumulator extends NSObject {
     @Generated
     @Selector("imageAccumulatorWithExtent:format:colorSpace:")
     public static native CIImageAccumulator imageAccumulatorWithExtentFormatColorSpace(@ByValue CGRect extent,
-            int format, CGColorSpaceRef colorSpace);
+            int format, @NotNull CGColorSpaceRef colorSpace);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -143,9 +148,10 @@ public class CIImageAccumulator extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -200,6 +206,7 @@ public class CIImageAccumulator extends NSObject {
      * Rendering the image after subsequently calling setImage: has
      * undefined behavior.
      */
+    @NotNull
     @Generated
     @Selector("image")
     public native CIImage image();
@@ -218,14 +225,14 @@ public class CIImageAccumulator extends NSObject {
     @Generated
     @Selector("initWithExtent:format:colorSpace:")
     public native CIImageAccumulator initWithExtentFormatColorSpace(@ByValue CGRect extent, int format,
-            CGColorSpaceRef colorSpace);
+            @NotNull CGColorSpaceRef colorSpace);
 
     /**
      * Set the image 'im' as the current contents of the accumulator.
      */
     @Generated
     @Selector("setImage:")
-    public native void setImage(CIImage image);
+    public native void setImage(@NotNull CIImage image);
 
     /**
      * Set the image 'im' as the accumulator's contents. The caller guarantees
@@ -234,5 +241,5 @@ public class CIImageAccumulator extends NSObject {
      */
     @Generated
     @Selector("setImage:dirtyRect:")
-    public native void setImageDirtyRect(CIImage image, @ByValue CGRect dirtyRect);
+    public native void setImageDirtyRect(@NotNull CIImage image, @ByValue CGRect dirtyRect);
 }

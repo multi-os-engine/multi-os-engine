@@ -42,6 +42,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 5.0
@@ -76,22 +78,25 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +131,10 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,10 +176,11 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      *                            A media selection group in which an associated option is to be sought.
      * @return An instance of AVMediaSelectionOption.
      */
+    @Nullable
     @Generated
     @Selector("associatedMediaSelectionOptionInMediaSelectionGroup:")
     public native AVMediaSelectionOption associatedMediaSelectionOptionInMediaSelectionGroup(
-            AVMediaSelectionGroup mediaSelectionGroup);
+            @NotNull AVMediaSelectionGroup mediaSelectionGroup);
 
     /**
      * [@property] availableMetadataFormats
@@ -183,6 +190,7 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      * 
      * Metadata formats are defined in AVMetadataFormat.h.
      */
+    @NotNull
     @Generated
     @Selector("availableMetadataFormats")
     public native NSArray<String> availableMetadataFormats();
@@ -218,15 +226,17 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      * }
      * }
      */
+    @NotNull
     @Generated
     @Selector("commonMetadata")
     public native NSArray<? extends AVMetadataItem> commonMetadata();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] displayName
@@ -241,6 +251,7 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("displayName")
     public native String displayName();
@@ -259,9 +270,10 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      * @param locale
      *               Localize manufactured portions of the string using the specificed locale.
      */
+    @NotNull
     @Generated
     @Selector("displayNameWithLocale:")
-    public native String displayNameWithLocale(NSLocale locale);
+    public native String displayNameWithLocale(@NotNull NSLocale locale);
 
     /**
      * [@property] extendedLanguageTag
@@ -270,6 +282,7 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("extendedLanguageTag")
     public native String extendedLanguageTag();
@@ -286,7 +299,7 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("hasMediaCharacteristic:")
-    public native boolean hasMediaCharacteristic(String mediaCharacteristic);
+    public native boolean hasMediaCharacteristic(@NotNull String mediaCharacteristic);
 
     @Generated
     @Selector("init")
@@ -311,6 +324,7 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      * Use -[NSLocale objectForKey:NSLocaleLanguageCode] to obtain the language code of the locale. See NSLocale.h for
      * additional information.
      */
+    @Nullable
     @Generated
     @Selector("locale")
     public native NSLocale locale();
@@ -319,6 +333,7 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      * Will create a language option from the AVMediaSelectionOption
      * Returns nil if the AVMediaSelectionOption does not represent an Audible or Legible selection option.
      */
+    @Nullable
     @Generated
     @Selector("makeNowPlayingInfoLanguageOption")
     public native MPNowPlayingInfoLanguageOption makeNowPlayingInfoLanguageOption();
@@ -336,6 +351,7 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      * selected, the value of mediaSubTypes will be an empty array. This can occur, for example, with streaming media.
      * In these cases the value of mediaSubTypes should simply not be used as a criteria for selection.
      */
+    @NotNull
     @Generated
     @Selector("mediaSubTypes")
     public native NSArray<? extends NSNumber> mediaSubTypes();
@@ -345,6 +361,7 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      * 
      * The media type of the media data, e.g. AVMediaTypeAudio, AVMediaTypeSubtitle, etc.
      */
+    @NotNull
     @Generated
     @Selector("mediaType")
     public native String mediaType();
@@ -358,9 +375,10 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      *               The metadata format for which items are requested.
      * @return An NSArray containing AVMetadataItems.
      */
+    @NotNull
     @Generated
     @Selector("metadataForFormat:")
-    public native NSArray<? extends AVMetadataItem> metadataForFormat(String format);
+    public native NSArray<? extends AVMetadataItem> metadataForFormat(@NotNull String format);
 
     /**
      * propertyList
@@ -371,6 +389,7 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      * @return A serializable property list that's sufficient to identify the option within its group. For serialization
      *         utilities, see NSPropertyList.h.
      */
+    @NotNull
     @Generated
     @Selector("propertyList")
     @MappedReturn(ObjCObjectMapper.class)

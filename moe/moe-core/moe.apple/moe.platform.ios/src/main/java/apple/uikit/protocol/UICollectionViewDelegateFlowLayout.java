@@ -31,6 +31,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -41,8 +42,8 @@ public interface UICollectionViewDelegateFlowLayout extends UICollectionViewDele
     @IsOptional
     @Selector("collectionView:layout:insetForSectionAtIndex:")
     @ByValue
-    default UIEdgeInsets collectionViewLayoutInsetForSectionAtIndex(UICollectionView collectionView,
-            UICollectionViewLayout collectionViewLayout, @NInt long section) {
+    default UIEdgeInsets collectionViewLayoutInsetForSectionAtIndex(@NotNull UICollectionView collectionView,
+            @NotNull UICollectionViewLayout collectionViewLayout, @NInt long section) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -50,8 +51,9 @@ public interface UICollectionViewDelegateFlowLayout extends UICollectionViewDele
     @IsOptional
     @Selector("collectionView:layout:minimumInteritemSpacingForSectionAtIndex:")
     @NFloat
-    default double collectionViewLayoutMinimumInteritemSpacingForSectionAtIndex(UICollectionView collectionView,
-            UICollectionViewLayout collectionViewLayout, @NInt long section) {
+    default double collectionViewLayoutMinimumInteritemSpacingForSectionAtIndex(
+            @NotNull UICollectionView collectionView, @NotNull UICollectionViewLayout collectionViewLayout,
+            @NInt long section) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -59,8 +61,8 @@ public interface UICollectionViewDelegateFlowLayout extends UICollectionViewDele
     @IsOptional
     @Selector("collectionView:layout:minimumLineSpacingForSectionAtIndex:")
     @NFloat
-    default double collectionViewLayoutMinimumLineSpacingForSectionAtIndex(UICollectionView collectionView,
-            UICollectionViewLayout collectionViewLayout, @NInt long section) {
+    default double collectionViewLayoutMinimumLineSpacingForSectionAtIndex(@NotNull UICollectionView collectionView,
+            @NotNull UICollectionViewLayout collectionViewLayout, @NInt long section) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,8 +70,8 @@ public interface UICollectionViewDelegateFlowLayout extends UICollectionViewDele
     @IsOptional
     @Selector("collectionView:layout:referenceSizeForFooterInSection:")
     @ByValue
-    default CGSize collectionViewLayoutReferenceSizeForFooterInSection(UICollectionView collectionView,
-            UICollectionViewLayout collectionViewLayout, @NInt long section) {
+    default CGSize collectionViewLayoutReferenceSizeForFooterInSection(@NotNull UICollectionView collectionView,
+            @NotNull UICollectionViewLayout collectionViewLayout, @NInt long section) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -77,8 +79,8 @@ public interface UICollectionViewDelegateFlowLayout extends UICollectionViewDele
     @IsOptional
     @Selector("collectionView:layout:referenceSizeForHeaderInSection:")
     @ByValue
-    default CGSize collectionViewLayoutReferenceSizeForHeaderInSection(UICollectionView collectionView,
-            UICollectionViewLayout collectionViewLayout, @NInt long section) {
+    default CGSize collectionViewLayoutReferenceSizeForHeaderInSection(@NotNull UICollectionView collectionView,
+            @NotNull UICollectionViewLayout collectionViewLayout, @NInt long section) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -86,8 +88,8 @@ public interface UICollectionViewDelegateFlowLayout extends UICollectionViewDele
     @IsOptional
     @Selector("collectionView:layout:sizeForItemAtIndexPath:")
     @ByValue
-    default CGSize collectionViewLayoutSizeForItemAtIndexPath(UICollectionView collectionView,
-            UICollectionViewLayout collectionViewLayout, NSIndexPath indexPath) {
+    default CGSize collectionViewLayoutSizeForItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull UICollectionViewLayout collectionViewLayout, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -18,6 +18,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 13.0
@@ -29,66 +30,66 @@ import org.moe.natj.objc.ann.Selector;
 public interface CNChangeHistoryEventVisitor {
     @Generated
     @Selector("visitAddContactEvent:")
-    void visitAddContactEvent(CNChangeHistoryAddContactEvent event);
+    void visitAddContactEvent(@NotNull CNChangeHistoryAddContactEvent event);
 
     @Generated
     @IsOptional
     @Selector("visitAddGroupEvent:")
-    default void visitAddGroupEvent(CNChangeHistoryAddGroupEvent event) {
+    default void visitAddGroupEvent(@NotNull CNChangeHistoryAddGroupEvent event) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("visitAddMemberToGroupEvent:")
-    default void visitAddMemberToGroupEvent(CNChangeHistoryAddMemberToGroupEvent event) {
+    default void visitAddMemberToGroupEvent(@NotNull CNChangeHistoryAddMemberToGroupEvent event) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("visitAddSubgroupToGroupEvent:")
-    default void visitAddSubgroupToGroupEvent(CNChangeHistoryAddSubgroupToGroupEvent event) {
+    default void visitAddSubgroupToGroupEvent(@NotNull CNChangeHistoryAddSubgroupToGroupEvent event) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @Selector("visitDeleteContactEvent:")
-    void visitDeleteContactEvent(CNChangeHistoryDeleteContactEvent event);
+    void visitDeleteContactEvent(@NotNull CNChangeHistoryDeleteContactEvent event);
 
     @Generated
     @IsOptional
     @Selector("visitDeleteGroupEvent:")
-    default void visitDeleteGroupEvent(CNChangeHistoryDeleteGroupEvent event) {
+    default void visitDeleteGroupEvent(@NotNull CNChangeHistoryDeleteGroupEvent event) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @Selector("visitDropEverythingEvent:")
-    void visitDropEverythingEvent(CNChangeHistoryDropEverythingEvent event);
+    void visitDropEverythingEvent(@NotNull CNChangeHistoryDropEverythingEvent event);
 
     @Generated
     @IsOptional
     @Selector("visitRemoveMemberFromGroupEvent:")
-    default void visitRemoveMemberFromGroupEvent(CNChangeHistoryRemoveMemberFromGroupEvent event) {
+    default void visitRemoveMemberFromGroupEvent(@NotNull CNChangeHistoryRemoveMemberFromGroupEvent event) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("visitRemoveSubgroupFromGroupEvent:")
-    default void visitRemoveSubgroupFromGroupEvent(CNChangeHistoryRemoveSubgroupFromGroupEvent event) {
+    default void visitRemoveSubgroupFromGroupEvent(@NotNull CNChangeHistoryRemoveSubgroupFromGroupEvent event) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @Selector("visitUpdateContactEvent:")
-    void visitUpdateContactEvent(CNChangeHistoryUpdateContactEvent event);
+    void visitUpdateContactEvent(@NotNull CNChangeHistoryUpdateContactEvent event);
 
     @Generated
     @IsOptional
     @Selector("visitUpdateGroupEvent:")
-    default void visitUpdateGroupEvent(CNChangeHistoryUpdateGroupEvent event) {
+    default void visitUpdateGroupEvent(@NotNull CNChangeHistoryUpdateGroupEvent event) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

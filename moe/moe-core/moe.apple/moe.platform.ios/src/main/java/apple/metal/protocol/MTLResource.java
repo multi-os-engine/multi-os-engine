@@ -25,6 +25,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLResource
@@ -53,6 +55,7 @@ public interface MTLResource {
      * 
      * The device this resource was created against. This resource can only be used with this device.
      */
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -67,6 +70,7 @@ public interface MTLResource {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("heap")
     @MappedReturn(ObjCObjectMapper.class)
@@ -92,6 +96,7 @@ public interface MTLResource {
      * 
      * A string to help identify this object.
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();
@@ -120,7 +125,7 @@ public interface MTLResource {
      */
     @Generated
     @Selector("setLabel:")
-    void setLabel(String value);
+    void setLabel(@Nullable String value);
 
     /**
      * setPurgeableState

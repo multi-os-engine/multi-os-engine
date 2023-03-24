@@ -8,6 +8,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 16.0
@@ -23,7 +24,7 @@ public interface MPNowPlayingSessionDelegate {
     @Generated
     @IsOptional
     @Selector("nowPlayingSessionDidChangeActive:")
-    default void nowPlayingSessionDidChangeActive(MPNowPlayingSession nowPlayingSession) {
+    default void nowPlayingSessionDidChangeActive(@NotNull MPNowPlayingSession nowPlayingSession) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -33,7 +34,7 @@ public interface MPNowPlayingSessionDelegate {
     @Generated
     @IsOptional
     @Selector("nowPlayingSessionDidChangeCanBecomeActive:")
-    default void nowPlayingSessionDidChangeCanBecomeActive(MPNowPlayingSession nowPlayingSession) {
+    default void nowPlayingSessionDidChangeCanBecomeActive(@NotNull MPNowPlayingSession nowPlayingSession) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -35,6 +35,8 @@ import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.map.ObjCStringMapper;
 import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("HealthKit")
@@ -56,6 +58,7 @@ public final class HealthKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -66,6 +69,7 @@ public final class HealthKit {
      * 
      * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -76,6 +80,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -84,6 +89,7 @@ public final class HealthKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -92,6 +98,7 @@ public final class HealthKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -100,6 +107,7 @@ public final class HealthKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -108,6 +116,7 @@ public final class HealthKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -116,6 +125,7 @@ public final class HealthKit {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -124,6 +134,7 @@ public final class HealthKit {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -134,6 +145,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -142,6 +154,7 @@ public final class HealthKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -152,6 +165,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -160,6 +174,7 @@ public final class HealthKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -170,6 +185,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -178,6 +194,7 @@ public final class HealthKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -186,6 +203,7 @@ public final class HealthKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -194,6 +212,7 @@ public final class HealthKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -202,6 +221,7 @@ public final class HealthKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -212,6 +232,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -220,6 +241,7 @@ public final class HealthKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -228,6 +250,7 @@ public final class HealthKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -236,6 +259,7 @@ public final class HealthKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -246,6 +270,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -256,6 +281,7 @@ public final class HealthKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -266,6 +292,7 @@ public final class HealthKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -276,6 +303,7 @@ public final class HealthKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -286,6 +314,7 @@ public final class HealthKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -300,6 +329,7 @@ public final class HealthKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -314,6 +344,7 @@ public final class HealthKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -328,6 +359,7 @@ public final class HealthKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -342,6 +374,7 @@ public final class HealthKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -356,6 +389,7 @@ public final class HealthKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -370,6 +404,7 @@ public final class HealthKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -384,6 +419,7 @@ public final class HealthKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -398,6 +434,7 @@ public final class HealthKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -412,6 +449,7 @@ public final class HealthKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -429,6 +467,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -443,6 +482,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -457,6 +497,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -471,6 +512,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -486,6 +528,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -503,6 +546,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -521,6 +565,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -541,6 +586,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -556,6 +602,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -570,6 +617,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -586,6 +634,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -602,6 +651,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -616,6 +666,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -630,6 +681,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -644,6 +696,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -658,6 +711,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -672,6 +726,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -686,6 +741,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -700,6 +756,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -714,6 +771,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -729,6 +787,7 @@ public final class HealthKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -744,6 +803,7 @@ public final class HealthKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -759,6 +819,7 @@ public final class HealthKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -774,6 +835,7 @@ public final class HealthKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -789,6 +851,7 @@ public final class HealthKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -804,6 +867,7 @@ public final class HealthKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -819,6 +883,7 @@ public final class HealthKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -835,6 +900,7 @@ public final class HealthKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -845,6 +911,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -855,6 +922,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -865,6 +933,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -875,6 +944,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -885,6 +955,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -895,6 +966,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -905,6 +977,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -915,6 +988,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -925,6 +999,7 @@ public final class HealthKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -935,6 +1010,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -945,6 +1021,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -955,6 +1032,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -965,6 +1043,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -975,6 +1054,7 @@ public final class HealthKit {
      * 
      * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -985,6 +1065,7 @@ public final class HealthKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -995,6 +1076,7 @@ public final class HealthKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1005,6 +1087,7 @@ public final class HealthKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1015,6 +1098,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1025,6 +1109,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1035,6 +1120,7 @@ public final class HealthKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1045,6 +1131,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1055,6 +1142,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1065,6 +1153,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1075,6 +1164,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1085,6 +1175,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1095,6 +1186,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1105,6 +1197,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1115,6 +1208,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1125,6 +1219,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1135,6 +1230,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1145,6 +1241,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1155,6 +1252,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1165,6 +1263,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1175,6 +1274,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1185,6 +1285,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1195,6 +1296,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1205,6 +1307,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1215,6 +1318,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1225,6 +1329,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1235,6 +1340,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1245,6 +1351,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1255,6 +1362,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1265,6 +1373,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1275,6 +1384,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1285,6 +1395,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1295,6 +1406,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1305,6 +1417,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1315,6 +1428,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1325,6 +1439,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1335,6 +1450,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1345,6 +1461,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1355,6 +1472,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1365,6 +1483,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1375,6 +1494,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1385,6 +1505,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1395,6 +1516,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1405,6 +1527,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1415,6 +1538,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1425,6 +1549,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1435,6 +1560,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1445,6 +1571,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1455,6 +1582,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1465,6 +1593,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1475,6 +1604,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1485,6 +1615,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1495,6 +1626,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1505,6 +1637,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1515,6 +1648,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1525,6 +1659,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1535,6 +1670,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1545,6 +1681,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1555,6 +1692,7 @@ public final class HealthKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1565,6 +1703,7 @@ public final class HealthKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1575,6 +1714,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1585,6 +1725,7 @@ public final class HealthKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1595,6 +1736,7 @@ public final class HealthKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1605,6 +1747,7 @@ public final class HealthKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1615,6 +1758,7 @@ public final class HealthKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1625,6 +1769,7 @@ public final class HealthKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1635,6 +1780,7 @@ public final class HealthKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1645,6 +1791,7 @@ public final class HealthKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1655,6 +1802,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1665,6 +1813,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1675,6 +1824,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1685,6 +1835,7 @@ public final class HealthKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1695,6 +1846,7 @@ public final class HealthKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1703,6 +1855,7 @@ public final class HealthKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1711,6 +1864,7 @@ public final class HealthKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1719,6 +1873,7 @@ public final class HealthKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1731,6 +1886,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1741,6 +1897,7 @@ public final class HealthKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1749,6 +1906,7 @@ public final class HealthKit {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1757,6 +1915,7 @@ public final class HealthKit {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1773,6 +1932,7 @@ public final class HealthKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1792,6 +1952,7 @@ public final class HealthKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1808,6 +1969,7 @@ public final class HealthKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1823,6 +1985,7 @@ public final class HealthKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1841,6 +2004,7 @@ public final class HealthKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1855,6 +2019,7 @@ public final class HealthKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1865,6 +2030,7 @@ public final class HealthKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1875,6 +2041,7 @@ public final class HealthKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1885,6 +2052,7 @@ public final class HealthKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1895,6 +2063,7 @@ public final class HealthKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1905,6 +2074,7 @@ public final class HealthKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1915,6 +2085,7 @@ public final class HealthKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1927,6 +2098,7 @@ public final class HealthKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1937,6 +2109,7 @@ public final class HealthKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1945,6 +2118,7 @@ public final class HealthKit {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1961,6 +2135,7 @@ public final class HealthKit {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1969,6 +2144,7 @@ public final class HealthKit {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1977,6 +2153,7 @@ public final class HealthKit {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1985,6 +2162,7 @@ public final class HealthKit {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1993,6 +2171,7 @@ public final class HealthKit {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2001,6 +2180,7 @@ public final class HealthKit {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2009,6 +2189,7 @@ public final class HealthKit {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2017,6 +2198,7 @@ public final class HealthKit {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2025,6 +2207,7 @@ public final class HealthKit {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2033,6 +2216,7 @@ public final class HealthKit {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2043,6 +2227,7 @@ public final class HealthKit {
      * 
      * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2053,6 +2238,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2063,6 +2249,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2073,6 +2260,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2083,6 +2271,7 @@ public final class HealthKit {
      * 
      * API-Since: 12.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2093,6 +2282,7 @@ public final class HealthKit {
      * 
      * API-Since: 12.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2103,6 +2293,7 @@ public final class HealthKit {
      * 
      * API-Since: 12.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2114,6 +2305,7 @@ public final class HealthKit {
      * API-Since: 13.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2125,6 +2317,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2133,6 +2326,7 @@ public final class HealthKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2143,6 +2337,7 @@ public final class HealthKit {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2153,6 +2348,7 @@ public final class HealthKit {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2163,6 +2359,7 @@ public final class HealthKit {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2173,6 +2370,7 @@ public final class HealthKit {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2183,6 +2381,7 @@ public final class HealthKit {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2193,6 +2392,7 @@ public final class HealthKit {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2203,6 +2403,7 @@ public final class HealthKit {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2211,6 +2412,7 @@ public final class HealthKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2221,6 +2423,7 @@ public final class HealthKit {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2231,6 +2434,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2239,6 +2443,7 @@ public final class HealthKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2247,6 +2452,7 @@ public final class HealthKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2255,6 +2461,7 @@ public final class HealthKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2263,6 +2470,7 @@ public final class HealthKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2271,6 +2479,7 @@ public final class HealthKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2279,6 +2488,7 @@ public final class HealthKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2298,6 +2508,7 @@ public final class HealthKit {
      * 
      * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2314,6 +2525,7 @@ public final class HealthKit {
      * 
      * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2332,6 +2544,7 @@ public final class HealthKit {
      * 
      * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2347,6 +2560,7 @@ public final class HealthKit {
      * 
      * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2362,6 +2576,7 @@ public final class HealthKit {
      * 
      * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2378,6 +2593,7 @@ public final class HealthKit {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2393,6 +2609,7 @@ public final class HealthKit {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2408,6 +2625,7 @@ public final class HealthKit {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2424,6 +2642,7 @@ public final class HealthKit {
      * 
      * API-Since: 12.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2439,6 +2658,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2454,6 +2674,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2464,6 +2685,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2474,6 +2696,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2484,6 +2707,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2494,6 +2718,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2504,6 +2729,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2514,6 +2740,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2524,6 +2751,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2534,6 +2762,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2544,6 +2773,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2554,6 +2784,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2564,6 +2795,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2574,6 +2806,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2584,6 +2817,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2594,6 +2828,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2604,6 +2839,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2614,6 +2850,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2624,6 +2861,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2634,6 +2872,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2644,6 +2883,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2654,6 +2894,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2664,6 +2905,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2674,6 +2916,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2684,6 +2927,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2694,6 +2938,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2704,6 +2949,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2714,6 +2960,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2724,6 +2971,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2734,6 +2982,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2744,6 +2993,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2754,6 +3004,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2764,6 +3015,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2774,6 +3026,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2784,6 +3037,7 @@ public final class HealthKit {
      * 
      * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2794,6 +3048,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2802,6 +3057,7 @@ public final class HealthKit {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2810,6 +3066,7 @@ public final class HealthKit {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2818,6 +3075,7 @@ public final class HealthKit {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2826,6 +3084,7 @@ public final class HealthKit {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2836,6 +3095,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2846,6 +3106,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2856,6 +3117,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2866,6 +3128,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2876,6 +3139,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2886,6 +3150,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2896,6 +3161,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2906,6 +3172,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2916,6 +3183,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2926,6 +3194,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2936,6 +3205,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2946,6 +3216,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2956,6 +3227,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2966,6 +3238,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2976,6 +3249,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2986,6 +3260,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2996,6 +3271,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3006,6 +3282,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3016,6 +3293,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3026,6 +3304,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3040,6 +3319,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3055,6 +3335,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3070,6 +3351,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3085,6 +3367,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3095,6 +3378,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3111,6 +3395,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3129,8 +3414,8 @@ public final class HealthKit {
      */
     @Generated
     @CFunction
-    public static native boolean HKAppleWalkingSteadinessClassificationForQuantity(HKQuantity value,
-            NIntPtr classificationOut, Ptr<NSError> errorOut);
+    public static native boolean HKAppleWalkingSteadinessClassificationForQuantity(@NotNull HKQuantity value,
+            @NotNull NIntPtr classificationOut, @Nullable Ptr<NSError> errorOut);
 
     /**
      * Retrieves the minimum quantity in percent unit for an Apple Walking Steadiness classification.
@@ -3139,6 +3424,7 @@ public final class HealthKit {
      * 
      *                       API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native HKQuantity HKAppleWalkingSteadinessMinimumQuantityForClassification(@NInt long classification);
@@ -3150,6 +3436,7 @@ public final class HealthKit {
      * 
      *                       API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native HKQuantity HKAppleWalkingSteadinessMaximumQuantityForClassification(@NInt long classification);
@@ -3159,6 +3446,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.5
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3169,6 +3457,7 @@ public final class HealthKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3179,6 +3468,7 @@ public final class HealthKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3189,6 +3479,7 @@ public final class HealthKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3199,6 +3490,7 @@ public final class HealthKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3209,6 +3501,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3219,6 +3512,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3229,6 +3523,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3237,6 +3532,7 @@ public final class HealthKit {
     /**
      * API-Since: 14.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3247,6 +3543,7 @@ public final class HealthKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3261,6 +3558,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3276,6 +3574,7 @@ public final class HealthKit {
      * 
      * API-Since: 14.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3291,6 +3590,7 @@ public final class HealthKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3306,6 +3606,7 @@ public final class HealthKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3316,6 +3617,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSSet<? extends NSNumber> HKCategoryValueSleepAnalysisAsleepValues();
@@ -3323,6 +3625,7 @@ public final class HealthKit {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3331,6 +3634,7 @@ public final class HealthKit {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3339,6 +3643,7 @@ public final class HealthKit {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3347,6 +3652,7 @@ public final class HealthKit {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3355,6 +3661,7 @@ public final class HealthKit {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3365,6 +3672,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3375,6 +3683,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3385,6 +3694,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3395,6 +3705,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3405,6 +3716,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3415,6 +3727,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3425,6 +3738,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3435,6 +3749,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3445,6 +3760,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3455,6 +3771,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3465,6 +3782,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3475,6 +3793,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3485,6 +3804,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3495,6 +3815,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3507,6 +3828,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3523,6 +3845,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3538,6 +3861,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3552,6 +3876,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3566,6 +3891,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3580,6 +3906,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3594,6 +3921,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3610,6 +3938,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3624,6 +3953,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3638,6 +3968,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3655,6 +3986,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3667,6 +3999,7 @@ public final class HealthKit {
      * 
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3679,6 +4012,7 @@ public final class HealthKit {
      * 
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3691,6 +4025,7 @@ public final class HealthKit {
      * 
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3703,6 +4038,7 @@ public final class HealthKit {
      * 
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3715,6 +4051,7 @@ public final class HealthKit {
      * 
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3727,6 +4064,7 @@ public final class HealthKit {
      * 
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3737,6 +4075,7 @@ public final class HealthKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3745,6 +4084,7 @@ public final class HealthKit {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3753,6 +4093,7 @@ public final class HealthKit {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3761,6 +4102,7 @@ public final class HealthKit {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3769,6 +4111,7 @@ public final class HealthKit {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3777,6 +4120,7 @@ public final class HealthKit {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3785,6 +4129,7 @@ public final class HealthKit {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3793,6 +4138,7 @@ public final class HealthKit {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

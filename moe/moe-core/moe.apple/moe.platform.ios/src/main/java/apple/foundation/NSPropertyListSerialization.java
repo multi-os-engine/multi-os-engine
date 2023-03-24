@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -69,22 +71,25 @@ public class NSPropertyListSerialization extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,11 +101,13 @@ public class NSPropertyListSerialization extends NSObject {
      * Deprecated-Since: 8.0
      * Deprecated-Message: Use dataWithPropertyList:format:options:error: instead.
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("dataFromPropertyList:format:errorDescription:")
-    public static native NSData dataFromPropertyListFormatErrorDescription(@Mapped(ObjCObjectMapper.class) Object plist,
-            @NUInt long format, @ReferenceInfo(type = NSString.class) Ptr<NSString> errorString);
+    public static native NSData dataFromPropertyListFormatErrorDescription(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object plist, @NUInt long format,
+            @Nullable @ReferenceInfo(type = NSString.class) Ptr<NSString> errorString);
 
     /**
      * Create an NSData from a property list. The format can be either NSPropertyListXMLFormat_v1_0 or
@@ -110,10 +117,12 @@ public class NSPropertyListSerialization extends NSObject {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("dataWithPropertyList:format:options:error:")
-    public static native NSData dataWithPropertyListFormatOptionsError(@Mapped(ObjCObjectMapper.class) Object plist,
-            @NUInt long format, @NUInt long opt, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSData dataWithPropertyListFormatOptionsError(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object plist, @NUInt long format, @NUInt long opt,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("debugDescription")
@@ -145,9 +154,10 @@ public class NSPropertyListSerialization extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,7 +169,7 @@ public class NSPropertyListSerialization extends NSObject {
      */
     @Generated
     @Selector("propertyList:isValidForFormat:")
-    public static native boolean propertyListIsValidForFormat(@Mapped(ObjCObjectMapper.class) Object plist,
+    public static native boolean propertyListIsValidForFormat(@NotNull @Mapped(ObjCObjectMapper.class) Object plist,
             @NUInt long format);
 
     /**
@@ -169,12 +179,14 @@ public class NSPropertyListSerialization extends NSObject {
      * Deprecated-Since: 8.0
      * Deprecated-Message: Use propertyListWithData:options:format:error: instead.
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("propertyListFromData:mutabilityOption:format:errorDescription:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object propertyListFromDataMutabilityOptionFormatErrorDescription(NSData data, @NUInt long opt,
-            NUIntPtr format, @ReferenceInfo(type = NSString.class) Ptr<NSString> errorString);
+    public static native Object propertyListFromDataMutabilityOptionFormatErrorDescription(@NotNull NSData data,
+            @NUInt long opt, @Nullable NUIntPtr format,
+            @Nullable @ReferenceInfo(type = NSString.class) Ptr<NSString> errorString);
 
     /**
      * Create a property list from an NSData. The options can be any of NSPropertyListMutabilityOptions. If the format
@@ -184,11 +196,12 @@ public class NSPropertyListSerialization extends NSObject {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("propertyListWithData:options:format:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object propertyListWithDataOptionsFormatError(NSData data, @NUInt long opt, NUIntPtr format,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native Object propertyListWithDataOptionsFormatError(@NotNull NSData data, @NUInt long opt,
+            @Nullable NUIntPtr format, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Create a property list by reading from an NSInputStream. The options can be any of
@@ -198,11 +211,12 @@ public class NSPropertyListSerialization extends NSObject {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("propertyListWithStream:options:format:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object propertyListWithStreamOptionsFormatError(NSInputStream stream, @NUInt long opt,
-            NUIntPtr format, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native Object propertyListWithStreamOptionsFormatError(@NotNull NSInputStream stream, @NUInt long opt,
+            @Nullable NUIntPtr format, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -237,9 +251,9 @@ public class NSPropertyListSerialization extends NSObject {
     @Generated
     @Selector("writePropertyList:toStream:format:options:error:")
     @NInt
-    public static native long writePropertyListToStreamFormatOptionsError(@Mapped(ObjCObjectMapper.class) Object plist,
-            NSOutputStream stream, @NUInt long format, @NUInt long opt,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native long writePropertyListToStreamFormatOptionsError(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object plist, @NotNull NSOutputStream stream, @NUInt long format,
+            @NUInt long opt, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("init")

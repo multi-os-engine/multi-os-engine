@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Abstract superclass for a template object.
@@ -62,22 +64,25 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -92,7 +97,7 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -105,7 +110,7 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CPTemplate initWithCoder(NSCoder coder);
+    public native CPTemplate initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -124,9 +129,10 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -146,7 +152,7 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setUserInfo:")
-    public native void setUserInfo(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setUserInfo(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
     @Selector("setVersion:")
@@ -169,6 +175,7 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
     /**
      * Any custom data or an object associated with this template can be stored in this property.
      */
+    @Nullable
     @Generated
     @Selector("userInfo")
     @MappedReturn(ObjCObjectMapper.class)
@@ -201,7 +208,7 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setTabImage:")
-    public native void setTabImage(UIImage value);
+    public native void setTabImage(@Nullable UIImage value);
 
     /**
      * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab will inherit
@@ -227,7 +234,7 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setTabTitle:")
-    public native void setTabTitle(String value);
+    public native void setTabTitle(@Nullable String value);
 
     /**
      * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab may optionally
@@ -249,6 +256,7 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("tabImage")
     public native UIImage tabImage();
@@ -276,6 +284,7 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("tabTitle")
     public native String tabTitle();

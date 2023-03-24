@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INCancelWorkoutIntent. By implementing this protocol, a class can provide
@@ -60,8 +61,8 @@ public interface INCancelWorkoutIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmCancelWorkout:completion:")
-    default void confirmCancelWorkoutCompletion(INCancelWorkoutIntent intent,
-            @ObjCBlock(name = "call_confirmCancelWorkoutCompletion") Block_confirmCancelWorkoutCompletion completion) {
+    default void confirmCancelWorkoutCompletion(@NotNull INCancelWorkoutIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmCancelWorkoutCompletion") Block_confirmCancelWorkoutCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,8 +79,8 @@ public interface INCancelWorkoutIntentHandling {
      */
     @Generated
     @Selector("handleCancelWorkout:completion:")
-    void handleCancelWorkoutCompletion(INCancelWorkoutIntent intent,
-            @ObjCBlock(name = "call_handleCancelWorkoutCompletion") Block_handleCancelWorkoutCompletion completion);
+    void handleCancelWorkoutCompletion(@NotNull INCancelWorkoutIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleCancelWorkoutCompletion") Block_handleCancelWorkoutCompletion completion);
 
     /**
      * Resolution methods - Determine if this intent is ready for the next step (confirmation)
@@ -95,8 +96,8 @@ public interface INCancelWorkoutIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveWorkoutNameForCancelWorkout:withCompletion:")
-    default void resolveWorkoutNameForCancelWorkoutWithCompletion(INCancelWorkoutIntent intent,
-            @ObjCBlock(name = "call_resolveWorkoutNameForCancelWorkoutWithCompletion") Block_resolveWorkoutNameForCancelWorkoutWithCompletion completion) {
+    default void resolveWorkoutNameForCancelWorkoutWithCompletion(@NotNull INCancelWorkoutIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveWorkoutNameForCancelWorkoutWithCompletion") Block_resolveWorkoutNameForCancelWorkoutWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,20 +105,21 @@ public interface INCancelWorkoutIntentHandling {
     @Generated
     public interface Block_confirmCancelWorkoutCompletion {
         @Generated
-        void call_confirmCancelWorkoutCompletion(INCancelWorkoutIntentResponse response);
+        void call_confirmCancelWorkoutCompletion(@NotNull INCancelWorkoutIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleCancelWorkoutCompletion {
         @Generated
-        void call_handleCancelWorkoutCompletion(INCancelWorkoutIntentResponse response);
+        void call_handleCancelWorkoutCompletion(@NotNull INCancelWorkoutIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveWorkoutNameForCancelWorkoutWithCompletion {
         @Generated
-        void call_resolveWorkoutNameForCancelWorkoutWithCompletion(INSpeakableStringResolutionResult resolutionResult);
+        void call_resolveWorkoutNameForCancelWorkoutWithCompletion(
+                @NotNull INSpeakableStringResolutionResult resolutionResult);
     }
 }

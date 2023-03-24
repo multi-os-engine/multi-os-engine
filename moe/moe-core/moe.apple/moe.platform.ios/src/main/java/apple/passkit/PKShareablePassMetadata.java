@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -56,26 +58,30 @@ public class PKShareablePassMetadata extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("cardConfigurationIdentifier")
     public native String cardConfigurationIdentifier();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -83,6 +89,7 @@ public class PKShareablePassMetadata extends NSObject {
     /**
      * A unique identifier for provisioning credential data.
      */
+    @NotNull
     @Generated
     @Selector("credentialIdentifier")
     public native String credentialIdentifier();
@@ -114,8 +121,9 @@ public class PKShareablePassMetadata extends NSObject {
     @Generated
     @Selector("initWithProvisioningCredentialIdentifier:cardConfigurationIdentifier:sharingInstanceIdentifier:passThumbnailImage:ownerDisplayName:localizedDescription:")
     public native PKShareablePassMetadata initWithProvisioningCredentialIdentifierCardConfigurationIdentifierSharingInstanceIdentifierPassThumbnailImageOwnerDisplayNameLocalizedDescription(
-            String credentialIdentifier, String cardConfigurationIdentifier, String sharingInstanceIdentifier,
-            CGImageRef passThumbnailImage, String ownerDisplayName, String localizedDescription);
+            @NotNull String credentialIdentifier, @NotNull String cardConfigurationIdentifier,
+            @NotNull String sharingInstanceIdentifier, @NotNull CGImageRef passThumbnailImage,
+            @NotNull String ownerDisplayName, @NotNull String localizedDescription);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -134,14 +142,16 @@ public class PKShareablePassMetadata extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * API-Since: 14.0
      * Deprecated-Since: 16.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("localizedDescription")
@@ -156,6 +166,7 @@ public class PKShareablePassMetadata extends NSObject {
      * API-Since: 14.0
      * Deprecated-Since: 16.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("ownerDisplayName")
@@ -165,6 +176,7 @@ public class PKShareablePassMetadata extends NSObject {
      * API-Since: 14.0
      * Deprecated-Since: 16.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("passThumbnailImage")
@@ -186,6 +198,7 @@ public class PKShareablePassMetadata extends NSObject {
      * A unique identifier that refers to an instance of sharing of credentials to a user's device initiated from
      * another user, device, or web.
      */
+    @NotNull
     @Generated
     @Selector("sharingInstanceIdentifier")
     public native String sharingInstanceIdentifier();
@@ -204,6 +217,7 @@ public class PKShareablePassMetadata extends NSObject {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("accountHash")
     public native String accountHash();
@@ -218,9 +232,10 @@ public class PKShareablePassMetadata extends NSObject {
     @Generated
     @Selector("initWithProvisioningCredentialIdentifier:sharingInstanceIdentifier:passThumbnailImage:ownerDisplayName:localizedDescription:accountHash:templateIdentifier:relyingPartyIdentifier:requiresUnifiedAccessCapableDevice:")
     public native PKShareablePassMetadata initWithProvisioningCredentialIdentifierSharingInstanceIdentifierPassThumbnailImageOwnerDisplayNameLocalizedDescriptionAccountHashTemplateIdentifierRelyingPartyIdentifierRequiresUnifiedAccessCapableDevice(
-            String credentialIdentifier, String sharingInstanceIdentifier, CGImageRef passThumbnailImage,
-            String ownerDisplayName, String localizedDescription, String accountHash, String templateIdentifier,
-            String relyingPartyIdentifier, boolean requiresUnifiedAccessCapableDevice);
+            @NotNull String credentialIdentifier, @NotNull String sharingInstanceIdentifier,
+            @NotNull CGImageRef passThumbnailImage, @NotNull String ownerDisplayName,
+            @NotNull String localizedDescription, @NotNull String accountHash, @NotNull String templateIdentifier,
+            @NotNull String relyingPartyIdentifier, boolean requiresUnifiedAccessCapableDevice);
 
     /**
      * Unique accountHash representing the external account in partner's system. This value needs to be the same for all
@@ -228,6 +243,7 @@ public class PKShareablePassMetadata extends NSObject {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("relyingPartyIdentifier")
     public native String relyingPartyIdentifier();
@@ -249,6 +265,7 @@ public class PKShareablePassMetadata extends NSObject {
      * API-Since: 15.0
      * Deprecated-Since: 16.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("templateIdentifier")
@@ -260,6 +277,7 @@ public class PKShareablePassMetadata extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("cardTemplateIdentifier")
     public native String cardTemplateIdentifier();
@@ -270,8 +288,8 @@ public class PKShareablePassMetadata extends NSObject {
     @Generated
     @Selector("initWithProvisioningCredentialIdentifier:sharingInstanceIdentifier:cardConfigurationIdentifier:preview:")
     public native PKShareablePassMetadata initWithProvisioningCredentialIdentifierSharingInstanceIdentifierCardConfigurationIdentifierPreview(
-            String credentialIdentifier, String sharingInstanceIdentifier, String templateIdentifier,
-            PKShareablePassMetadataPreview preview);
+            @NotNull String credentialIdentifier, @NotNull String sharingInstanceIdentifier,
+            @NotNull String templateIdentifier, @NotNull PKShareablePassMetadataPreview preview);
 
     /**
      * API-Since: 16.0
@@ -279,14 +297,15 @@ public class PKShareablePassMetadata extends NSObject {
     @Generated
     @Selector("initWithProvisioningCredentialIdentifier:sharingInstanceIdentifier:cardTemplateIdentifier:preview:")
     public native PKShareablePassMetadata initWithProvisioningCredentialIdentifierSharingInstanceIdentifierCardTemplateIdentifierPreview(
-            String credentialIdentifier, String sharingInstanceIdentifier, String templateIdentifier,
-            PKShareablePassMetadataPreview preview);
+            @NotNull String credentialIdentifier, @NotNull String sharingInstanceIdentifier,
+            @NotNull String templateIdentifier, @NotNull PKShareablePassMetadataPreview preview);
 
     /**
      * Display Properties
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("preview")
     public native PKShareablePassMetadataPreview preview();
@@ -297,6 +316,7 @@ public class PKShareablePassMetadata extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("serverEnvironmentIdentifier")
     public native String serverEnvironmentIdentifier();
@@ -308,7 +328,7 @@ public class PKShareablePassMetadata extends NSObject {
      */
     @Generated
     @Selector("setAccountHash:")
-    public native void setAccountHash(String value);
+    public native void setAccountHash(@NotNull String value);
 
     /**
      * Unique accountHash representing the external account in partner's system. This value needs to be the same for all
@@ -318,7 +338,7 @@ public class PKShareablePassMetadata extends NSObject {
      */
     @Generated
     @Selector("setRelyingPartyIdentifier:")
-    public native void setRelyingPartyIdentifier(String value);
+    public native void setRelyingPartyIdentifier(@NotNull String value);
 
     /**
      * Specify that the passes to provision require a unified access capable device.
@@ -338,5 +358,5 @@ public class PKShareablePassMetadata extends NSObject {
      */
     @Generated
     @Selector("setServerEnvironmentIdentifier:")
-    public native void setServerEnvironmentIdentifier(String value);
+    public native void setServerEnvironmentIdentifier(@NotNull String value);
 }

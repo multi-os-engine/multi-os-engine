@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.metal.struct.MTLResourceID;
 import org.moe.natj.general.ann.ByValue;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLSamplerState
@@ -44,6 +46,7 @@ public interface MTLSamplerState {
      * 
      * The device this resource was created against. This resource can only be used with this device.
      */
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -54,6 +57,7 @@ public interface MTLSamplerState {
      * 
      * A string to help identify this object.
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();

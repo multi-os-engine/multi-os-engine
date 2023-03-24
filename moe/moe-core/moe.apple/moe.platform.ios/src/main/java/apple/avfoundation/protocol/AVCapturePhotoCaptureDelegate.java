@@ -32,6 +32,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] AVCapturePhotoCaptureDelegate
@@ -86,8 +88,8 @@ public interface AVCapturePhotoCaptureDelegate {
     @Generated
     @IsOptional
     @Selector("captureOutput:didCapturePhotoForResolvedSettings:")
-    default void captureOutputDidCapturePhotoForResolvedSettings(AVCapturePhotoOutput output,
-            AVCaptureResolvedPhotoSettings resolvedSettings) {
+    default void captureOutputDidCapturePhotoForResolvedSettings(@NotNull AVCapturePhotoOutput output,
+            @NotNull AVCaptureResolvedPhotoSettings resolvedSettings) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -109,8 +111,8 @@ public interface AVCapturePhotoCaptureDelegate {
     @Generated
     @IsOptional
     @Selector("captureOutput:didFinishCaptureForResolvedSettings:error:")
-    default void captureOutputDidFinishCaptureForResolvedSettingsError(AVCapturePhotoOutput output,
-            AVCaptureResolvedPhotoSettings resolvedSettings, NSError error) {
+    default void captureOutputDidFinishCaptureForResolvedSettingsError(@NotNull AVCapturePhotoOutput output,
+            @NotNull AVCaptureResolvedPhotoSettings resolvedSettings, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -140,8 +142,9 @@ public interface AVCapturePhotoCaptureDelegate {
     @IsOptional
     @Selector("captureOutput:didFinishProcessingLivePhotoToMovieFileAtURL:duration:photoDisplayTime:resolvedSettings:error:")
     default void captureOutputDidFinishProcessingLivePhotoToMovieFileAtURLDurationPhotoDisplayTimeResolvedSettingsError(
-            AVCapturePhotoOutput output, NSURL outputFileURL, @ByValue CMTime duration,
-            @ByValue CMTime photoDisplayTime, AVCaptureResolvedPhotoSettings resolvedSettings, NSError error) {
+            @NotNull AVCapturePhotoOutput output, @NotNull NSURL outputFileURL, @ByValue CMTime duration,
+            @ByValue CMTime photoDisplayTime, @NotNull AVCaptureResolvedPhotoSettings resolvedSettings,
+            @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -180,9 +183,10 @@ public interface AVCapturePhotoCaptureDelegate {
     @IsOptional
     @Selector("captureOutput:didFinishProcessingPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:")
     default void captureOutputDidFinishProcessingPhotoSampleBufferPreviewPhotoSampleBufferResolvedSettingsBracketSettingsError(
-            AVCapturePhotoOutput output, CMSampleBufferRef photoSampleBuffer,
-            CMSampleBufferRef previewPhotoSampleBuffer, AVCaptureResolvedPhotoSettings resolvedSettings,
-            AVCaptureBracketedStillImageSettings bracketSettings, NSError error) {
+            @NotNull AVCapturePhotoOutput output, @Nullable CMSampleBufferRef photoSampleBuffer,
+            @Nullable CMSampleBufferRef previewPhotoSampleBuffer,
+            @NotNull AVCaptureResolvedPhotoSettings resolvedSettings,
+            @Nullable AVCaptureBracketedStillImageSettings bracketSettings, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -220,9 +224,10 @@ public interface AVCapturePhotoCaptureDelegate {
     @IsOptional
     @Selector("captureOutput:didFinishProcessingRawPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:")
     default void captureOutputDidFinishProcessingRawPhotoSampleBufferPreviewPhotoSampleBufferResolvedSettingsBracketSettingsError(
-            AVCapturePhotoOutput output, CMSampleBufferRef rawSampleBuffer, CMSampleBufferRef previewPhotoSampleBuffer,
-            AVCaptureResolvedPhotoSettings resolvedSettings, AVCaptureBracketedStillImageSettings bracketSettings,
-            NSError error) {
+            @NotNull AVCapturePhotoOutput output, @Nullable CMSampleBufferRef rawSampleBuffer,
+            @Nullable CMSampleBufferRef previewPhotoSampleBuffer,
+            @NotNull AVCaptureResolvedPhotoSettings resolvedSettings,
+            @Nullable AVCaptureBracketedStillImageSettings bracketSettings, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -250,7 +255,8 @@ public interface AVCapturePhotoCaptureDelegate {
     @IsOptional
     @Selector("captureOutput:didFinishRecordingLivePhotoMovieForEventualFileAtURL:resolvedSettings:")
     default void captureOutputDidFinishRecordingLivePhotoMovieForEventualFileAtURLResolvedSettings(
-            AVCapturePhotoOutput output, NSURL outputFileURL, AVCaptureResolvedPhotoSettings resolvedSettings) {
+            @NotNull AVCapturePhotoOutput output, @NotNull NSURL outputFileURL,
+            @NotNull AVCaptureResolvedPhotoSettings resolvedSettings) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -272,8 +278,8 @@ public interface AVCapturePhotoCaptureDelegate {
     @Generated
     @IsOptional
     @Selector("captureOutput:willBeginCaptureForResolvedSettings:")
-    default void captureOutputWillBeginCaptureForResolvedSettings(AVCapturePhotoOutput output,
-            AVCaptureResolvedPhotoSettings resolvedSettings) {
+    default void captureOutputWillBeginCaptureForResolvedSettings(@NotNull AVCapturePhotoOutput output,
+            @NotNull AVCaptureResolvedPhotoSettings resolvedSettings) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -295,8 +301,8 @@ public interface AVCapturePhotoCaptureDelegate {
     @Generated
     @IsOptional
     @Selector("captureOutput:willCapturePhotoForResolvedSettings:")
-    default void captureOutputWillCapturePhotoForResolvedSettings(AVCapturePhotoOutput output,
-            AVCaptureResolvedPhotoSettings resolvedSettings) {
+    default void captureOutputWillCapturePhotoForResolvedSettings(@NotNull AVCapturePhotoOutput output,
+            @NotNull AVCaptureResolvedPhotoSettings resolvedSettings) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -321,8 +327,8 @@ public interface AVCapturePhotoCaptureDelegate {
     @Generated
     @IsOptional
     @Selector("captureOutput:didFinishProcessingPhoto:error:")
-    default void captureOutputDidFinishProcessingPhotoError(AVCapturePhotoOutput output, AVCapturePhoto photo,
-            NSError error) {
+    default void captureOutputDidFinishProcessingPhotoError(@NotNull AVCapturePhotoOutput output,
+            @NotNull AVCapturePhoto photo, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

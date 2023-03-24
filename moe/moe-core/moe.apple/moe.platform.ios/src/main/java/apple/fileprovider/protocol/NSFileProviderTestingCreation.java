@@ -10,6 +10,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This operation causes the system to propagate a creation of an item from a source side to a target side.
@@ -24,6 +26,7 @@ public interface NSFileProviderTestingCreation extends NSFileProviderTestingOper
     /**
      * The domain version at the time the creation was discovered on the source side.
      */
+    @Nullable
     @Generated
     @Selector("domainVersion")
     NSFileProviderDomainVersion domainVersion();
@@ -31,6 +34,7 @@ public interface NSFileProviderTestingCreation extends NSFileProviderTestingOper
     /**
      * The description of the item.
      */
+    @NotNull
     @Generated
     @Selector("sourceItem")
     @MappedReturn(ObjCObjectMapper.class)

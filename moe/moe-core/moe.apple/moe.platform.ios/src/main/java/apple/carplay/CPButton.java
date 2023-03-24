@@ -23,6 +23,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -57,22 +59,25 @@ public class CPButton extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,6 +106,7 @@ public class CPButton extends NSObject {
      * 
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
      */
+    @Nullable
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -130,14 +136,14 @@ public class CPButton extends NSObject {
      */
     @Generated
     @Selector("initWithImage:handler:")
-    public native CPButton initWithImageHandler(UIImage image,
-            @ObjCBlock(name = "call_initWithImageHandler") Block_initWithImageHandler handler);
+    public native CPButton initWithImageHandler(@NotNull UIImage image,
+            @Nullable @ObjCBlock(name = "call_initWithImageHandler") Block_initWithImageHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithImageHandler {
         @Generated
-        void call_initWithImageHandler(CPButton button);
+        void call_initWithImageHandler(@NotNull CPButton button);
     }
 
     @Generated
@@ -167,9 +173,10 @@ public class CPButton extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -199,7 +206,7 @@ public class CPButton extends NSObject {
      */
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@Nullable String value);
 
     @Generated
     @Selector("setVersion:")
@@ -212,6 +219,7 @@ public class CPButton extends NSObject {
     /**
      * A custom title to display for this button, displayed only in templates that allow for custom titles.
      */
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();

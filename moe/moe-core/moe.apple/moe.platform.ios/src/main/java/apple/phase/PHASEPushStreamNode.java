@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] PHASEPushStreamNode
@@ -63,22 +65,25 @@ public class PHASEPushStreamNode extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,6 +101,7 @@ public class PHASEPushStreamNode extends NSObject {
      * 
      * The readonly property that returns the AVAudioFormat that this stream was initialized with.
      */
+    @NotNull
     @Generated
     @Selector("format")
     public native AVAudioFormat format();
@@ -105,6 +111,7 @@ public class PHASEPushStreamNode extends NSObject {
      * 
      * If specified during construction, the metaparameter for controlling gain will be available here
      */
+    @Nullable
     @Generated
     @Selector("gainMetaParameter")
     public native PHASENumberMetaParameter gainMetaParameter();
@@ -135,15 +142,17 @@ public class PHASEPushStreamNode extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] mixer
      * 
      * The readonly property that returns the PHASEMixer this sampler was created with and assigned to.
      */
+    @NotNull
     @Generated
     @Selector("mixer")
     public native PHASEMixer mixer();
@@ -158,6 +167,7 @@ public class PHASEPushStreamNode extends NSObject {
      * 
      * If specified during construction, the metaparameter for controlling rate/pitch will be available here
      */
+    @Nullable
     @Generated
     @Selector("rateMetaParameter")
     public native PHASENumberMetaParameter rateMetaParameter();
@@ -183,7 +193,7 @@ public class PHASEPushStreamNode extends NSObject {
      */
     @Generated
     @Selector("scheduleBuffer:")
-    public native void scheduleBuffer(AVAudioPCMBuffer buffer);
+    public native void scheduleBuffer(@NotNull AVAudioPCMBuffer buffer);
 
     /**
      * scheduleBuffer:atTime:options:
@@ -201,7 +211,8 @@ public class PHASEPushStreamNode extends NSObject {
      */
     @Generated
     @Selector("scheduleBuffer:atTime:options:")
-    public native void scheduleBufferAtTimeOptions(AVAudioPCMBuffer buffer, AVAudioTime when, @NUInt long options);
+    public native void scheduleBufferAtTimeOptions(@NotNull AVAudioPCMBuffer buffer, @Nullable AVAudioTime when,
+            @NUInt long options);
 
     /**
      * scheduleBuffer:atTime:options:completionCallbackType:completionHandler:
@@ -224,9 +235,10 @@ public class PHASEPushStreamNode extends NSObject {
      */
     @Generated
     @Selector("scheduleBuffer:atTime:options:completionCallbackType:completionHandler:")
-    public native void scheduleBufferAtTimeOptionsCompletionCallbackTypeCompletionHandler(AVAudioPCMBuffer buffer,
-            AVAudioTime when, @NUInt long options, @NInt long completionCallbackType,
-            @ObjCBlock(name = "call_scheduleBufferAtTimeOptionsCompletionCallbackTypeCompletionHandler") Block_scheduleBufferAtTimeOptionsCompletionCallbackTypeCompletionHandler completionHandler);
+    public native void scheduleBufferAtTimeOptionsCompletionCallbackTypeCompletionHandler(
+            @NotNull AVAudioPCMBuffer buffer, @Nullable AVAudioTime when, @NUInt long options,
+            @NInt long completionCallbackType,
+            @NotNull @ObjCBlock(name = "call_scheduleBufferAtTimeOptionsCompletionCallbackTypeCompletionHandler") Block_scheduleBufferAtTimeOptionsCompletionCallbackTypeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -253,9 +265,9 @@ public class PHASEPushStreamNode extends NSObject {
      */
     @Generated
     @Selector("scheduleBuffer:completionCallbackType:completionHandler:")
-    public native void scheduleBufferCompletionCallbackTypeCompletionHandler(AVAudioPCMBuffer buffer,
+    public native void scheduleBufferCompletionCallbackTypeCompletionHandler(@NotNull AVAudioPCMBuffer buffer,
             @NInt long completionCallbackType,
-            @ObjCBlock(name = "call_scheduleBufferCompletionCallbackTypeCompletionHandler") Block_scheduleBufferCompletionCallbackTypeCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_scheduleBufferCompletionCallbackTypeCompletionHandler") Block_scheduleBufferCompletionCallbackTypeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated

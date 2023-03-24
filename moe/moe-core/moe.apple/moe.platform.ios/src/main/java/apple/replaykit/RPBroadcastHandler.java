@@ -41,6 +41,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * RPBroadcastProcessExtension
@@ -79,22 +81,25 @@ public class RPBroadcastHandler extends NSObject implements NSExtensionRequestHa
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +134,10 @@ public class RPBroadcastHandler extends NSObject implements NSExtensionRequestHa
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,7 +167,7 @@ public class RPBroadcastHandler extends NSObject implements NSExtensionRequestHa
 
     @Generated
     @Selector("beginRequestWithExtensionContext:")
-    public native void beginRequestWithExtensionContext(NSExtensionContext context);
+    public native void beginRequestWithExtensionContext(@NotNull NSExtensionContext context);
 
     @Generated
     @Selector("init")
@@ -176,7 +182,7 @@ public class RPBroadcastHandler extends NSObject implements NSExtensionRequestHa
      */
     @Generated
     @Selector("updateServiceInfo:")
-    public native void updateServiceInfo(NSDictionary<String, ? extends NSObject> serviceInfo);
+    public native void updateServiceInfo(@NotNull NSDictionary<String, ? extends NSObject> serviceInfo);
 
     /**
      * Call this method, supplying it with a URL to update the broadcastURL property on RPBroadcastController.
@@ -188,5 +194,5 @@ public class RPBroadcastHandler extends NSObject implements NSExtensionRequestHa
      */
     @Generated
     @Selector("updateBroadcastURL:")
-    public native void updateBroadcastURL(NSURL broadcastURL);
+    public native void updateBroadcastURL(@NotNull NSURL broadcastURL);
 }

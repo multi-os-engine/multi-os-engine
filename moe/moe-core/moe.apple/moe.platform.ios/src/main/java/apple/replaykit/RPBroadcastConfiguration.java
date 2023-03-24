@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -79,22 +81,25 @@ public class RPBroadcastConfiguration extends NSObject implements NSCoding, NSSe
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +134,10 @@ public class RPBroadcastConfiguration extends NSObject implements NSCoding, NSSe
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -173,7 +179,7 @@ public class RPBroadcastConfiguration extends NSObject implements NSCoding, NSSe
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -181,7 +187,7 @@ public class RPBroadcastConfiguration extends NSObject implements NSCoding, NSSe
 
     @Generated
     @Selector("initWithCoder:")
-    public native RPBroadcastConfiguration initWithCoder(NSCoder coder);
+    public native RPBroadcastConfiguration initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Specify the duration of a movie clip before it is delivered to the movie clip handler extension. Default is 5
@@ -197,7 +203,7 @@ public class RPBroadcastConfiguration extends NSObject implements NSCoding, NSSe
      */
     @Generated
     @Selector("setVideoCompressionProperties:")
-    public native void setVideoCompressionProperties(NSDictionary<String, ? extends NSObject> value);
+    public native void setVideoCompressionProperties(@Nullable NSDictionary<String, ? extends NSObject> value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -209,6 +215,7 @@ public class RPBroadcastConfiguration extends NSObject implements NSCoding, NSSe
      * Override the video compression properties used to encode movie clips. See AVVideoCompressionPropertiesKey in
      * <AVFoundation/AVVideoSettings.h> for available properties.
      */
+    @Nullable
     @Generated
     @Selector("videoCompressionProperties")
     public native NSDictionary<String, ? extends NSObject> videoCompressionProperties();

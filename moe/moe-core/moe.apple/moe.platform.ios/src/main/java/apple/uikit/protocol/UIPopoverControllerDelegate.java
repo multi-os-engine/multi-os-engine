@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -45,8 +46,8 @@ public interface UIPopoverControllerDelegate {
     @IsOptional
     @Deprecated
     @Selector("popoverController:willRepositionPopoverToRect:inView:")
-    default void popoverControllerWillRepositionPopoverToRectInView(UIPopoverController popoverController, CGRect rect,
-            @ReferenceInfo(type = UIView.class) Ptr<UIView> view) {
+    default void popoverControllerWillRepositionPopoverToRectInView(@NotNull UIPopoverController popoverController,
+            @NotNull CGRect rect, @NotNull @ReferenceInfo(type = UIView.class) Ptr<UIView> view) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -61,7 +62,7 @@ public interface UIPopoverControllerDelegate {
     @IsOptional
     @Deprecated
     @Selector("popoverControllerDidDismissPopover:")
-    default void popoverControllerDidDismissPopover(UIPopoverController popoverController) {
+    default void popoverControllerDidDismissPopover(@NotNull UIPopoverController popoverController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -76,7 +77,7 @@ public interface UIPopoverControllerDelegate {
     @IsOptional
     @Deprecated
     @Selector("popoverControllerShouldDismissPopover:")
-    default boolean popoverControllerShouldDismissPopover(UIPopoverController popoverController) {
+    default boolean popoverControllerShouldDismissPopover(@NotNull UIPopoverController popoverController) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEVPNProtocolIKEv2
@@ -81,22 +83,25 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +136,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -172,6 +178,7 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("IKESecurityAssociationParameters")
     public native NEVPNIKEv2SecurityAssociationParameters IKESecurityAssociationParameters();
@@ -195,6 +202,7 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("childSecurityAssociationParameters")
     public native NEVPNIKEv2SecurityAssociationParameters childSecurityAssociationParameters();
@@ -262,7 +270,7 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEVPNProtocolIKEv2 initWithCoder(NSCoder coder);
+    public native NEVPNProtocolIKEv2 initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] serverCertificateCommonName
@@ -271,6 +279,7 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("serverCertificateCommonName")
     public native String serverCertificateCommonName();
@@ -283,6 +292,7 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("serverCertificateIssuerCommonName")
     public native String serverCertificateIssuerCommonName();
@@ -363,7 +373,7 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
      */
     @Generated
     @Selector("setServerCertificateCommonName:")
-    public native void setServerCertificateCommonName(String value);
+    public native void setServerCertificateCommonName(@Nullable String value);
 
     /**
      * [@property] serverCertificateIssuerCommonName
@@ -375,7 +385,7 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
      */
     @Generated
     @Selector("setServerCertificateIssuerCommonName:")
-    public native void setServerCertificateIssuerCommonName(String value);
+    public native void setServerCertificateIssuerCommonName(@Nullable String value);
 
     /**
      * [@property] strictRevocationCheck

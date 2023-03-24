@@ -35,6 +35,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSHTTPURLResponse
@@ -76,22 +78,25 @@ public class NSHTTPURLResponse extends NSURLResponse {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +131,10 @@ public class NSHTTPURLResponse extends NSURLResponse {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * localizedStringForStatusCode:
@@ -139,6 +145,7 @@ public class NSHTTPURLResponse extends NSURLResponse {
      * @param statusCode the status code to use to produce a localized string.
      * @return A localized string corresponding to the given status code.
      */
+    @NotNull
     @Generated
     @Selector("localizedStringForStatusCode:")
     public static native String localizedStringForStatusCode(@NInt long statusCode);
@@ -185,6 +192,7 @@ public class NSHTTPURLResponse extends NSURLResponse {
      * @return A dictionary containing all the HTTP header fields of the
      *         receiver.
      */
+    @NotNull
     @Generated
     @Selector("allHeaderFields")
     public native NSDictionary<?, ?> allHeaderFields();
@@ -195,12 +203,12 @@ public class NSHTTPURLResponse extends NSURLResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSHTTPURLResponse initWithCoder(NSCoder coder);
+    public native NSHTTPURLResponse initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithURL:MIMEType:expectedContentLength:textEncodingName:")
-    public native NSHTTPURLResponse initWithURLMIMETypeExpectedContentLengthTextEncodingName(NSURL URL, String MIMEType,
-            @NInt long length, String name);
+    public native NSHTTPURLResponse initWithURLMIMETypeExpectedContentLengthTextEncodingName(@NotNull NSURL URL,
+            @Nullable String MIMEType, @NInt long length, @Nullable String name);
 
     /**
      * initWithURL:statusCode:HTTPVersion:headerFields:
@@ -220,8 +228,8 @@ public class NSHTTPURLResponse extends NSURLResponse {
      */
     @Generated
     @Selector("initWithURL:statusCode:HTTPVersion:headerFields:")
-    public native NSHTTPURLResponse initWithURLStatusCodeHTTPVersionHeaderFields(NSURL url, @NInt long statusCode,
-            String HTTPVersion, NSDictionary<String, String> headerFields);
+    public native NSHTTPURLResponse initWithURLStatusCodeHTTPVersionHeaderFields(@NotNull NSURL url,
+            @NInt long statusCode, @Nullable String HTTPVersion, @Nullable NSDictionary<String, String> headerFields);
 
     /**
      * Returns the HTTP status code of the receiver.
@@ -253,7 +261,8 @@ public class NSHTTPURLResponse extends NSURLResponse {
      * 
      *         API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("valueForHTTPHeaderField:")
-    public native String valueForHTTPHeaderField(String field);
+    public native String valueForHTTPHeaderField(@NotNull String field);
 }

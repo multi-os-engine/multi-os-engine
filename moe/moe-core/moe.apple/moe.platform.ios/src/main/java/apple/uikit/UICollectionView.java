@@ -56,6 +56,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 6.0
@@ -83,7 +85,7 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Selector("addKeyframeWithRelativeStartTime:relativeDuration:animations:")
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
-            @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
 
     @Generated
     @Owned
@@ -99,64 +101,71 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
     public static native void animateKeyframesWithDurationDelayOptionsAnimationsCompletion(double duration,
             double delay, @NUInt long options,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:animations:")
     public static native void animateWithDurationAnimations(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
 
     @Generated
     @Selector("animateWithDuration:animations:completion:")
     public static native void animateWithDurationAnimationsCompletion(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:options:animations:completion:")
     public static native void animateWithDurationDelayOptionsAnimationsCompletion(double duration, double delay,
             @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:")
     public static native void animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion(
             double duration, double delay, @NFloat double dampingRatio, @NFloat double velocity, @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
 
+    @NotNull
     @Generated
     @Selector("appearance")
     public static native UICollectionView appearance();
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:")
-    public static native UICollectionView appearanceForTraitCollection(UITraitCollection trait);
+    public static native UICollectionView appearanceForTraitCollection(@NotNull UITraitCollection trait);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    public static native UICollectionView appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native UICollectionView appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     public static native UICollectionView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            UITraitCollection trait, NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     public static native UICollectionView appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    public static native UICollectionView appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native UICollectionView appearanceWhenContainedInInstancesOfClasses(
+            @NotNull NSArray<?> containerTypes);
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -164,34 +173,37 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
-    public static native void beginAnimationsContext(String animationID, VoidPtr context);
+    public static native void beginAnimationsContext(@Nullable String animationID, @Nullable VoidPtr context);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Deprecated
     @Generated
@@ -232,10 +244,12 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("layerClass")
     public static native Class layerClass();
@@ -248,14 +262,14 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")
     public static native void performSystemAnimationOnViewsOptionsAnimationsCompletion(@NUInt long animation,
-            NSArray<? extends UIView> views, @NUInt long options,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
+            @NotNull NSArray<? extends UIView> views, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("performWithoutAnimation:")
     public static native void performWithoutAnimation(
-            @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
+            @NotNull @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
 
     @Generated
     @Selector("requiresConstraintBasedLayout")
@@ -287,12 +301,12 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
-    public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
+    public static native void setAnimationDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object delegate);
 
     @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
-    public static native void setAnimationDidStopSelector(SEL selector);
+    public static native void setAnimationDidStopSelector(@Nullable SEL selector);
 
     @Deprecated
     @Generated
@@ -312,17 +326,18 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
-    public static native void setAnimationStartDate(NSDate startDate);
+    public static native void setAnimationStartDate(@NotNull NSDate startDate);
 
     @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
-    public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
+    public static native void setAnimationTransitionForViewCache(@NInt long transition, @NotNull UIView view,
+            boolean cache);
 
     @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
-    public static native void setAnimationWillStartSelector(SEL selector);
+    public static native void setAnimationWillStartSelector(@Nullable SEL selector);
 
     @Generated
     @Selector("setAnimationsEnabled:")
@@ -338,16 +353,16 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
 
     @Generated
     @Selector("transitionFromView:toView:duration:options:completion:")
-    public static native void transitionFromViewToViewDurationOptionsCompletion(UIView fromView, UIView toView,
-            double duration, @NUInt long options,
-            @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
+    public static native void transitionFromViewToViewDurationOptionsCompletion(@NotNull UIView fromView,
+            @NotNull UIView toView, double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
 
     @Generated
     @Selector("transitionWithView:duration:options:animations:completion:")
-    public static native void transitionWithViewDurationOptionsAnimationsCompletion(UIView view, double duration,
-            @NUInt long options,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
+    public static native void transitionWithViewDurationOptionsAnimationsCompletion(@NotNull UIView view,
+            double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:")
@@ -379,44 +394,50 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Selector("allowsSelection")
     public native boolean allowsSelection();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearance")
     public UICollectionView _appearance() {
         return appearance();
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    public UICollectionView _appearanceForTraitCollection(UITraitCollection trait) {
+    public UICollectionView _appearanceForTraitCollection(@NotNull UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    public UICollectionView _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public UICollectionView _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    public UICollectionView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
+    public UICollectionView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     public UICollectionView _appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    public UICollectionView _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public UICollectionView _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -424,6 +445,7 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
      * will be automatically resized to track the size of the collection view and placed behind all cells and
      * supplementary views.
      */
+    @Nullable
     @Generated
     @Selector("backgroundView")
     public native UIView backgroundView();
@@ -435,7 +457,7 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
      */
     @Generated
     @Selector("beginInteractiveMovementForItemAtIndexPath:")
-    public native boolean beginInteractiveMovementForItemAtIndexPath(NSIndexPath indexPath);
+    public native boolean beginInteractiveMovementForItemAtIndexPath(@NotNull NSIndexPath indexPath);
 
     /**
      * API-Since: 9.0
@@ -455,19 +477,23 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
      * Returns any existing visible or prepared cell for the index path. Returns nil when no cell exists, or if index
      * path is out of range.
      */
+    @Nullable
     @Generated
     @Selector("cellForItemAtIndexPath:")
-    public native UICollectionViewCell cellForItemAtIndexPath(NSIndexPath indexPath);
+    public native UICollectionViewCell cellForItemAtIndexPath(@NotNull NSIndexPath indexPath);
 
+    @NotNull
     @Generated
     @Selector("collectionViewLayout")
     public native UICollectionViewLayout collectionViewLayout();
 
+    @Nullable
     @Generated
     @Selector("dataSource")
     @MappedReturn(ObjCObjectMapper.class)
     public native UICollectionViewDataSource dataSource();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -475,25 +501,27 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
 
     @Generated
     @Selector("deleteItemsAtIndexPaths:")
-    public native void deleteItemsAtIndexPaths(NSArray<? extends NSIndexPath> indexPaths);
+    public native void deleteItemsAtIndexPaths(@NotNull NSArray<? extends NSIndexPath> indexPaths);
 
     @Generated
     @Selector("deleteSections:")
-    public native void deleteSections(NSIndexSet sections);
+    public native void deleteSections(@NotNull NSIndexSet sections);
 
+    @NotNull
     @Generated
     @Selector("dequeueReusableCellWithReuseIdentifier:forIndexPath:")
-    public native UICollectionViewCell dequeueReusableCellWithReuseIdentifierForIndexPath(String identifier,
-            NSIndexPath indexPath);
+    public native UICollectionViewCell dequeueReusableCellWithReuseIdentifierForIndexPath(@NotNull String identifier,
+            @NotNull NSIndexPath indexPath);
 
+    @NotNull
     @Generated
     @Selector("dequeueReusableSupplementaryViewOfKind:withReuseIdentifier:forIndexPath:")
     public native UICollectionReusableView dequeueReusableSupplementaryViewOfKindWithReuseIdentifierForIndexPath(
-            String elementKind, String identifier, NSIndexPath indexPath);
+            @NotNull String elementKind, @NotNull String identifier, @NotNull NSIndexPath indexPath);
 
     @Generated
     @Selector("deselectItemAtIndexPath:animated:")
-    public native void deselectItemAtIndexPathAnimated(NSIndexPath indexPath, boolean animated);
+    public native void deselectItemAtIndexPathAnimated(@NotNull NSIndexPath indexPath, boolean animated);
 
     /**
      * API-Since: 9.0
@@ -509,10 +537,12 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Selector("finishInteractiveTransition")
     public native void finishInteractiveTransition();
 
+    @Nullable
     @Generated
     @Selector("indexPathForCell:")
-    public native NSIndexPath indexPathForCell(UICollectionViewCell cell);
+    public native NSIndexPath indexPathForCell(@NotNull UICollectionViewCell cell);
 
+    @Nullable
     @Generated
     @Selector("indexPathForItemAtPoint:")
     public native NSIndexPath indexPathForItemAtPoint(@ByValue CGPoint point);
@@ -520,10 +550,12 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     /**
      * returns nil or an array of selected index paths
      */
+    @Nullable
     @Generated
     @Selector("indexPathsForSelectedItems")
     public native NSArray<? extends NSIndexPath> indexPathsForSelectedItems();
 
+    @NotNull
     @Generated
     @Selector("indexPathsForVisibleItems")
     public native NSArray<? extends NSIndexPath> indexPathsForVisibleItems();
@@ -531,9 +563,11 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("indexPathsForVisibleSupplementaryElementsOfKind:")
-    public native NSArray<? extends NSIndexPath> indexPathsForVisibleSupplementaryElementsOfKind(String elementKind);
+    public native NSArray<? extends NSIndexPath> indexPathsForVisibleSupplementaryElementsOfKind(
+            @NotNull String elementKind);
 
     @Generated
     @Selector("init")
@@ -541,7 +575,7 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
 
     @Generated
     @Selector("initWithCoder:")
-    public native UICollectionView initWithCoder(NSCoder coder);
+    public native UICollectionView initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -550,18 +584,18 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Generated
     @Selector("initWithFrame:collectionViewLayout:")
     public native UICollectionView initWithFrameCollectionViewLayout(@ByValue CGRect frame,
-            UICollectionViewLayout layout);
+            @NotNull UICollectionViewLayout layout);
 
     @Generated
     @Selector("insertItemsAtIndexPaths:")
-    public native void insertItemsAtIndexPaths(NSArray<? extends NSIndexPath> indexPaths);
+    public native void insertItemsAtIndexPaths(@NotNull NSArray<? extends NSIndexPath> indexPaths);
 
     /**
      * These methods allow dynamic modification of the current set of items in the collection view
      */
     @Generated
     @Selector("insertSections:")
-    public native void insertSections(NSIndexSet sections);
+    public native void insertSections(@NotNull NSIndexSet sections);
 
     /**
      * API-Since: 10.0
@@ -577,18 +611,21 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Selector("setPrefetchingEnabled:")
     public native void setPrefetchingEnabled(boolean value);
 
+    @Nullable
     @Generated
     @Selector("layoutAttributesForItemAtIndexPath:")
-    public native UICollectionViewLayoutAttributes layoutAttributesForItemAtIndexPath(NSIndexPath indexPath);
+    public native UICollectionViewLayoutAttributes layoutAttributesForItemAtIndexPath(@NotNull NSIndexPath indexPath);
 
+    @Nullable
     @Generated
     @Selector("layoutAttributesForSupplementaryElementOfKind:atIndexPath:")
-    public native UICollectionViewLayoutAttributes layoutAttributesForSupplementaryElementOfKindAtIndexPath(String kind,
-            NSIndexPath indexPath);
+    public native UICollectionViewLayoutAttributes layoutAttributesForSupplementaryElementOfKindAtIndexPath(
+            @NotNull String kind, @NotNull NSIndexPath indexPath);
 
     @Generated
     @Selector("moveItemAtIndexPath:toIndexPath:")
-    public native void moveItemAtIndexPathToIndexPath(NSIndexPath indexPath, NSIndexPath newIndexPath);
+    public native void moveItemAtIndexPathToIndexPath(@NotNull NSIndexPath indexPath,
+            @NotNull NSIndexPath newIndexPath);
 
     @Generated
     @Selector("moveSection:toSection:")
@@ -613,12 +650,13 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Generated
     @Selector("performBatchUpdates:completion:")
     public native void performBatchUpdatesCompletion(
-            @ObjCBlock(name = "call_performBatchUpdatesCompletion_0") Block_performBatchUpdatesCompletion_0 updates,
-            @ObjCBlock(name = "call_performBatchUpdatesCompletion_1") Block_performBatchUpdatesCompletion_1 completion);
+            @Nullable @ObjCBlock(name = "call_performBatchUpdatesCompletion_0") Block_performBatchUpdatesCompletion_0 updates,
+            @Nullable @ObjCBlock(name = "call_performBatchUpdatesCompletion_1") Block_performBatchUpdatesCompletion_1 completion);
 
     /**
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("prefetchDataSource")
     @MappedReturn(ObjCObjectMapper.class)
@@ -632,21 +670,21 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
      */
     @Generated
     @Selector("registerClass:forCellWithReuseIdentifier:")
-    public native void registerClassForCellWithReuseIdentifier(Class cellClass, String identifier);
+    public native void registerClassForCellWithReuseIdentifier(@Nullable Class cellClass, @NotNull String identifier);
 
     @Generated
     @Selector("registerClass:forSupplementaryViewOfKind:withReuseIdentifier:")
-    public native void registerClassForSupplementaryViewOfKindWithReuseIdentifier(Class viewClass, String elementKind,
-            String identifier);
+    public native void registerClassForSupplementaryViewOfKindWithReuseIdentifier(@Nullable Class viewClass,
+            @NotNull String elementKind, @NotNull String identifier);
 
     @Generated
     @Selector("registerNib:forCellWithReuseIdentifier:")
-    public native void registerNibForCellWithReuseIdentifier(UINib nib, String identifier);
+    public native void registerNibForCellWithReuseIdentifier(@Nullable UINib nib, @NotNull String identifier);
 
     @Generated
     @Selector("registerNib:forSupplementaryViewOfKind:withReuseIdentifier:")
-    public native void registerNibForSupplementaryViewOfKindWithReuseIdentifier(UINib nib, String kind,
-            String identifier);
+    public native void registerNibForSupplementaryViewOfKindWithReuseIdentifier(@Nullable UINib nib,
+            @NotNull String kind, @NotNull String identifier);
 
     /**
      * discard the dataSource and delegate data and requery as necessary
@@ -657,11 +695,11 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
 
     @Generated
     @Selector("reloadItemsAtIndexPaths:")
-    public native void reloadItemsAtIndexPaths(NSArray<? extends NSIndexPath> indexPaths);
+    public native void reloadItemsAtIndexPaths(@NotNull NSArray<? extends NSIndexPath> indexPaths);
 
     @Generated
     @Selector("reloadSections:")
-    public native void reloadSections(NSIndexSet sections);
+    public native void reloadSections(@NotNull NSIndexSet sections);
 
     /**
      * defaults to NO. If YES, when focusing on a collection view the last focused index path is focused automatically.
@@ -678,12 +716,12 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
      */
     @Generated
     @Selector("scrollToItemAtIndexPath:atScrollPosition:animated:")
-    public native void scrollToItemAtIndexPathAtScrollPositionAnimated(NSIndexPath indexPath,
+    public native void scrollToItemAtIndexPathAtScrollPositionAnimated(@NotNull NSIndexPath indexPath,
             @NUInt long scrollPosition, boolean animated);
 
     @Generated
     @Selector("selectItemAtIndexPath:animated:scrollPosition:")
-    public native void selectItemAtIndexPathAnimatedScrollPosition(NSIndexPath indexPath, boolean animated,
+    public native void selectItemAtIndexPathAnimatedScrollPosition(@Nullable NSIndexPath indexPath, boolean animated,
             @NUInt long scrollPosition);
 
     /**
@@ -706,33 +744,34 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
      */
     @Generated
     @Selector("setBackgroundView:")
-    public native void setBackgroundView(UIView value);
+    public native void setBackgroundView(@Nullable UIView value);
 
     @Generated
     @Selector("setCollectionViewLayout:")
-    public native void setCollectionViewLayout(UICollectionViewLayout value);
+    public native void setCollectionViewLayout(@NotNull UICollectionViewLayout value);
 
     /**
      * transition from one layout to another
      */
     @Generated
     @Selector("setCollectionViewLayout:animated:")
-    public native void setCollectionViewLayoutAnimated(UICollectionViewLayout layout, boolean animated);
+    public native void setCollectionViewLayoutAnimated(@NotNull UICollectionViewLayout layout, boolean animated);
 
     /**
      * API-Since: 7.0
      */
     @Generated
     @Selector("setCollectionViewLayout:animated:completion:")
-    public native void setCollectionViewLayoutAnimatedCompletion(UICollectionViewLayout layout, boolean animated,
-            @ObjCBlock(name = "call_setCollectionViewLayoutAnimatedCompletion") Block_setCollectionViewLayoutAnimatedCompletion completion);
+    public native void setCollectionViewLayoutAnimatedCompletion(@NotNull UICollectionViewLayout layout,
+            boolean animated,
+            @Nullable @ObjCBlock(name = "call_setCollectionViewLayoutAnimatedCompletion") Block_setCollectionViewLayoutAnimatedCompletion completion);
 
     @Generated
     @Selector("setDataSource:")
-    public native void setDataSource_unsafe(@Mapped(ObjCObjectMapper.class) UICollectionViewDataSource value);
+    public native void setDataSource_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UICollectionViewDataSource value);
 
     @Generated
-    public void setDataSource(@Mapped(ObjCObjectMapper.class) UICollectionViewDataSource value) {
+    public void setDataSource(@Nullable @Mapped(ObjCObjectMapper.class) UICollectionViewDataSource value) {
         Object __old = dataSource();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -745,10 +784,10 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -765,13 +804,14 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Generated
     @Selector("setPrefetchDataSource:")
     public native void setPrefetchDataSource_unsafe(
-            @Mapped(ObjCObjectMapper.class) UICollectionViewDataSourcePrefetching value);
+            @Nullable @Mapped(ObjCObjectMapper.class) UICollectionViewDataSourcePrefetching value);
 
     /**
      * API-Since: 10.0
      */
     @Generated
-    public void setPrefetchDataSource(@Mapped(ObjCObjectMapper.class) UICollectionViewDataSourcePrefetching value) {
+    public void setPrefetchDataSource(
+            @Nullable @Mapped(ObjCObjectMapper.class) UICollectionViewDataSourcePrefetching value) {
         Object __old = prefetchDataSource();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -795,19 +835,21 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("startInteractiveTransitionToCollectionViewLayout:completion:")
     public native UICollectionViewTransitionLayout startInteractiveTransitionToCollectionViewLayoutCompletion(
-            UICollectionViewLayout layout,
-            @ObjCBlock(name = "call_startInteractiveTransitionToCollectionViewLayoutCompletion") Block_startInteractiveTransitionToCollectionViewLayoutCompletion completion);
+            @NotNull UICollectionViewLayout layout,
+            @Nullable @ObjCBlock(name = "call_startInteractiveTransitionToCollectionViewLayoutCompletion") Block_startInteractiveTransitionToCollectionViewLayoutCompletion completion);
 
     /**
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("supplementaryViewForElementKind:atIndexPath:")
-    public native UICollectionReusableView supplementaryViewForElementKindAtIndexPath(String elementKind,
-            NSIndexPath indexPath);
+    public native UICollectionReusableView supplementaryViewForElementKindAtIndexPath(@NotNull String elementKind,
+            @NotNull NSIndexPath indexPath);
 
     /**
      * API-Since: 9.0
@@ -816,6 +858,7 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Selector("updateInteractiveMovementTargetPosition:")
     public native void updateInteractiveMovementTargetPosition(@ByValue CGPoint targetPosition);
 
+    @NotNull
     @Generated
     @Selector("visibleCells")
     public native NSArray<? extends UICollectionViewCell> visibleCells();
@@ -823,9 +866,11 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("visibleSupplementaryViewsOfKind:")
-    public native NSArray<? extends UICollectionReusableView> visibleSupplementaryViewsOfKind(String elementKind);
+    public native NSArray<? extends UICollectionReusableView> visibleSupplementaryViewsOfKind(
+            @NotNull String elementKind);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -855,9 +900,10 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
         void call_startInteractiveTransitionToCollectionViewLayoutCompletion(boolean completed, boolean finished);
     }
 
+    @Nullable
     @Generated
     @Selector("dataSourceIndexPathForPresentationIndexPath:")
-    public native NSIndexPath dataSourceIndexPathForPresentationIndexPath(NSIndexPath presentationIndexPath);
+    public native NSIndexPath dataSourceIndexPathForPresentationIndexPath(@Nullable NSIndexPath presentationIndexPath);
 
     @Generated
     @Selector("dataSourceSectionIndexForPresentationSectionIndex:")
@@ -867,6 +913,7 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     /**
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("dragDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -885,6 +932,7 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     /**
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("dropDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -925,11 +973,12 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Generated
     @Selector("performUsingPresentationValues:")
     public native void performUsingPresentationValues(
-            @ObjCBlock(name = "call_performUsingPresentationValues") UIDataSourceTranslating.Block_performUsingPresentationValues actionsToTranslate);
+            @NotNull @ObjCBlock(name = "call_performUsingPresentationValues") UIDataSourceTranslating.Block_performUsingPresentationValues actionsToTranslate);
 
+    @Nullable
     @Generated
     @Selector("presentationIndexPathForDataSourceIndexPath:")
-    public native NSIndexPath presentationIndexPathForDataSourceIndexPath(NSIndexPath dataSourceIndexPath);
+    public native NSIndexPath presentationIndexPathForDataSourceIndexPath(@Nullable NSIndexPath dataSourceIndexPath);
 
     @Generated
     @Selector("presentationSectionIndexForDataSourceSectionIndex:")
@@ -952,13 +1001,14 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
      */
     @Generated
     @Selector("setDragDelegate:")
-    public native void setDragDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UICollectionViewDragDelegate value);
+    public native void setDragDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) UICollectionViewDragDelegate value);
 
     /**
      * API-Since: 11.0
      */
     @Generated
-    public void setDragDelegate(@Mapped(ObjCObjectMapper.class) UICollectionViewDragDelegate value) {
+    public void setDragDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UICollectionViewDragDelegate value) {
         Object __old = dragDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -984,13 +1034,14 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
      */
     @Generated
     @Selector("setDropDelegate:")
-    public native void setDropDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UICollectionViewDropDelegate value);
+    public native void setDropDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) UICollectionViewDropDelegate value);
 
     /**
      * API-Since: 11.0
      */
     @Generated
-    public void setDropDelegate(@Mapped(ObjCObjectMapper.class) UICollectionViewDropDelegate value) {
+    public void setDropDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UICollectionViewDropDelegate value) {
         Object __old = dropDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -1019,7 +1070,7 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
-            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+            @NotNull @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
     /**
      * Controls whether multiple item selection can occur when the receiver is editing.
@@ -1044,19 +1095,21 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("dequeueConfiguredReusableCellWithRegistration:forIndexPath:item:")
     public native UICollectionViewCell dequeueConfiguredReusableCellWithRegistrationForIndexPathItem(
-            UICollectionViewCellRegistration registration, NSIndexPath indexPath,
-            @Mapped(ObjCObjectMapper.class) Object item);
+            @NotNull UICollectionViewCellRegistration registration, @NotNull NSIndexPath indexPath,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object item);
 
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("dequeueConfiguredReusableSupplementaryViewWithRegistration:forIndexPath:")
     public native UICollectionReusableView dequeueConfiguredReusableSupplementaryViewWithRegistrationForIndexPath(
-            UICollectionViewSupplementaryRegistration registration, NSIndexPath indexPath);
+            @NotNull UICollectionViewSupplementaryRegistration registration, @NotNull NSIndexPath indexPath);
 
     /**
      * Controls the editing state for the receiver.
@@ -1141,6 +1194,7 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     /**
      * API-Since: 13.2
      */
+    @Nullable
     @Generated
     @Selector("contextMenuInteraction")
     public native UIContextMenuInteraction contextMenuInteraction();
@@ -1155,7 +1209,7 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
      */
     @Generated
     @Selector("reconfigureItemsAtIndexPaths:")
-    public native void reconfigureItemsAtIndexPaths(NSArray<? extends NSIndexPath> indexPaths);
+    public native void reconfigureItemsAtIndexPaths(@NotNull NSArray<? extends NSIndexPath> indexPaths);
 
     /**
      * Determines if the collection view allows its cells to become focused.

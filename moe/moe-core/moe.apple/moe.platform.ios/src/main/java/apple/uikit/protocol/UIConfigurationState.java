@@ -12,6 +12,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -24,38 +26,42 @@ public interface UIConfigurationState extends NSCopying, NSSecureCoding {
     /**
      * Returns the custom state for the specified key.
      */
+    @Nullable
     @Generated
     @Selector("customStateForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object customStateForKey(String key);
+    Object customStateForKey(@NotNull String key);
 
     /**
      * Returns a new instance with the specified trait collection.
      */
+    @NotNull
     @Generated
     @Selector("initWithTraitCollection:")
-    UIConfigurationState initWithTraitCollection(UITraitCollection traitCollection);
+    UIConfigurationState initWithTraitCollection(@NotNull UITraitCollection traitCollection);
 
+    @Nullable
     @Generated
     @Selector("objectForKeyedSubscript:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object objectForKeyedSubscript(String key);
+    Object objectForKeyedSubscript(@NotNull String key);
 
     /**
      * Sets the custom state for the specified key.
      */
     @Generated
     @Selector("setCustomState:forKey:")
-    void setCustomStateForKey(@Mapped(ObjCObjectMapper.class) Object customState, String key);
+    void setCustomStateForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object customState, @NotNull String key);
 
     @Generated
     @Selector("setObject:forKeyedSubscript:")
-    void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object obj, String key);
+    void setObjectForKeyedSubscript(@Nullable @Mapped(ObjCObjectMapper.class) Object obj, @NotNull String key);
 
     @Generated
     @Selector("setTraitCollection:")
-    void setTraitCollection(UITraitCollection value);
+    void setTraitCollection(@NotNull UITraitCollection value);
 
+    @NotNull
     @Generated
     @Selector("traitCollection")
     UITraitCollection traitCollection();

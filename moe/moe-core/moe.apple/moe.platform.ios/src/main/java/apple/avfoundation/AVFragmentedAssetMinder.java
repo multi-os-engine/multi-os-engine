@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 12.0
@@ -56,7 +58,7 @@ public class AVFragmentedAssetMinder extends NSObject {
      */
     @Generated
     @Selector("addFragmentedAsset:")
-    public native void addFragmentedAsset(AVAsset asset);
+    public native void addFragmentedAsset(@NotNull AVAsset asset);
 
     @Generated
     @Owned
@@ -73,28 +75,32 @@ public class AVFragmentedAssetMinder extends NSObject {
      * 
      * An NSArray of the AVFragmentedAsset objects being minded.
      */
+    @NotNull
     @Generated
     @Selector("assets")
     public native NSArray<? extends AVAsset> assets();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,7 +127,7 @@ public class AVFragmentedAssetMinder extends NSObject {
      */
     @Generated
     @Selector("fragmentedAssetMinderWithAsset:mindingInterval:")
-    public static native AVFragmentedAssetMinder fragmentedAssetMinderWithAssetMindingInterval(AVAsset asset,
+    public static native AVFragmentedAssetMinder fragmentedAssetMinderWithAssetMindingInterval(@NotNull AVAsset asset,
             double mindingInterval);
 
     @Generated
@@ -147,7 +153,7 @@ public class AVFragmentedAssetMinder extends NSObject {
      */
     @Generated
     @Selector("initWithAsset:mindingInterval:")
-    public native AVFragmentedAssetMinder initWithAssetMindingInterval(AVAsset asset, double mindingInterval);
+    public native AVFragmentedAssetMinder initWithAssetMindingInterval(@NotNull AVAsset asset, double mindingInterval);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -166,9 +172,10 @@ public class AVFragmentedAssetMinder extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] mindingInterval
@@ -199,7 +206,7 @@ public class AVFragmentedAssetMinder extends NSObject {
      */
     @Generated
     @Selector("removeFragmentedAsset:")
-    public native void removeFragmentedAsset(AVAsset asset);
+    public native void removeFragmentedAsset(@NotNull AVAsset asset);
 
     @Generated
     @Selector("resolveClassMethod:")

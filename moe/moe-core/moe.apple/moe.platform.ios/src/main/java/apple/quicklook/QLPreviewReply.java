@@ -33,6 +33,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * To provide a data-based preview, you have to return a QLPreviewReply object.
@@ -71,28 +73,32 @@ public class QLPreviewReply extends NSObject {
      * Attachments for HTML data previews. The keys of the dictionary are the attachment identifiers (eg foo) that can
      * be referenced with the cid:id URL (eg cid:foo).
      */
+    @NotNull
     @Generated
     @Selector("attachments")
     public native NSDictionary<String, ? extends QLPreviewReplyAttachment> attachments();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,14 +135,15 @@ public class QLPreviewReply extends NSObject {
     @Generated
     @Selector("initForPDFWithPageSize:documentCreationBlock:")
     public native QLPreviewReply initForPDFWithPageSizeDocumentCreationBlock(@ByValue CGSize defaultPageSize,
-            @ObjCBlock(name = "call_initForPDFWithPageSizeDocumentCreationBlock") Block_initForPDFWithPageSizeDocumentCreationBlock documentCreationBlock);
+            @NotNull @ObjCBlock(name = "call_initForPDFWithPageSizeDocumentCreationBlock") Block_initForPDFWithPageSizeDocumentCreationBlock documentCreationBlock);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initForPDFWithPageSizeDocumentCreationBlock {
+        @Nullable
         @Generated
-        PDFDocument call_initForPDFWithPageSizeDocumentCreationBlock(QLPreviewReply reply,
-                @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+        PDFDocument call_initForPDFWithPageSizeDocumentCreationBlock(@NotNull QLPreviewReply reply,
+                @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
     }
 
     /**
@@ -152,14 +159,14 @@ public class QLPreviewReply extends NSObject {
     @Generated
     @Selector("initWithContextSize:isBitmap:drawingBlock:")
     public native QLPreviewReply initWithContextSizeIsBitmapDrawingBlock(@ByValue CGSize contextSize, boolean isBitmap,
-            @ObjCBlock(name = "call_initWithContextSizeIsBitmapDrawingBlock") Block_initWithContextSizeIsBitmapDrawingBlock drawingBlock);
+            @NotNull @ObjCBlock(name = "call_initWithContextSizeIsBitmapDrawingBlock") Block_initWithContextSizeIsBitmapDrawingBlock drawingBlock);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithContextSizeIsBitmapDrawingBlock {
         @Generated
-        boolean call_initWithContextSizeIsBitmapDrawingBlock(CGContextRef context, QLPreviewReply reply,
-                @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+        boolean call_initWithContextSizeIsBitmapDrawingBlock(@NotNull CGContextRef context,
+                @NotNull QLPreviewReply reply, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
     }
 
     /**
@@ -181,16 +188,17 @@ public class QLPreviewReply extends NSObject {
      */
     @Generated
     @Selector("initWithDataOfContentType:contentSize:dataCreationBlock:")
-    public native QLPreviewReply initWithDataOfContentTypeContentSizeDataCreationBlock(UTType contentType,
+    public native QLPreviewReply initWithDataOfContentTypeContentSizeDataCreationBlock(@NotNull UTType contentType,
             @ByValue CGSize contentSize,
-            @ObjCBlock(name = "call_initWithDataOfContentTypeContentSizeDataCreationBlock") Block_initWithDataOfContentTypeContentSizeDataCreationBlock dataCreationBlock);
+            @NotNull @ObjCBlock(name = "call_initWithDataOfContentTypeContentSizeDataCreationBlock") Block_initWithDataOfContentTypeContentSizeDataCreationBlock dataCreationBlock);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithDataOfContentTypeContentSizeDataCreationBlock {
+        @Nullable
         @Generated
-        NSData call_initWithDataOfContentTypeContentSizeDataCreationBlock(QLPreviewReply reply,
-                @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+        NSData call_initWithDataOfContentTypeContentSizeDataCreationBlock(@NotNull QLPreviewReply reply,
+                @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
     }
 
     /**
@@ -202,7 +210,7 @@ public class QLPreviewReply extends NSObject {
      */
     @Generated
     @Selector("initWithFileURL:")
-    public native QLPreviewReply initWithFileURL(NSURL fileURL);
+    public native QLPreviewReply initWithFileURL(@NotNull NSURL fileURL);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -221,9 +229,10 @@ public class QLPreviewReply extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -244,7 +253,7 @@ public class QLPreviewReply extends NSObject {
      */
     @Generated
     @Selector("setAttachments:")
-    public native void setAttachments(NSDictionary<String, ? extends QLPreviewReplyAttachment> value);
+    public native void setAttachments(@NotNull NSDictionary<String, ? extends QLPreviewReplyAttachment> value);
 
     /**
      * String encoding for text or html based previews. Defaults to NSUTF8StringEncoding.
@@ -258,7 +267,7 @@ public class QLPreviewReply extends NSObject {
      */
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@NotNull String value);
 
     @Generated
     @Selector("setVersion:")
@@ -279,6 +288,7 @@ public class QLPreviewReply extends NSObject {
     /**
      * Custom display title for the preview. If left as the empty string, QuickLook will use the file name.
      */
+    @NotNull
     @Generated
     @Selector("title")
     public native String title();

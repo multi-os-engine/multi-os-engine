@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.3
@@ -61,26 +63,30 @@ public class INPayBillIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("billDetails")
     public native INBillDetails billDetails();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -98,6 +104,7 @@ public class INPayBillIntentResponse extends INIntentResponse {
     @Selector("description")
     public static native String description_static();
 
+    @Nullable
     @Generated
     @Selector("fromAccount")
     public native INPaymentAccount fromAccount();
@@ -122,11 +129,12 @@ public class INPayBillIntentResponse extends INIntentResponse {
      */
     @Generated
     @Selector("initWithCode:userActivity:")
-    public native INPayBillIntentResponse initWithCodeUserActivity(@NInt long code, NSUserActivity userActivity);
+    public native INPayBillIntentResponse initWithCodeUserActivity(@NInt long code,
+            @Nullable NSUserActivity userActivity);
 
     @Generated
     @Selector("initWithCoder:")
-    public native INPayBillIntentResponse initWithCoder(NSCoder coder);
+    public native INPayBillIntentResponse initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -145,9 +153,10 @@ public class INPayBillIntentResponse extends INIntentResponse {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,23 +173,23 @@ public class INPayBillIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("setBillDetails:")
-    public native void setBillDetails(INBillDetails value);
+    public native void setBillDetails(@Nullable INBillDetails value);
 
     @Generated
     @Selector("setFromAccount:")
-    public native void setFromAccount(INPaymentAccount value);
+    public native void setFromAccount(@Nullable INPaymentAccount value);
 
     @Generated
     @Selector("setTransactionAmount:")
-    public native void setTransactionAmount(INPaymentAmount value);
+    public native void setTransactionAmount(@Nullable INPaymentAmount value);
 
     @Generated
     @Selector("setTransactionNote:")
-    public native void setTransactionNote(String value);
+    public native void setTransactionNote(@Nullable String value);
 
     @Generated
     @Selector("setTransactionScheduledDate:")
-    public native void setTransactionScheduledDate(INDateComponentsRange value);
+    public native void setTransactionScheduledDate(@Nullable INDateComponentsRange value);
 
     @Generated
     @Selector("setVersion:")
@@ -200,14 +209,17 @@ public class INPayBillIntentResponse extends INIntentResponse {
         return supportsSecureCoding();
     }
 
+    @Nullable
     @Generated
     @Selector("transactionAmount")
     public native INPaymentAmount transactionAmount();
 
+    @Nullable
     @Generated
     @Selector("transactionNote")
     public native String transactionNote();
 
+    @Nullable
     @Generated
     @Selector("transactionScheduledDate")
     public native INDateComponentsRange transactionScheduledDate();

@@ -7,6 +7,7 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -59,13 +60,14 @@ public final class BNNSNDArrayDescriptor extends StructObject {
     @StructureField(order = 3, isGetter = false, count = 8)
     public native void setStride(long value, int field_idx);
 
+    @Nullable
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native VoidPtr data();
 
     @Generated
     @StructureField(order = 4, isGetter = false)
-    public native void setData(VoidPtr value);
+    public native void setData(@Nullable VoidPtr value);
 
     @Generated
     @StructureField(order = 5, isGetter = true)
@@ -75,13 +77,14 @@ public final class BNNSNDArrayDescriptor extends StructObject {
     @StructureField(order = 5, isGetter = false)
     public native void setData_type(int value);
 
+    @Nullable
     @Generated
     @StructureField(order = 6, isGetter = true)
     public native VoidPtr table_data();
 
     @Generated
     @StructureField(order = 6, isGetter = false)
-    public native void setTable_data(VoidPtr value);
+    public native void setTable_data(@Nullable VoidPtr value);
 
     @Generated
     @StructureField(order = 7, isGetter = true)

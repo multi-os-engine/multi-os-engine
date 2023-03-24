@@ -39,6 +39,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.0
@@ -73,22 +75,25 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +128,10 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,13 +164,14 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
      * without needing to re-set the groups that are in that bar. Any UIBarButtonItems that are already in group will be
      * removed from that group.
      */
+    @NotNull
     @Generated
     @Selector("barButtonItems")
     public native NSArray<? extends UIBarButtonItem> barButtonItems();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -177,11 +184,11 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
     @Generated
     @Selector("initWithBarButtonItems:representativeItem:")
     public native UIBarButtonItemGroup initWithBarButtonItemsRepresentativeItem(
-            NSArray<? extends UIBarButtonItem> barButtonItems, UIBarButtonItem representativeItem);
+            @NotNull NSArray<? extends UIBarButtonItem> barButtonItems, @Nullable UIBarButtonItem representativeItem);
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIBarButtonItemGroup initWithCoder(NSCoder coder);
+    public native UIBarButtonItemGroup initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Returns YES if the representativeItem of this group is currently being displayed, rather than its barButtonItems.
@@ -200,6 +207,7 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
      * If the representativeItem has an action, then that action will be invoked, otherwise the bar will present a
      * standard UI to allow selection of the barButtonItems in the representedItem's group.
      */
+    @Nullable
     @Generated
     @Selector("representativeItem")
     public native UIBarButtonItem representativeItem();
@@ -211,7 +219,7 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("setBarButtonItems:")
-    public native void setBarButtonItems(NSArray<? extends UIBarButtonItem> value);
+    public native void setBarButtonItems(@NotNull NSArray<? extends UIBarButtonItem> value);
 
     /**
      * In order to display as many items as possible, bars that support UIBarButtonItemGroup may choose to collapse
@@ -225,7 +233,7 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("setRepresentativeItem:")
-    public native void setRepresentativeItem(UIBarButtonItem value);
+    public native void setRepresentativeItem(@Nullable UIBarButtonItem value);
 
     /**
      * Instructs UIKit to ensure that the functionality in this group is made available to the user regardless of
@@ -243,10 +251,11 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("fixedGroupWithRepresentativeItem:items:")
-    public static native UIBarButtonItemGroup fixedGroupWithRepresentativeItemItems(UIBarButtonItem representativeItem,
-            NSArray<? extends UIBarButtonItem> items);
+    public static native UIBarButtonItemGroup fixedGroupWithRepresentativeItemItems(
+            @Nullable UIBarButtonItem representativeItem, @NotNull NSArray<? extends UIBarButtonItem> items);
 
     /**
      * If the group should be hidden from display.
@@ -262,6 +271,7 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("menuRepresentation")
     public native UIMenuElement menuRepresentation();
@@ -271,22 +281,24 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("movableGroupWithCustomizationIdentifier:representativeItem:items:")
     public static native UIBarButtonItemGroup movableGroupWithCustomizationIdentifierRepresentativeItemItems(
-            String customizationIdentifier, UIBarButtonItem representativeItem,
-            NSArray<? extends UIBarButtonItem> items);
+            @NotNull String customizationIdentifier, @Nullable UIBarButtonItem representativeItem,
+            @NotNull NSArray<? extends UIBarButtonItem> items);
 
     /**
      * Construct a UIBarButtonItemGroup that can be moved or added/removed under UINavigationBar customization.
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("optionalGroupWithCustomizationIdentifier:inDefaultCustomization:representativeItem:items:")
     public static native UIBarButtonItemGroup optionalGroupWithCustomizationIdentifierInDefaultCustomizationRepresentativeItemItems(
-            String customizationIdentifier, boolean inDefaultCustomization, UIBarButtonItem representativeItem,
-            NSArray<? extends UIBarButtonItem> items);
+            @NotNull String customizationIdentifier, boolean inDefaultCustomization,
+            @Nullable UIBarButtonItem representativeItem, @NotNull NSArray<? extends UIBarButtonItem> items);
 
     /**
      * Instructs UIKit to ensure that the functionality in this group is made available to the user regardless of
@@ -315,5 +327,5 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("setMenuRepresentation:")
-    public native void setMenuRepresentation(UIMenuElement value);
+    public native void setMenuRepresentation(@Nullable UIMenuElement value);
 }

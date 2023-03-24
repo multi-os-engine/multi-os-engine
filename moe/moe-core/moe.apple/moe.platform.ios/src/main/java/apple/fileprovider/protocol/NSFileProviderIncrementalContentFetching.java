@@ -14,6 +14,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Protocol to implement if the provider instance supports fetching incremental content changes.
@@ -34,18 +36,21 @@ public interface NSFileProviderIncrementalContentFetching {
      * 
      * The semantics of the requestedVersion parameter are the same as for the non-delta update method above.
      */
+    @NotNull
     @Generated
     @Selector("fetchContentsForItemWithIdentifier:version:usingExistingContentsAtURL:existingVersion:request:completionHandler:")
     NSProgress fetchContentsForItemWithIdentifierVersionUsingExistingContentsAtURLExistingVersionRequestCompletionHandler(
-            String itemIdentifier, NSFileProviderItemVersion requestedVersion, NSURL existingContents,
-            NSFileProviderItemVersion existingVersion, NSFileProviderRequest request,
-            @ObjCBlock(name = "call_fetchContentsForItemWithIdentifierVersionUsingExistingContentsAtURLExistingVersionRequestCompletionHandler") Block_fetchContentsForItemWithIdentifierVersionUsingExistingContentsAtURLExistingVersionRequestCompletionHandler completionHandler);
+            @NotNull String itemIdentifier, @Nullable NSFileProviderItemVersion requestedVersion,
+            @NotNull NSURL existingContents, @NotNull NSFileProviderItemVersion existingVersion,
+            @NotNull NSFileProviderRequest request,
+            @NotNull @ObjCBlock(name = "call_fetchContentsForItemWithIdentifierVersionUsingExistingContentsAtURLExistingVersionRequestCompletionHandler") Block_fetchContentsForItemWithIdentifierVersionUsingExistingContentsAtURLExistingVersionRequestCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchContentsForItemWithIdentifierVersionUsingExistingContentsAtURLExistingVersionRequestCompletionHandler {
         @Generated
         void call_fetchContentsForItemWithIdentifierVersionUsingExistingContentsAtURLExistingVersionRequestCompletionHandler(
-                NSURL fileContents, @Mapped(ObjCObjectMapper.class) Object item, NSError error);
+                @Nullable NSURL fileContents, @Nullable @Mapped(ObjCObjectMapper.class) Object item,
+                @Nullable NSError error);
     }
 }

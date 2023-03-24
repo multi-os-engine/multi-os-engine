@@ -41,6 +41,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.foundation.NSDictionary;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 6.0
@@ -75,22 +77,25 @@ public class PKPassLibrary extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -160,9 +165,10 @@ public class PKPassLibrary extends NSObject {
     @Selector("isSuppressingAutomaticPassPresentation")
     public static native boolean isSuppressingAutomaticPassPresentation();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -181,7 +187,7 @@ public class PKPassLibrary extends NSObject {
     @Selector("requestAutomaticPassPresentationSuppressionWithResponseHandler:")
     @NUInt
     public static native long requestAutomaticPassPresentationSuppressionWithResponseHandler(
-            @ObjCBlock(name = "call_requestAutomaticPassPresentationSuppressionWithResponseHandler") Block_requestAutomaticPassPresentationSuppressionWithResponseHandler responseHandler);
+            @NotNull @ObjCBlock(name = "call_requestAutomaticPassPresentationSuppressionWithResponseHandler") Block_requestAutomaticPassPresentationSuppressionWithResponseHandler responseHandler);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -212,8 +218,9 @@ public class PKPassLibrary extends NSObject {
     @Generated
     @Deprecated
     @Selector("activatePaymentPass:withActivationCode:completion:")
-    public native void activatePaymentPassWithActivationCodeCompletion(PKPaymentPass paymentPass, String activationCode,
-            @ObjCBlock(name = "call_activatePaymentPassWithActivationCodeCompletion") Block_activatePaymentPassWithActivationCodeCompletion completion);
+    public native void activatePaymentPassWithActivationCodeCompletion(@NotNull PKPaymentPass paymentPass,
+            @NotNull String activationCode,
+            @Nullable @ObjCBlock(name = "call_activatePaymentPassWithActivationCodeCompletion") Block_activatePaymentPassWithActivationCodeCompletion completion);
 
     /**
      * These methods may be utilized to activate a payment pass that is provisioned but currently in the inactive state,
@@ -227,8 +234,9 @@ public class PKPassLibrary extends NSObject {
     @Deprecated
     @Generated
     @Selector("activatePaymentPass:withActivationData:completion:")
-    public native void activatePaymentPassWithActivationDataCompletion(PKPaymentPass paymentPass, NSData activationData,
-            @ObjCBlock(name = "call_activatePaymentPassWithActivationDataCompletion") Block_activatePaymentPassWithActivationDataCompletion completion);
+    public native void activatePaymentPassWithActivationDataCompletion(@NotNull PKPaymentPass paymentPass,
+            @NotNull NSData activationData,
+            @Nullable @ObjCBlock(name = "call_activatePaymentPassWithActivationDataCompletion") Block_activatePaymentPassWithActivationDataCompletion completion);
 
     /**
      * The user will be prompted to grant permission for the calling process to add passes to the Pass Library. The user
@@ -245,8 +253,8 @@ public class PKPassLibrary extends NSObject {
      */
     @Generated
     @Selector("addPasses:withCompletionHandler:")
-    public native void addPassesWithCompletionHandler(NSArray<? extends PKPass> passes,
-            @ObjCBlock(name = "call_addPassesWithCompletionHandler") Block_addPassesWithCompletionHandler completion);
+    public native void addPassesWithCompletionHandler(@NotNull NSArray<? extends PKPass> passes,
+            @Nullable @ObjCBlock(name = "call_addPassesWithCompletionHandler") Block_addPassesWithCompletionHandler completion);
 
     /**
      * If the library can add Felica passes, this method will return YES. Otherwise, NO will be returned.
@@ -269,7 +277,7 @@ public class PKPassLibrary extends NSObject {
     @Deprecated
     @Generated
     @Selector("canAddPaymentPassWithPrimaryAccountIdentifier:")
-    public native boolean canAddPaymentPassWithPrimaryAccountIdentifier(String primaryAccountIdentifier);
+    public native boolean canAddPaymentPassWithPrimaryAccountIdentifier(@NotNull String primaryAccountIdentifier);
 
     /**
      * This returns YES even if the process is not entitled to access the pass in the library. An app like Mail is not
@@ -279,7 +287,7 @@ public class PKPassLibrary extends NSObject {
      */
     @Generated
     @Selector("containsPass:")
-    public native boolean containsPass(PKPass pass);
+    public native boolean containsPass(@NotNull PKPass pass);
 
     @Generated
     @Selector("init")
@@ -308,13 +316,16 @@ public class PKPassLibrary extends NSObject {
     @Selector("openPaymentSetup")
     public native void openPaymentSetup();
 
+    @Nullable
     @Generated
     @Selector("passWithPassTypeIdentifier:serialNumber:")
-    public native PKPass passWithPassTypeIdentifierSerialNumber(String identifier, String serialNumber);
+    public native PKPass passWithPassTypeIdentifierSerialNumber(@NotNull String identifier,
+            @NotNull String serialNumber);
 
     /**
      * These return only local passes the process is entitled to access.
      */
+    @NotNull
     @Generated
     @Selector("passes")
     public native NSArray<? extends PKPass> passes();
@@ -322,6 +333,7 @@ public class PKPassLibrary extends NSObject {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("passesOfType:")
     public native NSArray<? extends PKPass> passesOfType(@NUInt long passType);
@@ -337,7 +349,7 @@ public class PKPassLibrary extends NSObject {
     @Deprecated
     @Generated
     @Selector("presentPaymentPass:")
-    public native void presentPaymentPass(PKPaymentPass pass);
+    public native void presentPaymentPass(@NotNull PKPaymentPass pass);
 
     /**
      * This returns the remote payment passes from attached devices
@@ -346,6 +358,7 @@ public class PKPassLibrary extends NSObject {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use -[PKPassLibrary remoteSecureElementPasses] instead
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("remotePaymentPasses")
@@ -353,7 +366,7 @@ public class PKPassLibrary extends NSObject {
 
     @Generated
     @Selector("removePass:")
-    public native void removePass(PKPass pass);
+    public native void removePass(@NotNull PKPass pass);
 
     /**
      * This will fail if a pass with matching identifier and serial number is not already present in the library, or if
@@ -362,20 +375,20 @@ public class PKPassLibrary extends NSObject {
      */
     @Generated
     @Selector("replacePassWithPass:")
-    public native boolean replacePassWithPass(PKPass pass);
+    public native boolean replacePassWithPass(@NotNull PKPass pass);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_activatePaymentPassWithActivationCodeCompletion {
         @Generated
-        void call_activatePaymentPassWithActivationCodeCompletion(boolean success, NSError error);
+        void call_activatePaymentPassWithActivationCodeCompletion(boolean success, @NotNull NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_activatePaymentPassWithActivationDataCompletion {
         @Generated
-        void call_activatePaymentPassWithActivationDataCompletion(boolean success, NSError error);
+        void call_activatePaymentPassWithActivationDataCompletion(boolean success, @NotNull NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -397,15 +410,15 @@ public class PKPassLibrary extends NSObject {
      */
     @Generated
     @Selector("activateSecureElementPass:withActivationData:completion:")
-    public native void activateSecureElementPassWithActivationDataCompletion(PKSecureElementPass secureElementPass,
-            NSData activationData,
-            @ObjCBlock(name = "call_activateSecureElementPassWithActivationDataCompletion") Block_activateSecureElementPassWithActivationDataCompletion completion);
+    public native void activateSecureElementPassWithActivationDataCompletion(
+            @NotNull PKSecureElementPass secureElementPass, @NotNull NSData activationData,
+            @Nullable @ObjCBlock(name = "call_activateSecureElementPassWithActivationDataCompletion") Block_activateSecureElementPassWithActivationDataCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_activateSecureElementPassWithActivationDataCompletion {
         @Generated
-        void call_activateSecureElementPassWithActivationDataCompletion(boolean success, NSError error);
+        void call_activateSecureElementPassWithActivationDataCompletion(boolean success, @Nullable NSError error);
     }
 
     /**
@@ -413,7 +426,7 @@ public class PKPassLibrary extends NSObject {
      */
     @Generated
     @Selector("canAddSecureElementPassWithPrimaryAccountIdentifier:")
-    public native boolean canAddSecureElementPassWithPrimaryAccountIdentifier(String primaryAccountIdentifier);
+    public native boolean canAddSecureElementPassWithPrimaryAccountIdentifier(@NotNull String primaryAccountIdentifier);
 
     /**
      * API-Since: 13.4
@@ -427,11 +440,12 @@ public class PKPassLibrary extends NSObject {
      */
     @Generated
     @Selector("presentSecureElementPass:")
-    public native void presentSecureElementPass(PKSecureElementPass pass);
+    public native void presentSecureElementPass(@NotNull PKSecureElementPass pass);
 
     /**
      * API-Since: 13.4
      */
+    @NotNull
     @Generated
     @Selector("remoteSecureElementPasses")
     public native NSArray<? extends PKSecureElementPass> remoteSecureElementPasses();
@@ -443,14 +457,16 @@ public class PKPassLibrary extends NSObject {
      */
     @Generated
     @Selector("signData:withSecureElementPass:completion:")
-    public native void signDataWithSecureElementPassCompletion(NSData signData, PKSecureElementPass secureElementPass,
-            @ObjCBlock(name = "call_signDataWithSecureElementPassCompletion") Block_signDataWithSecureElementPassCompletion completion);
+    public native void signDataWithSecureElementPassCompletion(@NotNull NSData signData,
+            @NotNull PKSecureElementPass secureElementPass,
+            @NotNull @ObjCBlock(name = "call_signDataWithSecureElementPassCompletion") Block_signDataWithSecureElementPassCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_signDataWithSecureElementPassCompletion {
         @Generated
-        void call_signDataWithSecureElementPassCompletion(NSData signedData, NSData signature, NSError error);
+        void call_signDataWithSecureElementPassCompletion(@Nullable NSData signedData, @Nullable NSData signature,
+                @Nullable NSError error);
     }
 
     /**
@@ -460,14 +476,15 @@ public class PKPassLibrary extends NSObject {
      */
     @Generated
     @Selector("serviceProviderDataForSecureElementPass:completion:")
-    public native void serviceProviderDataForSecureElementPassCompletion(PKSecureElementPass secureElementPass,
-            @ObjCBlock(name = "call_serviceProviderDataForSecureElementPassCompletion") Block_serviceProviderDataForSecureElementPassCompletion completion);
+    public native void serviceProviderDataForSecureElementPassCompletion(@NotNull PKSecureElementPass secureElementPass,
+            @NotNull @ObjCBlock(name = "call_serviceProviderDataForSecureElementPassCompletion") Block_serviceProviderDataForSecureElementPassCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_serviceProviderDataForSecureElementPassCompletion {
         @Generated
-        void call_serviceProviderDataForSecureElementPassCompletion(NSData serviceProviderData, NSError error);
+        void call_serviceProviderDataForSecureElementPassCompletion(@Nullable NSData serviceProviderData,
+                @Nullable NSError error);
     }
 
     /**
@@ -475,14 +492,15 @@ public class PKPassLibrary extends NSObject {
      */
     @Generated
     @Selector("encryptedServiceProviderDataForSecureElementPass:completion:")
-    public native void encryptedServiceProviderDataForSecureElementPassCompletion(PKSecureElementPass secureElementPass,
-            @ObjCBlock(name = "call_encryptedServiceProviderDataForSecureElementPassCompletion") Block_encryptedServiceProviderDataForSecureElementPassCompletion completion);
+    public native void encryptedServiceProviderDataForSecureElementPassCompletion(
+            @NotNull PKSecureElementPass secureElementPass,
+            @NotNull @ObjCBlock(name = "call_encryptedServiceProviderDataForSecureElementPassCompletion") Block_encryptedServiceProviderDataForSecureElementPassCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_encryptedServiceProviderDataForSecureElementPassCompletion {
         @Generated
         void call_encryptedServiceProviderDataForSecureElementPassCompletion(
-                NSDictionary<?, ?> encryptedServiceProviderData, NSError error);
+                @Nullable NSDictionary<?, ?> encryptedServiceProviderData, @Nullable NSError error);
     }
 }

@@ -27,6 +27,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVPortraitEffectsMatte
@@ -70,22 +72,25 @@ public class AVPortraitEffectsMatte extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -116,10 +121,11 @@ public class AVPortraitEffectsMatte extends NSObject {
      *         A dictionary of CGImageDestination compatible portrait effects matte information, or nil if the
      *         auxDataType is unsupported.
      */
+    @Nullable
     @Generated
     @Selector("dictionaryRepresentationForAuxiliaryDataType:")
     public native NSDictionary<?, ?> dictionaryRepresentationForAuxiliaryDataType(
-            @ReferenceInfo(type = NSString.class) Ptr<NSString> outAuxDataType);
+            @Nullable @ReferenceInfo(type = NSString.class) Ptr<NSString> outAuxDataType);
 
     @Generated
     @Selector("hash")
@@ -147,9 +153,10 @@ public class AVPortraitEffectsMatte extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] mattingImage
@@ -158,6 +165,7 @@ public class AVPortraitEffectsMatte extends NSObject {
      * 
      * The pixel format can be queried using the pixelFormatType property.
      */
+    @NotNull
     @Generated
     @Selector("mattingImage")
     public native CVBufferRef mattingImage();
@@ -193,6 +201,7 @@ public class AVPortraitEffectsMatte extends NSObject {
      * @return
      *         An AVPortraitEffectsMatte instance.
      */
+    @NotNull
     @Generated
     @Selector("portraitEffectsMatteByApplyingExifOrientation:")
     public native AVPortraitEffectsMatte portraitEffectsMatteByApplyingExifOrientation(int exifOrientation);
@@ -215,10 +224,11 @@ public class AVPortraitEffectsMatte extends NSObject {
      * @return
      *         An AVPortraitEffectsMatte instance, or nil if the pixel buffer is malformed.
      */
+    @Nullable
     @Generated
     @Selector("portraitEffectsMatteByReplacingPortraitEffectsMatteWithPixelBuffer:error:")
     public native AVPortraitEffectsMatte portraitEffectsMatteByReplacingPortraitEffectsMatteWithPixelBufferError(
-            CVBufferRef pixelBuffer, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @NotNull CVBufferRef pixelBuffer, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * portraitEffectsMatteFromDictionaryRepresentation:error:
@@ -241,8 +251,8 @@ public class AVPortraitEffectsMatte extends NSObject {
     @Generated
     @Selector("portraitEffectsMatteFromDictionaryRepresentation:error:")
     public static native AVPortraitEffectsMatte portraitEffectsMatteFromDictionaryRepresentationError(
-            NSDictionary<?, ?> imageSourceAuxDataInfoDictionary,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @NotNull NSDictionary<?, ?> imageSourceAuxDataInfoDictionary,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("resolveClassMethod:")

@@ -38,6 +38,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * GKMatchRequest represents the parameters needed to create the match.
@@ -74,22 +76,25 @@ public class GKMatchRequest extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +129,10 @@ public class GKMatchRequest extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * To determine the maximum allowed players for each type of match supported.
@@ -185,6 +191,7 @@ public class GKMatchRequest extends NSObject {
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("inviteMessage")
     public native String inviteMessage();
@@ -194,6 +201,7 @@ public class GKMatchRequest extends NSObject {
      * Deprecated-Since: 8.0
      * Deprecated-Message: use recipientResponseHandler
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("inviteeResponseHandler")
@@ -242,6 +250,7 @@ public class GKMatchRequest extends NSObject {
      * Deprecated-Since: 8.0
      * Deprecated-Message: This property is obsolete, use recipients instead
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("playersToInvite")
@@ -252,6 +261,7 @@ public class GKMatchRequest extends NSObject {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("recipientResponseHandler")
     @ObjCBlock(name = "call_recipientResponseHandler_ret")
@@ -262,6 +272,7 @@ public class GKMatchRequest extends NSObject {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("recipients")
     public native NSArray<? extends GKPlayer> recipients();
@@ -284,7 +295,7 @@ public class GKMatchRequest extends NSObject {
      */
     @Generated
     @Selector("setInviteMessage:")
-    public native void setInviteMessage(String value);
+    public native void setInviteMessage(@Nullable String value);
 
     /**
      * API-Since: 6.0
@@ -295,7 +306,7 @@ public class GKMatchRequest extends NSObject {
     @Deprecated
     @Selector("setInviteeResponseHandler:")
     public native void setInviteeResponseHandler(
-            @ObjCBlock(name = "call_setInviteeResponseHandler") Block_setInviteeResponseHandler value);
+            @Nullable @ObjCBlock(name = "call_setInviteeResponseHandler") Block_setInviteeResponseHandler value);
 
     /**
      * Maximum number of players for the match
@@ -339,7 +350,7 @@ public class GKMatchRequest extends NSObject {
     @Generated
     @Deprecated
     @Selector("setPlayersToInvite:")
-    public native void setPlayersToInvite(NSArray<String> value);
+    public native void setPlayersToInvite(@Nullable NSArray<String> value);
 
     /**
      * An recipientResponseHandler can be set in order to receive responses from programmatically invited players.
@@ -349,7 +360,7 @@ public class GKMatchRequest extends NSObject {
     @Generated
     @Selector("setRecipientResponseHandler:")
     public native void setRecipientResponseHandler(
-            @ObjCBlock(name = "call_setRecipientResponseHandler") Block_setRecipientResponseHandler value);
+            @Nullable @ObjCBlock(name = "call_setRecipientResponseHandler") Block_setRecipientResponseHandler value);
 
     /**
      * Array of GKPlayers to invite, or nil if none. This array can also include local guest players.
@@ -358,34 +369,34 @@ public class GKMatchRequest extends NSObject {
      */
     @Generated
     @Selector("setRecipients:")
-    public native void setRecipients(NSArray<? extends GKPlayer> value);
+    public native void setRecipients(@Nullable NSArray<? extends GKPlayer> value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_inviteeResponseHandler_ret {
         @Generated
-        void call_inviteeResponseHandler_ret(String arg0, @NInt long arg1);
+        void call_inviteeResponseHandler_ret(@NotNull String arg0, @NInt long arg1);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_recipientResponseHandler_ret {
         @Generated
-        void call_recipientResponseHandler_ret(GKPlayer arg0, @NInt long arg1);
+        void call_recipientResponseHandler_ret(@NotNull GKPlayer arg0, @NInt long arg1);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setInviteeResponseHandler {
         @Generated
-        void call_setInviteeResponseHandler(String arg0, @NInt long arg1);
+        void call_setInviteeResponseHandler(@NotNull String arg0, @NInt long arg1);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setRecipientResponseHandler {
         @Generated
-        void call_setRecipientResponseHandler(GKPlayer arg0, @NInt long arg1);
+        void call_setRecipientResponseHandler(@NotNull GKPlayer arg0, @NInt long arg1);
     }
 
     /**

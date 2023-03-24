@@ -13,6 +13,8 @@ import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * TKSmartCardTokenDriverDelegate is used to implement creation of new token instance according to the SmartCard.
@@ -33,8 +35,10 @@ public interface TKSmartCardTokenDriverDelegate extends TKTokenDriverDelegate {
      * @return Newly created token instance representing @c smartCard. If an error occurs or driver decides that it does
      *         not want to handle specified smartCard as token, return nil.
      */
+    @Nullable
     @Generated
     @Selector("tokenDriver:createTokenForSmartCard:AID:error:")
-    TKSmartCardToken tokenDriverCreateTokenForSmartCardAIDError(TKSmartCardTokenDriver driver, TKSmartCard smartCard,
-            NSData AID, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    TKSmartCardToken tokenDriverCreateTokenForSmartCardAIDError(@NotNull TKSmartCardTokenDriver driver,
+            @NotNull TKSmartCard smartCard, @Nullable NSData AID,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

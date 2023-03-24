@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -74,22 +76,25 @@ public class AVPlayerLooper extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +129,10 @@ public class AVPlayerLooper extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -150,8 +156,8 @@ public class AVPlayerLooper extends NSObject {
      */
     @Generated
     @Selector("playerLooperWithPlayer:templateItem:")
-    public static native AVPlayerLooper playerLooperWithPlayerTemplateItem(AVQueuePlayer player,
-            AVPlayerItem itemToLoop);
+    public static native AVPlayerLooper playerLooperWithPlayerTemplateItem(@NotNull AVQueuePlayer player,
+            @NotNull AVPlayerItem itemToLoop);
 
     /**
      * playerLooperWithPlayer:templateItem:timeRange:
@@ -194,8 +200,8 @@ public class AVPlayerLooper extends NSObject {
      */
     @Generated
     @Selector("playerLooperWithPlayer:templateItem:timeRange:")
-    public static native AVPlayerLooper playerLooperWithPlayerTemplateItemTimeRange(AVQueuePlayer player,
-            AVPlayerItem itemToLoop, @ByValue CMTimeRange loopRange);
+    public static native AVPlayerLooper playerLooperWithPlayerTemplateItemTimeRange(@NotNull AVQueuePlayer player,
+            @NotNull AVPlayerItem itemToLoop, @ByValue CMTimeRange loopRange);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -239,6 +245,7 @@ public class AVPlayerLooper extends NSObject {
      * The value of this property is a NSError that describes what caused the receiver to not be able to perform looping
      * playback. If the receiver's status is not AVPlayerLooperStatusFailed, the value of this property is nil.
      */
+    @Nullable
     @Generated
     @Selector("error")
     public native NSError error();
@@ -288,8 +295,8 @@ public class AVPlayerLooper extends NSObject {
      */
     @Generated
     @Selector("initWithPlayer:templateItem:timeRange:")
-    public native AVPlayerLooper initWithPlayerTemplateItemTimeRange(AVQueuePlayer player, AVPlayerItem itemToLoop,
-            @ByValue CMTimeRange loopRange);
+    public native AVPlayerLooper initWithPlayerTemplateItemTimeRange(@NotNull AVQueuePlayer player,
+            @NotNull AVPlayerItem itemToLoop, @ByValue CMTimeRange loopRange);
 
     /**
      * [@property] loopCount
@@ -321,6 +328,7 @@ public class AVPlayerLooper extends NSObject {
      * @return
      *         Array containing replicas of specified AVPlayerItem
      */
+    @NotNull
     @Generated
     @Selector("loopingPlayerItems")
     public native NSArray<? extends AVPlayerItem> loopingPlayerItems();

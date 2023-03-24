@@ -38,6 +38,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 7.0
@@ -72,22 +74,25 @@ public class GCControllerAxisInput extends GCControllerElement {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,9 +127,10 @@ public class GCControllerAxisInput extends GCControllerElement {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,7 +165,7 @@ public class GCControllerAxisInput extends GCControllerElement {
     @Generated
     @Selector("setValueChangedHandler:")
     public native void setValueChangedHandler(
-            @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
+            @Nullable @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
 
     /**
      * A normalized value for the input, between -1 and 1 for axis inputs. The values are deadzoned and saturated before
@@ -176,6 +182,7 @@ public class GCControllerAxisInput extends GCControllerElement {
     @Selector("value")
     public native float value();
 
+    @Nullable
     @Generated
     @Selector("valueChangedHandler")
     @ObjCBlock(name = "call_valueChangedHandler_ret")
@@ -185,14 +192,14 @@ public class GCControllerAxisInput extends GCControllerElement {
     @Generated
     public interface Block_setValueChangedHandler {
         @Generated
-        void call_setValueChangedHandler(GCControllerAxisInput axis, float value);
+        void call_setValueChangedHandler(@NotNull GCControllerAxisInput axis, float value);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_valueChangedHandler_ret {
         @Generated
-        void call_valueChangedHandler_ret(GCControllerAxisInput axis, float value);
+        void call_valueChangedHandler_ret(@NotNull GCControllerAxisInput axis, float value);
     }
 
     /**

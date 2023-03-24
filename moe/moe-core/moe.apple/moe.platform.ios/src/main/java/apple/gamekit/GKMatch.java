@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * GKMatch represents an active networking sessions between players. It handles network communications and can report
@@ -81,22 +83,25 @@ public class GKMatch extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +136,10 @@ public class GKMatch extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -173,7 +179,7 @@ public class GKMatch extends NSObject {
     @Deprecated
     @Selector("chooseBestHostPlayerWithCompletionHandler:")
     public native void chooseBestHostPlayerWithCompletionHandler(
-            @ObjCBlock(name = "call_chooseBestHostPlayerWithCompletionHandler") Block_chooseBestHostPlayerWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_chooseBestHostPlayerWithCompletionHandler") Block_chooseBestHostPlayerWithCompletionHandler completionHandler);
 
     /**
      * Choose the best host from among the connected players using gathered estimates for bandwidth and packet loss.
@@ -185,11 +191,12 @@ public class GKMatch extends NSObject {
     @Generated
     @Selector("chooseBestHostingPlayerWithCompletionHandler:")
     public native void chooseBestHostingPlayerWithCompletionHandler(
-            @ObjCBlock(name = "call_chooseBestHostingPlayerWithCompletionHandler") Block_chooseBestHostingPlayerWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_chooseBestHostingPlayerWithCompletionHandler") Block_chooseBestHostingPlayerWithCompletionHandler completionHandler);
 
     /**
      * all the GKPlayers in the match
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -219,6 +226,7 @@ public class GKMatch extends NSObject {
      * Deprecated-Since: 8.0
      * Deprecated-Message: This is never invoked and its implementation does nothing, use players instead.
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("playerIDs")
@@ -227,6 +235,7 @@ public class GKMatch extends NSObject {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("players")
     public native NSArray<? extends GKPlayer> players();
@@ -244,7 +253,7 @@ public class GKMatch extends NSObject {
     @Generated
     @Selector("rematchWithCompletionHandler:")
     public native void rematchWithCompletionHandler(
-            @ObjCBlock(name = "call_rematchWithCompletionHandler") Block_rematchWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_rematchWithCompletionHandler") Block_rematchWithCompletionHandler completionHandler);
 
     /**
      * Asynchronously send data to one or more GKPlayers. Returns YES if delivery started, NO if unable to start sending
@@ -254,8 +263,9 @@ public class GKMatch extends NSObject {
      */
     @Generated
     @Selector("sendData:toPlayers:dataMode:error:")
-    public native boolean sendDataToPlayersDataModeError(NSData data, NSArray<? extends GKPlayer> players,
-            @NInt long mode, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean sendDataToPlayersDataModeError(@NotNull NSData data,
+            @NotNull NSArray<? extends GKPlayer> players, @NInt long mode,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * This method is obsolete. It will never be invoked and its implementation does nothing**
@@ -268,8 +278,8 @@ public class GKMatch extends NSObject {
     @Generated
     @Deprecated
     @Selector("sendData:toPlayers:withDataMode:error:")
-    public native boolean sendDataToPlayersWithDataModeError(NSData data, NSArray<String> playerIDs, @NInt long mode,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean sendDataToPlayersWithDataModeError(@NotNull NSData data, @NotNull NSArray<String> playerIDs,
+            @NInt long mode, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Asynchronously broadcasts data to all players. Returns YES if delivery started, NO if unable to start sending and
@@ -277,21 +287,21 @@ public class GKMatch extends NSObject {
      */
     @Generated
     @Selector("sendDataToAllPlayers:withDataMode:error:")
-    public native boolean sendDataToAllPlayersWithDataModeError(NSData data, @NInt long mode,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean sendDataToAllPlayersWithDataModeError(@NotNull NSData data, @NInt long mode,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * all the GKPlayers in the match
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) GKMatchDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) GKMatchDelegate value);
 
     /**
      * all the GKPlayers in the match
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) GKMatchDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) GKMatchDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -306,28 +316,29 @@ public class GKMatch extends NSObject {
      * Join a named voice chat channel
      * Will return nil if parental controls are turned on
      */
+    @Nullable
     @Generated
     @Selector("voiceChatWithName:")
-    public native GKVoiceChat voiceChatWithName(String name);
+    public native GKVoiceChat voiceChatWithName(@NotNull String name);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_chooseBestHostPlayerWithCompletionHandler {
         @Generated
-        void call_chooseBestHostPlayerWithCompletionHandler(String playerID);
+        void call_chooseBestHostPlayerWithCompletionHandler(@Nullable String playerID);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_chooseBestHostingPlayerWithCompletionHandler {
         @Generated
-        void call_chooseBestHostingPlayerWithCompletionHandler(GKPlayer player);
+        void call_chooseBestHostingPlayerWithCompletionHandler(@Nullable GKPlayer player);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_rematchWithCompletionHandler {
         @Generated
-        void call_rematchWithCompletionHandler(GKMatch match, NSError error);
+        void call_rematchWithCompletionHandler(@Nullable GKMatch match, @Nullable NSError error);
     }
 }

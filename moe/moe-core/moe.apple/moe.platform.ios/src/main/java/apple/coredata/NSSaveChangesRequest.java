@@ -37,6 +37,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 5.0
@@ -71,22 +73,25 @@ public class NSSaveChangesRequest extends NSPersistentStoreRequest {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,9 +126,10 @@ public class NSSaveChangesRequest extends NSPersistentStoreRequest {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -154,6 +160,7 @@ public class NSSaveChangesRequest extends NSPersistentStoreRequest {
     /**
      * Objects that were deleted from the calling context.
      */
+    @Nullable
     @Generated
     @Selector("deletedObjects")
     public native NSSet<? extends NSManagedObject> deletedObjects();
@@ -168,12 +175,15 @@ public class NSSaveChangesRequest extends NSPersistentStoreRequest {
     @Generated
     @Selector("initWithInsertedObjects:updatedObjects:deletedObjects:lockedObjects:")
     public native NSSaveChangesRequest initWithInsertedObjectsUpdatedObjectsDeletedObjectsLockedObjects(
-            NSSet<? extends NSManagedObject> insertedObjects, NSSet<? extends NSManagedObject> updatedObjects,
-            NSSet<? extends NSManagedObject> deletedObjects, NSSet<? extends NSManagedObject> lockedObjects);
+            @Nullable NSSet<? extends NSManagedObject> insertedObjects,
+            @Nullable NSSet<? extends NSManagedObject> updatedObjects,
+            @Nullable NSSet<? extends NSManagedObject> deletedObjects,
+            @Nullable NSSet<? extends NSManagedObject> lockedObjects);
 
     /**
      * Objects that were inserted into the calling context.
      */
+    @Nullable
     @Generated
     @Selector("insertedObjects")
     public native NSSet<? extends NSManagedObject> insertedObjects();
@@ -181,6 +191,7 @@ public class NSSaveChangesRequest extends NSPersistentStoreRequest {
     /**
      * Objects that were flagged for optimistic locking on the calling context via detectConflictsForObject:.
      */
+    @Nullable
     @Generated
     @Selector("lockedObjects")
     public native NSSet<? extends NSManagedObject> lockedObjects();
@@ -188,6 +199,7 @@ public class NSSaveChangesRequest extends NSPersistentStoreRequest {
     /**
      * Objects that were modified in the calling context.
      */
+    @Nullable
     @Generated
     @Selector("updatedObjects")
     public native NSSet<? extends NSManagedObject> updatedObjects();

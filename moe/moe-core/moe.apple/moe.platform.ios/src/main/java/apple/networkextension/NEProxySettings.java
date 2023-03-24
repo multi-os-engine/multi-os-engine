@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEProxySettings
@@ -84,22 +86,25 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,9 +139,10 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -197,6 +203,7 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("HTTPSServer")
     public native NEProxyServer HTTPSServer();
@@ -208,6 +215,7 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("HTTPServer")
     public native NEProxyServer HTTPServer();
@@ -223,15 +231,16 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
     @Selector("autoProxyConfigurationEnabled")
     public native boolean autoProxyConfigurationEnabled();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] exceptionList
@@ -241,6 +250,7 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("exceptionList")
     public native NSArray<String> exceptionList();
@@ -263,7 +273,7 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEProxySettings initWithCoder(NSCoder coder);
+    public native NEProxySettings initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] matchDomains
@@ -274,6 +284,7 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("matchDomains")
     public native NSArray<String> matchDomains();
@@ -285,6 +296,7 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("proxyAutoConfigurationJavaScript")
     public native String proxyAutoConfigurationJavaScript();
@@ -296,6 +308,7 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("proxyAutoConfigurationURL")
     public native NSURL proxyAutoConfigurationURL();
@@ -321,7 +334,7 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
      */
     @Generated
     @Selector("setExceptionList:")
-    public native void setExceptionList(NSArray<String> value);
+    public native void setExceptionList(@Nullable NSArray<String> value);
 
     /**
      * [@property] excludeSimpleHostnames
@@ -366,7 +379,7 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
      */
     @Generated
     @Selector("setHTTPSServer:")
-    public native void setHTTPSServer(NEProxyServer value);
+    public native void setHTTPSServer(@Nullable NEProxyServer value);
 
     /**
      * [@property] HTTPServer
@@ -377,7 +390,7 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
      */
     @Generated
     @Selector("setHTTPServer:")
-    public native void setHTTPServer(NEProxyServer value);
+    public native void setHTTPServer(@Nullable NEProxyServer value);
 
     /**
      * [@property] matchDomains
@@ -390,7 +403,7 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
      */
     @Generated
     @Selector("setMatchDomains:")
-    public native void setMatchDomains(NSArray<String> value);
+    public native void setMatchDomains(@Nullable NSArray<String> value);
 
     /**
      * [@property] proxyAutoConfigurationJavaScript
@@ -401,7 +414,7 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
      */
     @Generated
     @Selector("setProxyAutoConfigurationJavaScript:")
-    public native void setProxyAutoConfigurationJavaScript(String value);
+    public native void setProxyAutoConfigurationJavaScript(@Nullable String value);
 
     /**
      * [@property] proxyAutoConfigurationURL
@@ -412,7 +425,7 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
      */
     @Generated
     @Selector("setProxyAutoConfigurationURL:")
-    public native void setProxyAutoConfigurationURL(NSURL value);
+    public native void setProxyAutoConfigurationURL(@Nullable NSURL value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

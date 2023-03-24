@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGVector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 7.0
@@ -78,22 +80,25 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -117,11 +122,12 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
      * 
      *              API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("fixedAttachmentWithItem:attachedToItem:attachmentAnchor:")
     public static native UIAttachmentBehavior fixedAttachmentWithItemAttachedToItemAttachmentAnchor(
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @Mapped(ObjCObjectMapper.class) UIDynamicItem item2,
-            @ByValue CGPoint point);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item1,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item2, @ByValue CGPoint point);
 
     @Generated
     @Selector("hash")
@@ -145,9 +151,10 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * A limit attachment imposes a maximum distance between two dynamic items, as if they were connected by a rope.
@@ -162,11 +169,12 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
      * 
      *      API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("limitAttachmentWithItem:offsetFromCenter:attachedToItem:offsetFromCenter:")
     public static native UIAttachmentBehavior limitAttachmentWithItemOffsetFromCenterAttachedToItemOffsetFromCenter(
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @ByValue UIOffset offset1,
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item2, @ByValue UIOffset offset2);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @ByValue UIOffset offset1,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item2, @ByValue UIOffset offset2);
 
     @Generated
     @Owned
@@ -185,11 +193,12 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
      * 
      *      API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("pinAttachmentWithItem:attachedToItem:attachmentAnchor:")
     public static native UIAttachmentBehavior pinAttachmentWithItemAttachedToItemAttachmentAnchor(
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @Mapped(ObjCObjectMapper.class) UIDynamicItem item2,
-            @ByValue CGPoint point);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item1,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item2, @ByValue CGPoint point);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -218,11 +227,13 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
      * 
      *      API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("slidingAttachmentWithItem:attachedToItem:attachmentAnchor:axisOfTranslation:")
     public static native UIAttachmentBehavior slidingAttachmentWithItemAttachedToItemAttachmentAnchorAxisOfTranslation(
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @Mapped(ObjCObjectMapper.class) UIDynamicItem item2,
-            @ByValue CGPoint point, @ByValue CGVector axis);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item1,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item2, @ByValue CGPoint point,
+            @ByValue CGVector axis);
 
     /**
      * A sliding attachment allows for translation of the item along a specified axis with respect to the anchor point.
@@ -237,10 +248,12 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
      * 
      *      API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("slidingAttachmentWithItem:attachmentAnchor:axisOfTranslation:")
     public static native UIAttachmentBehavior slidingAttachmentWithItemAttachmentAnchorAxisOfTranslation(
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item, @ByValue CGPoint point, @ByValue CGVector axis);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item, @ByValue CGPoint point,
+            @ByValue CGVector axis);
 
     @Generated
     @Selector("superclass")
@@ -303,25 +316,28 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
 
     @Generated
     @Selector("initWithItem:attachedToAnchor:")
-    public native UIAttachmentBehavior initWithItemAttachedToAnchor(@Mapped(ObjCObjectMapper.class) UIDynamicItem item,
-            @ByValue CGPoint point);
+    public native UIAttachmentBehavior initWithItemAttachedToAnchor(
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item, @ByValue CGPoint point);
 
     @Generated
     @Selector("initWithItem:attachedToItem:")
-    public native UIAttachmentBehavior initWithItemAttachedToItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item1,
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item2);
+    public native UIAttachmentBehavior initWithItemAttachedToItem(
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item1,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item2);
 
     @Generated
     @Selector("initWithItem:offsetFromCenter:attachedToAnchor:")
     public native UIAttachmentBehavior initWithItemOffsetFromCenterAttachedToAnchor(
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item, @ByValue UIOffset offset, @ByValue CGPoint point);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item, @ByValue UIOffset offset,
+            @ByValue CGPoint point);
 
     @Generated
     @Selector("initWithItem:offsetFromCenter:attachedToItem:offsetFromCenter:")
     public native UIAttachmentBehavior initWithItemOffsetFromCenterAttachedToItemOffsetFromCenter(
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @ByValue UIOffset offset1,
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item2, @ByValue UIOffset offset2);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @ByValue UIOffset offset1,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item2, @ByValue UIOffset offset2);
 
+    @NotNull
     @Generated
     @Selector("items")
     public native NSArray<?> items();

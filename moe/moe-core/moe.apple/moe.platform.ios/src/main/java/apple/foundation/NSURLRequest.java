@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSURLRequest
@@ -103,22 +105,25 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -153,9 +158,10 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -177,7 +183,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      */
     @Generated
     @Selector("requestWithURL:")
-    public static native NSURLRequest requestWithURL(NSURL URL);
+    public static native NSURLRequest requestWithURL(@NotNull NSURL URL);
 
     /**
      * requestWithURL:cachePolicy:timeoutInterval:
@@ -194,8 +200,8 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      */
     @Generated
     @Selector("requestWithURL:cachePolicy:timeoutInterval:")
-    public static native NSURLRequest requestWithURLCachePolicyTimeoutInterval(NSURL URL, @NUInt long cachePolicy,
-            double timeoutInterval);
+    public static native NSURLRequest requestWithURLCachePolicyTimeoutInterval(@NotNull NSURL URL,
+            @NUInt long cachePolicy, double timeoutInterval);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -230,6 +236,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * 
      * @return The request body data of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("HTTPBody")
     public native NSData HTTPBody();
@@ -247,6 +254,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * 
      * @return The request body stream of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("HTTPBodyStream")
     public native NSInputStream HTTPBodyStream();
@@ -256,6 +264,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * 
      * @return the HTTP request method of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("HTTPMethod")
     public native String HTTPMethod();
@@ -292,6 +301,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * 
      * @return The URL of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -303,6 +313,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * @return a dictionary containing all the HTTP header fields of the
      *         receiver.
      */
+    @Nullable
     @Generated
     @Selector("allHTTPHeaderFields")
     public native NSDictionary<String, String> allHTTPHeaderFields();
@@ -330,15 +341,16 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
     @NUInt
     public native long cachePolicy();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -346,7 +358,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSURLRequest initWithCoder(NSCoder coder);
+    public native NSURLRequest initWithCoder(@NotNull NSCoder coder);
 
     /**
      * initWithURL:
@@ -362,7 +374,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      */
     @Generated
     @Selector("initWithURL:")
-    public native NSURLRequest initWithURL(NSURL URL);
+    public native NSURLRequest initWithURL(@NotNull NSURL URL);
 
     /**
      * initWithURL:
@@ -382,7 +394,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      */
     @Generated
     @Selector("initWithURL:cachePolicy:timeoutInterval:")
-    public native NSURLRequest initWithURLCachePolicyTimeoutInterval(NSURL URL, @NUInt long cachePolicy,
+    public native NSURLRequest initWithURLCachePolicyTimeoutInterval(@NotNull NSURL URL, @NUInt long cachePolicy,
             double timeoutInterval);
 
     /**
@@ -395,15 +407,17 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * 
      * @return The main document URL.
      */
+    @Nullable
     @Generated
     @Selector("mainDocumentURL")
     public native NSURL mainDocumentURL();
 
+    @NotNull
     @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Returns the NSURLRequestNetworkServiceType associated with this request.
@@ -458,9 +472,10 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * @return the value associated with the given header field, or nil if
      *         there is no value associated with the given header field.
      */
+    @Nullable
     @Generated
     @Selector("valueForHTTPHeaderField:")
-    public native String valueForHTTPHeaderField(String field);
+    public native String valueForHTTPHeaderField(@NotNull String field);
 
     /**
      * returns whether a connection created with this request is allowed to use

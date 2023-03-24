@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INPauseWorkoutIntent. By implementing this protocol, a class can provide
@@ -60,8 +61,8 @@ public interface INPauseWorkoutIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmPauseWorkout:completion:")
-    default void confirmPauseWorkoutCompletion(INPauseWorkoutIntent intent,
-            @ObjCBlock(name = "call_confirmPauseWorkoutCompletion") Block_confirmPauseWorkoutCompletion completion) {
+    default void confirmPauseWorkoutCompletion(@NotNull INPauseWorkoutIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmPauseWorkoutCompletion") Block_confirmPauseWorkoutCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,8 +79,8 @@ public interface INPauseWorkoutIntentHandling {
      */
     @Generated
     @Selector("handlePauseWorkout:completion:")
-    void handlePauseWorkoutCompletion(INPauseWorkoutIntent intent,
-            @ObjCBlock(name = "call_handlePauseWorkoutCompletion") Block_handlePauseWorkoutCompletion completion);
+    void handlePauseWorkoutCompletion(@NotNull INPauseWorkoutIntent intent,
+            @NotNull @ObjCBlock(name = "call_handlePauseWorkoutCompletion") Block_handlePauseWorkoutCompletion completion);
 
     /**
      * Resolution methods - Determine if this intent is ready for the next step (confirmation)
@@ -95,8 +96,8 @@ public interface INPauseWorkoutIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveWorkoutNameForPauseWorkout:withCompletion:")
-    default void resolveWorkoutNameForPauseWorkoutWithCompletion(INPauseWorkoutIntent intent,
-            @ObjCBlock(name = "call_resolveWorkoutNameForPauseWorkoutWithCompletion") Block_resolveWorkoutNameForPauseWorkoutWithCompletion completion) {
+    default void resolveWorkoutNameForPauseWorkoutWithCompletion(@NotNull INPauseWorkoutIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveWorkoutNameForPauseWorkoutWithCompletion") Block_resolveWorkoutNameForPauseWorkoutWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,20 +105,21 @@ public interface INPauseWorkoutIntentHandling {
     @Generated
     public interface Block_confirmPauseWorkoutCompletion {
         @Generated
-        void call_confirmPauseWorkoutCompletion(INPauseWorkoutIntentResponse response);
+        void call_confirmPauseWorkoutCompletion(@NotNull INPauseWorkoutIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handlePauseWorkoutCompletion {
         @Generated
-        void call_handlePauseWorkoutCompletion(INPauseWorkoutIntentResponse response);
+        void call_handlePauseWorkoutCompletion(@NotNull INPauseWorkoutIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveWorkoutNameForPauseWorkoutWithCompletion {
         @Generated
-        void call_resolveWorkoutNameForPauseWorkoutWithCompletion(INSpeakableStringResolutionResult resolutionResult);
+        void call_resolveWorkoutNameForPauseWorkoutWithCompletion(
+                @NotNull INSpeakableStringResolutionResult resolutionResult);
     }
 }

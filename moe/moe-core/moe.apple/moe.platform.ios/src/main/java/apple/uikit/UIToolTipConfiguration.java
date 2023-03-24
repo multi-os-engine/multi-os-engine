@@ -23,6 +23,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 15.0
@@ -57,22 +59,25 @@ public class UIToolTipConfiguration extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -82,14 +87,14 @@ public class UIToolTipConfiguration extends NSObject {
      */
     @Generated
     @Selector("configurationWithToolTip:")
-    public static native UIToolTipConfiguration configurationWithToolTip(String toolTip);
+    public static native UIToolTipConfiguration configurationWithToolTip(@NotNull String toolTip);
 
     /**
      * Creates a UIToolTipConfiguration with the provided string, applied to the specified region.
      */
     @Generated
     @Selector("configurationWithToolTip:inRect:")
-    public static native UIToolTipConfiguration configurationWithToolTipInRect(String toolTip,
+    public static native UIToolTipConfiguration configurationWithToolTipInRect(@NotNull String toolTip,
             @ByValue CGRect sourceRect);
 
     @Generated
@@ -126,9 +131,10 @@ public class UIToolTipConfiguration extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,6 +169,7 @@ public class UIToolTipConfiguration extends NSObject {
     /**
      * The string to annotate the contents at a given point.
      */
+    @NotNull
     @Generated
     @Selector("toolTip")
     public native String toolTip();

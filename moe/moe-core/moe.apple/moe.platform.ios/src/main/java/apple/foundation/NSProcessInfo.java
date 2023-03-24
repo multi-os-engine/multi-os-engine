@@ -38,6 +38,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -69,22 +71,25 @@ public class NSProcessInfo extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -119,15 +124,17 @@ public class NSProcessInfo extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native NSProcessInfo new_objc();
 
+    @NotNull
     @Generated
     @Selector("processInfo")
     public static native NSProcessInfo processInfo();
@@ -161,6 +168,7 @@ public class NSProcessInfo extends NSObject {
     @NUInt
     public native long activeProcessorCount();
 
+    @NotNull
     @Generated
     @Selector("arguments")
     public native NSArray<String> arguments();
@@ -172,10 +180,11 @@ public class NSProcessInfo extends NSObject {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("beginActivityWithOptions:reason:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native apple.protocol.NSObject beginActivityWithOptionsReason(long options, String reason);
+    public native apple.protocol.NSObject beginActivityWithOptionsReason(long options, @NotNull String reason);
 
     /**
      * The argument to this method is the result of beginActivityWithOptions:reason:.
@@ -184,16 +193,19 @@ public class NSProcessInfo extends NSObject {
      */
     @Generated
     @Selector("endActivity:")
-    public native void endActivity(@Mapped(ObjCObjectMapper.class) apple.protocol.NSObject activity);
+    public native void endActivity(@NotNull @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject activity);
 
+    @NotNull
     @Generated
     @Selector("environment")
     public native NSDictionary<String, String> environment();
 
+    @NotNull
     @Generated
     @Selector("globallyUniqueString")
     public native String globallyUniqueString();
 
+    @NotNull
     @Generated
     @Selector("hostName")
     public native String hostName();
@@ -237,6 +249,7 @@ public class NSProcessInfo extends NSObject {
      * Deprecated-Message: -operatingSystemName always returns NSMACHOperatingSystem, use -operatingSystemVersionString
      * instead
      */
+    @NotNull
     @Generated
     @Deprecated
     @Selector("operatingSystemName")
@@ -254,6 +267,7 @@ public class NSProcessInfo extends NSObject {
      * Human readable, localized; appropriate for displaying to user or using in bug emails and such; NOT appropriate
      * for parsing
      */
+    @NotNull
     @Generated
     @Selector("operatingSystemVersionString")
     public native String operatingSystemVersionString();
@@ -266,8 +280,8 @@ public class NSProcessInfo extends NSObject {
      */
     @Generated
     @Selector("performActivityWithOptions:reason:usingBlock:")
-    public native void performActivityWithOptionsReasonUsingBlock(long options, String reason,
-            @ObjCBlock(name = "call_performActivityWithOptionsReasonUsingBlock") Block_performActivityWithOptionsReasonUsingBlock block);
+    public native void performActivityWithOptionsReasonUsingBlock(long options, @NotNull String reason,
+            @NotNull @ObjCBlock(name = "call_performActivityWithOptionsReasonUsingBlock") Block_performActivityWithOptionsReasonUsingBlock block);
 
     /**
      * Perform an expiring background task, which obtains an expiring task assertion on iOS. The block contains any work
@@ -280,8 +294,8 @@ public class NSProcessInfo extends NSObject {
      */
     @Generated
     @Selector("performExpiringActivityWithReason:usingBlock:")
-    public native void performExpiringActivityWithReasonUsingBlock(String reason,
-            @ObjCBlock(name = "call_performExpiringActivityWithReasonUsingBlock") Block_performExpiringActivityWithReasonUsingBlock block);
+    public native void performExpiringActivityWithReasonUsingBlock(@NotNull String reason,
+            @NotNull @ObjCBlock(name = "call_performExpiringActivityWithReasonUsingBlock") Block_performExpiringActivityWithReasonUsingBlock block);
 
     /**
      * API-Since: 2.0
@@ -294,6 +308,7 @@ public class NSProcessInfo extends NSObject {
     @Selector("processIdentifier")
     public native int processIdentifier();
 
+    @NotNull
     @Generated
     @Selector("processName")
     public native String processName();
@@ -308,7 +323,7 @@ public class NSProcessInfo extends NSObject {
 
     @Generated
     @Selector("setProcessName:")
-    public native void setProcessName(String value);
+    public native void setProcessName(@NotNull String value);
 
     /**
      * API-Since: 4.0

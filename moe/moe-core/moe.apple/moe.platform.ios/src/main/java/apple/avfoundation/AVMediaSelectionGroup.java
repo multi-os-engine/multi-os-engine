@@ -41,6 +41,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 5.0
@@ -75,22 +77,25 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +130,10 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * mediaSelectionOptionsFromArray:filteredAndSortedAccordingToPreferredLanguages:
@@ -147,10 +153,12 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
      * 
      *         API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("mediaSelectionOptionsFromArray:filteredAndSortedAccordingToPreferredLanguages:")
     public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayFilteredAndSortedAccordingToPreferredLanguages(
-            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSArray<String> preferredLanguages);
+            @NotNull NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions,
+            @NotNull NSArray<String> preferredLanguages);
 
     /**
      * mediaSelectionOptionsFromArray:withLocale:
@@ -165,10 +173,11 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
      * @return An instance of NSArray containing the media selection options of the specified NSArray that match the
      *         specified locale.
      */
+    @NotNull
     @Generated
     @Selector("mediaSelectionOptionsFromArray:withLocale:")
     public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayWithLocale(
-            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSLocale locale);
+            @NotNull NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, @NotNull NSLocale locale);
 
     /**
      * mediaSelectionOptionsFromArray:withMediaCharacteristics:
@@ -184,10 +193,12 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
      *         specified
      *         media characteristics.
      */
+    @NotNull
     @Generated
     @Selector("mediaSelectionOptionsFromArray:withMediaCharacteristics:")
     public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayWithMediaCharacteristics(
-            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSArray<String> mediaCharacteristics);
+            @NotNull NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions,
+            @NotNull NSArray<String> mediaCharacteristics);
 
     /**
      * mediaSelectionOptionsFromArray:withoutMediaCharacteristics:
@@ -203,10 +214,12 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
      *         specified
      *         media characteristics.
      */
+    @NotNull
     @Generated
     @Selector("mediaSelectionOptionsFromArray:withoutMediaCharacteristics:")
     public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayWithoutMediaCharacteristics(
-            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSArray<String> mediaCharacteristics);
+            @NotNull NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions,
+            @NotNull NSArray<String> mediaCharacteristics);
 
     @Generated
     @Owned
@@ -223,10 +236,11 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
      *                              playable.
      * @return An instance of NSArray containing the media selection options of the specified NSArray that are playable.
      */
+    @NotNull
     @Generated
     @Selector("playableMediaSelectionOptionsFromArray:")
     public static native NSArray<? extends AVMediaSelectionOption> playableMediaSelectionOptionsFromArray(
-            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions);
+            @NotNull NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -262,11 +276,12 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
     @Selector("allowsEmptySelection")
     public native boolean allowsEmptySelection();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] defaultOption
@@ -279,6 +294,7 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("defaultOption")
     public native AVMediaSelectionOption defaultOption();
@@ -292,6 +308,7 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
      * Any AVMediaSelectionOptions in the AVMediaSelectionGroup not representing
      * Audible or Legible selection options will be ignored.
      */
+    @NotNull
     @Generated
     @Selector("makeNowPlayingInfoLanguageOptionGroup")
     public native MPNowPlayingInfoLanguageOptionGroup makeNowPlayingInfoLanguageOptionGroup();
@@ -307,10 +324,11 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
      * @return If the specified properties match those of an option in the group, an instance of AVMediaSelectionOption.
      *         Otherwise nil.
      */
+    @Nullable
     @Generated
     @Selector("mediaSelectionOptionWithPropertyList:")
     public native AVMediaSelectionOption mediaSelectionOptionWithPropertyList(
-            @Mapped(ObjCObjectMapper.class) Object plist);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object plist);
 
     /**
      * [@property] options
@@ -319,6 +337,7 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
      * 
      * An NSArray of AVMediaSelectionOption*.
      */
+    @NotNull
     @Generated
     @Selector("options")
     public native NSArray<? extends AVMediaSelectionOption> options();

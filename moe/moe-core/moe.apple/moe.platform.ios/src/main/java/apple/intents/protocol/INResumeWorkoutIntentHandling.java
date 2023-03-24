@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INResumeWorkoutIntent. By implementing this protocol, a class can provide
@@ -60,8 +61,8 @@ public interface INResumeWorkoutIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmResumeWorkout:completion:")
-    default void confirmResumeWorkoutCompletion(INResumeWorkoutIntent intent,
-            @ObjCBlock(name = "call_confirmResumeWorkoutCompletion") Block_confirmResumeWorkoutCompletion completion) {
+    default void confirmResumeWorkoutCompletion(@NotNull INResumeWorkoutIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmResumeWorkoutCompletion") Block_confirmResumeWorkoutCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,8 +79,8 @@ public interface INResumeWorkoutIntentHandling {
      */
     @Generated
     @Selector("handleResumeWorkout:completion:")
-    void handleResumeWorkoutCompletion(INResumeWorkoutIntent intent,
-            @ObjCBlock(name = "call_handleResumeWorkoutCompletion") Block_handleResumeWorkoutCompletion completion);
+    void handleResumeWorkoutCompletion(@NotNull INResumeWorkoutIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleResumeWorkoutCompletion") Block_handleResumeWorkoutCompletion completion);
 
     /**
      * Resolution methods - Determine if this intent is ready for the next step (confirmation)
@@ -95,8 +96,8 @@ public interface INResumeWorkoutIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveWorkoutNameForResumeWorkout:withCompletion:")
-    default void resolveWorkoutNameForResumeWorkoutWithCompletion(INResumeWorkoutIntent intent,
-            @ObjCBlock(name = "call_resolveWorkoutNameForResumeWorkoutWithCompletion") Block_resolveWorkoutNameForResumeWorkoutWithCompletion completion) {
+    default void resolveWorkoutNameForResumeWorkoutWithCompletion(@NotNull INResumeWorkoutIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveWorkoutNameForResumeWorkoutWithCompletion") Block_resolveWorkoutNameForResumeWorkoutWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,20 +105,21 @@ public interface INResumeWorkoutIntentHandling {
     @Generated
     public interface Block_confirmResumeWorkoutCompletion {
         @Generated
-        void call_confirmResumeWorkoutCompletion(INResumeWorkoutIntentResponse response);
+        void call_confirmResumeWorkoutCompletion(@NotNull INResumeWorkoutIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleResumeWorkoutCompletion {
         @Generated
-        void call_handleResumeWorkoutCompletion(INResumeWorkoutIntentResponse response);
+        void call_handleResumeWorkoutCompletion(@NotNull INResumeWorkoutIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveWorkoutNameForResumeWorkoutWithCompletion {
         @Generated
-        void call_resolveWorkoutNameForResumeWorkoutWithCompletion(INSpeakableStringResolutionResult resolutionResult);
+        void call_resolveWorkoutNameForResumeWorkoutWithCompletion(
+                @NotNull INSpeakableStringResolutionResult resolutionResult);
     }
 }

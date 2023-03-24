@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Context of a SmartCard PIN authentication operation.
@@ -50,6 +52,7 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
      * authentication. It is preferred to provide APDUTemplate if possible, because it allows using hardware PINPad for
      * secure PIN entry (provided that the reader has one).
      */
+    @Nullable
     @Generated
     @Selector("APDUTemplate")
     public native NSData APDUTemplate();
@@ -58,6 +61,7 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
      * PIN value which will be set when 'finishWithError:' gets triggered. Note that the PIN is not set in case that
      * APDUTemplate was set. In this case, PIN was already sent to the card using specified template.
      */
+    @Nullable
     @Generated
     @Selector("PIN")
     public native String PIN();
@@ -74,6 +78,7 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
      * PIN formatting properties.
      * [@note] The property is initialized with a default instance of TKSmartCardPINFormat.
      */
+    @NotNull
     @Generated
     @Selector("PINFormat")
     public native TKSmartCardPINFormat PINFormat();
@@ -94,22 +99,25 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,7 +141,7 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native TKTokenSmartCardPINAuthOperation initWithCoder(NSCoder coder);
+    public native TKTokenSmartCardPINAuthOperation initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -152,9 +160,10 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -177,7 +186,7 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
      */
     @Generated
     @Selector("setAPDUTemplate:")
-    public native void setAPDUTemplate(NSData value);
+    public native void setAPDUTemplate(@Nullable NSData value);
 
     /**
      * PIN value which will be set when 'finishWithError:' gets triggered. Note that the PIN is not set in case that
@@ -185,7 +194,7 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
      */
     @Generated
     @Selector("setPIN:")
-    public native void setPIN(String value);
+    public native void setPIN(@Nullable String value);
 
     /**
      * Offset in bytes within APDU template to mark the location for filling in the PIN.
@@ -200,14 +209,14 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
      */
     @Generated
     @Selector("setPINFormat:")
-    public native void setPINFormat(TKSmartCardPINFormat value);
+    public native void setPINFormat(@NotNull TKSmartCardPINFormat value);
 
     /**
      * TKSmartCard to which the formatted APDU gets sent in order to authenticate (used only if 'APDUTemplate' is set).
      */
     @Generated
     @Selector("setSmartCard:")
-    public native void setSmartCard(TKSmartCard value);
+    public native void setSmartCard(@Nullable TKSmartCard value);
 
     @Generated
     @Selector("setVersion:")
@@ -216,6 +225,7 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
     /**
      * TKSmartCard to which the formatted APDU gets sent in order to authenticate (used only if 'APDUTemplate' is set).
      */
+    @Nullable
     @Generated
     @Selector("smartCard")
     public native TKSmartCard smartCard();

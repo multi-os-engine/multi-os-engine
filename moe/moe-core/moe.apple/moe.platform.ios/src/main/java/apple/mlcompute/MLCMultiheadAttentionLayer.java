@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCMultiheadAttentionLayer
@@ -70,19 +72,21 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
      * 
      * The biases added to key and value
      */
+    @Nullable
     @Generated
     @Selector("attentionBiases")
     public native NSArray<? extends MLCTensor> attentionBiases();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] biases
      * 
      * The biases of query, key, value and output projections
      */
+    @Nullable
     @Generated
     @Selector("biases")
     public native NSArray<? extends MLCTensor> biases();
@@ -92,24 +96,28 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
      * 
      * The biases tensor parameters used for optimizer update
      */
+    @Nullable
     @Generated
     @Selector("biasesParameters")
     public native NSArray<? extends MLCTensorParameter> biasesParameters();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,6 +135,7 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
      * 
      * The multi-head attention descriptor
      */
+    @NotNull
     @Generated
     @Selector("descriptor")
     public native MLCMultiheadAttentionDescriptor descriptor();
@@ -157,9 +166,10 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Create a multi-head attention layer
@@ -172,8 +182,8 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
     @Generated
     @Selector("layerWithDescriptor:weights:biases:attentionBiases:")
     public static native MLCMultiheadAttentionLayer layerWithDescriptorWeightsBiasesAttentionBiases(
-            MLCMultiheadAttentionDescriptor descriptor, NSArray<? extends MLCTensor> weights,
-            NSArray<? extends MLCTensor> biases, NSArray<? extends MLCTensor> attentionBiases);
+            @NotNull MLCMultiheadAttentionDescriptor descriptor, @NotNull NSArray<? extends MLCTensor> weights,
+            @Nullable NSArray<? extends MLCTensor> biases, @Nullable NSArray<? extends MLCTensor> attentionBiases);
 
     @Generated
     @Owned
@@ -198,7 +208,7 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
 
     @Generated
     @Selector("supportsDataType:onDevice:")
-    public static native boolean supportsDataTypeOnDevice(int dataType, MLCDevice device);
+    public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
 
     @Generated
     @Selector("version")
@@ -210,6 +220,7 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
      * 
      * The weights of query, key, value and output projections
      */
+    @NotNull
     @Generated
     @Selector("weights")
     public native NSArray<? extends MLCTensor> weights();
@@ -219,6 +230,7 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
      * 
      * The weights tensor parameters used for optimizer update
      */
+    @NotNull
     @Generated
     @Selector("weightsParameters")
     public native NSArray<? extends MLCTensorParameter> weightsParameters();

@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * WKWindowFeatures specifies optional attributes for the containing window when a new WKWebView is requested.
@@ -74,22 +76,25 @@ public class WKWindowFeatures extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +129,10 @@ public class WKWindowFeatures extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,6 +163,7 @@ public class WKWindowFeatures extends NSObject {
     /**
      * BOOL. Whether the containing window should be resizable. nil if resizability was not specified.
      */
+    @Nullable
     @Generated
     @Selector("allowsResizing")
     public native NSNumber allowsResizing();
@@ -164,6 +171,7 @@ public class WKWindowFeatures extends NSObject {
     /**
      * CGFloat. The height coordinate of the containing window. nil if the height was not specified.
      */
+    @Nullable
     @Generated
     @Selector("height")
     public native NSNumber height();
@@ -175,6 +183,7 @@ public class WKWindowFeatures extends NSObject {
     /**
      * BOOL. Whether the menu bar should be visible. nil if menu bar visibility was not specified.
      */
+    @Nullable
     @Generated
     @Selector("menuBarVisibility")
     public native NSNumber menuBarVisibility();
@@ -182,6 +191,7 @@ public class WKWindowFeatures extends NSObject {
     /**
      * BOOL. Whether the status bar should be visible. nil if status bar visibility was not specified.
      */
+    @Nullable
     @Generated
     @Selector("statusBarVisibility")
     public native NSNumber statusBarVisibility();
@@ -189,6 +199,7 @@ public class WKWindowFeatures extends NSObject {
     /**
      * BOOL. Whether toolbars should be visible. nil if toolbar visibility was not specified.
      */
+    @Nullable
     @Generated
     @Selector("toolbarsVisibility")
     public native NSNumber toolbarsVisibility();
@@ -196,6 +207,7 @@ public class WKWindowFeatures extends NSObject {
     /**
      * CGFloat. The width coordinate of the containing window. nil if the width was not specified.
      */
+    @Nullable
     @Generated
     @Selector("width")
     public native NSNumber width();
@@ -203,6 +215,7 @@ public class WKWindowFeatures extends NSObject {
     /**
      * CGFloat. The x coordinate of the containing window. nil if the x coordinate was not specified.
      */
+    @Nullable
     @Generated
     @Selector("x")
     public native NSNumber x();
@@ -210,6 +223,7 @@ public class WKWindowFeatures extends NSObject {
     /**
      * CGFloat. The y coordinate of the containing window. nil if the y coordinate was not specified.
      */
+    @Nullable
     @Generated
     @Selector("y")
     public native NSNumber y();

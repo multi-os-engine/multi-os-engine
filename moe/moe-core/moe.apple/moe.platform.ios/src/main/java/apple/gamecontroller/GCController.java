@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Controllers are available to an application that links to GameController.framework. There are 2 ways to access
@@ -86,22 +88,25 @@ public class GCController extends NSObject implements GCDevice {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -112,6 +117,7 @@ public class GCController extends NSObject implements GCDevice {
      * @see GCControllerDidConnectNotification
      * @see GCControllerDidDisconnectNotification
      */
+    @NotNull
     @Generated
     @Selector("controllers")
     public static native NSArray<? extends GCController> controllers();
@@ -146,9 +152,10 @@ public class GCController extends NSObject implements GCDevice {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -202,7 +209,7 @@ public class GCController extends NSObject implements GCDevice {
     @Generated
     @Selector("startWirelessControllerDiscoveryWithCompletionHandler:")
     public static native void startWirelessControllerDiscoveryWithCompletionHandler(
-            @ObjCBlock(name = "call_startWirelessControllerDiscoveryWithCompletionHandler") Block_startWirelessControllerDiscoveryWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_startWirelessControllerDiscoveryWithCompletionHandler") Block_startWirelessControllerDiscoveryWithCompletionHandler completionHandler);
 
     /**
      * If no more controllers are needed, depending on game state or number of controllers supported by a game, the
@@ -252,12 +259,14 @@ public class GCController extends NSObject implements GCDevice {
      *      Deprecated-Message: controllerPausedHandler has been deprecated. Use the Menu button found on the
      *      controller's profile, if it exists.
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("controllerPausedHandler")
     @ObjCBlock(name = "call_controllerPausedHandler_ret")
     public native Block_controllerPausedHandler_ret controllerPausedHandler();
 
+    @Nullable
     @Generated
     @Selector("extendedGamepad")
     public native GCExtendedGamepad extendedGamepad();
@@ -286,11 +295,13 @@ public class GCController extends NSObject implements GCDevice {
      *      API-Since: 7.0
      *      Deprecated-Since: 10.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("gamepad")
     public native GCGamepad gamepad();
 
+    @NotNull
     @Generated
     @Selector("handlerQueue")
     public native NSObject handlerQueue();
@@ -310,6 +321,7 @@ public class GCController extends NSObject implements GCDevice {
     @Selector("isAttachedToDevice")
     public native boolean isAttachedToDevice();
 
+    @Nullable
     @Generated
     @Selector("microGamepad")
     public native GCMicroGamepad microGamepad();
@@ -325,6 +337,7 @@ public class GCController extends NSObject implements GCDevice {
      * 
      *      API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("motion")
     public native GCMotion motion();
@@ -377,11 +390,11 @@ public class GCController extends NSObject implements GCDevice {
     @Generated
     @Selector("setControllerPausedHandler:")
     public native void setControllerPausedHandler(
-            @ObjCBlock(name = "call_setControllerPausedHandler") Block_setControllerPausedHandler value);
+            @Nullable @ObjCBlock(name = "call_setControllerPausedHandler") Block_setControllerPausedHandler value);
 
     @Generated
     @Selector("setHandlerQueue:")
-    public native void setHandlerQueue(NSObject value);
+    public native void setHandlerQueue(@NotNull NSObject value);
 
     /**
      * A player index for the controller, defaults to GCControllerPlayerIndexUnset.
@@ -401,6 +414,7 @@ public class GCController extends NSObject implements GCDevice {
     @Selector("setPlayerIndex:")
     public native void setPlayerIndex(@NInt long value);
 
+    @Nullable
     @Generated
     @Selector("vendorName")
     public native String vendorName();
@@ -409,14 +423,14 @@ public class GCController extends NSObject implements GCDevice {
     @Generated
     public interface Block_controllerPausedHandler_ret {
         @Generated
-        void call_controllerPausedHandler_ret(GCController arg0);
+        void call_controllerPausedHandler_ret(@NotNull GCController arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setControllerPausedHandler {
         @Generated
-        void call_setControllerPausedHandler(GCController arg0);
+        void call_setControllerPausedHandler(@NotNull GCController arg0);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -437,6 +451,7 @@ public class GCController extends NSObject implements GCDevice {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("capture")
     public native GCController capture();
@@ -452,6 +467,7 @@ public class GCController extends NSObject implements GCDevice {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("controllerWithExtendedGamepad")
     public static native GCController controllerWithExtendedGamepad();
@@ -467,6 +483,7 @@ public class GCController extends NSObject implements GCDevice {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("controllerWithMicroGamepad")
     public static native GCController controllerWithMicroGamepad();
@@ -489,6 +506,7 @@ public class GCController extends NSObject implements GCDevice {
     @Selector("isSnapshot")
     public native boolean isSnapshot();
 
+    @NotNull
     @Generated
     @Selector("productCategory")
     public native String productCategory();
@@ -502,6 +520,7 @@ public class GCController extends NSObject implements GCDevice {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("battery")
     public native GCDeviceBattery battery();
@@ -517,6 +536,7 @@ public class GCController extends NSObject implements GCDevice {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("current")
     public static native GCController current();
@@ -530,6 +550,7 @@ public class GCController extends NSObject implements GCDevice {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("haptics")
     public native GCDeviceHaptics haptics();
@@ -543,10 +564,12 @@ public class GCController extends NSObject implements GCDevice {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("light")
     public native GCDeviceLight light();
 
+    @NotNull
     @Generated
     @Selector("physicalInputProfile")
     public native GCPhysicalInputProfile physicalInputProfile();

@@ -31,6 +31,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Performs requests on a single image.
@@ -74,22 +76,25 @@ public class VNImageRequestHandler extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,7 +127,8 @@ public class VNImageRequestHandler extends NSObject {
      */
     @Generated
     @Selector("initWithCGImage:options:")
-    public native VNImageRequestHandler initWithCGImageOptions(CGImageRef image, NSDictionary<String, ?> options);
+    public native VNImageRequestHandler initWithCGImageOptions(@NotNull CGImageRef image,
+            @NotNull NSDictionary<String, ?> options);
 
     /**
      * initWithCGImage:options creates a VNImageRequestHandler to be used for performing requests against the image
@@ -138,8 +144,8 @@ public class VNImageRequestHandler extends NSObject {
      */
     @Generated
     @Selector("initWithCGImage:orientation:options:")
-    public native VNImageRequestHandler initWithCGImageOrientationOptions(CGImageRef image, int orientation,
-            NSDictionary<String, ?> options);
+    public native VNImageRequestHandler initWithCGImageOrientationOptions(@NotNull CGImageRef image, int orientation,
+            @NotNull NSDictionary<String, ?> options);
 
     /**
      * initWithCIImage:options creates a VNImageRequestHandler to be used for performing requests against the image
@@ -156,7 +162,8 @@ public class VNImageRequestHandler extends NSObject {
      */
     @Generated
     @Selector("initWithCIImage:options:")
-    public native VNImageRequestHandler initWithCIImageOptions(CIImage image, NSDictionary<String, ?> options);
+    public native VNImageRequestHandler initWithCIImageOptions(@NotNull CIImage image,
+            @NotNull NSDictionary<String, ?> options);
 
     /**
      * initWithCIImage:options:orientation creates a VNImageRequestHandler to be used for performing requests against
@@ -175,8 +182,8 @@ public class VNImageRequestHandler extends NSObject {
      */
     @Generated
     @Selector("initWithCIImage:orientation:options:")
-    public native VNImageRequestHandler initWithCIImageOrientationOptions(CIImage image, int orientation,
-            NSDictionary<String, ?> options);
+    public native VNImageRequestHandler initWithCIImageOrientationOptions(@NotNull CIImage image, int orientation,
+            @NotNull NSDictionary<String, ?> options);
 
     /**
      * initWithCVPixelBuffer:options creates a VNImageRequestHandler to be used for performing requests against the
@@ -189,8 +196,8 @@ public class VNImageRequestHandler extends NSObject {
      */
     @Generated
     @Selector("initWithCVPixelBuffer:options:")
-    public native VNImageRequestHandler initWithCVPixelBufferOptions(CVBufferRef pixelBuffer,
-            NSDictionary<String, ?> options);
+    public native VNImageRequestHandler initWithCVPixelBufferOptions(@NotNull CVBufferRef pixelBuffer,
+            @NotNull NSDictionary<String, ?> options);
 
     /**
      * initWithCVPixelBuffer:options creates a VNImageRequestHandler to be used for performing requests against the
@@ -206,8 +213,8 @@ public class VNImageRequestHandler extends NSObject {
      */
     @Generated
     @Selector("initWithCVPixelBuffer:orientation:options:")
-    public native VNImageRequestHandler initWithCVPixelBufferOrientationOptions(CVBufferRef pixelBuffer,
-            int orientation, NSDictionary<String, ?> options);
+    public native VNImageRequestHandler initWithCVPixelBufferOrientationOptions(@NotNull CVBufferRef pixelBuffer,
+            int orientation, @NotNull NSDictionary<String, ?> options);
 
     /**
      * initWithData:options creates a VNImageRequestHandler to be used for performing requests against an image
@@ -223,7 +230,8 @@ public class VNImageRequestHandler extends NSObject {
      */
     @Generated
     @Selector("initWithData:options:")
-    public native VNImageRequestHandler initWithDataOptions(NSData imageData, NSDictionary<String, ?> options);
+    public native VNImageRequestHandler initWithDataOptions(@NotNull NSData imageData,
+            @NotNull NSDictionary<String, ?> options);
 
     /**
      * initWithData:options creates a VNImageRequestHandler to be used for performing requests against an image
@@ -242,8 +250,8 @@ public class VNImageRequestHandler extends NSObject {
      */
     @Generated
     @Selector("initWithData:orientation:options:")
-    public native VNImageRequestHandler initWithDataOrientationOptions(NSData imageData, int orientation,
-            NSDictionary<String, ?> options);
+    public native VNImageRequestHandler initWithDataOrientationOptions(@NotNull NSData imageData, int orientation,
+            @NotNull NSDictionary<String, ?> options);
 
     /**
      * initWithURL:options creates a VNImageRequestHandler to be used for performing requests against an image specified
@@ -259,7 +267,8 @@ public class VNImageRequestHandler extends NSObject {
      */
     @Generated
     @Selector("initWithURL:options:")
-    public native VNImageRequestHandler initWithURLOptions(NSURL imageURL, NSDictionary<String, ?> options);
+    public native VNImageRequestHandler initWithURLOptions(@NotNull NSURL imageURL,
+            @NotNull NSDictionary<String, ?> options);
 
     /**
      * initWithURL:options creates a VNImageRequestHandler to be used for performing requests against an image specified
@@ -278,8 +287,8 @@ public class VNImageRequestHandler extends NSObject {
      */
     @Generated
     @Selector("initWithURL:orientation:options:")
-    public native VNImageRequestHandler initWithURLOrientationOptions(NSURL imageURL, int orientation,
-            NSDictionary<String, ?> options);
+    public native VNImageRequestHandler initWithURLOrientationOptions(@NotNull NSURL imageURL, int orientation,
+            @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -298,9 +307,10 @@ public class VNImageRequestHandler extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -322,8 +332,8 @@ public class VNImageRequestHandler extends NSObject {
      */
     @Generated
     @Selector("performRequests:error:")
-    public native boolean performRequestsError(NSArray<? extends VNRequest> requests,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsError(@NotNull NSArray<? extends VNRequest> requests,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -363,8 +373,8 @@ public class VNImageRequestHandler extends NSObject {
      */
     @Generated
     @Selector("initWithCMSampleBuffer:options:")
-    public native VNImageRequestHandler initWithCMSampleBufferOptions(CMSampleBufferRef sampleBuffer,
-            NSDictionary<String, ?> options);
+    public native VNImageRequestHandler initWithCMSampleBufferOptions(@NotNull CMSampleBufferRef sampleBuffer,
+            @NotNull NSDictionary<String, ?> options);
 
     /**
      * Creates a VNImageRequestHandler to be used for performing requests against the image buffer contained in the
@@ -388,6 +398,6 @@ public class VNImageRequestHandler extends NSObject {
      */
     @Generated
     @Selector("initWithCMSampleBuffer:orientation:options:")
-    public native VNImageRequestHandler initWithCMSampleBufferOrientationOptions(CMSampleBufferRef sampleBuffer,
-            int orientation, NSDictionary<String, ?> options);
+    public native VNImageRequestHandler initWithCMSampleBufferOrientationOptions(
+            @NotNull CMSampleBufferRef sampleBuffer, int orientation, @NotNull NSDictionary<String, ?> options);
 }

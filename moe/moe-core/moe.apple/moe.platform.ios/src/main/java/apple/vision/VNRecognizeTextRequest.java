@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A request that will detect regions of text and recognize the containing text in an image.
@@ -66,22 +68,25 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -95,6 +100,7 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
      * An array of strings that will be used at the word recognition stage in addition to the recognition languages. The
      * customWords list takes precedence over the standard lexicon.
      */
+    @NotNull
     @Generated
     @Selector("customWords")
     public native NSArray<String> customWords();
@@ -128,7 +134,7 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
     @Generated
     @Selector("initWithCompletionHandler:")
     public native VNRecognizeTextRequest initWithCompletionHandler(
-            @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -147,9 +153,10 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Minimum height of the text expected to be recognized, relative to the image height (e.g. for half of the image
@@ -168,6 +175,7 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
     @Selector("new")
     public static native VNRecognizeTextRequest new_objc();
 
+    @NotNull
     @Generated
     @Selector("progressHandler")
     @ObjCBlock(name = "call_progressHandler_ret")
@@ -178,6 +186,7 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
      * languages will be used during the language processing.
      * The languages are specified as ISO language codes.
      */
+    @NotNull
     @Generated
     @Selector("recognitionLanguages")
     public native NSArray<String> recognitionLanguages();
@@ -205,7 +214,7 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
      */
     @Generated
     @Selector("setCustomWords:")
-    public native void setCustomWords(NSArray<String> value);
+    public native void setCustomWords(@NotNull NSArray<String> value);
 
     /**
      * Minimum height of the text expected to be recognized, relative to the image height (e.g. for half of the image
@@ -222,7 +231,7 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
     @Generated
     @Selector("setProgressHandler:")
     public native void setProgressHandler(
-            @ObjCBlock(name = "call_setProgressHandler") VNRequestProgressProviding.Block_setProgressHandler value);
+            @NotNull @ObjCBlock(name = "call_setProgressHandler") VNRequestProgressProviding.Block_setProgressHandler value);
 
     /**
      * Specify the languages used for the detection. The order of the languages in the array defines the order in which
@@ -231,7 +240,7 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
      */
     @Generated
     @Selector("setRecognitionLanguages:")
-    public native void setRecognitionLanguages(NSArray<String> value);
+    public native void setRecognitionLanguages(@NotNull NSArray<String> value);
 
     /**
      * The recognition level selects which techniques will be used during the text recognition. There are trade-offs
@@ -264,13 +273,15 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
      * API-Since: 13.0
      * Deprecated-Since: 15.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("supportedRecognitionLanguagesForTextRecognitionLevel:revision:error:")
     public static native NSArray<String> supportedRecognitionLanguagesForTextRecognitionLevelRevisionError(
             @NInt long recognitionLevel, @NUInt long requestRevision,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    @NotNull
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();
@@ -291,6 +302,7 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
     /**
      * VNRecognizedTextObservation results.
      */
+    @Nullable
     @Generated
     @Selector("results")
     public native NSArray<? extends VNRecognizedTextObservation> results();
@@ -307,10 +319,11 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
      * 
      *         API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("supportedRecognitionLanguagesAndReturnError:")
     public native NSArray<String> supportedRecognitionLanguagesAndReturnError(
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Language detection will try to automatically identify the script/langauge during the detection and use the

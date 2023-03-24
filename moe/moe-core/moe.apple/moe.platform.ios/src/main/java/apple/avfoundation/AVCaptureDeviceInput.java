@@ -42,6 +42,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCaptureDeviceInput
@@ -84,22 +86,25 @@ public class AVCaptureDeviceInput extends AVCaptureInput {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,8 +138,8 @@ public class AVCaptureDeviceInput extends AVCaptureInput {
      */
     @Generated
     @Selector("deviceInputWithDevice:error:")
-    public static native AVCaptureDeviceInput deviceInputWithDeviceError(AVCaptureDevice device,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public static native AVCaptureDeviceInput deviceInputWithDeviceError(@NotNull AVCaptureDevice device,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("hash")
@@ -158,9 +163,10 @@ public class AVCaptureDeviceInput extends AVCaptureInput {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -195,6 +201,7 @@ public class AVCaptureDeviceInput extends AVCaptureInput {
      * 
      * The value of this property is the AVCaptureDevice instance that was used to create the receiver.
      */
+    @NotNull
     @Generated
     @Selector("device")
     public native AVCaptureDevice device();
@@ -224,8 +231,8 @@ public class AVCaptureDeviceInput extends AVCaptureInput {
      */
     @Generated
     @Selector("initWithDevice:error:")
-    public native AVCaptureDeviceInput initWithDeviceError(AVCaptureDevice device,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native AVCaptureDeviceInput initWithDeviceError(@NotNull AVCaptureDevice device,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * portsWithMediaType:sourceDeviceType:sourceDevicePosition:
@@ -281,10 +288,11 @@ public class AVCaptureDeviceInput extends AVCaptureInput {
      * @return
      *         An array of AVCaptureInputPorts satisfying the search criteria, or an empty array could be found.
      */
+    @NotNull
     @Generated
     @Selector("portsWithMediaType:sourceDeviceType:sourceDevicePosition:")
     public native NSArray<? extends AVCaptureInputPort> portsWithMediaTypeSourceDeviceTypeSourceDevicePosition(
-            String mediaType, String sourceDeviceType, @NInt long sourceDevicePosition);
+            @Nullable String mediaType, @Nullable String sourceDeviceType, @NInt long sourceDevicePosition);
 
     /**
      * [@property] unifiedAutoExposureDefaultsEnabled

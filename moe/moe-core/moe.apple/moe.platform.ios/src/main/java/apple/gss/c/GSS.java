@@ -46,6 +46,8 @@ import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.ann.ObjCBlock;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("GSS")
@@ -90,54 +92,58 @@ public final class GSS {
      */
     @Generated
     @CFunction
-    public static native int gss_accept_sec_context(IntPtr minor_status, Ptr<gss_ctx_id_t> context_handle,
-            gss_cred_id_t acceptor_cred_handle,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct input_token,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_channel_bindings_struct input_chan_bindings,
-            Ptr<gss_name_t> src_name, Ptr<Ptr<gss_OID_desc_struct>> mech_type,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_token,
-            IntPtr ret_flags, IntPtr time_rec, Ptr<gss_cred_id_t> delegated_cred_handle);
+    public static native int gss_accept_sec_context(@NotNull IntPtr minor_status,
+            @NotNull Ptr<gss_ctx_id_t> context_handle, @Nullable gss_cred_id_t acceptor_cred_handle,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct input_token,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_channel_bindings_struct input_chan_bindings,
+            @Nullable Ptr<gss_name_t> src_name, @Nullable Ptr<Ptr<gss_OID_desc_struct>> mech_type,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_token,
+            @Nullable IntPtr ret_flags, @Nullable IntPtr time_rec, @Nullable Ptr<gss_cred_id_t> delegated_cred_handle);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_acquire_cred(IntPtr minor_status, gss_name_t desired_name, int time_req,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_set_desc_struct desired_mechs,
-            int cred_usage, Ptr<gss_cred_id_t> output_cred_handle, Ptr<Ptr<gss_OID_set_desc_struct>> actual_mechs,
-            IntPtr time_rec);
-
-    /**
-     * API-Since: 5.0
-     */
-    @Generated
-    @CFunction
-    public static native int gss_acquire_cred_with_password(IntPtr minor_status, gss_name_t desired_name,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct password,
+    public static native int gss_acquire_cred(@NotNull IntPtr minor_status, @Nullable gss_name_t desired_name,
             int time_req,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_set_desc_struct desired_mechs,
-            int cred_usage, Ptr<gss_cred_id_t> output_cred_handle, Ptr<Ptr<gss_OID_set_desc_struct>> actual_mechs,
-            IntPtr time_rec);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_set_desc_struct desired_mechs,
+            int cred_usage, @NotNull Ptr<gss_cred_id_t> output_cred_handle,
+            @Nullable Ptr<Ptr<gss_OID_set_desc_struct>> actual_mechs, @Nullable IntPtr time_rec);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_add_buffer_set_member(IntPtr minor_status,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct member_buffer,
-            Ptr<Ptr<gss_buffer_set_desc_struct>> buffer_set);
+    public static native int gss_acquire_cred_with_password(@NotNull IntPtr minor_status,
+            @NotNull gss_name_t desired_name,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct password,
+            int time_req,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_set_desc_struct desired_mechs,
+            int cred_usage, @NotNull Ptr<gss_cred_id_t> output_cred_handle,
+            @Nullable Ptr<Ptr<gss_OID_set_desc_struct>> actual_mechs, @Nullable IntPtr time_rec);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_add_cred(IntPtr minor_status, gss_cred_id_t input_cred_handle, gss_name_t desired_name,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct desired_mech,
-            int cred_usage, int initiator_time_req, int acceptor_time_req, Ptr<gss_cred_id_t> output_cred_handle,
-            Ptr<Ptr<gss_OID_set_desc_struct>> actual_mechs, IntPtr initiator_time_rec, IntPtr acceptor_time_rec);
+    public static native int gss_add_buffer_set_member(@NotNull IntPtr minor_status,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct member_buffer,
+            @NotNull Ptr<Ptr<gss_buffer_set_desc_struct>> buffer_set);
+
+    /**
+     * API-Since: 5.0
+     */
+    @Generated
+    @CFunction
+    public static native int gss_add_cred(@NotNull IntPtr minor_status, @Nullable gss_cred_id_t input_cred_handle,
+            @Nullable gss_name_t desired_name,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct desired_mech,
+            int cred_usage, int initiator_time_req, int acceptor_time_req,
+            @NotNull Ptr<gss_cred_id_t> output_cred_handle, @Nullable Ptr<Ptr<gss_OID_set_desc_struct>> actual_mechs,
+            @Nullable IntPtr initiator_time_rec, @Nullable IntPtr acceptor_time_rec);
 
     /**
      * Add a oid to the oid set, function does not make a copy of the oid,
@@ -160,9 +166,9 @@ public final class GSS {
      */
     @Generated
     @CFunction
-    public static native int gss_add_oid_set_member(IntPtr minor_status,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct member_oid,
-            Ptr<Ptr<gss_OID_set_desc_struct>> oid_set);
+    public static native int gss_add_oid_set_member(@NotNull IntPtr minor_status,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct member_oid,
+            @NotNull Ptr<Ptr<gss_OID_set_desc_struct>> oid_set);
 
     /**
      * gss_canonicalize_name takes a Internal Name (IN) and converts in into a
@@ -191,39 +197,41 @@ public final class GSS {
      */
     @Generated
     @CFunction
-    public static native int gss_canonicalize_name(IntPtr minor_status, gss_name_t input_name,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct mech_type,
-            Ptr<gss_name_t> output_name);
+    public static native int gss_canonicalize_name(@NotNull IntPtr minor_status, @NotNull gss_name_t input_name,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct mech_type,
+            @NotNull Ptr<gss_name_t> output_name);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_compare_name(IntPtr minor_status, gss_name_t name1_arg, gss_name_t name2_arg,
-            IntPtr name_equal);
+    public static native int gss_compare_name(@NotNull IntPtr minor_status, @NotNull gss_name_t name1_arg,
+            @NotNull gss_name_t name2_arg, @NotNull IntPtr name_equal);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_context_time(IntPtr minor_status, gss_ctx_id_t context_handle, IntPtr time_rec);
+    public static native int gss_context_time(@NotNull IntPtr minor_status, @NotNull gss_ctx_id_t context_handle,
+            @NotNull IntPtr time_rec);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_create_empty_buffer_set(IntPtr minor_status,
-            Ptr<Ptr<gss_buffer_set_desc_struct>> buffer_set);
+    public static native int gss_create_empty_buffer_set(@NotNull IntPtr minor_status,
+            @NotNull Ptr<Ptr<gss_buffer_set_desc_struct>> buffer_set);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_create_empty_oid_set(IntPtr minor_status, Ptr<Ptr<gss_OID_set_desc_struct>> oid_set);
+    public static native int gss_create_empty_oid_set(@NotNull IntPtr minor_status,
+            @NotNull Ptr<Ptr<gss_OID_set_desc_struct>> oid_set);
 
     /**
      * API-Since: 5.0
@@ -231,17 +239,18 @@ public final class GSS {
     @Generated
     @CFunction
     public static native int gss_decapsulate_token(
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct input_token,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct oid,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_token);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct input_token,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct oid,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_token);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_delete_sec_context(IntPtr minor_status, Ptr<gss_ctx_id_t> context_handle,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_token);
+    public static native int gss_delete_sec_context(@NotNull IntPtr minor_status,
+            @NotNull Ptr<gss_ctx_id_t> context_handle,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_token);
 
     /**
      * Destroy a credential
@@ -261,7 +270,7 @@ public final class GSS {
      */
     @Generated
     @CFunction
-    public static native int gss_destroy_cred(IntPtr min_stat, Ptr<gss_cred_id_t> cred_handle);
+    public static native int gss_destroy_cred(@NotNull IntPtr min_stat, @NotNull Ptr<gss_cred_id_t> cred_handle);
 
     /**
      * Return names and descriptions of mech attributes
@@ -278,11 +287,11 @@ public final class GSS {
      */
     @Generated
     @CFunction
-    public static native int gss_display_mech_attr(IntPtr minor_status,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct mech_attr,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct name,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct short_desc,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct long_desc);
+    public static native int gss_display_mech_attr(@NotNull IntPtr minor_status,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct mech_attr,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct name,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct short_desc,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct long_desc);
 
     /**
      * Create a representstion of a name suitable for display
@@ -304,26 +313,27 @@ public final class GSS {
      */
     @Generated
     @CFunction
-    public static native int gss_display_name(IntPtr minor_status, gss_name_t input_name,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_name_buffer,
-            Ptr<Ptr<gss_OID_desc_struct>> output_name_type);
+    public static native int gss_display_name(@NotNull IntPtr minor_status, @NotNull gss_name_t input_name,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_name_buffer,
+            @Nullable Ptr<Ptr<gss_OID_desc_struct>> output_name_type);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_display_status(IntPtr minor_status, int status_value, int status_type,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct mech_type,
-            IntPtr message_content,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct status_string);
+    public static native int gss_display_status(@NotNull IntPtr minor_status, int status_value, int status_type,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct mech_type,
+            @NotNull IntPtr message_content,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct status_string);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_duplicate_name(IntPtr minor_status, gss_name_t src_name, Ptr<gss_name_t> dest_name);
+    public static native int gss_duplicate_name(@NotNull IntPtr minor_status, @NotNull gss_name_t src_name,
+            @NotNull Ptr<gss_name_t> dest_name);
 
     /**
      * API-Since: 5.0
@@ -333,9 +343,9 @@ public final class GSS {
     @Generated
     @Deprecated
     @CFunction
-    public static native int gss_duplicate_oid(IntPtr minor_status,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct src_oid,
-            Ptr<Ptr<gss_OID_desc_struct>> dest_oid);
+    public static native int gss_duplicate_oid(@NotNull IntPtr minor_status,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct src_oid,
+            @NotNull Ptr<Ptr<gss_OID_desc_struct>> dest_oid);
 
     /**
      * API-Since: 5.0
@@ -343,51 +353,53 @@ public final class GSS {
     @Generated
     @CFunction
     public static native int gss_encapsulate_token(
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct input_token,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct oid,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_token);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct input_token,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct oid,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_token);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_export_cred(IntPtr minor_status, gss_cred_id_t cred_handle,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct token);
+    public static native int gss_export_cred(@NotNull IntPtr minor_status, @NotNull gss_cred_id_t cred_handle,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct token);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_export_name(IntPtr minor_status, gss_name_t input_name,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct exported_name);
+    public static native int gss_export_name(@NotNull IntPtr minor_status, @NotNull gss_name_t input_name,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct exported_name);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_export_sec_context(IntPtr minor_status, Ptr<gss_ctx_id_t> context_handle,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct interprocess_token);
+    public static native int gss_export_sec_context(@NotNull IntPtr minor_status,
+            @NotNull Ptr<gss_ctx_id_t> context_handle,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct interprocess_token);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_get_mic(IntPtr minor_status, gss_ctx_id_t context_handle, int qop_req,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct message_buffer,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct message_token);
+    public static native int gss_get_mic(@NotNull IntPtr minor_status, @NotNull gss_ctx_id_t context_handle,
+            int qop_req,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct message_buffer,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct message_token);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_import_cred(IntPtr minor_status,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct token,
-            Ptr<gss_cred_id_t> cred_handle);
+    public static native int gss_import_cred(@NotNull IntPtr minor_status,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct token,
+            @NotNull Ptr<gss_cred_id_t> cred_handle);
 
     /**
      * Import a name internal or mechanism name
@@ -417,10 +429,10 @@ public final class GSS {
      */
     @Generated
     @CFunction
-    public static native int gss_import_name(IntPtr minor_status,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct input_name_buffer,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct input_name_type,
-            Ptr<gss_name_t> output_name);
+    public static native int gss_import_name(@NotNull IntPtr minor_status,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct input_name_buffer,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct input_name_type,
+            @NotNull Ptr<gss_name_t> output_name);
 
     /**
      * If we can't find a mechanism name for the name, we fail though.
@@ -429,16 +441,17 @@ public final class GSS {
      */
     @Generated
     @CFunction
-    public static native int gss_import_sec_context(IntPtr minor_status,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct interprocess_token,
-            Ptr<gss_ctx_id_t> context_handle);
+    public static native int gss_import_sec_context(@NotNull IntPtr minor_status,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct interprocess_token,
+            @NotNull Ptr<gss_ctx_id_t> context_handle);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_indicate_mechs(IntPtr minor_status, Ptr<Ptr<gss_OID_set_desc_struct>> mech_set);
+    public static native int gss_indicate_mechs(@NotNull IntPtr minor_status,
+            @NotNull Ptr<Ptr<gss_OID_set_desc_struct>> mech_set);
 
     /**
      * Return set of mechanism that fullfill the criteria
@@ -449,11 +462,11 @@ public final class GSS {
      */
     @Generated
     @CFunction
-    public static native int gss_indicate_mechs_by_attrs(IntPtr minor_status,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_set_desc_struct desired_mech_attrs,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_set_desc_struct except_mech_attrs,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_set_desc_struct critical_mech_attrs,
-            Ptr<Ptr<gss_OID_set_desc_struct>> mechs);
+    public static native int gss_indicate_mechs_by_attrs(@NotNull IntPtr minor_status,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_set_desc_struct desired_mech_attrs,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_set_desc_struct except_mech_attrs,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_set_desc_struct critical_mech_attrs,
+            @NotNull Ptr<Ptr<gss_OID_set_desc_struct>> mechs);
 
     /**
      * As the initiator build a context with an acceptor.
@@ -519,15 +532,16 @@ public final class GSS {
      */
     @Generated
     @CFunction
-    public static native int gss_init_sec_context(IntPtr minor_status, gss_cred_id_t initiator_cred_handle,
-            Ptr<gss_ctx_id_t> context_handle, gss_name_t target_name,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct input_mech_type,
+    public static native int gss_init_sec_context(@NotNull IntPtr minor_status,
+            @Nullable gss_cred_id_t initiator_cred_handle, @NotNull Ptr<gss_ctx_id_t> context_handle,
+            @NotNull gss_name_t target_name,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct input_mech_type,
             int req_flags, int time_req,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_channel_bindings_struct input_chan_bindings,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct input_token,
-            Ptr<Ptr<gss_OID_desc_struct>> actual_mech_type,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_token,
-            IntPtr ret_flags, IntPtr time_rec);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_channel_bindings_struct input_chan_bindings,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct input_token,
+            @Nullable Ptr<Ptr<gss_OID_desc_struct>> actual_mech_type,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_token,
+            @Nullable IntPtr ret_flags, @Nullable IntPtr time_rec);
 
     /**
      * List support attributes for a mech and/or all mechanisms.
@@ -546,44 +560,48 @@ public final class GSS {
      */
     @Generated
     @CFunction
-    public static native int gss_inquire_attrs_for_mech(IntPtr minor_status,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct mech,
-            Ptr<Ptr<gss_OID_set_desc_struct>> mech_attr, Ptr<Ptr<gss_OID_set_desc_struct>> known_mech_attrs);
+    public static native int gss_inquire_attrs_for_mech(@NotNull IntPtr minor_status,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct mech,
+            @Nullable Ptr<Ptr<gss_OID_set_desc_struct>> mech_attr,
+            @Nullable Ptr<Ptr<gss_OID_set_desc_struct>> known_mech_attrs);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_inquire_context(IntPtr minor_status, gss_ctx_id_t context_handle,
-            Ptr<gss_name_t> src_name, Ptr<gss_name_t> targ_name, IntPtr lifetime_rec,
-            Ptr<Ptr<gss_OID_desc_struct>> mech_type, IntPtr ctx_flags, IntPtr locally_initiated, IntPtr xopen);
+    public static native int gss_inquire_context(@NotNull IntPtr minor_status, @NotNull gss_ctx_id_t context_handle,
+            @Nullable Ptr<gss_name_t> src_name, @Nullable Ptr<gss_name_t> targ_name, @Nullable IntPtr lifetime_rec,
+            @Nullable Ptr<Ptr<gss_OID_desc_struct>> mech_type, @Nullable IntPtr ctx_flags,
+            @Nullable IntPtr locally_initiated, @Nullable IntPtr xopen);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_inquire_cred(IntPtr minor_status, gss_cred_id_t cred_handle, Ptr<gss_name_t> name_ret,
-            IntPtr lifetime, IntPtr cred_usage, Ptr<Ptr<gss_OID_set_desc_struct>> mechanisms);
+    public static native int gss_inquire_cred(@NotNull IntPtr minor_status, @Nullable gss_cred_id_t cred_handle,
+            @Nullable Ptr<gss_name_t> name_ret, @Nullable IntPtr lifetime, @Nullable IntPtr cred_usage,
+            @Nullable Ptr<Ptr<gss_OID_set_desc_struct>> mechanisms);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_inquire_cred_by_mech(IntPtr minor_status, gss_cred_id_t cred_handle,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct mech_type,
-            Ptr<gss_name_t> cred_name, IntPtr initiator_lifetime, IntPtr acceptor_lifetime, IntPtr cred_usage);
+    public static native int gss_inquire_cred_by_mech(@NotNull IntPtr minor_status, @Nullable gss_cred_id_t cred_handle,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct mech_type,
+            @Nullable Ptr<gss_name_t> cred_name, @Nullable IntPtr initiator_lifetime,
+            @Nullable IntPtr acceptor_lifetime, @Nullable IntPtr cred_usage);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_inquire_cred_by_oid(IntPtr minor_status, gss_cred_id_t cred_handle,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct desired_object,
-            Ptr<Ptr<gss_buffer_set_desc_struct>> data_set);
+    public static native int gss_inquire_cred_by_oid(@NotNull IntPtr minor_status, @NotNull gss_cred_id_t cred_handle,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct desired_object,
+            @NotNull Ptr<Ptr<gss_buffer_set_desc_struct>> data_set);
 
     /**
      * Find a mech for a sasl name
@@ -598,34 +616,35 @@ public final class GSS {
      */
     @Generated
     @CFunction
-    public static native int gss_inquire_mech_for_saslname(IntPtr minor_status,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct sasl_mech_name,
-            Ptr<Ptr<gss_OID_desc_struct>> mech_type);
+    public static native int gss_inquire_mech_for_saslname(@NotNull IntPtr minor_status,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct sasl_mech_name,
+            @NotNull Ptr<Ptr<gss_OID_desc_struct>> mech_type);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_inquire_mechs_for_name(IntPtr minor_status, gss_name_t input_name,
-            Ptr<Ptr<gss_OID_set_desc_struct>> mech_types);
+    public static native int gss_inquire_mechs_for_name(@NotNull IntPtr minor_status, @NotNull gss_name_t input_name,
+            @NotNull Ptr<Ptr<gss_OID_set_desc_struct>> mech_types);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_inquire_name(IntPtr minor_status, gss_name_t input_name, IntPtr name_is_MN,
-            Ptr<Ptr<gss_OID_desc_struct>> MN_mech, Ptr<Ptr<gss_buffer_set_desc_struct>> attrs);
+    public static native int gss_inquire_name(@NotNull IntPtr minor_status, @NotNull gss_name_t input_name,
+            @NotNull IntPtr name_is_MN, @Nullable Ptr<Ptr<gss_OID_desc_struct>> MN_mech,
+            @Nullable Ptr<Ptr<gss_buffer_set_desc_struct>> attrs);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_inquire_names_for_mech(IntPtr minor_status,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct mechanism,
-            Ptr<Ptr<gss_OID_set_desc_struct>> name_types);
+    public static native int gss_inquire_names_for_mech(@NotNull IntPtr minor_status,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct mechanism,
+            @NotNull Ptr<Ptr<gss_OID_set_desc_struct>> name_types);
 
     /**
      * Returns different protocol names and description of the mechanism.
@@ -644,29 +663,30 @@ public final class GSS {
      */
     @Generated
     @CFunction
-    public static native int gss_inquire_saslname_for_mech(IntPtr minor_status,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct desired_mech,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct sasl_mech_name,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct mech_name,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct mech_description);
+    public static native int gss_inquire_saslname_for_mech(@NotNull IntPtr minor_status,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct desired_mech,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct sasl_mech_name,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct mech_name,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct mech_description);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_inquire_sec_context_by_oid(IntPtr minor_status, gss_ctx_id_t context_handle,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct desired_object,
-            Ptr<Ptr<gss_buffer_set_desc_struct>> data_set);
+    public static native int gss_inquire_sec_context_by_oid(@NotNull IntPtr minor_status,
+            @NotNull gss_ctx_id_t context_handle,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct desired_object,
+            @Nullable Ptr<Ptr<gss_buffer_set_desc_struct>> data_set);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_iter_creds(IntPtr min_stat, int flags,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct mech,
-            @ObjCBlock(name = "call_gss_iter_creds") Block_gss_iter_creds useriter);
+    public static native int gss_iter_creds(@NotNull IntPtr min_stat, int flags,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct mech,
+            @NotNull @ObjCBlock(name = "call_gss_iter_creds") Block_gss_iter_creds useriter);
 
     /**
      * Iterate over all credentials
@@ -685,18 +705,19 @@ public final class GSS {
      */
     @Generated
     @CFunction
-    public static native int gss_iter_creds_f(IntPtr min_stat, int flags,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct mech,
-            VoidPtr userctx, @FunctionPtr(name = "call_gss_iter_creds_f") Function_gss_iter_creds_f useriter);
+    public static native int gss_iter_creds_f(@NotNull IntPtr min_stat, int flags,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct mech,
+            @Nullable VoidPtr userctx,
+            @NotNull @FunctionPtr(name = "call_gss_iter_creds_f") Function_gss_iter_creds_f useriter);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_krb5_ccache_name(IntPtr minor_status,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
-            @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) String[] out_name);
+    public static native int gss_krb5_ccache_name(@NotNull IntPtr minor_status,
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+            @Nullable @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) String[] out_name);
 
     /**
      * API-Since: 5.0
@@ -706,30 +727,31 @@ public final class GSS {
     @Generated
     @Deprecated
     @CFunction
-    public static native int gss_krb5_copy_ccache(IntPtr minor_status, gss_cred_id_t cred, VoidPtr out);
+    public static native int gss_krb5_copy_ccache(@NotNull IntPtr minor_status, @NotNull gss_cred_id_t cred,
+            @NotNull VoidPtr out);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_krb5_export_lucid_sec_context(IntPtr minor_status, Ptr<gss_ctx_id_t> context_handle,
-            int version, Ptr<VoidPtr> rctx);
+    public static native int gss_krb5_export_lucid_sec_context(@NotNull IntPtr minor_status,
+            @NotNull Ptr<gss_ctx_id_t> context_handle, int version, @Nullable Ptr<VoidPtr> rctx);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_krb5_free_lucid_sec_context(IntPtr minor_status, VoidPtr c);
+    public static native int gss_krb5_free_lucid_sec_context(@NotNull IntPtr minor_status, @NotNull VoidPtr c);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_krb5_set_allowable_enctypes(IntPtr minor_status, gss_cred_id_t cred, int num_enctypes,
-            IntPtr enctypes);
+    public static native int gss_krb5_set_allowable_enctypes(@NotNull IntPtr minor_status, @NotNull gss_cred_id_t cred,
+            int num_enctypes, @NotNull IntPtr enctypes);
 
     /**
      * Compare two GSS-API OIDs with each other.
@@ -749,8 +771,8 @@ public final class GSS {
     @Generated
     @CFunction
     public static native int gss_oid_equal(
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct a,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct b);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct a,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct b);
 
     /**
      * Turn an mech OID into an name
@@ -773,43 +795,44 @@ public final class GSS {
      */
     @Generated
     @CFunction
-    public static native int gss_oid_to_str(IntPtr minor_status,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct oid,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct oid_str);
+    public static native int gss_oid_to_str(@NotNull IntPtr minor_status,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct oid,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct oid_str);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_process_context_token(IntPtr minor_status, gss_ctx_id_t context_handle,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct token_buffer);
+    public static native int gss_process_context_token(@NotNull IntPtr minor_status,
+            @NotNull gss_ctx_id_t context_handle,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct token_buffer);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_pseudo_random(IntPtr minor_status, gss_ctx_id_t context, int prf_key,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct prf_in,
+    public static native int gss_pseudo_random(@NotNull IntPtr minor_status, @NotNull gss_ctx_id_t context, int prf_key,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct prf_in,
             @NInt long desired_output_len,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct prf_out);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct prf_out);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_release_buffer(IntPtr minor_status,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct buffer);
+    public static native int gss_release_buffer(@NotNull IntPtr minor_status,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct buffer);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_release_buffer_set(IntPtr minor_status,
-            Ptr<Ptr<gss_buffer_set_desc_struct>> buffer_set);
+    public static native int gss_release_buffer_set(@NotNull IntPtr minor_status,
+            @NotNull Ptr<Ptr<gss_buffer_set_desc_struct>> buffer_set);
 
     /**
      * Release a credentials
@@ -836,7 +859,7 @@ public final class GSS {
      */
     @Generated
     @CFunction
-    public static native int gss_release_cred(IntPtr minor_status, Ptr<gss_cred_id_t> cred_handle);
+    public static native int gss_release_cred(@NotNull IntPtr minor_status, @NotNull Ptr<gss_cred_id_t> cred_handle);
 
     /**
      * Free a name
@@ -857,7 +880,7 @@ public final class GSS {
      */
     @Generated
     @CFunction
-    public static native int gss_release_name(IntPtr minor_status, Ptr<gss_name_t> input_name);
+    public static native int gss_release_name(@NotNull IntPtr minor_status, @NotNull Ptr<gss_name_t> input_name);
 
     /**
      * Release a gss_OID
@@ -887,14 +910,15 @@ public final class GSS {
     @Generated
     @Deprecated
     @CFunction
-    public static native int gss_release_oid(IntPtr minor_status, Ptr<Ptr<gss_OID_desc_struct>> oid);
+    public static native int gss_release_oid(@NotNull IntPtr minor_status, @NotNull Ptr<Ptr<gss_OID_desc_struct>> oid);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_release_oid_set(IntPtr minor_status, Ptr<Ptr<gss_OID_set_desc_struct>> set);
+    public static native int gss_release_oid_set(@NotNull IntPtr minor_status,
+            @NotNull Ptr<Ptr<gss_OID_set_desc_struct>> set);
 
     /**
      * API-Since: 5.0
@@ -904,28 +928,30 @@ public final class GSS {
     @Generated
     @Deprecated
     @CFunction
-    public static native int gss_seal(IntPtr minor_status, gss_ctx_id_t context_handle, int conf_req_flag, int qop_req,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct input_message_buffer,
-            IntPtr conf_state,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_message_buffer);
+    public static native int gss_seal(@NotNull IntPtr minor_status, @NotNull gss_ctx_id_t context_handle,
+            int conf_req_flag, int qop_req,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct input_message_buffer,
+            @NotNull IntPtr conf_state,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_message_buffer);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_set_cred_option(IntPtr minor_status, Ptr<gss_cred_id_t> cred_handle,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct object,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct value);
+    public static native int gss_set_cred_option(@NotNull IntPtr minor_status, @Nullable Ptr<gss_cred_id_t> cred_handle,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct object,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct value);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_set_sec_context_option(IntPtr minor_status, Ptr<gss_ctx_id_t> context_handle,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct object,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct value);
+    public static native int gss_set_sec_context_option(@NotNull IntPtr minor_status,
+            @Nullable Ptr<gss_ctx_id_t> context_handle,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct object,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct value);
 
     /**
      * API-Since: 5.0
@@ -935,19 +961,19 @@ public final class GSS {
     @Generated
     @Deprecated
     @CFunction
-    public static native int gss_sign(IntPtr minor_status, gss_ctx_id_t context_handle, int qop_req,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct message_buffer,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct message_token);
+    public static native int gss_sign(@NotNull IntPtr minor_status, @NotNull gss_ctx_id_t context_handle, int qop_req,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct message_buffer,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct message_token);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_test_oid_set_member(IntPtr minor_status,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct member,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_set_desc_struct set,
-            IntPtr present);
+    public static native int gss_test_oid_set_member(@NotNull IntPtr minor_status,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct member,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_set_desc_struct set,
+            @NotNull IntPtr present);
 
     /**
      * API-Since: 5.0
@@ -957,28 +983,28 @@ public final class GSS {
     @Generated
     @Deprecated
     @CFunction
-    public static native int gss_unseal(IntPtr minor_status, gss_ctx_id_t context_handle,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct input_message_buffer,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_message_buffer,
-            IntPtr conf_state, IntPtr qop_state);
+    public static native int gss_unseal(@NotNull IntPtr minor_status, @NotNull gss_ctx_id_t context_handle,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct input_message_buffer,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_message_buffer,
+            @NotNull IntPtr conf_state, @NotNull IntPtr qop_state);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_unwrap(IntPtr minor_status, gss_ctx_id_t context_handle,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct input_message_buffer,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_message_buffer,
-            IntPtr conf_state, IntPtr qop_state);
+    public static native int gss_unwrap(@NotNull IntPtr minor_status, @NotNull gss_ctx_id_t context_handle,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct input_message_buffer,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_message_buffer,
+            @Nullable IntPtr conf_state, @Nullable IntPtr qop_state);
 
     /**
      * API-Since: 7.0
      */
     @Generated
     @CFunction
-    public static native int gss_userok(gss_name_t name,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String user);
+    public static native int gss_userok(@NotNull gss_name_t name,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String user);
 
     /**
      * API-Since: 5.0
@@ -988,20 +1014,20 @@ public final class GSS {
     @Generated
     @Deprecated
     @CFunction
-    public static native int gss_verify(IntPtr minor_status, gss_ctx_id_t context_handle,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct message_buffer,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct token_buffer,
-            IntPtr qop_state);
+    public static native int gss_verify(@NotNull IntPtr minor_status, @NotNull gss_ctx_id_t context_handle,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct message_buffer,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct token_buffer,
+            @NotNull IntPtr qop_state);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_verify_mic(IntPtr minor_status, gss_ctx_id_t context_handle,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct message_buffer,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct token_buffer,
-            IntPtr qop_state);
+    public static native int gss_verify_mic(@NotNull IntPtr minor_status, @NotNull gss_ctx_id_t context_handle,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct message_buffer,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct token_buffer,
+            @Nullable IntPtr qop_state);
 
     /**
      * Wrap a message using either confidentiality (encryption +
@@ -1021,27 +1047,28 @@ public final class GSS {
      */
     @Generated
     @CFunction
-    public static native int gss_wrap(IntPtr minor_status, gss_ctx_id_t context_handle, int conf_req_flag, int qop_req,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct input_message_buffer,
-            IntPtr conf_state,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_message_buffer);
+    public static native int gss_wrap(@NotNull IntPtr minor_status, @NotNull gss_ctx_id_t context_handle,
+            int conf_req_flag, int qop_req,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct input_message_buffer,
+            @Nullable IntPtr conf_state,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_message_buffer);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gss_wrap_size_limit(IntPtr minor_status, gss_ctx_id_t context_handle, int conf_req_flag,
-            int qop_req, int req_output_size, IntPtr max_input_size);
+    public static native int gss_wrap_size_limit(@NotNull IntPtr minor_status, @NotNull gss_ctx_id_t context_handle,
+            int conf_req_flag, int qop_req, int req_output_size, @NotNull IntPtr max_input_size);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native int gsskrb5_extract_authz_data_from_sec_context(IntPtr minor_status,
-            gss_ctx_id_t context_handle, int ad_type,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct ad_data);
+    public static native int gsskrb5_extract_authz_data_from_sec_context(@NotNull IntPtr minor_status,
+            @NotNull gss_ctx_id_t context_handle, int ad_type,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct ad_data);
 
     /**
      * API-Since: 5.0
@@ -1049,7 +1076,7 @@ public final class GSS {
     @Generated
     @CFunction
     public static native int gsskrb5_register_acceptor_identity(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String identity);
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String identity);
 
     /**
      * API-Since: 5.0
@@ -1057,7 +1084,7 @@ public final class GSS {
     @Generated
     @CFunction
     public static native int krb5_gss_register_acceptor_identity(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String identity);
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String identity);
 
     /**
      * Returns a GSS credential for a given UUID if the credential exists.
@@ -1071,17 +1098,19 @@ public final class GSS {
      * 
      * @param uuid the UUID of the credential to fetch
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native gss_cred_id_t GSSCreateCredentialFromUUID(CFUUIDRef uuid);
+    public static native gss_cred_id_t GSSCreateCredentialFromUUID(@NotNull CFUUIDRef uuid);
 
     /**
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native CFErrorRef GSSCreateError(
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct mech,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct mech,
             int major_status, int minor_status);
 
     /**
@@ -1098,11 +1127,12 @@ public final class GSS {
      * @param name_type on OID of the GSS_C_NT_* OIDs constants specifiy the name type.
      * @param error     if an error happen, this may be set to a CFErrorRef describing the failure futher.
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native gss_name_t GSSCreateName(ConstVoidPtr name,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct name_type,
-            Ptr<CFErrorRef> error);
+    public static native gss_name_t GSSCreateName(@NotNull ConstVoidPtr name,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct name_type,
+            @Nullable Ptr<CFErrorRef> error);
 
     /**
      * Copy the name describing the credential
@@ -1116,9 +1146,10 @@ public final class GSS {
      * 
      * @param cred the credential to get the name from
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native gss_name_t GSSCredentialCopyName(gss_cred_id_t cred);
+    public static native gss_name_t GSSCredentialCopyName(@NotNull gss_cred_id_t cred);
 
     /**
      * Returns a copy of the UUID of the GSS credential
@@ -1133,9 +1164,10 @@ public final class GSS {
      * 
      * @param credential credential
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFUUIDRef GSSCredentialCopyUUID(gss_cred_id_t credential);
+    public static native CFUUIDRef GSSCredentialCopyUUID(@NotNull gss_cred_id_t credential);
 
     /**
      * Return the lifetime (in seconds) left of the credential.
@@ -1151,7 +1183,7 @@ public final class GSS {
      */
     @Generated
     @CFunction
-    public static native int GSSCredentialGetLifetime(gss_cred_id_t cred);
+    public static native int GSSCredentialGetLifetime(@NotNull gss_cred_id_t cred);
 
     /**
      * Returns a string that is suitable for displaying to user, must not
@@ -1165,9 +1197,10 @@ public final class GSS {
      * 
      * @param name to get a display strings from
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFStringRef GSSNameCreateDisplayString(gss_name_t name);
+    public static native CFStringRef GSSNameCreateDisplayString(@NotNull gss_name_t name);
 
     /**
      * Change pasword for a gss name
@@ -1188,9 +1221,9 @@ public final class GSS {
      */
     @Generated
     @CFunction
-    public static native int gss_aapl_change_password(gss_name_t name,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct mech,
-            CFDictionaryRef attributes, Ptr<CFErrorRef> error);
+    public static native int gss_aapl_change_password(@NotNull gss_name_t name,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct mech,
+            @NotNull CFDictionaryRef attributes, @Nullable Ptr<CFErrorRef> error);
 
     /**
      * Acquire a new initial credentials using long term credentials (password, certificate).
@@ -1259,9 +1292,10 @@ public final class GSS {
      */
     @Generated
     @CFunction
-    public static native int gss_aapl_initial_cred(gss_name_t desired_name,
-            @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct desired_mech,
-            CFDictionaryRef attributes, Ptr<gss_cred_id_t> output_cred_handle, Ptr<CFErrorRef> error);
+    public static native int gss_aapl_initial_cred(@NotNull gss_name_t desired_name,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct desired_mech,
+            @Nullable CFDictionaryRef attributes, @NotNull Ptr<gss_cred_id_t> output_cred_handle,
+            @Nullable Ptr<CFErrorRef> error);
 
     /**
      * contact Love Hörnquist Åstrand <lha@h5l.org> for new oid arcs
@@ -1803,17 +1837,17 @@ public final class GSS {
     public interface Block_gss_iter_creds {
         @Generated
         void call_gss_iter_creds(
-                @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct arg0,
-                gss_cred_id_t arg1);
+                @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct arg0,
+                @Nullable gss_cred_id_t arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_gss_iter_creds_f {
         @Generated
-        void call_gss_iter_creds_f(VoidPtr arg0,
-                @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct arg1,
-                gss_cred_id_t arg2);
+        void call_gss_iter_creds_f(@Nullable VoidPtr arg0,
+                @Nullable @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct arg1,
+                @Nullable gss_cred_id_t arg2);
     }
 
     @Generated public static final double __GSS_FRAMEWORK_H = 1.0;

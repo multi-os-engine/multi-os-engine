@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * HKWorkoutActivity
@@ -51,6 +53,7 @@ public class HKWorkoutActivity extends NSObject {
      * 
      * A unique identifier of the activity in the HealthKit database.
      */
+    @NotNull
     @Generated
     @Selector("UUID")
     public native NSUUID UUID();
@@ -70,6 +73,7 @@ public class HKWorkoutActivity extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("allStatistics")
     public native NSDictionary<? extends HKQuantityType, ? extends HKStatistics> allStatistics();
@@ -86,22 +90,25 @@ public class HKWorkoutActivity extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,6 +141,7 @@ public class HKWorkoutActivity extends NSObject {
      * 
      * This value is nil when a workout activity is in progress.
      */
+    @Nullable
     @Generated
     @Selector("endDate")
     public native NSDate endDate();
@@ -160,8 +168,8 @@ public class HKWorkoutActivity extends NSObject {
     @Generated
     @Selector("initWithWorkoutConfiguration:startDate:endDate:metadata:")
     public native HKWorkoutActivity initWithWorkoutConfigurationStartDateEndDateMetadata(
-            HKWorkoutConfiguration workoutConfiguration, NSDate startDate, NSDate endDate,
-            NSDictionary<String, ?> metadata);
+            @NotNull HKWorkoutConfiguration workoutConfiguration, @NotNull NSDate startDate, @Nullable NSDate endDate,
+            @Nullable NSDictionary<String, ?> metadata);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -180,9 +188,10 @@ public class HKWorkoutActivity extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] metadata
@@ -192,6 +201,7 @@ public class HKWorkoutActivity extends NSObject {
      * Keys must be NSString and values must be either NSString, NSNumber, NSDate, or
      * HKQuantity. See HKMetadata.h for potential metadata keys and values.
      */
+    @Nullable
     @Generated
     @Selector("metadata")
     public native NSDictionary<String, ?> metadata();
@@ -218,6 +228,7 @@ public class HKWorkoutActivity extends NSObject {
      * 
      * The point in time when the workout activity was started.
      */
+    @NotNull
     @Generated
     @Selector("startDate")
     public native NSDate startDate();
@@ -231,9 +242,10 @@ public class HKWorkoutActivity extends NSObject {
      * 
      * @param quantityType The quantity type to gather statistics about.
      */
+    @Nullable
     @Generated
     @Selector("statisticsForType:")
-    public native HKStatistics statisticsForType(HKQuantityType quantityType);
+    public native HKStatistics statisticsForType(@NotNull HKQuantityType quantityType);
 
     @Generated
     @Selector("superclass")
@@ -249,6 +261,7 @@ public class HKWorkoutActivity extends NSObject {
      * 
      * The configuration object describing the workout activity.
      */
+    @NotNull
     @Generated
     @Selector("workoutConfiguration")
     public native HKWorkoutConfiguration workoutConfiguration();
@@ -263,6 +276,7 @@ public class HKWorkoutActivity extends NSObject {
      * activity. This includes any event that overlaps the activity, even partially.
      * Consequently, some events may be included in more than one activity.
      */
+    @NotNull
     @Generated
     @Selector("workoutEvents")
     public native NSArray<? extends HKWorkoutEvent> workoutEvents();

@@ -37,6 +37,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 7.0
@@ -71,22 +73,25 @@ public class NSURLSession extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,9 +126,10 @@ public class NSURLSession extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * API-Since: 7.0
@@ -152,15 +158,17 @@ public class NSURLSession extends NSObject {
      * If you do specify a delegate, the delegate will be retained until after
      * the delegate has been sent the URLSession:didBecomeInvalidWithError: message.
      */
+    @NotNull
     @Generated
     @Selector("sessionWithConfiguration:")
-    public static native NSURLSession sessionWithConfiguration(NSURLSessionConfiguration configuration);
+    public static native NSURLSession sessionWithConfiguration(@NotNull NSURLSessionConfiguration configuration);
 
+    @NotNull
     @Generated
     @Selector("sessionWithConfiguration:delegate:delegateQueue:")
     public static native NSURLSession sessionWithConfigurationDelegateDelegateQueue(
-            NSURLSessionConfiguration configuration, @Mapped(ObjCObjectMapper.class) NSURLSessionDelegate delegate,
-            NSOperationQueue queue);
+            @NotNull NSURLSessionConfiguration configuration,
+            @Nullable @Mapped(ObjCObjectMapper.class) NSURLSessionDelegate delegate, @Nullable NSOperationQueue queue);
 
     @Generated
     @Selector("setVersion:")
@@ -170,6 +178,7 @@ public class NSURLSession extends NSObject {
      * The shared session uses the currently set global NSURLCache,
      * NSHTTPCookieStorage and NSURLCredentialStorage objects.
      */
+    @NotNull
     @Generated
     @Selector("sharedSession")
     public static native NSURLSession sharedSession();
@@ -183,6 +192,7 @@ public class NSURLSession extends NSObject {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("configuration")
     public native NSURLSessionConfiguration configuration();
@@ -190,9 +200,10 @@ public class NSURLSession extends NSObject {
     /**
      * Creates a data task with the given request. The request may have a body stream.
      */
+    @NotNull
     @Generated
     @Selector("dataTaskWithRequest:")
-    public native NSURLSessionDataTask dataTaskWithRequest(NSURLRequest request);
+    public native NSURLSessionDataTask dataTaskWithRequest(@NotNull NSURLRequest request);
 
     /**
      * data task convenience methods. These methods create tasks that
@@ -202,28 +213,33 @@ public class NSURLSession extends NSObject {
      * see <Foundation/NSURLError.h>. The delegate, if any, will still be
      * called for authentication challenges.
      */
+    @NotNull
     @Generated
     @Selector("dataTaskWithRequest:completionHandler:")
-    public native NSURLSessionDataTask dataTaskWithRequestCompletionHandler(NSURLRequest request,
-            @ObjCBlock(name = "call_dataTaskWithRequestCompletionHandler") Block_dataTaskWithRequestCompletionHandler completionHandler);
+    public native NSURLSessionDataTask dataTaskWithRequestCompletionHandler(@NotNull NSURLRequest request,
+            @NotNull @ObjCBlock(name = "call_dataTaskWithRequestCompletionHandler") Block_dataTaskWithRequestCompletionHandler completionHandler);
 
     /**
      * Creates a data task to retrieve the contents of the given URL.
      */
+    @NotNull
     @Generated
     @Selector("dataTaskWithURL:")
-    public native NSURLSessionDataTask dataTaskWithURL(NSURL url);
+    public native NSURLSessionDataTask dataTaskWithURL(@NotNull NSURL url);
 
+    @NotNull
     @Generated
     @Selector("dataTaskWithURL:completionHandler:")
-    public native NSURLSessionDataTask dataTaskWithURLCompletionHandler(NSURL url,
-            @ObjCBlock(name = "call_dataTaskWithURLCompletionHandler") Block_dataTaskWithURLCompletionHandler completionHandler);
+    public native NSURLSessionDataTask dataTaskWithURLCompletionHandler(@NotNull NSURL url,
+            @NotNull @ObjCBlock(name = "call_dataTaskWithURLCompletionHandler") Block_dataTaskWithURLCompletionHandler completionHandler);
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native NSURLSessionDelegate delegate();
 
+    @NotNull
     @Generated
     @Selector("delegateQueue")
     public native NSOperationQueue delegateQueue();
@@ -231,9 +247,10 @@ public class NSURLSession extends NSObject {
     /**
      * Creates a download task with the given request.
      */
+    @NotNull
     @Generated
     @Selector("downloadTaskWithRequest:")
-    public native NSURLSessionDownloadTask downloadTaskWithRequest(NSURLRequest request);
+    public native NSURLSessionDownloadTask downloadTaskWithRequest(@NotNull NSURLRequest request);
 
     /**
      * download task convenience methods. When a download successfully
@@ -241,35 +258,40 @@ public class NSURLSession extends NSObject {
      * copied during the invocation of the completion routine. The file
      * will be removed automatically.
      */
+    @NotNull
     @Generated
     @Selector("downloadTaskWithRequest:completionHandler:")
-    public native NSURLSessionDownloadTask downloadTaskWithRequestCompletionHandler(NSURLRequest request,
-            @ObjCBlock(name = "call_downloadTaskWithRequestCompletionHandler") Block_downloadTaskWithRequestCompletionHandler completionHandler);
+    public native NSURLSessionDownloadTask downloadTaskWithRequestCompletionHandler(@NotNull NSURLRequest request,
+            @NotNull @ObjCBlock(name = "call_downloadTaskWithRequestCompletionHandler") Block_downloadTaskWithRequestCompletionHandler completionHandler);
 
     /**
      * Creates a download task with the resume data. If the download cannot be successfully resumed,
      * URLSession:task:didCompleteWithError: will be called.
      */
+    @NotNull
     @Generated
     @Selector("downloadTaskWithResumeData:")
-    public native NSURLSessionDownloadTask downloadTaskWithResumeData(NSData resumeData);
+    public native NSURLSessionDownloadTask downloadTaskWithResumeData(@NotNull NSData resumeData);
 
+    @NotNull
     @Generated
     @Selector("downloadTaskWithResumeData:completionHandler:")
-    public native NSURLSessionDownloadTask downloadTaskWithResumeDataCompletionHandler(NSData resumeData,
-            @ObjCBlock(name = "call_downloadTaskWithResumeDataCompletionHandler") Block_downloadTaskWithResumeDataCompletionHandler completionHandler);
+    public native NSURLSessionDownloadTask downloadTaskWithResumeDataCompletionHandler(@NotNull NSData resumeData,
+            @NotNull @ObjCBlock(name = "call_downloadTaskWithResumeDataCompletionHandler") Block_downloadTaskWithResumeDataCompletionHandler completionHandler);
 
     /**
      * Creates a download task to download the contents of the given URL.
      */
+    @NotNull
     @Generated
     @Selector("downloadTaskWithURL:")
-    public native NSURLSessionDownloadTask downloadTaskWithURL(NSURL url);
+    public native NSURLSessionDownloadTask downloadTaskWithURL(@NotNull NSURL url);
 
+    @NotNull
     @Generated
     @Selector("downloadTaskWithURL:completionHandler:")
-    public native NSURLSessionDownloadTask downloadTaskWithURLCompletionHandler(NSURL url,
-            @ObjCBlock(name = "call_downloadTaskWithURLCompletionHandler") Block_downloadTaskWithURLCompletionHandler completionHandler);
+    public native NSURLSessionDownloadTask downloadTaskWithURLCompletionHandler(@NotNull NSURL url,
+            @NotNull @ObjCBlock(name = "call_downloadTaskWithURLCompletionHandler") Block_downloadTaskWithURLCompletionHandler completionHandler);
 
     /**
      * -finishTasksAndInvalidate returns immediately and existing tasks will be allowed
@@ -294,7 +316,7 @@ public class NSURLSession extends NSObject {
     @Generated
     @Selector("flushWithCompletionHandler:")
     public native void flushWithCompletionHandler(
-            @ObjCBlock(name = "call_flushWithCompletionHandler") Block_flushWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_flushWithCompletionHandler") Block_flushWithCompletionHandler completionHandler);
 
     /**
      * invokes completionHandler with all outstanding tasks.
@@ -304,7 +326,7 @@ public class NSURLSession extends NSObject {
     @Generated
     @Selector("getAllTasksWithCompletionHandler:")
     public native void getAllTasksWithCompletionHandler(
-            @ObjCBlock(name = "call_getAllTasksWithCompletionHandler") Block_getAllTasksWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_getAllTasksWithCompletionHandler") Block_getAllTasksWithCompletionHandler completionHandler);
 
     /**
      * invokes completionHandler with outstanding data, upload and download tasks.
@@ -312,7 +334,7 @@ public class NSURLSession extends NSObject {
     @Generated
     @Selector("getTasksWithCompletionHandler:")
     public native void getTasksWithCompletionHandler(
-            @ObjCBlock(name = "call_getTasksWithCompletionHandler") Block_getTasksWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_getTasksWithCompletionHandler") Block_getTasksWithCompletionHandler completionHandler);
 
     /**
      * API-Since: 7.0
@@ -342,12 +364,13 @@ public class NSURLSession extends NSObject {
     @Generated
     @Selector("resetWithCompletionHandler:")
     public native void resetWithCompletionHandler(
-            @ObjCBlock(name = "call_resetWithCompletionHandler") Block_resetWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_resetWithCompletionHandler") Block_resetWithCompletionHandler completionHandler);
 
     /**
      * The sessionDescription property is available for the developer to
      * provide a descriptive label for the session.
      */
+    @Nullable
     @Generated
     @Selector("sessionDescription")
     public native String sessionDescription();
@@ -358,16 +381,17 @@ public class NSURLSession extends NSObject {
      */
     @Generated
     @Selector("setSessionDescription:")
-    public native void setSessionDescription(String value);
+    public native void setSessionDescription(@Nullable String value);
 
     /**
      * Creates a bidirectional stream task to a given host and port.
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("streamTaskWithHostName:port:")
-    public native NSURLSessionStreamTask streamTaskWithHostNamePort(String hostname, @NInt long port);
+    public native NSURLSessionStreamTask streamTaskWithHostNamePort(@NotNull String hostname, @NInt long port);
 
     /**
      * Creates a bidirectional stream task with an NSNetService to identify the endpoint.
@@ -377,82 +401,95 @@ public class NSURLSession extends NSObject {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use nw_connection_t in Network framework instead
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("streamTaskWithNetService:")
-    public native NSURLSessionStreamTask streamTaskWithNetService(NSNetService service);
+    public native NSURLSessionStreamTask streamTaskWithNetService(@NotNull NSNetService service);
 
     /**
      * Creates an upload task with the given request. The body of the request is provided from the bodyData.
      */
+    @NotNull
     @Generated
     @Selector("uploadTaskWithRequest:fromData:")
-    public native NSURLSessionUploadTask uploadTaskWithRequestFromData(NSURLRequest request, NSData bodyData);
+    public native NSURLSessionUploadTask uploadTaskWithRequestFromData(@NotNull NSURLRequest request,
+            @NotNull NSData bodyData);
 
+    @NotNull
     @Generated
     @Selector("uploadTaskWithRequest:fromData:completionHandler:")
-    public native NSURLSessionUploadTask uploadTaskWithRequestFromDataCompletionHandler(NSURLRequest request,
-            NSData bodyData,
-            @ObjCBlock(name = "call_uploadTaskWithRequestFromDataCompletionHandler") Block_uploadTaskWithRequestFromDataCompletionHandler completionHandler);
+    public native NSURLSessionUploadTask uploadTaskWithRequestFromDataCompletionHandler(@NotNull NSURLRequest request,
+            @Nullable NSData bodyData,
+            @NotNull @ObjCBlock(name = "call_uploadTaskWithRequestFromDataCompletionHandler") Block_uploadTaskWithRequestFromDataCompletionHandler completionHandler);
 
     /**
      * Creates an upload task with the given request. The body of the request will be created from the file referenced
      * by fileURL
      */
+    @NotNull
     @Generated
     @Selector("uploadTaskWithRequest:fromFile:")
-    public native NSURLSessionUploadTask uploadTaskWithRequestFromFile(NSURLRequest request, NSURL fileURL);
+    public native NSURLSessionUploadTask uploadTaskWithRequestFromFile(@NotNull NSURLRequest request,
+            @NotNull NSURL fileURL);
 
     /**
      * upload convenience method.
      */
+    @NotNull
     @Generated
     @Selector("uploadTaskWithRequest:fromFile:completionHandler:")
-    public native NSURLSessionUploadTask uploadTaskWithRequestFromFileCompletionHandler(NSURLRequest request,
-            NSURL fileURL,
-            @ObjCBlock(name = "call_uploadTaskWithRequestFromFileCompletionHandler") Block_uploadTaskWithRequestFromFileCompletionHandler completionHandler);
+    public native NSURLSessionUploadTask uploadTaskWithRequestFromFileCompletionHandler(@NotNull NSURLRequest request,
+            @NotNull NSURL fileURL,
+            @NotNull @ObjCBlock(name = "call_uploadTaskWithRequestFromFileCompletionHandler") Block_uploadTaskWithRequestFromFileCompletionHandler completionHandler);
 
     /**
      * Creates an upload task with the given request. The previously set body stream of the request (if any) is ignored
      * and the URLSession:task:needNewBodyStream: delegate will be called when the body payload is required.
      */
+    @NotNull
     @Generated
     @Selector("uploadTaskWithStreamedRequest:")
-    public native NSURLSessionUploadTask uploadTaskWithStreamedRequest(NSURLRequest request);
+    public native NSURLSessionUploadTask uploadTaskWithStreamedRequest(@NotNull NSURLRequest request);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_dataTaskWithRequestCompletionHandler {
         @Generated
-        void call_dataTaskWithRequestCompletionHandler(NSData data, NSURLResponse response, NSError error);
+        void call_dataTaskWithRequestCompletionHandler(@Nullable NSData data, @Nullable NSURLResponse response,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_dataTaskWithURLCompletionHandler {
         @Generated
-        void call_dataTaskWithURLCompletionHandler(NSData data, NSURLResponse response, NSError error);
+        void call_dataTaskWithURLCompletionHandler(@Nullable NSData data, @Nullable NSURLResponse response,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_downloadTaskWithRequestCompletionHandler {
         @Generated
-        void call_downloadTaskWithRequestCompletionHandler(NSURL location, NSURLResponse response, NSError error);
+        void call_downloadTaskWithRequestCompletionHandler(@Nullable NSURL location, @Nullable NSURLResponse response,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_downloadTaskWithResumeDataCompletionHandler {
         @Generated
-        void call_downloadTaskWithResumeDataCompletionHandler(NSURL location, NSURLResponse response, NSError error);
+        void call_downloadTaskWithResumeDataCompletionHandler(@Nullable NSURL location,
+                @Nullable NSURLResponse response, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_downloadTaskWithURLCompletionHandler {
         @Generated
-        void call_downloadTaskWithURLCompletionHandler(NSURL location, NSURLResponse response, NSError error);
+        void call_downloadTaskWithURLCompletionHandler(@Nullable NSURL location, @Nullable NSURLResponse response,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -466,16 +503,16 @@ public class NSURLSession extends NSObject {
     @Generated
     public interface Block_getAllTasksWithCompletionHandler {
         @Generated
-        void call_getAllTasksWithCompletionHandler(NSArray<? extends NSURLSessionTask> tasks);
+        void call_getAllTasksWithCompletionHandler(@NotNull NSArray<? extends NSURLSessionTask> tasks);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getTasksWithCompletionHandler {
         @Generated
-        void call_getTasksWithCompletionHandler(NSArray<? extends NSURLSessionDataTask> dataTasks,
-                NSArray<? extends NSURLSessionUploadTask> uploadTasks,
-                NSArray<? extends NSURLSessionDownloadTask> downloadTasks);
+        void call_getTasksWithCompletionHandler(@NotNull NSArray<? extends NSURLSessionDataTask> dataTasks,
+                @NotNull NSArray<? extends NSURLSessionUploadTask> uploadTasks,
+                @NotNull NSArray<? extends NSURLSessionDownloadTask> downloadTasks);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -489,14 +526,16 @@ public class NSURLSession extends NSObject {
     @Generated
     public interface Block_uploadTaskWithRequestFromDataCompletionHandler {
         @Generated
-        void call_uploadTaskWithRequestFromDataCompletionHandler(NSData data, NSURLResponse response, NSError error);
+        void call_uploadTaskWithRequestFromDataCompletionHandler(@Nullable NSData data,
+                @Nullable NSURLResponse response, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_uploadTaskWithRequestFromFileCompletionHandler {
         @Generated
-        void call_uploadTaskWithRequestFromFileCompletionHandler(NSData data, NSURLResponse response, NSError error);
+        void call_uploadTaskWithRequestFromFileCompletionHandler(@Nullable NSData data,
+                @Nullable NSURLResponse response, @Nullable NSError error);
     }
 
     /**
@@ -508,18 +547,20 @@ public class NSURLSession extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("webSocketTaskWithRequest:")
-    public native NSURLSessionWebSocketTask webSocketTaskWithRequest(NSURLRequest request);
+    public native NSURLSessionWebSocketTask webSocketTaskWithRequest(@NotNull NSURLRequest request);
 
     /**
      * Creates a WebSocket task given the url. The given url must have a ws or wss scheme.
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("webSocketTaskWithURL:")
-    public native NSURLSessionWebSocketTask webSocketTaskWithURL(NSURL url);
+    public native NSURLSessionWebSocketTask webSocketTaskWithURL(@NotNull NSURL url);
 
     /**
      * Creates a WebSocket task given the url and an array of protocols. The protocols will be used in the WebSocket
@@ -530,7 +571,9 @@ public class NSURLSession extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("webSocketTaskWithURL:protocols:")
-    public native NSURLSessionWebSocketTask webSocketTaskWithURLProtocols(NSURL url, NSArray<String> protocols);
+    public native NSURLSessionWebSocketTask webSocketTaskWithURLProtocols(@NotNull NSURL url,
+            @NotNull NSArray<String> protocols);
 }

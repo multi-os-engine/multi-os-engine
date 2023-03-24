@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSRNNMatrixTrainingLayer
@@ -105,22 +107,25 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,11 +140,12 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
      *         nil if the device is not supported. Devices must be
      *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:device:")
-    public native MPSRNNMatrixTrainingLayer copyWithZoneDevice(VoidPtr zone,
-            @Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSRNNMatrixTrainingLayer copyWithZoneDevice(@Nullable VoidPtr zone,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     /**
      * As @ref createWeightGradientMatrices, but the matrices will be temporary with readCount = 1, which means that
@@ -156,8 +162,9 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
      */
     @Generated
     @Selector("createTemporaryWeightGradientMatrices:dataType:commandBuffer:")
-    public native void createTemporaryWeightGradientMatricesDataTypeCommandBuffer(NSMutableArray<MPSMatrix> matricesOut,
-            int dataType, @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
+    public native void createTemporaryWeightGradientMatricesDataTypeCommandBuffer(
+            @NotNull NSMutableArray<MPSMatrix> matricesOut, int dataType,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
 
     /**
      * Initializes a set of matrices that can be used in training for weight and bias gradient outputs in
@@ -175,7 +182,8 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
      */
     @Generated
     @Selector("createWeightGradientMatrices:dataType:")
-    public native void createWeightGradientMatricesDataType(NSMutableArray<MPSMatrix> matricesOut, int dataType);
+    public native void createWeightGradientMatricesDataType(@NotNull NSMutableArray<MPSMatrix> matricesOut,
+            int dataType);
 
     /**
      * Initializes a set of matrices that can be used in training for weight and bias matrices in
@@ -188,7 +196,7 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
      */
     @Generated
     @Selector("createWeightMatrices:")
-    public native void createWeightMatrices(NSMutableArray<MPSMatrix> matricesOut);
+    public native void createWeightMatrices(@NotNull NSMutableArray<MPSMatrix> matricesOut);
 
     @Generated
     @Selector("debugDescription")
@@ -215,8 +223,9 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
     @Generated
     @Selector("encodeCopyWeightsToCommandBuffer:weights:matrixId:matrix:copyFromWeightsToMatrix:matrixOffset:")
     public native void encodeCopyWeightsToCommandBufferWeightsMatrixIdMatrixCopyFromWeightsToMatrixMatrixOffset(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, NSArray<? extends MPSMatrix> weights,
-            @NUInt long matrixId, MPSMatrix matrix, boolean copyFromWeightsToMatrix, @ByValue MTLOrigin matrixOffset);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull NSArray<? extends MPSMatrix> weights, @NUInt long matrixId, @NotNull MPSMatrix matrix,
+            boolean copyFromWeightsToMatrix, @ByValue MTLOrigin matrixOffset);
 
     /**
      * Encode an MPSRNNMatrixTrainingLayer forward pass kernel for a sequence of inputs into a command buffer.
@@ -233,9 +242,11 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
     @Generated
     @Selector("encodeForwardSequenceToCommandBuffer:sourceMatrices:destinationMatrices:trainingStates:weights:")
     public native void encodeForwardSequenceToCommandBufferSourceMatricesDestinationMatricesTrainingStatesWeights(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, NSArray<? extends MPSMatrix> sourceMatrices,
-            NSArray<? extends MPSMatrix> destinationMatrices, NSMutableArray<MPSRNNMatrixTrainingState> trainingStates,
-            NSArray<? extends MPSMatrix> weights);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull NSArray<? extends MPSMatrix> sourceMatrices,
+            @NotNull NSArray<? extends MPSMatrix> destinationMatrices,
+            @NotNull NSMutableArray<MPSRNNMatrixTrainingState> trainingStates,
+            @NotNull NSArray<? extends MPSMatrix> weights);
 
     /**
      * Encode an MPSRNNMatrixTrainingLayer forward pass kernel for a sequence of inputs into a command buffer.
@@ -262,10 +273,13 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
     @Generated
     @Selector("encodeForwardSequenceToCommandBuffer:sourceMatrices:sourceOffsets:destinationMatrices:destinationOffsets:trainingStates:recurrentInputState:recurrentOutputStates:weights:")
     public native void encodeForwardSequenceToCommandBufferSourceMatricesSourceOffsetsDestinationMatricesDestinationOffsetsTrainingStatesRecurrentInputStateRecurrentOutputStatesWeights(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, NSArray<? extends MPSMatrix> sourceMatrices,
-            NUIntPtr sourceOffsets, NSArray<? extends MPSMatrix> destinationMatrices, NUIntPtr destinationOffsets,
-            NSMutableArray<MPSRNNMatrixTrainingState> trainingStates, MPSRNNRecurrentMatrixState recurrentInputState,
-            NSMutableArray<MPSRNNRecurrentMatrixState> recurrentOutputStates, NSArray<? extends MPSMatrix> weights);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull NSArray<? extends MPSMatrix> sourceMatrices, @Nullable NUIntPtr sourceOffsets,
+            @NotNull NSArray<? extends MPSMatrix> destinationMatrices, @Nullable NUIntPtr destinationOffsets,
+            @NotNull NSMutableArray<MPSRNNMatrixTrainingState> trainingStates,
+            @Nullable MPSRNNRecurrentMatrixState recurrentInputState,
+            @Nullable NSMutableArray<MPSRNNRecurrentMatrixState> recurrentOutputStates,
+            @NotNull NSArray<? extends MPSMatrix> weights);
 
     /**
      * Encode an MPSRNNMatrixTrainingLayer gradient pass kernel for a sequence of input gradients into a command buffer.
@@ -307,12 +321,15 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
     @Generated
     @Selector("encodeGradientSequenceToCommandBuffer:forwardSources:forwardSourceOffsets:sourceGradients:sourceGradientOffsets:destinationGradients:destinationOffsets:weightGradients:trainingStates:recurrentInputState:recurrentOutputStates:weights:")
     public native void encodeGradientSequenceToCommandBufferForwardSourcesForwardSourceOffsetsSourceGradientsSourceGradientOffsetsDestinationGradientsDestinationOffsetsWeightGradientsTrainingStatesRecurrentInputStateRecurrentOutputStatesWeights(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, NSArray<? extends MPSMatrix> forwardSources,
-            NUIntPtr forwardSourceOffsets, NSArray<? extends MPSMatrix> sourceGradients, NUIntPtr sourceGradientOffsets,
-            NSArray<? extends MPSMatrix> destinationGradients, NUIntPtr destinationOffsets,
-            NSArray<? extends MPSMatrix> weightGradients, NSArray<? extends MPSRNNMatrixTrainingState> trainingStates,
-            MPSRNNRecurrentMatrixState recurrentInputState,
-            NSMutableArray<MPSRNNRecurrentMatrixState> recurrentOutputStates, NSArray<? extends MPSMatrix> weights);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull NSArray<? extends MPSMatrix> forwardSources, @Nullable NUIntPtr forwardSourceOffsets,
+            @NotNull NSArray<? extends MPSMatrix> sourceGradients, @Nullable NUIntPtr sourceGradientOffsets,
+            @Nullable NSArray<? extends MPSMatrix> destinationGradients, @Nullable NUIntPtr destinationOffsets,
+            @Nullable NSArray<? extends MPSMatrix> weightGradients,
+            @NotNull NSArray<? extends MPSRNNMatrixTrainingState> trainingStates,
+            @Nullable MPSRNNRecurrentMatrixState recurrentInputState,
+            @Nullable NSMutableArray<MPSRNNRecurrentMatrixState> recurrentOutputStates,
+            @NotNull NSArray<? extends MPSMatrix> weights);
 
     /**
      * Encode an MPSRNNMatrixTrainingLayer gradient pass kernel for a sequence of input gradients into a command buffer.
@@ -343,10 +360,12 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
     @Generated
     @Selector("encodeGradientSequenceToCommandBuffer:forwardSources:sourceGradients:destinationGradients:weightGradients:trainingStates:weights:")
     public native void encodeGradientSequenceToCommandBufferForwardSourcesSourceGradientsDestinationGradientsWeightGradientsTrainingStatesWeights(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, NSArray<? extends MPSMatrix> forwardSources,
-            NSArray<? extends MPSMatrix> sourceGradients, NSArray<? extends MPSMatrix> destinationGradients,
-            NSArray<? extends MPSMatrix> weightGradients, NSArray<? extends MPSRNNMatrixTrainingState> trainingStates,
-            NSArray<? extends MPSMatrix> weights);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull NSArray<? extends MPSMatrix> forwardSources, @NotNull NSArray<? extends MPSMatrix> sourceGradients,
+            @Nullable NSArray<? extends MPSMatrix> destinationGradients,
+            @Nullable NSArray<? extends MPSMatrix> weightGradients,
+            @NotNull NSArray<? extends MPSRNNMatrixTrainingState> trainingStates,
+            @NotNull NSArray<? extends MPSMatrix> weights);
 
     @Generated
     @Selector("hash")
@@ -359,7 +378,7 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSRNNMatrixTrainingLayer initWithCoder(NSCoder aDecoder);
+    public native MPSRNNMatrixTrainingLayer initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
@@ -374,12 +393,12 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSRNNMatrixTrainingLayer initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSRNNMatrixTrainingLayer initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSRNNMatrixTrainingLayer initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSRNNMatrixTrainingLayer initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initializes a linear (fully connected) RNN kernel for training
@@ -402,8 +421,8 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
     @Generated
     @Selector("initWithDevice:rnnDescriptor:trainableWeights:")
     public native MPSRNNMatrixTrainingLayer initWithDeviceRnnDescriptorTrainableWeights(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, MPSRNNDescriptor rnnDescriptor,
-            NSMutableArray<MPSMatrix> trainableWeights);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MPSRNNDescriptor rnnDescriptor,
+            @NotNull NSMutableArray<MPSMatrix> trainableWeights);
 
     /**
      * [@property] inputFeatureChannels
@@ -432,9 +451,10 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

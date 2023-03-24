@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("PushKit")
@@ -43,6 +44,7 @@ public final class PushKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -54,6 +56,7 @@ public final class PushKit {
      * Deprecated-Message: Complication pushes are supported directly on watchOS now, so this should no longer be used
      * on iOS.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -63,6 +66,7 @@ public final class PushKit {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

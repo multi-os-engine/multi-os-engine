@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCGraph
@@ -61,7 +63,7 @@ public class MLCGraph extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Associates data with input tensors. If the device is GPU, also copies the data to the device memory.
@@ -86,9 +88,9 @@ public class MLCGraph extends NSObject {
     @Generated
     @Selector("bindAndWriteData:forInputs:toDevice:batchSize:synchronous:")
     public native boolean bindAndWriteDataForInputsToDeviceBatchSizeSynchronous(
-            NSDictionary<String, ? extends MLCTensorData> inputsData,
-            NSDictionary<String, ? extends MLCTensor> inputTensors, MLCDevice device, @NUInt long batchSize,
-            boolean synchronous);
+            @NotNull NSDictionary<String, ? extends MLCTensorData> inputsData,
+            @NotNull NSDictionary<String, ? extends MLCTensor> inputTensors, @NotNull MLCDevice device,
+            @NUInt long batchSize, boolean synchronous);
 
     /**
      * Associates data with input tensors. If the device is GPU, also copies the data to the device memory.
@@ -110,23 +112,27 @@ public class MLCGraph extends NSObject {
     @Generated
     @Selector("bindAndWriteData:forInputs:toDevice:synchronous:")
     public native boolean bindAndWriteDataForInputsToDeviceSynchronous(
-            NSDictionary<String, ? extends MLCTensorData> inputsData,
-            NSDictionary<String, ? extends MLCTensor> inputTensors, MLCDevice device, boolean synchronous);
+            @NotNull NSDictionary<String, ? extends MLCTensorData> inputsData,
+            @NotNull NSDictionary<String, ? extends MLCTensor> inputTensors, @NotNull MLCDevice device,
+            boolean synchronous);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -138,9 +144,10 @@ public class MLCGraph extends NSObject {
      * @param dimension The concatenation dimension
      * @return A result tensor
      */
+    @Nullable
     @Generated
     @Selector("concatenateWithSources:dimension:")
-    public native MLCTensor concatenateWithSourcesDimension(NSArray<? extends MLCTensor> sources,
+    public native MLCTensor concatenateWithSourcesDimension(@NotNull NSArray<? extends MLCTensor> sources,
             @NUInt long dimension);
 
     @Generated
@@ -154,6 +161,7 @@ public class MLCGraph extends NSObject {
     /**
      * The device to be used when compiling and executing a graph
      */
+    @Nullable
     @Generated
     @Selector("device")
     public native MLCDevice device();
@@ -168,10 +176,11 @@ public class MLCGraph extends NSObject {
      * 
      *         API-Since: 14.5
      */
+    @Nullable
     @Generated
     @Selector("gatherWithDimension:source:indices:")
-    public native MLCTensor gatherWithDimensionSourceIndices(@NUInt long dimension, MLCTensor source,
-            MLCTensor indices);
+    public native MLCTensor gatherWithDimensionSourceIndices(@NUInt long dimension, @NotNull MLCTensor source,
+            @NotNull MLCTensor indices);
 
     /**
      * Creates a new graph.
@@ -208,13 +217,15 @@ public class MLCGraph extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Layers in the graph
      */
+    @NotNull
     @Generated
     @Selector("layers")
     public native NSArray<? extends MLCLayer> layers();
@@ -231,9 +242,10 @@ public class MLCGraph extends NSObject {
      * @param source The source tensor
      * @return A result tensor
      */
+    @Nullable
     @Generated
     @Selector("nodeWithLayer:source:")
-    public native MLCTensor nodeWithLayerSource(MLCLayer layer, MLCTensor source);
+    public native MLCTensor nodeWithLayerSource(@NotNull MLCLayer layer, @NotNull MLCTensor source);
 
     /**
      * Add a layer to the graph
@@ -245,9 +257,11 @@ public class MLCGraph extends NSObject {
      * @param sources A list of source tensors
      * @return A result tensor
      */
+    @Nullable
     @Generated
     @Selector("nodeWithLayer:sources:")
-    public native MLCTensor nodeWithLayerSources(MLCLayer layer, NSArray<? extends MLCTensor> sources);
+    public native MLCTensor nodeWithLayerSources(@NotNull MLCLayer layer,
+            @NotNull NSArray<? extends MLCTensor> sources);
 
     /**
      * Add a layer to the graph
@@ -260,10 +274,11 @@ public class MLCGraph extends NSObject {
      * @param disableUpdate A flag to indicate if optimizer update should be disabled for this layer
      * @return A result tensor
      */
+    @Nullable
     @Generated
     @Selector("nodeWithLayer:sources:disableUpdate:")
-    public native MLCTensor nodeWithLayerSourcesDisableUpdate(MLCLayer layer, NSArray<? extends MLCTensor> sources,
-            boolean disableUpdate);
+    public native MLCTensor nodeWithLayerSourcesDisableUpdate(@NotNull MLCLayer layer,
+            @NotNull NSArray<? extends MLCTensor> sources, boolean disableUpdate);
 
     /**
      * Add a loss layer to the graph
@@ -275,10 +290,11 @@ public class MLCGraph extends NSObject {
      * @param lossLabels The loss labels tensor
      * @return A result tensor
      */
+    @Nullable
     @Generated
     @Selector("nodeWithLayer:sources:lossLabels:")
-    public native MLCTensor nodeWithLayerSourcesLossLabels(MLCLayer layer, NSArray<? extends MLCTensor> sources,
-            NSArray<? extends MLCTensor> lossLabels);
+    public native MLCTensor nodeWithLayerSourcesLossLabels(@NotNull MLCLayer layer,
+            @NotNull NSArray<? extends MLCTensor> sources, @NotNull NSArray<? extends MLCTensor> lossLabels);
 
     /**
      * Add a reshape layer to the graph
@@ -287,9 +303,11 @@ public class MLCGraph extends NSObject {
      * @param source The source tensor
      * @return A result tensor
      */
+    @Nullable
     @Generated
     @Selector("reshapeWithShape:source:")
-    public native MLCTensor reshapeWithShapeSource(NSArray<? extends NSNumber> shape, MLCTensor source);
+    public native MLCTensor reshapeWithShapeSource(@NotNull NSArray<? extends NSNumber> shape,
+            @NotNull MLCTensor source);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -305,9 +323,10 @@ public class MLCGraph extends NSObject {
      * @param layer A layer in the training graph
      * @return A list of tensors
      */
+    @NotNull
     @Generated
     @Selector("resultTensorsForLayer:")
-    public native NSArray<? extends MLCTensor> resultTensorsForLayer(MLCLayer layer);
+    public native NSArray<? extends MLCTensor> resultTensorsForLayer(@NotNull MLCLayer layer);
 
     /**
      * Add a scatter layer to the graph
@@ -324,10 +343,11 @@ public class MLCGraph extends NSObject {
      * 
      *         API-Since: 14.5
      */
+    @Nullable
     @Generated
     @Selector("scatterWithDimension:source:indices:copyFrom:reductionType:")
     public native MLCTensor scatterWithDimensionSourceIndicesCopyFromReductionType(@NUInt long dimension,
-            MLCTensor source, MLCTensor indices, MLCTensor copyFrom, int reductionType);
+            @NotNull MLCTensor source, @NotNull MLCTensor indices, @NotNull MLCTensor copyFrom, int reductionType);
 
     /**
      * Add a select layer to the graph
@@ -338,9 +358,11 @@ public class MLCGraph extends NSObject {
      * 
      *         API-Since: 14.5
      */
+    @Nullable
     @Generated
     @Selector("selectWithSources:condition:")
-    public native MLCTensor selectWithSourcesCondition(NSArray<? extends MLCTensor> sources, MLCTensor condition);
+    public native MLCTensor selectWithSourcesCondition(@NotNull NSArray<? extends MLCTensor> sources,
+            @NotNull MLCTensor condition);
 
     @Generated
     @Selector("setVersion:")
@@ -352,9 +374,10 @@ public class MLCGraph extends NSObject {
      * @param layer A layer in the training graph
      * @return A list of tensors
      */
+    @NotNull
     @Generated
     @Selector("sourceTensorsForLayer:")
-    public native NSArray<? extends MLCTensor> sourceTensorsForLayer(MLCLayer layer);
+    public native NSArray<? extends MLCTensor> sourceTensorsForLayer(@NotNull MLCLayer layer);
 
     /**
      * Add a split layer to the graph
@@ -364,9 +387,10 @@ public class MLCGraph extends NSObject {
      * @param dimension  The dimension to split the source tensor
      * @return A result tensor
      */
+    @Nullable
     @Generated
     @Selector("splitWithSource:splitCount:dimension:")
-    public native NSArray<? extends MLCTensor> splitWithSourceSplitCountDimension(MLCTensor source,
+    public native NSArray<? extends MLCTensor> splitWithSourceSplitCountDimension(@NotNull MLCTensor source,
             @NUInt long splitCount, @NUInt long dimension);
 
     /**
@@ -377,10 +401,11 @@ public class MLCGraph extends NSObject {
      * @param dimension           The dimension to split the source tensor
      * @return A result tensor
      */
+    @Nullable
     @Generated
     @Selector("splitWithSource:splitSectionLengths:dimension:")
-    public native NSArray<? extends MLCTensor> splitWithSourceSplitSectionLengthsDimension(MLCTensor source,
-            NSArray<? extends NSNumber> splitSectionLengths, @NUInt long dimension);
+    public native NSArray<? extends MLCTensor> splitWithSourceSplitSectionLengthsDimension(@NotNull MLCTensor source,
+            @NotNull NSArray<? extends NSNumber> splitSectionLengths, @NUInt long dimension);
 
     /**
      * A DOT representation of the graph.
@@ -388,6 +413,7 @@ public class MLCGraph extends NSObject {
      * For more info on the DOT language, refer to https://en.wikipedia.org/wiki/DOT_(graph_description_language).
      * Edges that have a dashed lines are those that have stop gradients, while those with solid lines don't.
      */
+    @NotNull
     @Generated
     @Selector("summarizedDOTDescription")
     public native String summarizedDOTDescription();
@@ -405,9 +431,11 @@ public class MLCGraph extends NSObject {
      *                   output. The batch dimension which is typically axis 0 cannot be transposed.
      * @return A result tensor
      */
+    @Nullable
     @Generated
     @Selector("transposeWithDimensions:source:")
-    public native MLCTensor transposeWithDimensionsSource(NSArray<? extends NSNumber> dimensions, MLCTensor source);
+    public native MLCTensor transposeWithDimensionsSource(@NotNull NSArray<? extends NSNumber> dimensions,
+            @NotNull MLCTensor source);
 
     @Generated
     @Selector("version")

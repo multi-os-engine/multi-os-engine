@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Fetched properties allow to specify related objects through a "weakly" resolved property, so there is no actual join
@@ -75,22 +77,25 @@ public class NSFetchedPropertyDescription extends NSPropertyDescription {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +130,10 @@ public class NSFetchedPropertyDescription extends NSPropertyDescription {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,6 +165,7 @@ public class NSFetchedPropertyDescription extends NSPropertyDescription {
      * As part of the predicate for a fetched property, you can use the two variables $FETCH_SOURCE (which is the
      * managed object fetching the property) and $FETCHED_PROPERTY (which is the NSFetchedPropertyDescription instance).
      */
+    @Nullable
     @Generated
     @Selector("fetchRequest")
     public native NSFetchRequest<?> fetchRequest();
@@ -169,7 +176,7 @@ public class NSFetchedPropertyDescription extends NSPropertyDescription {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSFetchedPropertyDescription initWithCoder(NSCoder coder);
+    public native NSFetchedPropertyDescription initWithCoder(@NotNull NSCoder coder);
 
     /**
      * As part of the predicate for a fetched property, you can use the two variables $FETCH_SOURCE (which is the
@@ -177,5 +184,5 @@ public class NSFetchedPropertyDescription extends NSPropertyDescription {
      */
     @Generated
     @Selector("setFetchRequest:")
-    public native void setFetchRequest(NSFetchRequest<?> value);
+    public native void setFetchRequest(@Nullable NSFetchRequest<?> value);
 }

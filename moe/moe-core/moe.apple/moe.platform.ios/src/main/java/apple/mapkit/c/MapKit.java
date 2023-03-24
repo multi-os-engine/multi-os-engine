@@ -35,6 +35,7 @@ import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("MapKit")
@@ -195,18 +196,21 @@ public final class MapKit {
     @CFunction
     public static native boolean MKMapRectIsEmpty(@ByValue MKMapRect rect);
 
+    @NotNull
     @Generated
     @Inline
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKStringFromMapPoint(@ByValue MKMapPoint point);
 
+    @NotNull
     @Generated
     @Inline
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKStringFromMapSize(@ByValue MKMapSize size);
 
+    @NotNull
     @Generated
     @Inline
     @CFunction
@@ -251,9 +255,9 @@ public final class MapKit {
     @Generated
     @CFunction
     public static native void MKMapRectDivide(@ByValue MKMapRect rect,
-            @UncertainArgument("Options: reference, array Fallback: reference") MKMapRect slice,
-            @UncertainArgument("Options: reference, array Fallback: reference") MKMapRect remainder, double amount,
-            int edge);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MKMapRect slice,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MKMapRect remainder,
+            double amount, int edge);
 
     /**
      * API-Since: 4.0
@@ -347,6 +351,7 @@ public final class MapKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -357,6 +362,7 @@ public final class MapKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -367,6 +373,7 @@ public final class MapKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -377,6 +384,7 @@ public final class MapKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -385,6 +393,7 @@ public final class MapKit {
     /**
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -393,6 +402,7 @@ public final class MapKit {
     /**
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -401,6 +411,7 @@ public final class MapKit {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -411,6 +422,7 @@ public final class MapKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -421,6 +433,7 @@ public final class MapKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -431,6 +444,7 @@ public final class MapKit {
      * 
      * API-Since: 7.1
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -439,11 +453,13 @@ public final class MapKit {
     /**
      * Post this notification to re-query callout information.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKAnnotationCalloutInfoDidChangeNotification();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -452,6 +468,7 @@ public final class MapKit {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -473,6 +490,7 @@ public final class MapKit {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -481,6 +499,7 @@ public final class MapKit {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

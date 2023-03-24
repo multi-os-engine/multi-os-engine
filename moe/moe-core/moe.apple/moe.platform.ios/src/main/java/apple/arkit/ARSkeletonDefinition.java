@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Definition of a skeleton.
@@ -62,22 +64,25 @@ public class ARSkeletonDefinition extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -91,6 +96,7 @@ public class ARSkeletonDefinition extends NSObject {
      * 
      * @see ARBody2D
      */
+    @NotNull
     @Generated
     @Selector("defaultBody2DSkeletonDefinition")
     public static native ARSkeletonDefinition defaultBody2DSkeletonDefinition();
@@ -102,6 +108,7 @@ public class ARSkeletonDefinition extends NSObject {
      * 
      * @see ARSkeleton3D
      */
+    @NotNull
     @Generated
     @Selector("defaultBody3DSkeletonDefinition")
     public static native ARSkeletonDefinition defaultBody3DSkeletonDefinition();
@@ -126,7 +133,7 @@ public class ARSkeletonDefinition extends NSObject {
     @Generated
     @Selector("indexForJointName:")
     @NUInt
-    public native long indexForJointName(String jointName);
+    public native long indexForJointName(@NotNull String jointName);
 
     @Generated
     @Selector("init")
@@ -160,13 +167,15 @@ public class ARSkeletonDefinition extends NSObject {
     /**
      * The joint names.
      */
+    @NotNull
     @Generated
     @Selector("jointNames")
     public native NSArray<String> jointNames();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The 3D skeleton in neutral pose.
@@ -174,6 +183,7 @@ public class ARSkeletonDefinition extends NSObject {
      * The neutral skeleton pose assumes a standardized size of the skeleton in meters. The neutral pose is defined as
      * the skeleton's T-pose.
      */
+    @Nullable
     @Generated
     @Selector("neutralBodySkeleton3D")
     public native ARSkeleton3D neutralBodySkeleton3D();
@@ -192,6 +202,7 @@ public class ARSkeletonDefinition extends NSObject {
      * The root joint's parent index has
      * a value of -1.
      */
+    @NotNull
     @Generated
     @Selector("parentIndices")
     public native NSArray<? extends NSNumber> parentIndices();

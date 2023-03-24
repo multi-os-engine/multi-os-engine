@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 7.1
@@ -73,22 +75,25 @@ public class MPRemoteCommand extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +128,10 @@ public class MPRemoteCommand extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,16 +172,17 @@ public class MPRemoteCommand extends NSObject {
      */
     @Generated
     @Selector("addTarget:action:")
-    public native void addTargetAction(@Mapped(ObjCObjectMapper.class) Object target, SEL action);
+    public native void addTargetAction(@NotNull @Mapped(ObjCObjectMapper.class) Object target, @NotNull SEL action);
 
     /**
      * Returns an opaque object to act as the target.
      */
+    @NotNull
     @Generated
     @Selector("addTargetWithHandler:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object addTargetWithHandler(
-            @ObjCBlock(name = "call_addTargetWithHandler") Block_addTargetWithHandler handler);
+            @NotNull @ObjCBlock(name = "call_addTargetWithHandler") Block_addTargetWithHandler handler);
 
     @Generated
     @Selector("init")
@@ -199,17 +206,17 @@ public class MPRemoteCommand extends NSObject {
 
     @Generated
     @Selector("removeTarget:")
-    public native void removeTarget(@Mapped(ObjCObjectMapper.class) Object target);
+    public native void removeTarget(@Nullable @Mapped(ObjCObjectMapper.class) Object target);
 
     @Generated
     @Selector("removeTarget:action:")
-    public native void removeTargetAction(@Mapped(ObjCObjectMapper.class) Object target, SEL action);
+    public native void removeTargetAction(@NotNull @Mapped(ObjCObjectMapper.class) Object target, @Nullable SEL action);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addTargetWithHandler {
         @Generated
         @NInt
-        long call_addTargetWithHandler(MPRemoteCommandEvent event);
+        long call_addTargetWithHandler(@NotNull MPRemoteCommandEvent event);
     }
 }

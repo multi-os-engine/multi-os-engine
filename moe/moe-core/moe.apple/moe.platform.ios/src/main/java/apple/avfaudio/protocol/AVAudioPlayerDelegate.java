@@ -10,6 +10,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A protocol for delegates of AVAudioPlayer
@@ -30,7 +32,7 @@ public interface AVAudioPlayerDelegate {
     @IsOptional
     @Deprecated
     @Selector("audioPlayerBeginInterruption:")
-    default void audioPlayerBeginInterruption(AVAudioPlayer player) {
+    default void audioPlayerBeginInterruption(@NotNull AVAudioPlayer player) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -40,7 +42,7 @@ public interface AVAudioPlayerDelegate {
     @Generated
     @IsOptional
     @Selector("audioPlayerDecodeErrorDidOccur:error:")
-    default void audioPlayerDecodeErrorDidOccurError(AVAudioPlayer player, NSError error) {
+    default void audioPlayerDecodeErrorDidOccurError(@NotNull AVAudioPlayer player, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -51,7 +53,7 @@ public interface AVAudioPlayerDelegate {
     @Generated
     @IsOptional
     @Selector("audioPlayerDidFinishPlaying:successfully:")
-    default void audioPlayerDidFinishPlayingSuccessfully(AVAudioPlayer player, boolean flag) {
+    default void audioPlayerDidFinishPlayingSuccessfully(@NotNull AVAudioPlayer player, boolean flag) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -66,7 +68,7 @@ public interface AVAudioPlayerDelegate {
     @IsOptional
     @Deprecated
     @Selector("audioPlayerEndInterruption:")
-    default void audioPlayerEndInterruption(AVAudioPlayer player) {
+    default void audioPlayerEndInterruption(@NotNull AVAudioPlayer player) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,7 +80,7 @@ public interface AVAudioPlayerDelegate {
     @IsOptional
     @Deprecated
     @Selector("audioPlayerEndInterruption:withFlags:")
-    default void audioPlayerEndInterruptionWithFlags(AVAudioPlayer player, @NUInt long flags) {
+    default void audioPlayerEndInterruptionWithFlags(@NotNull AVAudioPlayer player, @NUInt long flags) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -94,7 +96,7 @@ public interface AVAudioPlayerDelegate {
     @IsOptional
     @Deprecated
     @Selector("audioPlayerEndInterruption:withOptions:")
-    default void audioPlayerEndInterruptionWithOptions(AVAudioPlayer player, @NUInt long flags) {
+    default void audioPlayerEndInterruptionWithOptions(@NotNull AVAudioPlayer player, @NUInt long flags) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

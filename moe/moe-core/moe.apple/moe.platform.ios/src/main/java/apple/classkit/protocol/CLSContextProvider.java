@@ -9,6 +9,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The CLSContext provider protocol.
@@ -34,13 +36,13 @@ public interface CLSContextProvider {
      */
     @Generated
     @Selector("updateDescendantsOfContext:completion:")
-    void updateDescendantsOfContextCompletion(CLSContext context,
-            @ObjCBlock(name = "call_updateDescendantsOfContextCompletion") Block_updateDescendantsOfContextCompletion completion);
+    void updateDescendantsOfContextCompletion(@NotNull CLSContext context,
+            @NotNull @ObjCBlock(name = "call_updateDescendantsOfContextCompletion") Block_updateDescendantsOfContextCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateDescendantsOfContextCompletion {
         @Generated
-        void call_updateDescendantsOfContextCompletion(NSError error);
+        void call_updateDescendantsOfContextCompletion(@Nullable NSError error);
     }
 }

@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNBinaryConvolution
@@ -119,22 +121,25 @@ public class MPSCNNBinaryConvolution extends MPSCNNKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -158,7 +163,7 @@ public class MPSCNNBinaryConvolution extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNBinaryConvolution initWithCoder(NSCoder aDecoder);
+    public native MPSCNNBinaryConvolution initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
@@ -175,12 +180,12 @@ public class MPSCNNBinaryConvolution extends MPSCNNKernel {
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNBinaryConvolution initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNBinaryConvolution initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNBinaryConvolution initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNBinaryConvolution initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initializes a binary convolution kernel with binary weights as well as both pre and post scaling terms.
@@ -232,10 +237,11 @@ public class MPSCNNBinaryConvolution extends MPSCNNKernel {
     @Generated
     @Selector("initWithDevice:convolutionData:outputBiasTerms:outputScaleTerms:inputBiasTerms:inputScaleTerms:type:flags:")
     public native MPSCNNBinaryConvolution initWithDeviceConvolutionDataOutputBiasTermsOutputScaleTermsInputBiasTermsInputScaleTermsTypeFlags(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource convolutionData, ConstFloatPtr outputBiasTerms,
-            ConstFloatPtr outputScaleTerms, ConstFloatPtr inputBiasTerms, ConstFloatPtr inputScaleTerms,
-            @NUInt long type, @NUInt long flags);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource convolutionData,
+            @Nullable ConstFloatPtr outputBiasTerms, @Nullable ConstFloatPtr outputScaleTerms,
+            @Nullable ConstFloatPtr inputBiasTerms, @Nullable ConstFloatPtr inputScaleTerms, @NUInt long type,
+            @NUInt long flags);
 
     /**
      * Initializes a binary convolution kernel with binary weights and a single scaling term.
@@ -265,8 +271,8 @@ public class MPSCNNBinaryConvolution extends MPSCNNKernel {
     @Generated
     @Selector("initWithDevice:convolutionData:scaleValue:type:flags:")
     public native MPSCNNBinaryConvolution initWithDeviceConvolutionDataScaleValueTypeFlags(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource convolutionData, float scaleValue,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource convolutionData, float scaleValue,
             @NUInt long type, @NUInt long flags);
 
     @Generated
@@ -291,9 +297,10 @@ public class MPSCNNBinaryConvolution extends MPSCNNKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

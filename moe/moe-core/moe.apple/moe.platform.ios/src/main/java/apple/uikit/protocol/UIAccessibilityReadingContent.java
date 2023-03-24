@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * UIAccessibilityReadingContent
@@ -45,6 +46,7 @@ public interface UIAccessibilityReadingContent {
      * 
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("accessibilityContentForLineNumber:")
     String accessibilityContentForLineNumber(@NInt long lineNumber);
@@ -74,6 +76,7 @@ public interface UIAccessibilityReadingContent {
      * 
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("accessibilityPageContent")
     String accessibilityPageContent();
@@ -84,6 +87,7 @@ public interface UIAccessibilityReadingContent {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("accessibilityAttributedContentForLineNumber:")
@@ -94,6 +98,7 @@ public interface UIAccessibilityReadingContent {
     /**
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("accessibilityAttributedPageContent")

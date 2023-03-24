@@ -48,6 +48,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -82,22 +84,25 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,15 +111,17 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("defaultActionForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native CAAction defaultActionForKey(String event);
+    public static native CAAction defaultActionForKey(@NotNull String event);
 
+    @Nullable
     @Generated
     @Selector("defaultValueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultValueForKey(String key);
+    public static native Object defaultValueForKey(@NotNull String key);
 
     @Generated
     @Selector("description")
@@ -142,9 +149,10 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Selector("layer")
@@ -152,7 +160,7 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
 
     @Generated
     @Selector("needsDisplayForKey:")
-    public static native boolean needsDisplayForKey(String key);
+    public static native boolean needsDisplayForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -200,13 +208,14 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
      * Note that prior to OSX 10.10 and iOS 8.0, the control timebase could not be changed after enqueueSampleBuffer:
      * was called. As of OSX 10.10 and iOS 8.0, the control timebase may be changed at any time.
      */
+    @Nullable
     @Generated
     @Selector("controlTimebase")
     public native CMTimebaseRef controlTimebase();
 
     @Generated
     @Selector("enqueueSampleBuffer:")
-    public native void enqueueSampleBuffer(CMSampleBufferRef sampleBuffer);
+    public native void enqueueSampleBuffer(@NotNull CMSampleBufferRef sampleBuffer);
 
     /**
      * [@property] error
@@ -220,6 +229,7 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("error")
     public native NSError error();
@@ -248,11 +258,11 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVSampleBufferDisplayLayer initWithCoder(NSCoder coder);
+    public native AVSampleBufferDisplayLayer initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
-    public native AVSampleBufferDisplayLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
+    public native AVSampleBufferDisplayLayer initWithLayer(@NotNull @Mapped(ObjCObjectMapper.class) Object layer);
 
     @Generated
     @Selector("isReadyForMoreMediaData")
@@ -260,8 +270,8 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
 
     @Generated
     @Selector("requestMediaDataWhenReadyOnQueue:usingBlock:")
-    public native void requestMediaDataWhenReadyOnQueueUsingBlock(NSObject queue,
-            @ObjCBlock(name = "call_requestMediaDataWhenReadyOnQueueUsingBlock") AVQueuedSampleBufferRendering.Block_requestMediaDataWhenReadyOnQueueUsingBlock block);
+    public native void requestMediaDataWhenReadyOnQueueUsingBlock(@NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_requestMediaDataWhenReadyOnQueueUsingBlock") AVQueuedSampleBufferRendering.Block_requestMediaDataWhenReadyOnQueueUsingBlock block);
 
     /**
      * [@property] controlTimebase
@@ -285,7 +295,7 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
      */
     @Generated
     @Selector("setControlTimebase:")
-    public native void setControlTimebase(CMTimebaseRef value);
+    public native void setControlTimebase(@Nullable CMTimebaseRef value);
 
     /**
      * [@property] videoGravity
@@ -297,7 +307,7 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
      */
     @Generated
     @Selector("setVideoGravity:")
-    public native void setVideoGravity(String value);
+    public native void setVideoGravity(@NotNull String value);
 
     /**
      * [@property] status
@@ -332,6 +342,7 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
      * and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default.
      * See <AVFoundation/AVAnimation.h> for a description of these options.
      */
+    @NotNull
     @Generated
     @Selector("videoGravity")
     public native String videoGravity();
@@ -346,6 +357,7 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
         return supportsSecureCoding();
     }
 
+    @NotNull
     @Generated
     @Selector("timebase")
     public native CMTimebaseRef timebase();
@@ -353,7 +365,7 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
     @Generated
     @Selector("cornerCurveExpansionFactor:")
     @NFloat
-    public static native double cornerCurveExpansionFactor(String curve);
+    public static native double cornerCurveExpansionFactor(@NotNull String curve);
 
     /**
      * [@property] preventsCapture

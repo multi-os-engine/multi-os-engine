@@ -39,6 +39,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * EKReminder
@@ -77,22 +79,25 @@ public class EKReminder extends EKCalendarItem {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +132,10 @@ public class EKReminder extends EKCalendarItem {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -141,9 +147,10 @@ public class EKReminder extends EKCalendarItem {
      * 
      * Creates a new reminder in the given event store.
      */
+    @NotNull
     @Generated
     @Selector("reminderWithEventStore:")
-    public static native EKReminder reminderWithEventStore(EKEventStore eventStore);
+    public static native EKReminder reminderWithEventStore(@NotNull EKEventStore eventStore);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -171,6 +178,7 @@ public class EKReminder extends EKCalendarItem {
      * 
      * The date on which this reminder was completed.
      */
+    @Nullable
     @Generated
     @Selector("completionDate")
     public native NSDate completionDate();
@@ -189,6 +197,7 @@ public class EKReminder extends EKCalendarItem {
      * On iOS, if you set the due date for a reminder, you must also set a start date, otherwise you will receive
      * an error (EKErrorNoStartDate) when attempting to save this reminder. This is not a requirement on OS X.
      */
+    @Nullable
     @Generated
     @Selector("dueDateComponents")
     public native NSDateComponents dueDateComponents();
@@ -243,7 +252,7 @@ public class EKReminder extends EKCalendarItem {
      */
     @Generated
     @Selector("setCompletionDate:")
-    public native void setCompletionDate(NSDate value);
+    public native void setCompletionDate(@Nullable NSDate value);
 
     /**
      * [@property] dueDateComponents
@@ -261,7 +270,7 @@ public class EKReminder extends EKCalendarItem {
      */
     @Generated
     @Selector("setDueDateComponents:")
-    public native void setDueDateComponents(NSDateComponents value);
+    public native void setDueDateComponents(@Nullable NSDateComponents value);
 
     /**
      * [@property] priority
@@ -290,7 +299,7 @@ public class EKReminder extends EKCalendarItem {
      */
     @Generated
     @Selector("setStartDateComponents:")
-    public native void setStartDateComponents(NSDateComponents value);
+    public native void setStartDateComponents(@Nullable NSDateComponents value);
 
     /**
      * [@property] startDateComponents
@@ -303,6 +312,7 @@ public class EKReminder extends EKCalendarItem {
      * If you set this property, the calendar must be set to NSCalendarIdentifierGregorian. An exception is raised
      * otherwise.
      */
+    @Nullable
     @Generated
     @Selector("startDateComponents")
     public native NSDateComponents startDateComponents();

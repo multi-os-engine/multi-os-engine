@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSGraphDepthwiseConvolution3DOpDescriptor
@@ -62,17 +64,18 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * [@property] channelDimensionIndex
@@ -91,19 +94,22 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
     @NInt
     public native long channelDimensionIndex();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -136,8 +142,8 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
     @Generated
     @Selector("descriptorWithStrides:dilationRates:paddingValues:paddingStyle:")
     public static native MPSGraphDepthwiseConvolution3DOpDescriptor descriptorWithStridesDilationRatesPaddingValuesPaddingStyle(
-            NSArray<? extends NSNumber> strides, NSArray<? extends NSNumber> dilationRates,
-            NSArray<? extends NSNumber> paddingValues, @NUInt long paddingStyle);
+            @NotNull NSArray<? extends NSNumber> strides, @NotNull NSArray<? extends NSNumber> dilationRates,
+            @NotNull NSArray<? extends NSNumber> paddingValues, @NUInt long paddingStyle);
 
     /**
      * [@property] dilationRates
@@ -145,6 +151,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
      * Must be three numbers, one for each spatial dimension, fastest running index last.
      * Default value: @code @[ @1, @1, @1 ] @endcode
      */
+    @NotNull
     @Generated
     @Selector("dilationRates")
     public native NSArray<? extends NSNumber> dilationRates();
@@ -175,9 +182,10 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -204,6 +212,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
      * Used only when `paddingStyle = MPSGraphPaddingStyleExplicit`.
      * Default value: @code @[ @0, @0, @0, @0, @0, @0 ] @endcode
      */
+    @NotNull
     @Generated
     @Selector("paddingValues")
     public native NSArray<? extends NSNumber> paddingValues();
@@ -240,7 +249,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
      */
     @Generated
     @Selector("setDilationRates:")
-    public native void setDilationRates(NSArray<? extends NSNumber> value);
+    public native void setDilationRates(@NotNull NSArray<? extends NSNumber> value);
 
     /**
      * [@property] paddingStyle
@@ -263,7 +272,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
      */
     @Generated
     @Selector("setPaddingValues:")
-    public native void setPaddingValues(NSArray<? extends NSNumber> value);
+    public native void setPaddingValues(@NotNull NSArray<? extends NSNumber> value);
 
     /**
      * [@property] strides
@@ -273,7 +282,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
      */
     @Generated
     @Selector("setStrides:")
-    public native void setStrides(NSArray<? extends NSNumber> value);
+    public native void setStrides(@NotNull NSArray<? extends NSNumber> value);
 
     @Generated
     @Selector("setVersion:")
@@ -285,6 +294,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
      * Must be three numbers, one for each spatial dimension, fastest running index last.
      * Default value: @code @[ @1, @1, @1 ] @endcode
      */
+    @NotNull
     @Generated
     @Selector("strides")
     public native NSArray<? extends NSNumber> strides();

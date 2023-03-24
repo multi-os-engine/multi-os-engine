@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The shape layer draws a cubic Bezier spline in its coordinate space.
@@ -102,22 +104,25 @@ public class CAShapeLayer extends CALayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,15 +131,17 @@ public class CAShapeLayer extends CALayer {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("defaultActionForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native CAAction defaultActionForKey(String event);
+    public static native CAAction defaultActionForKey(@NotNull String event);
 
+    @Nullable
     @Generated
     @Selector("defaultValueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultValueForKey(String key);
+    public static native Object defaultValueForKey(@NotNull String key);
 
     @Generated
     @Selector("description")
@@ -162,9 +169,10 @@ public class CAShapeLayer extends CALayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Selector("layer")
@@ -172,7 +180,7 @@ public class CAShapeLayer extends CALayer {
 
     @Generated
     @Selector("needsDisplayForKey:")
-    public static native boolean needsDisplayForKey(String key);
+    public static native boolean needsDisplayForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -204,6 +212,7 @@ public class CAShapeLayer extends CALayer {
      * The color to fill the path, or nil for no fill. Defaults to opaque
      * black. Animatable.
      */
+    @Nullable
     @Generated
     @Selector("fillColor")
     public native CGColorRef fillColor();
@@ -212,6 +221,7 @@ public class CAShapeLayer extends CALayer {
      * The fill rule used when filling the path. Options are `non-zero' and
      * `even-odd'. Defaults to `non-zero'.
      */
+    @NotNull
     @Generated
     @Selector("fillRule")
     public native String fillRule();
@@ -222,16 +232,17 @@ public class CAShapeLayer extends CALayer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAShapeLayer initWithCoder(NSCoder coder);
+    public native CAShapeLayer initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
-    public native CAShapeLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
+    public native CAShapeLayer initWithLayer(@NotNull @Mapped(ObjCObjectMapper.class) Object layer);
 
     /**
      * The cap style used when stroking the path. Options are `butt', `round'
      * and `square'. Defaults to `butt'.
      */
+    @NotNull
     @Generated
     @Selector("lineCap")
     public native String lineCap();
@@ -240,6 +251,7 @@ public class CAShapeLayer extends CALayer {
      * The dash pattern (an array of NSNumbers) applied when creating the
      * stroked version of the path. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("lineDashPattern")
     public native NSArray<? extends NSNumber> lineDashPattern();
@@ -257,6 +269,7 @@ public class CAShapeLayer extends CALayer {
      * The join style used when stroking the path. Options are `miter', `round'
      * and `bevel'. Defaults to `miter'.
      */
+    @NotNull
     @Generated
     @Selector("lineJoin")
     public native String lineJoin();
@@ -287,6 +300,7 @@ public class CAShapeLayer extends CALayer {
      * (Note that although the path property is animatable, no implicit
      * animation will be created when the property is changed.)
      */
+    @Nullable
     @Generated
     @Selector("path")
     public native CGPathRef path();
@@ -297,7 +311,7 @@ public class CAShapeLayer extends CALayer {
      */
     @Generated
     @Selector("setFillColor:")
-    public native void setFillColor(CGColorRef value);
+    public native void setFillColor(@Nullable CGColorRef value);
 
     /**
      * The fill rule used when filling the path. Options are `non-zero' and
@@ -305,7 +319,7 @@ public class CAShapeLayer extends CALayer {
      */
     @Generated
     @Selector("setFillRule:")
-    public native void setFillRule(String value);
+    public native void setFillRule(@NotNull String value);
 
     /**
      * The cap style used when stroking the path. Options are `butt', `round'
@@ -313,7 +327,7 @@ public class CAShapeLayer extends CALayer {
      */
     @Generated
     @Selector("setLineCap:")
-    public native void setLineCap(String value);
+    public native void setLineCap(@NotNull String value);
 
     /**
      * The dash pattern (an array of NSNumbers) applied when creating the
@@ -321,7 +335,7 @@ public class CAShapeLayer extends CALayer {
      */
     @Generated
     @Selector("setLineDashPattern:")
-    public native void setLineDashPattern(NSArray<? extends NSNumber> value);
+    public native void setLineDashPattern(@Nullable NSArray<? extends NSNumber> value);
 
     /**
      * The phase of the dashing pattern applied when creating the stroke.
@@ -337,7 +351,7 @@ public class CAShapeLayer extends CALayer {
      */
     @Generated
     @Selector("setLineJoin:")
-    public native void setLineJoin(String value);
+    public native void setLineJoin(@NotNull String value);
 
     /**
      * The line width used when stroking the path. Defaults to one.
@@ -365,7 +379,7 @@ public class CAShapeLayer extends CALayer {
      */
     @Generated
     @Selector("setPath:")
-    public native void setPath(CGPathRef value);
+    public native void setPath(@Nullable CGPathRef value);
 
     /**
      * The color to fill the path's stroked outline, or nil for no stroking.
@@ -373,7 +387,7 @@ public class CAShapeLayer extends CALayer {
      */
     @Generated
     @Selector("setStrokeColor:")
-    public native void setStrokeColor(CGColorRef value);
+    public native void setStrokeColor(@Nullable CGColorRef value);
 
     @Generated
     @Selector("setStrokeEnd:")
@@ -395,6 +409,7 @@ public class CAShapeLayer extends CALayer {
      * The color to fill the path's stroked outline, or nil for no stroking.
      * Defaults to nil. Animatable.
      */
+    @Nullable
     @Generated
     @Selector("strokeColor")
     public native CGColorRef strokeColor();
@@ -430,5 +445,5 @@ public class CAShapeLayer extends CALayer {
     @Generated
     @Selector("cornerCurveExpansionFactor:")
     @NFloat
-    public static native double cornerCurveExpansionFactor(String curve);
+    public static native double cornerCurveExpansionFactor(@NotNull String curve);
 }

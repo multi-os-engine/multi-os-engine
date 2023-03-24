@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A list of copy operations
@@ -65,22 +67,25 @@ public class MPSMatrixCopyDescriptor extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,7 +106,8 @@ public class MPSMatrixCopyDescriptor extends NSObject {
     @Generated
     @Selector("descriptorWithSourceMatrix:destinationMatrix:offsets:")
     public static native MPSMatrixCopyDescriptor descriptorWithSourceMatrixDestinationMatrixOffsets(
-            MPSMatrix sourceMatrix, MPSMatrix destinationMatrix, @ByValue MPSMatrixCopyOffsets offsets);
+            @NotNull MPSMatrix sourceMatrix, @NotNull MPSMatrix destinationMatrix,
+            @ByValue MPSMatrixCopyOffsets offsets);
 
     @Generated
     @Selector("hash")
@@ -127,7 +133,7 @@ public class MPSMatrixCopyDescriptor extends NSObject {
      */
     @Generated
     @Selector("initWithDevice:count:")
-    public native MPSMatrixCopyDescriptor initWithDeviceCount(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+    public native MPSMatrixCopyDescriptor initWithDeviceCount(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
             @NUInt long count);
 
     /**
@@ -149,8 +155,9 @@ public class MPSMatrixCopyDescriptor extends NSObject {
     @Generated
     @Selector("initWithSourceMatrices:destinationMatrices:offsetVector:offset:")
     public native MPSMatrixCopyDescriptor initWithSourceMatricesDestinationMatricesOffsetVectorOffset(
-            NSArray<? extends MPSMatrix> sourceMatrices, NSArray<? extends MPSMatrix> destinationMatrices,
-            MPSVector offsets, @NUInt long byteOffset);
+            @NotNull NSArray<? extends MPSMatrix> sourceMatrices,
+            @NotNull NSArray<? extends MPSMatrix> destinationMatrices, @Nullable MPSVector offsets,
+            @NUInt long byteOffset);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -169,9 +176,10 @@ public class MPSMatrixCopyDescriptor extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -201,7 +209,8 @@ public class MPSMatrixCopyDescriptor extends NSObject {
     @Generated
     @Selector("setCopyOperationAtIndex:sourceMatrix:destinationMatrix:offsets:")
     public native void setCopyOperationAtIndexSourceMatrixDestinationMatrixOffsets(@NUInt long index,
-            MPSMatrix sourceMatrix, MPSMatrix destinationMatrix, @ByValue MPSMatrixCopyOffsets offsets);
+            @NotNull MPSMatrix sourceMatrix, @NotNull MPSMatrix destinationMatrix,
+            @ByValue MPSMatrixCopyOffsets offsets);
 
     @Generated
     @Selector("setVersion:")

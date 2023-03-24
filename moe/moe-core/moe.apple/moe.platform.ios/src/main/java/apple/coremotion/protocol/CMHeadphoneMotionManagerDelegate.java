@@ -8,6 +8,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * CMHeadphoneMotionManagerDelegate
@@ -32,7 +33,7 @@ public interface CMHeadphoneMotionManagerDelegate {
     @Generated
     @IsOptional
     @Selector("headphoneMotionManagerDidConnect:")
-    default void headphoneMotionManagerDidConnect(CMHeadphoneMotionManager manager) {
+    default void headphoneMotionManagerDidConnect(@NotNull CMHeadphoneMotionManager manager) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -47,7 +48,7 @@ public interface CMHeadphoneMotionManagerDelegate {
     @Generated
     @IsOptional
     @Selector("headphoneMotionManagerDidDisconnect:")
-    default void headphoneMotionManagerDidDisconnect(CMHeadphoneMotionManager manager) {
+    default void headphoneMotionManagerDidDisconnect(@NotNull CMHeadphoneMotionManager manager) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

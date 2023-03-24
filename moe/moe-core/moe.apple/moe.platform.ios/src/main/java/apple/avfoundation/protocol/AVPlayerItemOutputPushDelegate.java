@@ -24,6 +24,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] AVPlayerItemOutputPushDelegate
@@ -46,7 +47,7 @@ public interface AVPlayerItemOutputPushDelegate {
     @Generated
     @IsOptional
     @Selector("outputSequenceWasFlushed:")
-    default void outputSequenceWasFlushed(AVPlayerItemOutput output) {
+    default void outputSequenceWasFlushed(@NotNull AVPlayerItemOutput output) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

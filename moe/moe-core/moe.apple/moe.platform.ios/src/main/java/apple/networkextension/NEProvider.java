@@ -38,6 +38,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEProvider
@@ -81,22 +83,25 @@ public class NEProvider extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +136,10 @@ public class NEProvider extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -177,10 +183,12 @@ public class NEProvider extends NSObject {
      * 
      *         API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("createTCPConnectionToEndpoint:enableTLS:TLSParameters:delegate:")
-    public native NWTCPConnection createTCPConnectionToEndpointEnableTLSTLSParametersDelegate(NWEndpoint remoteEndpoint,
-            boolean enableTLS, NWTLSParameters TLSParameters, @Mapped(ObjCObjectMapper.class) Object delegate);
+    public native NWTCPConnection createTCPConnectionToEndpointEnableTLSTLSParametersDelegate(
+            @NotNull NWEndpoint remoteEndpoint, boolean enableTLS, @Nullable NWTLSParameters TLSParameters,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object delegate);
 
     /**
      * createUDPSessionToEndpoint:fromEndpoint:
@@ -196,10 +204,11 @@ public class NEProvider extends NSObject {
      * 
      *         API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("createUDPSessionToEndpoint:fromEndpoint:")
-    public native NWUDPSession createUDPSessionToEndpointFromEndpoint(NWEndpoint remoteEndpoint,
-            NWHostEndpoint localEndpoint);
+    public native NWUDPSession createUDPSessionToEndpointFromEndpoint(@NotNull NWEndpoint remoteEndpoint,
+            @Nullable NWHostEndpoint localEndpoint);
 
     /**
      * [@property] defaultPath
@@ -208,6 +217,7 @@ public class NEProvider extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("defaultPath")
     public native NWPath defaultPath();
@@ -230,8 +240,8 @@ public class NEProvider extends NSObject {
     @Deprecated
     @Generated
     @Selector("displayMessage:completionHandler:")
-    public native void displayMessageCompletionHandler(String message,
-            @ObjCBlock(name = "call_displayMessageCompletionHandler") Block_displayMessageCompletionHandler completionHandler);
+    public native void displayMessageCompletionHandler(@NotNull String message,
+            @NotNull @ObjCBlock(name = "call_displayMessageCompletionHandler") Block_displayMessageCompletionHandler completionHandler);
 
     @Generated
     @Selector("init")
@@ -251,7 +261,7 @@ public class NEProvider extends NSObject {
     @Generated
     @Selector("sleepWithCompletionHandler:")
     public native void sleepWithCompletionHandler(
-            @ObjCBlock(name = "call_sleepWithCompletionHandler") Block_sleepWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_sleepWithCompletionHandler") Block_sleepWithCompletionHandler completionHandler);
 
     /**
      * wake

@@ -30,6 +30,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -39,34 +41,36 @@ public interface UINavigationControllerDelegate {
     /**
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("navigationController:animationControllerForOperation:fromViewController:toViewController:")
     @MappedReturn(ObjCObjectMapper.class)
     default UIViewControllerAnimatedTransitioning navigationControllerAnimationControllerForOperationFromViewControllerToViewController(
-            UINavigationController navigationController, @NInt long operation, UIViewController fromVC,
-            UIViewController toVC) {
+            @NotNull UINavigationController navigationController, @NInt long operation,
+            @NotNull UIViewController fromVC, @NotNull UIViewController toVC) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("navigationController:didShowViewController:animated:")
-    default void navigationControllerDidShowViewControllerAnimated(UINavigationController navigationController,
-            UIViewController viewController, boolean animated) {
+    default void navigationControllerDidShowViewControllerAnimated(@NotNull UINavigationController navigationController,
+            @NotNull UIViewController viewController, boolean animated) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("navigationController:interactionControllerForAnimationController:")
     @MappedReturn(ObjCObjectMapper.class)
     default UIViewControllerInteractiveTransitioning navigationControllerInteractionControllerForAnimationController(
-            UINavigationController navigationController,
-            @Mapped(ObjCObjectMapper.class) UIViewControllerAnimatedTransitioning animationController) {
+            @NotNull UINavigationController navigationController,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerAnimatedTransitioning animationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -77,8 +81,9 @@ public interface UINavigationControllerDelegate {
     @Generated
     @IsOptional
     @Selector("navigationController:willShowViewController:animated:")
-    default void navigationControllerWillShowViewControllerAnimated(UINavigationController navigationController,
-            UIViewController viewController, boolean animated) {
+    default void navigationControllerWillShowViewControllerAnimated(
+            @NotNull UINavigationController navigationController, @NotNull UIViewController viewController,
+            boolean animated) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -90,7 +95,7 @@ public interface UINavigationControllerDelegate {
     @Selector("navigationControllerPreferredInterfaceOrientationForPresentation:")
     @NInt
     default long navigationControllerPreferredInterfaceOrientationForPresentation(
-            UINavigationController navigationController) {
+            @NotNull UINavigationController navigationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -101,7 +106,8 @@ public interface UINavigationControllerDelegate {
     @IsOptional
     @Selector("navigationControllerSupportedInterfaceOrientations:")
     @NUInt
-    default long navigationControllerSupportedInterfaceOrientations(UINavigationController navigationController) {
+    default long navigationControllerSupportedInterfaceOrientations(
+            @NotNull UINavigationController navigationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

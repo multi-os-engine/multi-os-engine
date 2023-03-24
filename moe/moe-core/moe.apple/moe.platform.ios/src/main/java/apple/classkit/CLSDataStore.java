@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The data store maintains and syncs your app's contexts.
@@ -54,6 +56,7 @@ public class CLSDataStore extends NSObject {
     /**
      * Returns the context that is currently active. If no context is active, this will return nil.
      */
+    @Nullable
     @Generated
     @Selector("activeContext")
     public native CLSContext activeContext();
@@ -70,22 +73,25 @@ public class CLSDataStore extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -99,7 +105,7 @@ public class CLSDataStore extends NSObject {
      */
     @Generated
     @Selector("completeAllAssignedActivitiesMatching:")
-    public native void completeAllAssignedActivitiesMatching(NSArray<String> contextPath);
+    public native void completeAllAssignedActivitiesMatching(@NotNull NSArray<String> contextPath);
 
     /**
      * Returns contexts matching a set of identifiers where each identifier is the parent of the following identifier.
@@ -113,14 +119,15 @@ public class CLSDataStore extends NSObject {
      */
     @Generated
     @Selector("contextsMatchingIdentifierPath:completion:")
-    public native void contextsMatchingIdentifierPathCompletion(NSArray<String> identifierPath,
-            @ObjCBlock(name = "call_contextsMatchingIdentifierPathCompletion") Block_contextsMatchingIdentifierPathCompletion completion);
+    public native void contextsMatchingIdentifierPathCompletion(@NotNull NSArray<String> identifierPath,
+            @NotNull @ObjCBlock(name = "call_contextsMatchingIdentifierPathCompletion") Block_contextsMatchingIdentifierPathCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_contextsMatchingIdentifierPathCompletion {
         @Generated
-        void call_contextsMatchingIdentifierPathCompletion(NSArray<? extends CLSContext> contexts, NSError error);
+        void call_contextsMatchingIdentifierPathCompletion(@NotNull NSArray<? extends CLSContext> contexts,
+                @Nullable NSError error);
     }
 
     /**
@@ -131,14 +138,15 @@ public class CLSDataStore extends NSObject {
      */
     @Generated
     @Selector("contextsMatchingPredicate:completion:")
-    public native void contextsMatchingPredicateCompletion(NSPredicate predicate,
-            @ObjCBlock(name = "call_contextsMatchingPredicateCompletion") Block_contextsMatchingPredicateCompletion completion);
+    public native void contextsMatchingPredicateCompletion(@NotNull NSPredicate predicate,
+            @NotNull @ObjCBlock(name = "call_contextsMatchingPredicateCompletion") Block_contextsMatchingPredicateCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_contextsMatchingPredicateCompletion {
         @Generated
-        void call_contextsMatchingPredicateCompletion(NSArray<? extends CLSContext> contexts, NSError error);
+        void call_contextsMatchingPredicateCompletion(@NotNull NSArray<? extends CLSContext> contexts,
+                @Nullable NSError error);
     }
 
     @Generated
@@ -148,6 +156,7 @@ public class CLSDataStore extends NSObject {
     /**
      * The data store delegate allows for easy population of the app's context hierarchy.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -183,15 +192,17 @@ public class CLSDataStore extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Fetch the top level context for the current app.
      * 
      * The main context is automatically created. Add child contexts to this context to persist them in the data store.
      */
+    @NotNull
     @Generated
     @Selector("mainAppContext")
     public native CLSContext mainAppContext();
@@ -208,7 +219,7 @@ public class CLSDataStore extends NSObject {
      */
     @Generated
     @Selector("removeContext:")
-    public native void removeContext(CLSContext context);
+    public native void removeContext(@NotNull CLSContext context);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -221,6 +232,7 @@ public class CLSDataStore extends NSObject {
     /**
      * Returns the most recently started activity that is running.
      */
+    @Nullable
     @Generated
     @Selector("runningActivity")
     public native CLSActivity runningActivity();
@@ -234,13 +246,13 @@ public class CLSDataStore extends NSObject {
     @Generated
     @Selector("saveWithCompletion:")
     public native void saveWithCompletion(
-            @ObjCBlock(name = "call_saveWithCompletion") Block_saveWithCompletion completion);
+            @Nullable @ObjCBlock(name = "call_saveWithCompletion") Block_saveWithCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveWithCompletion {
         @Generated
-        void call_saveWithCompletion(NSError error);
+        void call_saveWithCompletion(@Nullable NSError error);
     }
 
     /**
@@ -248,13 +260,13 @@ public class CLSDataStore extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CLSDataStoreDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) CLSDataStoreDelegate value);
 
     /**
      * The data store delegate allows for easy population of the app's context hierarchy.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) CLSDataStoreDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CLSDataStoreDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -274,6 +286,7 @@ public class CLSDataStore extends NSObject {
      * 
      * Data written to the data store is automatically synced via iCloud across the user's devices.
      */
+    @NotNull
     @Generated
     @Selector("shared")
     public static native CLSDataStore shared();
@@ -299,13 +312,13 @@ public class CLSDataStore extends NSObject {
      */
     @Generated
     @Selector("fetchActivityForURL:completion:")
-    public native void fetchActivityForURLCompletion(NSURL url,
-            @ObjCBlock(name = "call_fetchActivityForURLCompletion") Block_fetchActivityForURLCompletion completion);
+    public native void fetchActivityForURLCompletion(@NotNull NSURL url,
+            @NotNull @ObjCBlock(name = "call_fetchActivityForURLCompletion") Block_fetchActivityForURLCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchActivityForURLCompletion {
         @Generated
-        void call_fetchActivityForURLCompletion(CLSActivity activity, NSError error);
+        void call_fetchActivityForURLCompletion(@Nullable CLSActivity activity, @Nullable NSError error);
     }
 }

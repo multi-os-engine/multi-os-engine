@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNImageNode
@@ -70,22 +72,25 @@ public class MPSNNImageNode extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +130,10 @@ public class MPSNNImageNode extends NSObject {
      * 
      * Note: image is still temporary. See MPSNNImageNode.imageAllocator parameter.
      */
+    @NotNull
     @Generated
     @Selector("exportedNodeWithHandle:")
-    public static native MPSNNImageNode exportedNodeWithHandle(NSObject handle);
+    public static native MPSNNImageNode exportedNodeWithHandle(@Nullable NSObject handle);
 
     /**
      * The preferred precision for the image
@@ -145,6 +151,7 @@ public class MPSNNImageNode extends NSObject {
      * 
      * See MPSHandle protocol description. Default: nil
      */
+    @Nullable
     @Generated
     @Selector("handle")
     @MappedReturn(ObjCObjectMapper.class)
@@ -161,6 +168,7 @@ public class MPSNNImageNode extends NSObject {
      * Allows you to influence how the image is allocated
      * Default: MPSTemporaryImage.defaultAllocator
      */
+    @NotNull
     @Generated
     @Selector("imageAllocator")
     @MappedReturn(ObjCObjectMapper.class)
@@ -172,7 +180,7 @@ public class MPSNNImageNode extends NSObject {
 
     @Generated
     @Selector("initWithHandle:")
-    public native MPSNNImageNode initWithHandle(NSObject handle);
+    public native MPSNNImageNode initWithHandle(@Nullable NSObject handle);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -191,9 +199,10 @@ public class MPSNNImageNode extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -202,7 +211,7 @@ public class MPSNNImageNode extends NSObject {
 
     @Generated
     @Selector("nodeWithHandle:")
-    public static native MPSNNImageNode nodeWithHandle(NSObject handle);
+    public static native MPSNNImageNode nodeWithHandle(@Nullable NSObject handle);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -251,7 +260,7 @@ public class MPSNNImageNode extends NSObject {
      */
     @Generated
     @Selector("setHandle:")
-    public native void setHandle(@Mapped(ObjCObjectMapper.class) MPSHandle value);
+    public native void setHandle(@Nullable @Mapped(ObjCObjectMapper.class) MPSHandle value);
 
     /**
      * Configurability for image allocation
@@ -261,7 +270,7 @@ public class MPSNNImageNode extends NSObject {
      */
     @Generated
     @Selector("setImageAllocator:")
-    public native void setImageAllocator(@Mapped(ObjCObjectMapper.class) MPSImageAllocator value);
+    public native void setImageAllocator(@NotNull @Mapped(ObjCObjectMapper.class) MPSImageAllocator value);
 
     @Generated
     @Selector("setVersion:")

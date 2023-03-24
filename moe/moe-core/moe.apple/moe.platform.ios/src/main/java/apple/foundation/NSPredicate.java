@@ -41,6 +41,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Predicates wrap some combination of expressions and operators and when evaluated return a BOOL.
@@ -77,22 +79,25 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +132,10 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -139,30 +145,36 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Selector("predicateWithBlock:")
     public static native NSPredicate predicateWithBlock(
-            @ObjCBlock(name = "call_predicateWithBlock") Block_predicateWithBlock block);
+            @NotNull @ObjCBlock(name = "call_predicateWithBlock") Block_predicateWithBlock block);
 
+    @NotNull
     @Generated
     @Variadic()
     @Selector("predicateWithFormat:")
-    public static native NSPredicate predicateWithFormat(String predicateFormat, Object... varargs);
+    public static native NSPredicate predicateWithFormat(@NotNull String predicateFormat, Object... varargs);
 
     /**
      * Parse predicateFormat and return an appropriate predicate
      */
+    @NotNull
     @Generated
     @Selector("predicateWithFormat:argumentArray:")
-    public static native NSPredicate predicateWithFormatArgumentArray(String predicateFormat, NSArray<?> arguments);
+    public static native NSPredicate predicateWithFormatArgumentArray(@NotNull String predicateFormat,
+            @Nullable NSArray<?> arguments);
 
+    @NotNull
     @Generated
     @Selector("predicateWithFormat:arguments:")
-    public static native NSPredicate predicateWithFormatArguments(String predicateFormat, BytePtr argList);
+    public static native NSPredicate predicateWithFormatArguments(@NotNull String predicateFormat, BytePtr argList);
 
     /**
      * return predicates that always evaluate to true/false
      */
+    @NotNull
     @Generated
     @Selector("predicateWithValue:")
     public static native NSPredicate predicateWithValue(boolean value);
@@ -201,22 +213,23 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("allowEvaluation")
     public native void allowEvaluation();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * evaluate a predicate against a single object
      */
     @Generated
     @Selector("evaluateWithObject:")
-    public native boolean evaluateWithObject(@Mapped(ObjCObjectMapper.class) Object object);
+    public native boolean evaluateWithObject(@Nullable @Mapped(ObjCObjectMapper.class) Object object);
 
     /**
      * single pass evaluation substituting variables from the bindings dictionary for any variable expressions
@@ -226,8 +239,8 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("evaluateWithObject:substitutionVariables:")
-    public native boolean evaluateWithObjectSubstitutionVariables(@Mapped(ObjCObjectMapper.class) Object object,
-            NSDictionary<String, ?> bindings);
+    public native boolean evaluateWithObjectSubstitutionVariables(
+            @Nullable @Mapped(ObjCObjectMapper.class) Object object, @Nullable NSDictionary<String, ?> bindings);
 
     @Generated
     @Selector("init")
@@ -235,11 +248,12 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSPredicate initWithCoder(NSCoder coder);
+    public native NSPredicate initWithCoder(@NotNull NSCoder coder);
 
     /**
      * returns the format string of the predicate
      */
+    @NotNull
     @Generated
     @Selector("predicateFormat")
     public native String predicateFormat();
@@ -247,9 +261,10 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * substitute constant values for variables
      */
+    @NotNull
     @Generated
     @Selector("predicateWithSubstitutionVariables:")
-    public native NSPredicate predicateWithSubstitutionVariables(NSDictionary<String, ?> variables);
+    public native NSPredicate predicateWithSubstitutionVariables(@NotNull NSDictionary<String, ?> variables);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -261,7 +276,7 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     public interface Block_predicateWithBlock {
         @Generated
-        boolean call_predicateWithBlock(@Mapped(ObjCObjectMapper.class) Object evaluatedObject,
-                NSDictionary<String, ?> bindings);
+        boolean call_predicateWithBlock(@Nullable @Mapped(ObjCObjectMapper.class) Object evaluatedObject,
+                @Nullable NSDictionary<String, ?> bindings);
     }
 }

@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.0
@@ -74,22 +76,25 @@ public class MPMediaPropertyPredicate extends MPMediaPredicate {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +129,10 @@ public class MPMediaPropertyPredicate extends MPMediaPredicate {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -136,15 +142,18 @@ public class MPMediaPropertyPredicate extends MPMediaPredicate {
     /**
      * comparisonType is MPMediaPredicateComparisonEqualTo
      */
+    @NotNull
     @Generated
     @Selector("predicateWithValue:forProperty:")
     public static native MPMediaPropertyPredicate predicateWithValueForProperty(
-            @Mapped(ObjCObjectMapper.class) Object value, String property);
+            @Nullable @Mapped(ObjCObjectMapper.class) Object value, @NotNull String property);
 
+    @NotNull
     @Generated
     @Selector("predicateWithValue:forProperty:comparisonType:")
     public static native MPMediaPropertyPredicate predicateWithValueForPropertyComparisonType(
-            @Mapped(ObjCObjectMapper.class) Object value, String property, @NInt long comparisonType);
+            @Nullable @Mapped(ObjCObjectMapper.class) Object value, @NotNull String property,
+            @NInt long comparisonType);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -182,8 +191,9 @@ public class MPMediaPropertyPredicate extends MPMediaPredicate {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPMediaPropertyPredicate initWithCoder(NSCoder coder);
+    public native MPMediaPropertyPredicate initWithCoder(@NotNull NSCoder coder);
 
+    @NotNull
     @Generated
     @Selector("property")
     public native String property();
@@ -194,6 +204,7 @@ public class MPMediaPropertyPredicate extends MPMediaPredicate {
         return supportsSecureCoding();
     }
 
+    @Nullable
     @Generated
     @Selector("value")
     @MappedReturn(ObjCObjectMapper.class)

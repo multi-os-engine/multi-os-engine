@@ -41,6 +41,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NKAssetDownload
@@ -91,22 +93,25 @@ public class NKAssetDownload extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -141,9 +146,10 @@ public class NKAssetDownload extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -176,6 +182,7 @@ public class NKAssetDownload extends NSObject {
      * 
      * The NSURLRequest of the download
      */
+    @NotNull
     @Generated
     @Selector("URLRequest")
     public native NSURLRequest URLRequest();
@@ -186,16 +193,18 @@ public class NKAssetDownload extends NSObject {
      * Begins downloading the asset with the specified delegate. Delegate
      * may not be nil.
      */
+    @NotNull
     @Generated
     @Selector("downloadWithDelegate:")
     public native NSURLConnection downloadWithDelegate(
-            @Mapped(ObjCObjectMapper.class) NSURLConnectionDownloadDelegate delegate);
+            @NotNull @Mapped(ObjCObjectMapper.class) NSURLConnectionDownloadDelegate delegate);
 
     /**
      * [@property] identifier
      * 
      * A unique identifier representing the asset.
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -207,6 +216,7 @@ public class NKAssetDownload extends NSObject {
     /**
      * back-pointer to the issue this asset is associated with
      */
+    @Nullable
     @Generated
     @Selector("issue")
     public native NKIssue issue();
@@ -224,7 +234,7 @@ public class NKAssetDownload extends NSObject {
      */
     @Generated
     @Selector("setUserInfo:")
-    public native void setUserInfo(NSDictionary<?, ?> value);
+    public native void setUserInfo(@Nullable NSDictionary<?, ?> value);
 
     /**
      * [@property] userInfo
@@ -237,6 +247,7 @@ public class NKAssetDownload extends NSObject {
      * encoding mechanisms, custom identifiers, etc. However, performance concerns dictate
      * that you should make this content as minimal as possible.
      */
+    @Nullable
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();

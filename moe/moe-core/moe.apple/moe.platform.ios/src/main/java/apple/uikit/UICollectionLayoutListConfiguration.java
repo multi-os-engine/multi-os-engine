@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A list configuration can be used to layout a section inside a UICollectionViewCompositionalLayout as a list.
@@ -70,39 +72,44 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * The background color of the section.
      * Defaults to nil, indicating the system background color for the specified appearance is used.
      */
+    @Nullable
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -158,14 +165,16 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Called when list is about to show leading swipe actions for a particular index path.
      * Return either a UISwipeActionsConfiguration object or nil if this index path does not show swipe actions.
      */
+    @Nullable
     @Generated
     @Selector("leadingSwipeActionsConfigurationProvider")
     @ObjCBlock(name = "call_leadingSwipeActionsConfigurationProvider_ret")
@@ -174,8 +183,9 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_leadingSwipeActionsConfigurationProvider_ret {
+        @Nullable
         @Generated
-        UISwipeActionsConfiguration call_leadingSwipeActionsConfigurationProvider_ret(NSIndexPath indexPath);
+        UISwipeActionsConfiguration call_leadingSwipeActionsConfigurationProvider_ret(@NotNull NSIndexPath indexPath);
     }
 
     @Generated
@@ -197,7 +207,7 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
      */
     @Generated
     @Selector("setBackgroundColor:")
-    public native void setBackgroundColor(UIColor value);
+    public native void setBackgroundColor(@Nullable UIColor value);
 
     /**
      * Defines whether the section has a footer. Defaults to UICollectionLayoutListFooterModeNone.
@@ -220,13 +230,14 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     @Generated
     @Selector("setLeadingSwipeActionsConfigurationProvider:")
     public native void setLeadingSwipeActionsConfigurationProvider(
-            @ObjCBlock(name = "call_setLeadingSwipeActionsConfigurationProvider") Block_setLeadingSwipeActionsConfigurationProvider value);
+            @Nullable @ObjCBlock(name = "call_setLeadingSwipeActionsConfigurationProvider") Block_setLeadingSwipeActionsConfigurationProvider value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setLeadingSwipeActionsConfigurationProvider {
+        @Nullable
         @Generated
-        UISwipeActionsConfiguration call_setLeadingSwipeActionsConfigurationProvider(NSIndexPath indexPath);
+        UISwipeActionsConfiguration call_setLeadingSwipeActionsConfigurationProvider(@NotNull NSIndexPath indexPath);
     }
 
     /**
@@ -244,13 +255,14 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     @Generated
     @Selector("setTrailingSwipeActionsConfigurationProvider:")
     public native void setTrailingSwipeActionsConfigurationProvider(
-            @ObjCBlock(name = "call_setTrailingSwipeActionsConfigurationProvider") Block_setTrailingSwipeActionsConfigurationProvider value);
+            @Nullable @ObjCBlock(name = "call_setTrailingSwipeActionsConfigurationProvider") Block_setTrailingSwipeActionsConfigurationProvider value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setTrailingSwipeActionsConfigurationProvider {
+        @Nullable
         @Generated
-        UISwipeActionsConfiguration call_setTrailingSwipeActionsConfigurationProvider(NSIndexPath indexPath);
+        UISwipeActionsConfiguration call_setTrailingSwipeActionsConfigurationProvider(@NotNull NSIndexPath indexPath);
     }
 
     @Generated
@@ -273,6 +285,7 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
      * Called when list is about to show trailing swipe actions for a particular index path.
      * Return either a UISwipeActionsConfiguration object or nil if this index path does not show swipe actions.
      */
+    @Nullable
     @Generated
     @Selector("trailingSwipeActionsConfigurationProvider")
     @ObjCBlock(name = "call_trailingSwipeActionsConfigurationProvider_ret")
@@ -281,8 +294,9 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_trailingSwipeActionsConfigurationProvider_ret {
+        @Nullable
         @Generated
-        UISwipeActionsConfiguration call_trailingSwipeActionsConfigurationProvider_ret(NSIndexPath indexPath);
+        UISwipeActionsConfiguration call_trailingSwipeActionsConfigurationProvider_ret(@NotNull NSIndexPath indexPath);
     }
 
     @Generated
@@ -309,6 +323,7 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
      * 
      * API-Since: 14.5
      */
+    @Nullable
     @Generated
     @Selector("itemSeparatorHandler")
     @ObjCBlock(name = "call_itemSeparatorHandler_ret")
@@ -317,9 +332,10 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_itemSeparatorHandler_ret {
+        @NotNull
         @Generated
-        UIListSeparatorConfiguration call_itemSeparatorHandler_ret(NSIndexPath indexPath,
-                UIListSeparatorConfiguration sectionSeparatorConfiguration);
+        UIListSeparatorConfiguration call_itemSeparatorHandler_ret(@NotNull NSIndexPath indexPath,
+                @NotNull UIListSeparatorConfiguration sectionSeparatorConfiguration);
     }
 
     /**
@@ -328,6 +344,7 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
      * 
      * API-Since: 14.5
      */
+    @NotNull
     @Generated
     @Selector("separatorConfiguration")
     public native UIListSeparatorConfiguration separatorConfiguration();
@@ -353,14 +370,15 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     @Generated
     @Selector("setItemSeparatorHandler:")
     public native void setItemSeparatorHandler(
-            @ObjCBlock(name = "call_setItemSeparatorHandler") Block_setItemSeparatorHandler value);
+            @Nullable @ObjCBlock(name = "call_setItemSeparatorHandler") Block_setItemSeparatorHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setItemSeparatorHandler {
+        @NotNull
         @Generated
-        UIListSeparatorConfiguration call_setItemSeparatorHandler(NSIndexPath indexPath,
-                UIListSeparatorConfiguration sectionSeparatorConfiguration);
+        UIListSeparatorConfiguration call_setItemSeparatorHandler(@NotNull NSIndexPath indexPath,
+                @NotNull UIListSeparatorConfiguration sectionSeparatorConfiguration);
     }
 
     /**
@@ -371,5 +389,5 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
      */
     @Generated
     @Selector("setSeparatorConfiguration:")
-    public native void setSeparatorConfiguration(UIListSeparatorConfiguration value);
+    public native void setSeparatorConfiguration(@NotNull UIListSeparatorConfiguration value);
 }

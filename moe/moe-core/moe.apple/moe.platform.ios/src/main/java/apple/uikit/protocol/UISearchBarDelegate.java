@@ -27,6 +27,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -39,7 +40,7 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
     @Generated
     @IsOptional
     @Selector("searchBar:selectedScopeButtonIndexDidChange:")
-    default void searchBarSelectedScopeButtonIndexDidChange(UISearchBar searchBar, @NInt long selectedScope) {
+    default void searchBarSelectedScopeButtonIndexDidChange(@NotNull UISearchBar searchBar, @NInt long selectedScope) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -51,8 +52,8 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
     @Generated
     @IsOptional
     @Selector("searchBar:shouldChangeTextInRange:replacementText:")
-    default boolean searchBarShouldChangeTextInRangeReplacementText(UISearchBar searchBar, @ByValue NSRange range,
-            String text) {
+    default boolean searchBarShouldChangeTextInRangeReplacementText(@NotNull UISearchBar searchBar,
+            @ByValue NSRange range, @NotNull String text) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -62,7 +63,7 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
     @Generated
     @IsOptional
     @Selector("searchBar:textDidChange:")
-    default void searchBarTextDidChange(UISearchBar searchBar, String searchText) {
+    default void searchBarTextDidChange(@NotNull UISearchBar searchBar, @NotNull String searchText) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -72,7 +73,7 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
     @Generated
     @IsOptional
     @Selector("searchBarBookmarkButtonClicked:")
-    default void searchBarBookmarkButtonClicked(UISearchBar searchBar) {
+    default void searchBarBookmarkButtonClicked(@NotNull UISearchBar searchBar) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -82,7 +83,7 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
     @Generated
     @IsOptional
     @Selector("searchBarCancelButtonClicked:")
-    default void searchBarCancelButtonClicked(UISearchBar searchBar) {
+    default void searchBarCancelButtonClicked(@NotNull UISearchBar searchBar) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -94,7 +95,7 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
     @Generated
     @IsOptional
     @Selector("searchBarResultsListButtonClicked:")
-    default void searchBarResultsListButtonClicked(UISearchBar searchBar) {
+    default void searchBarResultsListButtonClicked(@NotNull UISearchBar searchBar) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,7 +105,7 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
     @Generated
     @IsOptional
     @Selector("searchBarSearchButtonClicked:")
-    default void searchBarSearchButtonClicked(UISearchBar searchBar) {
+    default void searchBarSearchButtonClicked(@NotNull UISearchBar searchBar) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -114,7 +115,7 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
     @Generated
     @IsOptional
     @Selector("searchBarShouldBeginEditing:")
-    default boolean searchBarShouldBeginEditing(UISearchBar searchBar) {
+    default boolean searchBarShouldBeginEditing(@NotNull UISearchBar searchBar) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -124,7 +125,7 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
     @Generated
     @IsOptional
     @Selector("searchBarShouldEndEditing:")
-    default boolean searchBarShouldEndEditing(UISearchBar searchBar) {
+    default boolean searchBarShouldEndEditing(@NotNull UISearchBar searchBar) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -134,7 +135,7 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
     @Generated
     @IsOptional
     @Selector("searchBarTextDidBeginEditing:")
-    default void searchBarTextDidBeginEditing(UISearchBar searchBar) {
+    default void searchBarTextDidBeginEditing(@NotNull UISearchBar searchBar) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -144,7 +145,7 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
     @Generated
     @IsOptional
     @Selector("searchBarTextDidEndEditing:")
-    default void searchBarTextDidEndEditing(UISearchBar searchBar) {
+    default void searchBarTextDidEndEditing(@NotNull UISearchBar searchBar) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

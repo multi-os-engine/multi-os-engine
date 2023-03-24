@@ -12,6 +12,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLCounterSampleBuffer
@@ -32,6 +34,7 @@ public interface MTLCounterSampleBuffer {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -43,6 +46,7 @@ public interface MTLCounterSampleBuffer {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("label")
     String label();
@@ -62,6 +66,7 @@ public interface MTLCounterSampleBuffer {
      * @param range The range of indices in the sample buffer to resolve.
      * @return The resolved samples.
      */
+    @Nullable
     @Generated
     @Selector("resolveCounterRange:")
     NSData resolveCounterRange(@ByValue NSRange range);

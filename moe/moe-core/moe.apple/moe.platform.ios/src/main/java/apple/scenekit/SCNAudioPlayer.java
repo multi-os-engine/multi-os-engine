@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.0
@@ -78,7 +80,7 @@ public class SCNAudioPlayer extends NSObject {
      */
     @Generated
     @Selector("audioPlayerWithAVAudioNode:")
-    public static native SCNAudioPlayer audioPlayerWithAVAudioNode(AVAudioNode audioNode);
+    public static native SCNAudioPlayer audioPlayerWithAVAudioNode(@NotNull AVAudioNode audioNode);
 
     /**
      * [@property] audioPlayerWithSource:
@@ -87,26 +89,29 @@ public class SCNAudioPlayer extends NSObject {
      */
     @Generated
     @Selector("audioPlayerWithSource:")
-    public static native SCNAudioPlayer audioPlayerWithSource(SCNAudioSource source);
+    public static native SCNAudioPlayer audioPlayerWithSource(@NotNull SCNAudioSource source);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -141,9 +146,10 @@ public class SCNAudioPlayer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -177,6 +183,7 @@ public class SCNAudioPlayer extends NSObject {
      * The audioNode. If this player was not initialised with a custom AVAudioNode this contains the internal audio
      * player node used by scene kit internally.
      */
+    @Nullable
     @Generated
     @Selector("audioNode")
     public native AVAudioNode audioNode();
@@ -186,6 +193,7 @@ public class SCNAudioPlayer extends NSObject {
      * 
      * The audioSource if there is one.
      */
+    @Nullable
     @Generated
     @Selector("audioSource")
     public native SCNAudioSource audioSource();
@@ -195,6 +203,7 @@ public class SCNAudioPlayer extends NSObject {
      * 
      * This block is called when the playback stops in case a valid audio source is present.
      */
+    @Nullable
     @Generated
     @Selector("didFinishPlayback")
     @ObjCBlock(name = "call_didFinishPlayback_ret")
@@ -212,7 +221,7 @@ public class SCNAudioPlayer extends NSObject {
      */
     @Generated
     @Selector("initWithAVAudioNode:")
-    public native SCNAudioPlayer initWithAVAudioNode(AVAudioNode audioNode);
+    public native SCNAudioPlayer initWithAVAudioNode(@NotNull AVAudioNode audioNode);
 
     /**
      * [@property] initWithSource:
@@ -222,7 +231,7 @@ public class SCNAudioPlayer extends NSObject {
      */
     @Generated
     @Selector("initWithSource:")
-    public native SCNAudioPlayer initWithSource(SCNAudioSource source);
+    public native SCNAudioPlayer initWithSource(@NotNull SCNAudioSource source);
 
     /**
      * [@property] playbackFinished
@@ -232,7 +241,7 @@ public class SCNAudioPlayer extends NSObject {
     @Generated
     @Selector("setDidFinishPlayback:")
     public native void setDidFinishPlayback(
-            @ObjCBlock(name = "call_setDidFinishPlayback") Block_setDidFinishPlayback value);
+            @Nullable @ObjCBlock(name = "call_setDidFinishPlayback") Block_setDidFinishPlayback value);
 
     /**
      * [@property] playbackStarted
@@ -242,13 +251,14 @@ public class SCNAudioPlayer extends NSObject {
     @Generated
     @Selector("setWillStartPlayback:")
     public native void setWillStartPlayback(
-            @ObjCBlock(name = "call_setWillStartPlayback") Block_setWillStartPlayback value);
+            @Nullable @ObjCBlock(name = "call_setWillStartPlayback") Block_setWillStartPlayback value);
 
     /**
      * [@property] playbackStarted
      * 
      * This block is called when the playback starts in case a valid audio source is present.
      */
+    @Nullable
     @Generated
     @Selector("willStartPlayback")
     @ObjCBlock(name = "call_willStartPlayback_ret")

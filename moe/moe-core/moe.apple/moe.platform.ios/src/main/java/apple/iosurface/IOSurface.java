@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Note: IOSurface objects are "toll free bridged" to IOSurfaceRef objects
@@ -51,6 +53,7 @@ public class IOSurface extends NSObject implements NSSecureCoding {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    @Nullable
     @Generated
     @Selector("allAttachments")
     public native NSDictionary<String, ?> allAttachments();
@@ -82,19 +85,22 @@ public class IOSurface extends NSObject implements NSSecureCoding {
     @Selector("allowsPixelSizeCasting")
     public native boolean allowsPixelSizeCasting();
 
+    @Nullable
     @Generated
     @Selector("attachmentForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object attachmentForKey(String key);
+    public native Object attachmentForKey(@NotNull String key);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("baseAddress")
     public native VoidPtr baseAddress();
 
+    @NotNull
     @Generated
     @Selector("baseAddressOfPlaneAtIndex:")
     public native VoidPtr baseAddressOfPlaneAtIndex(@NUInt long planeIndex);
@@ -124,18 +130,21 @@ public class IOSurface extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -174,7 +183,7 @@ public class IOSurface extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -201,14 +210,14 @@ public class IOSurface extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native IOSurface initWithCoder(NSCoder coder);
+    public native IOSurface initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Create a new IOSurface
      */
     @Generated
     @Selector("initWithProperties:")
-    public native IOSurface initWithProperties(NSDictionary<String, ?> properties);
+    public native IOSurface initWithProperties(@NotNull NSDictionary<String, ?> properties);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -248,9 +257,10 @@ public class IOSurface extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The localUseCount property returns the local per-process usage count for an IOSurface. This call is only
@@ -284,7 +294,7 @@ public class IOSurface extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("lockWithOptions:seed:")
-    public native int lockWithOptionsSeed(int options, IntPtr seed);
+    public native int lockWithOptionsSeed(int options, @Nullable IntPtr seed);
 
     @Generated
     @Owned
@@ -309,7 +319,7 @@ public class IOSurface extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("removeAttachmentForKey:")
-    public native void removeAttachmentForKey(String key);
+    public native void removeAttachmentForKey(@NotNull String key);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -329,7 +339,7 @@ public class IOSurface extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("setAllAttachments:")
-    public native void setAllAttachments(NSDictionary<String, ?> dict);
+    public native void setAllAttachments(@NotNull NSDictionary<String, ?> dict);
 
     /**
      * These calls let you attach property list types to a IOSurface buffer. These calls are
@@ -338,7 +348,8 @@ public class IOSurface extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setAttachment:forKey:")
-    public native void setAttachmentForKey(@Mapped(ObjCObjectMapper.class) Object anObject, String key);
+    public native void setAttachmentForKey(@NotNull @Mapped(ObjCObjectMapper.class) Object anObject,
+            @NotNull String key);
 
     /**
      * See comments in IOSurfaceAPI.h
@@ -347,7 +358,7 @@ public class IOSurface extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setPurgeable:oldState:")
-    public native int setPurgeableOldState(int newState, IntPtr oldState);
+    public native int setPurgeableOldState(int newState, @Nullable IntPtr oldState);
 
     @Generated
     @Selector("setVersion:")
@@ -369,7 +380,7 @@ public class IOSurface extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("unlockWithOptions:seed:")
-    public native int unlockWithOptionsSeed(int options, IntPtr seed);
+    public native int unlockWithOptionsSeed(int options, @Nullable IntPtr seed);
 
     @Generated
     @Selector("version")

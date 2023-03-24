@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.natj.objc.ann.ObjCBlock;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioSequencer
@@ -66,7 +68,7 @@ public class AVAudioSequencer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * beatsForHostTime:error:
@@ -81,7 +83,7 @@ public class AVAudioSequencer extends NSObject {
     @Generated
     @Selector("beatsForHostTime:error:")
     public native double beatsForHostTimeError(long inHostTime,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * beatsForSeconds:
@@ -94,18 +96,21 @@ public class AVAudioSequencer extends NSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -142,10 +147,11 @@ public class AVAudioSequencer extends NSObject {
      * All details regarding the SMPTE resolution apply here as well.
      * The returned NSData lifetime is controlled by the client.
      */
+    @NotNull
     @Generated
     @Selector("dataWithSMPTEResolution:error:")
     public native NSData dataWithSMPTEResolutionError(@NInt long SMPTEResolution,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("debugDescription")
@@ -173,7 +179,7 @@ public class AVAudioSequencer extends NSObject {
     @Generated
     @Selector("hostTimeForBeats:error:")
     public native long hostTimeForBeatsError(double inBeats,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * init
@@ -193,7 +199,7 @@ public class AVAudioSequencer extends NSObject {
      */
     @Generated
     @Selector("initWithAudioEngine:")
-    public native AVAudioSequencer initWithAudioEngine(AVAudioEngine engine);
+    public native AVAudioSequencer initWithAudioEngine(@NotNull AVAudioEngine engine);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -225,9 +231,10 @@ public class AVAudioSequencer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * loadFromData:options:error:
@@ -243,8 +250,8 @@ public class AVAudioSequencer extends NSObject {
      */
     @Generated
     @Selector("loadFromData:options:error:")
-    public native boolean loadFromDataOptionsError(NSData data, @NUInt long options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean loadFromDataOptionsError(@NotNull NSData data, @NUInt long options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * loadFromURL:options:error:
@@ -260,8 +267,8 @@ public class AVAudioSequencer extends NSObject {
      */
     @Generated
     @Selector("loadFromURL:options:error:")
-    public native boolean loadFromURLOptionsError(NSURL fileURL, @NUInt long options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean loadFromURLOptionsError(@NotNull NSURL fileURL, @NUInt long options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Owned
@@ -358,7 +365,7 @@ public class AVAudioSequencer extends NSObject {
      */
     @Generated
     @Selector("startAndReturnError:")
-    public native boolean startAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean startAndReturnError(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * stop
@@ -391,6 +398,7 @@ public class AVAudioSequencer extends NSObject {
      * 
      * Non-tempo-related events will generate exceptions if added.
      */
+    @NotNull
     @Generated
     @Selector("tempoTrack")
     public native AVMusicTrack tempoTrack();
@@ -402,6 +410,7 @@ public class AVAudioSequencer extends NSObject {
      * 
      * This list will not include the tempo track.
      */
+    @NotNull
     @Generated
     @Selector("tracks")
     public native NSArray<? extends AVMusicTrack> tracks();
@@ -413,6 +422,7 @@ public class AVAudioSequencer extends NSObject {
      * 
      * The dictionary can contain one or more of the values accessible via the AVAudioSequencerInfoDictionaryKeys.
      */
+    @NotNull
     @Generated
     @Selector("userInfo")
     public native NSDictionary<String, ?> userInfo();
@@ -449,8 +459,8 @@ public class AVAudioSequencer extends NSObject {
      */
     @Generated
     @Selector("writeToURL:SMPTEResolution:replaceExisting:error:")
-    public native boolean writeToURLSMPTEResolutionReplaceExistingError(NSURL fileURL, @NInt long resolution,
-            boolean replace, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean writeToURLSMPTEResolutionReplaceExistingError(@NotNull NSURL fileURL, @NInt long resolution,
+            boolean replace, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * createAndAppendTrack:
@@ -459,6 +469,7 @@ public class AVAudioSequencer extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("createAndAppendTrack")
     public native AVMusicTrack createAndAppendTrack();
@@ -474,7 +485,7 @@ public class AVAudioSequencer extends NSObject {
      */
     @Generated
     @Selector("removeTrack:")
-    public native boolean removeTrack(AVMusicTrack track);
+    public native boolean removeTrack(@NotNull AVMusicTrack track);
 
     /**
      * reverseEvents:
@@ -500,12 +511,13 @@ public class AVAudioSequencer extends NSObject {
      */
     @Generated
     @Selector("setUserCallback:")
-    public native void setUserCallback(@ObjCBlock(name = "call_setUserCallback") Block_setUserCallback userCallback);
+    public native void setUserCallback(
+            @Nullable @ObjCBlock(name = "call_setUserCallback") Block_setUserCallback userCallback);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setUserCallback {
         @Generated
-        void call_setUserCallback(AVMusicTrack arg0, NSData arg1, double arg2);
+        void call_setUserCallback(@NotNull AVMusicTrack arg0, @NotNull NSData arg1, double arg2);
     }
 }

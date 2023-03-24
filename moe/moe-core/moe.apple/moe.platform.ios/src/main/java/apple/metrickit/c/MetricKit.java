@@ -10,6 +10,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.c.ann.CVariable;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("MetricKit")
@@ -26,6 +27,7 @@ public final class MetricKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native VoidPtr _MXSignpostMetricsSnapshot();

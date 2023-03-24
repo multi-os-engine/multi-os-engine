@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CKContainer
@@ -83,22 +85,25 @@ public class CKContainer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -110,9 +115,10 @@ public class CKContainer extends NSObject {
      * Production in your entitlements plist, and you have no override in @c
      * com.apple.developer.icloud-container-development-container-identifiers), then the production environment is used.
      */
+    @NotNull
     @Generated
     @Selector("containerWithIdentifier:")
-    public static native CKContainer containerWithIdentifier(String containerIdentifier);
+    public static native CKContainer containerWithIdentifier(@NotNull String containerIdentifier);
 
     @Generated
     @Selector("debugDescription")
@@ -126,6 +132,7 @@ public class CKContainer extends NSObject {
      * On all OSes, if an @c com.apple.developer.associated-application-identifier entitlement is present, its value
      * will be preferred over the @c application-identifier variants.
      */
+    @NotNull
     @Generated
     @Selector("defaultContainer")
     public static native CKContainer defaultContainer();
@@ -156,9 +163,10 @@ public class CKContainer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -191,18 +199,19 @@ public class CKContainer extends NSObject {
      */
     @Generated
     @Selector("acceptShareMetadata:completionHandler:")
-    public native void acceptShareMetadataCompletionHandler(CKShareMetadata metadata,
-            @ObjCBlock(name = "call_acceptShareMetadataCompletionHandler") Block_acceptShareMetadataCompletionHandler completionHandler);
+    public native void acceptShareMetadataCompletionHandler(@NotNull CKShareMetadata metadata,
+            @NotNull @ObjCBlock(name = "call_acceptShareMetadataCompletionHandler") Block_acceptShareMetadataCompletionHandler completionHandler);
 
     @Generated
     @Selector("accountStatusWithCompletionHandler:")
     public native void accountStatusWithCompletionHandler(
-            @ObjCBlock(name = "call_accountStatusWithCompletionHandler") Block_accountStatusWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_accountStatusWithCompletionHandler") Block_accountStatusWithCompletionHandler completionHandler);
 
     @Generated
     @Selector("addOperation:")
-    public native void addOperation(CKOperation operation);
+    public native void addOperation(@NotNull CKOperation operation);
 
+    @Nullable
     @Generated
     @Selector("containerIdentifier")
     public native String containerIdentifier();
@@ -214,6 +223,7 @@ public class CKContainer extends NSObject {
      * 
      *         API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("databaseWithDatabaseScope:")
     public native CKDatabase databaseWithDatabaseScope(@NInt long databaseScope);
@@ -229,7 +239,7 @@ public class CKContainer extends NSObject {
     @Generated
     @Selector("discoverAllIdentitiesWithCompletionHandler:")
     public native void discoverAllIdentitiesWithCompletionHandler(
-            @ObjCBlock(name = "call_discoverAllIdentitiesWithCompletionHandler") Block_discoverAllIdentitiesWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_discoverAllIdentitiesWithCompletionHandler") Block_discoverAllIdentitiesWithCompletionHandler completionHandler);
 
     /**
      * Fetches the user identity that corresponds to the given email address.
@@ -243,8 +253,8 @@ public class CKContainer extends NSObject {
      */
     @Generated
     @Selector("discoverUserIdentityWithEmailAddress:completionHandler:")
-    public native void discoverUserIdentityWithEmailAddressCompletionHandler(String email,
-            @ObjCBlock(name = "call_discoverUserIdentityWithEmailAddressCompletionHandler") Block_discoverUserIdentityWithEmailAddressCompletionHandler completionHandler);
+    public native void discoverUserIdentityWithEmailAddressCompletionHandler(@NotNull String email,
+            @NotNull @ObjCBlock(name = "call_discoverUserIdentityWithEmailAddressCompletionHandler") Block_discoverUserIdentityWithEmailAddressCompletionHandler completionHandler);
 
     /**
      * Fetches the user identity that corresponds to the given phone number.
@@ -258,8 +268,8 @@ public class CKContainer extends NSObject {
      */
     @Generated
     @Selector("discoverUserIdentityWithPhoneNumber:completionHandler:")
-    public native void discoverUserIdentityWithPhoneNumberCompletionHandler(String phoneNumber,
-            @ObjCBlock(name = "call_discoverUserIdentityWithPhoneNumberCompletionHandler") Block_discoverUserIdentityWithPhoneNumberCompletionHandler completionHandler);
+    public native void discoverUserIdentityWithPhoneNumberCompletionHandler(@NotNull String phoneNumber,
+            @NotNull @ObjCBlock(name = "call_discoverUserIdentityWithPhoneNumberCompletionHandler") Block_discoverUserIdentityWithPhoneNumberCompletionHandler completionHandler);
 
     /**
      * Fetches the user identity that corresponds to the given user record id.
@@ -272,8 +282,8 @@ public class CKContainer extends NSObject {
      */
     @Generated
     @Selector("discoverUserIdentityWithUserRecordID:completionHandler:")
-    public native void discoverUserIdentityWithUserRecordIDCompletionHandler(CKRecordID userRecordID,
-            @ObjCBlock(name = "call_discoverUserIdentityWithUserRecordIDCompletionHandler") Block_discoverUserIdentityWithUserRecordIDCompletionHandler completionHandler);
+    public native void discoverUserIdentityWithUserRecordIDCompletionHandler(@NotNull CKRecordID userRecordID,
+            @NotNull @ObjCBlock(name = "call_discoverUserIdentityWithUserRecordIDCompletionHandler") Block_discoverUserIdentityWithUserRecordIDCompletionHandler completionHandler);
 
     /**
      * Long lived CKOperations returned by this call must be started on an operation queue.
@@ -287,23 +297,23 @@ public class CKContainer extends NSObject {
     @Generated
     @Selector("fetchAllLongLivedOperationIDsWithCompletionHandler:")
     public native void fetchAllLongLivedOperationIDsWithCompletionHandler(
-            @ObjCBlock(name = "call_fetchAllLongLivedOperationIDsWithCompletionHandler") Block_fetchAllLongLivedOperationIDsWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_fetchAllLongLivedOperationIDsWithCompletionHandler") Block_fetchAllLongLivedOperationIDsWithCompletionHandler completionHandler);
 
     /**
      * API-Since: 9.3
      */
     @Generated
     @Selector("fetchLongLivedOperationWithID:completionHandler:")
-    public native void fetchLongLivedOperationWithIDCompletionHandler(String operationID,
-            @ObjCBlock(name = "call_fetchLongLivedOperationWithIDCompletionHandler") Block_fetchLongLivedOperationWithIDCompletionHandler completionHandler);
+    public native void fetchLongLivedOperationWithIDCompletionHandler(@NotNull String operationID,
+            @NotNull @ObjCBlock(name = "call_fetchLongLivedOperationWithIDCompletionHandler") Block_fetchLongLivedOperationWithIDCompletionHandler completionHandler);
 
     /**
      * API-Since: 10.0
      */
     @Generated
     @Selector("fetchShareMetadataWithURL:completionHandler:")
-    public native void fetchShareMetadataWithURLCompletionHandler(NSURL url,
-            @ObjCBlock(name = "call_fetchShareMetadataWithURLCompletionHandler") Block_fetchShareMetadataWithURLCompletionHandler completionHandler);
+    public native void fetchShareMetadataWithURLCompletionHandler(@NotNull NSURL url,
+            @NotNull @ObjCBlock(name = "call_fetchShareMetadataWithURLCompletionHandler") Block_fetchShareMetadataWithURLCompletionHandler completionHandler);
 
     /**
      * Fetches share participants matching the provided info.
@@ -315,24 +325,24 @@ public class CKContainer extends NSObject {
      */
     @Generated
     @Selector("fetchShareParticipantWithEmailAddress:completionHandler:")
-    public native void fetchShareParticipantWithEmailAddressCompletionHandler(String emailAddress,
-            @ObjCBlock(name = "call_fetchShareParticipantWithEmailAddressCompletionHandler") Block_fetchShareParticipantWithEmailAddressCompletionHandler completionHandler);
+    public native void fetchShareParticipantWithEmailAddressCompletionHandler(@NotNull String emailAddress,
+            @NotNull @ObjCBlock(name = "call_fetchShareParticipantWithEmailAddressCompletionHandler") Block_fetchShareParticipantWithEmailAddressCompletionHandler completionHandler);
 
     /**
      * API-Since: 10.0
      */
     @Generated
     @Selector("fetchShareParticipantWithPhoneNumber:completionHandler:")
-    public native void fetchShareParticipantWithPhoneNumberCompletionHandler(String phoneNumber,
-            @ObjCBlock(name = "call_fetchShareParticipantWithPhoneNumberCompletionHandler") Block_fetchShareParticipantWithPhoneNumberCompletionHandler completionHandler);
+    public native void fetchShareParticipantWithPhoneNumberCompletionHandler(@NotNull String phoneNumber,
+            @NotNull @ObjCBlock(name = "call_fetchShareParticipantWithPhoneNumberCompletionHandler") Block_fetchShareParticipantWithPhoneNumberCompletionHandler completionHandler);
 
     /**
      * API-Since: 10.0
      */
     @Generated
     @Selector("fetchShareParticipantWithUserRecordID:completionHandler:")
-    public native void fetchShareParticipantWithUserRecordIDCompletionHandler(CKRecordID userRecordID,
-            @ObjCBlock(name = "call_fetchShareParticipantWithUserRecordIDCompletionHandler") Block_fetchShareParticipantWithUserRecordIDCompletionHandler completionHandler);
+    public native void fetchShareParticipantWithUserRecordIDCompletionHandler(@NotNull CKRecordID userRecordID,
+            @NotNull @ObjCBlock(name = "call_fetchShareParticipantWithUserRecordIDCompletionHandler") Block_fetchShareParticipantWithUserRecordIDCompletionHandler completionHandler);
 
     /**
      * If there is no iCloud account configured, or if access is restricted, a @c CKErrorNotAuthenticated error will be
@@ -343,16 +353,18 @@ public class CKContainer extends NSObject {
     @Generated
     @Selector("fetchUserRecordIDWithCompletionHandler:")
     public native void fetchUserRecordIDWithCompletionHandler(
-            @ObjCBlock(name = "call_fetchUserRecordIDWithCompletionHandler") Block_fetchUserRecordIDWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_fetchUserRecordIDWithCompletionHandler") Block_fetchUserRecordIDWithCompletionHandler completionHandler);
 
     @Generated
     @Selector("init")
     public native CKContainer init();
 
+    @NotNull
     @Generated
     @Selector("privateCloudDatabase")
     public native CKDatabase privateCloudDatabase();
 
+    @NotNull
     @Generated
     @Selector("publicCloudDatabase")
     public native CKDatabase publicCloudDatabase();
@@ -360,11 +372,12 @@ public class CKContainer extends NSObject {
     @Generated
     @Selector("requestApplicationPermission:completionHandler:")
     public native void requestApplicationPermissionCompletionHandler(@NUInt long applicationPermission,
-            @ObjCBlock(name = "call_requestApplicationPermissionCompletionHandler") Block_requestApplicationPermissionCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_requestApplicationPermissionCompletionHandler") Block_requestApplicationPermissionCompletionHandler completionHandler);
 
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("sharedCloudDatabase")
     public native CKDatabase sharedCloudDatabase();
@@ -372,109 +385,115 @@ public class CKContainer extends NSObject {
     @Generated
     @Selector("statusForApplicationPermission:completionHandler:")
     public native void statusForApplicationPermissionCompletionHandler(@NUInt long applicationPermission,
-            @ObjCBlock(name = "call_statusForApplicationPermissionCompletionHandler") Block_statusForApplicationPermissionCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_statusForApplicationPermissionCompletionHandler") Block_statusForApplicationPermissionCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_acceptShareMetadataCompletionHandler {
         @Generated
-        void call_acceptShareMetadataCompletionHandler(CKShare acceptedShare, NSError error);
+        void call_acceptShareMetadataCompletionHandler(@Nullable CKShare acceptedShare, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_accountStatusWithCompletionHandler {
         @Generated
-        void call_accountStatusWithCompletionHandler(@NInt long accountStatus, NSError error);
+        void call_accountStatusWithCompletionHandler(@NInt long accountStatus, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_discoverAllIdentitiesWithCompletionHandler {
         @Generated
-        void call_discoverAllIdentitiesWithCompletionHandler(NSArray<? extends CKUserIdentity> userIdentities,
-                NSError error);
+        void call_discoverAllIdentitiesWithCompletionHandler(@Nullable NSArray<? extends CKUserIdentity> userIdentities,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_discoverUserIdentityWithEmailAddressCompletionHandler {
         @Generated
-        void call_discoverUserIdentityWithEmailAddressCompletionHandler(CKUserIdentity userInfo, NSError error);
+        void call_discoverUserIdentityWithEmailAddressCompletionHandler(@Nullable CKUserIdentity userInfo,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_discoverUserIdentityWithPhoneNumberCompletionHandler {
         @Generated
-        void call_discoverUserIdentityWithPhoneNumberCompletionHandler(CKUserIdentity userInfo, NSError error);
+        void call_discoverUserIdentityWithPhoneNumberCompletionHandler(@Nullable CKUserIdentity userInfo,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_discoverUserIdentityWithUserRecordIDCompletionHandler {
         @Generated
-        void call_discoverUserIdentityWithUserRecordIDCompletionHandler(CKUserIdentity userInfo, NSError error);
+        void call_discoverUserIdentityWithUserRecordIDCompletionHandler(@Nullable CKUserIdentity userInfo,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchAllLongLivedOperationIDsWithCompletionHandler {
         @Generated
-        void call_fetchAllLongLivedOperationIDsWithCompletionHandler(NSArray<String> outstandingOperationIDs,
-                NSError error);
+        void call_fetchAllLongLivedOperationIDsWithCompletionHandler(@Nullable NSArray<String> outstandingOperationIDs,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchLongLivedOperationWithIDCompletionHandler {
         @Generated
-        void call_fetchLongLivedOperationWithIDCompletionHandler(CKOperation outstandingOperation, NSError error);
+        void call_fetchLongLivedOperationWithIDCompletionHandler(@Nullable CKOperation outstandingOperation,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchShareMetadataWithURLCompletionHandler {
         @Generated
-        void call_fetchShareMetadataWithURLCompletionHandler(CKShareMetadata metadata, NSError error);
+        void call_fetchShareMetadataWithURLCompletionHandler(@Nullable CKShareMetadata metadata,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchShareParticipantWithEmailAddressCompletionHandler {
         @Generated
-        void call_fetchShareParticipantWithEmailAddressCompletionHandler(CKShareParticipant shareParticipant,
-                NSError error);
+        void call_fetchShareParticipantWithEmailAddressCompletionHandler(@Nullable CKShareParticipant shareParticipant,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchShareParticipantWithPhoneNumberCompletionHandler {
         @Generated
-        void call_fetchShareParticipantWithPhoneNumberCompletionHandler(CKShareParticipant shareParticipant,
-                NSError error);
+        void call_fetchShareParticipantWithPhoneNumberCompletionHandler(@Nullable CKShareParticipant shareParticipant,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchShareParticipantWithUserRecordIDCompletionHandler {
         @Generated
-        void call_fetchShareParticipantWithUserRecordIDCompletionHandler(CKShareParticipant shareParticipant,
-                NSError error);
+        void call_fetchShareParticipantWithUserRecordIDCompletionHandler(@Nullable CKShareParticipant shareParticipant,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchUserRecordIDWithCompletionHandler {
         @Generated
-        void call_fetchUserRecordIDWithCompletionHandler(CKRecordID recordID, NSError error);
+        void call_fetchUserRecordIDWithCompletionHandler(@Nullable CKRecordID recordID, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestApplicationPermissionCompletionHandler {
         @Generated
-        void call_requestApplicationPermissionCompletionHandler(@NInt long applicationPermissionStatus, NSError error);
+        void call_requestApplicationPermissionCompletionHandler(@NInt long applicationPermissionStatus,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -482,6 +501,6 @@ public class CKContainer extends NSObject {
     public interface Block_statusForApplicationPermissionCompletionHandler {
         @Generated
         void call_statusForApplicationPermissionCompletionHandler(@NInt long applicationPermissionStatus,
-                NSError error);
+                @Nullable NSError error);
     }
 }

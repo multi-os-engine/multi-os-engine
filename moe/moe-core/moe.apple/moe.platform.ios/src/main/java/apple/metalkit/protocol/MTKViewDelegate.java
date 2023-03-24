@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * MTKViewDelegate
@@ -47,7 +48,7 @@ public interface MTKViewDelegate {
      */
     @Generated
     @Selector("drawInMTKView:")
-    void drawInMTKView(MTKView view);
+    void drawInMTKView(@NotNull MTKView view);
 
     /**
      * mtkView:drawableSizeWillChange:
@@ -62,5 +63,5 @@ public interface MTKViewDelegate {
      */
     @Generated
     @Selector("mtkView:drawableSizeWillChange:")
-    void mtkViewDrawableSizeWillChange(MTKView view, @ByValue CGSize size);
+    void mtkViewDrawableSizeWillChange(@NotNull MTKView view, @ByValue CGSize size);
 }

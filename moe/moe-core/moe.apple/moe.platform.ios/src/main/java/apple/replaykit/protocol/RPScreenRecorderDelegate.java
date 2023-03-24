@@ -26,6 +26,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.0
@@ -51,8 +53,8 @@ public interface RPScreenRecorderDelegate {
     @Generated
     @IsOptional
     @Selector("screenRecorder:didStopRecordingWithError:previewViewController:")
-    default void screenRecorderDidStopRecordingWithErrorPreviewViewController(RPScreenRecorder screenRecorder,
-            NSError error, RPPreviewViewController previewViewController) {
+    default void screenRecorderDidStopRecordingWithErrorPreviewViewController(@NotNull RPScreenRecorder screenRecorder,
+            @NotNull NSError error, @Nullable RPPreviewViewController previewViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -66,7 +68,7 @@ public interface RPScreenRecorderDelegate {
     @Generated
     @IsOptional
     @Selector("screenRecorderDidChangeAvailability:")
-    default void screenRecorderDidChangeAvailability(RPScreenRecorder screenRecorder) {
+    default void screenRecorderDidChangeAvailability(@NotNull RPScreenRecorder screenRecorder) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -76,8 +78,8 @@ public interface RPScreenRecorderDelegate {
     @Generated
     @IsOptional
     @Selector("screenRecorder:didStopRecordingWithPreviewViewController:error:")
-    default void screenRecorderDidStopRecordingWithPreviewViewControllerError(RPScreenRecorder screenRecorder,
-            RPPreviewViewController previewViewController, NSError error) {
+    default void screenRecorderDidStopRecordingWithPreviewViewControllerError(@NotNull RPScreenRecorder screenRecorder,
+            @Nullable RPPreviewViewController previewViewController, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

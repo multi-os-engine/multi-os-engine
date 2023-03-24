@@ -14,6 +14,8 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -35,15 +37,16 @@ public final class NSMapTableValueCallBacks extends StructObject {
     }
 
     @Generated
-    public NSMapTableValueCallBacks(@FunctionPtr(name = "call_retain") Function_retain retain,
-            @FunctionPtr(name = "call_release") Function_release release,
-            @FunctionPtr(name = "call_describe") Function_describe describe) {
+    public NSMapTableValueCallBacks(@FunctionPtr(name = "call_retain") @Nullable Function_retain retain,
+            @FunctionPtr(name = "call_release") @Nullable Function_release release,
+            @FunctionPtr(name = "call_describe") @Nullable Function_describe describe) {
         super(NSMapTableValueCallBacks.class);
         setRetain(retain);
         setRelease(release);
         setDescribe(describe);
     }
 
+    @Nullable
     @Generated
     @StructureField(order = 0, isGetter = true)
     @FunctionPtr(name = "call_retain")
@@ -53,13 +56,14 @@ public final class NSMapTableValueCallBacks extends StructObject {
     @Generated
     public interface Function_retain {
         @Generated
-        void call_retain(NSMapTable<?, ?> arg0, ConstVoidPtr arg1);
+        void call_retain(@NotNull NSMapTable<?, ?> arg0, @NotNull ConstVoidPtr arg1);
     }
 
     @Generated
     @StructureField(order = 0, isGetter = false)
-    public native void setRetain(@FunctionPtr(name = "call_retain") Function_retain value);
+    public native void setRetain(@Nullable @FunctionPtr(name = "call_retain") Function_retain value);
 
+    @Nullable
     @Generated
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_release")
@@ -69,13 +73,14 @@ public final class NSMapTableValueCallBacks extends StructObject {
     @Generated
     public interface Function_release {
         @Generated
-        void call_release(NSMapTable<?, ?> arg0, VoidPtr arg1);
+        void call_release(@NotNull NSMapTable<?, ?> arg0, @NotNull VoidPtr arg1);
     }
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setRelease(@FunctionPtr(name = "call_release") Function_release value);
+    public native void setRelease(@Nullable @FunctionPtr(name = "call_release") Function_release value);
 
+    @Nullable
     @Generated
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call_describe")
@@ -84,12 +89,13 @@ public final class NSMapTableValueCallBacks extends StructObject {
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_describe {
+        @Nullable
         @Generated
         @MappedReturn(ObjCStringMapper.class)
-        String call_describe(NSMapTable<?, ?> arg0, ConstVoidPtr arg1);
+        String call_describe(@NotNull NSMapTable<?, ?> arg0, @NotNull ConstVoidPtr arg1);
     }
 
     @Generated
     @StructureField(order = 2, isGetter = false)
-    public native void setDescribe(@FunctionPtr(name = "call_describe") Function_describe value);
+    public native void setDescribe(@Nullable @FunctionPtr(name = "call_describe") Function_describe value);
 }

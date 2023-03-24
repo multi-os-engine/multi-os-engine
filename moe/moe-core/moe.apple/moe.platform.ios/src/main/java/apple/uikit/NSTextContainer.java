@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 7.0
@@ -79,22 +81,25 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +134,10 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,7 +167,7 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Default value : empty array An array of UIBezierPath representing the exclusion paths inside the receiver's
@@ -169,6 +175,7 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("exclusionPaths")
     public native NSArray<? extends UIBezierPath> exclusionPaths();
@@ -183,7 +190,7 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSTextContainer initWithCoder(NSCoder coder);
+    public native NSTextContainer initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initialization ***************************
@@ -213,6 +220,7 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
      * Avoid assigning a layout manager directly through this property. Adding a text container to a layout manager
      * through -[NSLayoutManager addTextContainer:] will use the property for assigning the new layout manager.
      */
+    @Nullable
     @Generated
     @Selector("layoutManager")
     public native NSLayoutManager layoutManager();
@@ -260,7 +268,7 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     @ByValue
     public native CGRect lineFragmentRectForProposedRectAtIndexWritingDirectionRemainingRect(
             @ByValue CGRect proposedRect, @NUInt long characterIndex, @NInt long baseWritingDirection,
-            CGRect remainingRect);
+            @Nullable CGRect remainingRect);
 
     /**
      * Default value: 0 (no limit) The maximum number of lines that can be stored in the receiver. This value is
@@ -283,7 +291,7 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
      */
     @Generated
     @Selector("replaceLayoutManager:")
-    public native void replaceLayoutManager(NSLayoutManager newLayoutManager);
+    public native void replaceLayoutManager(@NotNull NSLayoutManager newLayoutManager);
 
     /**
      * Default value : empty array An array of UIBezierPath representing the exclusion paths inside the receiver's
@@ -293,7 +301,7 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
      */
     @Generated
     @Selector("setExclusionPaths:")
-    public native void setExclusionPaths(NSArray<? extends UIBezierPath> value);
+    public native void setExclusionPaths(@NotNull NSArray<? extends UIBezierPath> value);
 
     @Generated
     @Selector("setHeightTracksTextView:")
@@ -306,7 +314,7 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
      */
     @Generated
     @Selector("setLayoutManager:")
-    public native void setLayoutManager_unsafe(NSLayoutManager value);
+    public native void setLayoutManager_unsafe(@Nullable NSLayoutManager value);
 
     /**
      * Accessor for the NSLayoutManager object owning the receiver.
@@ -314,7 +322,7 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
      * through -[NSLayoutManager addTextContainer:] will use the property for assigning the new layout manager.
      */
     @Generated
-    public void setLayoutManager(NSLayoutManager value) {
+    public void setLayoutManager(@Nullable NSLayoutManager value) {
         Object __old = layoutManager();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -403,6 +411,7 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("textLayoutManager")
     public native NSTextLayoutManager textLayoutManager();

@@ -10,6 +10,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Functionality related to MessageFilter extension capabilities query requests.
@@ -40,13 +41,15 @@ public interface ILMessageFilterCapabilitiesQueryHandling {
     @Generated
     @Selector("handleCapabilitiesQueryRequest:context:completion:")
     void handleCapabilitiesQueryRequestContextCompletion(
-            ILMessageFilterCapabilitiesQueryRequest capabilitiesQueryRequest, ILMessageFilterExtensionContext context,
-            @ObjCBlock(name = "call_handleCapabilitiesQueryRequestContextCompletion") Block_handleCapabilitiesQueryRequestContextCompletion completion);
+            @NotNull ILMessageFilterCapabilitiesQueryRequest capabilitiesQueryRequest,
+            @NotNull ILMessageFilterExtensionContext context,
+            @NotNull @ObjCBlock(name = "call_handleCapabilitiesQueryRequestContextCompletion") Block_handleCapabilitiesQueryRequestContextCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleCapabilitiesQueryRequestContextCompletion {
         @Generated
-        void call_handleCapabilitiesQueryRequestContextCompletion(ILMessageFilterCapabilitiesQueryResponse arg0);
+        void call_handleCapabilitiesQueryRequestContextCompletion(
+                @NotNull ILMessageFilterCapabilitiesQueryResponse arg0);
     }
 }

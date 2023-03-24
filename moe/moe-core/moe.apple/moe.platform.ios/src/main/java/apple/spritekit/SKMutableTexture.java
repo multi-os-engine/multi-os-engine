@@ -48,6 +48,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SKMutableTextures are not currently supported in the simulator
@@ -84,22 +86,25 @@ public class SKMutableTexture extends SKTexture {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,9 +139,10 @@ public class SKMutableTexture extends SKTexture {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Selector("mutableTextureWithSize:")
@@ -149,8 +155,8 @@ public class SKMutableTexture extends SKTexture {
 
     @Generated
     @Selector("preloadTextures:withCompletionHandler:")
-    public static native void preloadTexturesWithCompletionHandler(NSArray<? extends SKTexture> textures,
-            @ObjCBlock(name = "call_preloadTexturesWithCompletionHandler") SKTexture.Block_preloadTexturesWithCompletionHandler completionHandler);
+    public static native void preloadTexturesWithCompletionHandler(@NotNull NSArray<? extends SKTexture> textures,
+            @NotNull @ObjCBlock(name = "call_preloadTexturesWithCompletionHandler") SKTexture.Block_preloadTexturesWithCompletionHandler completionHandler);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -180,37 +186,37 @@ public class SKMutableTexture extends SKTexture {
 
     @Generated
     @Selector("textureWithCGImage:")
-    public static native SKMutableTexture textureWithCGImage(CGImageRef image);
+    public static native SKMutableTexture textureWithCGImage(@NotNull CGImageRef image);
 
     @Generated
     @Selector("textureWithData:size:")
-    public static native SKMutableTexture textureWithDataSize(NSData pixelData, @ByValue CGSize size);
+    public static native SKMutableTexture textureWithDataSize(@NotNull NSData pixelData, @ByValue CGSize size);
 
     @Generated
     @Selector("textureWithData:size:flipped:")
-    public static native SKMutableTexture textureWithDataSizeFlipped(NSData pixelData, @ByValue CGSize size,
+    public static native SKMutableTexture textureWithDataSizeFlipped(@NotNull NSData pixelData, @ByValue CGSize size,
             boolean flipped);
 
     @Generated
     @Selector("textureWithData:size:rowLength:alignment:")
-    public static native SKMutableTexture textureWithDataSizeRowLengthAlignment(NSData pixelData, @ByValue CGSize size,
-            int rowLength, int alignment);
+    public static native SKMutableTexture textureWithDataSizeRowLengthAlignment(@NotNull NSData pixelData,
+            @ByValue CGSize size, int rowLength, int alignment);
 
     @Generated
     @Selector("textureWithImage:")
-    public static native SKMutableTexture textureWithImage(UIImage image);
+    public static native SKMutableTexture textureWithImage(@NotNull UIImage image);
 
     @Generated
     @Selector("textureWithImageNamed:")
-    public static native SKMutableTexture textureWithImageNamed(String name);
+    public static native SKMutableTexture textureWithImageNamed(@NotNull String name);
 
     @Generated
     @Selector("textureWithNoiseMap:")
-    public static native SKMutableTexture textureWithNoiseMap(GKNoiseMap noiseMap);
+    public static native SKMutableTexture textureWithNoiseMap(@NotNull GKNoiseMap noiseMap);
 
     @Generated
     @Selector("textureWithRect:inTexture:")
-    public static native SKMutableTexture textureWithRectInTexture(@ByValue CGRect rect, SKTexture texture);
+    public static native SKMutableTexture textureWithRectInTexture(@ByValue CGRect rect, @NotNull SKTexture texture);
 
     @Generated
     @Selector("version")
@@ -223,7 +229,7 @@ public class SKMutableTexture extends SKTexture {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKMutableTexture initWithCoder(NSCoder coder);
+    public native SKMutableTexture initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Create a mutable texture with a specfic size.

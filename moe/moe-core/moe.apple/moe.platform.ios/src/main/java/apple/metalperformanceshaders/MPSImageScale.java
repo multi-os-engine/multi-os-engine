@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSImageScale
@@ -75,22 +77,25 @@ public class MPSImageScale extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -114,7 +119,7 @@ public class MPSImageScale extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSImageScale initWithCoder(NSCoder aDecoder);
+    public native MPSImageScale initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
@@ -133,14 +138,15 @@ public class MPSImageScale extends MPSUnaryImageKernel {
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSImageScale initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageScale initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * You must use one of the sub-classes of MPSImageScale
      */
     @Generated
     @Selector("initWithDevice:")
-    public native MPSImageScale initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageScale initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -159,9 +165,10 @@ public class MPSImageScale extends MPSUnaryImageKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -231,6 +238,7 @@ public class MPSImageScale extends MPSUnaryImageKernel {
      * scaleTransform is NULL. Reuse a MPSImageLanczosScale object for frequently used scalings
      * to avoid redundantly recreating expensive resampling state.
      */
+    @Nullable
     @Generated
     @Selector("scaleTransform")
     @UncertainReturn("Options: reference, array Fallback: reference")
@@ -294,7 +302,7 @@ public class MPSImageScale extends MPSUnaryImageKernel {
     @Generated
     @Selector("setScaleTransform:")
     public native void setScaleTransform(
-            @UncertainArgument("Options: reference, array Fallback: reference") MPSScaleTransform value);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") MPSScaleTransform value);
 
     @Generated
     @Selector("setVersion:")

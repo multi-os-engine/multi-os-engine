@@ -28,6 +28,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Analyzes a stream of audio data and provides analysis results to the client
@@ -72,9 +74,9 @@ public class SNAudioStreamAnalyzer extends NSObject {
      */
     @Generated
     @Selector("addRequest:withObserver:error:")
-    public native boolean addRequestWithObserverError(@Mapped(ObjCObjectMapper.class) SNRequest request,
-            @Mapped(ObjCObjectMapper.class) SNResultsObserving observer,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean addRequestWithObserverError(@NotNull @Mapped(ObjCObjectMapper.class) SNRequest request,
+            @NotNull @Mapped(ObjCObjectMapper.class) SNResultsObserving observer,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Owned
@@ -104,26 +106,30 @@ public class SNAudioStreamAnalyzer extends NSObject {
      */
     @Generated
     @Selector("analyzeAudioBuffer:atAudioFramePosition:")
-    public native void analyzeAudioBufferAtAudioFramePosition(AVAudioBuffer audioBuffer, long audioFramePosition);
+    public native void analyzeAudioBufferAtAudioFramePosition(@NotNull AVAudioBuffer audioBuffer,
+            long audioFramePosition);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -163,7 +169,7 @@ public class SNAudioStreamAnalyzer extends NSObject {
      */
     @Generated
     @Selector("initWithFormat:")
-    public native SNAudioStreamAnalyzer initWithFormat(AVAudioFormat format);
+    public native SNAudioStreamAnalyzer initWithFormat(@NotNull AVAudioFormat format);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -182,9 +188,10 @@ public class SNAudioStreamAnalyzer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -208,7 +215,7 @@ public class SNAudioStreamAnalyzer extends NSObject {
      */
     @Generated
     @Selector("removeRequest:")
-    public native void removeRequest(@Mapped(ObjCObjectMapper.class) SNRequest request);
+    public native void removeRequest(@NotNull @Mapped(ObjCObjectMapper.class) SNRequest request);
 
     @Generated
     @Selector("resolveClassMethod:")

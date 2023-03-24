@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.0
@@ -78,29 +80,32 @@ public class SKReferenceNode extends SKNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -132,9 +137,10 @@ public class SKReferenceNode extends SKNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -147,35 +153,39 @@ public class SKReferenceNode extends SKNode {
 
     @Generated
     @Selector("nodeWithFileNamed:")
-    public static native SKReferenceNode nodeWithFileNamed(String filename);
+    public static native SKReferenceNode nodeWithFileNamed(@NotNull String filename);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodeBounds:")
-    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
+    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodePhysicsBodies:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodePhysicsBodies(
-            NSArray<? extends SKNode> nodes);
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromSpriteTextures:accuracy:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromSpriteTexturesAccuracy(
-            NSArray<? extends SKNode> sprites, float accuracy);
+            @NotNull NSArray<? extends SKNode> sprites, float accuracy);
 
     /**
      * Create a reference node with a url
      */
     @Generated
     @Selector("referenceNodeWithFileNamed:")
-    public static native SKReferenceNode referenceNodeWithFileNamed(String fileName);
+    public static native SKReferenceNode referenceNodeWithFileNamed(@NotNull String fileName);
 
     /**
      * Create a reference node with a url
      */
     @Generated
     @Selector("referenceNodeWithURL:")
-    public static native SKReferenceNode referenceNodeWithURL(NSURL referenceURL);
+    public static native SKReferenceNode referenceNodeWithURL(@NotNull NSURL referenceURL);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -203,7 +213,7 @@ public class SKReferenceNode extends SKNode {
      */
     @Generated
     @Selector("didLoadReferenceNode:")
-    public native void didLoadReferenceNode(SKNode node);
+    public native void didLoadReferenceNode(@Nullable SKNode node);
 
     @Generated
     @Selector("init")
@@ -214,21 +224,21 @@ public class SKReferenceNode extends SKNode {
      */
     @Generated
     @Selector("initWithCoder:")
-    public native SKReferenceNode initWithCoder(NSCoder aDecoder);
+    public native SKReferenceNode initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * Create a reference node with a url
      */
     @Generated
     @Selector("initWithFileNamed:")
-    public native SKReferenceNode initWithFileNamed(String fileName);
+    public native SKReferenceNode initWithFileNamed(@Nullable String fileName);
 
     /**
      * Create a reference node with a url
      */
     @Generated
     @Selector("initWithURL:")
-    public native SKReferenceNode initWithURL(NSURL url);
+    public native SKReferenceNode initWithURL(@Nullable NSURL url);
 
     /**
      * Force the reference to be reloaded. The resolved node will added
@@ -242,8 +252,8 @@ public class SKReferenceNode extends SKNode {
 
     @Generated
     @Selector("nodeWithFileNamed:securelyWithClasses:andError:")
-    public static native SKReferenceNode nodeWithFileNamedSecurelyWithClassesAndError(String filename,
-            NSSet<? extends Class> classes, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native SKReferenceNode nodeWithFileNamedSecurelyWithClassesAndError(@NotNull String filename,
+            @NotNull NSSet<? extends Class> classes, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("supportsSecureCoding")

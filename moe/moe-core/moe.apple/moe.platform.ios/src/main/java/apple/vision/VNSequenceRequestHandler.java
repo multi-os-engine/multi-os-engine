@@ -30,6 +30,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Performs requests on a sequence of images.
@@ -72,22 +74,25 @@ public class VNSequenceRequestHandler extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +134,10 @@ public class VNSequenceRequestHandler extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -151,8 +157,8 @@ public class VNSequenceRequestHandler extends NSObject {
      */
     @Generated
     @Selector("performRequests:onCGImage:error:")
-    public native boolean performRequestsOnCGImageError(NSArray<? extends VNRequest> requests, CGImageRef image,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsOnCGImageError(@NotNull NSArray<? extends VNRequest> requests,
+            @NotNull CGImageRef image, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Perform requests on an image in a CGImageRef.
@@ -169,8 +175,9 @@ public class VNSequenceRequestHandler extends NSObject {
      */
     @Generated
     @Selector("performRequests:onCGImage:orientation:error:")
-    public native boolean performRequestsOnCGImageOrientationError(NSArray<? extends VNRequest> requests,
-            CGImageRef image, int orientation, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsOnCGImageOrientationError(@NotNull NSArray<? extends VNRequest> requests,
+            @NotNull CGImageRef image, int orientation,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Perform requests on an image in a CIImage.
@@ -185,8 +192,8 @@ public class VNSequenceRequestHandler extends NSObject {
      */
     @Generated
     @Selector("performRequests:onCIImage:error:")
-    public native boolean performRequestsOnCIImageError(NSArray<? extends VNRequest> requests, CIImage image,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsOnCIImageError(@NotNull NSArray<? extends VNRequest> requests,
+            @NotNull CIImage image, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Perform requests on an image in a CIImage.
@@ -203,8 +210,8 @@ public class VNSequenceRequestHandler extends NSObject {
      */
     @Generated
     @Selector("performRequests:onCIImage:orientation:error:")
-    public native boolean performRequestsOnCIImageOrientationError(NSArray<? extends VNRequest> requests, CIImage image,
-            int orientation, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsOnCIImageOrientationError(@NotNull NSArray<? extends VNRequest> requests,
+            @NotNull CIImage image, int orientation, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Perform requests on an image in a CVPixelBuffer.
@@ -219,8 +226,8 @@ public class VNSequenceRequestHandler extends NSObject {
      */
     @Generated
     @Selector("performRequests:onCVPixelBuffer:error:")
-    public native boolean performRequestsOnCVPixelBufferError(NSArray<? extends VNRequest> requests,
-            CVBufferRef pixelBuffer, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsOnCVPixelBufferError(@NotNull NSArray<? extends VNRequest> requests,
+            @NotNull CVBufferRef pixelBuffer, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Perform requests on an image in a CVPixelBuffer.
@@ -237,8 +244,9 @@ public class VNSequenceRequestHandler extends NSObject {
      */
     @Generated
     @Selector("performRequests:onCVPixelBuffer:orientation:error:")
-    public native boolean performRequestsOnCVPixelBufferOrientationError(NSArray<? extends VNRequest> requests,
-            CVBufferRef pixelBuffer, int orientation, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsOnCVPixelBufferOrientationError(@NotNull NSArray<? extends VNRequest> requests,
+            @NotNull CVBufferRef pixelBuffer, int orientation,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Perform requests on an image with its source format in memory.
@@ -253,8 +261,8 @@ public class VNSequenceRequestHandler extends NSObject {
      */
     @Generated
     @Selector("performRequests:onImageData:error:")
-    public native boolean performRequestsOnImageDataError(NSArray<? extends VNRequest> requests, NSData imageData,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsOnImageDataError(@NotNull NSArray<? extends VNRequest> requests,
+            @NotNull NSData imageData, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Perform requests on an image with its source format in memory.
@@ -271,8 +279,9 @@ public class VNSequenceRequestHandler extends NSObject {
      */
     @Generated
     @Selector("performRequests:onImageData:orientation:error:")
-    public native boolean performRequestsOnImageDataOrientationError(NSArray<? extends VNRequest> requests,
-            NSData imageData, int orientation, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsOnImageDataOrientationError(@NotNull NSArray<? extends VNRequest> requests,
+            @NotNull NSData imageData, int orientation,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Perform requests on an image referenced by an URL.
@@ -287,8 +296,8 @@ public class VNSequenceRequestHandler extends NSObject {
      */
     @Generated
     @Selector("performRequests:onImageURL:error:")
-    public native boolean performRequestsOnImageURLError(NSArray<? extends VNRequest> requests, NSURL imageURL,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsOnImageURLError(@NotNull NSArray<? extends VNRequest> requests,
+            @NotNull NSURL imageURL, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Perform requests on an image referenced by an URL.
@@ -305,8 +314,9 @@ public class VNSequenceRequestHandler extends NSObject {
      */
     @Generated
     @Selector("performRequests:onImageURL:orientation:error:")
-    public native boolean performRequestsOnImageURLOrientationError(NSArray<? extends VNRequest> requests,
-            NSURL imageURL, int orientation, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsOnImageURLOrientationError(@NotNull NSArray<? extends VNRequest> requests,
+            @NotNull NSURL imageURL, int orientation,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -346,8 +356,8 @@ public class VNSequenceRequestHandler extends NSObject {
      */
     @Generated
     @Selector("performRequests:onCMSampleBuffer:error:")
-    public native boolean performRequestsOnCMSampleBufferError(NSArray<? extends VNRequest> requests,
-            CMSampleBufferRef sampleBuffer, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsOnCMSampleBufferError(@NotNull NSArray<? extends VNRequest> requests,
+            @NotNull CMSampleBufferRef sampleBuffer, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Perform requests on the image buffer contained in the CMSampleBufferRef.
@@ -368,6 +378,7 @@ public class VNSequenceRequestHandler extends NSObject {
      */
     @Generated
     @Selector("performRequests:onCMSampleBuffer:orientation:error:")
-    public native boolean performRequestsOnCMSampleBufferOrientationError(NSArray<? extends VNRequest> requests,
-            CMSampleBufferRef sampleBuffer, int orientation, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsOnCMSampleBufferOrientationError(
+            @NotNull NSArray<? extends VNRequest> requests, @NotNull CMSampleBufferRef sampleBuffer, int orientation,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

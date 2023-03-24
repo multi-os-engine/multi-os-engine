@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * HKAttachmentStore
@@ -69,15 +71,17 @@ public class HKAttachmentStore extends NSObject {
      */
     @Generated
     @Selector("addAttachmentToObject:name:contentType:URL:metadata:completion:")
-    public native void addAttachmentToObjectNameContentTypeURLMetadataCompletion(HKObject object, String name,
-            UTType contentType, NSURL URL, NSDictionary<String, ?> metadata,
-            @ObjCBlock(name = "call_addAttachmentToObjectNameContentTypeURLMetadataCompletion") Block_addAttachmentToObjectNameContentTypeURLMetadataCompletion completion);
+    public native void addAttachmentToObjectNameContentTypeURLMetadataCompletion(@NotNull HKObject object,
+            @NotNull String name, @NotNull UTType contentType, @NotNull NSURL URL,
+            @Nullable NSDictionary<String, ?> metadata,
+            @NotNull @ObjCBlock(name = "call_addAttachmentToObjectNameContentTypeURLMetadataCompletion") Block_addAttachmentToObjectNameContentTypeURLMetadataCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addAttachmentToObjectNameContentTypeURLMetadataCompletion {
         @Generated
-        void call_addAttachmentToObjectNameContentTypeURLMetadataCompletion(HKAttachment attachment, NSError error);
+        void call_addAttachmentToObjectNameContentTypeURLMetadataCompletion(@Nullable HKAttachment attachment,
+                @Nullable NSError error);
     }
 
     @Generated
@@ -92,22 +96,25 @@ public class HKAttachmentStore extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,14 +137,15 @@ public class HKAttachmentStore extends NSObject {
      */
     @Generated
     @Selector("getAttachmentsForObject:completion:")
-    public native void getAttachmentsForObjectCompletion(HKObject object,
-            @ObjCBlock(name = "call_getAttachmentsForObjectCompletion") Block_getAttachmentsForObjectCompletion completion);
+    public native void getAttachmentsForObjectCompletion(@NotNull HKObject object,
+            @NotNull @ObjCBlock(name = "call_getAttachmentsForObjectCompletion") Block_getAttachmentsForObjectCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getAttachmentsForObjectCompletion {
         @Generated
-        void call_getAttachmentsForObjectCompletion(NSArray<? extends HKAttachment> attachments, NSError error);
+        void call_getAttachmentsForObjectCompletion(@Nullable NSArray<? extends HKAttachment> attachments,
+                @Nullable NSError error);
     }
 
     /**
@@ -153,16 +161,17 @@ public class HKAttachmentStore extends NSObject {
      * @param completion Called with an NSData or an error.
      * @return An NSProgress object to use for tracking the progress of downloading the attachment's data from iCloud.
      */
+    @NotNull
     @Generated
     @Selector("getDataForAttachment:completion:")
-    public native NSProgress getDataForAttachmentCompletion(HKAttachment attachment,
-            @ObjCBlock(name = "call_getDataForAttachmentCompletion") Block_getDataForAttachmentCompletion completion);
+    public native NSProgress getDataForAttachmentCompletion(@NotNull HKAttachment attachment,
+            @NotNull @ObjCBlock(name = "call_getDataForAttachmentCompletion") Block_getDataForAttachmentCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getDataForAttachmentCompletion {
         @Generated
-        void call_getDataForAttachmentCompletion(NSData attachmentData, NSError error);
+        void call_getDataForAttachmentCompletion(@Nullable NSData attachmentData, @Nullable NSError error);
     }
 
     @Generated
@@ -183,7 +192,7 @@ public class HKAttachmentStore extends NSObject {
      */
     @Generated
     @Selector("initWithHealthStore:")
-    public native HKAttachmentStore initWithHealthStore(HKHealthStore healthStore);
+    public native HKAttachmentStore initWithHealthStore(@NotNull HKHealthStore healthStore);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -202,9 +211,10 @@ public class HKAttachmentStore extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -222,14 +232,14 @@ public class HKAttachmentStore extends NSObject {
      */
     @Generated
     @Selector("removeAttachment:fromObject:completion:")
-    public native void removeAttachmentFromObjectCompletion(HKAttachment attachment, HKObject object,
-            @ObjCBlock(name = "call_removeAttachmentFromObjectCompletion") Block_removeAttachmentFromObjectCompletion completion);
+    public native void removeAttachmentFromObjectCompletion(@NotNull HKAttachment attachment, @NotNull HKObject object,
+            @NotNull @ObjCBlock(name = "call_removeAttachmentFromObjectCompletion") Block_removeAttachmentFromObjectCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeAttachmentFromObjectCompletion {
         @Generated
-        void call_removeAttachmentFromObjectCompletion(boolean success, NSError error);
+        void call_removeAttachmentFromObjectCompletion(boolean success, @Nullable NSError error);
     }
 
     @Generated
@@ -256,16 +266,17 @@ public class HKAttachmentStore extends NSObject {
      * @param dataHandler Called with an NSData chunk or an error. When done is YES, the operation has completed.
      * @return An NSProgress object to use for tracking the progress of downloading the attachment's data from iCloud.
      */
+    @NotNull
     @Generated
     @Selector("streamDataForAttachment:dataHandler:")
-    public native NSProgress streamDataForAttachmentDataHandler(HKAttachment attachment,
-            @ObjCBlock(name = "call_streamDataForAttachmentDataHandler") Block_streamDataForAttachmentDataHandler dataHandler);
+    public native NSProgress streamDataForAttachmentDataHandler(@NotNull HKAttachment attachment,
+            @NotNull @ObjCBlock(name = "call_streamDataForAttachmentDataHandler") Block_streamDataForAttachmentDataHandler dataHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_streamDataForAttachmentDataHandler {
         @Generated
-        void call_streamDataForAttachmentDataHandler(NSData dataChunk, NSError error, boolean done);
+        void call_streamDataForAttachmentDataHandler(@Nullable NSData dataChunk, @Nullable NSError error, boolean done);
     }
 
     @Generated

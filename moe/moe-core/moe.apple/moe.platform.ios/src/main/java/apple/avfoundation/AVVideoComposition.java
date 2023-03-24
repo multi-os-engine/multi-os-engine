@@ -49,6 +49,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.foundation.NSError;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.0
@@ -83,22 +85,25 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +138,10 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -213,11 +219,13 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
      *              asset are already loaded before invoking this method.
      * @return An instance of AVVideoComposition.
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("videoCompositionWithAsset:applyingCIFiltersWithHandler:")
-    public static native AVVideoComposition videoCompositionWithAssetApplyingCIFiltersWithHandler(AVAsset asset,
-            @ObjCBlock(name = "call_videoCompositionWithAssetApplyingCIFiltersWithHandler") Block_videoCompositionWithAssetApplyingCIFiltersWithHandler applier);
+    public static native AVVideoComposition videoCompositionWithAssetApplyingCIFiltersWithHandler(
+            @NotNull AVAsset asset,
+            @NotNull @ObjCBlock(name = "call_videoCompositionWithAssetApplyingCIFiltersWithHandler") Block_videoCompositionWithAssetApplyingCIFiltersWithHandler applier);
 
     /**
      * videoCompositionWithPropertiesOfAsset:
@@ -249,14 +257,16 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
      *              loaded before invoking this method.
      * @return An instance of AVVideoComposition.
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("videoCompositionWithPropertiesOfAsset:")
-    public static native AVVideoComposition videoCompositionWithPropertiesOfAsset(AVAsset asset);
+    public static native AVVideoComposition videoCompositionWithPropertiesOfAsset(@NotNull AVAsset asset);
 
     /**
      * indicates a special video composition tool for use of Core Animation; may be nil
      */
+    @Nullable
     @Generated
     @Selector("animationTool")
     public native AVVideoCompositionCoreAnimationTool animationTool();
@@ -272,6 +282,7 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("colorPrimaries")
     public native String colorPrimaries();
@@ -287,6 +298,7 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("colorTransferFunction")
     public native String colorTransferFunction();
@@ -302,15 +314,17 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("colorYCbCrMatrix")
     public native String colorYCbCrMatrix();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * indicates a custom compositor class to use. The class must implement the AVVideoCompositing protocol.
@@ -318,6 +332,7 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("customVideoCompositorClass")
     @MappedReturn(ObjCObjectMapper.class)
@@ -346,6 +361,7 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
      * be attempted (note that this will often be
      * the duration of the asset with which the instance of AVVideoComposition is associated).
      */
+    @NotNull
     @Generated
     @Selector("instructions")
     public native NSArray<?> instructions();
@@ -385,14 +401,16 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
     @Deprecated
     @Generated
     @Selector("isValidForAsset:timeRange:validationDelegate:")
-    public native boolean isValidForAssetTimeRangeValidationDelegate(AVAsset asset, @ByValue CMTimeRange timeRange,
-            @Mapped(ObjCObjectMapper.class) AVVideoCompositionValidationHandling validationDelegate);
+    public native boolean isValidForAssetTimeRangeValidationDelegate(@Nullable AVAsset asset,
+            @ByValue CMTimeRange timeRange,
+            @Nullable @Mapped(ObjCObjectMapper.class) AVVideoCompositionValidationHandling validationDelegate);
 
+    @NotNull
     @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 
     /**
      * indicates the scale at which the video composition should render. May only be other than 1.0 for a video
@@ -416,7 +434,8 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
     @Generated
     public interface Block_videoCompositionWithAssetApplyingCIFiltersWithHandler {
         @Generated
-        void call_videoCompositionWithAssetApplyingCIFiltersWithHandler(AVAsynchronousCIImageFilteringRequest request);
+        void call_videoCompositionWithAssetApplyingCIFiltersWithHandler(
+                @NotNull AVAsynchronousCIImageFilteringRequest request);
     }
 
     /**
@@ -438,6 +457,7 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("sourceSampleDataTrackIDs")
     public native NSArray<? extends NSNumber> sourceSampleDataTrackIDs();
@@ -479,16 +499,17 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
      */
     @Generated
     @Selector("determineValidityForAsset:timeRange:validationDelegate:completionHandler:")
-    public native void determineValidityForAssetTimeRangeValidationDelegateCompletionHandler(AVAsset asset,
+    public native void determineValidityForAssetTimeRangeValidationDelegateCompletionHandler(@Nullable AVAsset asset,
             @ByValue CMTimeRange timeRange,
-            @Mapped(ObjCObjectMapper.class) AVVideoCompositionValidationHandling validationDelegate,
-            @ObjCBlock(name = "call_determineValidityForAssetTimeRangeValidationDelegateCompletionHandler") Block_determineValidityForAssetTimeRangeValidationDelegateCompletionHandler completionHandler);
+            @Nullable @Mapped(ObjCObjectMapper.class) AVVideoCompositionValidationHandling validationDelegate,
+            @NotNull @ObjCBlock(name = "call_determineValidityForAssetTimeRangeValidationDelegateCompletionHandler") Block_determineValidityForAssetTimeRangeValidationDelegateCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_determineValidityForAssetTimeRangeValidationDelegateCompletionHandler {
         @Generated
-        void call_determineValidityForAssetTimeRangeValidationDelegateCompletionHandler(boolean isValid, NSError error);
+        void call_determineValidityForAssetTimeRangeValidationDelegateCompletionHandler(boolean isValid,
+                @Nullable NSError error);
     }
 
     /**
@@ -551,16 +572,17 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
      */
     @Generated
     @Selector("videoCompositionWithAsset:applyingCIFiltersWithHandler:completionHandler:")
-    public static native void videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler(AVAsset asset,
-            @ObjCBlock(name = "call_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_1") Block_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_1 applier,
-            @ObjCBlock(name = "call_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_2") Block_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_2 completionHandler);
+    public static native void videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler(
+            @NotNull AVAsset asset,
+            @NotNull @ObjCBlock(name = "call_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_1") Block_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_1 applier,
+            @NotNull @ObjCBlock(name = "call_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_2") Block_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_2 completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_1 {
         @Generated
         void call_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_1(
-                AVAsynchronousCIImageFilteringRequest request);
+                @NotNull AVAsynchronousCIImageFilteringRequest request);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -568,7 +590,7 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
     public interface Block_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_2 {
         @Generated
         void call_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_2(
-                AVVideoComposition videoComposition, NSError error);
+                @Nullable AVVideoComposition videoComposition, @Nullable NSError error);
     }
 
     /**
@@ -604,14 +626,14 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
      */
     @Generated
     @Selector("videoCompositionWithPropertiesOfAsset:completionHandler:")
-    public static native void videoCompositionWithPropertiesOfAssetCompletionHandler(AVAsset asset,
-            @ObjCBlock(name = "call_videoCompositionWithPropertiesOfAssetCompletionHandler") Block_videoCompositionWithPropertiesOfAssetCompletionHandler completionHandler);
+    public static native void videoCompositionWithPropertiesOfAssetCompletionHandler(@NotNull AVAsset asset,
+            @NotNull @ObjCBlock(name = "call_videoCompositionWithPropertiesOfAssetCompletionHandler") Block_videoCompositionWithPropertiesOfAssetCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_videoCompositionWithPropertiesOfAssetCompletionHandler {
         @Generated
-        void call_videoCompositionWithPropertiesOfAssetCompletionHandler(AVVideoComposition videoComposition,
-                NSError error);
+        void call_videoCompositionWithPropertiesOfAssetCompletionHandler(@Nullable AVVideoComposition videoComposition,
+                @Nullable NSError error);
     }
 }

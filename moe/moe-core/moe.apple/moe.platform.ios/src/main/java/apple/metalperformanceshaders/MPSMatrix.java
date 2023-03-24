@@ -41,6 +41,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSMatrix
@@ -94,22 +96,25 @@ public class MPSMatrix extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -144,9 +149,10 @@ public class MPSMatrix extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -189,6 +195,7 @@ public class MPSMatrix extends NSObject {
      * 
      * An MTLBuffer to store the data.
      */
+    @NotNull
     @Generated
     @Selector("data")
     @MappedReturn(ObjCObjectMapper.class)
@@ -208,6 +215,7 @@ public class MPSMatrix extends NSObject {
      * 
      * The device on which the MPSMatrix will be used.
      */
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -238,8 +246,8 @@ public class MPSMatrix extends NSObject {
      */
     @Generated
     @Selector("initWithBuffer:descriptor:")
-    public native MPSMatrix initWithBufferDescriptor(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
-            MPSMatrixDescriptor descriptor);
+    public native MPSMatrix initWithBufferDescriptor(@NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
+            @NotNull MPSMatrixDescriptor descriptor);
 
     /**
      * [@property] rowBytes
@@ -301,8 +309,8 @@ public class MPSMatrix extends NSObject {
      */
     @Generated
     @Selector("initWithBuffer:offset:descriptor:")
-    public native MPSMatrix initWithBufferOffsetDescriptor(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
-            @NUInt long offset, MPSMatrixDescriptor descriptor);
+    public native MPSMatrix initWithBufferOffsetDescriptor(@NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
+            @NUInt long offset, @NotNull MPSMatrixDescriptor descriptor);
 
     /**
      * Initialize a MPSMatrix object with a descriptor. Allocate the buffer.
@@ -319,8 +327,8 @@ public class MPSMatrix extends NSObject {
      */
     @Generated
     @Selector("initWithDevice:descriptor:")
-    public native MPSMatrix initWithDeviceDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            MPSMatrixDescriptor descriptor);
+    public native MPSMatrix initWithDeviceDescriptor(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull MPSMatrixDescriptor descriptor);
 
     /**
      * [@property] offset
@@ -376,5 +384,6 @@ public class MPSMatrix extends NSObject {
      */
     @Generated
     @Selector("synchronizeOnCommandBuffer:")
-    public native void synchronizeOnCommandBuffer(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
+    public native void synchronizeOnCommandBuffer(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
 }

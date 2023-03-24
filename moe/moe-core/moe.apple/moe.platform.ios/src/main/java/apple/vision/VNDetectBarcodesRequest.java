@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A request that detects barcodes in an image.
@@ -65,22 +67,25 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -105,7 +110,7 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
     @Generated
     @Selector("initWithCompletionHandler:")
     public native VNDetectBarcodesRequest initWithCompletionHandler(
-            @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -124,9 +129,10 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -148,7 +154,7 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
      */
     @Generated
     @Selector("setSymbologies:")
-    public native void setSymbologies(NSArray<String> value);
+    public native void setSymbologies(@NotNull NSArray<String> value);
 
     @Generated
     @Selector("setVersion:")
@@ -169,6 +175,7 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
      *         API-Since: 11.0
      *         Deprecated-Since: 15.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("supportedSymbologies")
@@ -179,6 +186,7 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
      * possible symbologies. Setting a revision on the request will reset the symbologies to all symbologies for the
      * specified revision.
      */
+    @NotNull
     @Generated
     @Selector("symbologies")
     public native NSArray<String> symbologies();
@@ -198,6 +206,7 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
     @NUInt
     public static native long defaultRevision();
 
+    @NotNull
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();
@@ -205,6 +214,7 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
     /**
      * VNBarcodeObservation results.
      */
+    @Nullable
     @Generated
     @Selector("results")
     public native NSArray<? extends VNBarcodeObservation> results();
@@ -219,8 +229,9 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
      * 
      *         API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("supportedSymbologiesAndReturnError:")
     public native NSArray<String> supportedSymbologiesAndReturnError(
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

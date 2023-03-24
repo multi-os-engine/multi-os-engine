@@ -10,6 +10,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] MXMetricManagerSubscriber
@@ -50,7 +51,7 @@ public interface MXMetricManagerSubscriber {
     @IsOptional
     @Generated
     @Selector("didReceiveMetricPayloads:")
-    default void didReceiveMetricPayloads(NSArray<? extends MXMetricPayload> payloads) {
+    default void didReceiveMetricPayloads(@NotNull NSArray<? extends MXMetricPayload> payloads) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -77,7 +78,7 @@ public interface MXMetricManagerSubscriber {
     @Generated
     @IsOptional
     @Selector("didReceiveDiagnosticPayloads:")
-    default void didReceiveDiagnosticPayloads(NSArray<? extends MXDiagnosticPayload> payloads) {
+    default void didReceiveDiagnosticPayloads(@NotNull NSArray<? extends MXDiagnosticPayload> payloads) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

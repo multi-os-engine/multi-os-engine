@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Analyzes an audio file and provides analysis results to the client
@@ -67,9 +69,9 @@ public class SNAudioFileAnalyzer extends NSObject {
      */
     @Generated
     @Selector("addRequest:withObserver:error:")
-    public native boolean addRequestWithObserverError(@Mapped(ObjCObjectMapper.class) SNRequest request,
-            @Mapped(ObjCObjectMapper.class) SNResultsObserving observer,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean addRequestWithObserverError(@NotNull @Mapped(ObjCObjectMapper.class) SNRequest request,
+            @NotNull @Mapped(ObjCObjectMapper.class) SNResultsObserving observer,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Owned
@@ -102,7 +104,7 @@ public class SNAudioFileAnalyzer extends NSObject {
     @Generated
     @Selector("analyzeWithCompletionHandler:")
     public native void analyzeWithCompletionHandler(
-            @ObjCBlock(name = "call_analyzeWithCompletionHandler") Block_analyzeWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_analyzeWithCompletionHandler") Block_analyzeWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -113,7 +115,7 @@ public class SNAudioFileAnalyzer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Cancels any in-progress analysis of the audio file
@@ -127,18 +129,21 @@ public class SNAudioFileAnalyzer extends NSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -170,8 +175,8 @@ public class SNAudioFileAnalyzer extends NSObject {
      */
     @Generated
     @Selector("initWithURL:error:")
-    public native SNAudioFileAnalyzer initWithURLError(NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native SNAudioFileAnalyzer initWithURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -190,9 +195,10 @@ public class SNAudioFileAnalyzer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -216,7 +222,7 @@ public class SNAudioFileAnalyzer extends NSObject {
      */
     @Generated
     @Selector("removeRequest:")
-    public native void removeRequest(@Mapped(ObjCObjectMapper.class) SNRequest request);
+    public native void removeRequest(@NotNull @Mapped(ObjCObjectMapper.class) SNRequest request);
 
     @Generated
     @Selector("resolveClassMethod:")

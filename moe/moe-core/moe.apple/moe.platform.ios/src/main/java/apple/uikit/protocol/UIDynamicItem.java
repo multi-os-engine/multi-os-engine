@@ -29,6 +29,7 @@ import org.moe.natj.objc.ann.Selector;
 import apple.corefoundation.struct.CGAffineTransform;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -51,6 +52,7 @@ public interface UIDynamicItem {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("collisionBoundingPath")

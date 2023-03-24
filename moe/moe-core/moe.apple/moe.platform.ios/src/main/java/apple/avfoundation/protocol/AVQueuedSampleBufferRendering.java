@@ -10,6 +10,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] AVQueuedSampleBufferRendering
@@ -49,7 +50,7 @@ public interface AVQueuedSampleBufferRendering {
      */
     @Generated
     @Selector("enqueueSampleBuffer:")
-    void enqueueSampleBuffer(CMSampleBufferRef sampleBuffer);
+    void enqueueSampleBuffer(@NotNull CMSampleBufferRef sampleBuffer);
 
     /**
      * flush
@@ -115,8 +116,8 @@ public interface AVQueuedSampleBufferRendering {
      */
     @Generated
     @Selector("requestMediaDataWhenReadyOnQueue:usingBlock:")
-    void requestMediaDataWhenReadyOnQueueUsingBlock(NSObject queue,
-            @ObjCBlock(name = "call_requestMediaDataWhenReadyOnQueueUsingBlock") Block_requestMediaDataWhenReadyOnQueueUsingBlock block);
+    void requestMediaDataWhenReadyOnQueueUsingBlock(@NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_requestMediaDataWhenReadyOnQueueUsingBlock") Block_requestMediaDataWhenReadyOnQueueUsingBlock block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -145,6 +146,7 @@ public interface AVQueuedSampleBufferRendering {
      * 
      * The timebase is read-only. Use the AVSampleBufferRenderSynchronizer to set the rate or time.
      */
+    @NotNull
     @Generated
     @Selector("timebase")
     CMTimebaseRef timebase();

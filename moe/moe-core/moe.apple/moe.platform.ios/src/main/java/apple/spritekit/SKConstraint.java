@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SKConstraints are evaluated each frame after actions and physics.
@@ -81,22 +83,25 @@ public class SKConstraint extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -112,17 +117,21 @@ public class SKConstraint extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * Constrain the node's position to be within a distance of a point or node
      */
+    @NotNull
     @Generated
     @Selector("distance:toNode:")
-    public static native SKConstraint distanceToNode(SKRange range, SKNode node);
+    public static native SKConstraint distanceToNode(@NotNull SKRange range, @NotNull SKNode node);
 
+    @NotNull
     @Generated
     @Selector("distance:toPoint:")
-    public static native SKConstraint distanceToPoint(SKRange range, @ByValue CGPoint point);
+    public static native SKConstraint distanceToPoint(@NotNull SKRange range, @ByValue CGPoint point);
 
+    @NotNull
     @Generated
     @Selector("distance:toPoint:inNode:")
-    public static native SKConstraint distanceToPointInNode(SKRange range, @ByValue CGPoint point, SKNode node);
+    public static native SKConstraint distanceToPointInNode(@NotNull SKRange range, @ByValue CGPoint point,
+            @NotNull SKNode node);
 
     @Generated
     @Selector("hash")
@@ -146,9 +155,10 @@ public class SKConstraint extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,32 +168,39 @@ public class SKConstraint extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * Constrain the node's rotation to orient to a point or node
      */
+    @NotNull
     @Generated
     @Selector("orientToNode:offset:")
-    public static native SKConstraint orientToNodeOffset(SKNode node, SKRange radians);
+    public static native SKConstraint orientToNodeOffset(@NotNull SKNode node, @NotNull SKRange radians);
 
+    @NotNull
     @Generated
     @Selector("orientToPoint:inNode:offset:")
-    public static native SKConstraint orientToPointInNodeOffset(@ByValue CGPoint point, SKNode node, SKRange radians);
+    public static native SKConstraint orientToPointInNodeOffset(@ByValue CGPoint point, @NotNull SKNode node,
+            @NotNull SKRange radians);
 
+    @NotNull
     @Generated
     @Selector("orientToPoint:offset:")
-    public static native SKConstraint orientToPointOffset(@ByValue CGPoint point, SKRange radians);
+    public static native SKConstraint orientToPointOffset(@ByValue CGPoint point, @NotNull SKRange radians);
 
     /**
      * Constrain the node's position to a range
      */
+    @NotNull
     @Generated
     @Selector("positionX:")
-    public static native SKConstraint positionX(SKRange range);
+    public static native SKConstraint positionX(@NotNull SKRange range);
 
+    @NotNull
     @Generated
     @Selector("positionX:Y:")
-    public static native SKConstraint positionXY(SKRange xRange, SKRange yRange);
+    public static native SKConstraint positionXY(@NotNull SKRange xRange, @NotNull SKRange yRange);
 
+    @NotNull
     @Generated
     @Selector("positionY:")
-    public static native SKConstraint positionY(SKRange range);
+    public static native SKConstraint positionY(@NotNull SKRange range);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -209,15 +226,17 @@ public class SKConstraint extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * Constrain the node's rotation to a range
      */
+    @NotNull
     @Generated
     @Selector("zRotation:")
-    public static native SKConstraint zRotation(SKRange zRange);
+    public static native SKConstraint zRotation(@NotNull SKRange zRange);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Wether the constraint should apply. Defualts to YES
@@ -228,7 +247,7 @@ public class SKConstraint extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -236,11 +255,12 @@ public class SKConstraint extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKConstraint initWithCoder(NSCoder coder);
+    public native SKConstraint initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Reference node to transform the values to before apply the constraint limits. Defaults to nil (no transfrom).
      */
+    @Nullable
     @Generated
     @Selector("referenceNode")
     public native SKNode referenceNode();
@@ -257,7 +277,7 @@ public class SKConstraint extends NSObject implements NSSecureCoding, NSCopying 
      */
     @Generated
     @Selector("setReferenceNode:")
-    public native void setReferenceNode(SKNode value);
+    public native void setReferenceNode(@Nullable SKNode value);
 
     @Generated
     @Selector("supportsSecureCoding")

@@ -25,6 +25,7 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ptr.ConstVoidPtr;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Structure()
@@ -46,7 +47,7 @@ public final class AudioFormatInfo extends StructObject {
     }
 
     @Generated
-    public AudioFormatInfo(@ByValue AudioStreamBasicDescription mASBD, ConstVoidPtr mMagicCookie,
+    public AudioFormatInfo(@ByValue AudioStreamBasicDescription mASBD, @NotNull ConstVoidPtr mMagicCookie,
             int mMagicCookieSize) {
         super(AudioFormatInfo.class);
         setMASBD(mASBD);
@@ -63,13 +64,14 @@ public final class AudioFormatInfo extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setMASBD(@ByValue AudioStreamBasicDescription value);
 
+    @NotNull
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native ConstVoidPtr mMagicCookie();
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setMMagicCookie(ConstVoidPtr value);
+    public native void setMMagicCookie(@NotNull ConstVoidPtr value);
 
     @Generated
     @StructureField(order = 2, isGetter = true)

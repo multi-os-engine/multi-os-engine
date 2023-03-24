@@ -43,6 +43,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCaptureVideoDataOutput
@@ -85,22 +87,25 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,9 +140,10 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -193,6 +199,7 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @Selector("availableVideoCVPixelFormatTypes")
     public native NSArray<? extends NSNumber> availableVideoCVPixelFormatTypes();
@@ -207,6 +214,7 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @Selector("availableVideoCodecTypes")
     public native NSArray<String> availableVideoCodecTypes();
@@ -265,10 +273,11 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
      * @return
      *         A fully populated dictionary of keys and values that are compatible with AVAssetWriter.
      */
+    @Nullable
     @Generated
     @Selector("recommendedVideoSettingsForAssetWriterWithOutputFileType:")
     public native NSDictionary<String, ?> recommendedVideoSettingsForAssetWriterWithOutputFileType(
-            String outputFileType);
+            @NotNull String outputFileType);
 
     /**
      * [@property] sampleBufferCallbackQueue
@@ -278,6 +287,7 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
      * The value of this property is a dispatch_queue_t. The queue is set using the setSampleBufferDelegate:queue:
      * method.
      */
+    @Nullable
     @Generated
     @Selector("sampleBufferCallbackQueue")
     public native NSObject sampleBufferCallbackQueue();
@@ -291,6 +301,7 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
      * that will receive sample buffers after they are captured. The delegate is set using the
      * setSampleBufferDelegate:queue: method.
      */
+    @Nullable
     @Generated
     @Selector("sampleBufferDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -365,8 +376,8 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
     @Generated
     @Selector("setSampleBufferDelegate:queue:")
     public native void setSampleBufferDelegateQueue(
-            @Mapped(ObjCObjectMapper.class) AVCaptureVideoDataOutputSampleBufferDelegate sampleBufferDelegate,
-            NSObject sampleBufferCallbackQueue);
+            @Nullable @Mapped(ObjCObjectMapper.class) AVCaptureVideoDataOutputSampleBufferDelegate sampleBufferDelegate,
+            @Nullable NSObject sampleBufferCallbackQueue);
 
     /**
      * [@property] videoSettings
@@ -436,9 +447,11 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
      * @return
      *         An array of video codecs; see AVVideoSettings.h for a full list.
      */
+    @NotNull
     @Generated
     @Selector("availableVideoCodecTypesForAssetWriterWithOutputFileType:")
-    public native NSArray<String> availableVideoCodecTypesForAssetWriterWithOutputFileType(String outputFileType);
+    public native NSArray<String> availableVideoCodecTypesForAssetWriterWithOutputFileType(
+            @NotNull String outputFileType);
 
     /**
      * recommendedVideoSettingsForVideoCodecType:assetWriterOutputFileType:
@@ -474,10 +487,11 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
      * @return
      *         A fully populated dictionary of keys and values that are compatible with AVAssetWriter.
      */
+    @Nullable
     @Generated
     @Selector("recommendedVideoSettingsForVideoCodecType:assetWriterOutputFileType:")
     public native NSDictionary<String, ?> recommendedVideoSettingsForVideoCodecTypeAssetWriterOutputFileType(
-            String videoCodecType, String outputFileType);
+            @NotNull String videoCodecType, @NotNull String outputFileType);
 
     /**
      * [@property] automaticallyConfiguresOutputBufferDimensions

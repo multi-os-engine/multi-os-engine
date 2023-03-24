@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -48,7 +49,7 @@ public interface UICoordinateSpace {
     @Selector("convertPoint:fromCoordinateSpace:")
     @ByValue
     CGPoint convertPointFromCoordinateSpace(@ByValue CGPoint point,
-            @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
+            @NotNull @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
 
     /**
      * API-Since: 8.0
@@ -57,7 +58,7 @@ public interface UICoordinateSpace {
     @Selector("convertPoint:toCoordinateSpace:")
     @ByValue
     CGPoint convertPointToCoordinateSpace(@ByValue CGPoint point,
-            @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
+            @NotNull @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
 
     /**
      * API-Since: 8.0
@@ -66,7 +67,7 @@ public interface UICoordinateSpace {
     @Selector("convertRect:fromCoordinateSpace:")
     @ByValue
     CGRect convertRectFromCoordinateSpace(@ByValue CGRect rect,
-            @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
+            @NotNull @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
 
     /**
      * API-Since: 8.0
@@ -75,5 +76,5 @@ public interface UICoordinateSpace {
     @Selector("convertRect:toCoordinateSpace:")
     @ByValue
     CGRect convertRectToCoordinateSpace(@ByValue CGRect rect,
-            @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
+            @NotNull @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
 }

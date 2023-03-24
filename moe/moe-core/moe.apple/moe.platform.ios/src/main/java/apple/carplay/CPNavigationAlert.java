@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@c] CPNavigationAlert is a banner alert that can display map or navigation-related information to the user.
@@ -61,22 +63,25 @@ public class CPNavigationAlert extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -95,17 +100,19 @@ public class CPNavigationAlert extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
 
+    @Nullable
     @Generated
     @Selector("image")
     public native UIImage image();
 
+    @Nullable
     @Generated
     @Selector("imageSet")
     public native CPImageSet imageSet();
@@ -116,13 +123,13 @@ public class CPNavigationAlert extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CPNavigationAlert initWithCoder(NSCoder coder);
+    public native CPNavigationAlert initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithTitleVariants:subtitleVariants:image:primaryAction:secondaryAction:duration:")
     public native CPNavigationAlert initWithTitleVariantsSubtitleVariantsImagePrimaryActionSecondaryActionDuration(
-            NSArray<String> titleVariants, NSArray<String> subtitleVariants, UIImage image, CPAlertAction primaryAction,
-            CPAlertAction secondaryAction, double duration);
+            @NotNull NSArray<String> titleVariants, @Nullable NSArray<String> subtitleVariants, @Nullable UIImage image,
+            @NotNull CPAlertAction primaryAction, @Nullable CPAlertAction secondaryAction, double duration);
 
     /**
      * Fully specify a @c CPNavigationAlert with a title, image, primary and secondary action,
@@ -154,8 +161,9 @@ public class CPNavigationAlert extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("initWithTitleVariants:subtitleVariants:imageSet:primaryAction:secondaryAction:duration:")
     public native CPNavigationAlert initWithTitleVariantsSubtitleVariantsImageSetPrimaryActionSecondaryActionDuration(
-            NSArray<String> titleVariants, NSArray<String> subtitleVariants, CPImageSet imageSet,
-            CPAlertAction primaryAction, CPAlertAction secondaryAction, double duration);
+            @NotNull NSArray<String> titleVariants, @Nullable NSArray<String> subtitleVariants,
+            @Nullable CPImageSet imageSet, @NotNull CPAlertAction primaryAction,
+            @Nullable CPAlertAction secondaryAction, double duration);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -174,15 +182,17 @@ public class CPNavigationAlert extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native CPNavigationAlert new_objc();
 
+    @NotNull
     @Generated
     @Selector("primaryAction")
     public native CPAlertAction primaryAction();
@@ -195,6 +205,7 @@ public class CPNavigationAlert extends NSObject implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Nullable
     @Generated
     @Selector("secondaryAction")
     public native CPAlertAction secondaryAction();
@@ -203,6 +214,7 @@ public class CPNavigationAlert extends NSObject implements NSSecureCoding {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("subtitleVariants")
     public native NSArray<String> subtitleVariants();
@@ -221,6 +233,7 @@ public class CPNavigationAlert extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    @NotNull
     @Generated
     @Selector("titleVariants")
     public native NSArray<String> titleVariants();
@@ -236,8 +249,8 @@ public class CPNavigationAlert extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("updateTitleVariants:subtitleVariants:")
-    public native void updateTitleVariantsSubtitleVariants(NSArray<String> newTitleVariants,
-            NSArray<String> newSubtitleVariants);
+    public native void updateTitleVariantsSubtitleVariants(@NotNull NSArray<String> newTitleVariants,
+            @NotNull NSArray<String> newSubtitleVariants);
 
     @Generated
     @Selector("version")

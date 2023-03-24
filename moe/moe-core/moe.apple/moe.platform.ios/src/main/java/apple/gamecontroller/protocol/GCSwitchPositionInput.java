@@ -12,6 +12,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -78,6 +80,7 @@ public interface GCSwitchPositionInput {
      * @param input the element that has been modified.
      * @see value
      */
+    @Nullable
     @Generated
     @Selector("positionDidChangeHandler")
     @ObjCBlock(name = "call_positionDidChangeHandler_ret")
@@ -87,8 +90,8 @@ public interface GCSwitchPositionInput {
     @Generated
     public interface Block_positionDidChangeHandler_ret {
         @Generated
-        void call_positionDidChangeHandler_ret(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, @NInt long arg2);
+        void call_positionDidChangeHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, @NInt long arg2);
     }
 
     /**
@@ -108,13 +111,13 @@ public interface GCSwitchPositionInput {
     @Generated
     @Selector("setPositionDidChangeHandler:")
     void setPositionDidChangeHandler(
-            @ObjCBlock(name = "call_setPositionDidChangeHandler") Block_setPositionDidChangeHandler value);
+            @Nullable @ObjCBlock(name = "call_setPositionDidChangeHandler") Block_setPositionDidChangeHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setPositionDidChangeHandler {
         @Generated
-        void call_setPositionDidChangeHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, @NInt long arg2);
+        void call_setPositionDidChangeHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, @NInt long arg2);
     }
 }

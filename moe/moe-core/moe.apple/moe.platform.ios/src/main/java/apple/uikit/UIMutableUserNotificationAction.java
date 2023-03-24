@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -77,22 +79,25 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +132,10 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -182,6 +188,7 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
     /**
      * The unique identifier for this action.
      */
+    @Nullable
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -192,7 +199,7 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIMutableUserNotificationAction initWithCoder(NSCoder coder);
+    public native UIMutableUserNotificationAction initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Whether this action is secure and should require unlocking before being performed. If the activation mode is
@@ -229,6 +236,7 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("parameters")
     public native NSDictionary<?, ?> parameters();
@@ -254,7 +262,7 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
      */
     @Generated
     @Selector("setIdentifier:")
-    public native void setIdentifier(String value);
+    public native void setIdentifier(@Nullable String value);
 
     /**
      * Parameters that can be used by some types of actions.
@@ -263,14 +271,14 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
      */
     @Generated
     @Selector("setParameters:")
-    public native void setParameters(NSDictionary<?, ?> value);
+    public native void setParameters(@NotNull NSDictionary<?, ?> value);
 
     /**
      * The localized title to display for this action.
      */
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@Nullable String value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -281,6 +289,7 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
     /**
      * The localized title to display for this action.
      */
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();

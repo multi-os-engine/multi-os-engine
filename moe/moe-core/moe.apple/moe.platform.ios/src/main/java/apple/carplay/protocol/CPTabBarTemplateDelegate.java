@@ -8,6 +8,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 14.0
@@ -22,5 +23,6 @@ public interface CPTabBarTemplateDelegate {
      */
     @Generated
     @Selector("tabBarTemplate:didSelectTemplate:")
-    void tabBarTemplateDidSelectTemplate(CPTabBarTemplate tabBarTemplate, CPTemplate selectedTemplate);
+    void tabBarTemplateDidSelectTemplate(@NotNull CPTabBarTemplate tabBarTemplate,
+            @NotNull CPTemplate selectedTemplate);
 }

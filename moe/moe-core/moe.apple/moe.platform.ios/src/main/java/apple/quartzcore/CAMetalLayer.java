@@ -48,6 +48,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.foundation.NSDictionary;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Note: The default value of the `opaque' property for CAMetalLayer
@@ -85,22 +87,25 @@ public class CAMetalLayer extends CALayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -109,15 +114,17 @@ public class CAMetalLayer extends CALayer {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("defaultActionForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native CAAction defaultActionForKey(String event);
+    public static native CAAction defaultActionForKey(@NotNull String event);
 
+    @Nullable
     @Generated
     @Selector("defaultValueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultValueForKey(String key);
+    public static native Object defaultValueForKey(@NotNull String key);
 
     @Generated
     @Selector("description")
@@ -145,9 +152,10 @@ public class CAMetalLayer extends CALayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Selector("layer")
@@ -155,7 +163,7 @@ public class CAMetalLayer extends CALayer {
 
     @Generated
     @Selector("needsDisplayForKey:")
-    public static native boolean needsDisplayForKey(String key);
+    public static native boolean needsDisplayForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -190,6 +198,7 @@ public class CAMetalLayer extends CALayer {
      * On macOS this defaults to nil and must be set explicitly before asking for
      * the first drawable.
      */
+    @Nullable
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -224,11 +233,11 @@ public class CAMetalLayer extends CALayer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAMetalLayer initWithCoder(NSCoder coder);
+    public native CAMetalLayer initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
-    public native CAMetalLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
+    public native CAMetalLayer initWithLayer(@NotNull @Mapped(ObjCObjectMapper.class) Object layer);
 
     /**
      * Get the swap queue's next available drawable. Always blocks until a drawable
@@ -238,6 +247,7 @@ public class CAMetalLayer extends CALayer {
      * has elapsed. (except when `allowsNextDrawableTimeout' is set to NO)
      * 3) Process is out of memory.
      */
+    @Nullable
     @Generated
     @Selector("nextDrawable")
     @MappedReturn(ObjCObjectMapper.class)
@@ -272,7 +282,7 @@ public class CAMetalLayer extends CALayer {
      */
     @Generated
     @Selector("setDevice:")
-    public native void setDevice(@Mapped(ObjCObjectMapper.class) MTLDevice value);
+    public native void setDevice(@Nullable @Mapped(ObjCObjectMapper.class) MTLDevice value);
 
     /**
      * This property controls the pixel dimensions of the returned drawable
@@ -354,6 +364,7 @@ public class CAMetalLayer extends CALayer {
      * If non-nil, the rendered content will be colormatched to the colorspace of
      * the context containing this layer (typically the display's colorspace).
      */
+    @Nullable
     @Generated
     @Selector("colorspace")
     public native CGColorSpaceRef colorspace();
@@ -361,7 +372,7 @@ public class CAMetalLayer extends CALayer {
     @Generated
     @Selector("cornerCurveExpansionFactor:")
     @NFloat
-    public static native double cornerCurveExpansionFactor(String curve);
+    public static native double cornerCurveExpansionFactor(@NotNull String curve);
 
     /**
      * Controls the number maximum number of drawables in the swap queue. The
@@ -380,6 +391,7 @@ public class CAMetalLayer extends CALayer {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("preferredDevice")
     @MappedReturn(ObjCObjectMapper.class)
@@ -392,7 +404,7 @@ public class CAMetalLayer extends CALayer {
      */
     @Generated
     @Selector("setColorspace:")
-    public native void setColorspace(CGColorSpaceRef value);
+    public native void setColorspace(@Nullable CGColorSpaceRef value);
 
     /**
      * Controls the number maximum number of drawables in the swap queue. The
@@ -415,6 +427,7 @@ public class CAMetalLayer extends CALayer {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("EDRMetadata")
     public native CAEDRMetadata EDRMetadata();
@@ -424,6 +437,7 @@ public class CAMetalLayer extends CALayer {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("developerHUDProperties")
     public native NSDictionary<?, ?> developerHUDProperties();
@@ -435,7 +449,7 @@ public class CAMetalLayer extends CALayer {
      */
     @Generated
     @Selector("setDeveloperHUDProperties:")
-    public native void setDeveloperHUDProperties(NSDictionary<?, ?> value);
+    public native void setDeveloperHUDProperties(@Nullable NSDictionary<?, ?> value);
 
     /**
      * Metadata describing extended dynamic range content in the layer's drawable.
@@ -449,7 +463,7 @@ public class CAMetalLayer extends CALayer {
      */
     @Generated
     @Selector("setEDRMetadata:")
-    public native void setEDRMetadata(CAEDRMetadata value);
+    public native void setEDRMetadata(@Nullable CAEDRMetadata value);
 
     /**
      * If any rendering context on the screen has this enabled, all content will be

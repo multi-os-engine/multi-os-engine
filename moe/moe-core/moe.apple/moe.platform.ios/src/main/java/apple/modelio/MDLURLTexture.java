@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MDLURLTexture
@@ -81,22 +83,25 @@ public class MDLURLTexture extends MDLTexture {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +136,10 @@ public class MDLURLTexture extends MDLTexture {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,25 +164,27 @@ public class MDLURLTexture extends MDLTexture {
 
     @Generated
     @Selector("textureCubeWithImagesNamed:")
-    public static native MDLURLTexture textureCubeWithImagesNamed(NSArray<String> names);
+    public static native MDLURLTexture textureCubeWithImagesNamed(@NotNull NSArray<String> names);
 
     @Generated
     @Selector("textureCubeWithImagesNamed:bundle:")
-    public static native MDLURLTexture textureCubeWithImagesNamedBundle(NSArray<String> names, NSBundle bundleOrNil);
+    public static native MDLURLTexture textureCubeWithImagesNamedBundle(@NotNull NSArray<String> names,
+            @Nullable NSBundle bundleOrNil);
 
     @Generated
     @Selector("textureNamed:")
-    public static native MDLURLTexture textureNamed(String name);
+    public static native MDLURLTexture textureNamed(@NotNull String name);
 
     @Generated
     @Selector("textureNamed:bundle:")
-    public static native MDLURLTexture textureNamedBundle(String name, NSBundle bundleOrNil);
+    public static native MDLURLTexture textureNamedBundle(@NotNull String name, @Nullable NSBundle bundleOrNil);
 
     @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -187,14 +195,14 @@ public class MDLURLTexture extends MDLTexture {
 
     @Generated
     @Selector("initWithURL:name:")
-    public native MDLURLTexture initWithURLName(NSURL URL, String name);
+    public native MDLURLTexture initWithURLName(@NotNull NSURL URL, @Nullable String name);
 
     @Generated
     @Selector("setURL:")
-    public native void setURL(NSURL value);
+    public native void setURL(@NotNull NSURL value);
 
     @Generated
     @Selector("textureNamed:assetResolver:")
-    public static native MDLURLTexture textureNamedAssetResolver(String name,
-            @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
+    public static native MDLURLTexture textureNamedAssetResolver(@NotNull String name,
+            @NotNull @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
 }

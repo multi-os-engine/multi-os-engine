@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -71,22 +73,25 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,8 +106,8 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("errorWithDomain:code:userInfo:")
-    public static native NSError errorWithDomainCodeUserInfo(String domain, @NInt long code,
-            NSDictionary<String, ?> dict);
+    public static native NSError errorWithDomainCodeUserInfo(@NotNull String domain, @NInt long code,
+            @Nullable NSDictionary<String, ?> dict);
 
     @Generated
     @Selector("hash")
@@ -126,9 +131,10 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,8 +176,8 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setUserInfoValueProviderForDomain:provider:")
-    public static native void setUserInfoValueProviderForDomainProvider(String errorDomain,
-            @ObjCBlock(name = "call_setUserInfoValueProviderForDomainProvider") Block_setUserInfoValueProviderForDomainProvider provider);
+    public static native void setUserInfoValueProviderForDomainProvider(@NotNull String errorDomain,
+            @Nullable @ObjCBlock(name = "call_setUserInfoValueProviderForDomainProvider") Block_setUserInfoValueProviderForDomainProvider provider);
 
     @Generated
     @Selector("setVersion:")
@@ -188,10 +194,12 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("userInfoValueProviderForDomain:")
     @ObjCBlock(name = "call_userInfoValueProviderForDomain_ret")
-    public static native Block_userInfoValueProviderForDomain_ret userInfoValueProviderForDomain(String errorDomain);
+    public static native Block_userInfoValueProviderForDomain_ret userInfoValueProviderForDomain(
+            @NotNull String errorDomain);
 
     @Generated
     @Selector("version")
@@ -203,23 +211,25 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public native long code();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * These define the error. Domains are described by names that are arbitrary strings used to differentiate groups of
      * codes; for custom domain using reverse-DNS naming will help avoid conflicts. Codes are domain-specific.
      */
+    @NotNull
     @Generated
     @Selector("domain")
     public native String domain();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Return the help anchor that can be used to create a help button to accompany the error when it's displayed to the
@@ -228,6 +238,7 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
      * dictionary. If not present, it consults the userInfoValueProvider for the domain. If that returns nil, this also
      * returns nil.
      */
+    @Nullable
     @Generated
     @Selector("helpAnchor")
     public native String helpAnchor();
@@ -238,14 +249,15 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSError initWithCoder(NSCoder coder);
+    public native NSError initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Domain cannot be nil; dict may be nil if no userInfo desired.
      */
     @Generated
     @Selector("initWithDomain:code:userInfo:")
-    public native NSError initWithDomainCodeUserInfo(String domain, @NInt long code, NSDictionary<String, ?> dict);
+    public native NSError initWithDomainCodeUserInfo(@NotNull String domain, @NInt long code,
+            @Nullable NSDictionary<String, ?> dict);
 
     /**
      * The primary user-presentable message for the error, for instance for NSFileReadNoPermissionError: "The file "File
@@ -264,6 +276,7 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
      * 6. Last resort localized but barely-presentable string manufactured from domain and code. The result is never
      * nil.
      */
+    @NotNull
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
@@ -275,6 +288,7 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
      * picks up the value of NSLocalizedFailureReasonErrorKey from the userInfo dictionary. If not present, it consults
      * the userInfoValueProvider for the domain, and if that returns nil, this also returns nil.
      */
+    @Nullable
     @Generated
     @Selector("localizedFailureReason")
     public native String localizedFailureReason();
@@ -288,6 +302,7 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
      * userInfoValueProvider for the domain, and if that returns nil, this also returns nil. nil return usually implies
      * no special suggestion, which would imply a single "OK" button.
      */
+    @Nullable
     @Generated
     @Selector("localizedRecoveryOptions")
     public native NSArray<String> localizedRecoveryOptions();
@@ -299,6 +314,7 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
      * NSLocalizedRecoverySuggestionErrorKey from the userInfo dictionary. If not present, it consults the
      * userInfoValueProvider for the domain, and if that returns nil, this also returns nil.
      */
+    @Nullable
     @Generated
     @Selector("localizedRecoverySuggestion")
     public native String localizedRecoverySuggestion();
@@ -309,6 +325,7 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
      * implementation of this picks up the value of NSRecoveryAttempterErrorKey from the userInfo dictionary. If not
      * present, it consults the userInfoValueProvider for the domain. If that returns nil, this also returns nil.
      */
+    @Nullable
     @Generated
     @Selector("recoveryAttempter")
     @MappedReturn(ObjCObjectMapper.class)
@@ -327,6 +344,7 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
      * from a higher level document object. If the embedded error information is itself NSError, the standard key
      * NSUnderlyingErrorKey can be used.
      */
+    @NotNull
     @Generated
     @Selector("userInfo")
     public native NSDictionary<String, ?> userInfo();
@@ -334,33 +352,37 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setUserInfoValueProviderForDomainProvider {
+        @Nullable
         @Generated
         @MappedReturn(ObjCObjectMapper.class)
-        Object call_setUserInfoValueProviderForDomainProvider(NSError err, String userInfoKey);
+        Object call_setUserInfoValueProviderForDomainProvider(@NotNull NSError err, @NotNull String userInfoKey);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_userInfoValueProviderForDomain_ret {
+        @Nullable
         @Generated
         @MappedReturn(ObjCObjectMapper.class)
-        Object call_userInfoValueProviderForDomain_ret(NSError arg0, String arg1);
+        Object call_userInfoValueProviderForDomain_ret(@NotNull NSError arg0, @NotNull String arg1);
     }
 
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("fileProviderErrorForCollisionWithItem:")
     public static native NSError fileProviderErrorForCollisionWithItem(
-            @Mapped(ObjCObjectMapper.class) NSFileProviderItem existingItem);
+            @NotNull @Mapped(ObjCObjectMapper.class) NSFileProviderItem existingItem);
 
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("fileProviderErrorForNonExistentItemWithIdentifier:")
-    public static native NSError fileProviderErrorForNonExistentItemWithIdentifier(String itemIdentifier);
+    public static native NSError fileProviderErrorForNonExistentItemWithIdentifier(@NotNull String itemIdentifier);
 
     /**
      * Return a list of underlying errors, if any. It includes the values of both NSUnderlyingErrorKey and
@@ -368,6 +390,7 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * API-Since: 14.5
      */
+    @NotNull
     @Generated
     @Selector("underlyingErrors")
     public native NSArray<? extends NSError> underlyingErrors();
@@ -375,8 +398,9 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("fileProviderErrorForRejectedDeletionOfItem:")
     public static native NSError fileProviderErrorForRejectedDeletionOfItem(
-            @Mapped(ObjCObjectMapper.class) NSFileProviderItem updatedVersion);
+            @NotNull @Mapped(ObjCObjectMapper.class) NSFileProviderItem updatedVersion);
 }

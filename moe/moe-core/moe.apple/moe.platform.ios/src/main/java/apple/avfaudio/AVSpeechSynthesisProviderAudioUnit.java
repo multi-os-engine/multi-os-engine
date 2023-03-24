@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -62,17 +64,18 @@ public class AVSpeechSynthesisProviderAudioUnit extends AUAudioUnit {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Informs the audio unit that the speech request job should be discarded.
@@ -81,10 +84,12 @@ public class AVSpeechSynthesisProviderAudioUnit extends AUAudioUnit {
     @Selector("cancelSpeechRequest")
     public native void cancelSpeechRequest();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -110,13 +115,13 @@ public class AVSpeechSynthesisProviderAudioUnit extends AUAudioUnit {
     @Selector("initWithComponentDescription:error:")
     public native AVSpeechSynthesisProviderAudioUnit initWithComponentDescriptionError(
             @ByValue AudioComponentDescription componentDescription,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("initWithComponentDescription:options:error:")
     public native AVSpeechSynthesisProviderAudioUnit initWithComponentDescriptionOptionsError(
             @ByValue AudioComponentDescription componentDescription, int options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -135,15 +140,16 @@ public class AVSpeechSynthesisProviderAudioUnit extends AUAudioUnit {
     @Selector("instantiateWithComponentDescription:options:completionHandler:")
     public static native void instantiateWithComponentDescriptionOptionsCompletionHandler(
             @ByValue AudioComponentDescription componentDescription, int options,
-            @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") AUAudioUnit.Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") AUAudioUnit.Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -152,8 +158,8 @@ public class AVSpeechSynthesisProviderAudioUnit extends AUAudioUnit {
 
     @Generated
     @Selector("registerSubclass:asComponentDescription:name:version:")
-    public static native void registerSubclassAsComponentDescriptionNameVersion(Class cls,
-            @ByValue AudioComponentDescription componentDescription, String name, int version);
+    public static native void registerSubclassAsComponentDescriptionNameVersion(@NotNull Class cls,
+            @ByValue AudioComponentDescription componentDescription, @NotNull String name, int version);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -180,14 +186,14 @@ public class AVSpeechSynthesisProviderAudioUnit extends AUAudioUnit {
     @Generated
     @Selector("setSpeechSynthesisOutputMetadataBlock:")
     public native void setSpeechSynthesisOutputMetadataBlock(
-            @ObjCBlock(name = "call_setSpeechSynthesisOutputMetadataBlock") Block_setSpeechSynthesisOutputMetadataBlock value);
+            @Nullable @ObjCBlock(name = "call_setSpeechSynthesisOutputMetadataBlock") Block_setSpeechSynthesisOutputMetadataBlock value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setSpeechSynthesisOutputMetadataBlock {
         @Generated
-        void call_setSpeechSynthesisOutputMetadataBlock(NSArray<? extends AVSpeechSynthesisMarker> markers,
-                AVSpeechSynthesisProviderRequest speechRequest);
+        void call_setSpeechSynthesisOutputMetadataBlock(@NotNull NSArray<? extends AVSpeechSynthesisMarker> markers,
+                @NotNull AVSpeechSynthesisProviderRequest speechRequest);
     }
 
     /**
@@ -200,7 +206,7 @@ public class AVSpeechSynthesisProviderAudioUnit extends AUAudioUnit {
      */
     @Generated
     @Selector("setSpeechVoices:")
-    public native void setSpeechVoices(NSArray<? extends AVSpeechSynthesisProviderVoice> value);
+    public native void setSpeechVoices(@NotNull NSArray<? extends AVSpeechSynthesisProviderVoice> value);
 
     @Generated
     @Selector("setVersion:")
@@ -220,6 +226,7 @@ public class AVSpeechSynthesisProviderAudioUnit extends AUAudioUnit {
      * perviously delivered audio buffer ranges will replace that audio buffer range's marker data, as it will be
      * considered stale.
      */
+    @Nullable
     @Generated
     @Selector("speechSynthesisOutputMetadataBlock")
     @ObjCBlock(name = "call_speechSynthesisOutputMetadataBlock_ret")
@@ -229,8 +236,8 @@ public class AVSpeechSynthesisProviderAudioUnit extends AUAudioUnit {
     @Generated
     public interface Block_speechSynthesisOutputMetadataBlock_ret {
         @Generated
-        void call_speechSynthesisOutputMetadataBlock_ret(NSArray<? extends AVSpeechSynthesisMarker> markers,
-                AVSpeechSynthesisProviderRequest speechRequest);
+        void call_speechSynthesisOutputMetadataBlock_ret(@NotNull NSArray<? extends AVSpeechSynthesisMarker> markers,
+                @NotNull AVSpeechSynthesisProviderRequest speechRequest);
     }
 
     /**
@@ -241,6 +248,7 @@ public class AVSpeechSynthesisProviderAudioUnit extends AUAudioUnit {
      * Required for speech synthesizer audio unit extensions. An audio unit with a dynamic list of voices can override
      * this property's getter to perform a more complex fetch.
      */
+    @NotNull
     @Generated
     @Selector("speechVoices")
     public native NSArray<? extends AVSpeechSynthesisProviderVoice> speechVoices();
@@ -259,7 +267,7 @@ public class AVSpeechSynthesisProviderAudioUnit extends AUAudioUnit {
      */
     @Generated
     @Selector("synthesizeSpeechRequest:")
-    public native void synthesizeSpeechRequest(AVSpeechSynthesisProviderRequest speechRequest);
+    public native void synthesizeSpeechRequest(@NotNull AVSpeechSynthesisProviderRequest speechRequest);
 
     @Generated
     @Selector("version")

@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CLPlacemark
@@ -85,22 +87,25 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,9 +140,10 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -149,8 +155,8 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("placemarkWithLocation:name:postalAddress:")
-    public static native CLPlacemark placemarkWithLocationNamePostalAddress(CLLocation location, String name,
-            CNPostalAddress postalAddress);
+    public static native CLPlacemark placemarkWithLocationNamePostalAddress(@NotNull CLLocation location,
+            @Nullable String name, @Nullable CNPostalAddress postalAddress);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -180,6 +186,7 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * eg. US
      */
+    @Nullable
     @Generated
     @Selector("ISOcountryCode")
     public native String ISOcountryCode();
@@ -195,6 +202,7 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
      * Deprecated-Since: 11.0
      * Deprecated-Message: Use @properties
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("addressDictionary")
@@ -203,6 +211,7 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * state, eg. CA
      */
+    @Nullable
     @Generated
     @Selector("administrativeArea")
     public native String administrativeArea();
@@ -210,26 +219,29 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * eg. Golden Gate Park
      */
+    @Nullable
     @Generated
     @Selector("areasOfInterest")
     public native NSArray<String> areasOfInterest();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * eg. United States
      */
+    @Nullable
     @Generated
     @Selector("country")
     public native String country();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -237,7 +249,7 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CLPlacemark initWithCoder(NSCoder coder);
+    public native CLPlacemark initWithCoder(@NotNull NSCoder coder);
 
     /**
      * initWithPlacemark:
@@ -247,11 +259,12 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("initWithPlacemark:")
-    public native CLPlacemark initWithPlacemark(CLPlacemark placemark);
+    public native CLPlacemark initWithPlacemark(@NotNull CLPlacemark placemark);
 
     /**
      * eg. Lake Tahoe
      */
+    @Nullable
     @Generated
     @Selector("inlandWater")
     public native String inlandWater();
@@ -259,6 +272,7 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * city, eg. Cupertino
      */
+    @Nullable
     @Generated
     @Selector("locality")
     public native String locality();
@@ -269,6 +283,7 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
      * Discussion:
      * Returns the geographic location associated with the placemark.
      */
+    @Nullable
     @Generated
     @Selector("location")
     public native CLLocation location();
@@ -276,6 +291,7 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * eg. Apple Inc.
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -283,6 +299,7 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * eg. Pacific Ocean
      */
+    @Nullable
     @Generated
     @Selector("ocean")
     public native String ocean();
@@ -290,6 +307,7 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * zip code, eg. 95014
      */
+    @Nullable
     @Generated
     @Selector("postalCode")
     public native String postalCode();
@@ -300,6 +318,7 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
      * Discussion:
      * Returns the geographic region associated with the placemark.
      */
+    @Nullable
     @Generated
     @Selector("region")
     public native CLRegion region();
@@ -307,6 +326,7 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * county, eg. Santa Clara
      */
+    @Nullable
     @Generated
     @Selector("subAdministrativeArea")
     public native String subAdministrativeArea();
@@ -314,6 +334,7 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * neighborhood, common name, eg. Mission District
      */
+    @Nullable
     @Generated
     @Selector("subLocality")
     public native String subLocality();
@@ -321,6 +342,7 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * eg. 1
      */
+    @Nullable
     @Generated
     @Selector("subThoroughfare")
     public native String subThoroughfare();
@@ -334,6 +356,7 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * street name, eg. Infinite Loop
      */
+    @Nullable
     @Generated
     @Selector("thoroughfare")
     public native String thoroughfare();
@@ -346,6 +369,7 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();
@@ -353,6 +377,7 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("postalAddress")
     public native CNPostalAddress postalAddress();

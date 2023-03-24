@@ -24,6 +24,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("GLKit")
@@ -36,7 +37,7 @@ public interface GLKViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("glkViewController:willPause:")
-    default void glkViewControllerWillPause(GLKViewController controller, boolean pause) {
+    default void glkViewControllerWillPause(@NotNull GLKViewController controller, boolean pause) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -47,5 +48,5 @@ public interface GLKViewControllerDelegate {
      */
     @Generated
     @Selector("glkViewControllerUpdate:")
-    void glkViewControllerUpdate(GLKViewController controller);
+    void glkViewControllerUpdate(@NotNull GLKViewController controller);
 }

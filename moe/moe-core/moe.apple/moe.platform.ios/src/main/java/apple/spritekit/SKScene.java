@@ -51,6 +51,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A scene is the root node of your content. It is used to display SpriteKit content on an SKView.
@@ -87,29 +89,32 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -141,9 +146,10 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,21 +162,25 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
 
     @Generated
     @Selector("nodeWithFileNamed:")
-    public static native SKScene nodeWithFileNamed(String filename);
+    public static native SKScene nodeWithFileNamed(@NotNull String filename);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodeBounds:")
-    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
+    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodePhysicsBodies:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodePhysicsBodies(
-            NSArray<? extends SKNode> nodes);
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromSpriteTextures:accuracy:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromSpriteTexturesAccuracy(
-            NSArray<? extends SKNode> sprites, float accuracy);
+            @NotNull NSArray<? extends SKNode> sprites, float accuracy);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -208,6 +218,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("audioEngine")
     public native AVAudioEngine audioEngine();
@@ -215,6 +226,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     /**
      * Background color, defaults to gray
      */
+    @NotNull
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
@@ -225,6 +237,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("camera")
     public native SKCameraNode camera();
@@ -242,6 +255,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     /**
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -286,7 +300,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
 
     @Generated
     @Selector("didMoveToView:")
-    public native void didMoveToView(SKView view);
+    public native void didMoveToView(@NotNull SKView view);
 
     /**
      * Override this to perform game logic. Called exactly once per frame after any actions have been evaluated and any
@@ -303,7 +317,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKScene initWithCoder(NSCoder aDecoder);
+    public native SKScene initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * A scene is infinitely large, but it has a viewport that is the frame through which you present the content of the
@@ -323,6 +337,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
      * 
      *      API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("listener")
     public native SKNode listener();
@@ -330,6 +345,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     /**
      * Physics simulation functionality
      */
+    @NotNull
     @Generated
     @Selector("physicsWorld")
     public native SKPhysicsWorld physicsWorld();
@@ -364,7 +380,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
      */
     @Generated
     @Selector("setBackgroundColor:")
-    public native void setBackgroundColor(UIColor value);
+    public native void setBackgroundColor(@NotNull UIColor value);
 
     /**
      * The camera that is used to obtain the view scale and translation based on where the camera is in relation to the
@@ -374,7 +390,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
      */
     @Generated
     @Selector("setCamera:")
-    public native void setCamera_unsafe(SKCameraNode value);
+    public native void setCamera_unsafe(@Nullable SKCameraNode value);
 
     /**
      * The camera that is used to obtain the view scale and translation based on where the camera is in relation to the
@@ -383,7 +399,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
      * API-Since: 9.0
      */
     @Generated
-    public void setCamera(SKCameraNode value) {
+    public void setCamera(@Nullable SKCameraNode value) {
         Object __old = camera();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -399,13 +415,13 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SKSceneDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) SKSceneDelegate value);
 
     /**
      * API-Since: 8.0
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) SKSceneDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SKSceneDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -425,7 +441,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
      */
     @Generated
     @Selector("setListener:")
-    public native void setListener_unsafe(SKNode value);
+    public native void setListener_unsafe(@Nullable SKNode value);
 
     /**
      * The node that is currently the listener for positional audio coming from SKAudioNodes
@@ -435,7 +451,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
      *      API-Since: 9.0
      */
     @Generated
-    public void setListener(SKNode value) {
+    public void setListener(@Nullable SKNode value) {
         Object __old = listener();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -475,18 +491,19 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     /**
      * The SKView this scene is currently presented in, or nil if it is not being presented.
      */
+    @Nullable
     @Generated
     @Selector("view")
     public native SKView view();
 
     @Generated
     @Selector("willMoveFromView:")
-    public native void willMoveFromView(SKView view);
+    public native void willMoveFromView(@NotNull SKView view);
 
     @Generated
     @Selector("nodeWithFileNamed:securelyWithClasses:andError:")
-    public static native SKScene nodeWithFileNamedSecurelyWithClassesAndError(String filename,
-            NSSet<? extends Class> classes, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native SKScene nodeWithFileNamedSecurelyWithClassesAndError(@NotNull String filename,
+            @NotNull NSSet<? extends Class> classes, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("supportsSecureCoding")

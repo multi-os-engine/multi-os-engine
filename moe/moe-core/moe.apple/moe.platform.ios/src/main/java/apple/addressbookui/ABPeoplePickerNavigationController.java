@@ -46,6 +46,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 2.0
@@ -88,29 +90,32 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -142,9 +147,10 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -177,6 +183,7 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
      * If not set, a new ABAddressBook will be created the first time the property is accessed.
      * Note this property is only used if the app has access to the user's contacts, otherwise it remains NULL.
      */
+    @Nullable
     @Generated
     @Selector("addressBook")
     public native ConstVoidPtr addressBook();
@@ -187,6 +194,7 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
      * should be an array with a single NSNumber instance (representing kABPersonPhoneProperty).
      * Note that name information will always be shown if available.
      */
+    @Nullable
     @Generated
     @Selector("displayedProperties")
     public native NSArray<? extends NSNumber> displayedProperties();
@@ -197,25 +205,27 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native ABPeoplePickerNavigationController initWithCoder(NSCoder coder);
+    public native ABPeoplePickerNavigationController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")
-    public native ABPeoplePickerNavigationController initWithNavigationBarClassToolbarClass(Class navigationBarClass,
-            Class toolbarClass);
+    public native ABPeoplePickerNavigationController initWithNavigationBarClassToolbarClass(
+            @Nullable Class navigationBarClass, @Nullable Class toolbarClass);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native ABPeoplePickerNavigationController initWithNibNameBundle(String nibNameOrNil,
-            NSBundle nibBundleOrNil);
+    public native ABPeoplePickerNavigationController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     @Generated
     @Selector("initWithRootViewController:")
-    public native ABPeoplePickerNavigationController initWithRootViewController(UIViewController rootViewController);
+    public native ABPeoplePickerNavigationController initWithRootViewController(
+            @NotNull UIViewController rootViewController);
 
     /**
      * Optional to get the selected contact, selected property or cancellation of the people picker.
      */
+    @Nullable
     @Generated
     @Selector("peoplePickerDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -228,6 +238,7 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("predicateForEnablingPerson")
     public native NSPredicate predicateForEnablingPerson();
@@ -243,6 +254,7 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("predicateForSelectionOfPerson")
     public native NSPredicate predicateForSelectionOfPerson();
@@ -256,6 +268,7 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("predicateForSelectionOfProperty")
     public native NSPredicate predicateForSelectionOfProperty();
@@ -267,7 +280,7 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
      */
     @Generated
     @Selector("setAddressBook:")
-    public native void setAddressBook(ConstVoidPtr value);
+    public native void setAddressBook(@Nullable ConstVoidPtr value);
 
     /**
      * An array of ABPropertyIDs listing the properties that should be visible when viewing a person.
@@ -277,7 +290,7 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
      */
     @Generated
     @Selector("setDisplayedProperties:")
-    public native void setDisplayedProperties(NSArray<? extends NSNumber> value);
+    public native void setDisplayedProperties(@Nullable NSArray<? extends NSNumber> value);
 
     /**
      * Optional to get the selected contact, selected property or cancellation of the people picker.
@@ -285,14 +298,14 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
     @Generated
     @Selector("setPeoplePickerDelegate:")
     public native void setPeoplePickerDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) ABPeoplePickerNavigationControllerDelegate value);
+            @Nullable @Mapped(ObjCObjectMapper.class) ABPeoplePickerNavigationControllerDelegate value);
 
     /**
      * Optional to get the selected contact, selected property or cancellation of the people picker.
      */
     @Generated
     public void setPeoplePickerDelegate(
-            @Mapped(ObjCObjectMapper.class) ABPeoplePickerNavigationControllerDelegate value) {
+            @Nullable @Mapped(ObjCObjectMapper.class) ABPeoplePickerNavigationControllerDelegate value) {
         Object __old = peoplePickerDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -312,7 +325,7 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
      */
     @Generated
     @Selector("setPredicateForEnablingPerson:")
-    public native void setPredicateForEnablingPerson(NSPredicate value);
+    public native void setPredicateForEnablingPerson(@Nullable NSPredicate value);
 
     /**
      * Optionally determines if a selected person should be returned to the app (predicate evaluates to TRUE),
@@ -327,7 +340,7 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
      */
     @Generated
     @Selector("setPredicateForSelectionOfPerson:")
-    public native void setPredicateForSelectionOfPerson(NSPredicate value);
+    public native void setPredicateForSelectionOfPerson(@Nullable NSPredicate value);
 
     /**
      * Optionally determines if a selected property should be returned to the app (predicate evaluates to TRUE),
@@ -340,5 +353,5 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
      */
     @Generated
     @Selector("setPredicateForSelectionOfProperty:")
-    public native void setPredicateForSelectionOfProperty(NSPredicate value);
+    public native void setPredicateForSelectionOfProperty(@Nullable NSPredicate value);
 }

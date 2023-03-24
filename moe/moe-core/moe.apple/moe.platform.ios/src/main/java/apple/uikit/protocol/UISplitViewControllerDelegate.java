@@ -31,6 +31,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -46,11 +48,12 @@ public interface UISplitViewControllerDelegate {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("primaryViewControllerForCollapsingSplitViewController:")
     default UIViewController primaryViewControllerForCollapsingSplitViewController(
-            UISplitViewController splitViewController) {
+            @NotNull UISplitViewController splitViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -63,11 +66,12 @@ public interface UISplitViewControllerDelegate {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("primaryViewControllerForExpandingSplitViewController:")
     default UIViewController primaryViewControllerForExpandingSplitViewController(
-            UISplitViewController splitViewController) {
+            @NotNull UISplitViewController splitViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -88,8 +92,8 @@ public interface UISplitViewControllerDelegate {
     @IsOptional
     @Selector("splitViewController:collapseSecondaryViewController:ontoPrimaryViewController:")
     default boolean splitViewControllerCollapseSecondaryViewControllerOntoPrimaryViewController(
-            UISplitViewController splitViewController, UIViewController secondaryViewController,
-            UIViewController primaryViewController) {
+            @NotNull UISplitViewController splitViewController, @NotNull UIViewController secondaryViewController,
+            @NotNull UIViewController primaryViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -103,8 +107,8 @@ public interface UISplitViewControllerDelegate {
     @IsOptional
     @Deprecated
     @Selector("splitViewController:popoverController:willPresentViewController:")
-    default void splitViewControllerPopoverControllerWillPresentViewController(UISplitViewController svc,
-            UIPopoverController pc, UIViewController aViewController) {
+    default void splitViewControllerPopoverControllerWillPresentViewController(@NotNull UISplitViewController svc,
+            @NotNull UIPopoverController pc, @NotNull UIViewController aViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -121,11 +125,12 @@ public interface UISplitViewControllerDelegate {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("splitViewController:separateSecondaryViewControllerFromPrimaryViewController:")
     default UIViewController splitViewControllerSeparateSecondaryViewControllerFromPrimaryViewController(
-            UISplitViewController splitViewController, UIViewController primaryViewController) {
+            @NotNull UISplitViewController splitViewController, @NotNull UIViewController primaryViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -140,8 +145,8 @@ public interface UISplitViewControllerDelegate {
     @IsOptional
     @Deprecated
     @Selector("splitViewController:shouldHideViewController:inOrientation:")
-    default boolean splitViewControllerShouldHideViewControllerInOrientation(UISplitViewController svc,
-            UIViewController vc, @NInt long orientation) {
+    default boolean splitViewControllerShouldHideViewControllerInOrientation(@NotNull UISplitViewController svc,
+            @NotNull UIViewController vc, @NInt long orientation) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -155,8 +160,9 @@ public interface UISplitViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("splitViewController:showDetailViewController:sender:")
-    default boolean splitViewControllerShowDetailViewControllerSender(UISplitViewController splitViewController,
-            UIViewController vc, @Mapped(ObjCObjectMapper.class) Object sender) {
+    default boolean splitViewControllerShowDetailViewControllerSender(
+            @NotNull UISplitViewController splitViewController, @NotNull UIViewController vc,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object sender) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -170,8 +176,8 @@ public interface UISplitViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("splitViewController:showViewController:sender:")
-    default boolean splitViewControllerShowViewControllerSender(UISplitViewController splitViewController,
-            UIViewController vc, @Mapped(ObjCObjectMapper.class) Object sender) {
+    default boolean splitViewControllerShowViewControllerSender(@NotNull UISplitViewController splitViewController,
+            @NotNull UIViewController vc, @Nullable @Mapped(ObjCObjectMapper.class) Object sender) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -183,7 +189,8 @@ public interface UISplitViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("splitViewController:willChangeToDisplayMode:")
-    default void splitViewControllerWillChangeToDisplayMode(UISplitViewController svc, @NInt long displayMode) {
+    default void splitViewControllerWillChangeToDisplayMode(@NotNull UISplitViewController svc,
+            @NInt long displayMode) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -201,8 +208,8 @@ public interface UISplitViewControllerDelegate {
     @Deprecated
     @Selector("splitViewController:willHideViewController:withBarButtonItem:forPopoverController:")
     default void splitViewControllerWillHideViewControllerWithBarButtonItemForPopoverController(
-            UISplitViewController svc, UIViewController aViewController, UIBarButtonItem barButtonItem,
-            UIPopoverController pc) {
+            @NotNull UISplitViewController svc, @NotNull UIViewController aViewController,
+            @NotNull UIBarButtonItem barButtonItem, @NotNull UIPopoverController pc) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -217,8 +224,8 @@ public interface UISplitViewControllerDelegate {
     @IsOptional
     @Deprecated
     @Selector("splitViewController:willShowViewController:invalidatingBarButtonItem:")
-    default void splitViewControllerWillShowViewControllerInvalidatingBarButtonItem(UISplitViewController svc,
-            UIViewController aViewController, UIBarButtonItem barButtonItem) {
+    default void splitViewControllerWillShowViewControllerInvalidatingBarButtonItem(@NotNull UISplitViewController svc,
+            @NotNull UIViewController aViewController, @NotNull UIBarButtonItem barButtonItem) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -230,7 +237,7 @@ public interface UISplitViewControllerDelegate {
     @Selector("splitViewControllerPreferredInterfaceOrientationForPresentation:")
     @NInt
     default long splitViewControllerPreferredInterfaceOrientationForPresentation(
-            UISplitViewController splitViewController) {
+            @NotNull UISplitViewController splitViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -241,7 +248,7 @@ public interface UISplitViewControllerDelegate {
     @IsOptional
     @Selector("splitViewControllerSupportedInterfaceOrientations:")
     @NUInt
-    default long splitViewControllerSupportedInterfaceOrientations(UISplitViewController splitViewController) {
+    default long splitViewControllerSupportedInterfaceOrientations(@NotNull UISplitViewController splitViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -256,7 +263,7 @@ public interface UISplitViewControllerDelegate {
     @IsOptional
     @Selector("targetDisplayModeForActionInSplitViewController:")
     @NInt
-    default long targetDisplayModeForActionInSplitViewController(UISplitViewController svc) {
+    default long targetDisplayModeForActionInSplitViewController(@NotNull UISplitViewController svc) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -267,7 +274,7 @@ public interface UISplitViewControllerDelegate {
     @IsOptional
     @Selector("splitViewController:displayModeForExpandingToProposedDisplayMode:")
     @NInt
-    default long splitViewControllerDisplayModeForExpandingToProposedDisplayMode(UISplitViewController svc,
+    default long splitViewControllerDisplayModeForExpandingToProposedDisplayMode(@NotNull UISplitViewController svc,
             @NInt long proposedDisplayMode) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -279,7 +286,7 @@ public interface UISplitViewControllerDelegate {
     @IsOptional
     @Selector("splitViewController:topColumnForCollapsingToProposedTopColumn:")
     @NInt
-    default long splitViewControllerTopColumnForCollapsingToProposedTopColumn(UISplitViewController svc,
+    default long splitViewControllerTopColumnForCollapsingToProposedTopColumn(@NotNull UISplitViewController svc,
             @NInt long proposedTopColumn) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -290,7 +297,7 @@ public interface UISplitViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("splitViewController:willHideColumn:")
-    default void splitViewControllerWillHideColumn(UISplitViewController svc, @NInt long column) {
+    default void splitViewControllerWillHideColumn(@NotNull UISplitViewController svc, @NInt long column) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -300,7 +307,7 @@ public interface UISplitViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("splitViewController:willShowColumn:")
-    default void splitViewControllerWillShowColumn(UISplitViewController svc, @NInt long column) {
+    default void splitViewControllerWillShowColumn(@NotNull UISplitViewController svc, @NInt long column) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -310,7 +317,7 @@ public interface UISplitViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("splitViewControllerDidCollapse:")
-    default void splitViewControllerDidCollapse(UISplitViewController svc) {
+    default void splitViewControllerDidCollapse(@NotNull UISplitViewController svc) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -320,7 +327,7 @@ public interface UISplitViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("splitViewControllerDidExpand:")
-    default void splitViewControllerDidExpand(UISplitViewController svc) {
+    default void splitViewControllerDidExpand(@NotNull UISplitViewController svc) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -330,7 +337,7 @@ public interface UISplitViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("splitViewControllerInteractivePresentationGestureDidEnd:")
-    default void splitViewControllerInteractivePresentationGestureDidEnd(UISplitViewController svc) {
+    default void splitViewControllerInteractivePresentationGestureDidEnd(@NotNull UISplitViewController svc) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -340,7 +347,7 @@ public interface UISplitViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("splitViewControllerInteractivePresentationGestureWillBegin:")
-    default void splitViewControllerInteractivePresentationGestureWillBegin(UISplitViewController svc) {
+    default void splitViewControllerInteractivePresentationGestureWillBegin(@NotNull UISplitViewController svc) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

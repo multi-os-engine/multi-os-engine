@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSMatrixDecompositionLU
@@ -75,22 +77,25 @@ public class MPSMatrixDecompositionLU extends MPSMatrixUnaryKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -146,8 +151,9 @@ public class MPSMatrixDecompositionLU extends MPSMatrixUnaryKernel {
     @Generated
     @Selector("encodeToCommandBuffer:sourceMatrix:resultMatrix:pivotIndices:status:")
     public native void encodeToCommandBufferSourceMatrixResultMatrixPivotIndicesStatus(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSMatrix sourceMatrix,
-            MPSMatrix resultMatrix, MPSMatrix pivotIndices, @Mapped(ObjCObjectMapper.class) MTLBuffer status);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSMatrix sourceMatrix,
+            @NotNull MPSMatrix resultMatrix, @NotNull MPSMatrix pivotIndices,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer status);
 
     @Generated
     @Selector("hash")
@@ -160,16 +166,16 @@ public class MPSMatrixDecompositionLU extends MPSMatrixUnaryKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSMatrixDecompositionLU initWithCoder(NSCoder aDecoder);
+    public native MPSMatrixDecompositionLU initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSMatrixDecompositionLU initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixDecompositionLU initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSMatrixDecompositionLU initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixDecompositionLU initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize an MPSMatrixDecompositionLU object on a device
@@ -184,8 +190,8 @@ public class MPSMatrixDecompositionLU extends MPSMatrixUnaryKernel {
      */
     @Generated
     @Selector("initWithDevice:rows:columns:")
-    public native MPSMatrixDecompositionLU initWithDeviceRowsColumns(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @NUInt long rows, @NUInt long columns);
+    public native MPSMatrixDecompositionLU initWithDeviceRowsColumns(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long rows, @NUInt long columns);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -204,9 +210,10 @@ public class MPSMatrixDecompositionLU extends MPSMatrixUnaryKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

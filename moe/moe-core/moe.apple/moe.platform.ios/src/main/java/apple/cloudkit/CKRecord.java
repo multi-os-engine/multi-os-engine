@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -79,22 +81,25 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +134,10 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,6 +169,7 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("allKeys")
     public native NSArray<String> allKeys();
@@ -172,20 +179,24 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
      * 
      * These tokens have been normalized for the current locale, so they are suitable for performing full-text searches.
      */
+    @NotNull
     @Generated
     @Selector("allTokens")
     public native NSArray<String> allTokens();
 
+    @NotNull
     @Generated
     @Selector("changedKeys")
     public native NSArray<String> changedKeys();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    @Nullable
     @Generated
     @Selector("creationDate")
     public native NSDate creationDate();
@@ -193,6 +204,7 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
     /**
      * This is a User Record recordID, identifying the user that created this record.
      */
+    @Nullable
     @Generated
     @Selector("creatorUserRecordID")
     public native CKRecordID creatorUserRecordID();
@@ -210,11 +222,11 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
      */
     @Generated
     @Selector("encodeSystemFieldsWithCoder:")
-    public native void encodeSystemFieldsWithCoder(NSCoder coder);
+    public native void encodeSystemFieldsWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -222,43 +234,47 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKRecord initWithCoder(NSCoder coder);
+    public native CKRecord initWithCoder(@NotNull NSCoder coder);
 
     /**
      * This creates the record in the default zone.
      */
     @Generated
     @Selector("initWithRecordType:")
-    public native CKRecord initWithRecordType(String recordType);
+    public native CKRecord initWithRecordType(@NotNull String recordType);
 
     @Generated
     @Selector("initWithRecordType:recordID:")
-    public native CKRecord initWithRecordTypeRecordID(String recordType, CKRecordID recordID);
+    public native CKRecord initWithRecordTypeRecordID(@NotNull String recordType, @NotNull CKRecordID recordID);
 
     @Generated
     @Selector("initWithRecordType:zoneID:")
-    public native CKRecord initWithRecordTypeZoneID(String recordType, CKRecordZoneID zoneID);
+    public native CKRecord initWithRecordTypeZoneID(@NotNull String recordType, @NotNull CKRecordZoneID zoneID);
 
     /**
      * This is a User Record recordID, identifying the user that last modified this record.
      */
+    @Nullable
     @Generated
     @Selector("lastModifiedUserRecordID")
     public native CKRecordID lastModifiedUserRecordID();
 
+    @Nullable
     @Generated
     @Selector("modificationDate")
     public native NSDate modificationDate();
 
+    @Nullable
     @Generated
     @Selector("objectForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native CKRecordValue objectForKey(String key);
+    public native CKRecordValue objectForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("objectForKeyedSubscript:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native CKRecordValue objectForKeyedSubscript(String key);
+    public native CKRecordValue objectForKeyedSubscript(@NotNull String key);
 
     /**
      * Use a parent reference to teach CloudKit about the hierarchy of your records.
@@ -278,6 +294,7 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("parent")
     public native CKReference parent();
@@ -286,25 +303,30 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
      * Change tags are updated by the server to a unique value every time a record is modified. A different change tag
      * necessarily means that the contents of the record are different.
      */
+    @Nullable
     @Generated
     @Selector("recordChangeTag")
     public native String recordChangeTag();
 
+    @NotNull
     @Generated
     @Selector("recordID")
     public native CKRecordID recordID();
 
+    @NotNull
     @Generated
     @Selector("recordType")
     public native String recordType();
 
     @Generated
     @Selector("setObject:forKey:")
-    public native void setObjectForKey(@Mapped(ObjCObjectMapper.class) CKRecordValue object, String key);
+    public native void setObjectForKey(@Nullable @Mapped(ObjCObjectMapper.class) CKRecordValue object,
+            @NotNull String key);
 
     @Generated
     @Selector("setObject:forKeyedSubscript:")
-    public native void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) CKRecordValue object, String key);
+    public native void setObjectForKeyedSubscript(@Nullable @Mapped(ObjCObjectMapper.class) CKRecordValue object,
+            @NotNull String key);
 
     /**
      * Use a parent reference to teach CloudKit about the hierarchy of your records.
@@ -326,7 +348,7 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
      */
     @Generated
     @Selector("setParent:")
-    public native void setParent(CKReference value);
+    public native void setParent(@Nullable CKReference value);
 
     /**
      * Convenience wrappers around creating a @c CKReference to a parent record. The resulting @c CKReference will
@@ -336,14 +358,14 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
      */
     @Generated
     @Selector("setParentReferenceFromRecord:")
-    public native void setParentReferenceFromRecord(CKRecord parentRecord);
+    public native void setParentReferenceFromRecord(@Nullable CKRecord parentRecord);
 
     /**
      * API-Since: 10.0
      */
     @Generated
     @Selector("setParentReferenceFromRecordID:")
-    public native void setParentReferenceFromRecordID(CKRecordID parentRecordID);
+    public native void setParentReferenceFromRecordID(@Nullable CKRecordID parentRecordID);
 
     /**
      * The share property on a record can be set by creating a share using @code -[CKShare
@@ -387,6 +409,7 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("share")
     public native CKReference share();
@@ -406,6 +429,7 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("encryptedValues")
     @MappedReturn(ObjCObjectMapper.class)

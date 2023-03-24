@@ -39,6 +39,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.0
@@ -73,22 +75,25 @@ public class MDLNormalMapTexture extends MDLTexture {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +128,10 @@ public class MDLNormalMapTexture extends MDLTexture {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -150,20 +156,20 @@ public class MDLNormalMapTexture extends MDLTexture {
 
     @Generated
     @Selector("textureCubeWithImagesNamed:")
-    public static native MDLNormalMapTexture textureCubeWithImagesNamed(NSArray<String> names);
+    public static native MDLNormalMapTexture textureCubeWithImagesNamed(@NotNull NSArray<String> names);
 
     @Generated
     @Selector("textureCubeWithImagesNamed:bundle:")
-    public static native MDLNormalMapTexture textureCubeWithImagesNamedBundle(NSArray<String> names,
-            NSBundle bundleOrNil);
+    public static native MDLNormalMapTexture textureCubeWithImagesNamedBundle(@NotNull NSArray<String> names,
+            @Nullable NSBundle bundleOrNil);
 
     @Generated
     @Selector("textureNamed:")
-    public static native MDLNormalMapTexture textureNamed(String name);
+    public static native MDLNormalMapTexture textureNamed(@NotNull String name);
 
     @Generated
     @Selector("textureNamed:bundle:")
-    public static native MDLNormalMapTexture textureNamedBundle(String name, NSBundle bundleOrNil);
+    public static native MDLNormalMapTexture textureNamedBundle(@NotNull String name, @Nullable NSBundle bundleOrNil);
 
     @Generated
     @Selector("version")
@@ -177,10 +183,10 @@ public class MDLNormalMapTexture extends MDLTexture {
     @Generated
     @Selector("initByGeneratingNormalMapWithTexture:name:smoothness:contrast:")
     public native MDLNormalMapTexture initByGeneratingNormalMapWithTextureNameSmoothnessContrast(
-            MDLTexture sourceTexture, String name, float smoothness, float contrast);
+            @NotNull MDLTexture sourceTexture, @Nullable String name, float smoothness, float contrast);
 
     @Generated
     @Selector("textureNamed:assetResolver:")
-    public static native MDLNormalMapTexture textureNamedAssetResolver(String name,
-            @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
+    public static native MDLNormalMapTexture textureNamedAssetResolver(@NotNull String name,
+            @NotNull @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
 }

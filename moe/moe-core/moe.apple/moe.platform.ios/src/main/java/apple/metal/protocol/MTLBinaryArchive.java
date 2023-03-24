@@ -17,6 +17,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLBinaryArchive
@@ -67,8 +69,8 @@ public interface MTLBinaryArchive {
      */
     @Generated
     @Selector("addComputePipelineFunctionsWithDescriptor:error:")
-    boolean addComputePipelineFunctionsWithDescriptorError(MTLComputePipelineDescriptor descriptor,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    boolean addComputePipelineFunctionsWithDescriptorError(@NotNull MTLComputePipelineDescriptor descriptor,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * addRenderPipelineFunctionsWithDescriptor:error:
@@ -82,8 +84,8 @@ public interface MTLBinaryArchive {
      */
     @Generated
     @Selector("addRenderPipelineFunctionsWithDescriptor:error:")
-    boolean addRenderPipelineFunctionsWithDescriptorError(MTLRenderPipelineDescriptor descriptor,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    boolean addRenderPipelineFunctionsWithDescriptorError(@NotNull MTLRenderPipelineDescriptor descriptor,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * addTileRenderPipelineFunctionsWithDescriptor:error:
@@ -97,14 +99,15 @@ public interface MTLBinaryArchive {
      */
     @Generated
     @Selector("addTileRenderPipelineFunctionsWithDescriptor:error:")
-    boolean addTileRenderPipelineFunctionsWithDescriptorError(MTLTileRenderPipelineDescriptor descriptor,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    boolean addTileRenderPipelineFunctionsWithDescriptorError(@NotNull MTLTileRenderPipelineDescriptor descriptor,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * [@property] device
      * 
      * The device this resource was created against. This resource can only be used with this device.
      */
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -115,6 +118,7 @@ public interface MTLBinaryArchive {
      * 
      * A string to help identify this object.
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();
@@ -135,7 +139,7 @@ public interface MTLBinaryArchive {
      */
     @Generated
     @Selector("serializeToURL:error:")
-    boolean serializeToURLError(NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    boolean serializeToURLError(@NotNull NSURL url, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * [@property] label
@@ -144,7 +148,7 @@ public interface MTLBinaryArchive {
      */
     @Generated
     @Selector("setLabel:")
-    void setLabel(String value);
+    void setLabel(@Nullable String value);
 
     /**
      * addFunctionWithDescriptor:library:error:
@@ -162,7 +166,7 @@ public interface MTLBinaryArchive {
      */
     @Generated
     @Selector("addFunctionWithDescriptor:library:error:")
-    boolean addFunctionWithDescriptorLibraryError(MTLFunctionDescriptor descriptor,
-            @Mapped(ObjCObjectMapper.class) MTLLibrary library,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    boolean addFunctionWithDescriptorLibraryError(@NotNull MTLFunctionDescriptor descriptor,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLLibrary library,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

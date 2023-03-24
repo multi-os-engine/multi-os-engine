@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * EKEventStore
@@ -102,22 +104,25 @@ public class EKEventStore extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -152,9 +157,10 @@ public class EKEventStore extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -189,9 +195,10 @@ public class EKEventStore extends NSObject {
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("calendarItemWithIdentifier:")
-    public native EKCalendarItem calendarItemWithIdentifier(String identifier);
+    public native EKCalendarItem calendarItemWithIdentifier(@NotNull String identifier);
 
     /**
      * calendarItemsWithExternalIdentifier:
@@ -209,9 +216,11 @@ public class EKEventStore extends NSObject {
      * 
      *         API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("calendarItemsWithExternalIdentifier:")
-    public native NSArray<? extends EKCalendarItem> calendarItemsWithExternalIdentifier(String externalIdentifier);
+    public native NSArray<? extends EKCalendarItem> calendarItemsWithExternalIdentifier(
+            @NotNull String externalIdentifier);
 
     /**
      * calendarWithIdentifier:
@@ -220,9 +229,10 @@ public class EKEventStore extends NSObject {
      * 
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("calendarWithIdentifier:")
-    public native EKCalendar calendarWithIdentifier(String identifier);
+    public native EKCalendar calendarWithIdentifier(@NotNull String identifier);
 
     /**
      * calendars
@@ -234,6 +244,7 @@ public class EKEventStore extends NSObject {
      * API-Since: 4.0
      * Deprecated-Since: 6.0
      */
+    @NotNull
     @Generated
     @Deprecated
     @Selector("calendars")
@@ -246,6 +257,7 @@ public class EKEventStore extends NSObject {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("calendarsForEntityType:")
     public native NSArray<? extends EKCalendar> calendarsForEntityType(@NUInt long entityType);
@@ -261,7 +273,7 @@ public class EKEventStore extends NSObject {
      */
     @Generated
     @Selector("cancelFetchRequest:")
-    public native void cancelFetchRequest(@Mapped(ObjCObjectMapper.class) Object fetchIdentifier);
+    public native void cancelFetchRequest(@NotNull @Mapped(ObjCObjectMapper.class) Object fetchIdentifier);
 
     /**
      * commit:
@@ -282,7 +294,7 @@ public class EKEventStore extends NSObject {
      */
     @Generated
     @Selector("commit:")
-    public native boolean commit(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean commit(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * [@property] defaultCalendarForNewEvents
@@ -291,6 +303,7 @@ public class EKEventStore extends NSObject {
      * 
      * This may be nil if there is no default calendar for new events.
      */
+    @Nullable
     @Generated
     @Selector("defaultCalendarForNewEvents")
     public native EKCalendar defaultCalendarForNewEvents();
@@ -304,6 +317,7 @@ public class EKEventStore extends NSObject {
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("defaultCalendarForNewReminders")
     public native EKCalendar defaultCalendarForNewReminders();
@@ -326,14 +340,15 @@ public class EKEventStore extends NSObject {
      */
     @Generated
     @Selector("enumerateEventsMatchingPredicate:usingBlock:")
-    public native void enumerateEventsMatchingPredicateUsingBlock(NSPredicate predicate,
-            @ObjCBlock(name = "call_enumerateEventsMatchingPredicateUsingBlock") Block_enumerateEventsMatchingPredicateUsingBlock block);
+    public native void enumerateEventsMatchingPredicateUsingBlock(@NotNull NSPredicate predicate,
+            @NotNull @ObjCBlock(name = "call_enumerateEventsMatchingPredicateUsingBlock") Block_enumerateEventsMatchingPredicateUsingBlock block);
 
     /**
      * [@property] eventStoreIdentifier
      * 
      * Returns a unique identifier string representing this calendar store.
      */
+    @NotNull
     @Generated
     @Selector("eventStoreIdentifier")
     public native String eventStoreIdentifier();
@@ -346,9 +361,10 @@ public class EKEventStore extends NSObject {
      * @param identifier The eventIdentifier to search for.
      * @return An EKEvent object, or nil if not found.
      */
+    @Nullable
     @Generated
     @Selector("eventWithIdentifier:")
-    public native EKEvent eventWithIdentifier(String identifier);
+    public native EKEvent eventWithIdentifier(@NotNull String identifier);
 
     /**
      * eventsMatchingPredicate:
@@ -365,9 +381,10 @@ public class EKEventStore extends NSObject {
      *                  creation functions in this class, an exception is raised.
      * @return An array of EKEvent objects, or nil. There is no guaranteed order to the events.
      */
+    @NotNull
     @Generated
     @Selector("eventsMatchingPredicate:")
-    public native NSArray<? extends EKEvent> eventsMatchingPredicate(NSPredicate predicate);
+    public native NSArray<? extends EKEvent> eventsMatchingPredicate(@NotNull NSPredicate predicate);
 
     /**
      * fetchRemindersMatchingPredicate:completion:
@@ -380,11 +397,12 @@ public class EKEventStore extends NSObject {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("fetchRemindersMatchingPredicate:completion:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object fetchRemindersMatchingPredicateCompletion(NSPredicate predicate,
-            @ObjCBlock(name = "call_fetchRemindersMatchingPredicateCompletion") Block_fetchRemindersMatchingPredicateCompletion completion);
+    public native Object fetchRemindersMatchingPredicateCompletion(@NotNull NSPredicate predicate,
+            @NotNull @ObjCBlock(name = "call_fetchRemindersMatchingPredicateCompletion") Block_fetchRemindersMatchingPredicateCompletion completion);
 
     /**
      * init
@@ -408,10 +426,11 @@ public class EKEventStore extends NSObject {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForCompletedRemindersWithCompletionDateStarting:ending:calendars:")
-    public native NSPredicate predicateForCompletedRemindersWithCompletionDateStartingEndingCalendars(NSDate startDate,
-            NSDate endDate, NSArray<? extends EKCalendar> calendars);
+    public native NSPredicate predicateForCompletedRemindersWithCompletionDateStartingEndingCalendars(
+            @Nullable NSDate startDate, @Nullable NSDate endDate, @Nullable NSArray<? extends EKCalendar> calendars);
 
     /**
      * predicateForEventsWithStartDate:endDate:calendars:
@@ -429,10 +448,11 @@ public class EKEventStore extends NSObject {
      * @param endDate   The end date.
      * @param calendars The calendars to search for events in, or nil to search all calendars.
      */
+    @NotNull
     @Generated
     @Selector("predicateForEventsWithStartDate:endDate:calendars:")
-    public native NSPredicate predicateForEventsWithStartDateEndDateCalendars(NSDate startDate, NSDate endDate,
-            NSArray<? extends EKCalendar> calendars);
+    public native NSPredicate predicateForEventsWithStartDateEndDateCalendars(@NotNull NSDate startDate,
+            @NotNull NSDate endDate, @Nullable NSArray<? extends EKCalendar> calendars);
 
     /**
      * predicateForIncompleteRemindersWithDueDateStarting:ending:calendars:
@@ -447,10 +467,11 @@ public class EKEventStore extends NSObject {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForIncompleteRemindersWithDueDateStarting:ending:calendars:")
-    public native NSPredicate predicateForIncompleteRemindersWithDueDateStartingEndingCalendars(NSDate startDate,
-            NSDate endDate, NSArray<? extends EKCalendar> calendars);
+    public native NSPredicate predicateForIncompleteRemindersWithDueDateStartingEndingCalendars(
+            @Nullable NSDate startDate, @Nullable NSDate endDate, @Nullable NSArray<? extends EKCalendar> calendars);
 
     /**
      * predicateForRemindersInCalendars:
@@ -461,9 +482,10 @@ public class EKEventStore extends NSObject {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForRemindersInCalendars:")
-    public native NSPredicate predicateForRemindersInCalendars(NSArray<? extends EKCalendar> calendars);
+    public native NSPredicate predicateForRemindersInCalendars(@Nullable NSArray<? extends EKCalendar> calendars);
 
     /**
      * refreshSourcesIfNecessary
@@ -511,16 +533,16 @@ public class EKEventStore extends NSObject {
      */
     @Generated
     @Selector("removeCalendar:commit:error:")
-    public native boolean removeCalendarCommitError(EKCalendar calendar, boolean commit,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean removeCalendarCommitError(@NotNull EKCalendar calendar, boolean commit,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @Selector("removeEvent:span:commit:error:")
-    public native boolean removeEventSpanCommitError(EKEvent event, @NInt long span, boolean commit,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean removeEventSpanCommitError(@NotNull EKEvent event, @NInt long span, boolean commit,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * removeEvent:span:error:
@@ -545,8 +567,8 @@ public class EKEventStore extends NSObject {
      */
     @Generated
     @Selector("removeEvent:span:error:")
-    public native boolean removeEventSpanError(EKEvent event, @NInt long span,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean removeEventSpanError(@NotNull EKEvent event, @NInt long span,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * removeReminder:commit:error:
@@ -568,8 +590,8 @@ public class EKEventStore extends NSObject {
      */
     @Generated
     @Selector("removeReminder:commit:error:")
-    public native boolean removeReminderCommitError(EKReminder reminder, boolean commit,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean removeReminderCommitError(@NotNull EKReminder reminder, boolean commit,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * requestAccessToEntityType:completion:
@@ -588,7 +610,7 @@ public class EKEventStore extends NSObject {
     @Generated
     @Selector("requestAccessToEntityType:completion:")
     public native void requestAccessToEntityTypeCompletion(@NUInt long entityType,
-            @ObjCBlock(name = "call_requestAccessToEntityTypeCompletion") Block_requestAccessToEntityTypeCompletion completion);
+            @NotNull @ObjCBlock(name = "call_requestAccessToEntityTypeCompletion") Block_requestAccessToEntityTypeCompletion completion);
 
     /**
      * reset
@@ -625,8 +647,8 @@ public class EKEventStore extends NSObject {
      */
     @Generated
     @Selector("saveCalendar:commit:error:")
-    public native boolean saveCalendarCommitError(EKCalendar calendar, boolean commit,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean saveCalendarCommitError(@NotNull EKCalendar calendar, boolean commit,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * These variants of the above allow you to batch changes by passing NO to commit. You can commit
@@ -636,8 +658,8 @@ public class EKEventStore extends NSObject {
      */
     @Generated
     @Selector("saveEvent:span:commit:error:")
-    public native boolean saveEventSpanCommitError(EKEvent event, @NInt long span, boolean commit,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean saveEventSpanCommitError(@NotNull EKEvent event, @NInt long span, boolean commit,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * saveEvent:span:error:
@@ -666,8 +688,8 @@ public class EKEventStore extends NSObject {
      */
     @Generated
     @Selector("saveEvent:span:error:")
-    public native boolean saveEventSpanError(EKEvent event, @NInt long span,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean saveEventSpanError(@NotNull EKEvent event, @NInt long span,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * saveReminder:commit:error:
@@ -692,8 +714,8 @@ public class EKEventStore extends NSObject {
      */
     @Generated
     @Selector("saveReminder:commit:error:")
-    public native boolean saveReminderCommitError(EKReminder reminder, boolean commit,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean saveReminderCommitError(@NotNull EKReminder reminder, boolean commit,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * sourceWithIdentifier:
@@ -702,9 +724,10 @@ public class EKEventStore extends NSObject {
      * 
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("sourceWithIdentifier:")
-    public native EKSource sourceWithIdentifier(String identifier);
+    public native EKSource sourceWithIdentifier(@NotNull String identifier);
 
     /**
      * [@property] sources
@@ -713,6 +736,7 @@ public class EKEventStore extends NSObject {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @Selector("sources")
     public native NSArray<? extends EKSource> sources();
@@ -721,21 +745,21 @@ public class EKEventStore extends NSObject {
     @Generated
     public interface Block_enumerateEventsMatchingPredicateUsingBlock {
         @Generated
-        void call_enumerateEventsMatchingPredicateUsingBlock(EKEvent event, BoolPtr stop);
+        void call_enumerateEventsMatchingPredicateUsingBlock(@NotNull EKEvent event, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchRemindersMatchingPredicateCompletion {
         @Generated
-        void call_fetchRemindersMatchingPredicateCompletion(NSArray<? extends EKReminder> reminders);
+        void call_fetchRemindersMatchingPredicateCompletion(@Nullable NSArray<? extends EKReminder> reminders);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestAccessToEntityTypeCompletion {
         @Generated
-        void call_requestAccessToEntityTypeCompletion(boolean granted, NSError error);
+        void call_requestAccessToEntityTypeCompletion(boolean granted, @Nullable NSError error);
     }
 
     /**
@@ -745,6 +769,7 @@ public class EKEventStore extends NSObject {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Selector("delegateSources")
     public native NSArray<? extends EKSource> delegateSources();
@@ -760,5 +785,5 @@ public class EKEventStore extends NSObject {
      */
     @Generated
     @Selector("initWithSources:")
-    public native EKEventStore initWithSources(NSArray<? extends EKSource> sources);
+    public native EKEventStore initWithSources(@NotNull NSArray<? extends EKSource> sources);
 }

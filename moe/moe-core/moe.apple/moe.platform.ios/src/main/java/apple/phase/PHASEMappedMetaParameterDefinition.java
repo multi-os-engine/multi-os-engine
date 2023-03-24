@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] PHASEMappedMetaParameterDefinition
@@ -59,22 +61,25 @@ public class PHASEMappedMetaParameterDefinition extends PHASENumberMetaParameter
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -92,6 +97,7 @@ public class PHASEMappedMetaParameterDefinition extends PHASENumberMetaParameter
      * 
      * An Envelope to define segments of curves
      */
+    @NotNull
     @Generated
     @Selector("envelope")
     public native PHASEEnvelope envelope();
@@ -120,7 +126,7 @@ public class PHASEMappedMetaParameterDefinition extends PHASENumberMetaParameter
     @Generated
     @Selector("initWithInputMetaParameterDefinition:envelope:")
     public native PHASEMappedMetaParameterDefinition initWithInputMetaParameterDefinitionEnvelope(
-            PHASENumberMetaParameterDefinition inputMetaParameterDefinition, PHASEEnvelope envelope);
+            @NotNull PHASENumberMetaParameterDefinition inputMetaParameterDefinition, @NotNull PHASEEnvelope envelope);
 
     /**
      * initWithInputMetaParameterDefinition:identifier
@@ -139,7 +145,8 @@ public class PHASEMappedMetaParameterDefinition extends PHASENumberMetaParameter
     @Generated
     @Selector("initWithInputMetaParameterDefinition:envelope:identifier:")
     public native PHASEMappedMetaParameterDefinition initWithInputMetaParameterDefinitionEnvelopeIdentifier(
-            PHASENumberMetaParameterDefinition inputMetaParameterDefinition, PHASEEnvelope envelope, String identifier);
+            @NotNull PHASENumberMetaParameterDefinition inputMetaParameterDefinition, @NotNull PHASEEnvelope envelope,
+            @NotNull String identifier);
 
     @Generated
     @Selector("initWithValue:")
@@ -147,7 +154,7 @@ public class PHASEMappedMetaParameterDefinition extends PHASENumberMetaParameter
 
     @Generated
     @Selector("initWithValue:identifier:")
-    public native PHASEMappedMetaParameterDefinition initWithValueIdentifier(double value, String identifier);
+    public native PHASEMappedMetaParameterDefinition initWithValueIdentifier(double value, @NotNull String identifier);
 
     @Generated
     @Selector("initWithValue:minimum:maximum:")
@@ -157,13 +164,14 @@ public class PHASEMappedMetaParameterDefinition extends PHASENumberMetaParameter
     @Generated
     @Selector("initWithValue:minimum:maximum:identifier:")
     public native PHASEMappedMetaParameterDefinition initWithValueMinimumMaximumIdentifier(double value, double minimum,
-            double maximum, String identifier);
+            double maximum, @NotNull String identifier);
 
     /**
      * [@property] inputMetaParameterDefinition
      * 
      * The readonly PHASENumberMetaParameterDefinition that this metaparameter definition was initialized with
      */
+    @NotNull
     @Generated
     @Selector("inputMetaParameterDefinition")
     public native PHASENumberMetaParameterDefinition inputMetaParameterDefinition();
@@ -185,9 +193,10 @@ public class PHASEMappedMetaParameterDefinition extends PHASENumberMetaParameter
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

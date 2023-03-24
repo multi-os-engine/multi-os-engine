@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -59,31 +61,35 @@ public class UITargetedPreview extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -109,7 +115,7 @@ public class UITargetedPreview extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("initWithView:")
-    public native UITargetedPreview initWithView(UIView view);
+    public native UITargetedPreview initWithView(@NotNull UIView view);
 
     /**
      * To use this initializer, the view must be in a window.
@@ -117,15 +123,16 @@ public class UITargetedPreview extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("initWithView:parameters:")
-    public native UITargetedPreview initWithViewParameters(UIView view, UIPreviewParameters parameters);
+    public native UITargetedPreview initWithViewParameters(@NotNull UIView view,
+            @NotNull UIPreviewParameters parameters);
 
     /**
      * To use this initializer, the view need not be in a window.
      */
     @Generated
     @Selector("initWithView:parameters:target:")
-    public native UITargetedPreview initWithViewParametersTarget(UIView view, UIPreviewParameters parameters,
-            UIPreviewTarget target);
+    public native UITargetedPreview initWithViewParametersTarget(@NotNull UIView view,
+            @NotNull UIPreviewParameters parameters, @NotNull UIPreviewTarget target);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -144,15 +151,17 @@ public class UITargetedPreview extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native UITargetedPreview new_objc();
 
+    @NotNull
     @Generated
     @Selector("parameters")
     public native UIPreviewParameters parameters();
@@ -173,9 +182,10 @@ public class UITargetedPreview extends NSObject implements NSCopying {
      * a UIDropInteractionDelegate in -dropInteraction:previewForCancellingItem:withDefault:,
      * to direct the default UITargetedPreview to a different target.
      */
+    @NotNull
     @Generated
     @Selector("retargetedPreviewWithTarget:")
-    public native UITargetedPreview retargetedPreviewWithTarget(UIPreviewTarget newTarget);
+    public native UITargetedPreview retargetedPreviewWithTarget(@NotNull UIPreviewTarget newTarget);
 
     @Generated
     @Selector("setVersion:")
@@ -195,6 +205,7 @@ public class UITargetedPreview extends NSObject implements NSCopying {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("target")
     public native UIPreviewTarget target();
@@ -204,6 +215,7 @@ public class UITargetedPreview extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("view")
     public native UIView view();

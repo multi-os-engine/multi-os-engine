@@ -23,6 +23,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CLSActivity represents user generated activity data for a given context.
@@ -58,7 +60,7 @@ public class CLSActivity extends CLSObject {
      */
     @Generated
     @Selector("addAdditionalActivityItem:")
-    public native void addAdditionalActivityItem(CLSActivityItem activityItem);
+    public native void addAdditionalActivityItem(@NotNull CLSActivityItem activityItem);
 
     /**
      * Adds progress to this activity.
@@ -75,6 +77,7 @@ public class CLSActivity extends CLSObject {
     /**
      * Array of all additional activity items on this CLSActivity.
      */
+    @NotNull
     @Generated
     @Selector("additionalActivityItems")
     public native NSArray<? extends CLSActivityItem> additionalActivityItems();
@@ -91,22 +94,25 @@ public class CLSActivity extends CLSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -139,7 +145,7 @@ public class CLSActivity extends CLSObject {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CLSActivity initWithCoder(NSCoder coder);
+    public native CLSActivity initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -165,9 +171,10 @@ public class CLSActivity extends CLSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -179,6 +186,7 @@ public class CLSActivity extends CLSObject {
      * 
      * This can be nil indicating @c progress property is the primary data instead of any activityItems.
      */
+    @Nullable
     @Generated
     @Selector("primaryActivityItem")
     public native CLSActivityItem primaryActivityItem();
@@ -207,7 +215,7 @@ public class CLSActivity extends CLSObject {
      */
     @Generated
     @Selector("setPrimaryActivityItem:")
-    public native void setPrimaryActivityItem(CLSActivityItem value);
+    public native void setPrimaryActivityItem(@Nullable CLSActivityItem value);
 
     /**
      * Current progress as a decimal representation of a percentage.

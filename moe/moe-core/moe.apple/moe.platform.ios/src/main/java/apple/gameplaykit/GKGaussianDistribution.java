@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A gaussian distribution is biased towards the mean value, the possible outcomes are spread out from the mean
@@ -80,30 +82,35 @@ public class GKGaussianDistribution extends GKRandomDistribution {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("d20")
     public static native GKGaussianDistribution d20();
 
+    @NotNull
     @Generated
     @Selector("d6")
     public static native GKGaussianDistribution d6();
@@ -147,9 +154,10 @@ public class GKGaussianDistribution extends GKRandomDistribution {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -208,7 +216,8 @@ public class GKGaussianDistribution extends GKRandomDistribution {
     @Generated
     @Selector("initWithRandomSource:lowestValue:highestValue:")
     public native GKGaussianDistribution initWithRandomSourceLowestValueHighestValue(
-            @Mapped(ObjCObjectMapper.class) GKRandom source, @NInt long lowestInclusive, @NInt long highestInclusive);
+            @NotNull @Mapped(ObjCObjectMapper.class) GKRandom source, @NInt long lowestInclusive,
+            @NInt long highestInclusive);
 
     /**
      * Initializes a Gaussian random distribution within the range [mean - 3 * deviation, mean + 3 * deviation]
@@ -217,7 +226,7 @@ public class GKGaussianDistribution extends GKRandomDistribution {
     @Generated
     @Selector("initWithRandomSource:mean:deviation:")
     public native GKGaussianDistribution initWithRandomSourceMeanDeviation(
-            @Mapped(ObjCObjectMapper.class) GKRandom source, float mean, float deviation);
+            @NotNull @Mapped(ObjCObjectMapper.class) GKRandom source, float mean, float deviation);
 
     /**
      * The mean, or expected, value of the distribution. Values are more probable the closer to the mean they are.

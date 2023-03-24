@@ -46,6 +46,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGAffineTransform;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAssetWriterInput
@@ -142,8 +144,8 @@ public class AVAssetWriterInput extends NSObject {
      */
     @Generated
     @Selector("assetWriterInputWithMediaType:outputSettings:")
-    public static native AVAssetWriterInput assetWriterInputWithMediaTypeOutputSettings(String mediaType,
-            NSDictionary<String, ?> outputSettings);
+    public static native AVAssetWriterInput assetWriterInputWithMediaTypeOutputSettings(@NotNull String mediaType,
+            @Nullable NSDictionary<String, ?> outputSettings);
 
     /**
      * assetWriterInputWithMediaType:outputSettings:sourceFormatHint:
@@ -185,26 +187,30 @@ public class AVAssetWriterInput extends NSObject {
     @Generated
     @Selector("assetWriterInputWithMediaType:outputSettings:sourceFormatHint:")
     public static native AVAssetWriterInput assetWriterInputWithMediaTypeOutputSettingsSourceFormatHint(
-            String mediaType, NSDictionary<String, ?> outputSettings, CMFormatDescriptionRef sourceFormatHint);
+            @NotNull String mediaType, @Nullable NSDictionary<String, ?> outputSettings,
+            @Nullable CMFormatDescriptionRef sourceFormatHint);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -239,9 +245,10 @@ public class AVAssetWriterInput extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -293,7 +300,8 @@ public class AVAssetWriterInput extends NSObject {
      */
     @Generated
     @Selector("addTrackAssociationWithTrackOfInput:type:")
-    public native void addTrackAssociationWithTrackOfInputType(AVAssetWriterInput input, String trackAssociationType);
+    public native void addTrackAssociationWithTrackOfInputType(@NotNull AVAssetWriterInput input,
+            @NotNull String trackAssociationType);
 
     /**
      * appendSampleBuffer:
@@ -390,7 +398,7 @@ public class AVAssetWriterInput extends NSObject {
      */
     @Generated
     @Selector("appendSampleBuffer:")
-    public native boolean appendSampleBuffer(CMSampleBufferRef sampleBuffer);
+    public native boolean appendSampleBuffer(@NotNull CMSampleBufferRef sampleBuffer);
 
     /**
      * canAddTrackAssociationWithTrackOfInput:type:
@@ -412,8 +420,8 @@ public class AVAssetWriterInput extends NSObject {
      */
     @Generated
     @Selector("canAddTrackAssociationWithTrackOfInput:type:")
-    public native boolean canAddTrackAssociationWithTrackOfInputType(AVAssetWriterInput input,
-            String trackAssociationType);
+    public native boolean canAddTrackAssociationWithTrackOfInputType(@NotNull AVAssetWriterInput input,
+            @NotNull String trackAssociationType);
 
     /**
      * [@property] canPerformMultiplePasses
@@ -464,6 +472,7 @@ public class AVAssetWriterInput extends NSObject {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("currentPassDescription")
     public native AVAssetWriterInputPassDescription currentPassDescription();
@@ -502,6 +511,7 @@ public class AVAssetWriterInput extends NSObject {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("extendedLanguageTag")
     public native String extendedLanguageTag();
@@ -566,8 +576,8 @@ public class AVAssetWriterInput extends NSObject {
      */
     @Generated
     @Selector("initWithMediaType:outputSettings:")
-    public native AVAssetWriterInput initWithMediaTypeOutputSettings(String mediaType,
-            NSDictionary<String, ?> outputSettings);
+    public native AVAssetWriterInput initWithMediaTypeOutputSettings(@NotNull String mediaType,
+            @Nullable NSDictionary<String, ?> outputSettings);
 
     /**
      * initWithMediaType:outputSettings:sourceFormatHint:
@@ -609,8 +619,8 @@ public class AVAssetWriterInput extends NSObject {
      */
     @Generated
     @Selector("initWithMediaType:outputSettings:sourceFormatHint:")
-    public native AVAssetWriterInput initWithMediaTypeOutputSettingsSourceFormatHint(String mediaType,
-            NSDictionary<String, ?> outputSettings, CMFormatDescriptionRef sourceFormatHint);
+    public native AVAssetWriterInput initWithMediaTypeOutputSettingsSourceFormatHint(@NotNull String mediaType,
+            @Nullable NSDictionary<String, ?> outputSettings, @Nullable CMFormatDescriptionRef sourceFormatHint);
 
     /**
      * [@property] readyForMoreMediaData
@@ -664,6 +674,7 @@ public class AVAssetWriterInput extends NSObject {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("languageCode")
     public native String languageCode();
@@ -771,6 +782,7 @@ public class AVAssetWriterInput extends NSObject {
      * 
      * The value of this property is one of the media types defined in AVMediaFormat.h.
      */
+    @NotNull
     @Generated
     @Selector("mediaType")
     public native String mediaType();
@@ -785,6 +797,7 @@ public class AVAssetWriterInput extends NSObject {
      * 
      * This property cannot be set after writing on the receiver's AVAssetWriter has started.
      */
+    @NotNull
     @Generated
     @Selector("metadata")
     public native NSArray<? extends AVMetadataItem> metadata();
@@ -815,6 +828,7 @@ public class AVAssetWriterInput extends NSObject {
      * AVAudioSettings.h for AVMediaTypeAudio or AVVideoSettings.h for AVMediaTypeVideo. A value of nil indicates that
      * the receiver will pass through appended samples, doing no processing before they are written to the output file.
      */
+    @Nullable
     @Generated
     @Selector("outputSettings")
     public native NSDictionary<String, ?> outputSettings();
@@ -973,8 +987,8 @@ public class AVAssetWriterInput extends NSObject {
      */
     @Generated
     @Selector("requestMediaDataWhenReadyOnQueue:usingBlock:")
-    public native void requestMediaDataWhenReadyOnQueueUsingBlock(NSObject queue,
-            @ObjCBlock(name = "call_requestMediaDataWhenReadyOnQueueUsingBlock") Block_requestMediaDataWhenReadyOnQueueUsingBlock block);
+    public native void requestMediaDataWhenReadyOnQueueUsingBlock(@NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_requestMediaDataWhenReadyOnQueueUsingBlock") Block_requestMediaDataWhenReadyOnQueueUsingBlock block);
 
     /**
      * respondToEachPassDescriptionOnQueue:usingBlock:
@@ -1008,8 +1022,8 @@ public class AVAssetWriterInput extends NSObject {
      */
     @Generated
     @Selector("respondToEachPassDescriptionOnQueue:usingBlock:")
-    public native void respondToEachPassDescriptionOnQueueUsingBlock(NSObject queue,
-            @ObjCBlock(name = "call_respondToEachPassDescriptionOnQueueUsingBlock") Block_respondToEachPassDescriptionOnQueueUsingBlock block);
+    public native void respondToEachPassDescriptionOnQueueUsingBlock(@NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_respondToEachPassDescriptionOnQueueUsingBlock") Block_respondToEachPassDescriptionOnQueueUsingBlock block);
 
     /**
      * [@property] sampleReferenceBaseURL
@@ -1039,6 +1053,7 @@ public class AVAssetWriterInput extends NSObject {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("sampleReferenceBaseURL")
     public native NSURL sampleReferenceBaseURL();
@@ -1079,7 +1094,7 @@ public class AVAssetWriterInput extends NSObject {
      */
     @Generated
     @Selector("setExtendedLanguageTag:")
-    public native void setExtendedLanguageTag(String value);
+    public native void setExtendedLanguageTag(@Nullable String value);
 
     /**
      * [@property] languageCode
@@ -1098,7 +1113,7 @@ public class AVAssetWriterInput extends NSObject {
      */
     @Generated
     @Selector("setLanguageCode:")
-    public native void setLanguageCode(String value);
+    public native void setLanguageCode(@Nullable String value);
 
     /**
      * [@property] marksOutputTrackAsEnabled
@@ -1152,7 +1167,7 @@ public class AVAssetWriterInput extends NSObject {
      */
     @Generated
     @Selector("setMetadata:")
-    public native void setMetadata(NSArray<? extends AVMetadataItem> value);
+    public native void setMetadata(@NotNull NSArray<? extends AVMetadataItem> value);
 
     /**
      * [@property] naturalSize
@@ -1297,7 +1312,7 @@ public class AVAssetWriterInput extends NSObject {
      */
     @Generated
     @Selector("setSampleReferenceBaseURL:")
-    public native void setSampleReferenceBaseURL(NSURL value);
+    public native void setSampleReferenceBaseURL(@Nullable NSURL value);
 
     /**
      * [@property] transform
@@ -1324,6 +1339,7 @@ public class AVAssetWriterInput extends NSObject {
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("sourceFormatHint")
     public native CMFormatDescriptionRef sourceFormatHint();
@@ -1384,6 +1400,7 @@ public class AVAssetWriterInput extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("mediaDataLocation")
     public native String mediaDataLocation();
@@ -1417,5 +1434,5 @@ public class AVAssetWriterInput extends NSObject {
      */
     @Generated
     @Selector("setMediaDataLocation:")
-    public native void setMediaDataLocation(String value);
+    public native void setMediaDataLocation(@NotNull String value);
 }

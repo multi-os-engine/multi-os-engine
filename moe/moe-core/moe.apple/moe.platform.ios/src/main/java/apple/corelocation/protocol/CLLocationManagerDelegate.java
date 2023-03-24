@@ -34,6 +34,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CLLocationManagerDelegate
@@ -59,7 +61,7 @@ public interface CLLocationManagerDelegate {
     @Generated
     @IsOptional
     @Selector("locationManager:didChangeAuthorizationStatus:")
-    default void locationManagerDidChangeAuthorizationStatus(CLLocationManager manager, int status) {
+    default void locationManagerDidChangeAuthorizationStatus(@NotNull CLLocationManager manager, int status) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -75,8 +77,8 @@ public interface CLLocationManagerDelegate {
     @Generated
     @IsOptional
     @Selector("locationManager:didDetermineState:forRegion:")
-    default void locationManagerDidDetermineStateForRegion(CLLocationManager manager, @NInt long state,
-            CLRegion region) {
+    default void locationManagerDidDetermineStateForRegion(@NotNull CLLocationManager manager, @NInt long state,
+            @NotNull CLRegion region) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -92,7 +94,7 @@ public interface CLLocationManagerDelegate {
     @Generated
     @IsOptional
     @Selector("locationManager:didEnterRegion:")
-    default void locationManagerDidEnterRegion(CLLocationManager manager, CLRegion region) {
+    default void locationManagerDidEnterRegion(@NotNull CLLocationManager manager, @NotNull CLRegion region) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -108,7 +110,7 @@ public interface CLLocationManagerDelegate {
     @Generated
     @IsOptional
     @Selector("locationManager:didExitRegion:")
-    default void locationManagerDidExitRegion(CLLocationManager manager, CLRegion region) {
+    default void locationManagerDidExitRegion(@NotNull CLLocationManager manager, @NotNull CLRegion region) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -121,7 +123,7 @@ public interface CLLocationManagerDelegate {
     @Generated
     @IsOptional
     @Selector("locationManager:didFailWithError:")
-    default void locationManagerDidFailWithError(CLLocationManager manager, NSError error) {
+    default void locationManagerDidFailWithError(@NotNull CLLocationManager manager, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -141,7 +143,8 @@ public interface CLLocationManagerDelegate {
     @Generated
     @IsOptional
     @Selector("locationManager:didFinishDeferredUpdatesWithError:")
-    default void locationManagerDidFinishDeferredUpdatesWithError(CLLocationManager manager, NSError error) {
+    default void locationManagerDidFinishDeferredUpdatesWithError(@NotNull CLLocationManager manager,
+            @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -162,8 +165,8 @@ public interface CLLocationManagerDelegate {
     @Generated
     @IsOptional
     @Selector("locationManager:didRangeBeacons:inRegion:")
-    default void locationManagerDidRangeBeaconsInRegion(CLLocationManager manager, NSArray<? extends CLBeacon> beacons,
-            CLBeaconRegion region) {
+    default void locationManagerDidRangeBeaconsInRegion(@NotNull CLLocationManager manager,
+            @NotNull NSArray<? extends CLBeacon> beacons, @NotNull CLBeaconRegion region) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -178,7 +181,8 @@ public interface CLLocationManagerDelegate {
     @Generated
     @IsOptional
     @Selector("locationManager:didStartMonitoringForRegion:")
-    default void locationManagerDidStartMonitoringForRegion(CLLocationManager manager, CLRegion region) {
+    default void locationManagerDidStartMonitoringForRegion(@NotNull CLLocationManager manager,
+            @NotNull CLRegion region) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -193,7 +197,7 @@ public interface CLLocationManagerDelegate {
     @Generated
     @IsOptional
     @Selector("locationManager:didUpdateHeading:")
-    default void locationManagerDidUpdateHeading(CLLocationManager manager, CLHeading newHeading) {
+    default void locationManagerDidUpdateHeading(@NotNull CLLocationManager manager, @NotNull CLHeading newHeading) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -212,7 +216,8 @@ public interface CLLocationManagerDelegate {
     @Generated
     @IsOptional
     @Selector("locationManager:didUpdateLocations:")
-    default void locationManagerDidUpdateLocations(CLLocationManager manager, NSArray<? extends CLLocation> locations) {
+    default void locationManagerDidUpdateLocations(@NotNull CLLocationManager manager,
+            @NotNull NSArray<? extends CLLocation> locations) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -234,8 +239,8 @@ public interface CLLocationManagerDelegate {
     @IsOptional
     @Deprecated
     @Selector("locationManager:didUpdateToLocation:fromLocation:")
-    default void locationManagerDidUpdateToLocationFromLocation(CLLocationManager manager, CLLocation newLocation,
-            CLLocation oldLocation) {
+    default void locationManagerDidUpdateToLocationFromLocation(@NotNull CLLocationManager manager,
+            @NotNull CLLocation newLocation, @NotNull CLLocation oldLocation) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -252,7 +257,7 @@ public interface CLLocationManagerDelegate {
     @Generated
     @IsOptional
     @Selector("locationManager:didVisit:")
-    default void locationManagerDidVisit(CLLocationManager manager, CLVisit visit) {
+    default void locationManagerDidVisit(@NotNull CLLocationManager manager, @NotNull CLVisit visit) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -267,8 +272,8 @@ public interface CLLocationManagerDelegate {
     @Generated
     @IsOptional
     @Selector("locationManager:monitoringDidFailForRegion:withError:")
-    default void locationManagerMonitoringDidFailForRegionWithError(CLLocationManager manager, CLRegion region,
-            NSError error) {
+    default void locationManagerMonitoringDidFailForRegionWithError(@NotNull CLLocationManager manager,
+            @Nullable CLRegion region, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -285,8 +290,8 @@ public interface CLLocationManagerDelegate {
     @Generated
     @IsOptional
     @Selector("locationManager:rangingBeaconsDidFailForRegion:withError:")
-    default void locationManagerRangingBeaconsDidFailForRegionWithError(CLLocationManager manager,
-            CLBeaconRegion region, NSError error) {
+    default void locationManagerRangingBeaconsDidFailForRegionWithError(@NotNull CLLocationManager manager,
+            @NotNull CLBeaconRegion region, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -299,7 +304,7 @@ public interface CLLocationManagerDelegate {
     @Generated
     @IsOptional
     @Selector("locationManagerDidPauseLocationUpdates:")
-    default void locationManagerDidPauseLocationUpdates(CLLocationManager manager) {
+    default void locationManagerDidPauseLocationUpdates(@NotNull CLLocationManager manager) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -315,7 +320,7 @@ public interface CLLocationManagerDelegate {
     @Generated
     @IsOptional
     @Selector("locationManagerDidResumeLocationUpdates:")
-    default void locationManagerDidResumeLocationUpdates(CLLocationManager manager) {
+    default void locationManagerDidResumeLocationUpdates(@NotNull CLLocationManager manager) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -331,7 +336,7 @@ public interface CLLocationManagerDelegate {
     @Generated
     @IsOptional
     @Selector("locationManagerShouldDisplayHeadingCalibration:")
-    default boolean locationManagerShouldDisplayHeadingCalibration(CLLocationManager manager) {
+    default boolean locationManagerShouldDisplayHeadingCalibration(@NotNull CLLocationManager manager) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -341,8 +346,8 @@ public interface CLLocationManagerDelegate {
     @Generated
     @IsOptional
     @Selector("locationManager:didFailRangingBeaconsForConstraint:error:")
-    default void locationManagerDidFailRangingBeaconsForConstraintError(CLLocationManager manager,
-            CLBeaconIdentityConstraint beaconConstraint, NSError error) {
+    default void locationManagerDidFailRangingBeaconsForConstraintError(@NotNull CLLocationManager manager,
+            @NotNull CLBeaconIdentityConstraint beaconConstraint, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -352,8 +357,8 @@ public interface CLLocationManagerDelegate {
     @Generated
     @IsOptional
     @Selector("locationManager:didRangeBeacons:satisfyingConstraint:")
-    default void locationManagerDidRangeBeaconsSatisfyingConstraint(CLLocationManager manager,
-            NSArray<? extends CLBeacon> beacons, CLBeaconIdentityConstraint beaconConstraint) {
+    default void locationManagerDidRangeBeaconsSatisfyingConstraint(@NotNull CLLocationManager manager,
+            @NotNull NSArray<? extends CLBeacon> beacons, @NotNull CLBeaconIdentityConstraint beaconConstraint) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -369,7 +374,7 @@ public interface CLLocationManagerDelegate {
     @Generated
     @IsOptional
     @Selector("locationManagerDidChangeAuthorization:")
-    default void locationManagerDidChangeAuthorization(CLLocationManager manager) {
+    default void locationManagerDidChangeAuthorization(@NotNull CLLocationManager manager) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

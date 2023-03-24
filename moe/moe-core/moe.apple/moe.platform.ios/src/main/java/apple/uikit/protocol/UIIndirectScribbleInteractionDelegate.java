@@ -16,6 +16,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The protocol to be implemented by the delegate of UIIndirectScribbleInteraction. It will be responsible for supplying
@@ -39,8 +41,9 @@ public interface UIIndirectScribbleInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("indirectScribbleInteraction:didFinishWritingInElement:")
-    default void indirectScribbleInteractionDidFinishWritingInElement(UIIndirectScribbleInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) Object elementIdentifier) {
+    default void indirectScribbleInteractionDidFinishWritingInElement(
+            @NotNull UIIndirectScribbleInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object elementIdentifier) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -62,15 +65,16 @@ public interface UIIndirectScribbleInteractionDelegate {
     @Generated
     @Selector("indirectScribbleInteraction:focusElementIfNeeded:referencePoint:completion:")
     void indirectScribbleInteractionFocusElementIfNeededReferencePointCompletion(
-            UIIndirectScribbleInteraction interaction, @Mapped(ObjCObjectMapper.class) Object elementIdentifier,
-            @ByValue CGPoint focusReferencePoint,
-            @ObjCBlock(name = "call_indirectScribbleInteractionFocusElementIfNeededReferencePointCompletion") Block_indirectScribbleInteractionFocusElementIfNeededReferencePointCompletion completion);
+            @NotNull UIIndirectScribbleInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object elementIdentifier, @ByValue CGPoint focusReferencePoint,
+            @NotNull @ObjCBlock(name = "call_indirectScribbleInteractionFocusElementIfNeededReferencePointCompletion") Block_indirectScribbleInteractionFocusElementIfNeededReferencePointCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indirectScribbleInteractionFocusElementIfNeededReferencePointCompletion {
         @Generated
-        void call_indirectScribbleInteractionFocusElementIfNeededReferencePointCompletion(UIResponder focusedInput);
+        void call_indirectScribbleInteractionFocusElementIfNeededReferencePointCompletion(
+                @Nullable UIResponder focusedInput);
     }
 
     /**
@@ -83,8 +87,8 @@ public interface UIIndirectScribbleInteractionDelegate {
     @Generated
     @Selector("indirectScribbleInteraction:frameForElement:")
     @ByValue
-    CGRect indirectScribbleInteractionFrameForElement(UIIndirectScribbleInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) Object elementIdentifier);
+    CGRect indirectScribbleInteractionFrameForElement(@NotNull UIIndirectScribbleInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object elementIdentifier);
 
     /**
      * Asks the delegate if an element is currently focused, according to the internal state of the interaction's view.
@@ -95,8 +99,8 @@ public interface UIIndirectScribbleInteractionDelegate {
      */
     @Generated
     @Selector("indirectScribbleInteraction:isElementFocused:")
-    boolean indirectScribbleInteractionIsElementFocused(UIIndirectScribbleInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) Object elementIdentifier);
+    boolean indirectScribbleInteractionIsElementFocused(@NotNull UIIndirectScribbleInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object elementIdentifier);
 
     /**
      * This method will be called to request the text input elements in a certain rect of the view, each of which
@@ -110,15 +114,15 @@ public interface UIIndirectScribbleInteractionDelegate {
      */
     @Generated
     @Selector("indirectScribbleInteraction:requestElementsInRect:completion:")
-    void indirectScribbleInteractionRequestElementsInRectCompletion(UIIndirectScribbleInteraction interaction,
+    void indirectScribbleInteractionRequestElementsInRectCompletion(@NotNull UIIndirectScribbleInteraction interaction,
             @ByValue CGRect rect,
-            @ObjCBlock(name = "call_indirectScribbleInteractionRequestElementsInRectCompletion") Block_indirectScribbleInteractionRequestElementsInRectCompletion completion);
+            @NotNull @ObjCBlock(name = "call_indirectScribbleInteractionRequestElementsInRectCompletion") Block_indirectScribbleInteractionRequestElementsInRectCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indirectScribbleInteractionRequestElementsInRectCompletion {
         @Generated
-        void call_indirectScribbleInteractionRequestElementsInRectCompletion(NSArray<?> elements);
+        void call_indirectScribbleInteractionRequestElementsInRectCompletion(@NotNull NSArray<?> elements);
     }
 
     /**
@@ -136,8 +140,9 @@ public interface UIIndirectScribbleInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("indirectScribbleInteraction:shouldDelayFocusForElement:")
-    default boolean indirectScribbleInteractionShouldDelayFocusForElement(UIIndirectScribbleInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) Object elementIdentifier) {
+    default boolean indirectScribbleInteractionShouldDelayFocusForElement(
+            @NotNull UIIndirectScribbleInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object elementIdentifier) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -152,8 +157,9 @@ public interface UIIndirectScribbleInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("indirectScribbleInteraction:willBeginWritingInElement:")
-    default void indirectScribbleInteractionWillBeginWritingInElement(UIIndirectScribbleInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) Object elementIdentifier) {
+    default void indirectScribbleInteractionWillBeginWritingInElement(
+            @NotNull UIIndirectScribbleInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object elementIdentifier) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEFilterProvider
@@ -80,22 +82,25 @@ public class NEFilterProvider extends NEProvider {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +135,10 @@ public class NEFilterProvider extends NEProvider {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -169,6 +175,7 @@ public class NEFilterProvider extends NEProvider {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("filterConfiguration")
     public native NEFilterProviderConfiguration filterConfiguration();
@@ -194,7 +201,7 @@ public class NEFilterProvider extends NEProvider {
     @Generated
     @Selector("startFilterWithCompletionHandler:")
     public native void startFilterWithCompletionHandler(
-            @ObjCBlock(name = "call_startFilterWithCompletionHandler") Block_startFilterWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_startFilterWithCompletionHandler") Block_startFilterWithCompletionHandler completionHandler);
 
     /**
      * stopFilterWithReason:completionHandler:
@@ -210,13 +217,13 @@ public class NEFilterProvider extends NEProvider {
     @Generated
     @Selector("stopFilterWithReason:completionHandler:")
     public native void stopFilterWithReasonCompletionHandler(@NInt long reason,
-            @ObjCBlock(name = "call_stopFilterWithReasonCompletionHandler") Block_stopFilterWithReasonCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_stopFilterWithReasonCompletionHandler") Block_stopFilterWithReasonCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startFilterWithCompletionHandler {
         @Generated
-        void call_startFilterWithCompletionHandler(NSError error);
+        void call_startFilterWithCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -239,5 +246,5 @@ public class NEFilterProvider extends NEProvider {
      */
     @Generated
     @Selector("handleReport:")
-    public native void handleReport(NEFilterReport report);
+    public native void handleReport(@NotNull NEFilterReport report);
 }

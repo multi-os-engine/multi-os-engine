@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A class conforming to the WKUIDelegate protocol provides methods for
@@ -62,7 +64,8 @@ public interface WKUIDelegate {
     @Generated
     @IsOptional
     @Selector("webView:commitPreviewingViewController:")
-    default void webViewCommitPreviewingViewController(WKWebView webView, UIViewController previewingViewController) {
+    default void webViewCommitPreviewingViewController(@NotNull WKWebView webView,
+            @NotNull UIViewController previewingViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -82,12 +85,13 @@ public interface WKUIDelegate {
      * @param windowFeatures   Window features requested by the webpage.
      * @return A new web view or nil.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("webView:createWebViewWithConfiguration:forNavigationAction:windowFeatures:")
-    default WKWebView webViewCreateWebViewWithConfigurationForNavigationActionWindowFeatures(WKWebView webView,
-            WKWebViewConfiguration configuration, WKNavigationAction navigationAction,
-            WKWindowFeatures windowFeatures) {
+    default WKWebView webViewCreateWebViewWithConfigurationForNavigationActionWindowFeatures(@NotNull WKWebView webView,
+            @NotNull WKWebViewConfiguration configuration, @NotNull WKNavigationAction navigationAction,
+            @NotNull WKWindowFeatures windowFeatures) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -112,12 +116,13 @@ public interface WKUIDelegate {
      *                       have not been
      *                       implemented, or if this delegate method returns nil.
      */
+    @Nullable
     @Deprecated
     @Generated
     @IsOptional
     @Selector("webView:previewingViewControllerForElement:defaultActions:")
-    default UIViewController webViewPreviewingViewControllerForElementDefaultActions(WKWebView webView,
-            WKPreviewElementInfo elementInfo, NSArray<?> previewActions) {
+    default UIViewController webViewPreviewingViewControllerForElementDefaultActions(@NotNull WKWebView webView,
+            @NotNull WKPreviewElementInfo elementInfo, @NotNull NSArray<?> previewActions) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -141,9 +146,9 @@ public interface WKUIDelegate {
     @Generated
     @IsOptional
     @Selector("webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:completionHandler:")
-    default void webViewRunJavaScriptAlertPanelWithMessageInitiatedByFrameCompletionHandler(WKWebView webView,
-            String message, WKFrameInfo frame,
-            @ObjCBlock(name = "call_webViewRunJavaScriptAlertPanelWithMessageInitiatedByFrameCompletionHandler") Block_webViewRunJavaScriptAlertPanelWithMessageInitiatedByFrameCompletionHandler completionHandler) {
+    default void webViewRunJavaScriptAlertPanelWithMessageInitiatedByFrameCompletionHandler(@NotNull WKWebView webView,
+            @NotNull String message, @NotNull WKFrameInfo frame,
+            @NotNull @ObjCBlock(name = "call_webViewRunJavaScriptAlertPanelWithMessageInitiatedByFrameCompletionHandler") Block_webViewRunJavaScriptAlertPanelWithMessageInitiatedByFrameCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -167,9 +172,9 @@ public interface WKUIDelegate {
     @Generated
     @IsOptional
     @Selector("webView:runJavaScriptConfirmPanelWithMessage:initiatedByFrame:completionHandler:")
-    default void webViewRunJavaScriptConfirmPanelWithMessageInitiatedByFrameCompletionHandler(WKWebView webView,
-            String message, WKFrameInfo frame,
-            @ObjCBlock(name = "call_webViewRunJavaScriptConfirmPanelWithMessageInitiatedByFrameCompletionHandler") Block_webViewRunJavaScriptConfirmPanelWithMessageInitiatedByFrameCompletionHandler completionHandler) {
+    default void webViewRunJavaScriptConfirmPanelWithMessageInitiatedByFrameCompletionHandler(
+            @NotNull WKWebView webView, @NotNull String message, @NotNull WKFrameInfo frame,
+            @NotNull @ObjCBlock(name = "call_webViewRunJavaScriptConfirmPanelWithMessageInitiatedByFrameCompletionHandler") Block_webViewRunJavaScriptConfirmPanelWithMessageInitiatedByFrameCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -196,8 +201,9 @@ public interface WKUIDelegate {
     @IsOptional
     @Selector("webView:runJavaScriptTextInputPanelWithPrompt:defaultText:initiatedByFrame:completionHandler:")
     default void webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler(
-            WKWebView webView, String prompt, String defaultText, WKFrameInfo frame,
-            @ObjCBlock(name = "call_webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler") Block_webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler completionHandler) {
+            @NotNull WKWebView webView, @NotNull String prompt, @Nullable String defaultText,
+            @NotNull WKFrameInfo frame,
+            @NotNull @ObjCBlock(name = "call_webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler") Block_webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -221,7 +227,7 @@ public interface WKUIDelegate {
     @Generated
     @IsOptional
     @Selector("webView:shouldPreviewElement:")
-    default boolean webViewShouldPreviewElement(WKWebView webView, WKPreviewElementInfo elementInfo) {
+    default boolean webViewShouldPreviewElement(@NotNull WKWebView webView, @NotNull WKPreviewElementInfo elementInfo) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -238,7 +244,7 @@ public interface WKUIDelegate {
     @Generated
     @IsOptional
     @Selector("webViewDidClose:")
-    default void webViewDidClose(WKWebView webView) {
+    default void webViewDidClose(@NotNull WKWebView webView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -261,7 +267,7 @@ public interface WKUIDelegate {
     public interface Block_webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler {
         @Generated
         void call_webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler(
-                String result);
+                @Nullable String result);
     }
 
     /**
@@ -279,9 +285,9 @@ public interface WKUIDelegate {
     @Generated
     @IsOptional
     @Selector("webView:contextMenuConfigurationForElement:completionHandler:")
-    default void webViewContextMenuConfigurationForElementCompletionHandler(WKWebView webView,
-            WKContextMenuElementInfo elementInfo,
-            @ObjCBlock(name = "call_webViewContextMenuConfigurationForElementCompletionHandler") Block_webViewContextMenuConfigurationForElementCompletionHandler completionHandler) {
+    default void webViewContextMenuConfigurationForElementCompletionHandler(@NotNull WKWebView webView,
+            @NotNull WKContextMenuElementInfo elementInfo,
+            @NotNull @ObjCBlock(name = "call_webViewContextMenuConfigurationForElementCompletionHandler") Block_webViewContextMenuConfigurationForElementCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -289,7 +295,8 @@ public interface WKUIDelegate {
     @Generated
     public interface Block_webViewContextMenuConfigurationForElementCompletionHandler {
         @Generated
-        void call_webViewContextMenuConfigurationForElementCompletionHandler(UIContextMenuConfiguration configuration);
+        void call_webViewContextMenuConfigurationForElementCompletionHandler(
+                @Nullable UIContextMenuConfiguration configuration);
     }
 
     /**
@@ -303,7 +310,8 @@ public interface WKUIDelegate {
     @Generated
     @IsOptional
     @Selector("webView:contextMenuDidEndForElement:")
-    default void webViewContextMenuDidEndForElement(WKWebView webView, WKContextMenuElementInfo elementInfo) {
+    default void webViewContextMenuDidEndForElement(@NotNull WKWebView webView,
+            @NotNull WKContextMenuElementInfo elementInfo) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -321,9 +329,9 @@ public interface WKUIDelegate {
     @Generated
     @IsOptional
     @Selector("webView:contextMenuForElement:willCommitWithAnimator:")
-    default void webViewContextMenuForElementWillCommitWithAnimator(WKWebView webView,
-            WKContextMenuElementInfo elementInfo,
-            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator) {
+    default void webViewContextMenuForElementWillCommitWithAnimator(@NotNull WKWebView webView,
+            @NotNull WKContextMenuElementInfo elementInfo,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -338,7 +346,8 @@ public interface WKUIDelegate {
     @Generated
     @IsOptional
     @Selector("webView:contextMenuWillPresentForElement:")
-    default void webViewContextMenuWillPresentForElement(WKWebView webView, WKContextMenuElementInfo elementInfo) {
+    default void webViewContextMenuWillPresentForElement(@NotNull WKWebView webView,
+            @NotNull WKContextMenuElementInfo elementInfo) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -356,8 +365,8 @@ public interface WKUIDelegate {
     @IsOptional
     @Selector("webView:requestDeviceOrientationAndMotionPermissionForOrigin:initiatedByFrame:decisionHandler:")
     default void webViewRequestDeviceOrientationAndMotionPermissionForOriginInitiatedByFrameDecisionHandler(
-            WKWebView webView, WKSecurityOrigin origin, WKFrameInfo frame,
-            @ObjCBlock(name = "call_webViewRequestDeviceOrientationAndMotionPermissionForOriginInitiatedByFrameDecisionHandler") Block_webViewRequestDeviceOrientationAndMotionPermissionForOriginInitiatedByFrameDecisionHandler decisionHandler) {
+            @NotNull WKWebView webView, @NotNull WKSecurityOrigin origin, @NotNull WKFrameInfo frame,
+            @NotNull @ObjCBlock(name = "call_webViewRequestDeviceOrientationAndMotionPermissionForOriginInitiatedByFrameDecisionHandler") Block_webViewRequestDeviceOrientationAndMotionPermissionForOriginInitiatedByFrameDecisionHandler decisionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -385,9 +394,9 @@ public interface WKUIDelegate {
     @Generated
     @IsOptional
     @Selector("webView:requestMediaCapturePermissionForOrigin:initiatedByFrame:type:decisionHandler:")
-    default void webViewRequestMediaCapturePermissionForOriginInitiatedByFrameTypeDecisionHandler(WKWebView webView,
-            WKSecurityOrigin origin, WKFrameInfo frame, @NInt long type,
-            @ObjCBlock(name = "call_webViewRequestMediaCapturePermissionForOriginInitiatedByFrameTypeDecisionHandler") Block_webViewRequestMediaCapturePermissionForOriginInitiatedByFrameTypeDecisionHandler decisionHandler) {
+    default void webViewRequestMediaCapturePermissionForOriginInitiatedByFrameTypeDecisionHandler(
+            @NotNull WKWebView webView, @NotNull WKSecurityOrigin origin, @NotNull WKFrameInfo frame, @NInt long type,
+            @NotNull @ObjCBlock(name = "call_webViewRequestMediaCapturePermissionForOriginInitiatedByFrameTypeDecisionHandler") Block_webViewRequestMediaCapturePermissionForOriginInitiatedByFrameTypeDecisionHandler decisionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -415,8 +424,9 @@ public interface WKUIDelegate {
     @Generated
     @IsOptional
     @Selector("webView:showLockdownModeFirstUseMessage:completionHandler:")
-    default void webViewShowLockdownModeFirstUseMessageCompletionHandler(WKWebView webView, String message,
-            @ObjCBlock(name = "call_webViewShowLockdownModeFirstUseMessageCompletionHandler") Block_webViewShowLockdownModeFirstUseMessageCompletionHandler completionHandler) {
+    default void webViewShowLockdownModeFirstUseMessageCompletionHandler(@NotNull WKWebView webView,
+            @NotNull String message,
+            @NotNull @ObjCBlock(name = "call_webViewShowLockdownModeFirstUseMessageCompletionHandler") Block_webViewShowLockdownModeFirstUseMessageCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -73,22 +75,25 @@ public class UIAccessibilityCustomRotor extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +128,10 @@ public class UIAccessibilityCustomRotor extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,14 +165,15 @@ public class UIAccessibilityCustomRotor extends NSObject {
 
     @Generated
     @Selector("initWithName:itemSearchBlock:")
-    public native UIAccessibilityCustomRotor initWithNameItemSearchBlock(String name,
-            @ObjCBlock(name = "call_initWithNameItemSearchBlock") Block_initWithNameItemSearchBlock itemSearchBlock);
+    public native UIAccessibilityCustomRotor initWithNameItemSearchBlock(@NotNull String name,
+            @NotNull @ObjCBlock(name = "call_initWithNameItemSearchBlock") Block_initWithNameItemSearchBlock itemSearchBlock);
 
     /**
      * A block that takes a UIAccessibilityCustomRotorItemResult and the search direction and returns the next/previous
      * instance of that rotor item.
      * If the currentItem is nil, that implies the first/last item should be returned.
      */
+    @NotNull
     @Generated
     @Selector("itemSearchBlock")
     @ObjCBlock(name = "call_itemSearchBlock_ret")
@@ -175,6 +182,7 @@ public class UIAccessibilityCustomRotor extends NSObject {
     /**
      * The localized name the assistive technology will use to describe the custom rotor.
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -186,37 +194,41 @@ public class UIAccessibilityCustomRotor extends NSObject {
      */
     @Generated
     @Selector("setItemSearchBlock:")
-    public native void setItemSearchBlock(@ObjCBlock(name = "call_setItemSearchBlock") Block_setItemSearchBlock value);
+    public native void setItemSearchBlock(
+            @NotNull @ObjCBlock(name = "call_setItemSearchBlock") Block_setItemSearchBlock value);
 
     /**
      * The localized name the assistive technology will use to describe the custom rotor.
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@NotNull String value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithNameItemSearchBlock {
+        @Nullable
         @Generated
         UIAccessibilityCustomRotorItemResult call_initWithNameItemSearchBlock(
-                UIAccessibilityCustomRotorSearchPredicate predicate);
+                @NotNull UIAccessibilityCustomRotorSearchPredicate predicate);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_itemSearchBlock_ret {
+        @Nullable
         @Generated
         UIAccessibilityCustomRotorItemResult call_itemSearchBlock_ret(
-                UIAccessibilityCustomRotorSearchPredicate predicate);
+                @NotNull UIAccessibilityCustomRotorSearchPredicate predicate);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setItemSearchBlock {
+        @Nullable
         @Generated
         UIAccessibilityCustomRotorItemResult call_setItemSearchBlock(
-                UIAccessibilityCustomRotorSearchPredicate predicate);
+                @NotNull UIAccessibilityCustomRotorSearchPredicate predicate);
     }
 
     /**
@@ -225,6 +237,7 @@ public class UIAccessibilityCustomRotor extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("attributedName")
     public native NSAttributedString attributedName();
@@ -234,15 +247,17 @@ public class UIAccessibilityCustomRotor extends NSObject {
      */
     @Generated
     @Selector("initWithAttributedName:itemSearchBlock:")
-    public native UIAccessibilityCustomRotor initWithAttributedNameItemSearchBlock(NSAttributedString attributedName,
-            @ObjCBlock(name = "call_initWithAttributedNameItemSearchBlock") Block_initWithAttributedNameItemSearchBlock itemSearchBlock);
+    public native UIAccessibilityCustomRotor initWithAttributedNameItemSearchBlock(
+            @NotNull NSAttributedString attributedName,
+            @NotNull @ObjCBlock(name = "call_initWithAttributedNameItemSearchBlock") Block_initWithAttributedNameItemSearchBlock itemSearchBlock);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithAttributedNameItemSearchBlock {
+        @Nullable
         @Generated
         UIAccessibilityCustomRotorItemResult call_initWithAttributedNameItemSearchBlock(
-                UIAccessibilityCustomRotorSearchPredicate predicate);
+                @NotNull UIAccessibilityCustomRotorSearchPredicate predicate);
     }
 
     /**
@@ -251,14 +266,15 @@ public class UIAccessibilityCustomRotor extends NSObject {
     @Generated
     @Selector("initWithSystemType:itemSearchBlock:")
     public native UIAccessibilityCustomRotor initWithSystemTypeItemSearchBlock(@NInt long type,
-            @ObjCBlock(name = "call_initWithSystemTypeItemSearchBlock") Block_initWithSystemTypeItemSearchBlock itemSearchBlock);
+            @NotNull @ObjCBlock(name = "call_initWithSystemTypeItemSearchBlock") Block_initWithSystemTypeItemSearchBlock itemSearchBlock);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithSystemTypeItemSearchBlock {
+        @Nullable
         @Generated
         UIAccessibilityCustomRotorItemResult call_initWithSystemTypeItemSearchBlock(
-                UIAccessibilityCustomRotorSearchPredicate predicate);
+                @NotNull UIAccessibilityCustomRotorSearchPredicate predicate);
     }
 
     /**
@@ -269,7 +285,7 @@ public class UIAccessibilityCustomRotor extends NSObject {
      */
     @Generated
     @Selector("setAttributedName:")
-    public native void setAttributedName(NSAttributedString value);
+    public native void setAttributedName(@NotNull NSAttributedString value);
 
     /**
      * The system rotor type that was optionally used during initialization.

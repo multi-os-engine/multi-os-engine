@@ -26,6 +26,7 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] MTLDrawable
@@ -62,13 +63,13 @@ public interface MTLDrawable {
      */
     @Generated
     @Selector("addPresentedHandler:")
-    void addPresentedHandler(@ObjCBlock(name = "call_addPresentedHandler") Block_addPresentedHandler block);
+    void addPresentedHandler(@NotNull @ObjCBlock(name = "call_addPresentedHandler") Block_addPresentedHandler block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addPresentedHandler {
         @Generated
-        void call_addPresentedHandler(@Mapped(ObjCObjectMapper.class) Object arg0);
+        void call_addPresentedHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
     /**

@@ -33,6 +33,8 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("MetalPerformanceShaders")
@@ -62,7 +64,7 @@ public final class MetalPerformanceShaders {
      */
     @Generated
     @CFunction
-    public static native boolean MPSSupportsMTLDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public static native boolean MPSSupportsMTLDevice(@Nullable @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * [@memberof] MPSKernel
@@ -81,7 +83,7 @@ public final class MetalPerformanceShaders {
 
     @Generated
     @CFunction
-    public static native int MPSGetImageType(MPSImage image);
+    public static native int MPSGetImageType(@NotNull MPSImage image);
 
     /**
      * a/b = (a * recip + addend) >> shift imad(a, recip, addend) >> shift
@@ -189,8 +191,8 @@ public final class MetalPerformanceShaders {
      */
     @Generated
     @CFunction
-    public static native void MPSHintTemporaryMemoryHighWaterMark(@Mapped(ObjCObjectMapper.class) Object cmdBuf,
-            @NUInt long bytes);
+    public static native void MPSHintTemporaryMemoryHighWaterMark(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object cmdBuf, @NUInt long bytes);
 
     /**
      * Set the timeout after which unused cached MTLHeaps are released
@@ -214,7 +216,8 @@ public final class MetalPerformanceShaders {
      */
     @Generated
     @CFunction
-    public static native void MPSSetHeapCacheDuration(@Mapped(ObjCObjectMapper.class) Object cmdBuf, double seconds);
+    public static native void MPSSetHeapCacheDuration(@NotNull @Mapped(ObjCObjectMapper.class) Object cmdBuf,
+            double seconds);
 
     /**
      * Identify the preferred device for MPS computation
@@ -243,6 +246,7 @@ public final class MetalPerformanceShaders {
      * 
      *         API-Since: 12.2
      */
+    @Nullable
     @Generated
     @CFunction
     @MappedReturn(ObjCObjectMapper.class)

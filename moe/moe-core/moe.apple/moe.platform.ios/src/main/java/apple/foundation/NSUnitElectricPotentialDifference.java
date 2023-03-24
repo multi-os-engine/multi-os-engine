@@ -36,6 +36,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -70,26 +72,30 @@ public class NSUnitElectricPotentialDifference extends NSDimension implements NS
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("baseUnit")
     public static native NSUnitElectricPotentialDifference baseUnit();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,10 +130,12 @@ public class NSUnitElectricPotentialDifference extends NSDimension implements NS
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("kilovolts")
     public static native NSUnitElectricPotentialDifference kilovolts();
@@ -135,14 +143,17 @@ public class NSUnitElectricPotentialDifference extends NSDimension implements NS
     /**
      * Base unit - volts
      */
+    @NotNull
     @Generated
     @Selector("megavolts")
     public static native NSUnitElectricPotentialDifference megavolts();
 
+    @NotNull
     @Generated
     @Selector("microvolts")
     public static native NSUnitElectricPotentialDifference microvolts();
 
+    @NotNull
     @Generated
     @Selector("millivolts")
     public static native NSUnitElectricPotentialDifference millivolts();
@@ -177,13 +188,14 @@ public class NSUnitElectricPotentialDifference extends NSDimension implements NS
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("volts")
     public static native NSUnitElectricPotentialDifference volts();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -191,15 +203,16 @@ public class NSUnitElectricPotentialDifference extends NSDimension implements NS
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUnitElectricPotentialDifference initWithCoder(NSCoder coder);
+    public native NSUnitElectricPotentialDifference initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithSymbol:")
-    public native NSUnitElectricPotentialDifference initWithSymbol(String symbol);
+    public native NSUnitElectricPotentialDifference initWithSymbol(@NotNull String symbol);
 
     @Generated
     @Selector("initWithSymbol:converter:")
-    public native NSUnitElectricPotentialDifference initWithSymbolConverter(String symbol, NSUnitConverter converter);
+    public native NSUnitElectricPotentialDifference initWithSymbolConverter(@NotNull String symbol,
+            @NotNull NSUnitConverter converter);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

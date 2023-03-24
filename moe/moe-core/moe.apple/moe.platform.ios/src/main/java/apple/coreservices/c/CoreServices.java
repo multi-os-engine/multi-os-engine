@@ -11,6 +11,8 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Runtime;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("CoreServices")
@@ -72,11 +74,12 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use the UTType class instead.
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native CFStringRef UTTypeCreatePreferredIdentifierForTag(CFStringRef inTagClass, CFStringRef inTag,
-            CFStringRef inConformingToUTI);
+    public static native CFStringRef UTTypeCreatePreferredIdentifierForTag(@NotNull CFStringRef inTagClass,
+            @NotNull CFStringRef inTag, @Nullable CFStringRef inConformingToUTI);
 
     /**
      * UTTypeCreateAllIdentifiersForTag() *** DEPRECATED ***
@@ -120,11 +123,12 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use the UTType class instead.
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native CFArrayRef UTTypeCreateAllIdentifiersForTag(CFStringRef inTagClass, CFStringRef inTag,
-            CFStringRef inConformingToUTI);
+    public static native CFArrayRef UTTypeCreateAllIdentifiersForTag(@NotNull CFStringRef inTagClass,
+            @NotNull CFStringRef inTag, @Nullable CFStringRef inConformingToUTI);
 
     /**
      * UTTypeCopyPreferredTagWithClass() *** DEPRECATED ***
@@ -154,10 +158,12 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use the UTType class instead.
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native CFStringRef UTTypeCopyPreferredTagWithClass(CFStringRef inUTI, CFStringRef inTagClass);
+    public static native CFStringRef UTTypeCopyPreferredTagWithClass(@NotNull CFStringRef inUTI,
+            @NotNull CFStringRef inTagClass);
 
     /**
      * UTTypeCopyAllTagsWithClass() *** DEPRECATED ***
@@ -181,10 +187,12 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use the UTType class instead.
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native CFArrayRef UTTypeCopyAllTagsWithClass(CFStringRef inUTI, CFStringRef inTagClass);
+    public static native CFArrayRef UTTypeCopyAllTagsWithClass(@NotNull CFStringRef inUTI,
+            @NotNull CFStringRef inTagClass);
 
     /**
      * UTTypeEqual() *** DEPRECATED ***
@@ -212,7 +220,7 @@ public final class CoreServices {
     @Deprecated
     @Generated
     @CFunction
-    public static native byte UTTypeEqual(CFStringRef inUTI1, CFStringRef inUTI2);
+    public static native byte UTTypeEqual(@NotNull CFStringRef inUTI1, @NotNull CFStringRef inUTI2);
 
     /**
      * UTTypeConformsTo() *** DEPRECATED ***
@@ -240,7 +248,7 @@ public final class CoreServices {
     @Deprecated
     @Generated
     @CFunction
-    public static native byte UTTypeConformsTo(CFStringRef inUTI, CFStringRef inConformsToUTI);
+    public static native byte UTTypeConformsTo(@NotNull CFStringRef inUTI, @NotNull CFStringRef inConformsToUTI);
 
     /**
      * UTTypeCopyDescription() *** DEPRECATED ***
@@ -263,10 +271,11 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTType.localizedDescription instead.
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native CFStringRef UTTypeCopyDescription(CFStringRef inUTI);
+    public static native CFStringRef UTTypeCopyDescription(@NotNull CFStringRef inUTI);
 
     /**
      * UTTypeIsDeclared() *** DEPRECATED ***
@@ -291,7 +300,7 @@ public final class CoreServices {
     @Deprecated
     @Generated
     @CFunction
-    public static native byte UTTypeIsDeclared(CFStringRef inUTI);
+    public static native byte UTTypeIsDeclared(@NotNull CFStringRef inUTI);
 
     /**
      * UTTypeIsDynamic() *** DEPRECATED ***
@@ -314,7 +323,7 @@ public final class CoreServices {
     @Deprecated
     @Generated
     @CFunction
-    public static native byte UTTypeIsDynamic(CFStringRef inUTI);
+    public static native byte UTTypeIsDynamic(@NotNull CFStringRef inUTI);
 
     /**
      * UTTypeCopyDeclaration() *** DEPRECATED ***
@@ -340,10 +349,11 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use the UTType class instead.
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native CFDictionaryRef UTTypeCopyDeclaration(CFStringRef inUTI);
+    public static native CFDictionaryRef UTTypeCopyDeclaration(@NotNull CFStringRef inUTI);
 
     /**
      * UTTypeCopyDeclaringBundleURL() *** DEPRECATED ***
@@ -366,10 +376,11 @@ public final class CoreServices {
      * API-Since: 3.0
      * Deprecated-Since: 14.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native CFURLRef UTTypeCopyDeclaringBundleURL(CFStringRef inUTI);
+    public static native CFURLRef UTTypeCopyDeclaringBundleURL(@NotNull CFStringRef inUTI);
 
     /**
      * kUTTypeItem *** DEPRECATED ***
@@ -431,6 +442,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeItem instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -441,6 +453,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeContent instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -451,6 +464,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeCompositeContent instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -461,6 +475,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeMessage instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -471,6 +486,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeContact instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -481,6 +497,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeArchive instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -491,6 +508,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeDiskImage instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -573,6 +591,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeData instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -583,6 +602,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeDirectory instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -593,6 +613,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeResolvable instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -603,6 +624,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeSymLink instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -613,6 +635,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeExecutable instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -623,6 +646,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeMountPoint instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -633,6 +657,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeAliasFile instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -643,6 +668,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: The Alias Manager is obsolete.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -653,6 +679,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeURLBookmarkData instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -681,6 +708,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeURL instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -691,6 +719,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeFileURL instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -787,6 +816,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeText instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -797,6 +827,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypePlainText instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -807,6 +838,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeUTF8PlainText instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -817,6 +849,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeUTF16ExternalPlainText instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -827,6 +860,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeUTF16PlainText instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -837,6 +871,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeDelimitedText instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -847,6 +882,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeCommaSeparatedText instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -857,6 +893,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeTabSeparatedText instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -867,6 +904,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeUTF8TabSeparatedText instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -877,6 +915,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeRTF instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -903,6 +942,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeHTML instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -913,6 +953,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeXML instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1003,6 +1044,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeSourceCode instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1013,6 +1055,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeAssemblyLanguageSource instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1023,6 +1066,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeCSource instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1033,6 +1077,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeObjectiveCSource instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1043,6 +1088,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeSwiftSource instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1053,6 +1099,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeCPlusPlusSource instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1063,6 +1110,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeObjectiveCPlusPlusSource instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1073,6 +1121,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeCHeader instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1083,6 +1132,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeCPlusPlusHeader instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1093,6 +1143,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Java support is no longer provided by this operating system. Install a JDK to use Java.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1183,6 +1234,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeScript instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1193,6 +1245,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeAppleScript instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1203,6 +1256,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeOSAScript instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1213,6 +1267,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeOSAScriptBundle instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1223,6 +1278,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeJavaScript instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1233,6 +1289,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeShellScript instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1243,6 +1300,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypePerlScript instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1253,6 +1311,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypePythonScript instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1263,6 +1322,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeRubyScript instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1273,6 +1333,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypePHPScript instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1317,6 +1378,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeJSON instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1327,6 +1389,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypePropertyList instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1337,6 +1400,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeXMLPropertyList instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1347,6 +1411,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeBinaryPropertyList instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1398,6 +1463,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypePDF instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1408,6 +1474,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeRTFD instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1418,6 +1485,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeFlatRTFD instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1428,6 +1496,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: The Multilingual Text Engine is obsolete.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1438,6 +1507,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeWebArchive instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1559,6 +1629,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeImage instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1569,6 +1640,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeJPEG instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1579,6 +1651,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: JPEG2000 is no longer supported by this operating system.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1589,6 +1662,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeTIFF instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1599,6 +1673,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: QuickDraw is obsolete.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1609,6 +1684,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeGIF instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1619,6 +1695,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypePNG instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1629,6 +1706,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: The QuickTime Image file format is obsolete.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1639,6 +1717,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeICNS instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1649,6 +1728,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeBMP instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1659,6 +1739,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeICO instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1669,6 +1750,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeRAWImage instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1679,6 +1761,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeSVG instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1689,6 +1772,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeLivePhoto instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1838,6 +1922,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeAudiovisualContent instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1848,6 +1933,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeMovie instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1858,6 +1944,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeVideo instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1868,6 +1955,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeAudio instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1878,6 +1966,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeQuickTimeMovie instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1888,6 +1977,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeMPEG instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1898,6 +1988,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeMPEG2Video instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1908,6 +1999,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeMPEG2TransportStream instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1918,6 +2010,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeMP3 instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1928,6 +2021,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeMPEG4Movie instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1938,6 +2032,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeMPEG4Audio instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1948,6 +2043,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeAppleProtectedMPEG4Audio instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1958,6 +2054,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeAppleProtectedMPEG4Video instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1968,6 +2065,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeAVI instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1978,6 +2076,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeAIFF instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1988,6 +2087,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeWAV instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1998,6 +2098,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeMIDI instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2023,6 +2124,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypePlaylist instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2033,6 +2135,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeM3UPlaylist instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2115,6 +2218,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeFolder instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2125,6 +2229,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeVolume instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2135,6 +2240,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypePackage instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2145,6 +2251,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeBundle instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2155,6 +2262,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypePluginBundle instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2165,6 +2273,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeSpotlightImporter instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2175,6 +2284,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeQuickLookGenerator instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2185,6 +2295,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeXPCService instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2195,6 +2306,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeFramework instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2270,6 +2382,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeApplication instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2280,6 +2393,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeApplicationBundle instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2290,6 +2404,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Classic applications are obsolete.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2300,6 +2415,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeUnixExecutable instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2312,6 +2428,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeEXE instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2322,6 +2439,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Java support is no longer provided by this operating system. Install a JDK to use Java.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2332,6 +2450,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Java support is no longer provided by this operating system. Install a JDK to use Java.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2344,6 +2463,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeSystemPreferencesPane instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2378,6 +2498,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeGZIP instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2388,6 +2509,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeBZ2 instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2398,6 +2520,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeZIP instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2431,6 +2554,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeSpreadsheet instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2441,6 +2565,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypePresentation instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2451,6 +2576,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeDatabase instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2491,6 +2617,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeVCard instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2501,6 +2628,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeToDoItem instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2511,6 +2639,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeCalendarEvent instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2521,6 +2650,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeEmailMessage instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2539,6 +2669,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeInternetLocation instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2610,6 +2741,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: The Ink framework is obsolete.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2620,6 +2752,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeFont instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2630,6 +2763,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeBookmark instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2640,6 +2774,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTType3DContent instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2650,6 +2785,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypePKCS12 instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2660,6 +2796,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeX509Certificate instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2670,6 +2807,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeEPUB instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2680,6 +2818,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTypeLog instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2693,6 +2832,7 @@ public final class CoreServices {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kUTExportedTypeDeclarationsKey();
@@ -2702,6 +2842,7 @@ public final class CoreServices {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kUTImportedTypeDeclarationsKey();
@@ -2711,6 +2852,7 @@ public final class CoreServices {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kUTTypeIdentifierKey();
@@ -2720,6 +2862,7 @@ public final class CoreServices {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kUTTypeTagSpecificationKey();
@@ -2729,6 +2872,7 @@ public final class CoreServices {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kUTTypeConformsToKey();
@@ -2738,6 +2882,7 @@ public final class CoreServices {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kUTTypeDescriptionKey();
@@ -2747,6 +2892,7 @@ public final class CoreServices {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kUTTypeIconFileKey();
@@ -2756,6 +2902,7 @@ public final class CoreServices {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kUTTypeReferenceURLKey();
@@ -2765,6 +2912,7 @@ public final class CoreServices {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kUTTypeVersionKey();
@@ -2781,6 +2929,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTagClassFilenameExtension instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2793,6 +2942,7 @@ public final class CoreServices {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UTTagClassMIMEType instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()

@@ -64,6 +64,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.audiotoolbox.protocol.AUMessageChannel;
 import org.moe.natj.general.ann.MappedReturn;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AUAudioUnit
@@ -131,22 +133,25 @@ public class AUAudioUnit extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -203,15 +208,16 @@ public class AUAudioUnit extends NSObject {
     @Selector("instantiateWithComponentDescription:options:completionHandler:")
     public static native void instantiateWithComponentDescriptionOptionsCompletionHandler(
             @ByValue AudioComponentDescription componentDescription, int options,
-            @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -230,8 +236,8 @@ public class AUAudioUnit extends NSObject {
      */
     @Generated
     @Selector("registerSubclass:asComponentDescription:name:version:")
-    public static native void registerSubclassAsComponentDescriptionNameVersion(Class cls,
-            @ByValue AudioComponentDescription componentDescription, String name, int version);
+    public static native void registerSubclassAsComponentDescriptionNameVersion(@NotNull Class cls,
+            @ByValue AudioComponentDescription componentDescription, @NotNull String name, int version);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -271,13 +277,14 @@ public class AUAudioUnit extends NSObject {
     @Generated
     @Selector("allocateRenderResourcesAndReturnError:")
     public native boolean allocateRenderResourcesAndReturnError(
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] audioUnitName
      * 
      * The audio unit's name.
      */
+    @Nullable
     @Generated
     @Selector("audioUnitName")
     public native String audioUnitName();
@@ -346,6 +353,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * Bridged to the v2 property kAudioUnitProperty_SupportedNumChannels.
      */
+    @Nullable
     @Generated
     @Selector("channelCapabilities")
     public native NSArray<? extends NSNumber> channelCapabilities();
@@ -368,6 +376,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("channelMap")
     public native NSArray<? extends NSNumber> channelMap();
@@ -378,6 +387,7 @@ public class AUAudioUnit extends NSObject {
      * The AudioComponent which was found based on componentDescription when the
      * audio unit was created.
      */
+    @NotNull
     @Generated
     @Selector("component")
     public native AudioComponent component();
@@ -401,6 +411,7 @@ public class AUAudioUnit extends NSObject {
      * plus the audio unit's name. The audioUnitName and manufacturerName properties are derived
      * from the component name.
      */
+    @Nullable
     @Generated
     @Selector("componentName")
     public native String componentName();
@@ -425,6 +436,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * Bridged to the v2 property kAudioUnitProperty_ContextName.
      */
+    @Nullable
     @Generated
     @Selector("contextName")
     public native String contextName();
@@ -440,6 +452,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * Bridged to the v2 property kAudioUnitProperty_PresentPreset.
      */
+    @Nullable
     @Generated
     @Selector("currentPreset")
     public native AUAudioUnitPreset currentPreset();
@@ -468,6 +481,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * Bridged to the v2 property kAudioUnitProperty_FactoryPresets.
      */
+    @Nullable
     @Generated
     @Selector("factoryPresets")
     public native NSArray<? extends AUAudioUnitPreset> factoryPresets();
@@ -489,6 +503,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * Bridged to the v2 property kAudioUnitProperty_ClassInfo.
      */
+    @Nullable
     @Generated
     @Selector("fullState")
     public native NSDictionary<String, ?> fullState();
@@ -509,6 +524,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * Bridged to the v2 property kAudioUnitProperty_ClassInfoFromDocument.
      */
+    @Nullable
     @Generated
     @Selector("fullStateForDocument")
     public native NSDictionary<String, ?> fullStateForDocument();
@@ -525,7 +541,7 @@ public class AUAudioUnit extends NSObject {
     @Generated
     @Selector("initWithComponentDescription:error:")
     public native AUAudioUnit initWithComponentDescriptionError(@ByValue AudioComponentDescription componentDescription,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * initWithComponentDescription:options:error:
@@ -546,7 +562,7 @@ public class AUAudioUnit extends NSObject {
     @Selector("initWithComponentDescription:options:error:")
     public native AUAudioUnit initWithComponentDescriptionOptionsError(
             @ByValue AudioComponentDescription componentDescription, int options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] inputBusses
@@ -556,6 +572,7 @@ public class AUAudioUnit extends NSObject {
      * Subclassers must override this property's getter. The implementation should return the same
      * object every time it is asked for it, since clients can install KVO observers on it.
      */
+    @NotNull
     @Generated
     @Selector("inputBusses")
     public native AUAudioUnitBusArray inputBusses();
@@ -567,6 +584,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * See discussion for AUInputHandler.
      */
+    @Nullable
     @Generated
     @Selector("inputHandler")
     @ObjCBlock(name = "call_inputHandler_ret")
@@ -695,6 +713,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * The manufacturer's name.
      */
+    @Nullable
     @Generated
     @Selector("manufacturerName")
     public native String manufacturerName();
@@ -724,6 +743,7 @@ public class AUAudioUnit extends NSObject {
      * Bridged to the HostCallback_GetBeatAndTempo and HostCallback_GetMusicalTimeLocation
      * callback members in kAudioUnitProperty_HostCallbacks.
      */
+    @Nullable
     @Generated
     @Selector("musicalContextBlock")
     @ObjCBlock(name = "call_musicalContextBlock_ret")
@@ -737,6 +757,7 @@ public class AUAudioUnit extends NSObject {
      * Subclassers must override this property's getter. The implementation should return the same
      * object every time it is asked for it, since clients can install KVO observers on it.
      */
+    @NotNull
     @Generated
     @Selector("outputBusses")
     public native AUAudioUnitBusArray outputBusses();
@@ -748,6 +769,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * This block must be set if output is enabled.
      */
+    @Nullable
     @Generated
     @Selector("outputProvider")
     @ObjCBlock(name = "call_outputProvider_ret")
@@ -780,6 +802,7 @@ public class AUAudioUnit extends NSObject {
      * @return
      *         A parameter tree object, or nil if the unit has no parameters.
      */
+    @Nullable
     @Generated
     @Selector("parameterTree")
     public native AUParameterTree parameterTree();
@@ -800,6 +823,7 @@ public class AUAudioUnit extends NSObject {
      * Partially bridged to kAudioUnitProperty_ParametersForOverview (v2 hosts can use that
      * property to access this v3 method of an audio unit).
      */
+    @NotNull
     @Generated
     @Selector("parametersForOverviewWithCount:")
     public native NSArray<? extends NSNumber> parametersForOverviewWithCount(@NInt long count);
@@ -878,6 +902,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * This bridged to the v2 API MusicDeviceMIDIEvent.
      */
+    @Nullable
     @Generated
     @Selector("scheduleMIDIEventBlock")
     @ObjCBlock(name = "call_scheduleMIDIEventBlock_ret")
@@ -899,6 +924,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * Bridged to the v2 API AudioUnitScheduleParameters().
      */
+    @NotNull
     @Generated
     @Selector("scheduleParameterBlock")
     @ObjCBlock(name = "call_scheduleParameterBlock_ret")
@@ -924,7 +950,7 @@ public class AUAudioUnit extends NSObject {
      */
     @Generated
     @Selector("setChannelMap:")
-    public native void setChannelMap(NSArray<? extends NSNumber> value);
+    public native void setChannelMap(@Nullable NSArray<? extends NSNumber> value);
 
     /**
      * [@property] contextName
@@ -939,7 +965,7 @@ public class AUAudioUnit extends NSObject {
      */
     @Generated
     @Selector("setContextName:")
-    public native void setContextName(String value);
+    public native void setContextName(@Nullable String value);
 
     /**
      * [@property] currentPreset
@@ -954,7 +980,7 @@ public class AUAudioUnit extends NSObject {
      */
     @Generated
     @Selector("setCurrentPreset:")
-    public native void setCurrentPreset(AUAudioUnitPreset value);
+    public native void setCurrentPreset(@Nullable AUAudioUnitPreset value);
 
     /**
      * [@property] fullState
@@ -975,7 +1001,7 @@ public class AUAudioUnit extends NSObject {
      */
     @Generated
     @Selector("setFullState:")
-    public native void setFullState(NSDictionary<String, ?> value);
+    public native void setFullState(@Nullable NSDictionary<String, ?> value);
 
     /**
      * [@property] fullStateForDocument
@@ -995,7 +1021,7 @@ public class AUAudioUnit extends NSObject {
      */
     @Generated
     @Selector("setFullStateForDocument:")
-    public native void setFullStateForDocument(NSDictionary<String, ?> value);
+    public native void setFullStateForDocument(@Nullable NSDictionary<String, ?> value);
 
     /**
      * [@property] inputHandler
@@ -1006,7 +1032,7 @@ public class AUAudioUnit extends NSObject {
      */
     @Generated
     @Selector("setInputHandler:")
-    public native void setInputHandler(@ObjCBlock(name = "call_setInputHandler") Block_setInputHandler value);
+    public native void setInputHandler(@Nullable @ObjCBlock(name = "call_setInputHandler") Block_setInputHandler value);
 
     /**
      * [@property] maximumFramesToRender
@@ -1036,7 +1062,7 @@ public class AUAudioUnit extends NSObject {
     @Generated
     @Selector("setMusicalContextBlock:")
     public native void setMusicalContextBlock(
-            @ObjCBlock(name = "call_setMusicalContextBlock") Block_setMusicalContextBlock value);
+            @Nullable @ObjCBlock(name = "call_setMusicalContextBlock") Block_setMusicalContextBlock value);
 
     /**
      * [@property] outputProvider
@@ -1047,7 +1073,8 @@ public class AUAudioUnit extends NSObject {
      */
     @Generated
     @Selector("setOutputProvider:")
-    public native void setOutputProvider(@ObjCBlock(name = "call_setOutputProvider") Block_setOutputProvider value);
+    public native void setOutputProvider(
+            @Nullable @ObjCBlock(name = "call_setOutputProvider") Block_setOutputProvider value);
 
     /**
      * [@property] renderQuality
@@ -1100,7 +1127,7 @@ public class AUAudioUnit extends NSObject {
     @Generated
     @Selector("setTransportStateBlock:")
     public native void setTransportStateBlock(
-            @ObjCBlock(name = "call_setTransportStateBlock") Block_setTransportStateBlock value);
+            @Nullable @ObjCBlock(name = "call_setTransportStateBlock") Block_setTransportStateBlock value);
 
     /**
      * [@property] shouldBypassEffect
@@ -1129,7 +1156,7 @@ public class AUAudioUnit extends NSObject {
      */
     @Generated
     @Selector("shouldChangeToFormat:forBus:")
-    public native boolean shouldChangeToFormatForBus(AVAudioFormat format, AUAudioUnitBus bus);
+    public native boolean shouldChangeToFormatForBus(@NotNull AVAudioFormat format, @NotNull AUAudioUnitBus bus);
 
     /**
      * startHardwareAndReturnError:
@@ -1141,7 +1168,8 @@ public class AUAudioUnit extends NSObject {
      */
     @Generated
     @Selector("startHardwareAndReturnError:")
-    public native boolean startHardwareAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean startHardwareAndReturnError(
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * stopHardware
@@ -1201,7 +1229,7 @@ public class AUAudioUnit extends NSObject {
     @Selector("tokenByAddingRenderObserver:")
     @NInt
     public native long tokenByAddingRenderObserver(
-            @ObjCBlock(name = "call_tokenByAddingRenderObserver") Block_tokenByAddingRenderObserver observer);
+            @NotNull @ObjCBlock(name = "call_tokenByAddingRenderObserver") Block_tokenByAddingRenderObserver observer);
 
     /**
      * [@property] transportStateBlock
@@ -1214,6 +1242,7 @@ public class AUAudioUnit extends NSObject {
      * Bridged to the HostCallback_GetTransportState and HostCallback_GetTransportState2
      * callback members in kAudioUnitProperty_HostCallbacks.
      */
+    @Nullable
     @Generated
     @Selector("transportStateBlock")
     @ObjCBlock(name = "call_transportStateBlock_ret")
@@ -1236,7 +1265,7 @@ public class AUAudioUnit extends NSObject {
     @Generated
     public interface Block_inputHandler_ret {
         @Generated
-        void call_inputHandler_ret(IntPtr actionFlags, AudioTimeStamp timestamp, int frameCount,
+        void call_inputHandler_ret(@NotNull IntPtr actionFlags, @NotNull AudioTimeStamp timestamp, int frameCount,
                 @NInt long inputBusNumber);
     }
 
@@ -1244,24 +1273,26 @@ public class AUAudioUnit extends NSObject {
     @Generated
     public interface Block_instantiateWithComponentDescriptionOptionsCompletionHandler {
         @Generated
-        void call_instantiateWithComponentDescriptionOptionsCompletionHandler(AUAudioUnit audioUnit, NSError error);
+        void call_instantiateWithComponentDescriptionOptionsCompletionHandler(@Nullable AUAudioUnit audioUnit,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_musicalContextBlock_ret {
         @Generated
-        boolean call_musicalContextBlock_ret(DoublePtr currentTempo, DoublePtr timeSignatureNumerator,
-                NIntPtr timeSignatureDenominator, DoublePtr currentBeatPosition, NIntPtr sampleOffsetToNextBeat,
-                DoublePtr currentMeasureDownbeatPosition);
+        boolean call_musicalContextBlock_ret(@Nullable DoublePtr currentTempo,
+                @Nullable DoublePtr timeSignatureNumerator, @Nullable NIntPtr timeSignatureDenominator,
+                @Nullable DoublePtr currentBeatPosition, @Nullable NIntPtr sampleOffsetToNextBeat,
+                @Nullable DoublePtr currentMeasureDownbeatPosition);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_outputProvider_ret {
         @Generated
-        int call_outputProvider_ret(IntPtr actionFlags, AudioTimeStamp timestamp, int frameCount,
-                @NInt long inputBusNumber, AudioBufferList inputData);
+        int call_outputProvider_ret(@NotNull IntPtr actionFlags, @NotNull AudioTimeStamp timestamp, int frameCount,
+                @NInt long inputBusNumber, @NotNull AudioBufferList inputData);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -1269,7 +1300,7 @@ public class AUAudioUnit extends NSObject {
     public interface Block_scheduleMIDIEventBlock_ret {
         @Generated
         void call_scheduleMIDIEventBlock_ret(long eventSampleTime, byte cable, @NInt long length,
-                ConstBytePtr midiBytes);
+                @NotNull ConstBytePtr midiBytes);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -1284,7 +1315,7 @@ public class AUAudioUnit extends NSObject {
     @Generated
     public interface Block_setInputHandler {
         @Generated
-        void call_setInputHandler(IntPtr actionFlags, AudioTimeStamp timestamp, int frameCount,
+        void call_setInputHandler(@NotNull IntPtr actionFlags, @NotNull AudioTimeStamp timestamp, int frameCount,
                 @NInt long inputBusNumber);
     }
 
@@ -1292,32 +1323,34 @@ public class AUAudioUnit extends NSObject {
     @Generated
     public interface Block_setMusicalContextBlock {
         @Generated
-        boolean call_setMusicalContextBlock(DoublePtr currentTempo, DoublePtr timeSignatureNumerator,
-                NIntPtr timeSignatureDenominator, DoublePtr currentBeatPosition, NIntPtr sampleOffsetToNextBeat,
-                DoublePtr currentMeasureDownbeatPosition);
+        boolean call_setMusicalContextBlock(@Nullable DoublePtr currentTempo,
+                @Nullable DoublePtr timeSignatureNumerator, @Nullable NIntPtr timeSignatureDenominator,
+                @Nullable DoublePtr currentBeatPosition, @Nullable NIntPtr sampleOffsetToNextBeat,
+                @Nullable DoublePtr currentMeasureDownbeatPosition);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setOutputProvider {
         @Generated
-        int call_setOutputProvider(IntPtr actionFlags, AudioTimeStamp timestamp, int frameCount,
-                @NInt long inputBusNumber, AudioBufferList inputData);
+        int call_setOutputProvider(@NotNull IntPtr actionFlags, @NotNull AudioTimeStamp timestamp, int frameCount,
+                @NInt long inputBusNumber, @NotNull AudioBufferList inputData);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setTransportStateBlock {
         @Generated
-        boolean call_setTransportStateBlock(NUIntPtr transportStateFlags, DoublePtr currentSamplePosition,
-                DoublePtr cycleStartBeatPosition, DoublePtr cycleEndBeatPosition);
+        boolean call_setTransportStateBlock(@Nullable NUIntPtr transportStateFlags,
+                @Nullable DoublePtr currentSamplePosition, @Nullable DoublePtr cycleStartBeatPosition,
+                @Nullable DoublePtr cycleEndBeatPosition);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_tokenByAddingRenderObserver {
         @Generated
-        void call_tokenByAddingRenderObserver(int actionFlags, AudioTimeStamp timestamp, int frameCount,
+        void call_tokenByAddingRenderObserver(int actionFlags, @NotNull AudioTimeStamp timestamp, int frameCount,
                 @NInt long outputBusNumber);
     }
 
@@ -1325,8 +1358,9 @@ public class AUAudioUnit extends NSObject {
     @Generated
     public interface Block_transportStateBlock_ret {
         @Generated
-        boolean call_transportStateBlock_ret(NUIntPtr transportStateFlags, DoublePtr currentSamplePosition,
-                DoublePtr cycleStartBeatPosition, DoublePtr cycleEndBeatPosition);
+        boolean call_transportStateBlock_ret(@Nullable NUIntPtr transportStateFlags,
+                @Nullable DoublePtr currentSamplePosition, @Nullable DoublePtr cycleStartBeatPosition,
+                @Nullable DoublePtr cycleEndBeatPosition);
     }
 
     /**
@@ -1378,6 +1412,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("MIDIOutputEventBlock")
     @ObjCBlock(name = "call_MIDIOutputEventBlock_ret")
@@ -1388,7 +1423,7 @@ public class AUAudioUnit extends NSObject {
     public interface Block_MIDIOutputEventBlock_ret {
         @Generated
         int call_MIDIOutputEventBlock_ret(long eventSampleTime, byte cable, @NInt long length,
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String midiBytes);
+                @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String midiBytes);
     }
 
     /**
@@ -1404,6 +1439,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("MIDIOutputNames")
     public native NSArray<String> MIDIOutputNames();
@@ -1419,6 +1455,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("audioUnitShortName")
     public native String audioUnitShortName();
@@ -1475,7 +1512,7 @@ public class AUAudioUnit extends NSObject {
      */
     @Generated
     @Selector("selectViewConfiguration:")
-    public native void selectViewConfiguration(AUAudioUnitViewConfiguration viewConfiguration);
+    public native void selectViewConfiguration(@NotNull AUAudioUnitViewConfiguration viewConfiguration);
 
     /**
      * [@property] MIDIOutputBufferSizeHint
@@ -1528,14 +1565,14 @@ public class AUAudioUnit extends NSObject {
     @Generated
     @Selector("setMIDIOutputEventBlock:")
     public native void setMIDIOutputEventBlock(
-            @ObjCBlock(name = "call_setMIDIOutputEventBlock") Block_setMIDIOutputEventBlock value);
+            @Nullable @ObjCBlock(name = "call_setMIDIOutputEventBlock") Block_setMIDIOutputEventBlock value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setMIDIOutputEventBlock {
         @Generated
         int call_setMIDIOutputEventBlock(long eventSampleTime, byte cable, @NInt long length,
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String midiBytes);
+                @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String midiBytes);
     }
 
     /**
@@ -1566,10 +1603,11 @@ public class AUAudioUnit extends NSObject {
      *         A set of indices of view configurations from the availableViewConfigurations array that the
      *         audio unit supports.
      */
+    @NotNull
     @Generated
     @Selector("supportedViewConfigurations:")
     public native NSIndexSet supportedViewConfigurations(
-            NSArray<? extends AUAudioUnitViewConfiguration> availableViewConfigurations);
+            @NotNull NSArray<? extends AUAudioUnitViewConfiguration> availableViewConfigurations);
 
     /**
      * deleteUserPreset:error
@@ -1601,8 +1639,8 @@ public class AUAudioUnit extends NSObject {
      */
     @Generated
     @Selector("deleteUserPreset:error:")
-    public native boolean deleteUserPresetError(AUAudioUnitPreset userPreset,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean deleteUserPresetError(@NotNull AUAudioUnitPreset userPreset,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * disableProfile:cable:onChannel:error:
@@ -1625,8 +1663,8 @@ public class AUAudioUnit extends NSObject {
      */
     @Generated
     @Selector("disableProfile:cable:onChannel:error:")
-    public native boolean disableProfileCableOnChannelError(MIDICIProfile profile, byte cable, byte channel,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean disableProfileCableOnChannelError(@NotNull MIDICIProfile profile, byte cable, byte channel,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * enableProfile:cable:onChannel:error:
@@ -1649,8 +1687,8 @@ public class AUAudioUnit extends NSObject {
      */
     @Generated
     @Selector("enableProfile:cable:onChannel:error:")
-    public native boolean enableProfileCableOnChannelError(MIDICIProfile profile, byte cable, byte channel,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean enableProfileCableOnChannelError(@NotNull MIDICIProfile profile, byte cable, byte channel,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * presetStateFor:error
@@ -1697,10 +1735,11 @@ public class AUAudioUnit extends NSObject {
      *         documentation for kAudioUnitProperty_ClassInfo.
      *         The minimal set of keys and their type is: @kAUPresetTypeKey : NSNumber,
      */
+    @Nullable
     @Generated
     @Selector("presetStateFor:error:")
-    public native NSDictionary<String, ?> presetStateForError(AUAudioUnitPreset userPreset,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native NSDictionary<String, ?> presetStateForError(@NotNull AUAudioUnitPreset userPreset,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] profileChangedBlock
@@ -1714,6 +1753,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("profileChangedBlock")
     @ObjCBlock(name = "call_profileChangedBlock_ret")
@@ -1723,7 +1763,7 @@ public class AUAudioUnit extends NSObject {
     @Generated
     public interface Block_profileChangedBlock_ret {
         @Generated
-        void call_profileChangedBlock_ret(byte cable, byte channel, MIDICIProfile profile, boolean enabled);
+        void call_profileChangedBlock_ret(byte cable, byte channel, @NotNull MIDICIProfile profile, boolean enabled);
     }
 
     /**
@@ -1741,6 +1781,7 @@ public class AUAudioUnit extends NSObject {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Selector("profileStateForCable:channel:")
     public native MIDICIProfileState profileStateForCableChannel(byte cable, byte channel);
@@ -1782,8 +1823,8 @@ public class AUAudioUnit extends NSObject {
      */
     @Generated
     @Selector("saveUserPreset:error:")
-    public native boolean saveUserPresetError(AUAudioUnitPreset userPreset,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean saveUserPresetError(@NotNull AUAudioUnitPreset userPreset,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] parameterTree
@@ -1814,7 +1855,7 @@ public class AUAudioUnit extends NSObject {
      */
     @Generated
     @Selector("setParameterTree:")
-    public native void setParameterTree(AUParameterTree value);
+    public native void setParameterTree(@Nullable AUParameterTree value);
 
     /**
      * [@property] profileChangedBlock
@@ -1831,13 +1872,13 @@ public class AUAudioUnit extends NSObject {
     @Generated
     @Selector("setProfileChangedBlock:")
     public native void setProfileChangedBlock(
-            @ObjCBlock(name = "call_setProfileChangedBlock") Block_setProfileChangedBlock value);
+            @Nullable @ObjCBlock(name = "call_setProfileChangedBlock") Block_setProfileChangedBlock value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setProfileChangedBlock {
         @Generated
-        void call_setProfileChangedBlock(byte cable, byte channel, MIDICIProfile profile, boolean enabled);
+        void call_setProfileChangedBlock(byte cable, byte channel, @NotNull MIDICIProfile profile, boolean enabled);
     }
 
     /**
@@ -1879,6 +1920,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("userPresets")
     public native NSArray<? extends AUAudioUnitPreset> userPresets();
@@ -1899,6 +1941,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * Bridged to the v2 API AudioUnitRender().
      */
+    @NotNull
     @Generated
     @Selector("renderBlock")
     @ObjCBlock(name = "call_renderBlock_ret")
@@ -1911,18 +1954,18 @@ public class AUAudioUnit extends NSObject {
         @Generated
         public interface Block_Block_renderBlock_ret {
             @Generated
-            int call_Block_renderBlock_ret(IntPtr actionFlags,
-                    @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp timestamp,
+            int call_Block_renderBlock_ret(@NotNull IntPtr actionFlags,
+                    @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp timestamp,
                     int frameCount, @NInt long inputBusNumber,
-                    @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList inputData);
+                    @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList inputData);
         }
 
         @Generated
-        int call_renderBlock_ret(IntPtr actionFlags,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp timestamp,
+        int call_renderBlock_ret(@NotNull IntPtr actionFlags,
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp timestamp,
                 int frameCount, @NInt long outputBusNumber,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outputData,
-                @ObjCBlock(name = "call_Block_renderBlock_ret") Block_Block_renderBlock_ret pullInputBlock);
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outputData,
+                @Nullable @ObjCBlock(name = "call_Block_renderBlock_ret") Block_Block_renderBlock_ret pullInputBlock);
     }
 
     /**
@@ -1936,6 +1979,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("osWorkgroup")
     public native OS_os_workgroup osWorkgroup();
@@ -1952,6 +1996,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("renderContextObserver")
     @ObjCBlock(name = "call_renderContextObserver_ret")
@@ -1961,7 +2006,7 @@ public class AUAudioUnit extends NSObject {
     @Generated
     public interface Block_renderContextObserver_ret {
         @Generated
-        void call_renderContextObserver_ret(VoidPtr context);
+        void call_renderContextObserver_ret(@NotNull VoidPtr context);
     }
 
     /**
@@ -2007,6 +2052,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("MIDIOutputEventListBlock")
     @ObjCBlock(name = "call_MIDIOutputEventListBlock_ret")
@@ -2017,7 +2063,7 @@ public class AUAudioUnit extends NSObject {
     public interface Block_MIDIOutputEventListBlock_ret {
         @Generated
         int call_MIDIOutputEventListBlock_ret(long eventSampleTime, byte cable,
-                @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList eventList);
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList eventList);
     }
 
     /**
@@ -2066,6 +2112,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("scheduleMIDIEventListBlock")
     @ObjCBlock(name = "call_scheduleMIDIEventListBlock_ret")
@@ -2076,7 +2123,7 @@ public class AUAudioUnit extends NSObject {
     public interface Block_scheduleMIDIEventListBlock_ret {
         @Generated
         int call_scheduleMIDIEventListBlock_ret(long eventSampleTime, byte cable,
-                @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList eventList);
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList eventList);
     }
 
     /**
@@ -2126,19 +2173,20 @@ public class AUAudioUnit extends NSObject {
     @Generated
     @Selector("setMIDIOutputEventListBlock:")
     public native void setMIDIOutputEventListBlock(
-            @ObjCBlock(name = "call_setMIDIOutputEventListBlock") Block_setMIDIOutputEventListBlock value);
+            @Nullable @ObjCBlock(name = "call_setMIDIOutputEventListBlock") Block_setMIDIOutputEventListBlock value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setMIDIOutputEventListBlock {
         @Generated
         int call_setMIDIOutputEventListBlock(long eventSampleTime, byte cable,
-                @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList eventList);
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList eventList);
     }
 
     /**
      * Block which subclassers must provide (via a getter) to implement rendering.
      */
+    @NotNull
     @Generated
     @Selector("internalRenderBlock")
     @ObjCBlock(name = "call_internalRenderBlock_ret")
@@ -2151,19 +2199,19 @@ public class AUAudioUnit extends NSObject {
         @Generated
         public interface Block_Block_internalRenderBlock_ret {
             @Generated
-            int call_Block_internalRenderBlock_ret(IntPtr actionFlags,
-                    @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp timestamp,
+            int call_Block_internalRenderBlock_ret(@NotNull IntPtr actionFlags,
+                    @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp timestamp,
                     int frameCount, @NInt long inputBusNumber,
-                    @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList inputData);
+                    @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList inputData);
         }
 
         @Generated
-        int call_internalRenderBlock_ret(IntPtr actionFlags,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp timestamp,
+        int call_internalRenderBlock_ret(@NotNull IntPtr actionFlags,
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp timestamp,
                 int frameCount, @NInt long outputBusNumber,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outputData,
-                VoidPtr realtimeEventListHead,
-                @ObjCBlock(name = "call_Block_internalRenderBlock_ret") Block_Block_internalRenderBlock_ret pullInputBlock);
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outputData,
+                @Nullable VoidPtr realtimeEventListHead,
+                @Nullable @ObjCBlock(name = "call_Block_internalRenderBlock_ret") Block_Block_internalRenderBlock_ret pullInputBlock);
     }
 
     /**
@@ -2184,8 +2232,9 @@ public class AUAudioUnit extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("messageChannelFor:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native AUMessageChannel messageChannelFor(String channelName);
+    public native AUMessageChannel messageChannelFor(@NotNull String channelName);
 }

@@ -44,6 +44,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 6.0
@@ -78,22 +80,25 @@ public class AVAssetResourceLoadingRequest extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,9 +133,10 @@ public class AVAssetResourceLoadingRequest extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,6 +172,7 @@ public class AVAssetResourceLoadingRequest extends NSObject {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("contentInformationRequest")
     public native AVAssetResourceLoadingContentInformationRequest contentInformationRequest();
@@ -178,6 +185,7 @@ public class AVAssetResourceLoadingRequest extends NSObject {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("dataRequest")
     public native AVAssetResourceLoadingDataRequest dataRequest();
@@ -208,7 +216,7 @@ public class AVAssetResourceLoadingRequest extends NSObject {
      */
     @Generated
     @Selector("finishLoadingWithError:")
-    public native void finishLoadingWithError(NSError error);
+    public native void finishLoadingWithError(@Nullable NSError error);
 
     /**
      * finishLoadingWithResponse:data:redirect:
@@ -240,8 +248,8 @@ public class AVAssetResourceLoadingRequest extends NSObject {
     @Generated
     @Deprecated
     @Selector("finishLoadingWithResponse:data:redirect:")
-    public native void finishLoadingWithResponseDataRedirect(NSURLResponse response, NSData data,
-            NSURLRequest redirect);
+    public native void finishLoadingWithResponseDataRedirect(@Nullable NSURLResponse response, @Nullable NSData data,
+            @Nullable NSURLRequest redirect);
 
     @Generated
     @Selector("init")
@@ -297,11 +305,13 @@ public class AVAssetResourceLoadingRequest extends NSObject {
      * @return The persistable content key data that may be stored offline to answer future loading requests of the same
      *         content key.
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("persistentContentKeyFromKeyVendorResponse:options:error:")
-    public native NSData persistentContentKeyFromKeyVendorResponseOptionsError(NSData keyVendorResponse,
-            NSDictionary<String, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native NSData persistentContentKeyFromKeyVendorResponseOptionsError(@NotNull NSData keyVendorResponse,
+            @Nullable NSDictionary<String, ?> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] redirect
@@ -314,6 +324,7 @@ public class AVAssetResourceLoadingRequest extends NSObject {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("redirect")
     public native NSURLRequest redirect();
@@ -323,6 +334,7 @@ public class AVAssetResourceLoadingRequest extends NSObject {
      * 
      * An NSURLRequest for the requested resource.
      */
+    @NotNull
     @Generated
     @Selector("request")
     public native NSURLRequest request();
@@ -335,6 +347,7 @@ public class AVAssetResourceLoadingRequest extends NSObject {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("response")
     public native NSURLResponse response();
@@ -352,7 +365,7 @@ public class AVAssetResourceLoadingRequest extends NSObject {
      */
     @Generated
     @Selector("setRedirect:")
-    public native void setRedirect(NSURLRequest value);
+    public native void setRedirect(@Nullable NSURLRequest value);
 
     /**
      * [@property] response
@@ -364,7 +377,7 @@ public class AVAssetResourceLoadingRequest extends NSObject {
      */
     @Generated
     @Selector("setResponse:")
-    public native void setResponse(NSURLResponse value);
+    public native void setResponse(@Nullable NSURLResponse value);
 
     /**
      * streamingContentKeyRequestDataForApp:contentIdentifier:options:error:
@@ -387,12 +400,13 @@ public class AVAssetResourceLoadingRequest extends NSObject {
      *         API-Since: 7.0
      *         Deprecated-Since: 100000.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("streamingContentKeyRequestDataForApp:contentIdentifier:options:error:")
-    public native NSData streamingContentKeyRequestDataForAppContentIdentifierOptionsError(NSData appIdentifier,
-            NSData contentIdentifier, NSDictionary<String, ?> options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native NSData streamingContentKeyRequestDataForAppContentIdentifierOptionsError(
+            @NotNull NSData appIdentifier, @NotNull NSData contentIdentifier, @Nullable NSDictionary<String, ?> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] requestor
@@ -401,6 +415,7 @@ public class AVAssetResourceLoadingRequest extends NSObject {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Selector("requestor")
     public native AVAssetResourceLoadingRequestor requestor();

@@ -19,6 +19,8 @@ import apple.fileprovider.NSFileProviderItemVersion;
 import apple.fileprovider.struct.NSFileProviderTypeAndCreator;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.NInt;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -42,6 +44,7 @@ public interface NSFileProviderItem {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("childItemCount")
@@ -49,6 +52,7 @@ public interface NSFileProviderItem {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("contentModificationDate")
@@ -56,6 +60,7 @@ public interface NSFileProviderItem {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("creationDate")
@@ -63,6 +68,7 @@ public interface NSFileProviderItem {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("documentSize")
@@ -73,6 +79,7 @@ public interface NSFileProviderItem {
     /**
      * An error that occurred while downloading from your remote server.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("downloadingError")
@@ -96,6 +103,7 @@ public interface NSFileProviderItem {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("favoriteRank")
@@ -110,6 +118,7 @@ public interface NSFileProviderItem {
      * NSFileProviderRootContainerItemIdentifier. The filename for NSFileProviderRootContainerItemIdentifier
      * may be displayed in the user interface. Therefore it should be a user-friendly string.
      */
+    @NotNull
     @Generated
     @Selector("filename")
     String filename();
@@ -202,6 +211,7 @@ public interface NSFileProviderItem {
      * The itemIdentifier should not contain sensitive information, as it may be recorded in system logs and
      * diagnostic files.
      */
+    @NotNull
     @Generated
     @Selector("itemIdentifier")
     String itemIdentifier();
@@ -217,6 +227,7 @@ public interface NSFileProviderItem {
      * 
      * This property must not be shared between users, even if the item is.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("lastUsedDate")
@@ -224,6 +235,7 @@ public interface NSFileProviderItem {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("mostRecentEditorNameComponents")
@@ -235,6 +247,7 @@ public interface NSFileProviderItem {
      * ownerNameComponents should be nil when sharedByCurrentUser is equal to YES or
      * when the item is not shared.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("ownerNameComponents")
@@ -256,6 +269,7 @@ public interface NSFileProviderItem {
      * 
      * The parents of trashed items and of the root item are ignored.
      */
+    @NotNull
     @Generated
     @Selector("parentItemIdentifier")
     String parentItemIdentifier();
@@ -271,6 +285,7 @@ public interface NSFileProviderItem {
      * Starting in macOS 12 and iOS 15, the system suppports the value of the
      * `com.apple.metadata:_kMDItemUserTags` xattr as a valid `tagData` blob input.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("tagData")
@@ -293,6 +308,7 @@ public interface NSFileProviderItem {
      * API-Since: 11.0
      * Deprecated-Since: 15.0
      */
+    @NotNull
     @Deprecated
     @IsOptional
     @Generated
@@ -311,6 +327,7 @@ public interface NSFileProviderItem {
      * \seealso NSFileProviderErrorInsufficientQuota
      * \seealso NSFileProviderErrorServerUnreachable
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("uploadingError")
@@ -557,6 +574,7 @@ public interface NSFileProviderItem {
      * </array>
      * ```
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("userInfo")
@@ -574,6 +592,7 @@ public interface NSFileProviderItem {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("versionIdentifier")
@@ -603,6 +622,7 @@ public interface NSFileProviderItem {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("contentType")
@@ -661,6 +681,7 @@ public interface NSFileProviderItem {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("extendedAttributes")
@@ -691,6 +712,7 @@ public interface NSFileProviderItem {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("itemVersion")
@@ -706,6 +728,7 @@ public interface NSFileProviderItem {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("symlinkTargetPath")

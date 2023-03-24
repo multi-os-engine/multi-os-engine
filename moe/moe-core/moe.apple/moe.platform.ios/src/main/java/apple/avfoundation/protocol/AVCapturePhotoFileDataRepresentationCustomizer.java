@@ -16,6 +16,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] AVCapturePhotoFileDataRepresentationCustomizer
@@ -51,10 +53,11 @@ public interface AVCapturePhotoFileDataRepresentationCustomizer {
      *         An instance of AVDepthData. To preserve the existing depth data, return photo.depthData. To strip the
      *         existing one, return nil. To replace, provide a replacement AVDepthData instance.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("replacementDepthDataForPhoto:")
-    default AVDepthData replacementDepthDataForPhoto(AVCapturePhoto photo) {
+    default AVDepthData replacementDepthDataForPhoto(@NotNull AVCapturePhoto photo) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -90,12 +93,13 @@ public interface AVCapturePhotoFileDataRepresentationCustomizer {
      *         nil. To replace the existing embedded thumbnail photo, pass a replacement photo format dictionary and
      *         return a non-nil replacement pixel buffer.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("replacementEmbeddedThumbnailPixelBufferWithPhotoFormat:forPhoto:")
     default CVBufferRef replacementEmbeddedThumbnailPixelBufferWithPhotoFormatForPhoto(
-            @ReferenceInfo(type = NSDictionary.class) Ptr<NSDictionary<String, ?>> replacementEmbeddedThumbnailPhotoFormatOut,
-            AVCapturePhoto photo) {
+            @NotNull @ReferenceInfo(type = NSDictionary.class) Ptr<NSDictionary<String, ?>> replacementEmbeddedThumbnailPhotoFormatOut,
+            @NotNull AVCapturePhoto photo) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -115,10 +119,11 @@ public interface AVCapturePhotoFileDataRepresentationCustomizer {
      *         photo.metadata. To strip existing metadata, return nil. To replace metadata, pass a replacement
      *         dictionary.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("replacementMetadataForPhoto:")
-    default NSDictionary<String, ?> replacementMetadataForPhoto(AVCapturePhoto photo) {
+    default NSDictionary<String, ?> replacementMetadataForPhoto(@NotNull AVCapturePhoto photo) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -138,10 +143,11 @@ public interface AVCapturePhotoFileDataRepresentationCustomizer {
      *         photo.portraitEffectsMatte. To strip the existing one, return nil. To replace, provide a replacement
      *         AVPortraitEffectsMatte instance.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("replacementPortraitEffectsMatteForPhoto:")
-    default AVPortraitEffectsMatte replacementPortraitEffectsMatteForPhoto(AVCapturePhoto photo) {
+    default AVPortraitEffectsMatte replacementPortraitEffectsMatteForPhoto(@NotNull AVCapturePhoto photo) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -166,11 +172,12 @@ public interface AVCapturePhotoFileDataRepresentationCustomizer {
      *         semanticSegmentationMatteForType:semanticSegmentationMatteType]. To strip the existing one, return nil.
      *         To replace, provide a replacement AVPortraitEffectsMatte instance.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("replacementSemanticSegmentationMatteOfType:forPhoto:")
     default AVSemanticSegmentationMatte replacementSemanticSegmentationMatteOfTypeForPhoto(
-            String semanticSegmentationMatteType, AVCapturePhoto photo) {
+            @NotNull String semanticSegmentationMatteType, @NotNull AVCapturePhoto photo) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -204,11 +211,13 @@ public interface AVCapturePhotoFileDataRepresentationCustomizer {
      *         Any keys not specified in the returned dictionary will use the values from defaultSettings. Return
      *         defaultSettings if no changes to the compression settings are desired.
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("replacementAppleProRAWCompressionSettingsForPhoto:defaultSettings:maximumBitDepth:")
     default NSDictionary<String, ?> replacementAppleProRAWCompressionSettingsForPhotoDefaultSettingsMaximumBitDepth(
-            AVCapturePhoto photo, NSDictionary<String, ?> defaultSettings, @NInt long maximumBitDepth) {
+            @NotNull AVCapturePhoto photo, @NotNull NSDictionary<String, ?> defaultSettings,
+            @NInt long maximumBitDepth) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

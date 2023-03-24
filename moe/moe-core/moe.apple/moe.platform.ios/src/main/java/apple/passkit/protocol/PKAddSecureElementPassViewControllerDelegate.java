@@ -11,6 +11,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.ann.IsOptional;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.4
@@ -30,13 +32,14 @@ public interface PKAddSecureElementPassViewControllerDelegate {
     @Generated
     @Selector("addSecureElementPassViewController:didFinishAddingSecureElementPass:error:")
     default void addSecureElementPassViewControllerDidFinishAddingSecureElementPassError(
-            PKAddSecureElementPassViewController controller, PKSecureElementPass pass, NSError error) {
+            @NotNull PKAddSecureElementPassViewController controller, @Nullable PKSecureElementPass pass,
+            @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @Selector("addSecureElementPassViewController:didFinishAddingSecureElementPasses:error:")
     void addSecureElementPassViewControllerDidFinishAddingSecureElementPassesError(
-            PKAddSecureElementPassViewController controller, NSArray<? extends PKSecureElementPass> passes,
-            NSError error);
+            @NotNull PKAddSecureElementPassViewController controller,
+            @Nullable NSArray<? extends PKSecureElementPass> passes, @Nullable NSError error);
 }

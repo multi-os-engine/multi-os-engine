@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CBMutableCharacteristic
@@ -85,22 +87,25 @@ public class CBMutableCharacteristic extends CBCharacteristic {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,9 +140,10 @@ public class CBMutableCharacteristic extends CBCharacteristic {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,6 +171,7 @@ public class CBMutableCharacteristic extends CBCharacteristic {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("descriptors")
     public native NSArray<? extends CBDescriptor> descriptors();
@@ -186,8 +193,8 @@ public class CBMutableCharacteristic extends CBCharacteristic {
      */
     @Generated
     @Selector("initWithType:properties:value:permissions:")
-    public native CBMutableCharacteristic initWithTypePropertiesValuePermissions(CBUUID UUID, @NUInt long properties,
-            NSData value, @NUInt long permissions);
+    public native CBMutableCharacteristic initWithTypePropertiesValuePermissions(@NotNull CBUUID UUID,
+            @NUInt long properties, @Nullable NSData value, @NUInt long permissions);
 
     /**
      * [@property] permissions
@@ -208,7 +215,7 @@ public class CBMutableCharacteristic extends CBCharacteristic {
 
     @Generated
     @Selector("setDescriptors:")
-    public native void setDescriptors(NSArray<? extends CBDescriptor> value);
+    public native void setDescriptors(@Nullable NSArray<? extends CBDescriptor> value);
 
     /**
      * [@property] permissions
@@ -227,7 +234,7 @@ public class CBMutableCharacteristic extends CBCharacteristic {
 
     @Generated
     @Selector("setValue:")
-    public native void setValue(NSData value);
+    public native void setValue(@Nullable NSData value);
 
     /**
      * [@property] subscribedCentrals
@@ -236,10 +243,12 @@ public class CBMutableCharacteristic extends CBCharacteristic {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("subscribedCentrals")
     public native NSArray<? extends CBCentral> subscribedCentrals();
 
+    @Nullable
     @Generated
     @Selector("value")
     public native NSData value();

@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -58,31 +60,35 @@ public class UIDragPreview extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -106,7 +112,7 @@ public class UIDragPreview extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("initWithView:")
-    public native UIDragPreview initWithView(UIView view);
+    public native UIDragPreview initWithView(@NotNull UIView view);
 
     /**
      * Create a preview based on a view and parameters.
@@ -114,7 +120,8 @@ public class UIDragPreview extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("initWithView:parameters:")
-    public native UIDragPreview initWithViewParameters(UIView view, UIDragPreviewParameters parameters);
+    public native UIDragPreview initWithViewParameters(@NotNull UIView view,
+            @NotNull UIDragPreviewParameters parameters);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -133,15 +140,17 @@ public class UIDragPreview extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native UIDragPreview new_objc();
 
+    @NotNull
     @Generated
     @Selector("parameters")
     public native UIDragPreviewParameters parameters();
@@ -151,7 +160,7 @@ public class UIDragPreview extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("previewForURL:")
-    public static native UIDragPreview previewForURL(NSURL url);
+    public static native UIDragPreview previewForURL(@NotNull NSURL url);
 
     /**
      * If the title is nil or empty, this is the same as `previewForURL:`.
@@ -160,7 +169,7 @@ public class UIDragPreview extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("previewForURL:title:")
-    public static native UIDragPreview previewForURLTitle(NSURL url, String title);
+    public static native UIDragPreview previewForURLTitle(@NotNull NSURL url, @Nullable String title);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -183,6 +192,7 @@ public class UIDragPreview extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("view")
     public native UIView view();

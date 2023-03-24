@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSMatrixBatchNormalizationGradient
@@ -73,22 +75,25 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -103,11 +108,12 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
      *         nil if the device is not supported. Devices must be
      *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:device:")
-    public native MPSMatrixBatchNormalizationGradient copyWithZoneDevice(VoidPtr zone,
-            @Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSMatrixBatchNormalizationGradient copyWithZoneDevice(@Nullable VoidPtr zone,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     @Generated
     @Selector("debugDescription")
@@ -159,10 +165,11 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
     @Generated
     @Selector("encodeToCommandBuffer:gradientMatrix:inputMatrix:meanVector:varianceVector:gammaVector:betaVector:resultGradientForDataMatrix:resultGradientForGammaVector:resultGradientForBetaVector:")
     public native void encodeToCommandBufferGradientMatrixInputMatrixMeanVectorVarianceVectorGammaVectorBetaVectorResultGradientForDataMatrixResultGradientForGammaVectorResultGradientForBetaVector(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSMatrix gradientMatrix,
-            MPSMatrix inputMatrix, MPSVector meanVector, MPSVector varianceVector, MPSVector gammaVector,
-            MPSVector betaVector, MPSMatrix resultGradientForDataMatrix, MPSVector resultGradientForGammaVector,
-            MPSVector resultGradientForBetaVector);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSMatrix gradientMatrix,
+            @NotNull MPSMatrix inputMatrix, @NotNull MPSVector meanVector, @NotNull MPSVector varianceVector,
+            @Nullable MPSVector gammaVector, @Nullable MPSVector betaVector,
+            @NotNull MPSMatrix resultGradientForDataMatrix, @Nullable MPSVector resultGradientForGammaVector,
+            @Nullable MPSVector resultGradientForBetaVector);
 
     /**
      * [@property] epsilon
@@ -184,7 +191,7 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSMatrixBatchNormalizationGradient initWithCoder(NSCoder aDecoder);
+    public native MPSMatrixBatchNormalizationGradient initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
@@ -197,12 +204,13 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSMatrixBatchNormalizationGradient initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixBatchNormalizationGradient initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSMatrixBatchNormalizationGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixBatchNormalizationGradient initWithDevice(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -221,9 +229,10 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method

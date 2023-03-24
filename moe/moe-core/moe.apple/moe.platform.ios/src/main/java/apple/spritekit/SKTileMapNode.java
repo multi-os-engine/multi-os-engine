@@ -54,6 +54,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A SpriteKit node used to render a 2D array of textured sprites. Uses SKTileSet to determine what textures it can use
@@ -92,29 +94,32 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -146,9 +151,10 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,21 +167,25 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("nodeWithFileNamed:")
-    public static native SKTileMapNode nodeWithFileNamed(String filename);
+    public static native SKTileMapNode nodeWithFileNamed(@NotNull String filename);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodeBounds:")
-    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
+    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodePhysicsBodies:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodePhysicsBodies(
-            NSArray<? extends SKNode> nodes);
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromSpriteTextures:accuracy:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromSpriteTexturesAccuracy(
-            NSArray<? extends SKNode> sprites, float accuracy);
+            @NotNull NSArray<? extends SKNode> sprites, float accuracy);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -204,8 +214,8 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("tileMapNodeWithTileSet:columns:rows:tileSize:")
-    public static native SKTileMapNode tileMapNodeWithTileSetColumnsRowsTileSize(SKTileSet tileSet, @NUInt long columns,
-            @NUInt long rows, @ByValue CGSize tileSize);
+    public static native SKTileMapNode tileMapNodeWithTileSetColumnsRowsTileSize(@NotNull SKTileSet tileSet,
+            @NUInt long columns, @NUInt long rows, @ByValue CGSize tileSize);
 
     /**
      * Create a tile map node with the specified tile set and dimensions, and fill it with the specified tile group.
@@ -218,8 +228,9 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("tileMapNodeWithTileSet:columns:rows:tileSize:fillWithTileGroup:")
-    public static native SKTileMapNode tileMapNodeWithTileSetColumnsRowsTileSizeFillWithTileGroup(SKTileSet tileSet,
-            @NUInt long columns, @NUInt long rows, @ByValue CGSize tileSize, SKTileGroup tileGroup);
+    public static native SKTileMapNode tileMapNodeWithTileSetColumnsRowsTileSizeFillWithTileGroup(
+            @NotNull SKTileSet tileSet, @NUInt long columns, @NUInt long rows, @ByValue CGSize tileSize,
+            @NotNull SKTileGroup tileGroup);
 
     /**
      * Create a tile map node with the specified tile set and dimensions, and fill it with a specific layout of tile
@@ -238,9 +249,9 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("tileMapNodeWithTileSet:columns:rows:tileSize:tileGroupLayout:")
-    public static native SKTileMapNode tileMapNodeWithTileSetColumnsRowsTileSizeTileGroupLayout(SKTileSet tileSet,
-            @NUInt long columns, @NUInt long rows, @ByValue CGSize tileSize,
-            NSArray<? extends SKTileGroup> tileGroupLayout);
+    public static native SKTileMapNode tileMapNodeWithTileSetColumnsRowsTileSizeTileGroupLayout(
+            @NotNull SKTileSet tileSet, @NUInt long columns, @NUInt long rows, @ByValue CGSize tileSize,
+            @NotNull NSArray<? extends SKTileGroup> tileGroupLayout);
 
     /**
      * Create a set of layered tile map nodes with the specified tile set and dimensions, and fill each layer based on
@@ -270,11 +281,12 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
      * @param noiseMap   the noise map we wish to use to fill each layer
      * @param thresholds the thresholds for each tile group in the tile set
      */
+    @NotNull
     @Generated
     @Selector("tileMapNodesWithTileSet:columns:rows:tileSize:fromNoiseMap:tileTypeNoiseMapThresholds:")
     public static native NSArray<? extends SKTileMapNode> tileMapNodesWithTileSetColumnsRowsTileSizeFromNoiseMapTileTypeNoiseMapThresholds(
-            SKTileSet tileSet, @NUInt long columns, @NUInt long rows, @ByValue CGSize tileSize, GKNoiseMap noiseMap,
-            NSArray<? extends NSNumber> thresholds);
+            @NotNull SKTileSet tileSet, @NUInt long columns, @NUInt long rows, @ByValue CGSize tileSize,
+            @NotNull GKNoiseMap noiseMap, @NotNull NSArray<? extends NSNumber> thresholds);
 
     @Generated
     @Selector("version")
@@ -296,6 +308,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("attributeValues")
     public native NSDictionary<String, ? extends SKAttributeValue> attributeValues();
@@ -324,6 +337,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
     /**
      * Base color for the tile map (If no texture is present, the color still is drawn).
      */
+    @NotNull
     @Generated
     @Selector("color")
     public native UIColor color();
@@ -338,11 +352,12 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
     @NFloat
     public native double colorBlendFactor();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("enableAutomapping")
@@ -350,7 +365,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Fill the entire tile map with the provided tile group.
@@ -359,7 +374,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("fillWithTileGroup:")
-    public native void fillWithTileGroup(SKTileGroup tileGroup);
+    public native void fillWithTileGroup(@Nullable SKTileGroup tileGroup);
 
     @Generated
     @Selector("init")
@@ -367,7 +382,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKTileMapNode initWithCoder(NSCoder coder);
+    public native SKTileMapNode initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initialize a tile map node with the specified tile set and dimensions. The tiles of the map will be empty,
@@ -380,7 +395,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("initWithTileSet:columns:rows:tileSize:")
-    public native SKTileMapNode initWithTileSetColumnsRowsTileSize(SKTileSet tileSet, @NUInt long columns,
+    public native SKTileMapNode initWithTileSetColumnsRowsTileSize(@NotNull SKTileSet tileSet, @NUInt long columns,
             @NUInt long rows, @ByValue CGSize tileSize);
 
     /**
@@ -394,8 +409,8 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("initWithTileSet:columns:rows:tileSize:fillWithTileGroup:")
-    public native SKTileMapNode initWithTileSetColumnsRowsTileSizeFillWithTileGroup(SKTileSet tileSet,
-            @NUInt long columns, @NUInt long rows, @ByValue CGSize tileSize, SKTileGroup tileGroup);
+    public native SKTileMapNode initWithTileSetColumnsRowsTileSizeFillWithTileGroup(@NotNull SKTileSet tileSet,
+            @NUInt long columns, @NUInt long rows, @ByValue CGSize tileSize, @NotNull SKTileGroup tileGroup);
 
     /**
      * Initialize a tile map node with the specified tile set and dimensions, and fill it with a specific layout of tile
@@ -414,9 +429,9 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("initWithTileSet:columns:rows:tileSize:tileGroupLayout:")
-    public native SKTileMapNode initWithTileSetColumnsRowsTileSizeTileGroupLayout(SKTileSet tileSet,
+    public native SKTileMapNode initWithTileSetColumnsRowsTileSizeTileGroupLayout(@NotNull SKTileSet tileSet,
             @NUInt long columns, @NUInt long rows, @ByValue CGSize tileSize,
-            NSArray<? extends SKTileGroup> tileGroupLayout);
+            @NotNull NSArray<? extends SKTileGroup> tileGroupLayout);
 
     /**
      * Bitmask to indicate being lit by a set of lights using overlapping lighting categories.
@@ -471,7 +486,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setAttributeValues:")
-    public native void setAttributeValues(NSDictionary<String, ? extends SKAttributeValue> value);
+    public native void setAttributeValues(@NotNull NSDictionary<String, ? extends SKAttributeValue> value);
 
     /**
      * Sets the blend mode to use when composing the tile map with the final framebuffer.
@@ -487,7 +502,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setColor:")
-    public native void setColor(UIColor value);
+    public native void setColor(@NotNull UIColor value);
 
     /**
      * Controls the blending between the texture and the tile map color. The valid interval of values is from 0.0 up to
@@ -533,7 +548,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setShader:")
-    public native void setShader(SKShader value);
+    public native void setShader(@Nullable SKShader value);
 
     /**
      * Set the tile group and tile defintion at the specified tile index. When automapping is enabled, it will attempt
@@ -547,8 +562,8 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setTileGroup:andTileDefinition:forColumn:row:")
-    public native void setTileGroupAndTileDefinitionForColumnRow(SKTileGroup tileGroup, SKTileDefinition tileDefinition,
-            @NUInt long column, @NUInt long row);
+    public native void setTileGroupAndTileDefinitionForColumnRow(@NotNull SKTileGroup tileGroup,
+            @NotNull SKTileDefinition tileDefinition, @NUInt long column, @NUInt long row);
 
     /**
      * Set the tile group at the specified tile index. When automapping is enabled, the appropriate tile definitions
@@ -562,14 +577,14 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setTileGroup:forColumn:row:")
-    public native void setTileGroupForColumnRow(SKTileGroup tileGroup, @NUInt long column, @NUInt long row);
+    public native void setTileGroupForColumnRow(@Nullable SKTileGroup tileGroup, @NUInt long column, @NUInt long row);
 
     /**
      * The tile set being used by this tile map.
      */
     @Generated
     @Selector("setTileSet:")
-    public native void setTileSet(SKTileSet value);
+    public native void setTileSet(@NotNull SKTileSet value);
 
     /**
      * The size of each tile in the map.
@@ -583,11 +598,12 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setValue:forAttributeNamed:")
-    public native void setValueForAttributeNamed(SKAttributeValue value, String key);
+    public native void setValueForAttributeNamed(@NotNull SKAttributeValue value, @NotNull String key);
 
     /**
      * A property that determines whether the tile map is rendered using a custom shader.
      */
+    @Nullable
     @Generated
     @Selector("shader")
     public native SKShader shader();
@@ -609,6 +625,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
      * @param column the column index of the tile
      * @param row    the row index of the tile
      */
+    @Nullable
     @Generated
     @Selector("tileDefinitionAtColumn:row:")
     public native SKTileDefinition tileDefinitionAtColumnRow(@NUInt long column, @NUInt long row);
@@ -619,6 +636,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
      * @param column the column index of the tile
      * @param row    the row index of the tile
      */
+    @Nullable
     @Generated
     @Selector("tileGroupAtColumn:row:")
     public native SKTileGroup tileGroupAtColumnRow(@NUInt long column, @NUInt long row);
@@ -637,6 +655,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
     /**
      * The tile set being used by this tile map.
      */
+    @NotNull
     @Generated
     @Selector("tileSet")
     public native SKTileSet tileSet();
@@ -652,14 +671,15 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
     /**
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("valueForAttributeNamed:")
-    public native SKAttributeValue valueForAttributeNamed(String key);
+    public native SKAttributeValue valueForAttributeNamed(@NotNull String key);
 
     @Generated
     @Selector("nodeWithFileNamed:securelyWithClasses:andError:")
-    public static native SKTileMapNode nodeWithFileNamedSecurelyWithClassesAndError(String filename,
-            NSSet<? extends Class> classes, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native SKTileMapNode nodeWithFileNamedSecurelyWithClassesAndError(@NotNull String filename,
+            @NotNull NSSet<? extends Class> classes, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("supportsSecureCoding")

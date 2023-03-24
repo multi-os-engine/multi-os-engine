@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An acceleration structure built over instances of other acceleration structures
@@ -158,6 +160,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
      * structure group. If a polygon acceleration structure is rebuilt or refit, the instance
      * acceleration structure must subsequently be rebuilt or refit.
      */
+    @Nullable
     @Generated
     @Selector("accelerationStructures")
     public native NSArray<? extends MPSPolygonAccelerationStructure> accelerationStructures();
@@ -178,22 +181,25 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -217,30 +223,32 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSInstanceAccelerationStructure initWithCoder(NSCoder aDecoder);
+    public native MPSInstanceAccelerationStructure initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSInstanceAccelerationStructure initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSInstanceAccelerationStructure initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithCoder:group:")
-    public native MPSInstanceAccelerationStructure initWithCoderGroup(NSCoder aDecoder,
-            MPSAccelerationStructureGroup group);
+    public native MPSInstanceAccelerationStructure initWithCoderGroup(@NotNull NSCoder aDecoder,
+            @NotNull MPSAccelerationStructureGroup group);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSInstanceAccelerationStructure initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSInstanceAccelerationStructure initWithDevice(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithGroup:")
-    public native MPSInstanceAccelerationStructure initWithGroup(MPSAccelerationStructureGroup group);
+    public native MPSInstanceAccelerationStructure initWithGroup(@NotNull MPSAccelerationStructureGroup group);
 
     /**
      * Buffer containing the 32 bit unsigned integer index into the acceleration structure array
      * for each instance
      */
+    @Nullable
     @Generated
     @Selector("instanceBuffer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -281,13 +289,15 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Mask buffer containing one uint32_t mask per instance. May be nil.
      */
+    @Nullable
     @Generated
     @Selector("maskBuffer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -325,7 +335,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
      */
     @Generated
     @Selector("setAccelerationStructures:")
-    public native void setAccelerationStructures(NSArray<? extends MPSPolygonAccelerationStructure> value);
+    public native void setAccelerationStructures(@Nullable NSArray<? extends MPSPolygonAccelerationStructure> value);
 
     /**
      * Buffer containing the 32 bit unsigned integer index into the acceleration structure array
@@ -333,7 +343,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
      */
     @Generated
     @Selector("setInstanceBuffer:")
-    public native void setInstanceBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
+    public native void setInstanceBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
      * Offset, in bytes, into the instance buffer. Defaults to 0 bytes. Must be aligned to 4
@@ -356,7 +366,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
      */
     @Generated
     @Selector("setMaskBuffer:")
-    public native void setMaskBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
+    public native void setMaskBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
      * Offset, in bytes, into the mask buffer. Defaults to 0 bytes. Must be aligned to 4 bytes.
@@ -370,7 +380,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
      */
     @Generated
     @Selector("setTransformBuffer:")
-    public native void setTransformBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
+    public native void setTransformBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
      * Offset, in bytes, into the transform buffer. Defaults to 0 bytes. Must be aligned to the
@@ -409,6 +419,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     /**
      * Buffer containing one column major matrix_float4x4 transformation matrix per instance
      */
+    @Nullable
     @Generated
     @Selector("transformBuffer")
     @MappedReturn(ObjCObjectMapper.class)

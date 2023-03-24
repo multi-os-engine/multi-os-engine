@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNFilterNode
@@ -66,22 +68,25 @@ public class MPSNNFilterNode extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,15 +125,17 @@ public class MPSNNFilterNode extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] label
      * 
      * A string to help identify this object.
      */
+    @Nullable
     @Generated
     @Selector("label")
     public native String label();
@@ -171,6 +178,7 @@ public class MPSNNFilterNode extends NSObject {
      * other properties. In such cases, the custom padding policy may need to keep
      * a record of the original value to enable consistent behavior.
      */
+    @NotNull
     @Generated
     @Selector("paddingPolicy")
     @MappedReturn(ObjCObjectMapper.class)
@@ -191,6 +199,7 @@ public class MPSNNFilterNode extends NSObject {
      * result image (see format property) is copied from the precision
      * from the first input image node.
      */
+    @NotNull
     @Generated
     @Selector("resultImage")
     public native MPSNNImageNode resultImage();
@@ -200,6 +209,7 @@ public class MPSNNFilterNode extends NSObject {
      * 
      * If resultStates is nil, returns nil
      */
+    @Nullable
     @Generated
     @Selector("resultState")
     public native MPSNNStateNode resultState();
@@ -209,6 +219,7 @@ public class MPSNNFilterNode extends NSObject {
      * 
      * If more than one, see description of subclass for ordering.
      */
+    @Nullable
     @Generated
     @Selector("resultStates")
     public native NSArray<? extends MPSNNStateNode> resultStates();
@@ -220,7 +231,7 @@ public class MPSNNFilterNode extends NSObject {
      */
     @Generated
     @Selector("setLabel:")
-    public native void setLabel(String value);
+    public native void setLabel(@Nullable String value);
 
     /**
      * The padding method used for the filter node
@@ -257,7 +268,7 @@ public class MPSNNFilterNode extends NSObject {
      */
     @Generated
     @Selector("setPaddingPolicy:")
-    public native void setPaddingPolicy(@Mapped(ObjCObjectMapper.class) MPSNNPadding value);
+    public native void setPaddingPolicy(@NotNull @Mapped(ObjCObjectMapper.class) MPSNNPadding value);
 
     @Generated
     @Selector("setVersion:")
@@ -282,9 +293,10 @@ public class MPSNNFilterNode extends NSObject {
      * @param gradientImage The gradient images corresponding with the resultImage
      *                      of the target
      */
+    @NotNull
     @Generated
     @Selector("gradientFilterWithSource:")
-    public native MPSNNGradientFilterNode gradientFilterWithSource(MPSNNImageNode gradientImage);
+    public native MPSNNGradientFilterNode gradientFilterWithSource(@NotNull MPSNNImageNode gradientImage);
 
     /**
      * Return the gradient (backwards) version of this filter.
@@ -296,9 +308,11 @@ public class MPSNNFilterNode extends NSObject {
      * @param gradientImages The gradient images corresponding with the resultImage
      *                       of the target
      */
+    @NotNull
     @Generated
     @Selector("gradientFilterWithSources:")
-    public native MPSNNGradientFilterNode gradientFilterWithSources(NSArray<? extends MPSNNImageNode> gradientImages);
+    public native MPSNNGradientFilterNode gradientFilterWithSources(
+            @NotNull NSArray<? extends MPSNNImageNode> gradientImages);
 
     /**
      * Return multiple gradient versions of the filter
@@ -309,9 +323,11 @@ public class MPSNNFilterNode extends NSObject {
      * that concatenates multple images will result in an array of slice
      * operators that carve out subsections of the input gradient image.
      */
+    @NotNull
     @Generated
     @Selector("gradientFiltersWithSource:")
-    public native NSArray<? extends MPSNNGradientFilterNode> gradientFiltersWithSource(MPSNNImageNode gradientImage);
+    public native NSArray<? extends MPSNNGradientFilterNode> gradientFiltersWithSource(
+            @NotNull MPSNNImageNode gradientImage);
 
     /**
      * Return multiple gradient versions of the filter
@@ -322,10 +338,11 @@ public class MPSNNFilterNode extends NSObject {
      * that concatenates multple images will result in an array of slice
      * operators that carve out subsections of the input gradient image.
      */
+    @NotNull
     @Generated
     @Selector("gradientFiltersWithSources:")
     public native NSArray<? extends MPSNNGradientFilterNode> gradientFiltersWithSources(
-            NSArray<? extends MPSNNImageNode> gradientImages);
+            @NotNull NSArray<? extends MPSNNImageNode> gradientImages);
 
     /**
      * Build training graph from inference graph
@@ -366,17 +383,19 @@ public class MPSNNFilterNode extends NSObject {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("trainingGraphWithSourceGradient:nodeHandler:")
     public native NSArray<? extends MPSNNFilterNode> trainingGraphWithSourceGradientNodeHandler(
-            MPSNNImageNode gradientImage,
-            @ObjCBlock(name = "call_trainingGraphWithSourceGradientNodeHandler") Block_trainingGraphWithSourceGradientNodeHandler nodeHandler);
+            @Nullable MPSNNImageNode gradientImage,
+            @Nullable @ObjCBlock(name = "call_trainingGraphWithSourceGradientNodeHandler") Block_trainingGraphWithSourceGradientNodeHandler nodeHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_trainingGraphWithSourceGradientNodeHandler {
         @Generated
-        void call_trainingGraphWithSourceGradientNodeHandler(MPSNNFilterNode gradientNode,
-                MPSNNFilterNode inferenceNode, MPSNNImageNode inferenceSource, MPSNNImageNode gradientSource);
+        void call_trainingGraphWithSourceGradientNodeHandler(@NotNull MPSNNFilterNode gradientNode,
+                @NotNull MPSNNFilterNode inferenceNode, @NotNull MPSNNImageNode inferenceSource,
+                @NotNull MPSNNImageNode gradientSource);
     }
 }

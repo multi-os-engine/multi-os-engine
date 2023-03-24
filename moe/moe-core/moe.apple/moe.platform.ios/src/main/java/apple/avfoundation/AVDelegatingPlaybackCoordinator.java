@@ -26,6 +26,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVDelegatingPlaybackCoordinator
@@ -65,22 +67,25 @@ public class AVDelegatingPlaybackCoordinator extends AVPlaybackCoordinator {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -140,6 +145,7 @@ public class AVDelegatingPlaybackCoordinator extends AVPlaybackCoordinator {
      * The item identifier of the current item. Previously set by a call to
      * transitionToItemWithIdentifier:proposingInitialTimingBasedOnTimebase:
      */
+    @Nullable
     @Generated
     @Selector("currentItemIdentifier")
     public native String currentItemIdentifier();
@@ -177,7 +183,7 @@ public class AVDelegatingPlaybackCoordinator extends AVPlaybackCoordinator {
     @Generated
     @Selector("initWithPlaybackControlDelegate:")
     public native AVDelegatingPlaybackCoordinator initWithPlaybackControlDelegate(
-            @Mapped(ObjCObjectMapper.class) AVPlaybackCoordinatorPlaybackControlDelegate playbackControlDelegate);
+            @NotNull @Mapped(ObjCObjectMapper.class) AVPlaybackCoordinatorPlaybackControlDelegate playbackControlDelegate);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -196,9 +202,10 @@ public class AVDelegatingPlaybackCoordinator extends AVPlaybackCoordinator {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -210,6 +217,7 @@ public class AVDelegatingPlaybackCoordinator extends AVPlaybackCoordinator {
      * 
      * The custom player implementation controlled by the coordinator.
      */
+    @Nullable
     @Generated
     @Selector("playbackControlDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -271,8 +279,8 @@ public class AVDelegatingPlaybackCoordinator extends AVPlaybackCoordinator {
      */
     @Generated
     @Selector("transitionToItemWithIdentifier:proposingInitialTimingBasedOnTimebase:")
-    public native void transitionToItemWithIdentifierProposingInitialTimingBasedOnTimebase(String itemIdentifier,
-            CMTimebaseRef snapshotTimebase);
+    public native void transitionToItemWithIdentifierProposingInitialTimingBasedOnTimebase(
+            @Nullable String itemIdentifier, @Nullable CMTimebaseRef snapshotTimebase);
 
     @Generated
     @Selector("version")

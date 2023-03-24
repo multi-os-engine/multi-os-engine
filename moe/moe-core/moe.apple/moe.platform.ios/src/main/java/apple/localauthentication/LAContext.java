@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Class that represents an authentication context.
@@ -84,22 +86,25 @@ public class LAContext extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,9 +139,10 @@ public class LAContext extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -191,7 +197,7 @@ public class LAContext extends NSObject {
     @Generated
     @Selector("canEvaluatePolicy:error:")
     public native boolean canEvaluatePolicyError(@NInt long policy,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Evaluates access control object for the specified operation.
@@ -251,9 +257,9 @@ public class LAContext extends NSObject {
      */
     @Generated
     @Selector("evaluateAccessControl:operation:localizedReason:reply:")
-    public native void evaluateAccessControlOperationLocalizedReasonReply(SecAccessControlRef accessControl,
-            @NInt long operation, String localizedReason,
-            @ObjCBlock(name = "call_evaluateAccessControlOperationLocalizedReasonReply") Block_evaluateAccessControlOperationLocalizedReasonReply reply);
+    public native void evaluateAccessControlOperationLocalizedReasonReply(@NotNull SecAccessControlRef accessControl,
+            @NInt long operation, @NotNull String localizedReason,
+            @NotNull @ObjCBlock(name = "call_evaluateAccessControlOperationLocalizedReasonReply") Block_evaluateAccessControlOperationLocalizedReasonReply reply);
 
     /**
      * Evaluates the specified policy.
@@ -315,8 +321,8 @@ public class LAContext extends NSObject {
      */
     @Generated
     @Selector("evaluatePolicy:localizedReason:reply:")
-    public native void evaluatePolicyLocalizedReasonReply(@NInt long policy, String localizedReason,
-            @ObjCBlock(name = "call_evaluatePolicyLocalizedReasonReply") Block_evaluatePolicyLocalizedReasonReply reply);
+    public native void evaluatePolicyLocalizedReasonReply(@NInt long policy, @NotNull String localizedReason,
+            @NotNull @ObjCBlock(name = "call_evaluatePolicyLocalizedReasonReply") Block_evaluatePolicyLocalizedReasonReply reply);
 
     /**
      * Contains policy domain state.
@@ -335,6 +341,7 @@ public class LAContext extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("evaluatedPolicyDomainState")
     public native NSData evaluatedPolicyDomainState();
@@ -383,6 +390,7 @@ public class LAContext extends NSObject {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("localizedCancelTitle")
     public native String localizedCancelTitle();
@@ -395,6 +403,7 @@ public class LAContext extends NSObject {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("localizedFallbackTitle")
     public native String localizedFallbackTitle();
@@ -406,6 +415,7 @@ public class LAContext extends NSObject {
      * Deprecated-Since: 9.0
      * Deprecated-Message: No longer supported
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("maxBiometryFailures")
@@ -429,7 +439,7 @@ public class LAContext extends NSObject {
      */
     @Generated
     @Selector("setCredential:type:")
-    public native boolean setCredentialType(NSData credential, @NInt long type);
+    public native boolean setCredentialType(@Nullable NSData credential, @NInt long type);
 
     /**
      * Cancel button title.
@@ -441,7 +451,7 @@ public class LAContext extends NSObject {
      */
     @Generated
     @Selector("setLocalizedCancelTitle:")
-    public native void setLocalizedCancelTitle(String value);
+    public native void setLocalizedCancelTitle(@Nullable String value);
 
     /**
      * Fallback button title.
@@ -453,7 +463,7 @@ public class LAContext extends NSObject {
      */
     @Generated
     @Selector("setLocalizedFallbackTitle:")
-    public native void setLocalizedFallbackTitle(String value);
+    public native void setLocalizedFallbackTitle(@Nullable String value);
 
     /**
      * This property is deprecated and setting it has no effect.
@@ -465,7 +475,7 @@ public class LAContext extends NSObject {
     @Generated
     @Deprecated
     @Selector("setMaxBiometryFailures:")
-    public native void setMaxBiometryFailures(NSNumber value);
+    public native void setMaxBiometryFailures(@Nullable NSNumber value);
 
     /**
      * Time interval for accepting a successful Touch ID or Face ID device unlock (on the lock screen) from the past.
@@ -517,14 +527,14 @@ public class LAContext extends NSObject {
     @Generated
     public interface Block_evaluateAccessControlOperationLocalizedReasonReply {
         @Generated
-        void call_evaluateAccessControlOperationLocalizedReasonReply(boolean success, NSError error);
+        void call_evaluateAccessControlOperationLocalizedReasonReply(boolean success, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_evaluatePolicyLocalizedReasonReply {
         @Generated
-        void call_evaluatePolicyLocalizedReasonReply(boolean success, NSError error);
+        void call_evaluatePolicyLocalizedReasonReply(boolean success, @Nullable NSError error);
     }
 
     /**
@@ -566,6 +576,7 @@ public class LAContext extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("localizedReason")
     public native String localizedReason();
@@ -598,5 +609,5 @@ public class LAContext extends NSObject {
      */
     @Generated
     @Selector("setLocalizedReason:")
-    public native void setLocalizedReason(String value);
+    public native void setLocalizedReason(@NotNull String value);
 }

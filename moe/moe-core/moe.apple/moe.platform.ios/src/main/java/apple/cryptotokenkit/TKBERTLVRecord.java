@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * TKBERTLVRecord implements encoding using BER-TLV encoding rules.
@@ -60,22 +62,25 @@ public class TKBERTLVRecord extends TKTLVRecord {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -86,6 +91,7 @@ public class TKBERTLVRecord extends TKTLVRecord {
      * @param tag Tag value to encode
      * @return Binary block containing encoded tag value.
      */
+    @NotNull
     @Generated
     @Selector("dataForTag:")
     public static native NSData dataForTag(long tag);
@@ -116,7 +122,7 @@ public class TKBERTLVRecord extends TKTLVRecord {
      */
     @Generated
     @Selector("initWithTag:records:")
-    public native TKBERTLVRecord initWithTagRecords(long tag, NSArray<? extends TKTLVRecord> records);
+    public native TKBERTLVRecord initWithTagRecords(long tag, @NotNull NSArray<? extends TKTLVRecord> records);
 
     /**
      * Creates TLV record with specified tag and value.
@@ -127,7 +133,7 @@ public class TKBERTLVRecord extends TKTLVRecord {
      */
     @Generated
     @Selector("initWithTag:value:")
-    public native TKBERTLVRecord initWithTagValue(long tag, NSData value);
+    public native TKBERTLVRecord initWithTagValue(long tag, @NotNull NSData value);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -146,9 +152,10 @@ public class TKBERTLVRecord extends TKTLVRecord {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,7 +164,7 @@ public class TKBERTLVRecord extends TKTLVRecord {
 
     @Generated
     @Selector("recordFromData:")
-    public static native TKBERTLVRecord recordFromData(NSData data);
+    public static native TKBERTLVRecord recordFromData(@NotNull NSData data);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -167,9 +174,10 @@ public class TKBERTLVRecord extends TKTLVRecord {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Nullable
     @Generated
     @Selector("sequenceOfRecordsFromData:")
-    public static native NSArray<? extends TKTLVRecord> sequenceOfRecordsFromData(NSData data);
+    public static native NSArray<? extends TKTLVRecord> sequenceOfRecordsFromData(@NotNull NSData data);
 
     @Generated
     @Selector("setVersion:")

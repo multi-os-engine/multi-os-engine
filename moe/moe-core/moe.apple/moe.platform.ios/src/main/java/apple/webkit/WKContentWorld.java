@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A WKContentWorld object allows you to separate your application's interaction with content displayed in a WKWebView
@@ -75,22 +77,25 @@ public class WKContentWorld extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -107,6 +112,7 @@ public class WKContentWorld extends NSObject {
      * content itself)
      * Repeated calls will retrieve the same WKContentWorld instance.
      */
+    @NotNull
     @Generated
     @Selector("defaultClientWorld")
     public static native WKContentWorld defaultClientWorld();
@@ -141,9 +147,10 @@ public class WKContentWorld extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The name of the WKContentWorld
@@ -151,6 +158,7 @@ public class WKContentWorld extends NSObject {
      * The pageWorld and defaultClientWorld instances will have a nil name.
      * All other instances will have the non-nil name they were accessed by.
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -166,6 +174,7 @@ public class WKContentWorld extends NSObject {
      * When interacting with page content in a WKWebView using the page content world you can disrupt the operation of
      * page content (e.g. by conflicting with variable names in JavaScript set by the web page content itself).
      */
+    @NotNull
     @Generated
     @Selector("pageWorld")
     public static native WKContentWorld pageWorld();
@@ -206,7 +215,8 @@ public class WKContentWorld extends NSObject {
      * 
      * @param name The name of the WKContentWorld to retrieve.
      */
+    @NotNull
     @Generated
     @Selector("worldWithName:")
-    public static native WKContentWorld worldWithName(String name);
+    public static native WKContentWorld worldWithName(@NotNull String name);
 }

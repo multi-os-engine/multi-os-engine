@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSURLProtectionSpace
@@ -77,22 +79,25 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +132,10 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,15 +172,17 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
      * 
      * @return The authentication method
      */
+    @NotNull
     @Generated
     @Selector("authenticationMethod")
     public native String authenticationMethod();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Returns an array of acceptable certificate issuing authorities for client certification authentication. Issuers
@@ -185,19 +193,21 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
      * 
      *         API-Since: 3.0
      */
+    @Nullable
     @Generated
     @Selector("distinguishedNames")
     public native NSArray<? extends NSData> distinguishedNames();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Get the proxy host if this is a proxy authentication, or the host from the URL.
      * 
      * @return The host for this protection space.
      */
+    @NotNull
     @Generated
     @Selector("host")
     public native String host();
@@ -208,7 +218,7 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSURLProtectionSpace initWithCoder(NSCoder coder);
+    public native NSURLProtectionSpace initWithCoder(@NotNull NSCoder coder);
 
     /**
      * initWithHost:port:protocol:realm:authenticationMethod:
@@ -228,8 +238,8 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
      */
     @Generated
     @Selector("initWithHost:port:protocol:realm:authenticationMethod:")
-    public native NSURLProtectionSpace initWithHostPortProtocolRealmAuthenticationMethod(String host, @NInt long port,
-            String protocol, String realm, String authenticationMethod);
+    public native NSURLProtectionSpace initWithHostPortProtocolRealmAuthenticationMethod(@NotNull String host,
+            @NInt long port, @Nullable String protocol, @Nullable String realm, @Nullable String authenticationMethod);
 
     /**
      * initWithProxyHost:port:type:realm:authenticationMethod:
@@ -249,8 +259,8 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
      */
     @Generated
     @Selector("initWithProxyHost:port:type:realm:authenticationMethod:")
-    public native NSURLProtectionSpace initWithProxyHostPortTypeRealmAuthenticationMethod(String host, @NInt long port,
-            String type, String realm, String authenticationMethod);
+    public native NSURLProtectionSpace initWithProxyHostPortTypeRealmAuthenticationMethod(@NotNull String host,
+            @NInt long port, @Nullable String type, @Nullable String realm, @Nullable String authenticationMethod);
 
     /**
      * Determine if this authenticating protection space is a proxy server
@@ -276,6 +286,7 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
      * 
      * @return The type string, or nil if a proxy.
      */
+    @Nullable
     @Generated
     @Selector("protocol")
     public native String protocol();
@@ -285,6 +296,7 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
      * 
      * @return The type string, or nil if not a proxy.
      */
+    @Nullable
     @Generated
     @Selector("proxyType")
     public native String proxyType();
@@ -298,6 +310,7 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
      * 
      * @return The realm string
      */
+    @Nullable
     @Generated
     @Selector("realm")
     public native String realm();
@@ -319,6 +332,7 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
      * 
      *         API-Since: 3.0
      */
+    @Nullable
     @Generated
     @Selector("serverTrust")
     public native SecTrustRef serverTrust();

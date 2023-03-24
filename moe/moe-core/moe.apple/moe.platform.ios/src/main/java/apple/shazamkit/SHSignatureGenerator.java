@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.avfoundation.AVAsset;
 import org.moe.natj.objc.ann.ObjCBlock;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@c] SHSignatureGenerator provides a way to convert audio data into instances of @c SHSignature
@@ -78,27 +80,30 @@ public class SHSignatureGenerator extends NSObject {
      */
     @Generated
     @Selector("appendBuffer:atTime:error:")
-    public native boolean appendBufferAtTimeError(AVAudioPCMBuffer buffer, AVAudioTime time,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean appendBufferAtTimeError(@NotNull AVAudioPCMBuffer buffer, @Nullable AVAudioTime time,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -137,9 +142,10 @@ public class SHSignatureGenerator extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,6 +170,7 @@ public class SHSignatureGenerator extends NSObject {
      * Signature may be called as many times as needed, each time producing a @c SHSignature from
      * the audio data
      */
+    @NotNull
     @Generated
     @Selector("signature")
     public native SHSignature signature();
@@ -191,13 +198,13 @@ public class SHSignatureGenerator extends NSObject {
      */
     @Generated
     @Selector("generateSignatureFromAsset:completionHandler:")
-    public static native void generateSignatureFromAssetCompletionHandler(AVAsset asset,
-            @ObjCBlock(name = "call_generateSignatureFromAssetCompletionHandler") Block_generateSignatureFromAssetCompletionHandler completionHandler);
+    public static native void generateSignatureFromAssetCompletionHandler(@NotNull AVAsset asset,
+            @NotNull @ObjCBlock(name = "call_generateSignatureFromAssetCompletionHandler") Block_generateSignatureFromAssetCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_generateSignatureFromAssetCompletionHandler {
         @Generated
-        void call_generateSignatureFromAssetCompletionHandler(SHSignature signature, NSError error);
+        void call_generateSignatureFromAssetCompletionHandler(@Nullable SHSignature signature, @Nullable NSError error);
     }
 }

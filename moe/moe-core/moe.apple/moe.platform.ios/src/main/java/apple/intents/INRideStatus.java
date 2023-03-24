@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -79,22 +81,25 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +134,10 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,6 +174,7 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
      * When shown, the .title of each activity will presented to the user. Selecting an activity will open your
      * application to continue it.
      */
+    @Nullable
     @Generated
     @Selector("additionalActionActivities")
     public native NSArray<? extends NSUserActivity> additionalActionActivities();
@@ -175,32 +182,38 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
     /**
      * This property should be set if the phase is INRidePhaseCompleted.
      */
+    @Nullable
     @Generated
     @Selector("completionStatus")
     public native INRideCompletionStatus completionStatus();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    @Nullable
     @Generated
     @Selector("driver")
     public native INRideDriver driver();
 
+    @Nullable
     @Generated
     @Selector("dropOffLocation")
     public native CLPlacemark dropOffLocation();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    @Nullable
     @Generated
     @Selector("estimatedDropOffDate")
     public native NSDate estimatedDropOffDate();
 
+    @Nullable
     @Generated
     @Selector("estimatedPickupDate")
     public native NSDate estimatedPickupDate();
@@ -210,6 +223,7 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
      * be picked up.
      * The passenger is expected to arrive at pickup before this date.
      */
+    @Nullable
     @Generated
     @Selector("estimatedPickupEndDate")
     public native NSDate estimatedPickupEndDate();
@@ -220,21 +234,24 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRideStatus initWithCoder(NSCoder coder);
+    public native INRideStatus initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("phase")
     @NInt
     public native long phase();
 
+    @Nullable
     @Generated
     @Selector("pickupLocation")
     public native CLPlacemark pickupLocation();
 
+    @Nullable
     @Generated
     @Selector("rideIdentifier")
     public native String rideIdentifier();
 
+    @Nullable
     @Generated
     @Selector("rideOption")
     public native INRideOption rideOption();
@@ -246,30 +263,30 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
      */
     @Generated
     @Selector("setAdditionalActionActivities:")
-    public native void setAdditionalActionActivities(NSArray<? extends NSUserActivity> value);
+    public native void setAdditionalActionActivities(@Nullable NSArray<? extends NSUserActivity> value);
 
     /**
      * This property should be set if the phase is INRidePhaseCompleted.
      */
     @Generated
     @Selector("setCompletionStatus:")
-    public native void setCompletionStatus(INRideCompletionStatus value);
+    public native void setCompletionStatus(@Nullable INRideCompletionStatus value);
 
     @Generated
     @Selector("setDriver:")
-    public native void setDriver(INRideDriver value);
+    public native void setDriver(@Nullable INRideDriver value);
 
     @Generated
     @Selector("setDropOffLocation:")
-    public native void setDropOffLocation(CLPlacemark value);
+    public native void setDropOffLocation(@Nullable CLPlacemark value);
 
     @Generated
     @Selector("setEstimatedDropOffDate:")
-    public native void setEstimatedDropOffDate(NSDate value);
+    public native void setEstimatedDropOffDate(@Nullable NSDate value);
 
     @Generated
     @Selector("setEstimatedPickupDate:")
-    public native void setEstimatedPickupDate(NSDate value);
+    public native void setEstimatedPickupDate(@Nullable NSDate value);
 
     /**
      * This is the date after arrival at the pickup location after which the ride may stop waiting for the passenger to
@@ -278,7 +295,7 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
      */
     @Generated
     @Selector("setEstimatedPickupEndDate:")
-    public native void setEstimatedPickupEndDate(NSDate value);
+    public native void setEstimatedPickupEndDate(@Nullable NSDate value);
 
     @Generated
     @Selector("setPhase:")
@@ -286,15 +303,15 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("setPickupLocation:")
-    public native void setPickupLocation(CLPlacemark value);
+    public native void setPickupLocation(@Nullable CLPlacemark value);
 
     @Generated
     @Selector("setRideIdentifier:")
-    public native void setRideIdentifier(String value);
+    public native void setRideIdentifier(@Nullable String value);
 
     @Generated
     @Selector("setRideOption:")
-    public native void setRideOption(INRideOption value);
+    public native void setRideOption(@Nullable INRideOption value);
 
     /**
      * If set, and the ride hasn't completed or been canceled yet, the system may open the containing application and
@@ -303,15 +320,15 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
      */
     @Generated
     @Selector("setUserActivityForCancelingInApplication:")
-    public native void setUserActivityForCancelingInApplication(NSUserActivity value);
+    public native void setUserActivityForCancelingInApplication(@Nullable NSUserActivity value);
 
     @Generated
     @Selector("setVehicle:")
-    public native void setVehicle(INRideVehicle value);
+    public native void setVehicle(@Nullable INRideVehicle value);
 
     @Generated
     @Selector("setWaypoints:")
-    public native void setWaypoints(NSArray<? extends CLPlacemark> value);
+    public native void setWaypoints(@Nullable NSArray<? extends CLPlacemark> value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -324,14 +341,17 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
      * request continuation of this activity to request that the ride be canceled. It is appropriate to show
      * confirmation UI to the user when this happens.
      */
+    @Nullable
     @Generated
     @Selector("userActivityForCancelingInApplication")
     public native NSUserActivity userActivityForCancelingInApplication();
 
+    @Nullable
     @Generated
     @Selector("vehicle")
     public native INRideVehicle vehicle();
 
+    @Nullable
     @Generated
     @Selector("waypoints")
     public native NSArray<? extends CLPlacemark> waypoints();
@@ -341,6 +361,7 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
      * 
      * API-Since: 10.3
      */
+    @Nullable
     @Generated
     @Selector("scheduledPickupTime")
     public native INDateComponentsRange scheduledPickupTime();
@@ -352,5 +373,5 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
      */
     @Generated
     @Selector("setScheduledPickupTime:")
-    public native void setScheduledPickupTime(INDateComponentsRange value);
+    public native void setScheduledPickupTime(@Nullable INDateComponentsRange value);
 }

@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This class is used to represent a significant time event.
@@ -58,22 +60,25 @@ public class HMMutableSignificantTimeEvent extends HMSignificantTimeEvent {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -97,8 +102,8 @@ public class HMMutableSignificantTimeEvent extends HMSignificantTimeEvent {
 
     @Generated
     @Selector("initWithSignificantEvent:offset:")
-    public native HMMutableSignificantTimeEvent initWithSignificantEventOffset(String significantEvent,
-            NSDateComponents offset);
+    public native HMMutableSignificantTimeEvent initWithSignificantEventOffset(@NotNull String significantEvent,
+            @Nullable NSDateComponents offset);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -119,11 +124,12 @@ public class HMMutableSignificantTimeEvent extends HMSignificantTimeEvent {
 
     @Generated
     @Selector("isSupportedForHome:")
-    public static native boolean isSupportedForHome(HMHome home);
+    public static native boolean isSupportedForHome(@NotNull HMHome home);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -135,6 +141,7 @@ public class HMMutableSignificantTimeEvent extends HMSignificantTimeEvent {
      * properties of the NSDateComponents must be negative value. e.g. To specify 30 mins before sunset, the
      * 'minute' property must be set to -30.
      */
+    @NotNull
     @Generated
     @Selector("offset")
     public native NSDateComponents offset();
@@ -154,14 +161,14 @@ public class HMMutableSignificantTimeEvent extends HMSignificantTimeEvent {
      */
     @Generated
     @Selector("setOffset:")
-    public native void setOffset(NSDateComponents value);
+    public native void setOffset(@NotNull NSDateComponents value);
 
     /**
      * significantEvent The significant event for the trigger.
      */
     @Generated
     @Selector("setSignificantEvent:")
-    public native void setSignificantEvent(String value);
+    public native void setSignificantEvent(@NotNull String value);
 
     @Generated
     @Selector("setVersion:")
@@ -170,6 +177,7 @@ public class HMMutableSignificantTimeEvent extends HMSignificantTimeEvent {
     /**
      * significantEvent The significant event for the trigger.
      */
+    @NotNull
     @Generated
     @Selector("significantEvent")
     public native String significantEvent();

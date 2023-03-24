@@ -41,6 +41,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Subclass for basic (single-keyframe) animations. *
@@ -81,26 +83,29 @@ public class CABasicAnimation extends CAPropertyAnimation {
 
     @Generated
     @Selector("animationWithKeyPath:")
-    public static native CABasicAnimation animationWithKeyPath(String path);
+    public static native CABasicAnimation animationWithKeyPath(@Nullable String path);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -109,10 +114,11 @@ public class CABasicAnimation extends CAPropertyAnimation {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("defaultValueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultValueForKey(String key);
+    public static native Object defaultValueForKey(@NotNull String key);
 
     @Generated
     @Selector("description")
@@ -140,9 +146,10 @@ public class CABasicAnimation extends CAPropertyAnimation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,6 +177,7 @@ public class CABasicAnimation extends CAPropertyAnimation {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("byValue")
     @MappedReturn(ObjCObjectMapper.class)
@@ -200,6 +208,7 @@ public class CABasicAnimation extends CAPropertyAnimation {
      * - `byValue' non-nil. Interpolates between the layer's current value
      * of the property in the render tree and that plus `byValue'.
      */
+    @Nullable
     @Generated
     @Selector("fromValue")
     @MappedReturn(ObjCObjectMapper.class)
@@ -211,11 +220,11 @@ public class CABasicAnimation extends CAPropertyAnimation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CABasicAnimation initWithCoder(NSCoder coder);
+    public native CABasicAnimation initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("setByValue:")
-    public native void setByValue(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setByValue(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * The objects defining the property values being interpolated between.
@@ -244,20 +253,22 @@ public class CABasicAnimation extends CAPropertyAnimation {
      */
     @Generated
     @Selector("setFromValue:")
-    public native void setFromValue(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setFromValue(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
     @Selector("setToValue:")
-    public native void setToValue(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setToValue(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
+    @Nullable
     @Generated
     @Selector("toValue")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object toValue();
 
+    @NotNull
     @Generated
     @Selector("animationWithSCNAnimation:")
-    public static native CAAnimation animationWithSCNAnimation(SCNAnimation animation);
+    public static native CAAnimation animationWithSCNAnimation(@NotNull SCNAnimation animation);
 
     @Generated
     @Selector("supportsSecureCoding")

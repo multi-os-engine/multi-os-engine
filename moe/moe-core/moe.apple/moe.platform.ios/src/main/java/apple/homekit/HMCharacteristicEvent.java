@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This class represents an event that is evaluated based on the value of a characteristic
@@ -79,22 +81,25 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +134,10 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,6 +168,7 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
     /**
      * The characteristic associated with the event.
      */
+    @NotNull
     @Generated
     @Selector("characteristic")
     public native HMCharacteristic characteristic();
@@ -184,13 +191,14 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
      */
     @Generated
     @Selector("initWithCharacteristic:triggerValue:")
-    public native HMCharacteristicEvent<?> initWithCharacteristicTriggerValue(HMCharacteristic characteristic,
-            @Mapped(ObjCObjectMapper.class) Object triggerValue);
+    public native HMCharacteristicEvent<?> initWithCharacteristicTriggerValue(@NotNull HMCharacteristic characteristic,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object triggerValue);
 
     /**
      * The value of the characteristic that triggers the event.
      * A value of nil corresponds to any change in the value of the characteristic.
      */
+    @Nullable
     @Generated
     @Selector("triggerValue")
     @MappedReturn(ObjCObjectMapper.class)
@@ -214,29 +222,32 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
     @Deprecated
     @Generated
     @Selector("updateTriggerValue:completionHandler:")
-    public native void updateTriggerValueCompletionHandler(@Mapped(ObjCObjectMapper.class) Object triggerValue,
-            @ObjCBlock(name = "call_updateTriggerValueCompletionHandler") Block_updateTriggerValueCompletionHandler completion);
+    public native void updateTriggerValueCompletionHandler(
+            @Nullable @Mapped(ObjCObjectMapper.class) Object triggerValue,
+            @NotNull @ObjCBlock(name = "call_updateTriggerValueCompletionHandler") Block_updateTriggerValueCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateTriggerValueCompletionHandler {
         @Generated
-        void call_updateTriggerValueCompletionHandler(NSError error);
+        void call_updateTriggerValueCompletionHandler(@Nullable NSError error);
     }
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("isSupportedForHome:")
-    public static native boolean isSupportedForHome(HMHome home);
+    public static native boolean isSupportedForHome(@NotNull HMHome home);
 
+    @NotNull
     @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 }

@@ -25,6 +25,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("SceneKit")
@@ -36,15 +38,17 @@ public interface SCNActionable {
      * 
      * Returns an action associated with a specific key.
      */
+    @Nullable
     @Generated
     @Selector("actionForKey:")
-    SCNAction actionForKey(String key);
+    SCNAction actionForKey(@NotNull String key);
 
     /**
      * [@property] actionKeys
      * 
      * Returns an array containing the keys of all actions currently attached to the receiver.
      */
+    @NotNull
     @Generated
     @Selector("actionKeys")
     NSArray<String> actionKeys();
@@ -65,7 +69,7 @@ public interface SCNActionable {
      */
     @Generated
     @Selector("removeActionForKey:")
-    void removeActionForKey(String key);
+    void removeActionForKey(@NotNull String key);
 
     /**
      * removeAllActions
@@ -83,7 +87,7 @@ public interface SCNActionable {
      */
     @Generated
     @Selector("runAction:")
-    void runAction(SCNAction action);
+    void runAction(@NotNull SCNAction action);
 
     /**
      * runAction:completionHandler:
@@ -92,8 +96,8 @@ public interface SCNActionable {
      */
     @Generated
     @Selector("runAction:completionHandler:")
-    void runActionCompletionHandler(SCNAction action,
-            @ObjCBlock(name = "call_runActionCompletionHandler") Block_runActionCompletionHandler block);
+    void runActionCompletionHandler(@NotNull SCNAction action,
+            @Nullable @ObjCBlock(name = "call_runActionCompletionHandler") Block_runActionCompletionHandler block);
 
     /**
      * runAction:forKey:
@@ -102,7 +106,7 @@ public interface SCNActionable {
      */
     @Generated
     @Selector("runAction:forKey:")
-    void runActionForKey(SCNAction action, String key);
+    void runActionForKey(@NotNull SCNAction action, @Nullable String key);
 
     /**
      * runAction:forKey:completionHandler:
@@ -112,8 +116,8 @@ public interface SCNActionable {
      */
     @Generated
     @Selector("runAction:forKey:completionHandler:")
-    void runActionForKeyCompletionHandler(SCNAction action, String key,
-            @ObjCBlock(name = "call_runActionForKeyCompletionHandler") Block_runActionForKeyCompletionHandler block);
+    void runActionForKeyCompletionHandler(@NotNull SCNAction action, @Nullable String key,
+            @Nullable @ObjCBlock(name = "call_runActionForKeyCompletionHandler") Block_runActionForKeyCompletionHandler block);
 
     @Runtime(ObjCRuntime.class)
     @Generated

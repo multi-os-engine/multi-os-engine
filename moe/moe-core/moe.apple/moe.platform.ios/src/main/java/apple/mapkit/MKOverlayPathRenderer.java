@@ -43,6 +43,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 7.0
@@ -77,22 +79,25 @@ public class MKOverlayPathRenderer extends MKOverlayRenderer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +132,10 @@ public class MKOverlayPathRenderer extends MKOverlayRenderer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,14 +165,15 @@ public class MKOverlayPathRenderer extends MKOverlayRenderer {
 
     @Generated
     @Selector("applyFillPropertiesToContext:atZoomScale:")
-    public native void applyFillPropertiesToContextAtZoomScale(CGContextRef context, @NFloat double zoomScale);
+    public native void applyFillPropertiesToContextAtZoomScale(@NotNull CGContextRef context, @NFloat double zoomScale);
 
     /**
      * subclassers may override these
      */
     @Generated
     @Selector("applyStrokePropertiesToContext:atZoomScale:")
-    public native void applyStrokePropertiesToContextAtZoomScale(CGContextRef context, @NFloat double zoomScale);
+    public native void applyStrokePropertiesToContextAtZoomScale(@NotNull CGContextRef context,
+            @NFloat double zoomScale);
 
     /**
      * subclassers should override this to create a path and then set it on
@@ -176,13 +183,14 @@ public class MKOverlayPathRenderer extends MKOverlayRenderer {
     @Selector("createPath")
     public native void createPath();
 
+    @Nullable
     @Generated
     @Selector("fillColor")
     public native UIColor fillColor();
 
     @Generated
     @Selector("fillPath:inContext:")
-    public native void fillPathInContext(CGPathRef path, CGContextRef context);
+    public native void fillPathInContext(@NotNull CGPathRef path, @NotNull CGContextRef context);
 
     @Generated
     @Selector("init")
@@ -190,7 +198,7 @@ public class MKOverlayPathRenderer extends MKOverlayRenderer {
 
     @Generated
     @Selector("initWithOverlay:")
-    public native MKOverlayPathRenderer initWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
+    public native MKOverlayPathRenderer initWithOverlay(@NotNull @Mapped(ObjCObjectMapper.class) MKOverlay overlay);
 
     @Generated
     @Selector("invalidatePath")
@@ -206,6 +214,7 @@ public class MKOverlayPathRenderer extends MKOverlayRenderer {
     /**
      * defaults to nil
      */
+    @Nullable
     @Generated
     @Selector("lineDashPattern")
     public native NSArray<? extends NSNumber> lineDashPattern();
@@ -250,7 +259,7 @@ public class MKOverlayPathRenderer extends MKOverlayRenderer {
 
     @Generated
     @Selector("setFillColor:")
-    public native void setFillColor(UIColor value);
+    public native void setFillColor(@Nullable UIColor value);
 
     /**
      * defaults to kCGLineCapRound
@@ -264,7 +273,7 @@ public class MKOverlayPathRenderer extends MKOverlayRenderer {
      */
     @Generated
     @Selector("setLineDashPattern:")
-    public native void setLineDashPattern(NSArray<? extends NSNumber> value);
+    public native void setLineDashPattern(@Nullable NSArray<? extends NSNumber> value);
 
     /**
      * defaults to 0
@@ -303,15 +312,16 @@ public class MKOverlayPathRenderer extends MKOverlayRenderer {
 
     @Generated
     @Selector("setStrokeColor:")
-    public native void setStrokeColor(UIColor value);
+    public native void setStrokeColor(@Nullable UIColor value);
 
+    @Nullable
     @Generated
     @Selector("strokeColor")
     public native UIColor strokeColor();
 
     @Generated
     @Selector("strokePath:inContext:")
-    public native void strokePathInContext(CGPathRef path, CGContextRef context);
+    public native void strokePathInContext(@NotNull CGPathRef path, @NotNull CGContextRef context);
 
     /**
      * For renderers which support vector drawing, controls whether the overlay is rendered

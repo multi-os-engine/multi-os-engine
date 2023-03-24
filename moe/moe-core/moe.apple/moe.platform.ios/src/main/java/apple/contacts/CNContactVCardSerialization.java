@@ -43,6 +43,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Contact vCard support.
@@ -81,22 +83,25 @@ public class CNContactVCardSerialization extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -112,10 +117,11 @@ public class CNContactVCardSerialization extends NSObject {
      * @param error
      *              An optional outparameter. If the parsing fails, this will be set.
      */
+    @Nullable
     @Generated
     @Selector("contactsWithData:error:")
-    public static native NSArray<? extends CNContact> contactsWithDataError(NSData data,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSArray<? extends CNContact> contactsWithDataError(@NotNull NSData data,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Serialize contacts to data.
@@ -131,10 +137,11 @@ public class CNContactVCardSerialization extends NSObject {
      * @param error
      *                 An optional outparameter. If the serialization fails, this will be set.
      */
+    @Nullable
     @Generated
     @Selector("dataWithContacts:error:")
-    public static native NSData dataWithContactsError(NSArray<? extends CNContact> contacts,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSData dataWithContactsError(@NotNull NSArray<? extends CNContact> contacts,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("debugDescription")
@@ -150,6 +157,7 @@ public class CNContactVCardSerialization extends NSObject {
      * This descriptor must be passed to the fetch request if the returned
      * contacts are to be serialized with dataWithContacts:error:.
      */
+    @NotNull
     @Generated
     @Selector("descriptorForRequiredKeys")
     @MappedReturn(ObjCObjectMapper.class)
@@ -177,9 +185,10 @@ public class CNContactVCardSerialization extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

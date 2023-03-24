@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CKFetchRecordChangesOperation
@@ -90,22 +92,25 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -140,9 +145,10 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -177,6 +183,7 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
      * should be downloaded.
      * Defaults to @c nil.
      */
+    @Nullable
     @Generated
     @Selector("desiredKeys")
     public native NSArray<String> desiredKeys();
@@ -195,6 +202,7 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
      * previousServerChangeToken.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
+    @Nullable
     @Generated
     @Selector("fetchRecordChangesCompletionBlock")
     @ObjCBlock(name = "call_fetchRecordChangesCompletionBlock_ret")
@@ -207,7 +215,7 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     @Generated
     @Selector("initWithRecordZoneID:previousServerChangeToken:")
     public native CKFetchRecordChangesOperation initWithRecordZoneIDPreviousServerChangeToken(
-            CKRecordZoneID recordZoneID, CKServerChangeToken previousServerChangeToken);
+            @NotNull CKRecordZoneID recordZoneID, @Nullable CKServerChangeToken previousServerChangeToken);
 
     /**
      * If true, then the server wasn't able to return all the changes in this response.
@@ -220,6 +228,7 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     @Selector("moreComing")
     public native boolean moreComing();
 
+    @Nullable
     @Generated
     @Selector("previousServerChangeToken")
     public native CKServerChangeToken previousServerChangeToken();
@@ -228,6 +237,7 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
      * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block
      * invocations.
      */
+    @Nullable
     @Generated
     @Selector("recordChangedBlock")
     @ObjCBlock(name = "call_recordChangedBlock_ret")
@@ -237,11 +247,13 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
      * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block
      * invocations.
      */
+    @Nullable
     @Generated
     @Selector("recordWithIDWasDeletedBlock")
     @ObjCBlock(name = "call_recordWithIDWasDeletedBlock_ret")
     public native Block_recordWithIDWasDeletedBlock_ret recordWithIDWasDeletedBlock();
 
+    @Nullable
     @Generated
     @Selector("recordZoneID")
     public native CKRecordZoneID recordZoneID();
@@ -260,7 +272,7 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
      */
     @Generated
     @Selector("setDesiredKeys:")
-    public native void setDesiredKeys(NSArray<String> value);
+    public native void setDesiredKeys(@Nullable NSArray<String> value);
 
     /**
      * This block is called when the operation completes.
@@ -279,11 +291,11 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     @Generated
     @Selector("setFetchRecordChangesCompletionBlock:")
     public native void setFetchRecordChangesCompletionBlock(
-            @ObjCBlock(name = "call_setFetchRecordChangesCompletionBlock") Block_setFetchRecordChangesCompletionBlock value);
+            @Nullable @ObjCBlock(name = "call_setFetchRecordChangesCompletionBlock") Block_setFetchRecordChangesCompletionBlock value);
 
     @Generated
     @Selector("setPreviousServerChangeToken:")
-    public native void setPreviousServerChangeToken(CKServerChangeToken value);
+    public native void setPreviousServerChangeToken(@Nullable CKServerChangeToken value);
 
     /**
      * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block
@@ -292,7 +304,7 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     @Generated
     @Selector("setRecordChangedBlock:")
     public native void setRecordChangedBlock(
-            @ObjCBlock(name = "call_setRecordChangedBlock") Block_setRecordChangedBlock value);
+            @Nullable @ObjCBlock(name = "call_setRecordChangedBlock") Block_setRecordChangedBlock value);
 
     /**
      * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block
@@ -301,11 +313,11 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     @Generated
     @Selector("setRecordWithIDWasDeletedBlock:")
     public native void setRecordWithIDWasDeletedBlock(
-            @ObjCBlock(name = "call_setRecordWithIDWasDeletedBlock") Block_setRecordWithIDWasDeletedBlock value);
+            @Nullable @ObjCBlock(name = "call_setRecordWithIDWasDeletedBlock") Block_setRecordWithIDWasDeletedBlock value);
 
     @Generated
     @Selector("setRecordZoneID:")
-    public native void setRecordZoneID(CKRecordZoneID value);
+    public native void setRecordZoneID(@Nullable CKRecordZoneID value);
 
     @Generated
     @Selector("setResultsLimit:")
@@ -315,41 +327,43 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     @Generated
     public interface Block_fetchRecordChangesCompletionBlock_ret {
         @Generated
-        void call_fetchRecordChangesCompletionBlock_ret(CKServerChangeToken arg0, NSData arg1, NSError arg2);
+        void call_fetchRecordChangesCompletionBlock_ret(@Nullable CKServerChangeToken arg0, @Nullable NSData arg1,
+                @Nullable NSError arg2);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_recordChangedBlock_ret {
         @Generated
-        void call_recordChangedBlock_ret(CKRecord arg0);
+        void call_recordChangedBlock_ret(@NotNull CKRecord arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_recordWithIDWasDeletedBlock_ret {
         @Generated
-        void call_recordWithIDWasDeletedBlock_ret(CKRecordID arg0);
+        void call_recordWithIDWasDeletedBlock_ret(@NotNull CKRecordID arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setFetchRecordChangesCompletionBlock {
         @Generated
-        void call_setFetchRecordChangesCompletionBlock(CKServerChangeToken arg0, NSData arg1, NSError arg2);
+        void call_setFetchRecordChangesCompletionBlock(@Nullable CKServerChangeToken arg0, @Nullable NSData arg1,
+                @Nullable NSError arg2);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setRecordChangedBlock {
         @Generated
-        void call_setRecordChangedBlock(CKRecord arg0);
+        void call_setRecordChangedBlock(@NotNull CKRecord arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setRecordWithIDWasDeletedBlock {
         @Generated
-        void call_setRecordWithIDWasDeletedBlock(CKRecordID arg0);
+        void call_setRecordWithIDWasDeletedBlock(@NotNull CKRecordID arg0);
     }
 }

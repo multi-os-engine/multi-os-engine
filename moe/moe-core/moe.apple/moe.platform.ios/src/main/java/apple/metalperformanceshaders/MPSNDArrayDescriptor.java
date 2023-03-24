@@ -26,6 +26,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNDArrayDescriptor
@@ -66,22 +68,25 @@ public class MPSNDArrayDescriptor extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,7 +129,7 @@ public class MPSNDArrayDescriptor extends NSObject {
     @Generated
     @Selector("descriptorWithDataType:dimensionCount:dimensionSizes:")
     public static native MPSNDArrayDescriptor descriptorWithDataTypeDimensionCountDimensionSizes(int dataType,
-            @NUInt long numberOfDimensions, NUIntPtr dimensionSizes);
+            @NUInt long numberOfDimensions, @NotNull NUIntPtr dimensionSizes);
 
     /**
      * Create an MPSNDArrayDescriptor object for a given size of dimensions.
@@ -173,7 +178,7 @@ public class MPSNDArrayDescriptor extends NSObject {
     @Generated
     @Selector("descriptorWithDataType:shape:")
     public static native MPSNDArrayDescriptor descriptorWithDataTypeShape(int dataType,
-            NSArray<? extends NSNumber> shape);
+            @NotNull NSArray<? extends NSNumber> shape);
 
     @Generated
     @Selector("hash")
@@ -201,9 +206,10 @@ public class MPSNDArrayDescriptor extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The number of elements of type dataType in the indicated dimension.
@@ -245,7 +251,8 @@ public class MPSNDArrayDescriptor extends NSObject {
      */
     @Generated
     @Selector("reshapeWithDimensionCount:dimensionSizes:")
-    public native void reshapeWithDimensionCountDimensionSizes(@NUInt long numberOfDimensions, NUIntPtr dimensionSizes);
+    public native void reshapeWithDimensionCountDimensionSizes(@NUInt long numberOfDimensions,
+            @NotNull NUIntPtr dimensionSizes);
 
     /**
      * Changes dimension sizes and number of dimensions on the current descriptor
@@ -258,7 +265,7 @@ public class MPSNDArrayDescriptor extends NSObject {
      */
     @Generated
     @Selector("reshapeWithShape:")
-    public native void reshapeWithShape(NSArray<? extends NSNumber> shape);
+    public native void reshapeWithShape(@NotNull NSArray<? extends NSNumber> shape);
 
     @Generated
     @Selector("resolveClassMethod:")

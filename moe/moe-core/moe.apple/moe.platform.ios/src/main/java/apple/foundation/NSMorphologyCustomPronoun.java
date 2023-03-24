@@ -22,6 +22,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 15.0
@@ -56,31 +58,35 @@ public class NSMorphologyCustomPronoun extends NSObject implements NSCopying, NS
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -92,7 +98,7 @@ public class NSMorphologyCustomPronoun extends NSObject implements NSCopying, NS
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -105,7 +111,7 @@ public class NSMorphologyCustomPronoun extends NSObject implements NSCopying, NS
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMorphologyCustomPronoun initWithCoder(NSCoder coder);
+    public native NSMorphologyCustomPronoun initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -126,36 +132,42 @@ public class NSMorphologyCustomPronoun extends NSObject implements NSCopying, NS
 
     @Generated
     @Selector("isSupportedForLanguage:")
-    public static native boolean isSupportedForLanguage(String language);
+    public static native boolean isSupportedForLanguage(@NotNull String language);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native NSMorphologyCustomPronoun new_objc();
 
+    @Nullable
     @Generated
     @Selector("objectForm")
     public native String objectForm();
 
+    @Nullable
     @Generated
     @Selector("possessiveAdjectiveForm")
     public native String possessiveAdjectiveForm();
 
+    @Nullable
     @Generated
     @Selector("possessiveForm")
     public native String possessiveForm();
 
+    @Nullable
     @Generated
     @Selector("reflexiveForm")
     public native String reflexiveForm();
 
+    @NotNull
     @Generated
     @Selector("requiredKeysForLanguage:")
-    public static native NSArray<String> requiredKeysForLanguage(String language);
+    public static native NSArray<String> requiredKeysForLanguage(@NotNull String language);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -167,28 +179,29 @@ public class NSMorphologyCustomPronoun extends NSObject implements NSCopying, NS
 
     @Generated
     @Selector("setObjectForm:")
-    public native void setObjectForm(String value);
+    public native void setObjectForm(@Nullable String value);
 
     @Generated
     @Selector("setPossessiveAdjectiveForm:")
-    public native void setPossessiveAdjectiveForm(String value);
+    public native void setPossessiveAdjectiveForm(@Nullable String value);
 
     @Generated
     @Selector("setPossessiveForm:")
-    public native void setPossessiveForm(String value);
+    public native void setPossessiveForm(@Nullable String value);
 
     @Generated
     @Selector("setReflexiveForm:")
-    public native void setReflexiveForm(String value);
+    public native void setReflexiveForm(@Nullable String value);
 
     @Generated
     @Selector("setSubjectForm:")
-    public native void setSubjectForm(String value);
+    public native void setSubjectForm(@Nullable String value);
 
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @Nullable
     @Generated
     @Selector("subjectForm")
     public native String subjectForm();

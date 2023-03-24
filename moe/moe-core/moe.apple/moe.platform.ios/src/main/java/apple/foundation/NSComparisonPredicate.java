@@ -38,6 +38,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Comparison predicates are predicates which do some form of comparison between the results of two expressions and
@@ -76,22 +78,25 @@ public class NSComparisonPredicate extends NSPredicate {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,43 +131,53 @@ public class NSComparisonPredicate extends NSPredicate {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native NSComparisonPredicate new_objc();
 
+    @NotNull
     @Generated
     @Selector("predicateWithBlock:")
     public static native NSPredicate predicateWithBlock(
-            @ObjCBlock(name = "call_predicateWithBlock") NSPredicate.Block_predicateWithBlock block);
+            @NotNull @ObjCBlock(name = "call_predicateWithBlock") NSPredicate.Block_predicateWithBlock block);
 
+    @NotNull
     @Generated
     @Variadic()
     @Selector("predicateWithFormat:")
-    public static native NSPredicate predicateWithFormat(String predicateFormat, Object... varargs);
+    public static native NSPredicate predicateWithFormat(@NotNull String predicateFormat, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("predicateWithFormat:argumentArray:")
-    public static native NSPredicate predicateWithFormatArgumentArray(String predicateFormat, NSArray<?> arguments);
+    public static native NSPredicate predicateWithFormatArgumentArray(@NotNull String predicateFormat,
+            @Nullable NSArray<?> arguments);
 
+    @NotNull
     @Generated
     @Selector("predicateWithFormat:arguments:")
-    public static native NSPredicate predicateWithFormatArguments(String predicateFormat, BytePtr argList);
+    public static native NSPredicate predicateWithFormatArguments(@NotNull String predicateFormat, BytePtr argList);
 
+    @NotNull
     @Generated
     @Selector("predicateWithLeftExpression:rightExpression:customSelector:")
     public static native NSComparisonPredicate predicateWithLeftExpressionRightExpressionCustomSelector(
-            NSExpression lhs, NSExpression rhs, SEL selector);
+            @NotNull NSExpression lhs, @NotNull NSExpression rhs, @NotNull SEL selector);
 
+    @NotNull
     @Generated
     @Selector("predicateWithLeftExpression:rightExpression:modifier:type:options:")
     public static native NSComparisonPredicate predicateWithLeftExpressionRightExpressionModifierTypeOptions(
-            NSExpression lhs, NSExpression rhs, @NUInt long modifier, @NUInt long type, @NUInt long options);
+            @NotNull NSExpression lhs, @NotNull NSExpression rhs, @NUInt long modifier, @NUInt long type,
+            @NUInt long options);
 
+    @NotNull
     @Generated
     @Selector("predicateWithValue:")
     public static native NSPredicate predicateWithValue(boolean value);
@@ -197,6 +212,7 @@ public class NSComparisonPredicate extends NSPredicate {
     @NUInt
     public native long comparisonPredicateModifier();
 
+    @Nullable
     @Generated
     @Selector("customSelector")
     public native SEL customSelector();
@@ -207,18 +223,20 @@ public class NSComparisonPredicate extends NSPredicate {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSComparisonPredicate initWithCoder(NSCoder coder);
+    public native NSComparisonPredicate initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithLeftExpression:rightExpression:customSelector:")
-    public native NSComparisonPredicate initWithLeftExpressionRightExpressionCustomSelector(NSExpression lhs,
-            NSExpression rhs, SEL selector);
+    public native NSComparisonPredicate initWithLeftExpressionRightExpressionCustomSelector(@NotNull NSExpression lhs,
+            @NotNull NSExpression rhs, @NotNull SEL selector);
 
     @Generated
     @Selector("initWithLeftExpression:rightExpression:modifier:type:options:")
-    public native NSComparisonPredicate initWithLeftExpressionRightExpressionModifierTypeOptions(NSExpression lhs,
-            NSExpression rhs, @NUInt long modifier, @NUInt long type, @NUInt long options);
+    public native NSComparisonPredicate initWithLeftExpressionRightExpressionModifierTypeOptions(
+            @NotNull NSExpression lhs, @NotNull NSExpression rhs, @NUInt long modifier, @NUInt long type,
+            @NUInt long options);
 
+    @NotNull
     @Generated
     @Selector("leftExpression")
     public native NSExpression leftExpression();
@@ -233,6 +251,7 @@ public class NSComparisonPredicate extends NSPredicate {
     @NUInt
     public native long predicateOperatorType();
 
+    @NotNull
     @Generated
     @Selector("rightExpression")
     public native NSExpression rightExpression();

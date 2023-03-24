@@ -27,6 +27,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -39,8 +40,8 @@ public interface UIGestureRecognizerDelegate {
     @Generated
     @IsOptional
     @Selector("gestureRecognizer:shouldBeRequiredToFailByGestureRecognizer:")
-    default boolean gestureRecognizerShouldBeRequiredToFailByGestureRecognizer(UIGestureRecognizer gestureRecognizer,
-            UIGestureRecognizer otherGestureRecognizer) {
+    default boolean gestureRecognizerShouldBeRequiredToFailByGestureRecognizer(
+            @NotNull UIGestureRecognizer gestureRecognizer, @NotNull UIGestureRecognizer otherGestureRecognizer) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -51,7 +52,8 @@ public interface UIGestureRecognizerDelegate {
     @Generated
     @IsOptional
     @Selector("gestureRecognizer:shouldReceivePress:")
-    default boolean gestureRecognizerShouldReceivePress(UIGestureRecognizer gestureRecognizer, UIPress press) {
+    default boolean gestureRecognizerShouldReceivePress(@NotNull UIGestureRecognizer gestureRecognizer,
+            @NotNull UIPress press) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -62,7 +64,8 @@ public interface UIGestureRecognizerDelegate {
     @Generated
     @IsOptional
     @Selector("gestureRecognizer:shouldReceiveTouch:")
-    default boolean gestureRecognizerShouldReceiveTouch(UIGestureRecognizer gestureRecognizer, UITouch touch) {
+    default boolean gestureRecognizerShouldReceiveTouch(@NotNull UIGestureRecognizer gestureRecognizer,
+            @NotNull UITouch touch) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,7 +81,7 @@ public interface UIGestureRecognizerDelegate {
     @IsOptional
     @Selector("gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:")
     default boolean gestureRecognizerShouldRecognizeSimultaneouslyWithGestureRecognizer(
-            UIGestureRecognizer gestureRecognizer, UIGestureRecognizer otherGestureRecognizer) {
+            @NotNull UIGestureRecognizer gestureRecognizer, @NotNull UIGestureRecognizer otherGestureRecognizer) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -95,8 +98,8 @@ public interface UIGestureRecognizerDelegate {
     @Generated
     @IsOptional
     @Selector("gestureRecognizer:shouldRequireFailureOfGestureRecognizer:")
-    default boolean gestureRecognizerShouldRequireFailureOfGestureRecognizer(UIGestureRecognizer gestureRecognizer,
-            UIGestureRecognizer otherGestureRecognizer) {
+    default boolean gestureRecognizerShouldRequireFailureOfGestureRecognizer(
+            @NotNull UIGestureRecognizer gestureRecognizer, @NotNull UIGestureRecognizer otherGestureRecognizer) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -107,7 +110,7 @@ public interface UIGestureRecognizerDelegate {
     @Generated
     @IsOptional
     @Selector("gestureRecognizerShouldBegin:")
-    default boolean gestureRecognizerShouldBegin(UIGestureRecognizer gestureRecognizer) {
+    default boolean gestureRecognizerShouldBegin(@NotNull UIGestureRecognizer gestureRecognizer) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -120,7 +123,8 @@ public interface UIGestureRecognizerDelegate {
     @Generated
     @IsOptional
     @Selector("gestureRecognizer:shouldReceiveEvent:")
-    default boolean gestureRecognizerShouldReceiveEvent(UIGestureRecognizer gestureRecognizer, UIEvent event) {
+    default boolean gestureRecognizerShouldReceiveEvent(@NotNull UIGestureRecognizer gestureRecognizer,
+            @NotNull UIEvent event) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

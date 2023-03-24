@@ -38,6 +38,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -72,22 +74,25 @@ public class NSAsynchronousFetchRequest<_ResultType> extends NSPersistentStoreRe
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,9 +127,10 @@ public class NSAsynchronousFetchRequest<_ResultType> extends NSPersistentStoreRe
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -152,6 +158,7 @@ public class NSAsynchronousFetchRequest<_ResultType> extends NSPersistentStoreRe
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("completionBlock")
     @ObjCBlock(name = "call_completionBlock_ret")
@@ -162,6 +169,7 @@ public class NSAsynchronousFetchRequest<_ResultType> extends NSPersistentStoreRe
     @NInt
     public native long estimatedResultCount();
 
+    @NotNull
     @Generated
     @Selector("fetchRequest")
     public native NSFetchRequest<?> fetchRequest();
@@ -172,8 +180,8 @@ public class NSAsynchronousFetchRequest<_ResultType> extends NSPersistentStoreRe
 
     @Generated
     @Selector("initWithFetchRequest:completionBlock:")
-    public native NSAsynchronousFetchRequest<?> initWithFetchRequestCompletionBlock(NSFetchRequest<?> request,
-            @ObjCBlock(name = "call_initWithFetchRequestCompletionBlock") Block_initWithFetchRequestCompletionBlock blk);
+    public native NSAsynchronousFetchRequest<?> initWithFetchRequestCompletionBlock(@NotNull NSFetchRequest<?> request,
+            @Nullable @ObjCBlock(name = "call_initWithFetchRequestCompletionBlock") Block_initWithFetchRequestCompletionBlock blk);
 
     @Generated
     @Selector("setEstimatedResultCount:")
@@ -183,13 +191,13 @@ public class NSAsynchronousFetchRequest<_ResultType> extends NSPersistentStoreRe
     @Generated
     public interface Block_completionBlock_ret {
         @Generated
-        void call_completionBlock_ret(NSAsynchronousFetchResult<?> result);
+        void call_completionBlock_ret(@NotNull NSAsynchronousFetchResult<?> result);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithFetchRequestCompletionBlock {
         @Generated
-        void call_initWithFetchRequestCompletionBlock(NSAsynchronousFetchResult<Object> arg0);
+        void call_initWithFetchRequestCompletionBlock(@NotNull NSAsynchronousFetchResult<Object> arg0);
     }
 }

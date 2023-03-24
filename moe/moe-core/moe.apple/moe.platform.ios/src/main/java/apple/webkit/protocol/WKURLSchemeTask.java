@@ -10,6 +10,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 11.0
@@ -31,7 +32,7 @@ public interface WKURLSchemeTask {
      */
     @Generated
     @Selector("didFailWithError:")
-    void didFailWithError(NSError error);
+    void didFailWithError(@NotNull NSError error);
 
     /**
      * Mark the task as successfully completed.
@@ -61,7 +62,7 @@ public interface WKURLSchemeTask {
      */
     @Generated
     @Selector("didReceiveData:")
-    void didReceiveData(NSData data);
+    void didReceiveData(@NotNull NSData data);
 
     /**
      * Set the current response object for the task.
@@ -76,11 +77,12 @@ public interface WKURLSchemeTask {
      */
     @Generated
     @Selector("didReceiveResponse:")
-    void didReceiveResponse(NSURLResponse response);
+    void didReceiveResponse(@NotNull NSURLResponse response);
 
     /**
      * The request to load for this task.
      */
+    @NotNull
     @Generated
     @Selector("request")
     NSURLRequest request();

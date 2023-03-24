@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Slice layer is used to slice a given source.
@@ -62,22 +64,25 @@ public class MLCSliceLayer extends MLCLayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -95,6 +100,7 @@ public class MLCSliceLayer extends MLCLayer {
      * 
      * A vector of length equal to that of source. The element at index i specifies the end of slice in dimension i.
      */
+    @NotNull
     @Generated
     @Selector("end")
     public native NSArray<? extends NSNumber> end();
@@ -125,9 +131,10 @@ public class MLCSliceLayer extends MLCLayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -154,8 +161,8 @@ public class MLCSliceLayer extends MLCLayer {
      */
     @Generated
     @Selector("sliceLayerWithStart:end:stride:")
-    public static native MLCSliceLayer sliceLayerWithStartEndStride(NSArray<? extends NSNumber> start,
-            NSArray<? extends NSNumber> end, NSArray<? extends NSNumber> stride);
+    public static native MLCSliceLayer sliceLayerWithStartEndStride(@NotNull NSArray<? extends NSNumber> start,
+            @NotNull NSArray<? extends NSNumber> end, @Nullable NSArray<? extends NSNumber> stride);
 
     /**
      * [@property] start
@@ -163,6 +170,7 @@ public class MLCSliceLayer extends MLCLayer {
      * A vector of length equal to that of source. The element at index i specifies the beginning of slice in dimension
      * i.
      */
+    @NotNull
     @Generated
     @Selector("start")
     public native NSArray<? extends NSNumber> start();
@@ -172,6 +180,7 @@ public class MLCSliceLayer extends MLCLayer {
      * 
      * A vector of length equal to that of source. The element at index i specifies the stride of slice in dimension i.
      */
+    @Nullable
     @Generated
     @Selector("stride")
     public native NSArray<? extends NSNumber> stride();
@@ -182,7 +191,7 @@ public class MLCSliceLayer extends MLCLayer {
 
     @Generated
     @Selector("supportsDataType:onDevice:")
-    public static native boolean supportsDataTypeOnDevice(int dataType, MLCDevice device);
+    public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
 
     @Generated
     @Selector("version")

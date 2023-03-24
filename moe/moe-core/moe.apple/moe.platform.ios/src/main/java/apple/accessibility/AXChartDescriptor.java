@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The top-level descriptor object for an accessible chart.
@@ -56,6 +58,7 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
      * For example, in a visual chart, these values might be represented by the size
      * or color of data points.
      */
+    @Nullable
     @Generated
     @Selector("additionalAxes")
     public native NSArray<?> additionalAxes();
@@ -74,28 +77,32 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
      * An attributed version of the title of the chart.
      * When set, this will be used instead of `title`.
      */
+    @Nullable
     @Generated
     @Selector("attributedTitle")
     public native NSAttributedString attributedTitle();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -116,11 +123,12 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
     @ByValue
     public native CGRect contentFrame();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -142,29 +150,31 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("initWithAttributedTitle:summary:xAxisDescriptor:yAxisDescriptor:additionalAxes:series:")
     public native AXChartDescriptor initWithAttributedTitleSummaryXAxisDescriptorYAxisDescriptorAdditionalAxesSeries(
-            NSAttributedString attributedTitle, String summary,
-            @Mapped(ObjCObjectMapper.class) AXDataAxisDescriptor xAxis, AXNumericDataAxisDescriptor yAxis,
-            NSArray<?> additionalAxes, NSArray<? extends AXDataSeriesDescriptor> series);
+            @Nullable NSAttributedString attributedTitle, @Nullable String summary,
+            @NotNull @Mapped(ObjCObjectMapper.class) AXDataAxisDescriptor xAxis,
+            @Nullable AXNumericDataAxisDescriptor yAxis, @Nullable NSArray<?> additionalAxes,
+            @NotNull NSArray<? extends AXDataSeriesDescriptor> series);
 
     @Generated
     @Selector("initWithAttributedTitle:summary:xAxisDescriptor:yAxisDescriptor:series:")
     public native AXChartDescriptor initWithAttributedTitleSummaryXAxisDescriptorYAxisDescriptorSeries(
-            NSAttributedString attributedTitle, String summary,
-            @Mapped(ObjCObjectMapper.class) AXDataAxisDescriptor xAxis, AXNumericDataAxisDescriptor yAxis,
-            NSArray<? extends AXDataSeriesDescriptor> series);
+            @Nullable NSAttributedString attributedTitle, @Nullable String summary,
+            @NotNull @Mapped(ObjCObjectMapper.class) AXDataAxisDescriptor xAxis,
+            @NotNull AXNumericDataAxisDescriptor yAxis, @NotNull NSArray<? extends AXDataSeriesDescriptor> series);
 
     @Generated
     @Selector("initWithTitle:summary:xAxisDescriptor:yAxisDescriptor:additionalAxes:series:")
-    public native AXChartDescriptor initWithTitleSummaryXAxisDescriptorYAxisDescriptorAdditionalAxesSeries(String title,
-            String summary, @Mapped(ObjCObjectMapper.class) AXDataAxisDescriptor xAxis,
-            AXNumericDataAxisDescriptor yAxis, NSArray<?> additionalAxes,
-            NSArray<? extends AXDataSeriesDescriptor> series);
+    public native AXChartDescriptor initWithTitleSummaryXAxisDescriptorYAxisDescriptorAdditionalAxesSeries(
+            @Nullable String title, @Nullable String summary,
+            @NotNull @Mapped(ObjCObjectMapper.class) AXDataAxisDescriptor xAxis,
+            @Nullable AXNumericDataAxisDescriptor yAxis, @Nullable NSArray<?> additionalAxes,
+            @NotNull NSArray<? extends AXDataSeriesDescriptor> series);
 
     @Generated
     @Selector("initWithTitle:summary:xAxisDescriptor:yAxisDescriptor:series:")
-    public native AXChartDescriptor initWithTitleSummaryXAxisDescriptorYAxisDescriptorSeries(String title,
-            String summary, @Mapped(ObjCObjectMapper.class) AXDataAxisDescriptor xAxis,
-            AXNumericDataAxisDescriptor yAxis, NSArray<? extends AXDataSeriesDescriptor> series);
+    public native AXChartDescriptor initWithTitleSummaryXAxisDescriptorYAxisDescriptorSeries(@Nullable String title,
+            @Nullable String summary, @NotNull @Mapped(ObjCObjectMapper.class) AXDataAxisDescriptor xAxis,
+            @Nullable AXNumericDataAxisDescriptor yAxis, @NotNull NSArray<? extends AXDataSeriesDescriptor> series);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -183,9 +193,10 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -203,6 +214,7 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
     /**
      * A set of data series descriptors describing each series in the chart.
      */
+    @NotNull
     @Generated
     @Selector("series")
     public native NSArray<? extends AXDataSeriesDescriptor> series();
@@ -214,7 +226,7 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setAdditionalAxes:")
-    public native void setAdditionalAxes(NSArray<?> value);
+    public native void setAdditionalAxes(@Nullable NSArray<?> value);
 
     /**
      * An attributed version of the title of the chart.
@@ -222,7 +234,7 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setAttributedTitle:")
-    public native void setAttributedTitle(NSAttributedString value);
+    public native void setAttributedTitle(@Nullable NSAttributedString value);
 
     /**
      * The direction of the chart's X axis.
@@ -243,7 +255,7 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setSeries:")
-    public native void setSeries(NSArray<? extends AXDataSeriesDescriptor> value);
+    public native void setSeries(@NotNull NSArray<? extends AXDataSeriesDescriptor> value);
 
     /**
      * A natural language summary of the key message or features of the chart.
@@ -251,14 +263,14 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setSummary:")
-    public native void setSummary(String value);
+    public native void setSummary(@Nullable String value);
 
     /**
      * The title of the chart.
      */
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@Nullable String value);
 
     @Generated
     @Selector("setVersion:")
@@ -269,19 +281,20 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setXAxis:")
-    public native void setXAxis(@Mapped(ObjCObjectMapper.class) AXDataAxisDescriptor value);
+    public native void setXAxis(@NotNull @Mapped(ObjCObjectMapper.class) AXDataAxisDescriptor value);
 
     /**
      * The axis descriptor for the chart's Y axis.
      */
     @Generated
     @Selector("setYAxis:")
-    public native void setYAxis(AXNumericDataAxisDescriptor value);
+    public native void setYAxis(@Nullable AXNumericDataAxisDescriptor value);
 
     /**
      * A natural language summary of the key message or features of the chart.
      * e.g. "The chart shows that fuel efficiency decreases as vehicle weight increases."
      */
+    @Nullable
     @Generated
     @Selector("summary")
     public native String summary();
@@ -293,6 +306,7 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
     /**
      * The title of the chart.
      */
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();
@@ -305,6 +319,7 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
     /**
      * The axis descriptor for the chart's X axis.
      */
+    @NotNull
     @Generated
     @Selector("xAxis")
     @MappedReturn(ObjCObjectMapper.class)
@@ -313,6 +328,7 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
     /**
      * The axis descriptor for the chart's Y axis.
      */
+    @Nullable
     @Generated
     @Selector("yAxis")
     public native AXNumericDataAxisDescriptor yAxis();

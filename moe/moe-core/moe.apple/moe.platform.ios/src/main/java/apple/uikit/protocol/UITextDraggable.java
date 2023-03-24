@@ -11,6 +11,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Defines a text draggable control.
@@ -31,12 +32,13 @@ public interface UITextDraggable extends UITextInput {
 
     @Generated
     @Selector("setTextDragDelegate:")
-    void setTextDragDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextDragDelegate value);
+    void setTextDragDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UITextDragDelegate value);
 
     @Generated
     @Selector("setTextDragOptions:")
     void setTextDragOptions(@NInt long value);
 
+    @Nullable
     @Generated
     @Selector("textDragDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -47,6 +49,7 @@ public interface UITextDraggable extends UITextInput {
      * Use this to explicitly disable drag interactions on system text controls,
      * if desired.
      */
+    @Nullable
     @Generated
     @Selector("textDragInteraction")
     UIDragInteraction textDragInteraction();

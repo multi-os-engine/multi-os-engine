@@ -37,6 +37,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a mutually exclusive group of language options.
@@ -74,22 +76,25 @@ public class MPNowPlayingInfoLanguageOptionGroup extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +129,10 @@ public class MPNowPlayingInfoLanguageOptionGroup extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,6 +170,7 @@ public class MPNowPlayingInfoLanguageOptionGroup extends NSObject {
     /**
      * The default language option, if any, within this group.
      */
+    @Nullable
     @Generated
     @Selector("defaultLanguageOption")
     public native MPNowPlayingInfoLanguageOption defaultLanguageOption();
@@ -175,12 +182,13 @@ public class MPNowPlayingInfoLanguageOptionGroup extends NSObject {
     @Generated
     @Selector("initWithLanguageOptions:defaultLanguageOption:allowEmptySelection:")
     public native MPNowPlayingInfoLanguageOptionGroup initWithLanguageOptionsDefaultLanguageOptionAllowEmptySelection(
-            NSArray<? extends MPNowPlayingInfoLanguageOption> languageOptions,
-            MPNowPlayingInfoLanguageOption defaultLanguageOption, boolean allowEmptySelection);
+            @NotNull NSArray<? extends MPNowPlayingInfoLanguageOption> languageOptions,
+            @Nullable MPNowPlayingInfoLanguageOption defaultLanguageOption, boolean allowEmptySelection);
 
     /**
      * The available language options within this group.
      */
+    @NotNull
     @Generated
     @Selector("languageOptions")
     public native NSArray<? extends MPNowPlayingInfoLanguageOption> languageOptions();

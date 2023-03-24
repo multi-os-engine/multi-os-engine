@@ -43,6 +43,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 2.0
@@ -85,29 +87,32 @@ public class ABNewPersonViewController extends UIViewController {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -139,9 +144,10 @@ public class ABNewPersonViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -173,6 +179,7 @@ public class ABNewPersonViewController extends UIViewController {
      * The Address Book to use. Any contact returned will be from this ABAddressBook instance.
      * If not set, a new ABAddressBook will be created the first time the property is accessed.
      */
+    @Nullable
     @Generated
     @Selector("addressBook")
     public native ConstVoidPtr addressBook();
@@ -182,6 +189,7 @@ public class ABNewPersonViewController extends UIViewController {
      * If displayedPerson has been added to an ABAddressBook, then the addressBook
      * property will be updated to use the displayedPerson's ABAddressBook.
      */
+    @Nullable
     @Generated
     @Selector("displayedPerson")
     public native ConstVoidPtr displayedPerson();
@@ -192,12 +200,14 @@ public class ABNewPersonViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native ABNewPersonViewController initWithCoder(NSCoder coder);
+    public native ABNewPersonViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native ABNewPersonViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native ABNewPersonViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
+    @NotNull
     @Generated
     @Selector("newPersonViewDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -206,6 +216,7 @@ public class ABNewPersonViewController extends UIViewController {
     /**
      * Specify a parentGroup the person should be added to when saved. This is optional.
      */
+    @Nullable
     @Generated
     @Selector("parentGroup")
     public native ConstVoidPtr parentGroup();
@@ -216,7 +227,7 @@ public class ABNewPersonViewController extends UIViewController {
      */
     @Generated
     @Selector("setAddressBook:")
-    public native void setAddressBook(ConstVoidPtr value);
+    public native void setAddressBook(@Nullable ConstVoidPtr value);
 
     /**
      * Specify a displayedPerson to prefill some fields in the card. This is optional.
@@ -225,7 +236,7 @@ public class ABNewPersonViewController extends UIViewController {
      */
     @Generated
     @Selector("setDisplayedPerson:")
-    public native void setDisplayedPerson(ConstVoidPtr value);
+    public native void setDisplayedPerson(@Nullable ConstVoidPtr value);
 
     /**
      * ABNewPersonViewController does not support subclassing in iOS 7.0 and later. A nil instance will be returned.
@@ -233,13 +244,14 @@ public class ABNewPersonViewController extends UIViewController {
     @Generated
     @Selector("setNewPersonViewDelegate:")
     public native void setNewPersonViewDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) ABNewPersonViewControllerDelegate value);
+            @Nullable @Mapped(ObjCObjectMapper.class) ABNewPersonViewControllerDelegate value);
 
     /**
      * ABNewPersonViewController does not support subclassing in iOS 7.0 and later. A nil instance will be returned.
      */
     @Generated
-    public void setNewPersonViewDelegate(@Mapped(ObjCObjectMapper.class) ABNewPersonViewControllerDelegate value) {
+    public void setNewPersonViewDelegate(
+            @Nullable @Mapped(ObjCObjectMapper.class) ABNewPersonViewControllerDelegate value) {
         Object __old = newPersonViewDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -255,5 +267,5 @@ public class ABNewPersonViewController extends UIViewController {
      */
     @Generated
     @Selector("setParentGroup:")
-    public native void setParentGroup(ConstVoidPtr value);
+    public native void setParentGroup(@Nullable ConstVoidPtr value);
 }

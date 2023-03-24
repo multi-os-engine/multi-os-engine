@@ -9,6 +9,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * A class conforming to the WKURLSchemeHandler protocol provides methods for
@@ -30,7 +31,8 @@ public interface WKURLSchemeHandler {
      */
     @Generated
     @Selector("webView:startURLSchemeTask:")
-    void webViewStartURLSchemeTask(WKWebView webView, @Mapped(ObjCObjectMapper.class) WKURLSchemeTask urlSchemeTask);
+    void webViewStartURLSchemeTask(@NotNull WKWebView webView,
+            @NotNull @Mapped(ObjCObjectMapper.class) WKURLSchemeTask urlSchemeTask);
 
     /**
      * Notifies your app to stop handling a URL scheme handler task.
@@ -45,5 +47,6 @@ public interface WKURLSchemeHandler {
      */
     @Generated
     @Selector("webView:stopURLSchemeTask:")
-    void webViewStopURLSchemeTask(WKWebView webView, @Mapped(ObjCObjectMapper.class) WKURLSchemeTask urlSchemeTask);
+    void webViewStopURLSchemeTask(@NotNull WKWebView webView,
+            @NotNull @Mapped(ObjCObjectMapper.class) WKURLSchemeTask urlSchemeTask);
 }

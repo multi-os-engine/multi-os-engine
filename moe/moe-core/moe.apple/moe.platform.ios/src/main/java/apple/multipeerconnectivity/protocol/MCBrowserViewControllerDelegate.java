@@ -26,6 +26,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("MultipeerConnectivity")
@@ -43,7 +45,8 @@ public interface MCBrowserViewControllerDelegate {
     @IsOptional
     @Selector("browserViewController:shouldPresentNearbyPeer:withDiscoveryInfo:")
     default boolean browserViewControllerShouldPresentNearbyPeerWithDiscoveryInfo(
-            MCBrowserViewController browserViewController, MCPeerID peerID, NSDictionary<String, String> info) {
+            @NotNull MCBrowserViewController browserViewController, @NotNull MCPeerID peerID,
+            @Nullable NSDictionary<String, String> info) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -52,12 +55,12 @@ public interface MCBrowserViewControllerDelegate {
      */
     @Generated
     @Selector("browserViewControllerDidFinish:")
-    void browserViewControllerDidFinish(MCBrowserViewController browserViewController);
+    void browserViewControllerDidFinish(@NotNull MCBrowserViewController browserViewController);
 
     /**
      * Notifies delegate that the user taps the cancel button.
      */
     @Generated
     @Selector("browserViewControllerWasCancelled:")
-    void browserViewControllerWasCancelled(MCBrowserViewController browserViewController);
+    void browserViewControllerWasCancelled(@NotNull MCBrowserViewController browserViewController);
 }

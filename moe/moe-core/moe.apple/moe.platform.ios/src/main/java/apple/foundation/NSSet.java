@@ -46,6 +46,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Immutable Set ***************
@@ -81,22 +83,25 @@ public class NSSet<_ObjectType> extends NSObject implements NSCopying, NSMutable
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +132,10 @@ public class NSSet<_ObjectType> extends NSObject implements NSCopying, NSMutable
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -154,26 +160,27 @@ public class NSSet<_ObjectType> extends NSObject implements NSCopying, NSMutable
 
     @Generated
     @Selector("setWithArray:")
-    public static native <_ObjectType> NSSet<?> setWithArray(NSArray<_ObjectType> array);
+    public static native <_ObjectType> NSSet<?> setWithArray(@NotNull NSArray<_ObjectType> array);
 
     @Generated
     @Selector("setWithObject:")
-    public static native <_ObjectType> NSSet<?> setWithObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
+    public static native <_ObjectType> NSSet<?> setWithObject(
+            @NotNull @Mapped(ObjCObjectMapper.class) _ObjectType object);
 
     @Generated
     @Variadic()
     @Selector("setWithObjects:")
-    public static native <_ObjectType> NSSet<?> setWithObjects(@Mapped(ObjCObjectMapper.class) _ObjectType firstObj,
-            Object... varargs);
+    public static native <_ObjectType> NSSet<?> setWithObjects(
+            @NotNull @Mapped(ObjCObjectMapper.class) _ObjectType firstObj, Object... varargs);
 
     @Generated
     @Selector("setWithObjects:count:")
     public static native <_ObjectType> NSSet<?> setWithObjectsCount(
-            @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("setWithSet:")
-    public static native <_ObjectType> NSSet<?> setWithSet(NSSet<_ObjectType> set);
+    public static native <_ObjectType> NSSet<?> setWithSet(@NotNull NSSet<_ObjectType> set);
 
     @Generated
     @Selector("superclass")
@@ -194,13 +201,15 @@ public class NSSet<_ObjectType> extends NSObject implements NSCopying, NSMutable
      */
     @Generated
     @Selector("addObserver:forKeyPath:options:context:")
-    public native void addObserverForKeyPathOptionsContext(NSObject observer, String keyPath, @NUInt long options,
-            VoidPtr context);
+    public native void addObserverForKeyPathOptionsContext(@NotNull NSObject observer, @NotNull String keyPath,
+            @NUInt long options, @Nullable VoidPtr context);
 
+    @NotNull
     @Generated
     @Selector("allObjects")
     public native NSArray<_ObjectType> allObjects();
 
+    @Nullable
     @Generated
     @Selector("anyObject")
     @MappedReturn(ObjCObjectMapper.class)
@@ -208,13 +217,14 @@ public class NSSet<_ObjectType> extends NSObject implements NSCopying, NSMutable
 
     @Generated
     @Selector("containsObject:")
-    public native boolean containsObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
+    public native boolean containsObject(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("count")
@@ -224,20 +234,22 @@ public class NSSet<_ObjectType> extends NSObject implements NSCopying, NSMutable
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")
     @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
+    public native long countByEnumeratingWithStateObjectsCount(@NotNull VoidPtr state,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
+    @NotNull
     @Generated
     @Selector("description")
     public native String description();
 
+    @NotNull
     @Generated
     @Selector("descriptionWithLocale:")
-    public native String descriptionWithLocale(@Mapped(ObjCObjectMapper.class) Object locale);
+    public native String descriptionWithLocale(@Nullable @Mapped(ObjCObjectMapper.class) Object locale);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * API-Since: 4.0
@@ -245,7 +257,7 @@ public class NSSet<_ObjectType> extends NSObject implements NSCopying, NSMutable
     @Generated
     @Selector("enumerateObjectsUsingBlock:")
     public native void enumerateObjectsUsingBlock(
-            @ObjCBlock(name = "call_enumerateObjectsUsingBlock") Block_enumerateObjectsUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateObjectsUsingBlock") Block_enumerateObjectsUsingBlock block);
 
     /**
      * API-Since: 4.0
@@ -253,16 +265,17 @@ public class NSSet<_ObjectType> extends NSObject implements NSCopying, NSMutable
     @Generated
     @Selector("enumerateObjectsWithOptions:usingBlock:")
     public native void enumerateObjectsWithOptionsUsingBlock(@NUInt long opts,
-            @ObjCBlock(name = "call_enumerateObjectsWithOptionsUsingBlock") Block_enumerateObjectsWithOptionsUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateObjectsWithOptionsUsingBlock") Block_enumerateObjectsWithOptionsUsingBlock block);
 
     /**
      * evaluate a predicate against a set of objects and return a filtered set
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("filteredSetUsingPredicate:")
-    public native NSSet<_ObjectType> filteredSetUsingPredicate(NSPredicate predicate);
+    public native NSSet<_ObjectType> filteredSetUsingPredicate(@NotNull NSPredicate predicate);
 
     @Generated
     @Selector("init")
@@ -270,62 +283,66 @@ public class NSSet<_ObjectType> extends NSObject implements NSCopying, NSMutable
 
     @Generated
     @Selector("initWithArray:")
-    public native NSSet<?> initWithArray(NSArray<_ObjectType> array);
+    public native NSSet<?> initWithArray(@NotNull NSArray<_ObjectType> array);
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSSet<?> initWithCoder(NSCoder coder);
+    public native NSSet<?> initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Variadic()
     @Selector("initWithObjects:")
-    public native NSSet<?> initWithObjects(@Mapped(ObjCObjectMapper.class) _ObjectType firstObj, Object... varargs);
+    public native NSSet<?> initWithObjects(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType firstObj,
+            Object... varargs);
 
     @Generated
     @Selector("initWithObjects:count:")
-    public native NSSet<?> initWithObjectsCount(@ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
-            @NUInt long cnt);
+    public native NSSet<?> initWithObjectsCount(
+            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("initWithSet:")
-    public native NSSet<?> initWithSet(NSSet<_ObjectType> set);
+    public native NSSet<?> initWithSet(@NotNull NSSet<_ObjectType> set);
 
     @Generated
     @Selector("initWithSet:copyItems:")
-    public native NSSet<?> initWithSetCopyItems(NSSet<_ObjectType> set, boolean flag);
+    public native NSSet<?> initWithSetCopyItems(@NotNull NSSet<_ObjectType> set, boolean flag);
 
     @Generated
     @Selector("intersectsSet:")
-    public native boolean intersectsSet(NSSet<_ObjectType> otherSet);
+    public native boolean intersectsSet(@NotNull NSSet<_ObjectType> otherSet);
 
     @Generated
     @Selector("isEqualToSet:")
-    public native boolean isEqualToSet(NSSet<_ObjectType> otherSet);
+    public native boolean isEqualToSet(@NotNull NSSet<_ObjectType> otherSet);
 
     @Generated
     @Selector("isSubsetOfSet:")
-    public native boolean isSubsetOfSet(NSSet<_ObjectType> otherSet);
+    public native boolean isSubsetOfSet(@NotNull NSSet<_ObjectType> otherSet);
 
     @Generated
     @Selector("makeObjectsPerformSelector:")
-    public native void makeObjectsPerformSelector(SEL aSelector);
+    public native void makeObjectsPerformSelector(@NotNull SEL aSelector);
 
     @Generated
     @Selector("makeObjectsPerformSelector:withObject:")
-    public native void makeObjectsPerformSelectorWithObject(SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object argument);
+    public native void makeObjectsPerformSelectorWithObject(@NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object argument);
 
+    @Nullable
     @Generated
     @Selector("member:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native _ObjectType member(@Mapped(ObjCObjectMapper.class) _ObjectType object);
+    public native _ObjectType member(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType object);
 
+    @NotNull
     @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("objectEnumerator")
     public native NSEnumerator<_ObjectType> objectEnumerator();
@@ -333,66 +350,74 @@ public class NSSet<_ObjectType> extends NSObject implements NSCopying, NSMutable
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Selector("objectsPassingTest:")
     public native NSSet<_ObjectType> objectsPassingTest(
-            @ObjCBlock(name = "call_objectsPassingTest") Block_objectsPassingTest predicate);
+            @NotNull @ObjCBlock(name = "call_objectsPassingTest") Block_objectsPassingTest predicate);
 
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Selector("objectsWithOptions:passingTest:")
     public native NSSet<_ObjectType> objectsWithOptionsPassingTest(@NUInt long opts,
-            @ObjCBlock(name = "call_objectsWithOptionsPassingTest") Block_objectsWithOptionsPassingTest predicate);
+            @NotNull @ObjCBlock(name = "call_objectsWithOptionsPassingTest") Block_objectsWithOptionsPassingTest predicate);
 
     @Generated
     @Selector("removeObserver:forKeyPath:")
-    public native void removeObserverForKeyPath(NSObject observer, String keyPath);
+    public native void removeObserverForKeyPath(@NotNull NSObject observer, @NotNull String keyPath);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @Selector("removeObserver:forKeyPath:context:")
-    public native void removeObserverForKeyPathContext(NSObject observer, String keyPath, VoidPtr context);
+    public native void removeObserverForKeyPathContext(@NotNull NSObject observer, @NotNull String keyPath,
+            @Nullable VoidPtr context);
 
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @Selector("setByAddingObject:")
-    public native NSSet<_ObjectType> setByAddingObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
+    public native NSSet<_ObjectType> setByAddingObject(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @Selector("setByAddingObjectsFromArray:")
-    public native NSSet<_ObjectType> setByAddingObjectsFromArray(NSArray<_ObjectType> other);
+    public native NSSet<_ObjectType> setByAddingObjectsFromArray(@NotNull NSArray<_ObjectType> other);
 
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @Selector("setByAddingObjectsFromSet:")
-    public native NSSet<_ObjectType> setByAddingObjectsFromSet(NSSet<_ObjectType> other);
+    public native NSSet<_ObjectType> setByAddingObjectsFromSet(@NotNull NSSet<_ObjectType> other);
 
     /**
      * Invoke -setValue:forKey: on each of the receiver's members.
      */
     @Generated
     @Selector("setValue:forKey:")
-    public native void setValueForKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
+    public native void setValueForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object value, @NotNull String key);
 
     /**
      * returns a new array by sorting the objects of the receiver
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Selector("sortedArrayUsingDescriptors:")
-    public native NSArray<_ObjectType> sortedArrayUsingDescriptors(NSArray<? extends NSSortDescriptor> sortDescriptors);
+    public native NSArray<_ObjectType> sortedArrayUsingDescriptors(
+            @NotNull NSArray<? extends NSSortDescriptor> sortDescriptors);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -406,36 +431,40 @@ public class NSSet<_ObjectType> extends NSObject implements NSCopying, NSMutable
      * corresponding to instances of -valueForKey: returning nil (in contrast with -[NSArray(NSKeyValueCoding)
      * valueForKey:], which may put NSNulls in the arrays it returns).
      */
+    @NotNull
     @Generated
     @Selector("valueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object valueForKey(String key);
+    public native Object valueForKey(@NotNull String key);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateObjectsUsingBlock {
         @Generated
-        void call_enumerateObjectsUsingBlock(@Mapped(ObjCObjectMapper.class) Object obj, BoolPtr stop);
+        void call_enumerateObjectsUsingBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object obj,
+                @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateObjectsWithOptionsUsingBlock {
         @Generated
-        void call_enumerateObjectsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object obj, BoolPtr stop);
+        void call_enumerateObjectsWithOptionsUsingBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object obj,
+                @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_objectsPassingTest {
         @Generated
-        boolean call_objectsPassingTest(@Mapped(ObjCObjectMapper.class) Object obj, BoolPtr stop);
+        boolean call_objectsPassingTest(@NotNull @Mapped(ObjCObjectMapper.class) Object obj, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_objectsWithOptionsPassingTest {
         @Generated
-        boolean call_objectsWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object obj, BoolPtr stop);
+        boolean call_objectsWithOptionsPassingTest(@NotNull @Mapped(ObjCObjectMapper.class) Object obj,
+                @NotNull BoolPtr stop);
     }
 }

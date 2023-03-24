@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 2.0
@@ -78,22 +80,25 @@ public class CATextLayer extends CALayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,15 +107,17 @@ public class CATextLayer extends CALayer {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("defaultActionForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native CAAction defaultActionForKey(String event);
+    public static native CAAction defaultActionForKey(@NotNull String event);
 
+    @Nullable
     @Generated
     @Selector("defaultValueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultValueForKey(String key);
+    public static native Object defaultValueForKey(@NotNull String key);
 
     @Generated
     @Selector("description")
@@ -138,9 +145,10 @@ public class CATextLayer extends CALayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Selector("layer")
@@ -148,7 +156,7 @@ public class CATextLayer extends CALayer {
 
     @Generated
     @Selector("needsDisplayForKey:")
-    public static native boolean needsDisplayForKey(String key);
+    public static native boolean needsDisplayForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -181,6 +189,7 @@ public class CATextLayer extends CALayer {
      * bounds. The possible options are `natural', `left', `right',
      * `center' and `justified'. Defaults to `natural'.
      */
+    @NotNull
     @Generated
     @Selector("alignmentMode")
     public native String alignmentMode();
@@ -199,6 +208,7 @@ public class CATextLayer extends CALayer {
      * Defaults to the Helvetica font. Only used when the `string' property
      * is not an NSAttributedString.
      */
+    @Nullable
     @Generated
     @Selector("font")
     public native ConstVoidPtr font();
@@ -217,6 +227,7 @@ public class CATextLayer extends CALayer {
      * Only used when the `string' property is not an NSAttributedString.
      * Animatable (Mac OS X 10.6 and later.)
      */
+    @Nullable
     @Generated
     @Selector("foregroundColor")
     public native CGColorRef foregroundColor();
@@ -227,11 +238,11 @@ public class CATextLayer extends CALayer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CATextLayer initWithCoder(NSCoder coder);
+    public native CATextLayer initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
-    public native CATextLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
+    public native CATextLayer initWithLayer(@NotNull @Mapped(ObjCObjectMapper.class) Object layer);
 
     /**
      * When true the string is wrapped to fit within the layer bounds.
@@ -256,7 +267,7 @@ public class CATextLayer extends CALayer {
      */
     @Generated
     @Selector("setAlignmentMode:")
-    public native void setAlignmentMode(String value);
+    public native void setAlignmentMode(@NotNull String value);
 
     /**
      * Sets allowsFontSubpixelQuantization parameter of CGContextRef
@@ -274,7 +285,7 @@ public class CATextLayer extends CALayer {
      */
     @Generated
     @Selector("setFont:")
-    public native void setFont(ConstVoidPtr value);
+    public native void setFont(@Nullable ConstVoidPtr value);
 
     /**
      * The font size. Defaults to 36. Only used when the `string' property
@@ -291,7 +302,7 @@ public class CATextLayer extends CALayer {
      */
     @Generated
     @Selector("setForegroundColor:")
-    public native void setForegroundColor(CGColorRef value);
+    public native void setForegroundColor(@Nullable CGColorRef value);
 
     /**
      * The text to be rendered, should be either an NSString or an
@@ -299,7 +310,7 @@ public class CATextLayer extends CALayer {
      */
     @Generated
     @Selector("setString:")
-    public native void setString(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setString(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * Describes how the string is truncated to fit within the layer
@@ -308,12 +319,13 @@ public class CATextLayer extends CALayer {
      */
     @Generated
     @Selector("setTruncationMode:")
-    public native void setTruncationMode(String value);
+    public native void setTruncationMode(@NotNull String value);
 
     /**
      * The text to be rendered, should be either an NSString or an
      * NSAttributedString. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("string")
     @MappedReturn(ObjCObjectMapper.class)
@@ -324,6 +336,7 @@ public class CATextLayer extends CALayer {
      * bounds. The possible options are `none', `start', `middle' and
      * `end'. Defaults to `none'.
      */
+    @NotNull
     @Generated
     @Selector("truncationMode")
     public native String truncationMode();
@@ -341,5 +354,5 @@ public class CATextLayer extends CALayer {
     @Generated
     @Selector("cornerCurveExpansionFactor:")
     @NFloat
-    public static native double cornerCurveExpansionFactor(String curve);
+    public static native double cornerCurveExpansionFactor(@NotNull String curve);
 }

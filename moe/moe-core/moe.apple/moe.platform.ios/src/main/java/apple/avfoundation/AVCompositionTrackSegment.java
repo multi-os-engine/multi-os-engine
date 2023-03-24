@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.0
@@ -74,22 +76,25 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,7 +138,8 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
     @Generated
     @Selector("compositionTrackSegmentWithURL:trackID:sourceTimeRange:targetTimeRange:")
     public static native AVCompositionTrackSegment compositionTrackSegmentWithURLTrackIDSourceTimeRangeTargetTimeRange(
-            NSURL URL, int trackID, @ByValue CMTimeRange sourceTimeRange, @ByValue CMTimeRange targetTimeRange);
+            @NotNull NSURL URL, int trackID, @ByValue CMTimeRange sourceTimeRange,
+            @ByValue CMTimeRange targetTimeRange);
 
     @Generated
     @Selector("debugDescription")
@@ -165,9 +171,10 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -237,8 +244,8 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
      */
     @Generated
     @Selector("initWithURL:trackID:sourceTimeRange:targetTimeRange:")
-    public native AVCompositionTrackSegment initWithURLTrackIDSourceTimeRangeTargetTimeRange(NSURL URL, int trackID,
-            @ByValue CMTimeRange sourceTimeRange, @ByValue CMTimeRange targetTimeRange);
+    public native AVCompositionTrackSegment initWithURLTrackIDSourceTimeRangeTargetTimeRange(@NotNull NSURL URL,
+            int trackID, @ByValue CMTimeRange sourceTimeRange, @ByValue CMTimeRange targetTimeRange);
 
     /**
      * indicates whether the AVCompositionTrackSegment is an empty segment;
@@ -259,6 +266,7 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
     /**
      * indicates the container file of the media presented by the AVCompositionTrackSegment
      */
+    @Nullable
     @Generated
     @Selector("sourceURL")
     public native NSURL sourceURL();

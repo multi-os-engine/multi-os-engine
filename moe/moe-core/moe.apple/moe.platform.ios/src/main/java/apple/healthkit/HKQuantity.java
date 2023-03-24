@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * HKQuantity
@@ -80,22 +82,25 @@ public class HKQuantity extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +135,10 @@ public class HKQuantity extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -146,7 +152,7 @@ public class HKQuantity extends NSObject implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("quantityWithUnit:doubleValue:")
-    public static native HKQuantity quantityWithUnitDoubleValue(HKUnit unit, double value);
+    public static native HKQuantity quantityWithUnitDoubleValue(@NotNull HKUnit unit, double value);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -184,13 +190,14 @@ public class HKQuantity extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("compare:")
     @NInt
-    public native long compare(HKQuantity quantity);
+    public native long compare(@NotNull HKQuantity quantity);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * doubleValueForUnit:
@@ -201,11 +208,11 @@ public class HKQuantity extends NSObject implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("doubleValueForUnit:")
-    public native double doubleValueForUnit(HKUnit unit);
+    public native double doubleValueForUnit(@NotNull HKUnit unit);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -213,7 +220,7 @@ public class HKQuantity extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKQuantity initWithCoder(NSCoder coder);
+    public native HKQuantity initWithCoder(@NotNull NSCoder coder);
 
     /**
      * isCompatibleWithUnit:
@@ -222,7 +229,7 @@ public class HKQuantity extends NSObject implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("isCompatibleWithUnit:")
-    public native boolean isCompatibleWithUnit(HKUnit unit);
+    public native boolean isCompatibleWithUnit(@NotNull HKUnit unit);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

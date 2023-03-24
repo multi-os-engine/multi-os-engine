@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Defines the context for a single payment token in a request for multiple payment tokens.
@@ -61,28 +63,32 @@ public class PKPaymentTokenContext extends NSObject {
      * the enclosing payment request. Must be less than or equal to the total amount of the enclosing
      * payment request.
      */
+    @NotNull
     @Generated
     @Selector("amount")
     public native NSDecimalNumber amount();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -100,6 +106,7 @@ public class PKPaymentTokenContext extends NSObject {
      * token for another merchant, try to always use the same external identifier for that merchant,
      * if possible.
      */
+    @NotNull
     @Generated
     @Selector("externalIdentifier")
     public native String externalIdentifier();
@@ -116,8 +123,8 @@ public class PKPaymentTokenContext extends NSObject {
     @Generated
     @Selector("initWithMerchantIdentifier:externalIdentifier:merchantName:merchantDomain:amount:")
     public native PKPaymentTokenContext initWithMerchantIdentifierExternalIdentifierMerchantNameMerchantDomainAmount(
-            String merchantIdentifier, String externalIdentifier, String merchantName, String merchantDomain,
-            NSDecimalNumber amount);
+            @NotNull String merchantIdentifier, @NotNull String externalIdentifier, @NotNull String merchantName,
+            @Nullable String merchantDomain, @NotNull NSDecimalNumber amount);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -136,13 +143,15 @@ public class PKPaymentTokenContext extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The main top-level domain of the merchant this payment token is intended for, optional.
      */
+    @Nullable
     @Generated
     @Selector("merchantDomain")
     public native String merchantDomain();
@@ -151,6 +160,7 @@ public class PKPaymentTokenContext extends NSObject {
      * An identifier for the merchant, as previously agreed with Apple. If you request a payment token
      * for another merchant, use their merchant identifier, if available. Otherwise, use your own.
      */
+    @NotNull
     @Generated
     @Selector("merchantIdentifier")
     public native String merchantIdentifier();
@@ -158,6 +168,7 @@ public class PKPaymentTokenContext extends NSObject {
     /**
      * The name of the merchant this payment token is intended for; will be displayed to the user.
      */
+    @NotNull
     @Generated
     @Selector("merchantName")
     public native String merchantName();
@@ -182,7 +193,7 @@ public class PKPaymentTokenContext extends NSObject {
      */
     @Generated
     @Selector("setAmount:")
-    public native void setAmount(NSDecimalNumber value);
+    public native void setAmount(@NotNull NSDecimalNumber value);
 
     /**
      * An external identifier for the merchant, provided by the developer. If you request a payment
@@ -191,14 +202,14 @@ public class PKPaymentTokenContext extends NSObject {
      */
     @Generated
     @Selector("setExternalIdentifier:")
-    public native void setExternalIdentifier(String value);
+    public native void setExternalIdentifier(@NotNull String value);
 
     /**
      * The main top-level domain of the merchant this payment token is intended for, optional.
      */
     @Generated
     @Selector("setMerchantDomain:")
-    public native void setMerchantDomain(String value);
+    public native void setMerchantDomain(@Nullable String value);
 
     /**
      * An identifier for the merchant, as previously agreed with Apple. If you request a payment token
@@ -206,14 +217,14 @@ public class PKPaymentTokenContext extends NSObject {
      */
     @Generated
     @Selector("setMerchantIdentifier:")
-    public native void setMerchantIdentifier(String value);
+    public native void setMerchantIdentifier(@NotNull String value);
 
     /**
      * The name of the merchant this payment token is intended for; will be displayed to the user.
      */
     @Generated
     @Selector("setMerchantName:")
-    public native void setMerchantName(String value);
+    public native void setMerchantName(@NotNull String value);
 
     @Generated
     @Selector("setVersion:")

@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioPCMBuffer
@@ -70,22 +72,25 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -115,6 +120,7 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
      * If format.interleaved is true, then the pointers will refer into the same chunk of interleaved
      * samples, each offset by 1 frame. "stride" is the number of interleaved channels.
      */
+    @Nullable
     @Generated
     @Selector("floatChannelData")
     @ReferenceInfo(type = Float.class, depth = 2)
@@ -186,16 +192,16 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
      */
     @Generated
     @Selector("initWithPCMFormat:bufferListNoCopy:deallocator:")
-    public native AVAudioPCMBuffer initWithPCMFormatBufferListNoCopyDeallocator(AVAudioFormat format,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList bufferList,
-            @ObjCBlock(name = "call_initWithPCMFormatBufferListNoCopyDeallocator") Block_initWithPCMFormatBufferListNoCopyDeallocator deallocator);
+    public native AVAudioPCMBuffer initWithPCMFormatBufferListNoCopyDeallocator(@NotNull AVAudioFormat format,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList bufferList,
+            @Nullable @ObjCBlock(name = "call_initWithPCMFormatBufferListNoCopyDeallocator") Block_initWithPCMFormatBufferListNoCopyDeallocator deallocator);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithPCMFormatBufferListNoCopyDeallocator {
         @Generated
         void call_initWithPCMFormatBufferListNoCopyDeallocator(
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg0);
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg0);
     }
 
     /**
@@ -217,7 +223,7 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
      */
     @Generated
     @Selector("initWithPCMFormat:frameCapacity:")
-    public native AVAudioPCMBuffer initWithPCMFormatFrameCapacity(AVAudioFormat format, int frameCapacity);
+    public native AVAudioPCMBuffer initWithPCMFormatFrameCapacity(@NotNull AVAudioFormat format, int frameCapacity);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -242,6 +248,7 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
      * 
      * See the discussion of floatChannelData.
      */
+    @Nullable
     @Generated
     @Selector("int16ChannelData")
     @ReferenceInfo(type = Short.class, depth = 2)
@@ -257,6 +264,7 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
      * 
      * See the discussion of floatChannelData.
      */
+    @Nullable
     @Generated
     @Selector("int32ChannelData")
     @ReferenceInfo(type = Integer.class, depth = 2)
@@ -266,9 +274,10 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

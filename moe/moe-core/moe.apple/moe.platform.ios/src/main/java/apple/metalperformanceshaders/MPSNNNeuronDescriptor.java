@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNNeuronDescriptor
@@ -127,7 +129,7 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("b")
@@ -139,18 +141,21 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -161,6 +166,7 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
      * @param neuronType The type of a neuron filter.
      * @return A valid MPSNNNeuronDescriptor object or nil, if failure.
      */
+    @NotNull
     @Generated
     @Selector("cnnNeuronDescriptorWithType:")
     public static native MPSNNNeuronDescriptor cnnNeuronDescriptorWithType(int neuronType);
@@ -172,6 +178,7 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
      * @param a          Parameter "a".
      * @return A valid MPSNNNeuronDescriptor object or nil, if failure.
      */
+    @NotNull
     @Generated
     @Selector("cnnNeuronDescriptorWithType:a:")
     public static native MPSNNNeuronDescriptor cnnNeuronDescriptorWithTypeA(int neuronType, float a);
@@ -184,6 +191,7 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
      * @param b          Parameter "b".
      * @return A valid MPSNNNeuronDescriptor object or nil, if failure.
      */
+    @NotNull
     @Generated
     @Selector("cnnNeuronDescriptorWithType:a:b:")
     public static native MPSNNNeuronDescriptor cnnNeuronDescriptorWithTypeAB(int neuronType, float a, float b);
@@ -197,6 +205,7 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
      * @param c          Parameter "c".
      * @return A valid MPSNNNeuronDescriptor object or nil, if failure.
      */
+    @NotNull
     @Generated
     @Selector("cnnNeuronDescriptorWithType:a:b:c:")
     public static native MPSNNNeuronDescriptor cnnNeuronDescriptorWithTypeABC(int neuronType, float a, float b,
@@ -218,19 +227,23 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
      *               MTLBuffer.
      * @return A valid MPSNNNeuronDescriptor object for a neuron of type MPSCNNNeuronTypePReLU or nil, if failure
      */
+    @NotNull
     @Generated
     @Selector("cnnNeuronPReLUDescriptorWithData:noCopy:")
-    public static native MPSNNNeuronDescriptor cnnNeuronPReLUDescriptorWithDataNoCopy(NSData data, boolean noCopy);
+    public static native MPSNNNeuronDescriptor cnnNeuronPReLUDescriptorWithDataNoCopy(@NotNull NSData data,
+            boolean noCopy);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Note: data is retained, not copied
      */
+    @Nullable
     @Generated
     @Selector("data")
     public native NSData data();
@@ -245,7 +258,7 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -258,7 +271,7 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNNeuronDescriptor initWithCoder(NSCoder coder);
+    public native MPSNNNeuronDescriptor initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -277,9 +290,10 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Selector("neuronType")
@@ -315,7 +329,7 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
      */
     @Generated
     @Selector("setData:")
-    public native void setData(NSData value);
+    public native void setData(@Nullable NSData value);
 
     @Generated
     @Selector("setNeuronType:")

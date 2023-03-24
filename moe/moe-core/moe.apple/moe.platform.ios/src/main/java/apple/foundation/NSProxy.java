@@ -33,6 +33,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -55,7 +57,7 @@ public class NSProxy extends ObjCObject implements NSObject {
 
     @Generated
     @Selector("respondsToSelector:")
-    public static native boolean respondsToSelector_static(SEL aSelector);
+    public static native boolean respondsToSelector_static(@NotNull SEL aSelector);
 
     @Generated
     @Selector("class")
@@ -66,10 +68,12 @@ public class NSProxy extends ObjCObject implements NSObject {
         new RuntimeException().printStackTrace(System.err);
     }
 
+    @NotNull
     @Generated
     @Selector("debugDescription")
     public native String debugDescription();
 
+    @NotNull
     @Generated
     @Selector("description")
     public native String description();
@@ -80,7 +84,7 @@ public class NSProxy extends ObjCObject implements NSObject {
 
     @Generated
     @Selector("forwardInvocation:")
-    public native void forwardInvocation(NSInvocation invocation);
+    public native void forwardInvocation(@NotNull NSInvocation invocation);
 
     @Generated
     @Selector("hash")
@@ -103,9 +107,10 @@ public class NSProxy extends ObjCObject implements NSObject {
     @Selector("isProxy")
     public native boolean isProxy();
 
+    @Nullable
     @Generated
     @Selector("methodSignatureForSelector:")
-    public native NSMethodSignature methodSignatureForSelector(SEL sel);
+    public native NSMethodSignature methodSignatureForSelector(@NotNull SEL sel);
 
     @Generated
     @Selector("performSelector:")

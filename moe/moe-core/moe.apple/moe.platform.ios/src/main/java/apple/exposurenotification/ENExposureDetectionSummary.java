@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * ===========================================================================================================================
@@ -67,28 +69,32 @@ public class ENExposureDetectionSummary extends NSObject {
      * Array index 3: Sum of durations for all exposures when attenuation > Z
      * X, Y, Z come from the attenuationDurationThresholds on the configuration object.
      */
+    @NotNull
     @Generated
     @Selector("attenuationDurations")
     public native NSArray<? extends NSNumber> attenuationDurations();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -98,6 +104,7 @@ public class ENExposureDetectionSummary extends NSObject {
      * 
      * API-Since: 12.5
      */
+    @NotNull
     @Generated
     @Selector("daySummaries")
     public native NSArray<? extends ENExposureDaySummary> daySummaries();
@@ -144,9 +151,10 @@ public class ENExposureDetectionSummary extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Number of diagnosis keys that matched.
@@ -172,6 +180,7 @@ public class ENExposureDetectionSummary extends NSObject {
     /**
      * Metadata associated with the summary.
      */
+    @Nullable
     @Generated
     @Selector("metadata")
     public native NSDictionary<?, ?> metadata();

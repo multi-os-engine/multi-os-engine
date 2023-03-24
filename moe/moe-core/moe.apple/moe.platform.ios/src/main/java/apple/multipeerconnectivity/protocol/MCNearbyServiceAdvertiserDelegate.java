@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("MultipeerConnectivity")
@@ -41,7 +43,8 @@ public interface MCNearbyServiceAdvertiserDelegate {
     @Generated
     @IsOptional
     @Selector("advertiser:didNotStartAdvertisingPeer:")
-    default void advertiserDidNotStartAdvertisingPeer(MCNearbyServiceAdvertiser advertiser, NSError error) {
+    default void advertiserDidNotStartAdvertisingPeer(@NotNull MCNearbyServiceAdvertiser advertiser,
+            @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -51,14 +54,15 @@ public interface MCNearbyServiceAdvertiserDelegate {
      */
     @Generated
     @Selector("advertiser:didReceiveInvitationFromPeer:withContext:invitationHandler:")
-    void advertiserDidReceiveInvitationFromPeerWithContextInvitationHandler(MCNearbyServiceAdvertiser advertiser,
-            MCPeerID peerID, NSData context,
-            @ObjCBlock(name = "call_advertiserDidReceiveInvitationFromPeerWithContextInvitationHandler") Block_advertiserDidReceiveInvitationFromPeerWithContextInvitationHandler invitationHandler);
+    void advertiserDidReceiveInvitationFromPeerWithContextInvitationHandler(
+            @NotNull MCNearbyServiceAdvertiser advertiser, @NotNull MCPeerID peerID, @Nullable NSData context,
+            @NotNull @ObjCBlock(name = "call_advertiserDidReceiveInvitationFromPeerWithContextInvitationHandler") Block_advertiserDidReceiveInvitationFromPeerWithContextInvitationHandler invitationHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_advertiserDidReceiveInvitationFromPeerWithContextInvitationHandler {
         @Generated
-        void call_advertiserDidReceiveInvitationFromPeerWithContextInvitationHandler(boolean accept, MCSession session);
+        void call_advertiserDidReceiveInvitationFromPeerWithContextInvitationHandler(boolean accept,
+                @Nullable MCSession session);
     }
 }

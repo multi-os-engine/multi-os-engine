@@ -24,6 +24,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The input delegate must be notified of changes to the selection and text.
@@ -35,17 +36,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface UITextInputDelegate {
     @Generated
     @Selector("selectionDidChange:")
-    void selectionDidChange(@Mapped(ObjCObjectMapper.class) UITextInput textInput);
+    void selectionDidChange(@Nullable @Mapped(ObjCObjectMapper.class) UITextInput textInput);
 
     @Generated
     @Selector("selectionWillChange:")
-    void selectionWillChange(@Mapped(ObjCObjectMapper.class) UITextInput textInput);
+    void selectionWillChange(@Nullable @Mapped(ObjCObjectMapper.class) UITextInput textInput);
 
     @Generated
     @Selector("textDidChange:")
-    void textDidChange(@Mapped(ObjCObjectMapper.class) UITextInput textInput);
+    void textDidChange(@Nullable @Mapped(ObjCObjectMapper.class) UITextInput textInput);
 
     @Generated
     @Selector("textWillChange:")
-    void textWillChange(@Mapped(ObjCObjectMapper.class) UITextInput textInput);
+    void textWillChange(@Nullable @Mapped(ObjCObjectMapper.class) UITextInput textInput);
 }

@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.0
@@ -74,22 +76,25 @@ public class PKContact extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +129,10 @@ public class PKContact extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -154,6 +160,7 @@ public class PKContact extends NSObject {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("emailAddress")
     public native String emailAddress();
@@ -162,33 +169,36 @@ public class PKContact extends NSObject {
     @Selector("init")
     public native PKContact init();
 
+    @Nullable
     @Generated
     @Selector("name")
     public native NSPersonNameComponents name();
 
+    @Nullable
     @Generated
     @Selector("phoneNumber")
     public native CNPhoneNumber phoneNumber();
 
+    @Nullable
     @Generated
     @Selector("postalAddress")
     public native CNPostalAddress postalAddress();
 
     @Generated
     @Selector("setEmailAddress:")
-    public native void setEmailAddress(String value);
+    public native void setEmailAddress(@Nullable String value);
 
     @Generated
     @Selector("setName:")
-    public native void setName(NSPersonNameComponents value);
+    public native void setName(@Nullable NSPersonNameComponents value);
 
     @Generated
     @Selector("setPhoneNumber:")
-    public native void setPhoneNumber(CNPhoneNumber value);
+    public native void setPhoneNumber(@Nullable CNPhoneNumber value);
 
     @Generated
     @Selector("setPostalAddress:")
-    public native void setPostalAddress(CNPostalAddress value);
+    public native void setPostalAddress(@Nullable CNPostalAddress value);
 
     /**
      * This property is now deprecated. Use the -subLocality property on [PKContact -postalAddress] instead
@@ -200,7 +210,7 @@ public class PKContact extends NSObject {
     @Deprecated
     @Generated
     @Selector("setSupplementarySubLocality:")
-    public native void setSupplementarySubLocality(String value);
+    public native void setSupplementarySubLocality(@Nullable String value);
 
     /**
      * This property is now deprecated. Use the -subLocality property on [PKContact -postalAddress] instead
@@ -209,6 +219,7 @@ public class PKContact extends NSObject {
      * Deprecated-Since: 10.3
      * Deprecated-Message: Use subLocality and subAdministrativeArea on -postalAddress instead
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("supplementarySubLocality")

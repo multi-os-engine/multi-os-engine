@@ -42,6 +42,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AUAudioUnitBus
@@ -80,22 +82,25 @@ public class AUAudioUnitBus extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +135,10 @@ public class AUAudioUnitBus extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -221,6 +227,7 @@ public class AUAudioUnitBus extends NSObject {
      * 
      * Bridged to the v2 property kAudioUnitProperty_StreamFormat.
      */
+    @NotNull
     @Generated
     @Selector("format")
     public native AVAudioFormat format();
@@ -249,8 +256,8 @@ public class AUAudioUnitBus extends NSObject {
      */
     @Generated
     @Selector("initWithFormat:error:")
-    public native AUAudioUnitBus initWithFormatError(AVAudioFormat format,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native AUAudioUnitBus initWithFormatError(@NotNull AVAudioFormat format,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] enabled
@@ -302,6 +309,7 @@ public class AUAudioUnitBus extends NSObject {
      * 
      * A name for the bus. Can be set by host.
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -311,6 +319,7 @@ public class AUAudioUnitBus extends NSObject {
      * 
      * The audio unit that owns the bus.
      */
+    @NotNull
     @Generated
     @Selector("ownerAudioUnit")
     public native AUAudioUnit ownerAudioUnit();
@@ -370,8 +379,8 @@ public class AUAudioUnitBus extends NSObject {
      */
     @Generated
     @Selector("setFormat:error:")
-    public native boolean setFormatError(AVAudioFormat format,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean setFormatError(@NotNull AVAudioFormat format,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] maximumChannelCount
@@ -393,7 +402,7 @@ public class AUAudioUnitBus extends NSObject {
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
     /**
      * [@property] supportedChannelCounts
@@ -406,7 +415,7 @@ public class AUAudioUnitBus extends NSObject {
      */
     @Generated
     @Selector("setSupportedChannelCounts:")
-    public native void setSupportedChannelCounts(NSArray<? extends NSNumber> value);
+    public native void setSupportedChannelCounts(@Nullable NSArray<? extends NSNumber> value);
 
     /**
      * [@property] supportedChannelCounts
@@ -417,6 +426,7 @@ public class AUAudioUnitBus extends NSObject {
      * is supported. If setting supportedChannelCounts makes the current format unsupported, then
      * format will be set to nil. The default value is nil.
      */
+    @Nullable
     @Generated
     @Selector("supportedChannelCounts")
     public native NSArray<? extends NSNumber> supportedChannelCounts();
@@ -426,6 +436,7 @@ public class AUAudioUnitBus extends NSObject {
      * 
      * This is an array of NSNumbers representing AudioChannelLayoutTag.
      */
+    @Nullable
     @Generated
     @Selector("supportedChannelLayoutTags")
     public native NSArray<? extends NSNumber> supportedChannelLayoutTags();

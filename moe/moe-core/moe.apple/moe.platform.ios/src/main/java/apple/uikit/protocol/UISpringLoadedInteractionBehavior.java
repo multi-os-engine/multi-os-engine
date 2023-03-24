@@ -10,6 +10,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * The interaction behavior of a `UISpringLoadedInteraction` object must adopt the `UISpringLoadedInteractionBehavior`
@@ -30,7 +31,7 @@ public interface UISpringLoadedInteractionBehavior {
     @Generated
     @IsOptional
     @Selector("interactionDidFinish:")
-    default void interactionDidFinish(UISpringLoadedInteraction interaction) {
+    default void interactionDidFinish(@NotNull UISpringLoadedInteraction interaction) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -43,6 +44,6 @@ public interface UISpringLoadedInteractionBehavior {
      */
     @Generated
     @Selector("shouldAllowInteraction:withContext:")
-    boolean shouldAllowInteractionWithContext(UISpringLoadedInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionContext context);
+    boolean shouldAllowInteractionWithContext(@NotNull UISpringLoadedInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionContext context);
 }

@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioPlayerNode
@@ -134,22 +136,25 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -162,9 +167,10 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     @Selector("description")
     public static native String description_static();
 
+    @Nullable
     @Generated
     @Selector("destinationForMixer:bus:")
-    public native AVAudioMixingDestination destinationForMixerBus(AVAudioNode mixer, @NUInt long bus);
+    public native AVAudioMixingDestination destinationForMixerBus(@NotNull AVAudioNode mixer, @NUInt long bus);
 
     @Generated
     @Selector("hash")
@@ -201,9 +207,10 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -225,9 +232,10 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      * @return
      *         a node time
      */
+    @Nullable
     @Generated
     @Selector("nodeTimeForPlayerTime:")
-    public native AVAudioTime nodeTimeForPlayerTime(AVAudioTime playerTime);
+    public native AVAudioTime nodeTimeForPlayerTime(@NotNull AVAudioTime playerTime);
 
     @Generated
     @Selector("obstruction")
@@ -299,7 +307,7 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      */
     @Generated
     @Selector("playAtTime:")
-    public native void playAtTime(AVAudioTime when);
+    public native void playAtTime(@Nullable AVAudioTime when);
 
     /**
      * playerTimeForNodeTime:
@@ -316,9 +324,10 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      * @return
      *         a time relative to the player's start time
      */
+    @Nullable
     @Generated
     @Selector("playerTimeForNodeTime:")
-    public native AVAudioTime playerTimeForNodeTime(AVAudioTime nodeTime);
+    public native AVAudioTime playerTimeForNodeTime(@NotNull AVAudioTime nodeTime);
 
     @Generated
     @Selector("pointSourceInHeadMode")
@@ -384,9 +393,9 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      */
     @Generated
     @Selector("scheduleBuffer:atTime:options:completionCallbackType:completionHandler:")
-    public native void scheduleBufferAtTimeOptionsCompletionCallbackTypeCompletionHandler(AVAudioPCMBuffer buffer,
-            AVAudioTime when, @NUInt long options, @NInt long callbackType,
-            @ObjCBlock(name = "call_scheduleBufferAtTimeOptionsCompletionCallbackTypeCompletionHandler") Block_scheduleBufferAtTimeOptionsCompletionCallbackTypeCompletionHandler completionHandler);
+    public native void scheduleBufferAtTimeOptionsCompletionCallbackTypeCompletionHandler(
+            @NotNull AVAudioPCMBuffer buffer, @Nullable AVAudioTime when, @NUInt long options, @NInt long callbackType,
+            @Nullable @ObjCBlock(name = "call_scheduleBufferAtTimeOptionsCompletionCallbackTypeCompletionHandler") Block_scheduleBufferAtTimeOptionsCompletionCallbackTypeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -415,9 +424,9 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      */
     @Generated
     @Selector("scheduleBuffer:atTime:options:completionHandler:")
-    public native void scheduleBufferAtTimeOptionsCompletionHandler(AVAudioPCMBuffer buffer, AVAudioTime when,
-            @NUInt long options,
-            @ObjCBlock(name = "call_scheduleBufferAtTimeOptionsCompletionHandler") Block_scheduleBufferAtTimeOptionsCompletionHandler completionHandler);
+    public native void scheduleBufferAtTimeOptionsCompletionHandler(@NotNull AVAudioPCMBuffer buffer,
+            @Nullable AVAudioTime when, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_scheduleBufferAtTimeOptionsCompletionHandler") Block_scheduleBufferAtTimeOptionsCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -445,9 +454,9 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      */
     @Generated
     @Selector("scheduleBuffer:completionCallbackType:completionHandler:")
-    public native void scheduleBufferCompletionCallbackTypeCompletionHandler(AVAudioPCMBuffer buffer,
+    public native void scheduleBufferCompletionCallbackTypeCompletionHandler(@NotNull AVAudioPCMBuffer buffer,
             @NInt long callbackType,
-            @ObjCBlock(name = "call_scheduleBufferCompletionCallbackTypeCompletionHandler") Block_scheduleBufferCompletionCallbackTypeCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_scheduleBufferCompletionCallbackTypeCompletionHandler") Block_scheduleBufferCompletionCallbackTypeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -474,8 +483,8 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      */
     @Generated
     @Selector("scheduleBuffer:completionHandler:")
-    public native void scheduleBufferCompletionHandler(AVAudioPCMBuffer buffer,
-            @ObjCBlock(name = "call_scheduleBufferCompletionHandler") Block_scheduleBufferCompletionHandler completionHandler);
+    public native void scheduleBufferCompletionHandler(@NotNull AVAudioPCMBuffer buffer,
+            @Nullable @ObjCBlock(name = "call_scheduleBufferCompletionHandler") Block_scheduleBufferCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -503,9 +512,9 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      */
     @Generated
     @Selector("scheduleFile:atTime:completionCallbackType:completionHandler:")
-    public native void scheduleFileAtTimeCompletionCallbackTypeCompletionHandler(AVAudioFile file, AVAudioTime when,
-            @NInt long callbackType,
-            @ObjCBlock(name = "call_scheduleFileAtTimeCompletionCallbackTypeCompletionHandler") Block_scheduleFileAtTimeCompletionCallbackTypeCompletionHandler completionHandler);
+    public native void scheduleFileAtTimeCompletionCallbackTypeCompletionHandler(@NotNull AVAudioFile file,
+            @Nullable AVAudioTime when, @NInt long callbackType,
+            @Nullable @ObjCBlock(name = "call_scheduleFileAtTimeCompletionCallbackTypeCompletionHandler") Block_scheduleFileAtTimeCompletionCallbackTypeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -532,8 +541,8 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      */
     @Generated
     @Selector("scheduleFile:atTime:completionHandler:")
-    public native void scheduleFileAtTimeCompletionHandler(AVAudioFile file, AVAudioTime when,
-            @ObjCBlock(name = "call_scheduleFileAtTimeCompletionHandler") Block_scheduleFileAtTimeCompletionHandler completionHandler);
+    public native void scheduleFileAtTimeCompletionHandler(@NotNull AVAudioFile file, @Nullable AVAudioTime when,
+            @Nullable @ObjCBlock(name = "call_scheduleFileAtTimeCompletionHandler") Block_scheduleFileAtTimeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -566,8 +575,9 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     @Generated
     @Selector("scheduleSegment:startingFrame:frameCount:atTime:completionCallbackType:completionHandler:")
     public native void scheduleSegmentStartingFrameFrameCountAtTimeCompletionCallbackTypeCompletionHandler(
-            AVAudioFile file, long startFrame, int numberFrames, AVAudioTime when, @NInt long callbackType,
-            @ObjCBlock(name = "call_scheduleSegmentStartingFrameFrameCountAtTimeCompletionCallbackTypeCompletionHandler") Block_scheduleSegmentStartingFrameFrameCountAtTimeCompletionCallbackTypeCompletionHandler completionHandler);
+            @NotNull AVAudioFile file, long startFrame, int numberFrames, @Nullable AVAudioTime when,
+            @NInt long callbackType,
+            @Nullable @ObjCBlock(name = "call_scheduleSegmentStartingFrameFrameCountAtTimeCompletionCallbackTypeCompletionHandler") Block_scheduleSegmentStartingFrameFrameCountAtTimeCompletionCallbackTypeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -599,9 +609,9 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      */
     @Generated
     @Selector("scheduleSegment:startingFrame:frameCount:atTime:completionHandler:")
-    public native void scheduleSegmentStartingFrameFrameCountAtTimeCompletionHandler(AVAudioFile file, long startFrame,
-            int numberFrames, AVAudioTime when,
-            @ObjCBlock(name = "call_scheduleSegmentStartingFrameFrameCountAtTimeCompletionHandler") Block_scheduleSegmentStartingFrameFrameCountAtTimeCompletionHandler completionHandler);
+    public native void scheduleSegmentStartingFrameFrameCountAtTimeCompletionHandler(@NotNull AVAudioFile file,
+            long startFrame, int numberFrames, @Nullable AVAudioTime when,
+            @Nullable @ObjCBlock(name = "call_scheduleSegmentStartingFrameFrameCountAtTimeCompletionHandler") Block_scheduleSegmentStartingFrameFrameCountAtTimeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated

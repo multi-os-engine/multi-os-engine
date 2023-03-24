@@ -24,6 +24,8 @@ import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("AddressBookUI")
@@ -37,5 +39,6 @@ public interface ABNewPersonViewControllerDelegate {
      */
     @Generated
     @Selector("newPersonViewController:didCompleteWithNewPerson:")
-    void newPersonViewControllerDidCompleteWithNewPerson(ABNewPersonViewController newPersonView, ConstVoidPtr person);
+    void newPersonViewControllerDidCompleteWithNewPerson(@NotNull ABNewPersonViewController newPersonView,
+            @Nullable ConstVoidPtr person);
 }

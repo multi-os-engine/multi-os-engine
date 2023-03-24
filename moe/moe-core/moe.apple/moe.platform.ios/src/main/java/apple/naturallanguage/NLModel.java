@@ -28,6 +28,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 12.0
@@ -62,22 +64,25 @@ public class NLModel extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -85,6 +90,7 @@ public class NLModel extends NSObject {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Selector("configuration")
     public native NLModelConfiguration configuration();
@@ -123,25 +129,26 @@ public class NLModel extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * API-Since: 12.0
      */
     @Generated
     @Selector("modelWithContentsOfURL:error:")
-    public static native NLModel modelWithContentsOfURLError(NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NLModel modelWithContentsOfURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 12.0
      */
     @Generated
     @Selector("modelWithMLModel:error:")
-    public static native NLModel modelWithMLModelError(MLModel mlModel,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NLModel modelWithMLModelError(@NotNull MLModel mlModel,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Owned
@@ -157,16 +164,18 @@ public class NLModel extends NSObject {
      * 
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("predictedLabelForString:")
-    public native String predictedLabelForString(String string);
+    public native String predictedLabelForString(@NotNull String string);
 
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Selector("predictedLabelsForTokens:")
-    public native NSArray<String> predictedLabelsForTokens(NSArray<String> tokens);
+    public native NSArray<String> predictedLabelsForTokens(@NotNull NSArray<String> tokens);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -192,16 +201,18 @@ public class NLModel extends NSObject {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("predictedLabelHypothesesForString:maximumCount:")
-    public native NSDictionary<String, ? extends NSNumber> predictedLabelHypothesesForStringMaximumCount(String string,
-            @NUInt long maximumCount);
+    public native NSDictionary<String, ? extends NSNumber> predictedLabelHypothesesForStringMaximumCount(
+            @NotNull String string, @NUInt long maximumCount);
 
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("predictedLabelHypothesesForTokens:maximumCount:")
     public native NSArray<? extends NSDictionary<String, ? extends NSNumber>> predictedLabelHypothesesForTokensMaximumCount(
-            NSArray<String> tokens, @NUInt long maximumCount);
+            @NotNull NSArray<String> tokens, @NUInt long maximumCount);
 }

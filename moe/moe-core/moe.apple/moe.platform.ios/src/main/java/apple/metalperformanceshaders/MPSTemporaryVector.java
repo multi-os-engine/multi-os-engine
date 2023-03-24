@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A MPSVector allocated on GPU private memory.
@@ -63,22 +65,25 @@ public class MPSTemporaryVector extends MPSVector {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,18 +107,19 @@ public class MPSTemporaryVector extends MPSVector {
 
     @Generated
     @Selector("initWithBuffer:descriptor:")
-    public native MPSTemporaryVector initWithBufferDescriptor(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
-            MPSVectorDescriptor descriptor);
+    public native MPSTemporaryVector initWithBufferDescriptor(@NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
+            @NotNull MPSVectorDescriptor descriptor);
 
     @Generated
     @Selector("initWithBuffer:offset:descriptor:")
-    public native MPSTemporaryVector initWithBufferOffsetDescriptor(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
-            @NUInt long offset, MPSVectorDescriptor descriptor);
+    public native MPSTemporaryVector initWithBufferOffsetDescriptor(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
+            @NotNull MPSVectorDescriptor descriptor);
 
     @Generated
     @Selector("initWithDevice:descriptor:")
-    public native MPSTemporaryVector initWithDeviceDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            MPSVectorDescriptor descriptor);
+    public native MPSTemporaryVector initWithDeviceDescriptor(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull MPSVectorDescriptor descriptor);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -132,9 +138,10 @@ public class MPSTemporaryVector extends MPSVector {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,8 +164,8 @@ public class MPSTemporaryVector extends MPSVector {
     @Generated
     @Selector("prefetchStorageWithCommandBuffer:descriptorList:")
     public static native void prefetchStorageWithCommandBufferDescriptorList(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            NSArray<? extends MPSVectorDescriptor> descriptorList);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull NSArray<? extends MPSVectorDescriptor> descriptorList);
 
     /**
      * The number of times a temporary vector may be read by a MPSMatrix... kernel
@@ -252,7 +259,8 @@ public class MPSTemporaryVector extends MPSVector {
     @Generated
     @Selector("temporaryVectorWithCommandBuffer:descriptor:")
     public static native MPSTemporaryVector temporaryVectorWithCommandBufferDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSVectorDescriptor descriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSVectorDescriptor descriptor);
 
     @Generated
     @Selector("version")

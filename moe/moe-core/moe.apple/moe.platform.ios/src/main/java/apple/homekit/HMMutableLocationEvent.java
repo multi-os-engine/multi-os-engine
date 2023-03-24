@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This class represents an event that is evaluated based on entry to and/or
@@ -59,22 +61,25 @@ public class HMMutableLocationEvent extends HMLocationEvent {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -98,7 +103,7 @@ public class HMMutableLocationEvent extends HMLocationEvent {
 
     @Generated
     @Selector("initWithRegion:")
-    public native HMMutableLocationEvent initWithRegion(CLRegion region);
+    public native HMMutableLocationEvent initWithRegion(@NotNull CLRegion region);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -119,11 +124,12 @@ public class HMMutableLocationEvent extends HMLocationEvent {
 
     @Generated
     @Selector("isSupportedForHome:")
-    public static native boolean isSupportedForHome(HMHome home);
+    public static native boolean isSupportedForHome(@NotNull HMHome home);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -134,6 +140,7 @@ public class HMMutableLocationEvent extends HMLocationEvent {
      * Region on which events are triggered based on the properties notifyOnEntry and notifyOnExit.
      * This property will be nil when an application is not authorized for location services.
      */
+    @Nullable
     @Generated
     @Selector("region")
     public native CLRegion region();
@@ -152,7 +159,7 @@ public class HMMutableLocationEvent extends HMLocationEvent {
      */
     @Generated
     @Selector("setRegion:")
-    public native void setRegion(CLRegion value);
+    public native void setRegion(@Nullable CLRegion value);
 
     @Generated
     @Selector("setVersion:")

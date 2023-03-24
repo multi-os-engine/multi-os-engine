@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This configuration allows for fine grained control of separator appearance in a UICollectionView List section.
@@ -66,7 +68,7 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Insets to apply to the bottom separator of the item that this configuration is applied to. Defaults to
@@ -87,18 +89,21 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,15 +111,17 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
     /**
      * The color to use for the separators for the item this configuration is applied to.
      */
+    @NotNull
     @Generated
     @Selector("color")
     public native UIColor color();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -126,7 +133,7 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -139,7 +146,7 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIListSeparatorConfiguration initWithCoder(NSCoder coder);
+    public native UIListSeparatorConfiguration initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initializes a list separator configuration with the appropriate defaults for the passed in list appearance.
@@ -167,14 +174,16 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The color to use for the separators for the item this configuration is applied to, when the item is in a multiple
      * selection group.
      */
+    @NotNull
     @Generated
     @Selector("multipleSelectionColor")
     public native UIColor multipleSelectionColor();
@@ -212,7 +221,7 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
      */
     @Generated
     @Selector("setColor:")
-    public native void setColor(UIColor value);
+    public native void setColor(@NotNull UIColor value);
 
     /**
      * The color to use for the separators for the item this configuration is applied to, when the item is in a multiple
@@ -220,7 +229,7 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
      */
     @Generated
     @Selector("setMultipleSelectionColor:")
-    public native void setMultipleSelectionColor(UIColor value);
+    public native void setMultipleSelectionColor(@NotNull UIColor value);
 
     /**
      * Insets to apply to the top separator of the item that this configuration is applied to. Defaults to
@@ -248,7 +257,7 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
      */
     @Generated
     @Selector("setVisualEffect:")
-    public native void setVisualEffect(UIVisualEffect value);
+    public native void setVisualEffect(@Nullable UIVisualEffect value);
 
     @Generated
     @Selector("superclass")
@@ -291,6 +300,7 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("visualEffect")
     public native UIVisualEffect visualEffect();

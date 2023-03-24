@@ -33,6 +33,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.foundation.NSLocale;
 import apple.corefoundation.struct.CGAffineTransform;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVMutableMovie
@@ -85,10 +87,11 @@ public class AVMutableMovie extends AVMovie {
      *                  new AVMutableMovieTrack object. Pass nil for default initialization behavior.
      * @return An AVMutableMovieTrack object
      */
+    @Nullable
     @Generated
     @Selector("addMutableTrackWithMediaType:copySettingsFromTrack:options:")
-    public native AVMutableMovieTrack addMutableTrackWithMediaTypeCopySettingsFromTrackOptions(String mediaType,
-            AVAssetTrack track, NSDictionary<String, ?> options);
+    public native AVMutableMovieTrack addMutableTrackWithMediaTypeCopySettingsFromTrackOptions(
+            @NotNull String mediaType, @Nullable AVAssetTrack track, @Nullable NSDictionary<String, ?> options);
 
     /**
      * addMutableTracksCopyingSettingsFromTracks:options:
@@ -108,10 +111,11 @@ public class AVMutableMovie extends AVMovie {
      * @return An array of AVMutableMovieTrack objects; the index of a track in this array is the same as the index of
      *         its source track in the existingTracks array.
      */
+    @NotNull
     @Generated
     @Selector("addMutableTracksCopyingSettingsFromTracks:options:")
     public native NSArray<? extends AVMutableMovieTrack> addMutableTracksCopyingSettingsFromTracksOptions(
-            NSArray<? extends AVAssetTrack> existingTracks, NSDictionary<String, ?> options);
+            @NotNull NSArray<? extends AVAssetTrack> existingTracks, @Nullable NSDictionary<String, ?> options);
 
     @Generated
     @Owned
@@ -125,26 +129,29 @@ public class AVMutableMovie extends AVMovie {
 
     @Generated
     @Selector("assetWithURL:")
-    public static native AVMutableMovie assetWithURL(NSURL URL);
+    public static native AVMutableMovie assetWithURL(@NotNull NSURL URL);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -161,6 +168,7 @@ public class AVMutableMovie extends AVMovie {
      * The value of this property is an AVMediaDataStorage object that indicates where sample data that is added to a
      * movie should be written, for any track for whose mediaDataStorage property is nil.
      */
+    @Nullable
     @Generated
     @Selector("defaultMediaDataStorage")
     public native AVMediaDataStorage defaultMediaDataStorage();
@@ -180,7 +188,7 @@ public class AVMutableMovie extends AVMovie {
 
     @Generated
     @Selector("initWithData:options:")
-    public native AVMutableMovie initWithDataOptions(NSData data, NSDictionary<String, ?> options);
+    public native AVMutableMovie initWithDataOptions(@NotNull NSData data, @Nullable NSDictionary<String, ?> options);
 
     /**
      * initWithData:options:error:
@@ -206,8 +214,9 @@ public class AVMutableMovie extends AVMovie {
      */
     @Generated
     @Selector("initWithData:options:error:")
-    public native AVMutableMovie initWithDataOptionsError(NSData data, NSDictionary<String, ?> options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native AVMutableMovie initWithDataOptionsError(@NotNull NSData data,
+            @Nullable NSDictionary<String, ?> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * initWithSettingsFromMovie:options:error:
@@ -234,12 +243,13 @@ public class AVMutableMovie extends AVMovie {
      */
     @Generated
     @Selector("initWithSettingsFromMovie:options:error:")
-    public native AVMutableMovie initWithSettingsFromMovieOptionsError(AVMovie movie, NSDictionary<String, ?> options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native AVMutableMovie initWithSettingsFromMovieOptionsError(@Nullable AVMovie movie,
+            @Nullable NSDictionary<String, ?> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("initWithURL:options:")
-    public native AVMutableMovie initWithURLOptions(NSURL URL, NSDictionary<String, ?> options);
+    public native AVMutableMovie initWithURLOptions(@NotNull NSURL URL, @Nullable NSDictionary<String, ?> options);
 
     /**
      * initWithURL:options:error:
@@ -263,8 +273,8 @@ public class AVMutableMovie extends AVMovie {
      */
     @Generated
     @Selector("initWithURL:options:error:")
-    public native AVMutableMovie initWithURLOptionsError(NSURL URL, NSDictionary<String, ?> options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native AVMutableMovie initWithURLOptionsError(@NotNull NSURL URL, @Nullable NSDictionary<String, ?> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * insertEmptyTimeRange:
@@ -314,9 +324,9 @@ public class AVMutableMovie extends AVMovie {
      */
     @Generated
     @Selector("insertTimeRange:ofAsset:atTime:copySampleData:error:")
-    public native boolean insertTimeRangeOfAssetAtTimeCopySampleDataError(@ByValue CMTimeRange timeRange, AVAsset asset,
-            @ByValue CMTime startTime, boolean copySampleData,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean insertTimeRangeOfAssetAtTimeCopySampleDataError(@ByValue CMTimeRange timeRange,
+            @NotNull AVAsset asset, @ByValue CMTime startTime, boolean copySampleData,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -359,9 +369,10 @@ public class AVMutableMovie extends AVMovie {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] metadata
@@ -371,17 +382,20 @@ public class AVMutableMovie extends AVMovie {
      * The value of this property is an array of AVMetadataItem objects representing the collection of metadata stored
      * by the movie.
      */
+    @NotNull
     @Generated
     @Selector("metadata")
     public native NSArray<? extends AVMetadataItem> metadata();
 
+    @NotNull
     @Generated
     @Selector("movieTypes")
     public static native NSArray<String> movieTypes();
 
     @Generated
     @Selector("movieWithData:options:")
-    public static native AVMutableMovie movieWithDataOptions(NSData data, NSDictionary<String, ?> options);
+    public static native AVMutableMovie movieWithDataOptions(@NotNull NSData data,
+            @Nullable NSDictionary<String, ?> options);
 
     /**
      * movieWithData:options:error:
@@ -409,8 +423,9 @@ public class AVMutableMovie extends AVMovie {
      */
     @Generated
     @Selector("movieWithData:options:error:")
-    public static native AVMutableMovie movieWithDataOptionsError(NSData data, NSDictionary<String, ?> options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public static native AVMutableMovie movieWithDataOptionsError(@NotNull NSData data,
+            @Nullable NSDictionary<String, ?> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * movieWithSettingsFromMovie:options:error:
@@ -437,12 +452,14 @@ public class AVMutableMovie extends AVMovie {
      */
     @Generated
     @Selector("movieWithSettingsFromMovie:options:error:")
-    public static native AVMutableMovie movieWithSettingsFromMovieOptionsError(AVMovie movie,
-            NSDictionary<String, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public static native AVMutableMovie movieWithSettingsFromMovieOptionsError(@Nullable AVMovie movie,
+            @Nullable NSDictionary<String, ?> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("movieWithURL:options:")
-    public static native AVMutableMovie movieWithURLOptions(NSURL URL, NSDictionary<String, ?> options);
+    public static native AVMutableMovie movieWithURLOptions(@NotNull NSURL URL,
+            @Nullable NSDictionary<String, ?> options);
 
     /**
      * movieWithURL:options:error:
@@ -466,8 +483,9 @@ public class AVMutableMovie extends AVMovie {
      */
     @Generated
     @Selector("movieWithURL:options:error:")
-    public static native AVMutableMovie movieWithURLOptionsError(NSURL URL, NSDictionary<String, ?> options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public static native AVMutableMovie movieWithURLOptionsError(@NotNull NSURL URL,
+            @Nullable NSDictionary<String, ?> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * mutableTrackCompatibleWithTrack:
@@ -487,9 +505,10 @@ public class AVMutableMovie extends AVMovie {
      *         as the AVAssetTrack can be created via -addMutableTrackWithMediaType:copySettingsFromTrack:options:,
      *         and this new track will be compatible.
      */
+    @Nullable
     @Generated
     @Selector("mutableTrackCompatibleWithTrack:")
-    public native AVMutableMovieTrack mutableTrackCompatibleWithTrack(AVAssetTrack track);
+    public native AVMutableMovieTrack mutableTrackCompatibleWithTrack(@NotNull AVAssetTrack track);
 
     @Generated
     @Owned
@@ -548,7 +567,7 @@ public class AVMutableMovie extends AVMovie {
      */
     @Generated
     @Selector("removeTrack:")
-    public native void removeTrack(AVMovieTrack track);
+    public native void removeTrack(@NotNull AVMovieTrack track);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -582,7 +601,7 @@ public class AVMutableMovie extends AVMovie {
      */
     @Generated
     @Selector("setDefaultMediaDataStorage:")
-    public native void setDefaultMediaDataStorage(AVMediaDataStorage value);
+    public native void setDefaultMediaDataStorage(@Nullable AVMediaDataStorage value);
 
     /**
      * [@property] interleavingPeriod
@@ -605,7 +624,7 @@ public class AVMutableMovie extends AVMovie {
      */
     @Generated
     @Selector("setMetadata:")
-    public native void setMetadata(NSArray<? extends AVMetadataItem> value);
+    public native void setMetadata(@NotNull NSArray<? extends AVMetadataItem> value);
 
     /**
      * [@property] modified
@@ -699,6 +718,7 @@ public class AVMutableMovie extends AVMovie {
      *                The trackID of the requested AVMutableMovieTrack.
      * @return An instance of AVMutableMovieTrack; may be nil if no track of the specified trackID is available.
      */
+    @Nullable
     @Generated
     @Selector("trackWithTrackID:")
     public native AVMutableMovieTrack trackWithTrackID(int trackID);
@@ -711,6 +731,7 @@ public class AVMutableMovie extends AVMovie {
      * The value of this property is an array of tracks the mutable movie contains; the tracks are of type
      * AVMutableMovieTrack.
      */
+    @NotNull
     @Generated
     @Selector("tracks")
     public native NSArray<? extends AVMutableMovieTrack> tracks();
@@ -728,9 +749,11 @@ public class AVMutableMovie extends AVMovie {
      * @return An NSArray of AVMutableMovieTracks; may be empty if no tracks with the specified characteristic are
      *         available.
      */
+    @NotNull
     @Generated
     @Selector("tracksWithMediaCharacteristic:")
-    public native NSArray<? extends AVMutableMovieTrack> tracksWithMediaCharacteristic(String mediaCharacteristic);
+    public native NSArray<? extends AVMutableMovieTrack> tracksWithMediaCharacteristic(
+            @NotNull String mediaCharacteristic);
 
     /**
      * tracksWithMediaType:
@@ -744,9 +767,10 @@ public class AVMutableMovie extends AVMovie {
      *                  are defined in AVMediaFormat.h)
      * @return An NSArray of AVMutableMovieTracks; may be empty if no tracks of the specified media type are available.
      */
+    @NotNull
     @Generated
     @Selector("tracksWithMediaType:")
-    public native NSArray<? extends AVMutableMovieTrack> tracksWithMediaType(String mediaType);
+    public native NSArray<? extends AVMutableMovieTrack> tracksWithMediaType(@NotNull String mediaType);
 
     @Generated
     @Selector("version")
@@ -769,13 +793,13 @@ public class AVMutableMovie extends AVMovie {
     @Generated
     @Selector("loadTrackWithTrackID:completionHandler:")
     public native void loadTrackWithTrackIDCompletionHandler(int trackID,
-            @ObjCBlock(name = "call_loadTrackWithTrackIDCompletionHandler") Block_loadTrackWithTrackIDCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_loadTrackWithTrackIDCompletionHandler") Block_loadTrackWithTrackIDCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadTrackWithTrackIDCompletionHandler {
         @Generated
-        void call_loadTrackWithTrackIDCompletionHandler(AVMutableMovieTrack arg0, NSError arg1);
+        void call_loadTrackWithTrackIDCompletionHandler(@Nullable AVMutableMovieTrack arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -795,15 +819,15 @@ public class AVMutableMovie extends AVMovie {
      */
     @Generated
     @Selector("loadTracksWithMediaCharacteristic:completionHandler:")
-    public native void loadTracksWithMediaCharacteristicCompletionHandler(String mediaCharacteristic,
-            @ObjCBlock(name = "call_loadTracksWithMediaCharacteristicCompletionHandler") Block_loadTracksWithMediaCharacteristicCompletionHandler completionHandler);
+    public native void loadTracksWithMediaCharacteristicCompletionHandler(@NotNull String mediaCharacteristic,
+            @NotNull @ObjCBlock(name = "call_loadTracksWithMediaCharacteristicCompletionHandler") Block_loadTracksWithMediaCharacteristicCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadTracksWithMediaCharacteristicCompletionHandler {
         @Generated
-        void call_loadTracksWithMediaCharacteristicCompletionHandler(NSArray<? extends AVMutableMovieTrack> arg0,
-                NSError arg1);
+        void call_loadTracksWithMediaCharacteristicCompletionHandler(
+                @Nullable NSArray<? extends AVMutableMovieTrack> arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -822,33 +846,38 @@ public class AVMutableMovie extends AVMovie {
      */
     @Generated
     @Selector("loadTracksWithMediaType:completionHandler:")
-    public native void loadTracksWithMediaTypeCompletionHandler(String mediaType,
-            @ObjCBlock(name = "call_loadTracksWithMediaTypeCompletionHandler") Block_loadTracksWithMediaTypeCompletionHandler completionHandler);
+    public native void loadTracksWithMediaTypeCompletionHandler(@NotNull String mediaType,
+            @NotNull @ObjCBlock(name = "call_loadTracksWithMediaTypeCompletionHandler") Block_loadTracksWithMediaTypeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadTracksWithMediaTypeCompletionHandler {
         @Generated
-        void call_loadTracksWithMediaTypeCompletionHandler(NSArray<? extends AVMutableMovieTrack> arg0, NSError arg1);
+        void call_loadTracksWithMediaTypeCompletionHandler(@Nullable NSArray<? extends AVMutableMovieTrack> arg0,
+                @Nullable NSError arg1);
     }
 
+    @NotNull
     @Generated
     @Selector("chapterMetadataGroupsBestMatchingPreferredLanguages:")
     public native NSArray<? extends AVTimedMetadataGroup> chapterMetadataGroupsBestMatchingPreferredLanguages(
-            NSArray<String> preferredLanguages);
+            @NotNull NSArray<String> preferredLanguages);
 
+    @NotNull
     @Generated
     @Selector("chapterMetadataGroupsWithTitleLocale:containingItemsWithCommonKeys:")
     public native NSArray<? extends AVTimedMetadataGroup> chapterMetadataGroupsWithTitleLocaleContainingItemsWithCommonKeys(
-            NSLocale locale, NSArray<String> commonKeys);
+            @NotNull NSLocale locale, @Nullable NSArray<String> commonKeys);
 
+    @Nullable
     @Generated
     @Selector("mediaSelectionGroupForMediaCharacteristic:")
-    public native AVMediaSelectionGroup mediaSelectionGroupForMediaCharacteristic(String mediaCharacteristic);
+    public native AVMediaSelectionGroup mediaSelectionGroupForMediaCharacteristic(@NotNull String mediaCharacteristic);
 
+    @NotNull
     @Generated
     @Selector("metadataForFormat:")
-    public native NSArray<? extends AVMetadataItem> metadataForFormat(String format);
+    public native NSArray<? extends AVMetadataItem> metadataForFormat(@NotNull String format);
 
     @Generated
     @Selector("unusedTrackID")

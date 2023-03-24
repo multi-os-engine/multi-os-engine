@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -58,22 +60,25 @@ public class DCDevice extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -81,6 +86,7 @@ public class DCDevice extends NSObject {
     /**
      * The current device.
      */
+    @NotNull
     @Generated
     @Selector("currentDevice")
     public static native DCDevice currentDevice();
@@ -100,13 +106,13 @@ public class DCDevice extends NSObject {
     @Generated
     @Selector("generateTokenWithCompletionHandler:")
     public native void generateTokenWithCompletionHandler(
-            @ObjCBlock(name = "call_generateTokenWithCompletionHandler") Block_generateTokenWithCompletionHandler completion);
+            @NotNull @ObjCBlock(name = "call_generateTokenWithCompletionHandler") Block_generateTokenWithCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_generateTokenWithCompletionHandler {
         @Generated
-        void call_generateTokenWithCompletionHandler(NSData token, NSError error);
+        void call_generateTokenWithCompletionHandler(@Nullable NSData token, @Nullable NSError error);
     }
 
     @Generated
@@ -142,9 +148,10 @@ public class DCDevice extends NSObject {
     @Selector("isSupported")
     public native boolean isSupported();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

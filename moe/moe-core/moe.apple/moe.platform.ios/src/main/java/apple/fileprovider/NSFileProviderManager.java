@@ -34,6 +34,8 @@ import apple.foundation.NSDictionary;
 import apple.foundation.NSFileProviderService;
 import apple.foundation.NSProgress;
 import org.moe.natj.general.ann.MappedReturn;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The file provider manager allows you to communicate with the file provider
@@ -88,14 +90,14 @@ public class NSFileProviderManager extends NSObject {
      */
     @Generated
     @Selector("addDomain:completionHandler:")
-    public static native void addDomainCompletionHandler(NSFileProviderDomain domain,
-            @ObjCBlock(name = "call_addDomainCompletionHandler") Block_addDomainCompletionHandler completionHandler);
+    public static native void addDomainCompletionHandler(@NotNull NSFileProviderDomain domain,
+            @NotNull @ObjCBlock(name = "call_addDomainCompletionHandler") Block_addDomainCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addDomainCompletionHandler {
         @Generated
-        void call_addDomainCompletionHandler(NSError error);
+        void call_addDomainCompletionHandler(@Nullable NSError error);
     }
 
     @Generated
@@ -110,22 +112,25 @@ public class NSFileProviderManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -137,6 +142,7 @@ public class NSFileProviderManager extends NSObject {
     /**
      * Return the manager responsible for the default domain.
      */
+    @NotNull
     @Generated
     @Selector("defaultManager")
     public static native NSFileProviderManager defaultManager();
@@ -156,6 +162,7 @@ public class NSFileProviderManager extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("documentStorageURL")
     public native NSURL documentStorageURL();
@@ -166,13 +173,14 @@ public class NSFileProviderManager extends NSObject {
     @Generated
     @Selector("getDomainsWithCompletionHandler:")
     public static native void getDomainsWithCompletionHandler(
-            @ObjCBlock(name = "call_getDomainsWithCompletionHandler") Block_getDomainsWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_getDomainsWithCompletionHandler") Block_getDomainsWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getDomainsWithCompletionHandler {
         @Generated
-        void call_getDomainsWithCompletionHandler(NSArray<? extends NSFileProviderDomain> domains, NSError error);
+        void call_getDomainsWithCompletionHandler(@NotNull NSArray<? extends NSFileProviderDomain> domains,
+                @Nullable NSError error);
     }
 
     @Generated
@@ -201,16 +209,17 @@ public class NSFileProviderManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Return the manager for the specified domain.
      */
     @Generated
     @Selector("managerForDomain:")
-    public static native NSFileProviderManager managerForDomain(NSFileProviderDomain domain);
+    public static native NSFileProviderManager managerForDomain(@NotNull NSFileProviderDomain domain);
 
     @Generated
     @Owned
@@ -223,9 +232,10 @@ public class NSFileProviderManager extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("placeholderURLForURL:")
-    public static native NSURL placeholderURLForURL(NSURL url);
+    public static native NSURL placeholderURLForURL(@NotNull NSURL url);
 
     /**
      * The purpose identifier of your file provider extension. A coordination using a
@@ -235,6 +245,7 @@ public class NSFileProviderManager extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("providerIdentifier")
     public native String providerIdentifier();
@@ -247,15 +258,15 @@ public class NSFileProviderManager extends NSObject {
      */
     @Generated
     @Selector("registerURLSessionTask:forItemWithIdentifier:completionHandler:")
-    public native void registerURLSessionTaskForItemWithIdentifierCompletionHandler(NSURLSessionTask task,
-            String identifier,
-            @ObjCBlock(name = "call_registerURLSessionTaskForItemWithIdentifierCompletionHandler") Block_registerURLSessionTaskForItemWithIdentifierCompletionHandler completion);
+    public native void registerURLSessionTaskForItemWithIdentifierCompletionHandler(@NotNull NSURLSessionTask task,
+            @NotNull String identifier,
+            @NotNull @ObjCBlock(name = "call_registerURLSessionTaskForItemWithIdentifierCompletionHandler") Block_registerURLSessionTaskForItemWithIdentifierCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_registerURLSessionTaskForItemWithIdentifierCompletionHandler {
         @Generated
-        void call_registerURLSessionTaskForItemWithIdentifierCompletionHandler(NSError error);
+        void call_registerURLSessionTaskForItemWithIdentifierCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -264,13 +275,13 @@ public class NSFileProviderManager extends NSObject {
     @Generated
     @Selector("removeAllDomainsWithCompletionHandler:")
     public static native void removeAllDomainsWithCompletionHandler(
-            @ObjCBlock(name = "call_removeAllDomainsWithCompletionHandler") Block_removeAllDomainsWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_removeAllDomainsWithCompletionHandler") Block_removeAllDomainsWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeAllDomainsWithCompletionHandler {
         @Generated
-        void call_removeAllDomainsWithCompletionHandler(NSError error);
+        void call_removeAllDomainsWithCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -278,14 +289,14 @@ public class NSFileProviderManager extends NSObject {
      */
     @Generated
     @Selector("removeDomain:completionHandler:")
-    public static native void removeDomainCompletionHandler(NSFileProviderDomain domain,
-            @ObjCBlock(name = "call_removeDomainCompletionHandler") Block_removeDomainCompletionHandler completionHandler);
+    public static native void removeDomainCompletionHandler(@NotNull NSFileProviderDomain domain,
+            @NotNull @ObjCBlock(name = "call_removeDomainCompletionHandler") Block_removeDomainCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeDomainCompletionHandler {
         @Generated
-        void call_removeDomainCompletionHandler(NSError error);
+        void call_removeDomainCompletionHandler(@Nullable NSError error);
     }
 
     @Generated
@@ -333,14 +344,15 @@ public class NSFileProviderManager extends NSObject {
      */
     @Generated
     @Selector("signalEnumeratorForContainerItemIdentifier:completionHandler:")
-    public native void signalEnumeratorForContainerItemIdentifierCompletionHandler(String containerItemIdentifier,
-            @ObjCBlock(name = "call_signalEnumeratorForContainerItemIdentifierCompletionHandler") Block_signalEnumeratorForContainerItemIdentifierCompletionHandler completion);
+    public native void signalEnumeratorForContainerItemIdentifierCompletionHandler(
+            @NotNull String containerItemIdentifier,
+            @NotNull @ObjCBlock(name = "call_signalEnumeratorForContainerItemIdentifierCompletionHandler") Block_signalEnumeratorForContainerItemIdentifierCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_signalEnumeratorForContainerItemIdentifierCompletionHandler {
         @Generated
-        void call_signalEnumeratorForContainerItemIdentifierCompletionHandler(NSError error);
+        void call_signalEnumeratorForContainerItemIdentifierCompletionHandler(@Nullable NSError error);
     }
 
     @Generated
@@ -376,9 +388,9 @@ public class NSFileProviderManager extends NSObject {
      */
     @Generated
     @Selector("writePlaceholderAtURL:withMetadata:error:")
-    public static native boolean writePlaceholderAtURLWithMetadataError(NSURL placeholderURL,
-            @Mapped(ObjCObjectMapper.class) NSFileProviderItem metadata,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native boolean writePlaceholderAtURLWithMetadataError(@NotNull NSURL placeholderURL,
+            @NotNull @Mapped(ObjCObjectMapper.class) NSFileProviderItem metadata,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Returns an enumerator for the set of materialized items.
@@ -397,6 +409,7 @@ public class NSFileProviderManager extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("enumeratorForMaterializedItems")
     @MappedReturn(ObjCObjectMapper.class)
@@ -411,6 +424,7 @@ public class NSFileProviderManager extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("enumeratorForPendingItems")
     @MappedReturn(ObjCObjectMapper.class)
@@ -445,14 +459,14 @@ public class NSFileProviderManager extends NSObject {
      */
     @Generated
     @Selector("evictItemWithIdentifier:completionHandler:")
-    public native void evictItemWithIdentifierCompletionHandler(String itemIdentifier,
-            @ObjCBlock(name = "call_evictItemWithIdentifierCompletionHandler") Block_evictItemWithIdentifierCompletionHandler completionHandler);
+    public native void evictItemWithIdentifierCompletionHandler(@NotNull String itemIdentifier,
+            @NotNull @ObjCBlock(name = "call_evictItemWithIdentifierCompletionHandler") Block_evictItemWithIdentifierCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_evictItemWithIdentifierCompletionHandler {
         @Generated
-        void call_evictItemWithIdentifierCompletionHandler(NSError error);
+        void call_evictItemWithIdentifierCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -467,15 +481,15 @@ public class NSFileProviderManager extends NSObject {
      */
     @Generated
     @Selector("getIdentifierForUserVisibleFileAtURL:completionHandler:")
-    public static native void getIdentifierForUserVisibleFileAtURLCompletionHandler(NSURL url,
-            @ObjCBlock(name = "call_getIdentifierForUserVisibleFileAtURLCompletionHandler") Block_getIdentifierForUserVisibleFileAtURLCompletionHandler completionHandler);
+    public static native void getIdentifierForUserVisibleFileAtURLCompletionHandler(@NotNull NSURL url,
+            @NotNull @ObjCBlock(name = "call_getIdentifierForUserVisibleFileAtURLCompletionHandler") Block_getIdentifierForUserVisibleFileAtURLCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getIdentifierForUserVisibleFileAtURLCompletionHandler {
         @Generated
-        void call_getIdentifierForUserVisibleFileAtURLCompletionHandler(String itemIdentifier, String domainIdentifier,
-                NSError error);
+        void call_getIdentifierForUserVisibleFileAtURLCompletionHandler(@Nullable String itemIdentifier,
+                @Nullable String domainIdentifier, @Nullable NSError error);
     }
 
     /**
@@ -483,14 +497,16 @@ public class NSFileProviderManager extends NSObject {
      */
     @Generated
     @Selector("getServiceWithName:itemIdentifier:completionHandler:")
-    public native void getServiceWithNameItemIdentifierCompletionHandler(String serviceName, String itemIdentifier,
-            @ObjCBlock(name = "call_getServiceWithNameItemIdentifierCompletionHandler") Block_getServiceWithNameItemIdentifierCompletionHandler completionHandler);
+    public native void getServiceWithNameItemIdentifierCompletionHandler(@NotNull String serviceName,
+            @NotNull String itemIdentifier,
+            @NotNull @ObjCBlock(name = "call_getServiceWithNameItemIdentifierCompletionHandler") Block_getServiceWithNameItemIdentifierCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getServiceWithNameItemIdentifierCompletionHandler {
         @Generated
-        void call_getServiceWithNameItemIdentifierCompletionHandler(NSFileProviderService arg0, NSError arg1);
+        void call_getServiceWithNameItemIdentifierCompletionHandler(@Nullable NSFileProviderService arg0,
+                @Nullable NSError arg1);
     }
 
     /**
@@ -524,14 +540,15 @@ public class NSFileProviderManager extends NSObject {
      */
     @Generated
     @Selector("getUserVisibleURLForItemIdentifier:completionHandler:")
-    public native void getUserVisibleURLForItemIdentifierCompletionHandler(String itemIdentifier,
-            @ObjCBlock(name = "call_getUserVisibleURLForItemIdentifierCompletionHandler") Block_getUserVisibleURLForItemIdentifierCompletionHandler completionHandler);
+    public native void getUserVisibleURLForItemIdentifierCompletionHandler(@NotNull String itemIdentifier,
+            @NotNull @ObjCBlock(name = "call_getUserVisibleURLForItemIdentifierCompletionHandler") Block_getUserVisibleURLForItemIdentifierCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getUserVisibleURLForItemIdentifierCompletionHandler {
         @Generated
-        void call_getUserVisibleURLForItemIdentifierCompletionHandler(NSURL userVisibleFile, NSError error);
+        void call_getUserVisibleURLForItemIdentifierCompletionHandler(@Nullable NSURL userVisibleFile,
+                @Nullable NSError error);
     }
 
     /**
@@ -563,9 +580,10 @@ public class NSFileProviderManager extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("globalProgressForKind:")
-    public native NSProgress globalProgressForKind(String kind);
+    public native NSProgress globalProgressForKind(@NotNull String kind);
 
     /**
      * Request the creation of a new domain that will take ownership of on-disk data that
@@ -599,14 +617,15 @@ public class NSFileProviderManager extends NSObject {
      */
     @Generated
     @Selector("importDomain:fromDirectoryAtURL:completionHandler:")
-    public static native void importDomainFromDirectoryAtURLCompletionHandler(NSFileProviderDomain domain, NSURL url,
-            @ObjCBlock(name = "call_importDomainFromDirectoryAtURLCompletionHandler") Block_importDomainFromDirectoryAtURLCompletionHandler completionHandler);
+    public static native void importDomainFromDirectoryAtURLCompletionHandler(@NotNull NSFileProviderDomain domain,
+            @NotNull NSURL url,
+            @NotNull @ObjCBlock(name = "call_importDomainFromDirectoryAtURLCompletionHandler") Block_importDomainFromDirectoryAtURLCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_importDomainFromDirectoryAtURLCompletionHandler {
         @Generated
-        void call_importDomainFromDirectoryAtURLCompletionHandler(NSError error);
+        void call_importDomainFromDirectoryAtURLCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -620,10 +639,11 @@ public class NSFileProviderManager extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("listAvailableTestingOperationsWithError:")
     public native NSArray<?> listAvailableTestingOperationsWithError(
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Notify the system that the itemIdentifiers known by the system are not valid anymore.
@@ -666,14 +686,14 @@ public class NSFileProviderManager extends NSObject {
      */
     @Generated
     @Selector("reimportItemsBelowItemWithIdentifier:completionHandler:")
-    public native void reimportItemsBelowItemWithIdentifierCompletionHandler(String itemIdentifier,
-            @ObjCBlock(name = "call_reimportItemsBelowItemWithIdentifierCompletionHandler") Block_reimportItemsBelowItemWithIdentifierCompletionHandler completionHandler);
+    public native void reimportItemsBelowItemWithIdentifierCompletionHandler(@NotNull String itemIdentifier,
+            @NotNull @ObjCBlock(name = "call_reimportItemsBelowItemWithIdentifierCompletionHandler") Block_reimportItemsBelowItemWithIdentifierCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_reimportItemsBelowItemWithIdentifierCompletionHandler {
         @Generated
-        void call_reimportItemsBelowItemWithIdentifierCompletionHandler(NSError error);
+        void call_reimportItemsBelowItemWithIdentifierCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -683,14 +703,14 @@ public class NSFileProviderManager extends NSObject {
      */
     @Generated
     @Selector("removeDomain:mode:completionHandler:")
-    public static native void removeDomainModeCompletionHandler(NSFileProviderDomain domain, @NInt long mode,
-            @ObjCBlock(name = "call_removeDomainModeCompletionHandler") Block_removeDomainModeCompletionHandler completionHandler);
+    public static native void removeDomainModeCompletionHandler(@NotNull NSFileProviderDomain domain, @NInt long mode,
+            @NotNull @ObjCBlock(name = "call_removeDomainModeCompletionHandler") Block_removeDomainModeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeDomainModeCompletionHandler {
         @Generated
-        void call_removeDomainModeCompletionHandler(NSURL preservedLocation, NSError error);
+        void call_removeDomainModeCompletionHandler(@Nullable NSURL preservedLocation, @Nullable NSError error);
     }
 
     /**
@@ -708,14 +728,14 @@ public class NSFileProviderManager extends NSObject {
     @Generated
     @Selector("requestModificationOfFields:forItemWithIdentifier:options:completionHandler:")
     public native void requestModificationOfFieldsForItemWithIdentifierOptionsCompletionHandler(@NUInt long fields,
-            String itemIdentifier, @NUInt long options,
-            @ObjCBlock(name = "call_requestModificationOfFieldsForItemWithIdentifierOptionsCompletionHandler") Block_requestModificationOfFieldsForItemWithIdentifierOptionsCompletionHandler completionHandler);
+            @NotNull String itemIdentifier, @NUInt long options,
+            @NotNull @ObjCBlock(name = "call_requestModificationOfFieldsForItemWithIdentifierOptionsCompletionHandler") Block_requestModificationOfFieldsForItemWithIdentifierOptionsCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestModificationOfFieldsForItemWithIdentifierOptionsCompletionHandler {
         @Generated
-        void call_requestModificationOfFieldsForItemWithIdentifierOptionsCompletionHandler(NSError error);
+        void call_requestModificationOfFieldsForItemWithIdentifierOptionsCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -726,10 +746,11 @@ public class NSFileProviderManager extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("runTestingOperations:error:")
-    public native NSDictionary<?, ? extends NSError> runTestingOperationsError(NSArray<?> operations,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSDictionary<?, ? extends NSError> runTestingOperationsError(@NotNull NSArray<?> operations,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Calling this method will cause the system to cancel throttling on every item which has been throttled due to the
@@ -745,14 +766,14 @@ public class NSFileProviderManager extends NSObject {
      */
     @Generated
     @Selector("signalErrorResolved:completionHandler:")
-    public native void signalErrorResolvedCompletionHandler(NSError error,
-            @ObjCBlock(name = "call_signalErrorResolvedCompletionHandler") Block_signalErrorResolvedCompletionHandler completionHandler);
+    public native void signalErrorResolvedCompletionHandler(@NotNull NSError error,
+            @NotNull @ObjCBlock(name = "call_signalErrorResolvedCompletionHandler") Block_signalErrorResolvedCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_signalErrorResolvedCompletionHandler {
         @Generated
-        void call_signalErrorResolvedCompletionHandler(NSError error);
+        void call_signalErrorResolvedCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -771,9 +792,11 @@ public class NSFileProviderManager extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("temporaryDirectoryURLWithError:")
-    public native NSURL temporaryDirectoryURLWithError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSURL temporaryDirectoryURLWithError(
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Wait for all changes on disk in the sub-hierarchy of the item to be acknowledged by the extension.
@@ -798,14 +821,14 @@ public class NSFileProviderManager extends NSObject {
      */
     @Generated
     @Selector("waitForChangesOnItemsBelowItemWithIdentifier:completionHandler:")
-    public native void waitForChangesOnItemsBelowItemWithIdentifierCompletionHandler(String itemIdentifier,
-            @ObjCBlock(name = "call_waitForChangesOnItemsBelowItemWithIdentifierCompletionHandler") Block_waitForChangesOnItemsBelowItemWithIdentifierCompletionHandler completionHandler);
+    public native void waitForChangesOnItemsBelowItemWithIdentifierCompletionHandler(@NotNull String itemIdentifier,
+            @NotNull @ObjCBlock(name = "call_waitForChangesOnItemsBelowItemWithIdentifierCompletionHandler") Block_waitForChangesOnItemsBelowItemWithIdentifierCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_waitForChangesOnItemsBelowItemWithIdentifierCompletionHandler {
         @Generated
-        void call_waitForChangesOnItemsBelowItemWithIdentifierCompletionHandler(NSError error);
+        void call_waitForChangesOnItemsBelowItemWithIdentifierCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -823,12 +846,12 @@ public class NSFileProviderManager extends NSObject {
     @Generated
     @Selector("waitForStabilizationWithCompletionHandler:")
     public native void waitForStabilizationWithCompletionHandler(
-            @ObjCBlock(name = "call_waitForStabilizationWithCompletionHandler") Block_waitForStabilizationWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_waitForStabilizationWithCompletionHandler") Block_waitForStabilizationWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_waitForStabilizationWithCompletionHandler {
         @Generated
-        void call_waitForStabilizationWithCompletionHandler(NSError error);
+        void call_waitForStabilizationWithCompletionHandler(@Nullable NSError error);
     }
 }

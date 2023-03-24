@@ -31,6 +31,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.coremidi.struct.MIDIEventList;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioEngine
@@ -107,7 +109,7 @@ public class AVAudioEngine extends NSObject {
      */
     @Generated
     @Selector("attachNode:")
-    public native void attachNode(AVAudioNode node);
+    public native void attachNode(@NotNull AVAudioNode node);
 
     /**
      * [@property] attachedNodes
@@ -116,28 +118,32 @@ public class AVAudioEngine extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("attachedNodes")
     public native NSSet<? extends AVAudioNode> attachedNodes();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -153,7 +159,8 @@ public class AVAudioEngine extends NSObject {
      */
     @Generated
     @Selector("connect:to:format:")
-    public native void connectToFormat(AVAudioNode node1, AVAudioNode node2, AVAudioFormat format);
+    public native void connectToFormat(@NotNull AVAudioNode node1, @NotNull AVAudioNode node2,
+            @Nullable AVAudioFormat format);
 
     /**
      * connect:to:fromBus:toBus:format:
@@ -182,8 +189,8 @@ public class AVAudioEngine extends NSObject {
      */
     @Generated
     @Selector("connect:to:fromBus:toBus:format:")
-    public native void connectToFromBusToBusFormat(AVAudioNode node1, AVAudioNode node2, @NUInt long bus1,
-            @NUInt long bus2, AVAudioFormat format);
+    public native void connectToFromBusToBusFormat(@NotNull AVAudioNode node1, @NotNull AVAudioNode node2,
+            @NUInt long bus1, @NUInt long bus2, @Nullable AVAudioFormat format);
 
     /**
      * connect:toConnectionPoints:fromBus:format:
@@ -226,8 +233,9 @@ public class AVAudioEngine extends NSObject {
      */
     @Generated
     @Selector("connect:toConnectionPoints:fromBus:format:")
-    public native void connectToConnectionPointsFromBusFormat(AVAudioNode sourceNode,
-            NSArray<? extends AVAudioConnectionPoint> destNodes, @NUInt long sourceBus, AVAudioFormat format);
+    public native void connectToConnectionPointsFromBusFormat(@NotNull AVAudioNode sourceNode,
+            @NotNull NSArray<? extends AVAudioConnectionPoint> destNodes, @NUInt long sourceBus,
+            @Nullable AVAudioFormat format);
 
     /**
      * connectMIDI:to:format:block:
@@ -267,16 +275,16 @@ public class AVAudioEngine extends NSObject {
     @Deprecated
     @Generated
     @Selector("connectMIDI:to:format:block:")
-    public native void connectMIDIToFormatBlock(AVAudioNode sourceNode, AVAudioNode destinationNode,
-            AVAudioFormat format,
-            @ObjCBlock(name = "call_connectMIDIToFormatBlock") Block_connectMIDIToFormatBlock tapBlock);
+    public native void connectMIDIToFormatBlock(@NotNull AVAudioNode sourceNode, @NotNull AVAudioNode destinationNode,
+            @Nullable AVAudioFormat format,
+            @Nullable @ObjCBlock(name = "call_connectMIDIToFormatBlock") Block_connectMIDIToFormatBlock tapBlock);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_connectMIDIToFormatBlock {
         @Generated
         int call_connectMIDIToFormatBlock(long eventSampleTime, byte cable, @NInt long length,
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String midiBytes);
+                @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String midiBytes);
     }
 
     /**
@@ -321,16 +329,16 @@ public class AVAudioEngine extends NSObject {
     @Deprecated
     @Generated
     @Selector("connectMIDI:toNodes:format:block:")
-    public native void connectMIDIToNodesFormatBlock(AVAudioNode sourceNode,
-            NSArray<? extends AVAudioNode> destinationNodes, AVAudioFormat format,
-            @ObjCBlock(name = "call_connectMIDIToNodesFormatBlock") Block_connectMIDIToNodesFormatBlock tapBlock);
+    public native void connectMIDIToNodesFormatBlock(@NotNull AVAudioNode sourceNode,
+            @NotNull NSArray<? extends AVAudioNode> destinationNodes, @Nullable AVAudioFormat format,
+            @Nullable @ObjCBlock(name = "call_connectMIDIToNodesFormatBlock") Block_connectMIDIToNodesFormatBlock tapBlock);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_connectMIDIToNodesFormatBlock {
         @Generated
         int call_connectMIDIToNodesFormatBlock(long eventSampleTime, byte cable, @NInt long length,
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String midiBytes);
+                @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String midiBytes);
     }
 
     @Generated
@@ -350,7 +358,7 @@ public class AVAudioEngine extends NSObject {
      */
     @Generated
     @Selector("detachNode:")
-    public native void detachNode(AVAudioNode node);
+    public native void detachNode(@NotNull AVAudioNode node);
 
     /**
      * disableManualRenderingMode
@@ -390,7 +398,7 @@ public class AVAudioEngine extends NSObject {
      */
     @Generated
     @Selector("disconnectMIDI:from:")
-    public native void disconnectMIDIFrom(AVAudioNode sourceNode, AVAudioNode destinationNode);
+    public native void disconnectMIDIFrom(@NotNull AVAudioNode sourceNode, @NotNull AVAudioNode destinationNode);
 
     /**
      * disconnectMIDI:fromNodes:
@@ -409,7 +417,8 @@ public class AVAudioEngine extends NSObject {
      */
     @Generated
     @Selector("disconnectMIDI:fromNodes:")
-    public native void disconnectMIDIFromNodes(AVAudioNode sourceNode, NSArray<? extends AVAudioNode> destinationNodes);
+    public native void disconnectMIDIFromNodes(@NotNull AVAudioNode sourceNode,
+            @NotNull NSArray<? extends AVAudioNode> destinationNodes);
 
     /**
      * disconnectMIDIInput:
@@ -423,7 +432,7 @@ public class AVAudioEngine extends NSObject {
      */
     @Generated
     @Selector("disconnectMIDIInput:")
-    public native void disconnectMIDIInput(AVAudioNode node);
+    public native void disconnectMIDIInput(@NotNull AVAudioNode node);
 
     /**
      * disconnectMIDIOutput:
@@ -437,7 +446,7 @@ public class AVAudioEngine extends NSObject {
      */
     @Generated
     @Selector("disconnectMIDIOutput:")
-    public native void disconnectMIDIOutput(AVAudioNode node);
+    public native void disconnectMIDIOutput(@NotNull AVAudioNode node);
 
     /**
      * disconnectNodeInput:
@@ -451,7 +460,7 @@ public class AVAudioEngine extends NSObject {
      */
     @Generated
     @Selector("disconnectNodeInput:")
-    public native void disconnectNodeInput(AVAudioNode node);
+    public native void disconnectNodeInput(@NotNull AVAudioNode node);
 
     /**
      * disconnectNodeInput:bus:
@@ -465,7 +474,7 @@ public class AVAudioEngine extends NSObject {
      */
     @Generated
     @Selector("disconnectNodeInput:bus:")
-    public native void disconnectNodeInputBus(AVAudioNode node, @NUInt long bus);
+    public native void disconnectNodeInputBus(@NotNull AVAudioNode node, @NUInt long bus);
 
     /**
      * disconnectNodeOutput:
@@ -479,7 +488,7 @@ public class AVAudioEngine extends NSObject {
      */
     @Generated
     @Selector("disconnectNodeOutput:")
-    public native void disconnectNodeOutput(AVAudioNode node);
+    public native void disconnectNodeOutput(@NotNull AVAudioNode node);
 
     /**
      * disconnectNodeOutput:bus:
@@ -493,7 +502,7 @@ public class AVAudioEngine extends NSObject {
      */
     @Generated
     @Selector("disconnectNodeOutput:bus:")
-    public native void disconnectNodeOutputBus(AVAudioNode node, @NUInt long bus);
+    public native void disconnectNodeOutputBus(@NotNull AVAudioNode node, @NUInt long bus);
 
     /**
      * enableManualRenderingMode:format:maximumFrameCount:error:
@@ -544,7 +553,8 @@ public class AVAudioEngine extends NSObject {
     @Generated
     @Selector("enableManualRenderingMode:format:maximumFrameCount:error:")
     public native boolean enableManualRenderingModeFormatMaximumFrameCountError(@NInt long mode,
-            AVAudioFormat pcmFormat, int maximumFrameCount, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @NotNull AVAudioFormat pcmFormat, int maximumFrameCount,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("hash")
@@ -583,9 +593,11 @@ public class AVAudioEngine extends NSObject {
      * 
      *         API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("inputConnectionPointForNode:inputBus:")
-    public native AVAudioConnectionPoint inputConnectionPointForNodeInputBus(AVAudioNode node, @NUInt long bus);
+    public native AVAudioConnectionPoint inputConnectionPointForNodeInputBus(@NotNull AVAudioNode node,
+            @NUInt long bus);
 
     /**
      * [@property] inputNode
@@ -609,6 +621,7 @@ public class AVAudioEngine extends NSObject {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("inputNode")
     public native AVAudioInputNode inputNode();
@@ -677,9 +690,10 @@ public class AVAudioEngine extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] mainMixerNode
@@ -698,6 +712,7 @@ public class AVAudioEngine extends NSObject {
      * By default, the mixer's output format (sample rate and channel count) will track the format
      * of the output node. You may however make the connection explicitly with a different format.
      */
+    @NotNull
     @Generated
     @Selector("mainMixerNode")
     public native AVAudioMixerNode mainMixerNode();
@@ -722,6 +737,7 @@ public class AVAudioEngine extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("manualRenderingBlock")
     @ObjCBlock(name = "call_manualRenderingBlock_ret")
@@ -733,8 +749,8 @@ public class AVAudioEngine extends NSObject {
         @Generated
         @NInt
         long call_manualRenderingBlock_ret(int numberOfFrames,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outBuffer,
-                IntPtr outError);
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outBuffer,
+                @Nullable IntPtr outError);
     }
 
     /**
@@ -747,6 +763,7 @@ public class AVAudioEngine extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("manualRenderingFormat")
     public native AVAudioFormat manualRenderingFormat();
@@ -800,6 +817,7 @@ public class AVAudioEngine extends NSObject {
      * 
      * The MusicSequence previously attached to the engine (if any).
      */
+    @Nullable
     @Generated
     @Selector("musicSequence")
     public native MusicSequence musicSequence();
@@ -828,10 +846,11 @@ public class AVAudioEngine extends NSObject {
      * 
      *         API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("outputConnectionPointsForNode:outputBus:")
-    public native NSArray<? extends AVAudioConnectionPoint> outputConnectionPointsForNodeOutputBus(AVAudioNode node,
-            @NUInt long bus);
+    public native NSArray<? extends AVAudioConnectionPoint> outputConnectionPointsForNodeOutputBus(
+            @NotNull AVAudioNode node, @NUInt long bus);
 
     /**
      * [@property] outputNode
@@ -853,6 +872,7 @@ public class AVAudioEngine extends NSObject {
      * render format of the engine. It can be changed through
      * `enableManualRenderingMode:format:maximumFrameCount:error:`.
      */
+    @NotNull
     @Generated
     @Selector("outputNode")
     public native AVAudioOutputNode outputNode();
@@ -924,8 +944,8 @@ public class AVAudioEngine extends NSObject {
     @Generated
     @Selector("renderOffline:toBuffer:error:")
     @NInt
-    public native long renderOfflineToBufferError(int numberOfFrames, AVAudioPCMBuffer buffer,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native long renderOfflineToBufferError(int numberOfFrames, @NotNull AVAudioPCMBuffer buffer,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * reset
@@ -983,7 +1003,7 @@ public class AVAudioEngine extends NSObject {
      */
     @Generated
     @Selector("setMusicSequence:")
-    public native void setMusicSequence(MusicSequence value);
+    public native void setMusicSequence(@Nullable MusicSequence value);
 
     @Generated
     @Selector("setVersion:")
@@ -1012,7 +1032,7 @@ public class AVAudioEngine extends NSObject {
      */
     @Generated
     @Selector("startAndReturnError:")
-    public native boolean startAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean startAndReturnError(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * stop
@@ -1072,16 +1092,16 @@ public class AVAudioEngine extends NSObject {
      */
     @Generated
     @Selector("connectMIDI:to:format:eventListBlock:")
-    public native void connectMIDIToFormatEventListBlock(AVAudioNode sourceNode, AVAudioNode destinationNode,
-            AVAudioFormat format,
-            @ObjCBlock(name = "call_connectMIDIToFormatEventListBlock") Block_connectMIDIToFormatEventListBlock tapBlock);
+    public native void connectMIDIToFormatEventListBlock(@NotNull AVAudioNode sourceNode,
+            @NotNull AVAudioNode destinationNode, @Nullable AVAudioFormat format,
+            @Nullable @ObjCBlock(name = "call_connectMIDIToFormatEventListBlock") Block_connectMIDIToFormatEventListBlock tapBlock);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_connectMIDIToFormatEventListBlock {
         @Generated
         int call_connectMIDIToFormatEventListBlock(long eventSampleTime, byte cable,
-                @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList eventList);
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList eventList);
     }
 
     /**
@@ -1124,15 +1144,15 @@ public class AVAudioEngine extends NSObject {
      */
     @Generated
     @Selector("connectMIDI:toNodes:format:eventListBlock:")
-    public native void connectMIDIToNodesFormatEventListBlock(AVAudioNode sourceNode,
-            NSArray<? extends AVAudioNode> destinationNodes, AVAudioFormat format,
-            @ObjCBlock(name = "call_connectMIDIToNodesFormatEventListBlock") Block_connectMIDIToNodesFormatEventListBlock tapBlock);
+    public native void connectMIDIToNodesFormatEventListBlock(@NotNull AVAudioNode sourceNode,
+            @NotNull NSArray<? extends AVAudioNode> destinationNodes, @Nullable AVAudioFormat format,
+            @Nullable @ObjCBlock(name = "call_connectMIDIToNodesFormatEventListBlock") Block_connectMIDIToNodesFormatEventListBlock tapBlock);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_connectMIDIToNodesFormatEventListBlock {
         @Generated
         int call_connectMIDIToNodesFormatEventListBlock(long eventSampleTime, byte cable,
-                @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList eventList);
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList eventList);
     }
 }

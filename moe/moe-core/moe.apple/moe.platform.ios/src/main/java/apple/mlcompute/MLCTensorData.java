@@ -23,6 +23,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCTensorData
@@ -61,31 +63,35 @@ public class MLCTensorData extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] bytes
      * 
      * Pointer to memory that contains or will be used for tensor data
      */
+    @NotNull
     @Generated
     @Selector("bytes")
     public native VoidPtr bytes();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,7 +107,7 @@ public class MLCTensorData extends NSObject {
      */
     @Generated
     @Selector("dataWithBytesNoCopy:length:")
-    public static native MLCTensorData dataWithBytesNoCopyLength(VoidPtr bytes, @NUInt long length);
+    public static native MLCTensorData dataWithBytesNoCopyLength(@NotNull VoidPtr bytes, @NUInt long length);
 
     /**
      * [@absract] Creates a data object that holds a given number of bytes from a given buffer. with a custom
@@ -116,14 +122,14 @@ public class MLCTensorData extends NSObject {
      */
     @Generated
     @Selector("dataWithBytesNoCopy:length:deallocator:")
-    public static native MLCTensorData dataWithBytesNoCopyLengthDeallocator(VoidPtr bytes, @NUInt long length,
-            @ObjCBlock(name = "call_dataWithBytesNoCopyLengthDeallocator") Block_dataWithBytesNoCopyLengthDeallocator deallocator);
+    public static native MLCTensorData dataWithBytesNoCopyLengthDeallocator(@NotNull VoidPtr bytes, @NUInt long length,
+            @NotNull @ObjCBlock(name = "call_dataWithBytesNoCopyLengthDeallocator") Block_dataWithBytesNoCopyLengthDeallocator deallocator);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_dataWithBytesNoCopyLengthDeallocator {
         @Generated
-        void call_dataWithBytesNoCopyLengthDeallocator(VoidPtr bytes, @NUInt long length);
+        void call_dataWithBytesNoCopyLengthDeallocator(@NotNull VoidPtr bytes, @NUInt long length);
     }
 
     /**
@@ -137,7 +143,8 @@ public class MLCTensorData extends NSObject {
      */
     @Generated
     @Selector("dataWithImmutableBytesNoCopy:length:")
-    public static native MLCTensorData dataWithImmutableBytesNoCopyLength(ConstVoidPtr bytes, @NUInt long length);
+    public static native MLCTensorData dataWithImmutableBytesNoCopyLength(@NotNull ConstVoidPtr bytes,
+            @NUInt long length);
 
     @Generated
     @Selector("debugDescription")
@@ -173,9 +180,10 @@ public class MLCTensorData extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] length

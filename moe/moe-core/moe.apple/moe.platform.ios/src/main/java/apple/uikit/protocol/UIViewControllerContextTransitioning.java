@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import apple.corefoundation.struct.CGAffineTransform;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A transition context object is constructed by the system and passed to the
@@ -91,6 +93,7 @@ public interface UIViewControllerContextTransitioning {
     /**
      * The view in which the animated transition should take place.
      */
+    @NotNull
     @Generated
     @Selector("containerView")
     UIView containerView();
@@ -98,7 +101,7 @@ public interface UIViewControllerContextTransitioning {
     @Generated
     @Selector("finalFrameForViewController:")
     @ByValue
-    CGRect finalFrameForViewController(UIViewController vc);
+    CGRect finalFrameForViewController(@NotNull UIViewController vc);
 
     @Generated
     @Selector("finishInteractiveTransition")
@@ -115,7 +118,7 @@ public interface UIViewControllerContextTransitioning {
     @Generated
     @Selector("initialFrameForViewController:")
     @ByValue
-    CGRect initialFrameForViewController(UIViewController vc);
+    CGRect initialFrameForViewController(@NotNull UIViewController vc);
 
     /**
      * Most of the time this is YES. For custom transitions that use the new UIModalPresentationCustom
@@ -181,9 +184,10 @@ public interface UIViewControllerContextTransitioning {
      * Animators should not directly manipulate a view controller's views and should
      * use viewForKey: to get views instead.
      */
+    @Nullable
     @Generated
     @Selector("viewControllerForKey:")
-    UIViewController viewControllerForKey(String key);
+    UIViewController viewControllerForKey(@NotNull String key);
 
     /**
      * Currently only two keys are defined by the system -
@@ -193,7 +197,8 @@ public interface UIViewControllerContextTransitioning {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("viewForKey:")
-    UIView viewForKey(String key);
+    UIView viewForKey(@NotNull String key);
 }

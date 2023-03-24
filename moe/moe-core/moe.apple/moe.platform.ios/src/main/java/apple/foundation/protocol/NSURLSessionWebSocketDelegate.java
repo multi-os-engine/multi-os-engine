@@ -11,6 +11,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -28,8 +30,8 @@ public interface NSURLSessionWebSocketDelegate extends NSURLSessionTaskDelegate 
     @Generated
     @IsOptional
     @Selector("URLSession:webSocketTask:didCloseWithCode:reason:")
-    default void URLSessionWebSocketTaskDidCloseWithCodeReason(NSURLSession session,
-            NSURLSessionWebSocketTask webSocketTask, @NInt long closeCode, NSData reason) {
+    default void URLSessionWebSocketTaskDidCloseWithCodeReason(@NotNull NSURLSession session,
+            @NotNull NSURLSessionWebSocketTask webSocketTask, @NInt long closeCode, @Nullable NSData reason) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -41,8 +43,8 @@ public interface NSURLSessionWebSocketDelegate extends NSURLSessionTaskDelegate 
     @Generated
     @IsOptional
     @Selector("URLSession:webSocketTask:didOpenWithProtocol:")
-    default void URLSessionWebSocketTaskDidOpenWithProtocol(NSURLSession session,
-            NSURLSessionWebSocketTask webSocketTask, String protocol) {
+    default void URLSessionWebSocketTaskDidOpenWithProtocol(@NotNull NSURLSession session,
+            @NotNull NSURLSessionWebSocketTask webSocketTask, @Nullable String protocol) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

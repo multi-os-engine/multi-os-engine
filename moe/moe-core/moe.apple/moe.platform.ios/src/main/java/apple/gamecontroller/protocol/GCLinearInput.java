@@ -9,6 +9,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An object conforming to \c GCLinearInput represents an input that produces
@@ -75,14 +77,14 @@ public interface GCLinearInput {
     @Generated
     @Selector("setValueDidChangeHandler:")
     void setValueDidChangeHandler(
-            @ObjCBlock(name = "call_setValueDidChangeHandler") Block_setValueDidChangeHandler value);
+            @Nullable @ObjCBlock(name = "call_setValueDidChangeHandler") Block_setValueDidChangeHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setValueDidChangeHandler {
         @Generated
-        void call_setValueDidChangeHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, float arg2);
+        void call_setValueDidChangeHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, float arg2);
     }
 
     /**
@@ -105,6 +107,7 @@ public interface GCLinearInput {
      * @param input   the input that has been modified.
      * @param value   the value the axis was set to at the time the valueDidChangeHandler fired.
      */
+    @Nullable
     @Generated
     @Selector("valueDidChangeHandler")
     @ObjCBlock(name = "call_valueDidChangeHandler_ret")
@@ -114,7 +117,7 @@ public interface GCLinearInput {
     @Generated
     public interface Block_valueDidChangeHandler_ret {
         @Generated
-        void call_valueDidChangeHandler_ret(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, float arg2);
+        void call_valueDidChangeHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, float arg2);
     }
 }

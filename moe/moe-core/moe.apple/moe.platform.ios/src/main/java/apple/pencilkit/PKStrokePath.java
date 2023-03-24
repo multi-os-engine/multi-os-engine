@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A uniform cubic B-spline representing the point data of a `PKStroke`.
@@ -65,31 +67,35 @@ public class PKStrokePath extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * The number of control points in this stroke path.
@@ -103,6 +109,7 @@ public class PKStrokePath extends NSObject implements NSCopying {
      * The time at which this stroke path was started.
      * The `timeOffset` of contained PKStrokePoints is relative to this date.
      */
+    @NotNull
     @Generated
     @Selector("creationDate")
     public native NSDate creationDate();
@@ -128,15 +135,16 @@ public class PKStrokePath extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("enumerateInterpolatedPointsInRange:strideByDistance:usingBlock:")
-    public native void enumerateInterpolatedPointsInRangeStrideByDistanceUsingBlock(PKFloatRange range,
+    public native void enumerateInterpolatedPointsInRangeStrideByDistanceUsingBlock(@NotNull PKFloatRange range,
             @NFloat double distanceStep,
-            @ObjCBlock(name = "call_enumerateInterpolatedPointsInRangeStrideByDistanceUsingBlock") Block_enumerateInterpolatedPointsInRangeStrideByDistanceUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateInterpolatedPointsInRangeStrideByDistanceUsingBlock") Block_enumerateInterpolatedPointsInRangeStrideByDistanceUsingBlock block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateInterpolatedPointsInRangeStrideByDistanceUsingBlock {
         @Generated
-        void call_enumerateInterpolatedPointsInRangeStrideByDistanceUsingBlock(PKStrokePoint point, BoolPtr stop);
+        void call_enumerateInterpolatedPointsInRangeStrideByDistanceUsingBlock(@NotNull PKStrokePoint point,
+                @NotNull BoolPtr stop);
     }
 
     /**
@@ -152,15 +160,16 @@ public class PKStrokePath extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("enumerateInterpolatedPointsInRange:strideByParametricStep:usingBlock:")
-    public native void enumerateInterpolatedPointsInRangeStrideByParametricStepUsingBlock(PKFloatRange range,
+    public native void enumerateInterpolatedPointsInRangeStrideByParametricStepUsingBlock(@NotNull PKFloatRange range,
             @NFloat double parametricStep,
-            @ObjCBlock(name = "call_enumerateInterpolatedPointsInRangeStrideByParametricStepUsingBlock") Block_enumerateInterpolatedPointsInRangeStrideByParametricStepUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateInterpolatedPointsInRangeStrideByParametricStepUsingBlock") Block_enumerateInterpolatedPointsInRangeStrideByParametricStepUsingBlock block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateInterpolatedPointsInRangeStrideByParametricStepUsingBlock {
         @Generated
-        void call_enumerateInterpolatedPointsInRangeStrideByParametricStepUsingBlock(PKStrokePoint point, BoolPtr stop);
+        void call_enumerateInterpolatedPointsInRangeStrideByParametricStepUsingBlock(@NotNull PKStrokePoint point,
+                @NotNull BoolPtr stop);
     }
 
     /**
@@ -176,14 +185,16 @@ public class PKStrokePath extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("enumerateInterpolatedPointsInRange:strideByTime:usingBlock:")
-    public native void enumerateInterpolatedPointsInRangeStrideByTimeUsingBlock(PKFloatRange range, double timeStep,
-            @ObjCBlock(name = "call_enumerateInterpolatedPointsInRangeStrideByTimeUsingBlock") Block_enumerateInterpolatedPointsInRangeStrideByTimeUsingBlock block);
+    public native void enumerateInterpolatedPointsInRangeStrideByTimeUsingBlock(@NotNull PKFloatRange range,
+            double timeStep,
+            @NotNull @ObjCBlock(name = "call_enumerateInterpolatedPointsInRangeStrideByTimeUsingBlock") Block_enumerateInterpolatedPointsInRangeStrideByTimeUsingBlock block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateInterpolatedPointsInRangeStrideByTimeUsingBlock {
         @Generated
-        void call_enumerateInterpolatedPointsInRangeStrideByTimeUsingBlock(PKStrokePoint point, BoolPtr stop);
+        void call_enumerateInterpolatedPointsInRangeStrideByTimeUsingBlock(@NotNull PKStrokePoint point,
+                @NotNull BoolPtr stop);
     }
 
     @Generated
@@ -203,8 +214,8 @@ public class PKStrokePath extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("initWithControlPoints:creationDate:")
-    public native PKStrokePath initWithControlPointsCreationDate(NSArray<? extends PKStrokePoint> controlPoints,
-            NSDate creationDate);
+    public native PKStrokePath initWithControlPointsCreationDate(
+            @NotNull NSArray<? extends PKStrokePoint> controlPoints, @NotNull NSDate creationDate);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -233,6 +244,7 @@ public class PKStrokePath extends NSObject implements NSCopying {
     /**
      * The on-curve point for the floating point [0, count-1] `parametricValue` parameter.
      */
+    @NotNull
     @Generated
     @Selector("interpolatedPointAt:")
     public native PKStrokePoint interpolatedPointAt(@NFloat double parametricValue);
@@ -241,9 +253,10 @@ public class PKStrokePath extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -253,6 +266,7 @@ public class PKStrokePath extends NSObject implements NSCopying {
     /**
      * Returns B-spline control point at index `i`.
      */
+    @NotNull
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native PKStrokePoint objectAtIndexedSubscript(@NUInt long i);
@@ -284,6 +298,7 @@ public class PKStrokePath extends NSObject implements NSCopying {
     /**
      * Returns B-spline control point at index `i`.
      */
+    @NotNull
     @Generated
     @Selector("pointAtIndex:")
     public native PKStrokePoint pointAtIndex(@NUInt long i);

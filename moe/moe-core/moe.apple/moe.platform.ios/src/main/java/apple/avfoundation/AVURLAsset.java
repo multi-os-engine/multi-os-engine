@@ -51,6 +51,8 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.foundation.NSUUID;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.0
@@ -84,7 +86,8 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
      */
     @Generated
     @Selector("URLAssetWithURL:options:")
-    public static native AVURLAsset URLAssetWithURLOptions(NSURL URL, NSDictionary<String, ?> options);
+    public static native AVURLAsset URLAssetWithURLOptions(@NotNull NSURL URL,
+            @Nullable NSDictionary<String, ?> options);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -102,7 +105,7 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
 
     @Generated
     @Selector("assetWithURL:")
-    public static native AVURLAsset assetWithURL(NSURL URL);
+    public static native AVURLAsset assetWithURL(@NotNull NSURL URL);
 
     /**
      * audiovisualMIMETypes
@@ -113,6 +116,7 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
      * 
      *         API-Since: 5.0
      */
+    @NotNull
     @Generated
     @Selector("audiovisualMIMETypes")
     public static native NSArray<String> audiovisualMIMETypes();
@@ -126,28 +130,32 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
      * 
      *         API-Since: 5.0
      */
+    @NotNull
     @Generated
     @Selector("audiovisualTypes")
     public static native NSArray<String> audiovisualTypes();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -191,15 +199,16 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
      */
     @Generated
     @Selector("isPlayableExtendedMIMEType:")
-    public static native boolean isPlayableExtendedMIMEType(String extendedMIMEType);
+    public static native boolean isPlayableExtendedMIMEType(@NotNull String extendedMIMEType);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -232,6 +241,7 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
      * 
      * Indicates the URL with which the instance of AVURLAsset was initialized.
      */
+    @NotNull
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -244,6 +254,7 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("assetCache")
     public native AVAssetCache assetCache();
@@ -265,10 +276,11 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
      *                         The composition track for which a compatible AVAssetTrack is requested.
      * @return an instance of AVAssetTrack
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("compatibleTrackForCompositionTrack:")
-    public native AVAssetTrack compatibleTrackForCompositionTrack(AVCompositionTrack compositionTrack);
+    public native AVAssetTrack compatibleTrackForCompositionTrack(@NotNull AVCompositionTrack compositionTrack);
 
     @Generated
     @Selector("init")
@@ -289,7 +301,7 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
      */
     @Generated
     @Selector("initWithURL:options:")
-    public native AVURLAsset initWithURLOptions(NSURL URL, NSDictionary<String, ?> options);
+    public native AVURLAsset initWithURLOptions(@NotNull NSURL URL, @Nullable NSDictionary<String, ?> options);
 
     /**
      * [@property] resourceLoader
@@ -301,6 +313,7 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("resourceLoader")
     public native AVAssetResourceLoader resourceLoader();
@@ -313,13 +326,14 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
     @IsOptional
     @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
     @NInt
-    public static native long itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier);
+    public static native long itemProviderVisibilityForRepresentationWithTypeIdentifier_static(
+            @NotNull String typeIdentifier);
 
     @Generated
     @IsOptional
     @ProtocolClassMethod("itemProviderVisibilityForRepresentationWithTypeIdentifier_static")
     @NInt
-    public long _itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier) {
+    public long _itemProviderVisibilityForRepresentationWithTypeIdentifier_static(@NotNull String typeIdentifier) {
         return itemProviderVisibilityForRepresentationWithTypeIdentifier_static(typeIdentifier);
     }
 
@@ -327,45 +341,53 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
     @IsOptional
     @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
     @NInt
-    public native long itemProviderVisibilityForRepresentationWithTypeIdentifier(String typeIdentifier);
+    public native long itemProviderVisibilityForRepresentationWithTypeIdentifier(@NotNull String typeIdentifier);
 
+    @Nullable
     @Generated
     @Selector("loadDataWithTypeIdentifier:forItemProviderCompletionHandler:")
-    public native NSProgress loadDataWithTypeIdentifierForItemProviderCompletionHandler(String typeIdentifier,
-            @ObjCBlock(name = "call_loadDataWithTypeIdentifierForItemProviderCompletionHandler") NSItemProviderWriting.Block_loadDataWithTypeIdentifierForItemProviderCompletionHandler completionHandler);
+    public native NSProgress loadDataWithTypeIdentifierForItemProviderCompletionHandler(@NotNull String typeIdentifier,
+            @NotNull @ObjCBlock(name = "call_loadDataWithTypeIdentifierForItemProviderCompletionHandler") NSItemProviderWriting.Block_loadDataWithTypeIdentifierForItemProviderCompletionHandler completionHandler);
 
+    @Nullable
     @Generated
     @Selector("objectWithItemProviderData:typeIdentifier:error:")
-    public static native AVURLAsset objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public static native AVURLAsset objectWithItemProviderDataTypeIdentifierError(@NotNull NSData data,
+            @NotNull String typeIdentifier, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    @Nullable
     @Generated
     @ProtocolClassMethod("objectWithItemProviderDataTypeIdentifierError")
-    public AVURLAsset _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
+    public AVURLAsset _objectWithItemProviderDataTypeIdentifierError(@NotNull NSData data,
+            @NotNull String typeIdentifier, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
         return objectWithItemProviderDataTypeIdentifierError(data, typeIdentifier, outError);
     }
 
+    @NotNull
     @Generated
     @Selector("readableTypeIdentifiersForItemProvider")
     public static native NSArray<String> readableTypeIdentifiersForItemProvider();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("readableTypeIdentifiersForItemProvider")
     public NSArray<String> _readableTypeIdentifiersForItemProvider() {
         return readableTypeIdentifiersForItemProvider();
     }
 
+    @NotNull
     @Generated
     @Selector("writableTypeIdentifiersForItemProvider")
     public static native NSArray<String> writableTypeIdentifiersForItemProvider_static();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("writableTypeIdentifiersForItemProvider_static")
     public NSArray<String> _writableTypeIdentifiersForItemProvider_static() {
         return writableTypeIdentifiersForItemProvider_static();
     }
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("writableTypeIdentifiersForItemProvider")
@@ -374,8 +396,8 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
     @Generated
     @IsOptional
     @Selector("contentKeySession:didProvideContentKey:")
-    public native void contentKeySessionDidProvideContentKey(AVContentKeySession contentKeySession,
-            AVContentKey contentKey);
+    public native void contentKeySessionDidProvideContentKey(@NotNull AVContentKeySession contentKeySession,
+            @NotNull AVContentKey contentKey);
 
     /**
      * findCompatibleTrackForCompositionTrack:completionHandler:
@@ -397,14 +419,16 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
      */
     @Generated
     @Selector("findCompatibleTrackForCompositionTrack:completionHandler:")
-    public native void findCompatibleTrackForCompositionTrackCompletionHandler(AVCompositionTrack compositionTrack,
-            @ObjCBlock(name = "call_findCompatibleTrackForCompositionTrackCompletionHandler") Block_findCompatibleTrackForCompositionTrackCompletionHandler completionHandler);
+    public native void findCompatibleTrackForCompositionTrackCompletionHandler(
+            @NotNull AVCompositionTrack compositionTrack,
+            @NotNull @ObjCBlock(name = "call_findCompatibleTrackForCompositionTrackCompletionHandler") Block_findCompatibleTrackForCompositionTrackCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_findCompatibleTrackForCompositionTrackCompletionHandler {
         @Generated
-        void call_findCompatibleTrackForCompositionTrackCompletionHandler(AVAssetTrack arg0, NSError arg1);
+        void call_findCompatibleTrackForCompositionTrackCompletionHandler(@Nullable AVAssetTrack arg0,
+                @Nullable NSError arg1);
     }
 
     /**
@@ -416,6 +440,7 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("variants")
     public native NSArray<? extends AVAssetVariant> variants();
@@ -431,6 +456,7 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("httpSessionIdentifier")
     public native NSUUID httpSessionIdentifier();

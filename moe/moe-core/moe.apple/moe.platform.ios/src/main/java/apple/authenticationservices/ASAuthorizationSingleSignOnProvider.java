@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -59,13 +61,15 @@ public class ASAuthorizationSingleSignOnProvider extends NSObject implements ASA
      * To get the right extension the identity provider main URL has to be provided. The URL is even part of the
      * extension using assosiated domains mechanism or can be configured by MDM profile.
      */
+    @NotNull
     @Generated
     @Selector("authorizationProviderWithIdentityProviderURL:")
-    public static native ASAuthorizationSingleSignOnProvider authorizationProviderWithIdentityProviderURL(NSURL url);
+    public static native ASAuthorizationSingleSignOnProvider authorizationProviderWithIdentityProviderURL(
+            @NotNull NSURL url);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Returns YES if the configured provider is capable of performing authorization within a given configuration.
@@ -76,22 +80,26 @@ public class ASAuthorizationSingleSignOnProvider extends NSObject implements ASA
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("createRequest")
     public native ASAuthorizationSingleSignOnRequest createRequest();
@@ -130,9 +138,10 @@ public class ASAuthorizationSingleSignOnProvider extends NSObject implements ASA
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -155,6 +164,7 @@ public class ASAuthorizationSingleSignOnProvider extends NSObject implements ASA
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("url")
     public native NSURL url();

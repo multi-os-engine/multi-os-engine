@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 15.0
@@ -56,22 +58,25 @@ public class UIWindowSceneActivationConfiguration extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -95,7 +100,7 @@ public class UIWindowSceneActivationConfiguration extends NSObject {
 
     @Generated
     @Selector("initWithUserActivity:")
-    public native UIWindowSceneActivationConfiguration initWithUserActivity(NSUserActivity userActivity);
+    public native UIWindowSceneActivationConfiguration initWithUserActivity(@NotNull NSUserActivity userActivity);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -114,9 +119,10 @@ public class UIWindowSceneActivationConfiguration extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -126,6 +132,7 @@ public class UIWindowSceneActivationConfiguration extends NSObject {
     /**
      * Options for customizing the scene request. If omitted default options are used.
      */
+    @Nullable
     @Generated
     @Selector("options")
     public native UIWindowSceneActivationRequestOptions options();
@@ -133,6 +140,7 @@ public class UIWindowSceneActivationConfiguration extends NSObject {
     /**
      * An optional preview used to define the visual "source" of the newly activated scene for use in system animations.
      */
+    @Nullable
     @Generated
     @Selector("preview")
     public native UITargetedPreview preview();
@@ -150,14 +158,14 @@ public class UIWindowSceneActivationConfiguration extends NSObject {
      */
     @Generated
     @Selector("setOptions:")
-    public native void setOptions(UIWindowSceneActivationRequestOptions value);
+    public native void setOptions(@Nullable UIWindowSceneActivationRequestOptions value);
 
     /**
      * An optional preview used to define the visual "source" of the newly activated scene for use in system animations.
      */
     @Generated
     @Selector("setPreview:")
-    public native void setPreview(UITargetedPreview value);
+    public native void setPreview(@Nullable UITargetedPreview value);
 
     @Generated
     @Selector("setVersion:")
@@ -170,6 +178,7 @@ public class UIWindowSceneActivationConfiguration extends NSObject {
     /**
      * The user activity that will be used to request a scene
      */
+    @NotNull
     @Generated
     @Selector("userActivity")
     public native NSUserActivity userActivity();

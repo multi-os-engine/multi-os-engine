@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 12.2
@@ -57,22 +59,25 @@ public class SKPaymentDiscount extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -95,6 +100,7 @@ public class SKPaymentDiscount extends NSObject {
      * 
      * API-Since: 12.2
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -108,8 +114,9 @@ public class SKPaymentDiscount extends NSObject {
      */
     @Generated
     @Selector("initWithIdentifier:keyIdentifier:nonce:signature:timestamp:")
-    public native SKPaymentDiscount initWithIdentifierKeyIdentifierNonceSignatureTimestamp(String identifier,
-            String keyIdentifier, NSUUID nonce, String signature, NSNumber timestamp);
+    public native SKPaymentDiscount initWithIdentifierKeyIdentifierNonceSignatureTimestamp(@NotNull String identifier,
+            @NotNull String keyIdentifier, @NotNull NSUUID nonce, @NotNull String signature,
+            @NotNull NSNumber timestamp);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -133,13 +140,15 @@ public class SKPaymentDiscount extends NSObject {
      * 
      * API-Since: 12.2
      */
+    @NotNull
     @Generated
     @Selector("keyIdentifier")
     public native String keyIdentifier();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -151,6 +160,7 @@ public class SKPaymentDiscount extends NSObject {
      * 
      * API-Since: 12.2
      */
+    @NotNull
     @Generated
     @Selector("nonce")
     public native NSUUID nonce();
@@ -172,6 +182,7 @@ public class SKPaymentDiscount extends NSObject {
      * 
      * API-Since: 12.2
      */
+    @NotNull
     @Generated
     @Selector("signature")
     public native String signature();
@@ -185,6 +196,7 @@ public class SKPaymentDiscount extends NSObject {
      * 
      * API-Since: 12.2
      */
+    @NotNull
     @Generated
     @Selector("timestamp")
     public native NSNumber timestamp();

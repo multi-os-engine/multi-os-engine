@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -59,22 +61,25 @@ public class MKMapFeatureAnnotation extends NSObject implements MKAnnotation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,6 +107,7 @@ public class MKMapFeatureAnnotation extends NSObject implements MKAnnotation {
     @NUInt
     public static native long hash_static();
 
+    @Nullable
     @Generated
     @Selector("iconStyle")
     public native MKIconStyle iconStyle();
@@ -127,15 +133,17 @@ public class MKMapFeatureAnnotation extends NSObject implements MKAnnotation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native MKMapFeatureAnnotation new_objc();
 
+    @Nullable
     @Generated
     @Selector("pointOfInterestCategory")
     public native String pointOfInterestCategory();
@@ -157,6 +165,7 @@ public class MKMapFeatureAnnotation extends NSObject implements MKAnnotation {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("subtitle")
@@ -166,6 +175,7 @@ public class MKMapFeatureAnnotation extends NSObject implements MKAnnotation {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("title")

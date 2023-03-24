@@ -25,6 +25,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * The MSStickerBrowserViewDataSource protocol declares the methods that the Sticker Browser View uses to access the
@@ -46,7 +47,7 @@ public interface MSStickerBrowserViewDataSource {
     @Generated
     @Selector("numberOfStickersInStickerBrowserView:")
     @NInt
-    long numberOfStickersInStickerBrowserView(MSStickerBrowserView stickerBrowserView);
+    long numberOfStickersInStickerBrowserView(@NotNull MSStickerBrowserView stickerBrowserView);
 
     /**
      * Returns the sticker that the sticker browser should show in the browser.
@@ -55,7 +56,8 @@ public interface MSStickerBrowserViewDataSource {
      * @param index              The index of the sticker to show.
      * @return A MSSticker object.
      */
+    @NotNull
     @Generated
     @Selector("stickerBrowserView:stickerAtIndex:")
-    MSSticker stickerBrowserViewStickerAtIndex(MSStickerBrowserView stickerBrowserView, @NInt long index);
+    MSSticker stickerBrowserViewStickerAtIndex(@NotNull MSStickerBrowserView stickerBrowserView, @NInt long index);
 }

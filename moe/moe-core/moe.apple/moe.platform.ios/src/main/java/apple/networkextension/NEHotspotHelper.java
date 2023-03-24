@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEHotspotHelper
@@ -78,22 +80,25 @@ public class NEHotspotHelper extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,9 +133,10 @@ public class NEHotspotHelper extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * logoff:
@@ -160,7 +166,7 @@ public class NEHotspotHelper extends NSObject {
      */
     @Generated
     @Selector("logoff:")
-    public static native boolean logoff(NEHotspotNetwork network);
+    public static native boolean logoff(@NotNull NEHotspotNetwork network);
 
     @Generated
     @Owned
@@ -204,9 +210,9 @@ public class NEHotspotHelper extends NSObject {
      */
     @Generated
     @Selector("registerWithOptions:queue:handler:")
-    public static native boolean registerWithOptionsQueueHandler(NSDictionary<String, ? extends NSObject> options,
-            NSObject queue,
-            @ObjCBlock(name = "call_registerWithOptionsQueueHandler") Block_registerWithOptionsQueueHandler handler);
+    public static native boolean registerWithOptionsQueueHandler(
+            @Nullable NSDictionary<String, ? extends NSObject> options, @NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_registerWithOptionsQueueHandler") Block_registerWithOptionsQueueHandler handler);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -229,6 +235,7 @@ public class NEHotspotHelper extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("supportedNetworkInterfaces")
     public static native NSArray<?> supportedNetworkInterfaces();
@@ -246,6 +253,6 @@ public class NEHotspotHelper extends NSObject {
     @Generated
     public interface Block_registerWithOptionsQueueHandler {
         @Generated
-        void call_registerWithOptionsQueueHandler(NEHotspotHelperCommand cmd);
+        void call_registerWithOptionsQueueHandler(@NotNull NEHotspotHelperCommand cmd);
     }
 }

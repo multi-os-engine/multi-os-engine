@@ -27,6 +27,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNConvolutionWeightsAndBiasesState
@@ -74,13 +76,14 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] biases
      * 
      * A buffer that contains the biases. Each value is float and there are ouputFeatureChannels values.
      */
+    @Nullable
     @Generated
     @Selector("biases")
     @MappedReturn(ObjCObjectMapper.class)
@@ -99,18 +102,21 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,7 +141,7 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
     @Generated
     @Selector("initWithDevice:bufferSize:")
     public native MPSCNNConvolutionWeightsAndBiasesState initWithDeviceBufferSize(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long bufferSize);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long bufferSize);
 
     /**
      * Create and initialize MPSCNNConvolutionWeightsAndBiasesState with application provided convolution descriptor
@@ -145,26 +151,26 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
     @Generated
     @Selector("initWithDevice:cnnConvolutionDescriptor:")
     public native MPSCNNConvolutionWeightsAndBiasesState initWithDeviceCnnConvolutionDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, MPSCNNConvolutionDescriptor descriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MPSCNNConvolutionDescriptor descriptor);
 
     @Generated
     @Selector("initWithDevice:resourceList:")
     public native MPSCNNConvolutionWeightsAndBiasesState initWithDeviceResourceList(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, MPSStateResourceList resourceList);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MPSStateResourceList resourceList);
 
     @Generated
     @Selector("initWithDevice:textureDescriptor:")
     public native MPSCNNConvolutionWeightsAndBiasesState initWithDeviceTextureDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, MTLTextureDescriptor descriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MTLTextureDescriptor descriptor);
 
     @Generated
     @Selector("initWithResource:")
     public native MPSCNNConvolutionWeightsAndBiasesState initWithResource(
-            @Mapped(ObjCObjectMapper.class) MTLResource resource);
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLResource resource);
 
     @Generated
     @Selector("initWithResources:")
-    public native MPSCNNConvolutionWeightsAndBiasesState initWithResources(NSArray<?> resources);
+    public native MPSCNNConvolutionWeightsAndBiasesState initWithResources(@Nullable NSArray<?> resources);
 
     /**
      * Create and initialize MPSCNNConvolutionWeightsAndBiasesState with application
@@ -179,7 +185,8 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
     @Generated
     @Selector("initWithWeights:biases:")
     public native MPSCNNConvolutionWeightsAndBiasesState initWithWeightsBiases(
-            @Mapped(ObjCObjectMapper.class) MTLBuffer weights, @Mapped(ObjCObjectMapper.class) MTLBuffer biases);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer weights,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer biases);
 
     /**
      * Create and initialize MPSCNNConvolutionWeightsAndBiasesState with application
@@ -207,9 +214,9 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
     @Generated
     @Selector("initWithWeights:weightsOffset:biases:biasesOffset:cnnConvolutionDescriptor:")
     public native MPSCNNConvolutionWeightsAndBiasesState initWithWeightsWeightsOffsetBiasesBiasesOffsetCnnConvolutionDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLBuffer weights, @NUInt long weightsOffset,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer biases, @NUInt long biasesOffset,
-            MPSCNNConvolutionDescriptor descriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer weights, @NUInt long weightsOffset,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer biases, @NUInt long biasesOffset,
+            @NotNull MPSCNNConvolutionDescriptor descriptor);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -228,9 +235,10 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -259,30 +267,37 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
      * 
      * Create weights and biases buffers of appropriate size from command buffer cache.
      */
+    @NotNull
     @Generated
     @Selector("temporaryCNNConvolutionWeightsAndBiasesStateWithCommandBuffer:cnnConvolutionDescriptor:")
     public static native MPSCNNConvolutionWeightsAndBiasesState temporaryCNNConvolutionWeightsAndBiasesStateWithCommandBufferCnnConvolutionDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSCNNConvolutionDescriptor descriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNConvolutionDescriptor descriptor);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:")
     public static native MPSCNNConvolutionWeightsAndBiasesState temporaryStateWithCommandBuffer(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:bufferSize:")
     public static native MPSCNNConvolutionWeightsAndBiasesState temporaryStateWithCommandBufferBufferSize(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:resourceList:")
     public static native MPSCNNConvolutionWeightsAndBiasesState temporaryStateWithCommandBufferResourceList(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSStateResourceList resourceList);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSStateResourceList resourceList);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:textureDescriptor:")
     public static native MPSCNNConvolutionWeightsAndBiasesState temporaryStateWithCommandBufferTextureDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MTLTextureDescriptor descriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NotNull MTLTextureDescriptor descriptor);
 
     @Generated
     @Selector("version")
@@ -300,6 +315,7 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
      * for regular convolution. For depthwise convolution
      * weights[outputFeatureChannels][kernelHeight][kernelWidth] as we currently only support channel multiplier of 1.
      */
+    @NotNull
     @Generated
     @Selector("weights")
     @MappedReturn(ObjCObjectMapper.class)

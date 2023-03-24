@@ -12,6 +12,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLDynamicLibrary
@@ -58,6 +60,7 @@ public interface MTLDynamicLibrary {
      * 
      * The device this resource was created against. This resource can only be used with this device.
      */
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -68,6 +71,7 @@ public interface MTLDynamicLibrary {
      * 
      * The installName of this dynamic library. Can not be nil.
      */
+    @NotNull
     @Generated
     @Selector("installName")
     String installName();
@@ -77,6 +81,7 @@ public interface MTLDynamicLibrary {
      * 
      * A string to help identify this object.
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();
@@ -101,7 +106,7 @@ public interface MTLDynamicLibrary {
      */
     @Generated
     @Selector("serializeToURL:error:")
-    boolean serializeToURLError(NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    boolean serializeToURLError(@NotNull NSURL url, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * [@property] label
@@ -110,5 +115,5 @@ public interface MTLDynamicLibrary {
      */
     @Generated
     @Selector("setLabel:")
-    void setLabel(String value);
+    void setLabel(@Nullable String value);
 }

@@ -58,6 +58,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * _______________________________________________________________________________________________________________
@@ -87,7 +89,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Selector("addKeyframeWithRelativeStartTime:relativeDuration:animations:")
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
-            @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
 
     @Generated
     @Owned
@@ -103,64 +105,70 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
     public static native void animateKeyframesWithDurationDelayOptionsAnimationsCompletion(double duration,
             double delay, @NUInt long options,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:animations:")
     public static native void animateWithDurationAnimations(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
 
     @Generated
     @Selector("animateWithDuration:animations:completion:")
     public static native void animateWithDurationAnimationsCompletion(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:options:animations:completion:")
     public static native void animateWithDurationDelayOptionsAnimationsCompletion(double duration, double delay,
             @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:")
     public static native void animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion(
             double duration, double delay, @NFloat double dampingRatio, @NFloat double velocity, @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
 
+    @NotNull
     @Generated
     @Selector("appearance")
     public static native UITableView appearance();
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:")
-    public static native UITableView appearanceForTraitCollection(UITraitCollection trait);
+    public static native UITableView appearanceForTraitCollection(@NotNull UITraitCollection trait);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    public static native UITableView appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native UITableView appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     public static native UITableView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            UITraitCollection trait, NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     public static native UITableView appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    public static native UITableView appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native UITableView appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes);
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -168,34 +176,37 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
-    public static native void beginAnimationsContext(String animationID, VoidPtr context);
+    public static native void beginAnimationsContext(@Nullable String animationID, @Nullable VoidPtr context);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Deprecated
     @Generated
@@ -236,10 +247,12 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("layerClass")
     public static native Class layerClass();
@@ -252,14 +265,14 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")
     public static native void performSystemAnimationOnViewsOptionsAnimationsCompletion(@NUInt long animation,
-            NSArray<? extends UIView> views, @NUInt long options,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
+            @NotNull NSArray<? extends UIView> views, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("performWithoutAnimation:")
     public static native void performWithoutAnimation(
-            @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
+            @NotNull @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
 
     @Generated
     @Selector("requiresConstraintBasedLayout")
@@ -291,12 +304,12 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
-    public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
+    public static native void setAnimationDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object delegate);
 
     @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
-    public static native void setAnimationDidStopSelector(SEL selector);
+    public static native void setAnimationDidStopSelector(@Nullable SEL selector);
 
     @Deprecated
     @Generated
@@ -316,17 +329,18 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
-    public static native void setAnimationStartDate(NSDate startDate);
+    public static native void setAnimationStartDate(@NotNull NSDate startDate);
 
     @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
-    public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
+    public static native void setAnimationTransitionForViewCache(@NInt long transition, @NotNull UIView view,
+            boolean cache);
 
     @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
-    public static native void setAnimationWillStartSelector(SEL selector);
+    public static native void setAnimationWillStartSelector(@Nullable SEL selector);
 
     @Generated
     @Selector("setAnimationsEnabled:")
@@ -342,16 +356,16 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     @Generated
     @Selector("transitionFromView:toView:duration:options:completion:")
-    public static native void transitionFromViewToViewDurationOptionsCompletion(UIView fromView, UIView toView,
-            double duration, @NUInt long options,
-            @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
+    public static native void transitionFromViewToViewDurationOptionsCompletion(@NotNull UIView fromView,
+            @NotNull UIView toView, double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
 
     @Generated
     @Selector("transitionWithView:duration:options:animations:completion:")
-    public static native void transitionWithViewDurationOptionsAnimationsCompletion(UIView view, double duration,
-            @NUInt long options,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
+    public static native void transitionWithViewDurationOptionsAnimationsCompletion(@NotNull UIView view,
+            double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:")
@@ -403,44 +417,50 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Selector("allowsSelectionDuringEditing")
     public native boolean allowsSelectionDuringEditing();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearance")
     public UITableView _appearance() {
         return appearance();
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    public UITableView _appearanceForTraitCollection(UITraitCollection trait) {
+    public UITableView _appearanceForTraitCollection(@NotNull UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    public UITableView _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public UITableView _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    public UITableView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
+    public UITableView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(@NotNull UITraitCollection trait,
+            @NotNull NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    public UITableView _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
-            Object... varargs) {
+    public UITableView _appearanceWhenContainedIn(
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    public UITableView _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public UITableView _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -450,6 +470,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      * 
      * API-Since: 3.2
      */
+    @Nullable
     @Generated
     @Selector("backgroundView")
     public native UIView backgroundView();
@@ -465,9 +486,10 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      * Returns any existing visible or prepared cell for the index path. Returns nil when no cell exists, or if index
      * path is out of range.
      */
+    @Nullable
     @Generated
     @Selector("cellForRowAtIndexPath:")
-    public native UITableViewCell cellForRowAtIndexPath(NSIndexPath indexPath);
+    public native UITableViewCell cellForRowAtIndexPath(@NotNull NSIndexPath indexPath);
 
     /**
      * if cell layout margins are derived from the width of the readableContentGuide. default is NO.
@@ -478,11 +500,13 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Selector("cellLayoutMarginsFollowReadableWidth")
     public native boolean cellLayoutMarginsFollowReadableWidth();
 
+    @Nullable
     @Generated
     @Selector("dataSource")
     @MappedReturn(ObjCObjectMapper.class)
     public native UITableViewDataSource dataSource();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -490,46 +514,49 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     @Generated
     @Selector("deleteRowsAtIndexPaths:withRowAnimation:")
-    public native void deleteRowsAtIndexPathsWithRowAnimation(NSArray<? extends NSIndexPath> indexPaths,
+    public native void deleteRowsAtIndexPathsWithRowAnimation(@NotNull NSArray<? extends NSIndexPath> indexPaths,
             @NInt long animation);
 
     @Generated
     @Selector("deleteSections:withRowAnimation:")
-    public native void deleteSectionsWithRowAnimation(NSIndexSet sections, @NInt long animation);
+    public native void deleteSectionsWithRowAnimation(@NotNull NSIndexSet sections, @NInt long animation);
 
     /**
      * Used by the delegate to acquire an already allocated cell, in lieu of allocating a new one.
      */
+    @Nullable
     @Generated
     @Selector("dequeueReusableCellWithIdentifier:")
-    public native UITableViewCell dequeueReusableCellWithIdentifier(String identifier);
+    public native UITableViewCell dequeueReusableCellWithIdentifier(@NotNull String identifier);
 
     /**
      * newer dequeue method guarantees a cell is returned and resized properly, assuming identifier is registered
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("dequeueReusableCellWithIdentifier:forIndexPath:")
-    public native UITableViewCell dequeueReusableCellWithIdentifierForIndexPath(String identifier,
-            NSIndexPath indexPath);
+    public native UITableViewCell dequeueReusableCellWithIdentifierForIndexPath(@NotNull String identifier,
+            @NotNull NSIndexPath indexPath);
 
     /**
      * like dequeueReusableCellWithIdentifier:, but for headers/footers
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("dequeueReusableHeaderFooterViewWithIdentifier:")
-    public native UITableViewHeaderFooterView dequeueReusableHeaderFooterViewWithIdentifier(String identifier);
+    public native UITableViewHeaderFooterView dequeueReusableHeaderFooterViewWithIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("deselectRowAtIndexPath:animated:")
-    public native void deselectRowAtIndexPathAnimated(NSIndexPath indexPath, boolean animated);
+    public native void deselectRowAtIndexPathAnimated(@NotNull NSIndexPath indexPath, boolean animated);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("endUpdates")
@@ -568,6 +595,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("footerViewForSection:")
     public native UITableViewHeaderFooterView footerViewForSection(@NInt long section);
@@ -575,6 +603,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("headerViewForSection:")
     public native UITableViewHeaderFooterView headerViewForSection(@NInt long section);
@@ -582,13 +611,15 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * returns nil if cell is not visible
      */
+    @Nullable
     @Generated
     @Selector("indexPathForCell:")
-    public native NSIndexPath indexPathForCell(UITableViewCell cell);
+    public native NSIndexPath indexPathForCell(@NotNull UITableViewCell cell);
 
     /**
      * returns nil if point is outside of any row in the table
      */
+    @Nullable
     @Generated
     @Selector("indexPathForRowAtPoint:")
     public native NSIndexPath indexPathForRowAtPoint(@ByValue CGPoint point);
@@ -596,6 +627,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * returns nil or index path representing section and row of selection.
      */
+    @Nullable
     @Generated
     @Selector("indexPathForSelectedRow")
     public native NSIndexPath indexPathForSelectedRow();
@@ -603,6 +635,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * returns nil if rect not valid
      */
+    @Nullable
     @Generated
     @Selector("indexPathsForRowsInRect:")
     public native NSArray<? extends NSIndexPath> indexPathsForRowsInRect(@ByValue CGRect rect);
@@ -612,10 +645,12 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      * 
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("indexPathsForSelectedRows")
     public native NSArray<? extends NSIndexPath> indexPathsForSelectedRows();
 
+    @Nullable
     @Generated
     @Selector("indexPathsForVisibleRows")
     public native NSArray<? extends NSIndexPath> indexPathsForVisibleRows();
@@ -626,7 +661,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     @Generated
     @Selector("initWithCoder:")
-    public native UITableView initWithCoder(NSCoder coder);
+    public native UITableView initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -641,12 +676,12 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     @Generated
     @Selector("insertRowsAtIndexPaths:withRowAnimation:")
-    public native void insertRowsAtIndexPathsWithRowAnimation(NSArray<? extends NSIndexPath> indexPaths,
+    public native void insertRowsAtIndexPathsWithRowAnimation(@NotNull NSArray<? extends NSIndexPath> indexPaths,
             @NInt long animation);
 
     @Generated
     @Selector("insertSections:withRowAnimation:")
-    public native void insertSectionsWithRowAnimation(NSIndexSet sections, @NInt long animation);
+    public native void insertSectionsWithRowAnimation(@NotNull NSIndexSet sections, @NInt long animation);
 
     /**
      * default is NO. setting is not animated.
@@ -667,7 +702,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      */
     @Generated
     @Selector("moveRowAtIndexPath:toIndexPath:")
-    public native void moveRowAtIndexPathToIndexPath(NSIndexPath indexPath, NSIndexPath newIndexPath);
+    public native void moveRowAtIndexPathToIndexPath(@NotNull NSIndexPath indexPath, @NotNull NSIndexPath newIndexPath);
 
     /**
      * API-Since: 5.0
@@ -692,6 +727,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("prefetchDataSource")
     @MappedReturn(ObjCObjectMapper.class)
@@ -710,7 +746,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Generated
     @Selector("rectForRowAtIndexPath:")
     @ByValue
-    public native CGRect rectForRowAtIndexPath(NSIndexPath indexPath);
+    public native CGRect rectForRowAtIndexPath(@NotNull NSIndexPath indexPath);
 
     /**
      * includes header, footer and all rows
@@ -725,14 +761,15 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      */
     @Generated
     @Selector("registerClass:forCellReuseIdentifier:")
-    public native void registerClassForCellReuseIdentifier(Class cellClass, String identifier);
+    public native void registerClassForCellReuseIdentifier(@Nullable Class cellClass, @NotNull String identifier);
 
     /**
      * API-Since: 6.0
      */
     @Generated
     @Selector("registerClass:forHeaderFooterViewReuseIdentifier:")
-    public native void registerClassForHeaderFooterViewReuseIdentifier(Class aClass, String identifier);
+    public native void registerClassForHeaderFooterViewReuseIdentifier(@Nullable Class aClass,
+            @NotNull String identifier);
 
     /**
      * Beginning in iOS 6, clients can register a nib or class for each cell.
@@ -744,14 +781,14 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      */
     @Generated
     @Selector("registerNib:forCellReuseIdentifier:")
-    public native void registerNibForCellReuseIdentifier(UINib nib, String identifier);
+    public native void registerNibForCellReuseIdentifier(@Nullable UINib nib, @NotNull String identifier);
 
     /**
      * API-Since: 6.0
      */
     @Generated
     @Selector("registerNib:forHeaderFooterViewReuseIdentifier:")
-    public native void registerNibForHeaderFooterViewReuseIdentifier(UINib nib, String identifier);
+    public native void registerNibForHeaderFooterViewReuseIdentifier(@Nullable UINib nib, @NotNull String identifier);
 
     /**
      * Reloads everything from scratch. Redisplays visible rows. Note that this will cause any existing drop placeholder
@@ -766,7 +803,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      */
     @Generated
     @Selector("reloadRowsAtIndexPaths:withRowAnimation:")
-    public native void reloadRowsAtIndexPathsWithRowAnimation(NSArray<? extends NSIndexPath> indexPaths,
+    public native void reloadRowsAtIndexPathsWithRowAnimation(@NotNull NSArray<? extends NSIndexPath> indexPaths,
             @NInt long animation);
 
     /**
@@ -783,7 +820,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      */
     @Generated
     @Selector("reloadSections:withRowAnimation:")
-    public native void reloadSectionsWithRowAnimation(NSIndexSet sections, @NInt long animation);
+    public native void reloadSectionsWithRowAnimation(@NotNull NSIndexSet sections, @NInt long animation);
 
     /**
      * defaults to NO. If YES, when focusing on a table view the last focused index path is focused automatically. If
@@ -809,8 +846,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     @Generated
     @Selector("scrollToRowAtIndexPath:atScrollPosition:animated:")
-    public native void scrollToRowAtIndexPathAtScrollPositionAnimated(NSIndexPath indexPath, @NInt long scrollPosition,
-            boolean animated);
+    public native void scrollToRowAtIndexPathAtScrollPositionAnimated(@NotNull NSIndexPath indexPath,
+            @NInt long scrollPosition, boolean animated);
 
     /**
      * default is UITableViewAutomaticDimension
@@ -833,6 +870,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("sectionIndexBackgroundColor")
     public native UIColor sectionIndexBackgroundColor();
@@ -842,6 +880,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("sectionIndexColor")
     public native UIColor sectionIndexColor();
@@ -859,6 +898,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("sectionIndexTrackingBackgroundColor")
     public native UIColor sectionIndexTrackingBackgroundColor();
@@ -870,12 +910,13 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      */
     @Generated
     @Selector("selectRowAtIndexPath:animated:scrollPosition:")
-    public native void selectRowAtIndexPathAnimatedScrollPosition(NSIndexPath indexPath, boolean animated,
+    public native void selectRowAtIndexPathAnimatedScrollPosition(@Nullable NSIndexPath indexPath, boolean animated,
             @NInt long scrollPosition);
 
     /**
      * default is the standard separator gray
      */
+    @Nullable
     @Generated
     @Selector("separatorColor")
     public native UIColor separatorColor();
@@ -885,6 +926,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("separatorEffect")
     public native UIVisualEffect separatorEffect();
@@ -950,7 +992,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      */
     @Generated
     @Selector("setBackgroundView:")
-    public native void setBackgroundView(UIView value);
+    public native void setBackgroundView(@Nullable UIView value);
 
     /**
      * if cell layout margins are derived from the width of the readableContentGuide. default is NO.
@@ -963,10 +1005,10 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     @Generated
     @Selector("setDataSource:")
-    public native void setDataSource_unsafe(@Mapped(ObjCObjectMapper.class) UITableViewDataSource value);
+    public native void setDataSource_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UITableViewDataSource value);
 
     @Generated
-    public void setDataSource(@Mapped(ObjCObjectMapper.class) UITableViewDataSource value) {
+    public void setDataSource(@Nullable @Mapped(ObjCObjectMapper.class) UITableViewDataSource value) {
         Object __old = dataSource();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -979,10 +1021,10 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -1030,13 +1072,14 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Generated
     @Selector("setPrefetchDataSource:")
     public native void setPrefetchDataSource_unsafe(
-            @Mapped(ObjCObjectMapper.class) UITableViewDataSourcePrefetching value);
+            @Nullable @Mapped(ObjCObjectMapper.class) UITableViewDataSourcePrefetching value);
 
     /**
      * API-Since: 10.0
      */
     @Generated
-    public void setPrefetchDataSource(@Mapped(ObjCObjectMapper.class) UITableViewDataSourcePrefetching value) {
+    public void setPrefetchDataSource(
+            @Nullable @Mapped(ObjCObjectMapper.class) UITableViewDataSourcePrefetching value) {
         Object __old = prefetchDataSource();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -1085,7 +1128,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      */
     @Generated
     @Selector("setSectionIndexBackgroundColor:")
-    public native void setSectionIndexBackgroundColor(UIColor value);
+    public native void setSectionIndexBackgroundColor(@Nullable UIColor value);
 
     /**
      * color used for text of the section index
@@ -1094,7 +1137,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      */
     @Generated
     @Selector("setSectionIndexColor:")
-    public native void setSectionIndexColor(UIColor value);
+    public native void setSectionIndexColor(@Nullable UIColor value);
 
     /**
      * show special section index list on right when row count reaches this value. default is 0
@@ -1110,14 +1153,14 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      */
     @Generated
     @Selector("setSectionIndexTrackingBackgroundColor:")
-    public native void setSectionIndexTrackingBackgroundColor(UIColor value);
+    public native void setSectionIndexTrackingBackgroundColor(@Nullable UIColor value);
 
     /**
      * default is the standard separator gray
      */
     @Generated
     @Selector("setSeparatorColor:")
-    public native void setSeparatorColor(UIColor value);
+    public native void setSeparatorColor(@Nullable UIColor value);
 
     /**
      * effect to apply to table separators
@@ -1126,7 +1169,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      */
     @Generated
     @Selector("setSeparatorEffect:")
-    public native void setSeparatorEffect(UIVisualEffect value);
+    public native void setSeparatorEffect(@Nullable UIVisualEffect value);
 
     /**
      * allows customization of the frame of cell separators; see also the separatorInsetReference property. Use
@@ -1150,14 +1193,14 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      */
     @Generated
     @Selector("setTableFooterView:")
-    public native void setTableFooterView(UIView value);
+    public native void setTableFooterView(@Nullable UIView value);
 
     /**
      * accessory view for above row content. default is nil. not to be confused with section header
      */
     @Generated
     @Selector("setTableHeaderView:")
-    public native void setTableHeaderView(UIView value);
+    public native void setTableHeaderView(@Nullable UIView value);
 
     @Generated
     @Selector("style")
@@ -1167,6 +1210,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * accessory view below content. default is nil. not to be confused with section footer
      */
+    @Nullable
     @Generated
     @Selector("tableFooterView")
     public native UIView tableFooterView();
@@ -1174,17 +1218,20 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * accessory view for above row content. default is nil. not to be confused with section header
      */
+    @Nullable
     @Generated
     @Selector("tableHeaderView")
     public native UIView tableHeaderView();
 
+    @NotNull
     @Generated
     @Selector("visibleCells")
     public native NSArray<? extends UITableViewCell> visibleCells();
 
+    @Nullable
     @Generated
     @Selector("dataSourceIndexPathForPresentationIndexPath:")
-    public native NSIndexPath dataSourceIndexPathForPresentationIndexPath(NSIndexPath presentationIndexPath);
+    public native NSIndexPath dataSourceIndexPathForPresentationIndexPath(@Nullable NSIndexPath presentationIndexPath);
 
     @Generated
     @Selector("dataSourceSectionIndexForPresentationSectionIndex:")
@@ -1194,6 +1241,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("dragDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -1212,6 +1260,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("dropDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -1267,8 +1316,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Generated
     @Selector("performBatchUpdates:completion:")
     public native void performBatchUpdatesCompletion(
-            @ObjCBlock(name = "call_performBatchUpdatesCompletion_0") Block_performBatchUpdatesCompletion_0 updates,
-            @ObjCBlock(name = "call_performBatchUpdatesCompletion_1") Block_performBatchUpdatesCompletion_1 completion);
+            @Nullable @ObjCBlock(name = "call_performBatchUpdatesCompletion_0") Block_performBatchUpdatesCompletion_0 updates,
+            @Nullable @ObjCBlock(name = "call_performBatchUpdatesCompletion_1") Block_performBatchUpdatesCompletion_1 completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -1287,11 +1336,12 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Generated
     @Selector("performUsingPresentationValues:")
     public native void performUsingPresentationValues(
-            @ObjCBlock(name = "call_performUsingPresentationValues") UIDataSourceTranslating.Block_performUsingPresentationValues actionsToTranslate);
+            @NotNull @ObjCBlock(name = "call_performUsingPresentationValues") UIDataSourceTranslating.Block_performUsingPresentationValues actionsToTranslate);
 
+    @Nullable
     @Generated
     @Selector("presentationIndexPathForDataSourceIndexPath:")
-    public native NSIndexPath presentationIndexPathForDataSourceIndexPath(NSIndexPath dataSourceIndexPath);
+    public native NSIndexPath presentationIndexPathForDataSourceIndexPath(@Nullable NSIndexPath dataSourceIndexPath);
 
     @Generated
     @Selector("presentationSectionIndexForDataSourceSectionIndex:")
@@ -1314,13 +1364,13 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      */
     @Generated
     @Selector("setDragDelegate:")
-    public native void setDragDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITableViewDragDelegate value);
+    public native void setDragDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UITableViewDragDelegate value);
 
     /**
      * API-Since: 11.0
      */
     @Generated
-    public void setDragDelegate(@Mapped(ObjCObjectMapper.class) UITableViewDragDelegate value) {
+    public void setDragDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UITableViewDragDelegate value) {
         Object __old = dragDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -1346,13 +1396,13 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      */
     @Generated
     @Selector("setDropDelegate:")
-    public native void setDropDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITableViewDropDelegate value);
+    public native void setDropDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UITableViewDropDelegate value);
 
     /**
      * API-Since: 11.0
      */
     @Generated
-    public void setDropDelegate(@Mapped(ObjCObjectMapper.class) UITableViewDropDelegate value) {
+    public void setDropDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UITableViewDropDelegate value) {
         Object __old = dropDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -1390,7 +1440,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
-            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+            @NotNull @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
     /**
      * When enabled, the table view ensures that selection is automatically triggered when focus moves to a cell.
@@ -1437,6 +1487,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("contextMenuInteraction")
     public native UIContextMenuInteraction contextMenuInteraction();
@@ -1470,7 +1521,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      */
     @Generated
     @Selector("reconfigureRowsAtIndexPaths:")
-    public native void reconfigureRowsAtIndexPaths(NSArray<? extends NSIndexPath> indexPaths);
+    public native void reconfigureRowsAtIndexPaths(@NotNull NSArray<? extends NSIndexPath> indexPaths);
 
     /**
      * Padding above each section header. The default value is `UITableViewAutomaticDimension`.

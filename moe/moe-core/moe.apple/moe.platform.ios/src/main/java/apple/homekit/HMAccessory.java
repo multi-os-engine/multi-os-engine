@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.foundation.NSNumber;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Represent an accessory in the home.
@@ -83,22 +85,25 @@ public class HMAccessory extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +138,10 @@ public class HMAccessory extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -172,6 +178,7 @@ public class HMAccessory extends NSObject {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("cameraProfiles")
     public native NSArray<? extends HMCameraProfile> cameraProfiles();
@@ -181,6 +188,7 @@ public class HMAccessory extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("category")
     public native HMAccessoryCategory category();
@@ -188,6 +196,7 @@ public class HMAccessory extends NSObject {
     /**
      * Delegate object that receives updates on the state of the accessory.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -202,6 +211,7 @@ public class HMAccessory extends NSObject {
      * Deprecated-Since: 9.0
      * Deprecated-Message: No longer supported.
      */
+    @NotNull
     @Generated
     @Deprecated
     @Selector("identifier")
@@ -218,6 +228,7 @@ public class HMAccessory extends NSObject {
      * Deprecated-Since: 9.0
      * Deprecated-Message: No longer supported.
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("identifiersForBridgedAccessories")
@@ -233,7 +244,7 @@ public class HMAccessory extends NSObject {
     @Generated
     @Selector("identifyWithCompletionHandler:")
     public native void identifyWithCompletionHandler(
-            @ObjCBlock(name = "call_identifyWithCompletionHandler") Block_identifyWithCompletionHandler completion);
+            @NotNull @ObjCBlock(name = "call_identifyWithCompletionHandler") Block_identifyWithCompletionHandler completion);
 
     @Generated
     @Selector("init")
@@ -269,6 +280,7 @@ public class HMAccessory extends NSObject {
      * Returns the accessory's name that is associated with HomeKit. The initial value is the name
      * provided by the accessory information service of the accessory.
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -276,6 +288,7 @@ public class HMAccessory extends NSObject {
     /**
      * Room containing the accessory.
      */
+    @Nullable
     @Generated
     @Selector("room")
     public native HMRoom room();
@@ -283,6 +296,7 @@ public class HMAccessory extends NSObject {
     /**
      * Array of HMService objects that represent all the services provided by the accessory.
      */
+    @NotNull
     @Generated
     @Selector("services")
     public native NSArray<? extends HMService> services();
@@ -292,13 +306,13 @@ public class HMAccessory extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) HMAccessoryDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) HMAccessoryDelegate value);
 
     /**
      * Delegate object that receives updates on the state of the accessory.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) HMAccessoryDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) HMAccessoryDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -314,6 +328,7 @@ public class HMAccessory extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
@@ -332,6 +347,7 @@ public class HMAccessory extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("uniqueIdentifiersForBridgedAccessories")
     public native NSArray<? extends NSUUID> uniqueIdentifiersForBridgedAccessories();
@@ -349,21 +365,21 @@ public class HMAccessory extends NSObject {
      */
     @Generated
     @Selector("updateName:completionHandler:")
-    public native void updateNameCompletionHandler(String name,
-            @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
+    public native void updateNameCompletionHandler(@NotNull String name,
+            @NotNull @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_identifyWithCompletionHandler {
         @Generated
-        void call_identifyWithCompletionHandler(NSError error);
+        void call_identifyWithCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateNameCompletionHandler {
         @Generated
-        void call_updateNameCompletionHandler(NSError error);
+        void call_updateNameCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -371,6 +387,7 @@ public class HMAccessory extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("firmwareVersion")
     public native String firmwareVersion();
@@ -380,6 +397,7 @@ public class HMAccessory extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("manufacturer")
     public native String manufacturer();
@@ -389,6 +407,7 @@ public class HMAccessory extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("model")
     public native String model();
@@ -398,6 +417,7 @@ public class HMAccessory extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("profiles")
     public native NSArray<? extends HMAccessoryProfile> profiles();
@@ -416,6 +436,7 @@ public class HMAccessory extends NSObject {
      * 
      * API-Since: 16.1
      */
+    @Nullable
     @Generated
     @Selector("matterNodeID")
     public native NSNumber matterNodeID();

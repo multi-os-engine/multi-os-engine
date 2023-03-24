@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.3
@@ -64,7 +66,7 @@ public class MPSCNNSpatialNormalizationGradientNode extends MPSNNGradientFilterN
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] beta
@@ -77,18 +79,21 @@ public class MPSCNNSpatialNormalizationGradientNode extends MPSNNGradientFilterN
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,8 +127,8 @@ public class MPSCNNSpatialNormalizationGradientNode extends MPSNNGradientFilterN
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:kernelSize:")
     public native MPSCNNSpatialNormalizationGradientNode initWithSourceGradientSourceImageGradientStateKernelSize(
-            MPSNNImageNode sourceGradient, MPSNNImageNode sourceImage, MPSNNGradientStateNode gradientState,
-            @NUInt long kernelSize);
+            @NotNull MPSNNImageNode sourceGradient, @NotNull MPSNNImageNode sourceImage,
+            @NotNull MPSNNGradientStateNode gradientState, @NUInt long kernelSize);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -152,9 +157,10 @@ public class MPSCNNSpatialNormalizationGradientNode extends MPSNNGradientFilterN
     @NUInt
     public native long kernelWidth();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,8 +170,8 @@ public class MPSCNNSpatialNormalizationGradientNode extends MPSNNGradientFilterN
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:kernelSize:")
     public static native MPSCNNSpatialNormalizationGradientNode nodeWithSourceGradientSourceImageGradientStateKernelSize(
-            MPSNNImageNode sourceGradient, MPSNNImageNode sourceImage, MPSNNGradientStateNode gradientState,
-            @NUInt long kernelSize);
+            @NotNull MPSNNImageNode sourceGradient, @NotNull MPSNNImageNode sourceImage,
+            @NotNull MPSNNGradientStateNode gradientState, @NUInt long kernelSize);
 
     @Generated
     @Selector("resolveClassMethod:")

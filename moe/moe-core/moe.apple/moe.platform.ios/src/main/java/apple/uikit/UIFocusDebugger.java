@@ -25,6 +25,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * UIFocusDebugger provides a collection of runtime utilities for debugging issues related to focus interaction.
@@ -61,17 +63,18 @@ public class UIFocusDebugger extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Outputs a diagnosis of the specified item's focusability, including any known issues that may be preventing
@@ -80,16 +83,19 @@ public class UIFocusDebugger extends NSObject {
      * - To use in Objective-C, enter `po [UIFocusDebugger checkFocusabilityForItem:<item reference>]` when paused in
      * lldb.
      */
+    @NotNull
     @Generated
     @Selector("checkFocusabilityForItem:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native UIFocusDebuggerOutput checkFocusabilityForItem(
-            @Mapped(ObjCObjectMapper.class) UIFocusItem item);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIFocusItem item);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -112,6 +118,7 @@ public class UIFocusDebugger extends NSObject {
      * - To use in Swift, enter `po UIFocusDebugger.help()` when paused in lldb.
      * - To use in Objective-C, enter `po [UIFocusDebugger help]` when paused in lldb.
      */
+    @NotNull
     @Generated
     @Selector("help")
     @MappedReturn(ObjCObjectMapper.class)
@@ -138,9 +145,10 @@ public class UIFocusDebugger extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,17 +175,19 @@ public class UIFocusDebugger extends NSObject {
      * - To use in Objective-C, enter `po [UIFocusDebugger simulateFocusUpdateRequestFromEnvironment:<environment
      * reference>]` when paused in lldb.
      */
+    @NotNull
     @Generated
     @Selector("simulateFocusUpdateRequestFromEnvironment:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native UIFocusDebuggerOutput simulateFocusUpdateRequestFromEnvironment(
-            @Mapped(ObjCObjectMapper.class) UIFocusEnvironment environment);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIFocusEnvironment environment);
 
     /**
      * Outputs information for the currently focused item.
      * - To use in Swift, enter `po UIFocusDebugger.status()` when paused in lldb.
      * - To use in Objective-C, enter `po [UIFocusDebugger status]` when paused in lldb.
      */
+    @NotNull
     @Generated
     @Selector("status")
     @MappedReturn(ObjCObjectMapper.class)
@@ -199,11 +209,12 @@ public class UIFocusDebugger extends NSObject {
      * - To use in Objective-C, enter `po [UIFocusDebugger focusGroupsForEnvironment:<environment reference>]` when
      * paused in lldb.
      */
+    @NotNull
     @Generated
     @Selector("focusGroupsForEnvironment:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native UIFocusDebuggerOutput focusGroupsForEnvironment(
-            @Mapped(ObjCObjectMapper.class) UIFocusEnvironment environment);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIFocusEnvironment environment);
 
     /**
      * Outputs a diagnoses of the preferred focus environments tree.
@@ -212,9 +223,10 @@ public class UIFocusDebugger extends NSObject {
      * - To use in Objective-C, enter `po [UIFocusDebugger preferredFocusEnvironmentsForEnvironment:<environment
      * reference>]` when paused in lldb.
      */
+    @NotNull
     @Generated
     @Selector("preferredFocusEnvironmentsForEnvironment:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native UIFocusDebuggerOutput preferredFocusEnvironmentsForEnvironment(
-            @Mapped(ObjCObjectMapper.class) UIFocusEnvironment environment);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIFocusEnvironment environment);
 }

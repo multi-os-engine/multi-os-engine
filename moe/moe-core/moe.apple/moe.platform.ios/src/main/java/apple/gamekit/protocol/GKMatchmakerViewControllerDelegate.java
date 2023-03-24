@@ -28,6 +28,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("GameKit")
@@ -41,7 +42,8 @@ public interface GKMatchmakerViewControllerDelegate {
      */
     @Generated
     @Selector("matchmakerViewController:didFailWithError:")
-    void matchmakerViewControllerDidFailWithError(GKMatchmakerViewController viewController, NSError error);
+    void matchmakerViewControllerDidFailWithError(@NotNull GKMatchmakerViewController viewController,
+            @NotNull NSError error);
 
     /**
      * Players have been found for a server-hosted game, the game should start
@@ -51,8 +53,8 @@ public interface GKMatchmakerViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("matchmakerViewController:didFindHostedPlayers:")
-    default void matchmakerViewControllerDidFindHostedPlayers(GKMatchmakerViewController viewController,
-            NSArray<? extends GKPlayer> players) {
+    default void matchmakerViewControllerDidFindHostedPlayers(@NotNull GKMatchmakerViewController viewController,
+            @NotNull NSArray<? extends GKPlayer> players) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -64,7 +66,8 @@ public interface GKMatchmakerViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("matchmakerViewController:didFindMatch:")
-    default void matchmakerViewControllerDidFindMatch(GKMatchmakerViewController viewController, GKMatch match) {
+    default void matchmakerViewControllerDidFindMatch(@NotNull GKMatchmakerViewController viewController,
+            @NotNull GKMatch match) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -80,8 +83,8 @@ public interface GKMatchmakerViewControllerDelegate {
     @IsOptional
     @Deprecated
     @Selector("matchmakerViewController:didFindPlayers:")
-    default void matchmakerViewControllerDidFindPlayers(GKMatchmakerViewController viewController,
-            NSArray<String> playerIDs) {
+    default void matchmakerViewControllerDidFindPlayers(@NotNull GKMatchmakerViewController viewController,
+            @NotNull NSArray<String> playerIDs) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -95,8 +98,8 @@ public interface GKMatchmakerViewControllerDelegate {
     @IsOptional
     @Deprecated
     @Selector("matchmakerViewController:didReceiveAcceptFromHostedPlayer:")
-    default void matchmakerViewControllerDidReceiveAcceptFromHostedPlayer(GKMatchmakerViewController viewController,
-            String playerID) {
+    default void matchmakerViewControllerDidReceiveAcceptFromHostedPlayer(
+            @NotNull GKMatchmakerViewController viewController, @NotNull String playerID) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -109,8 +112,8 @@ public interface GKMatchmakerViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("matchmakerViewController:hostedPlayerDidAccept:")
-    default void matchmakerViewControllerHostedPlayerDidAccept(GKMatchmakerViewController viewController,
-            GKPlayer player) {
+    default void matchmakerViewControllerHostedPlayerDidAccept(@NotNull GKMatchmakerViewController viewController,
+            @NotNull GKPlayer player) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -121,5 +124,5 @@ public interface GKMatchmakerViewControllerDelegate {
      */
     @Generated
     @Selector("matchmakerViewControllerWasCancelled:")
-    void matchmakerViewControllerWasCancelled(GKMatchmakerViewController viewController);
+    void matchmakerViewControllerWasCancelled(@NotNull GKMatchmakerViewController viewController);
 }

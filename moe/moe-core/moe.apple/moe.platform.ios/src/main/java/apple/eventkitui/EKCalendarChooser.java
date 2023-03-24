@@ -44,6 +44,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("EventKitUI")
@@ -80,29 +82,32 @@ public class EKCalendarChooser extends UIViewController {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -134,9 +139,10 @@ public class EKCalendarChooser extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,6 +170,7 @@ public class EKCalendarChooser extends UIViewController {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -175,11 +182,12 @@ public class EKCalendarChooser extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native EKCalendarChooser initWithCoder(NSCoder coder);
+    public native EKCalendarChooser initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native EKCalendarChooser initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native EKCalendarChooser initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * variant to only show calendars for events or reminders.
@@ -187,17 +195,18 @@ public class EKCalendarChooser extends UIViewController {
     @Generated
     @Selector("initWithSelectionStyle:displayStyle:entityType:eventStore:")
     public native EKCalendarChooser initWithSelectionStyleDisplayStyleEntityTypeEventStore(@NInt long style,
-            @NInt long displayStyle, @NUInt long entityType, EKEventStore eventStore);
+            @NInt long displayStyle, @NUInt long entityType, @NotNull EKEventStore eventStore);
 
     @Generated
     @Selector("initWithSelectionStyle:displayStyle:eventStore:")
     public native EKCalendarChooser initWithSelectionStyleDisplayStyleEventStore(@NInt long selectionStyle,
-            @NInt long displayStyle, EKEventStore eventStore);
+            @NInt long displayStyle, @NotNull EKEventStore eventStore);
 
     /**
      * Regardless of whether the chooser allows you to select one or multiple
      * calendars, the selection is always expressed as a set.
      */
+    @NotNull
     @Generated
     @Selector("selectedCalendars")
     public native NSSet<? extends EKCalendar> selectedCalendars();
@@ -209,10 +218,10 @@ public class EKCalendarChooser extends UIViewController {
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) EKCalendarChooserDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) EKCalendarChooserDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) EKCalendarChooserDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) EKCalendarChooserDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -229,7 +238,7 @@ public class EKCalendarChooser extends UIViewController {
      */
     @Generated
     @Selector("setSelectedCalendars:")
-    public native void setSelectedCalendars(NSSet<? extends EKCalendar> value);
+    public native void setSelectedCalendars(@NotNull NSSet<? extends EKCalendar> value);
 
     @Generated
     @Selector("setShowsCancelButton:")

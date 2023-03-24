@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNLocalCorrelation
@@ -74,22 +76,25 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -113,7 +118,7 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNLocalCorrelation initWithCoder(NSCoder aDecoder);
+    public native MPSNNLocalCorrelation initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
@@ -126,8 +131,8 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNNLocalCorrelation initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNLocalCorrelation initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize the MPSNNLocalCorrelation filter with default property values.
@@ -137,7 +142,7 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
      */
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNNLocalCorrelation initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNLocalCorrelation initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Specifies information to apply the local correlation operation on an image.
@@ -154,7 +159,7 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
     @Generated
     @Selector("initWithDevice:windowInX:windowInY:strideInX:strideInY:")
     public native MPSNNLocalCorrelation initWithDeviceWindowInXWindowInYStrideInXStrideInY(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long windowInX, @NUInt long windowInY,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long windowInX, @NUInt long windowInY,
             @NUInt long strideInX, @NUInt long strideInY);
 
     @Generated
@@ -174,9 +179,10 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

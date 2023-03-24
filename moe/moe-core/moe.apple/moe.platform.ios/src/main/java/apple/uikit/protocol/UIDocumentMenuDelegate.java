@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 8.0
@@ -39,13 +40,13 @@ import org.moe.natj.objc.ann.Selector;
 public interface UIDocumentMenuDelegate {
     @Generated
     @Selector("documentMenu:didPickDocumentPicker:")
-    void documentMenuDidPickDocumentPicker(UIDocumentMenuViewController documentMenu,
-            UIDocumentPickerViewController documentPicker);
+    void documentMenuDidPickDocumentPicker(@NotNull UIDocumentMenuViewController documentMenu,
+            @NotNull UIDocumentPickerViewController documentPicker);
 
     @Generated
     @IsOptional
     @Selector("documentMenuWasCancelled:")
-    default void documentMenuWasCancelled(UIDocumentMenuViewController documentMenu) {
+    default void documentMenuWasCancelled(@NotNull UIDocumentMenuViewController documentMenu) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

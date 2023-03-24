@@ -38,6 +38,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -69,22 +71,25 @@ public class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -119,9 +124,10 @@ public class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,19 +162,22 @@ public class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
     /**
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("calendar")
     public native NSCalendar calendar();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("date")
     public native NSDate date();
@@ -180,7 +189,7 @@ public class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("era")
@@ -198,7 +207,7 @@ public class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSDateComponents initWithCoder(NSCoder coder);
+    public native NSDateComponents initWithCoder(@NotNull NSCoder coder);
 
     /**
      * API-Since: 6.0
@@ -243,7 +252,7 @@ public class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
      */
     @Generated
     @Selector("isValidDateInCalendar:")
-    public native boolean isValidDateInCalendar(NSCalendar calendar);
+    public native boolean isValidDateInCalendar(@NotNull NSCalendar calendar);
 
     @Generated
     @Selector("minute")
@@ -281,7 +290,7 @@ public class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
      */
     @Generated
     @Selector("setCalendar:")
-    public native void setCalendar(NSCalendar value);
+    public native void setCalendar(@Nullable NSCalendar value);
 
     @Generated
     @Selector("setDay:")
@@ -326,7 +335,7 @@ public class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
      */
     @Generated
     @Selector("setTimeZone:")
-    public native void setTimeZone(NSTimeZone value);
+    public native void setTimeZone(@Nullable NSTimeZone value);
 
     /**
      * This API allows one to set a specific component of NSDateComponents, by enum constant value rather than property
@@ -391,6 +400,7 @@ public class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
     /**
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();

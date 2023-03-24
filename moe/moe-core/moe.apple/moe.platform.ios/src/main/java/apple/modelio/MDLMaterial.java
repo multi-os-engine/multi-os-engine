@@ -44,6 +44,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.0
@@ -78,22 +80,25 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,16 +133,17 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * API-Since: 9.0
      */
     @Generated
     @Selector("materialWithSCNMaterial:")
-    public static native MDLMaterial materialWithSCNMaterial(SCNMaterial scnMaterial);
+    public static native MDLMaterial materialWithSCNMaterial(@NotNull SCNMaterial scnMaterial);
 
     @Generated
     @Owned
@@ -170,6 +176,7 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
      * propertyForKey will invoke propertyForKey on baseMaterial.
      * All other selectors disregard baseMaterial.
      */
+    @Nullable
     @Generated
     @Selector("baseMaterial")
     public native MDLMaterial baseMaterial();
@@ -182,8 +189,8 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")
     @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
+    public native long countByEnumeratingWithStateObjectsCount(@NotNull VoidPtr state,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
     @Generated
     @Selector("init")
@@ -191,7 +198,8 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
 
     @Generated
     @Selector("initWithName:scatteringFunction:")
-    public native MDLMaterial initWithNameScatteringFunction(String name, MDLScatteringFunction scatteringFunction);
+    public native MDLMaterial initWithNameScatteringFunction(@NotNull String name,
+            @NotNull MDLScatteringFunction scatteringFunction);
 
     /**
      * Default is MDLMaterialFaceFront
@@ -201,35 +209,41 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     @NUInt
     public native long materialFace();
 
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
 
+    @Nullable
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native MDLMaterialProperty objectAtIndexedSubscript(@NUInt long idx);
 
+    @Nullable
     @Generated
     @Selector("objectForKeyedSubscript:")
-    public native MDLMaterialProperty objectForKeyedSubscript(String name);
+    public native MDLMaterialProperty objectForKeyedSubscript(@NotNull String name);
 
     /**
      * Returns the complete list of properties that match the semantic (e.g. Kd & Kd_map)
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("propertiesWithSemantic:")
     public native NSArray<? extends MDLMaterialProperty> propertiesWithSemantic(@NUInt long semantic);
 
+    @Nullable
     @Generated
     @Selector("propertyNamed:")
-    public native MDLMaterialProperty propertyNamed(String name);
+    public native MDLMaterialProperty propertyNamed(@NotNull String name);
 
     /**
      * Returns the first occurence of the property that matches the semantic.
      * Not recommended to use when there are multiple properties with same semantic.
      */
+    @Nullable
     @Generated
     @Selector("propertyWithSemantic:")
     public native MDLMaterialProperty propertyWithSemantic(@NUInt long semantic);
@@ -240,8 +254,9 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
 
     @Generated
     @Selector("removeProperty:")
-    public native void removeProperty(MDLMaterialProperty property);
+    public native void removeProperty(@NotNull MDLMaterialProperty property);
 
+    @NotNull
     @Generated
     @Selector("scatteringFunction")
     public native MDLScatteringFunction scatteringFunction();
@@ -253,7 +268,7 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
      */
     @Generated
     @Selector("setBaseMaterial:")
-    public native void setBaseMaterial(MDLMaterial value);
+    public native void setBaseMaterial(@Nullable MDLMaterial value);
 
     /**
      * Default is MDLMaterialFaceFront
@@ -264,11 +279,11 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
 
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@NotNull String value);
 
     @Generated
     @Selector("setProperty:")
-    public native void setProperty(MDLMaterialProperty property);
+    public native void setProperty(@NotNull MDLMaterialProperty property);
 
     /**
      * Iterates all material properties. If they are string values or NSURL values, and
@@ -283,7 +298,7 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
      */
     @Generated
     @Selector("loadTexturesUsingResolver:")
-    public native void loadTexturesUsingResolver(@Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
+    public native void loadTexturesUsingResolver(@NotNull @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
 
     /**
      * Iterates all material properties. If they are string values, they are resolved into
@@ -296,5 +311,5 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
      */
     @Generated
     @Selector("resolveTexturesWithResolver:")
-    public native void resolveTexturesWithResolver(@Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
+    public native void resolveTexturesWithResolver(@NotNull @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
 }

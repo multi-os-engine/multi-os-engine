@@ -15,6 +15,8 @@ import org.moe.natj.objc.ann.Selector;
 import apple.corefoundation.struct.CGAffineTransform;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -44,6 +46,7 @@ public interface NSCollectionLayoutVisibleItem extends UIDynamicItem {
     @ByValue
     CGRect frame();
 
+    @NotNull
     @Generated
     @Selector("indexPath")
     NSIndexPath indexPath();
@@ -52,6 +55,7 @@ public interface NSCollectionLayoutVisibleItem extends UIDynamicItem {
     @Selector("isHidden")
     boolean isHidden();
 
+    @NotNull
     @Generated
     @Selector("name")
     String name();
@@ -61,6 +65,7 @@ public interface NSCollectionLayoutVisibleItem extends UIDynamicItem {
     @NUInt
     long representedElementCategory();
 
+    @Nullable
     @Generated
     @Selector("representedElementKind")
     String representedElementKind();

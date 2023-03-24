@@ -25,6 +25,8 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -49,6 +51,6 @@ public interface RPBroadcastActivityViewControllerDelegate {
     @Generated
     @Selector("broadcastActivityViewController:didFinishWithBroadcastController:error:")
     void broadcastActivityViewControllerDidFinishWithBroadcastControllerError(
-            RPBroadcastActivityViewController broadcastActivityViewController,
-            RPBroadcastController broadcastController, NSError error);
+            @NotNull RPBroadcastActivityViewController broadcastActivityViewController,
+            @Nullable RPBroadcastController broadcastController, @Nullable NSError error);
 }

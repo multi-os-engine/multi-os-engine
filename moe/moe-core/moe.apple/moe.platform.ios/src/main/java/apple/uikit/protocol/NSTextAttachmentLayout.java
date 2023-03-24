@@ -16,6 +16,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This protocol defines the interface to attachment objects from NSTextLayoutManager
@@ -37,8 +39,9 @@ public interface NSTextAttachmentLayout {
     @Selector("attachmentBoundsForAttributes:location:textContainer:proposedLineFragment:position:")
     @ByValue
     CGRect attachmentBoundsForAttributesLocationTextContainerProposedLineFragmentPosition(
-            NSDictionary<String, ?> attributes, @Mapped(ObjCObjectMapper.class) NSTextLocation location,
-            NSTextContainer textContainer, @ByValue CGRect proposedLineFragment, @ByValue CGPoint position);
+            @NotNull NSDictionary<String, ?> attributes,
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location, @Nullable NSTextContainer textContainer,
+            @ByValue CGRect proposedLineFragment, @ByValue CGPoint position);
 
     /**
      * Returns the image object rendered at bounds inside textContainer. It should return an image appropriate for the
@@ -47,10 +50,12 @@ public interface NSTextAttachmentLayout {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("imageForBounds:attributes:location:textContainer:")
-    UIImage imageForBoundsAttributesLocationTextContainer(@ByValue CGRect bounds, NSDictionary<String, ?> attributes,
-            @Mapped(ObjCObjectMapper.class) NSTextLocation location, NSTextContainer textContainer);
+    UIImage imageForBoundsAttributesLocationTextContainer(@ByValue CGRect bounds,
+            @NotNull NSDictionary<String, ?> attributes,
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location, @Nullable NSTextContainer textContainer);
 
     /**
      * Returns the text attachment view provider corresponding to -fileType. The default implementation queries the text
@@ -59,8 +64,9 @@ public interface NSTextAttachmentLayout {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("viewProviderForParentView:location:textContainer:")
-    NSTextAttachmentViewProvider viewProviderForParentViewLocationTextContainer(UIView parentView,
-            @Mapped(ObjCObjectMapper.class) NSTextLocation location, NSTextContainer textContainer);
+    NSTextAttachmentViewProvider viewProviderForParentViewLocationTextContainer(@Nullable UIView parentView,
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location, @Nullable NSTextContainer textContainer);
 }

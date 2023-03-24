@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -72,22 +74,25 @@ public class NSMassFormatter extends NSFormatter {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,9 +127,10 @@ public class NSMassFormatter extends NSFormatter {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,8 +164,8 @@ public class NSMassFormatter extends NSFormatter {
     @Generated
     @Selector("getObjectValue:forString:errorDescription:")
     public native boolean getObjectValueForStringErrorDescription(
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> obj, String string,
-            @ReferenceInfo(type = NSString.class) Ptr<NSString> error);
+            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> obj, @NotNull String string,
+            @Nullable @ReferenceInfo(type = NSString.class) Ptr<NSString> error);
 
     @Generated
     @Selector("init")
@@ -167,7 +173,7 @@ public class NSMassFormatter extends NSFormatter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMassFormatter initWithCoder(NSCoder coder);
+    public native NSMassFormatter initWithCoder(@NotNull NSCoder coder);
 
     /**
      * default is NO; if it is set to YES, the number argument for -stringFromKilograms: and -unitStringFromKilograms:
@@ -210,6 +216,7 @@ public class NSMassFormatter extends NSFormatter {
      * Format a number in kilograms to a localized string with the locale-appropriate unit and an appropriate scale
      * (e.g. 1.2kg = 2.64lb in the US locale).
      */
+    @NotNull
     @Generated
     @Selector("stringFromKilograms:")
     public native String stringFromKilograms(double numberInKilograms);
@@ -217,6 +224,7 @@ public class NSMassFormatter extends NSFormatter {
     /**
      * Format a combination of a number and an unit to a localized string.
      */
+    @NotNull
     @Generated
     @Selector("stringFromValue:unit:")
     public native String stringFromValueUnit(double value, @NInt long unit);
@@ -224,13 +232,15 @@ public class NSMassFormatter extends NSFormatter {
     /**
      * Return the locale-appropriate unit, the same unit used by -stringFromKilograms:.
      */
+    @NotNull
     @Generated
     @Selector("unitStringFromKilograms:usedUnit:")
-    public native String unitStringFromKilogramsUsedUnit(double numberInKilograms, NIntPtr unitp);
+    public native String unitStringFromKilogramsUsedUnit(double numberInKilograms, @Nullable NIntPtr unitp);
 
     /**
      * Return a localized string of the given unit, and if the unit is singular or plural is based on the given number.
      */
+    @NotNull
     @Generated
     @Selector("unitStringFromValue:unit:")
     public native String unitStringFromValueUnit(double value, @NInt long unit);

@@ -35,6 +35,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.metal.struct.MTLResourceID;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLComputePipelineState
@@ -56,6 +58,7 @@ public interface MTLComputePipelineState {
      * 
      * The device this resource was created against. This resource can only be used with this device.
      */
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -96,6 +99,7 @@ public interface MTLComputePipelineState {
     /**
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();
@@ -130,10 +134,11 @@ public interface MTLComputePipelineState {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("functionHandleWithFunction:")
     @MappedReturn(ObjCObjectMapper.class)
-    MTLFunctionHandle functionHandleWithFunction(@Mapped(ObjCObjectMapper.class) MTLFunction function);
+    MTLFunctionHandle functionHandleWithFunction(@NotNull @Mapped(ObjCObjectMapper.class) MTLFunction function);
 
     /**
      * newRenderPipelineStateWithAdditionalBinaryFunctions:stage:
@@ -142,11 +147,12 @@ public interface MTLComputePipelineState {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("newComputePipelineStateWithAdditionalBinaryFunctions:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    MTLComputePipelineState newComputePipelineStateWithAdditionalBinaryFunctionsError(NSArray<?> functions,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    MTLComputePipelineState newComputePipelineStateWithAdditionalBinaryFunctionsError(@NotNull NSArray<?> functions,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * newIntersectionFunctionTableWithDescriptor:
@@ -155,11 +161,12 @@ public interface MTLComputePipelineState {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("newIntersectionFunctionTableWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
     MTLIntersectionFunctionTable newIntersectionFunctionTableWithDescriptor(
-            MTLIntersectionFunctionTableDescriptor descriptor);
+            @NotNull MTLIntersectionFunctionTableDescriptor descriptor);
 
     /**
      * newVisibleFunctionTableWithDescriptor:
@@ -168,10 +175,12 @@ public interface MTLComputePipelineState {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("newVisibleFunctionTableWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
-    MTLVisibleFunctionTable newVisibleFunctionTableWithDescriptor(MTLVisibleFunctionTableDescriptor descriptor);
+    MTLVisibleFunctionTable newVisibleFunctionTableWithDescriptor(
+            @NotNull MTLVisibleFunctionTableDescriptor descriptor);
 
     /**
      * [@property] gpuResourceID

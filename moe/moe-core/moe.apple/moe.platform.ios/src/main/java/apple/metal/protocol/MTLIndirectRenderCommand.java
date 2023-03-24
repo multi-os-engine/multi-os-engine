@@ -10,6 +10,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Describes a CPU-recorded indirect render command
@@ -25,25 +27,25 @@ public interface MTLIndirectRenderCommand {
     @Selector("drawIndexedPatches:patchStart:patchCount:patchIndexBuffer:patchIndexBufferOffset:controlPointIndexBuffer:controlPointIndexBufferOffset:instanceCount:baseInstance:tessellationFactorBuffer:tessellationFactorBufferOffset:tessellationFactorBufferInstanceStride:")
     void drawIndexedPatchesPatchStartPatchCountPatchIndexBufferPatchIndexBufferOffsetControlPointIndexBufferControlPointIndexBufferOffsetInstanceCountBaseInstanceTessellationFactorBufferTessellationFactorBufferOffsetTessellationFactorBufferInstanceStride(
             @NUInt long numberOfPatchControlPoints, @NUInt long patchStart, @NUInt long patchCount,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer patchIndexBuffer, @NUInt long patchIndexBufferOffset,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer controlPointIndexBuffer,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer patchIndexBuffer, @NUInt long patchIndexBufferOffset,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer controlPointIndexBuffer,
             @NUInt long controlPointIndexBufferOffset, @NUInt long instanceCount, @NUInt long baseInstance,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset, @NUInt long instanceStride);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset, @NUInt long instanceStride);
 
     @Generated
     @Selector("drawIndexedPrimitives:indexCount:indexType:indexBuffer:indexBufferOffset:instanceCount:baseVertex:baseInstance:")
     void drawIndexedPrimitivesIndexCountIndexTypeIndexBufferIndexBufferOffsetInstanceCountBaseVertexBaseInstance(
             @NUInt long primitiveType, @NUInt long indexCount, @NUInt long indexType,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer indexBuffer, @NUInt long indexBufferOffset,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer indexBuffer, @NUInt long indexBufferOffset,
             @NUInt long instanceCount, @NInt long baseVertex, @NUInt long baseInstance);
 
     @Generated
     @Selector("drawPatches:patchStart:patchCount:patchIndexBuffer:patchIndexBufferOffset:instanceCount:baseInstance:tessellationFactorBuffer:tessellationFactorBufferOffset:tessellationFactorBufferInstanceStride:")
     void drawPatchesPatchStartPatchCountPatchIndexBufferPatchIndexBufferOffsetInstanceCountBaseInstanceTessellationFactorBufferTessellationFactorBufferOffsetTessellationFactorBufferInstanceStride(
             @NUInt long numberOfPatchControlPoints, @NUInt long patchStart, @NUInt long patchCount,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer patchIndexBuffer, @NUInt long patchIndexBufferOffset,
-            @NUInt long instanceCount, @NUInt long baseInstance, @Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
-            @NUInt long offset, @NUInt long instanceStride);
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer patchIndexBuffer, @NUInt long patchIndexBufferOffset,
+            @NUInt long instanceCount, @NUInt long baseInstance,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset, @NUInt long instanceStride);
 
     @Generated
     @Selector("drawPrimitives:vertexStart:vertexCount:instanceCount:baseInstance:")
@@ -56,7 +58,7 @@ public interface MTLIndirectRenderCommand {
 
     @Generated
     @Selector("setFragmentBuffer:offset:atIndex:")
-    void setFragmentBufferOffsetAtIndex(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
+    void setFragmentBufferOffsetAtIndex(@NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
             @NUInt long index);
 
     /**
@@ -64,10 +66,10 @@ public interface MTLIndirectRenderCommand {
      */
     @Generated
     @Selector("setRenderPipelineState:")
-    void setRenderPipelineState(@Mapped(ObjCObjectMapper.class) MTLRenderPipelineState pipelineState);
+    void setRenderPipelineState(@NotNull @Mapped(ObjCObjectMapper.class) MTLRenderPipelineState pipelineState);
 
     @Generated
     @Selector("setVertexBuffer:offset:atIndex:")
-    void setVertexBufferOffsetAtIndex(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
+    void setVertexBufferOffsetAtIndex(@NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
             @NUInt long index);
 }

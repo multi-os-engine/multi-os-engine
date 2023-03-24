@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -42,8 +43,8 @@ public interface UIPopoverPresentationControllerDelegate extends UIAdaptivePrese
     @IsOptional
     @Selector("popoverPresentationController:willRepositionPopoverToRect:inView:")
     default void popoverPresentationControllerWillRepositionPopoverToRectInView(
-            UIPopoverPresentationController popoverPresentationController, CGRect rect,
-            @ReferenceInfo(type = UIView.class) Ptr<UIView> view) {
+            @NotNull UIPopoverPresentationController popoverPresentationController, @NotNull CGRect rect,
+            @NotNull @ReferenceInfo(type = UIView.class) Ptr<UIView> view) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -59,7 +60,7 @@ public interface UIPopoverPresentationControllerDelegate extends UIAdaptivePrese
     @IsOptional
     @Selector("popoverPresentationControllerDidDismissPopover:")
     default void popoverPresentationControllerDidDismissPopover(
-            UIPopoverPresentationController popoverPresentationController) {
+            @NotNull UIPopoverPresentationController popoverPresentationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -75,14 +76,14 @@ public interface UIPopoverPresentationControllerDelegate extends UIAdaptivePrese
     @IsOptional
     @Selector("popoverPresentationControllerShouldDismissPopover:")
     default boolean popoverPresentationControllerShouldDismissPopover(
-            UIPopoverPresentationController popoverPresentationController) {
+            @NotNull UIPopoverPresentationController popoverPresentationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("prepareForPopoverPresentation:")
-    default void prepareForPopoverPresentation(UIPopoverPresentationController popoverPresentationController) {
+    default void prepareForPopoverPresentation(@NotNull UIPopoverPresentationController popoverPresentationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

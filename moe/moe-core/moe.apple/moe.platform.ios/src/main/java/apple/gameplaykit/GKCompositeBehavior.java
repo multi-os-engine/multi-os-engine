@@ -39,6 +39,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A GKBehavior that can also contain a number of sub-behaviors
@@ -74,55 +76,58 @@ public class GKCompositeBehavior extends GKBehavior {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Creates a behavior with an array of sub-behaviors
      */
     @Generated
     @Selector("behaviorWithBehaviors:")
-    public static native GKCompositeBehavior behaviorWithBehaviors(NSArray<? extends GKBehavior> behaviors);
+    public static native GKCompositeBehavior behaviorWithBehaviors(@NotNull NSArray<? extends GKBehavior> behaviors);
 
     /**
      * Creates a behavior with two associated arrays of sub-behaviors and weights
      */
     @Generated
     @Selector("behaviorWithBehaviors:andWeights:")
-    public static native GKCompositeBehavior behaviorWithBehaviorsAndWeights(NSArray<? extends GKBehavior> behaviors,
-            NSArray<? extends NSNumber> weights);
+    public static native GKCompositeBehavior behaviorWithBehaviorsAndWeights(
+            @NotNull NSArray<? extends GKBehavior> behaviors, @NotNull NSArray<? extends NSNumber> weights);
 
     @Generated
     @Selector("behaviorWithGoal:weight:")
-    public static native GKCompositeBehavior behaviorWithGoalWeight(GKGoal goal, float weight);
+    public static native GKCompositeBehavior behaviorWithGoalWeight(@NotNull GKGoal goal, float weight);
 
     @Generated
     @Selector("behaviorWithGoals:")
-    public static native GKCompositeBehavior behaviorWithGoals(NSArray<? extends GKGoal> goals);
+    public static native GKCompositeBehavior behaviorWithGoals(@NotNull NSArray<? extends GKGoal> goals);
 
     @Generated
     @Selector("behaviorWithGoals:andWeights:")
-    public static native GKCompositeBehavior behaviorWithGoalsAndWeights(NSArray<? extends GKGoal> goals,
-            NSArray<? extends NSNumber> weights);
+    public static native GKCompositeBehavior behaviorWithGoalsAndWeights(@NotNull NSArray<? extends GKGoal> goals,
+            @NotNull NSArray<? extends NSNumber> weights);
 
     @Generated
     @Selector("behaviorWithWeightedGoals:")
     public static native GKCompositeBehavior behaviorWithWeightedGoals(
-            NSDictionary<? extends GKGoal, ? extends NSNumber> weightedGoals);
+            @NotNull NSDictionary<? extends GKGoal, ? extends NSNumber> weightedGoals);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -157,9 +162,10 @@ public class GKCompositeBehavior extends GKBehavior {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -202,6 +208,7 @@ public class GKCompositeBehavior extends GKBehavior {
     /**
      * Supports getting behaviors via a [int] subscript.
      */
+    @NotNull
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native GKGoal objectAtIndexedSubscript(@NUInt long idx);
@@ -209,9 +216,10 @@ public class GKCompositeBehavior extends GKBehavior {
     /**
      * Supports getting a weight via a [behavior] subscript.
      */
+    @NotNull
     @Generated
     @Selector("objectForKeyedSubscript:")
-    public native NSNumber objectForKeyedSubscript(GKBehavior behavior);
+    public native NSNumber objectForKeyedSubscript(@NotNull GKBehavior behavior);
 
     /**
      * Removes all the sub-behavior on the behavior.
@@ -227,14 +235,14 @@ public class GKCompositeBehavior extends GKBehavior {
      */
     @Generated
     @Selector("removeBehavior:")
-    public native void removeBehavior(GKBehavior behavior);
+    public native void removeBehavior(@NotNull GKBehavior behavior);
 
     /**
      * Supports setting a weight via a [behavior] subscript.
      */
     @Generated
     @Selector("setObject:forKeyedSubscript:")
-    public native void setObjectForKeyedSubscript(NSNumber weight, GKBehavior behavior);
+    public native void setObjectForKeyedSubscript(@NotNull NSNumber weight, @NotNull GKBehavior behavior);
 
     /**
      * Adds a new sub-behavior or changes the weight of the existing sub-behavior in this behavior.
@@ -245,7 +253,7 @@ public class GKCompositeBehavior extends GKBehavior {
      */
     @Generated
     @Selector("setWeight:forBehavior:")
-    public native void setWeightForBehavior(float weight, GKBehavior behavior);
+    public native void setWeightForBehavior(float weight, @NotNull GKBehavior behavior);
 
     /**
      * Gets the current weight for a given sub-behavior.
@@ -254,5 +262,5 @@ public class GKCompositeBehavior extends GKBehavior {
      */
     @Generated
     @Selector("weightForBehavior:")
-    public native float weightForBehavior(GKBehavior behavior);
+    public native float weightForBehavior(@NotNull GKBehavior behavior);
 }

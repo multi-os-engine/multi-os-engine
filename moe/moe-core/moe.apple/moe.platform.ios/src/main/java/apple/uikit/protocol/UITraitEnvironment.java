@@ -23,6 +23,8 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Trait environments expose a trait collection that describes their environment.
@@ -35,6 +37,7 @@ public interface UITraitEnvironment {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("traitCollection")
     UITraitCollection traitCollection();
@@ -46,5 +49,5 @@ public interface UITraitEnvironment {
      */
     @Generated
     @Selector("traitCollectionDidChange:")
-    void traitCollectionDidChange(UITraitCollection previousTraitCollection);
+    void traitCollectionDidChange(@Nullable UITraitCollection previousTraitCollection);
 }

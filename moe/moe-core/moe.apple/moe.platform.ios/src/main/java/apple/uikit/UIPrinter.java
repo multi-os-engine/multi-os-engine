@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -73,22 +75,25 @@ public class UIPrinter extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +128,10 @@ public class UIPrinter extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -141,9 +147,10 @@ public class UIPrinter extends NSObject {
      * A UIPrinter object is returned even if the printer is not available
      * on the network.
      */
+    @NotNull
     @Generated
     @Selector("printerWithURL:")
-    public static native UIPrinter printerWithURL(NSURL url);
+    public static native UIPrinter printerWithURL(@NotNull NSURL url);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -173,6 +180,7 @@ public class UIPrinter extends NSObject {
      * used in future calls to printerWithURL to access the same
      * printer.
      */
+    @NotNull
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -189,7 +197,8 @@ public class UIPrinter extends NSObject {
      */
     @Generated
     @Selector("contactPrinter:")
-    public native void contactPrinter(@ObjCBlock(name = "call_contactPrinter") Block_contactPrinter completionHandler);
+    public native void contactPrinter(
+            @Nullable @ObjCBlock(name = "call_contactPrinter") Block_contactPrinter completionHandler);
 
     /**
      * Return a human-readable location.
@@ -200,6 +209,7 @@ public class UIPrinter extends NSObject {
      * This property's value is undefined until contactPrinter: has been called and
      * completed successfully.
      */
+    @Nullable
     @Generated
     @Selector("displayLocation")
     public native String displayLocation();
@@ -209,6 +219,7 @@ public class UIPrinter extends NSObject {
      * 
      * This method returns the printer name suitable for displaying in the UI.
      */
+    @NotNull
     @Generated
     @Selector("displayName")
     public native String displayName();
@@ -225,6 +236,7 @@ public class UIPrinter extends NSObject {
      * This property's value is undefined until contactPrinter: has been called and
      * completed successfully.
      */
+    @Nullable
     @Generated
     @Selector("makeAndModel")
     public native String makeAndModel();

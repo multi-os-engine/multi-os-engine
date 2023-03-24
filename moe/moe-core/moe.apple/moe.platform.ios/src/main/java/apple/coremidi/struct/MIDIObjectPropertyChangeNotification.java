@@ -23,6 +23,7 @@ import org.moe.natj.c.ann.StructureField;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Structure()
@@ -75,11 +76,12 @@ public final class MIDIObjectPropertyChangeNotification extends StructObject {
     @StructureField(order = 3, isGetter = false)
     public native void setObjectType(int value);
 
+    @NotNull
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native CFStringRef propertyName();
 
     @Generated
     @StructureField(order = 4, isGetter = false)
-    public native void setPropertyName(CFStringRef value);
+    public native void setPropertyName(@NotNull CFStringRef value);
 }

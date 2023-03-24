@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The GCDualSenseGamepad profile represents any supported DualSense controller.
@@ -60,22 +62,25 @@ public class GCDualSenseGamepad extends GCExtendedGamepad {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -114,9 +119,10 @@ public class GCDualSenseGamepad extends GCExtendedGamepad {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Triggers are required to be analog inputs. Common uses would be acceleration and decelleration in a driving game
@@ -126,6 +132,7 @@ public class GCDualSenseGamepad extends GCExtendedGamepad {
      * pulling the trigger. This can,
      * for example, be used to emulate the feeling of pulling back a bow string, firing a weapon, or pulling a lever.
      */
+    @NotNull
     @Generated
     @Selector("leftTrigger")
     public native GCDualSenseAdaptiveTrigger leftTrigger();
@@ -143,6 +150,7 @@ public class GCDualSenseGamepad extends GCExtendedGamepad {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @NotNull
     @Generated
     @Selector("rightTrigger")
     public native GCDualSenseAdaptiveTrigger rightTrigger();
@@ -158,14 +166,17 @@ public class GCDualSenseGamepad extends GCExtendedGamepad {
     /**
      * DualSense controllers have a touchpad with a button and two-finger tracking.
      */
+    @NotNull
     @Generated
     @Selector("touchpadButton")
     public native GCControllerButtonInput touchpadButton();
 
+    @NotNull
     @Generated
     @Selector("touchpadPrimary")
     public native GCControllerDirectionPad touchpadPrimary();
 
+    @NotNull
     @Generated
     @Selector("touchpadSecondary")
     public native GCControllerDirectionPad touchpadSecondary();

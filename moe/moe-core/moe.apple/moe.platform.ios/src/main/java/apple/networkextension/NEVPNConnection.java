@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.natj.objc.ann.ObjCBlock;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEVPNConnection
@@ -83,22 +85,25 @@ public class NEVPNConnection extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +138,10 @@ public class NEVPNConnection extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -171,6 +177,7 @@ public class NEVPNConnection extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("connectedDate")
     public native NSDate connectedDate();
@@ -186,6 +193,7 @@ public class NEVPNConnection extends NSObject {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("manager")
     public native NEVPNManager manager();
@@ -206,7 +214,8 @@ public class NEVPNConnection extends NSObject {
      */
     @Generated
     @Selector("startVPNTunnelAndReturnError:")
-    public native boolean startVPNTunnelAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean startVPNTunnelAndReturnError(
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * startVPNTunnelWithOptions:andReturnError:
@@ -228,8 +237,9 @@ public class NEVPNConnection extends NSObject {
      */
     @Generated
     @Selector("startVPNTunnelWithOptions:andReturnError:")
-    public native boolean startVPNTunnelWithOptionsAndReturnError(NSDictionary<String, ? extends NSObject> options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean startVPNTunnelWithOptionsAndReturnError(
+            @Nullable NSDictionary<String, ? extends NSObject> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * [@property] status
@@ -270,12 +280,12 @@ public class NEVPNConnection extends NSObject {
     @Generated
     @Selector("fetchLastDisconnectErrorWithCompletionHandler:")
     public native void fetchLastDisconnectErrorWithCompletionHandler(
-            @ObjCBlock(name = "call_fetchLastDisconnectErrorWithCompletionHandler") Block_fetchLastDisconnectErrorWithCompletionHandler handler);
+            @NotNull @ObjCBlock(name = "call_fetchLastDisconnectErrorWithCompletionHandler") Block_fetchLastDisconnectErrorWithCompletionHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchLastDisconnectErrorWithCompletionHandler {
         @Generated
-        void call_fetchLastDisconnectErrorWithCompletionHandler(NSError arg0);
+        void call_fetchLastDisconnectErrorWithCompletionHandler(@Nullable NSError arg0);
     }
 }

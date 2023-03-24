@@ -27,6 +27,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * This defines the protocol for a delegate to receive updates about
@@ -49,7 +50,8 @@ public interface HMAccessoryDelegate {
     @Generated
     @IsOptional
     @Selector("accessory:didUpdateAssociatedServiceTypeForService:")
-    default void accessoryDidUpdateAssociatedServiceTypeForService(HMAccessory accessory, HMService service) {
+    default void accessoryDidUpdateAssociatedServiceTypeForService(@NotNull HMAccessory accessory,
+            @NotNull HMService service) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -63,7 +65,7 @@ public interface HMAccessoryDelegate {
     @Generated
     @IsOptional
     @Selector("accessory:didUpdateNameForService:")
-    default void accessoryDidUpdateNameForService(HMAccessory accessory, HMService service) {
+    default void accessoryDidUpdateNameForService(@NotNull HMAccessory accessory, @NotNull HMService service) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,8 +81,8 @@ public interface HMAccessoryDelegate {
     @Generated
     @IsOptional
     @Selector("accessory:service:didUpdateValueForCharacteristic:")
-    default void accessoryServiceDidUpdateValueForCharacteristic(HMAccessory accessory, HMService service,
-            HMCharacteristic characteristic) {
+    default void accessoryServiceDidUpdateValueForCharacteristic(@NotNull HMAccessory accessory,
+            @NotNull HMService service, @NotNull HMCharacteristic characteristic) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -92,7 +94,7 @@ public interface HMAccessoryDelegate {
     @Generated
     @IsOptional
     @Selector("accessoryDidUpdateName:")
-    default void accessoryDidUpdateName(HMAccessory accessory) {
+    default void accessoryDidUpdateName(@NotNull HMAccessory accessory) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,7 +106,7 @@ public interface HMAccessoryDelegate {
     @Generated
     @IsOptional
     @Selector("accessoryDidUpdateReachability:")
-    default void accessoryDidUpdateReachability(HMAccessory accessory) {
+    default void accessoryDidUpdateReachability(@NotNull HMAccessory accessory) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -117,7 +119,7 @@ public interface HMAccessoryDelegate {
     @Generated
     @IsOptional
     @Selector("accessoryDidUpdateServices:")
-    default void accessoryDidUpdateServices(HMAccessory accessory) {
+    default void accessoryDidUpdateServices(@NotNull HMAccessory accessory) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -132,7 +134,7 @@ public interface HMAccessoryDelegate {
     @Generated
     @IsOptional
     @Selector("accessory:didAddProfile:")
-    default void accessoryDidAddProfile(HMAccessory accessory, HMAccessoryProfile profile) {
+    default void accessoryDidAddProfile(@NotNull HMAccessory accessory, @NotNull HMAccessoryProfile profile) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -147,7 +149,7 @@ public interface HMAccessoryDelegate {
     @Generated
     @IsOptional
     @Selector("accessory:didRemoveProfile:")
-    default void accessoryDidRemoveProfile(HMAccessory accessory, HMAccessoryProfile profile) {
+    default void accessoryDidRemoveProfile(@NotNull HMAccessory accessory, @NotNull HMAccessoryProfile profile) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -163,7 +165,7 @@ public interface HMAccessoryDelegate {
     @Generated
     @IsOptional
     @Selector("accessory:didUpdateFirmwareVersion:")
-    default void accessoryDidUpdateFirmwareVersion(HMAccessory accessory, String firmwareVersion) {
+    default void accessoryDidUpdateFirmwareVersion(@NotNull HMAccessory accessory, @NotNull String firmwareVersion) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

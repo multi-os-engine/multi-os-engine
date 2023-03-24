@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 12.0
@@ -46,6 +48,7 @@ public class CPTripPreviewTextConfiguration extends NSObject implements NSSecure
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    @Nullable
     @Generated
     @Selector("additionalRoutesButtonTitle")
     public native String additionalRoutesButtonTitle();
@@ -62,22 +65,25 @@ public class CPTripPreviewTextConfiguration extends NSObject implements NSSecure
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -92,7 +98,7 @@ public class CPTripPreviewTextConfiguration extends NSObject implements NSSecure
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -105,12 +111,13 @@ public class CPTripPreviewTextConfiguration extends NSObject implements NSSecure
 
     @Generated
     @Selector("initWithCoder:")
-    public native CPTripPreviewTextConfiguration initWithCoder(NSCoder coder);
+    public native CPTripPreviewTextConfiguration initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithStartButtonTitle:additionalRoutesButtonTitle:overviewButtonTitle:")
     public native CPTripPreviewTextConfiguration initWithStartButtonTitleAdditionalRoutesButtonTitleOverviewButtonTitle(
-            String startButtonTitle, String additionalRoutesButtonTitle, String overviewButtonTitle);
+            @Nullable String startButtonTitle, @Nullable String additionalRoutesButtonTitle,
+            @Nullable String overviewButtonTitle);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -129,15 +136,17 @@ public class CPTripPreviewTextConfiguration extends NSObject implements NSSecure
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native CPTripPreviewTextConfiguration new_objc();
 
+    @Nullable
     @Generated
     @Selector("overviewButtonTitle")
     public native String overviewButtonTitle();
@@ -154,6 +163,7 @@ public class CPTripPreviewTextConfiguration extends NSObject implements NSSecure
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @Nullable
     @Generated
     @Selector("startButtonTitle")
     public native String startButtonTitle();

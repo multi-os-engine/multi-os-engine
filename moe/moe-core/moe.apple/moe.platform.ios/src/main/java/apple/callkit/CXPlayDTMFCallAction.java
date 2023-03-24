@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -74,22 +76,25 @@ public class CXPlayDTMFCallAction extends CXCallAction {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +129,10 @@ public class CXPlayDTMFCallAction extends CXCallAction {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,6 +167,7 @@ public class CXPlayDTMFCallAction extends CXCallAction {
     /**
      * The string representation of the digits that should be played as DTMF tones
      */
+    @NotNull
     @Generated
     @Selector("digits")
     public native String digits();
@@ -171,22 +178,23 @@ public class CXPlayDTMFCallAction extends CXCallAction {
 
     @Generated
     @Selector("initWithCallUUID:")
-    public native CXPlayDTMFCallAction initWithCallUUID(NSUUID callUUID);
+    public native CXPlayDTMFCallAction initWithCallUUID(@NotNull NSUUID callUUID);
 
     @Generated
     @Selector("initWithCallUUID:digits:type:")
-    public native CXPlayDTMFCallAction initWithCallUUIDDigitsType(NSUUID callUUID, String digits, @NInt long type);
+    public native CXPlayDTMFCallAction initWithCallUUIDDigitsType(@NotNull NSUUID callUUID, @NotNull String digits,
+            @NInt long type);
 
     @Generated
     @Selector("initWithCoder:")
-    public native CXPlayDTMFCallAction initWithCoder(NSCoder aDecoder);
+    public native CXPlayDTMFCallAction initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * The string representation of the digits that should be played as DTMF tones
      */
     @Generated
     @Selector("setDigits:")
-    public native void setDigits(String value);
+    public native void setDigits(@NotNull String value);
 
     /**
      * Whether or not the string of digits represents tones following a hard or soft pause

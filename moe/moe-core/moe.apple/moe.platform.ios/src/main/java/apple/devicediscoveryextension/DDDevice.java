@@ -25,6 +25,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * ===========================================================================================================================
@@ -62,24 +64,26 @@ public class DDDevice extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Identifier to communicate with the device via Bluetooth.
      */
+    @Nullable
     @Generated
     @Selector("bluetoothIdentifier")
     public native NSUUID bluetoothIdentifier();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Category of the device.
@@ -89,10 +93,12 @@ public class DDDevice extends NSObject {
     @NInt
     public native long category();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -108,6 +114,7 @@ public class DDDevice extends NSObject {
     /**
      * Name of the device. Should be suitable for displaying to a user.
      */
+    @NotNull
     @Generated
     @Selector("displayName")
     public native String displayName();
@@ -120,6 +127,7 @@ public class DDDevice extends NSObject {
     /**
      * Identifier of the device.
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -133,8 +141,8 @@ public class DDDevice extends NSObject {
      */
     @Generated
     @Selector("initWithDisplayName:category:protocolType:identifier:")
-    public native DDDevice initWithDisplayNameCategoryProtocolTypeIdentifier(String displayName, @NInt long category,
-            UTType protocolType, String identifier);
+    public native DDDevice initWithDisplayNameCategoryProtocolTypeIdentifier(@NotNull String displayName,
+            @NInt long category, @NotNull UTType protocolType, @NotNull String identifier);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -153,14 +161,16 @@ public class DDDevice extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Subtitle of the media content being played. It can be used to display extra information about the content, such
      * as the name of the artist.
      */
+    @Nullable
     @Generated
     @Selector("mediaContentSubtitle")
     public native String mediaContentSubtitle();
@@ -168,6 +178,7 @@ public class DDDevice extends NSObject {
     /**
      * Title of the media content being played.
      */
+    @Nullable
     @Generated
     @Selector("mediaContentTitle")
     public native String mediaContentTitle();
@@ -183,6 +194,7 @@ public class DDDevice extends NSObject {
     /**
      * Endpoint to communicate with the device via networking.
      */
+    @Nullable
     @Generated
     @Selector("networkEndpoint")
     public native NSObject networkEndpoint();
@@ -203,6 +215,7 @@ public class DDDevice extends NSObject {
     /**
      * Uniform Type for the protocol.
      */
+    @NotNull
     @Generated
     @Selector("protocolType")
     public native UTType protocolType();
@@ -220,7 +233,7 @@ public class DDDevice extends NSObject {
      */
     @Generated
     @Selector("setBluetoothIdentifier:")
-    public native void setBluetoothIdentifier(NSUUID value);
+    public native void setBluetoothIdentifier(@Nullable NSUUID value);
 
     /**
      * Category of the device.
@@ -234,14 +247,14 @@ public class DDDevice extends NSObject {
      */
     @Generated
     @Selector("setDisplayName:")
-    public native void setDisplayName(String value);
+    public native void setDisplayName(@NotNull String value);
 
     /**
      * Identifier of the device.
      */
     @Generated
     @Selector("setIdentifier:")
-    public native void setIdentifier(String value);
+    public native void setIdentifier(@NotNull String value);
 
     /**
      * Subtitle of the media content being played. It can be used to display extra information about the content, such
@@ -249,14 +262,14 @@ public class DDDevice extends NSObject {
      */
     @Generated
     @Selector("setMediaContentSubtitle:")
-    public native void setMediaContentSubtitle(String value);
+    public native void setMediaContentSubtitle(@Nullable String value);
 
     /**
      * Title of the media content being played.
      */
     @Generated
     @Selector("setMediaContentTitle:")
-    public native void setMediaContentTitle(String value);
+    public native void setMediaContentTitle(@Nullable String value);
 
     /**
      * Current state of media playback on this device.
@@ -270,7 +283,7 @@ public class DDDevice extends NSObject {
      */
     @Generated
     @Selector("setNetworkEndpoint:")
-    public native void setNetworkEndpoint(NSObject value);
+    public native void setNetworkEndpoint(@Nullable NSObject value);
 
     /**
      * Protocol of the device.
@@ -284,7 +297,7 @@ public class DDDevice extends NSObject {
      */
     @Generated
     @Selector("setProtocolType:")
-    public native void setProtocolType(UTType value);
+    public native void setProtocolType(@NotNull UTType value);
 
     /**
      * State of the device.
@@ -298,7 +311,7 @@ public class DDDevice extends NSObject {
      */
     @Generated
     @Selector("setTxtRecordData:")
-    public native void setTxtRecordData(NSData value);
+    public native void setTxtRecordData(@Nullable NSData value);
 
     /**
      * URL used for SSDP connection.
@@ -306,7 +319,7 @@ public class DDDevice extends NSObject {
      */
     @Generated
     @Selector("setUrl:")
-    public native void setUrl(NSURL value);
+    public native void setUrl(@NotNull NSURL value);
 
     @Generated
     @Selector("setVersion:")
@@ -327,6 +340,7 @@ public class DDDevice extends NSObject {
     /**
      * TXT record of the device.
      */
+    @Nullable
     @Generated
     @Selector("txtRecordData")
     public native NSData txtRecordData();
@@ -335,6 +349,7 @@ public class DDDevice extends NSObject {
      * URL used for SSDP connection.
      * The URL must have a valid hostname, no query parameters, and a maximum size of 100 bytes.
      */
+    @NotNull
     @Generated
     @Selector("url")
     public native NSURL url();

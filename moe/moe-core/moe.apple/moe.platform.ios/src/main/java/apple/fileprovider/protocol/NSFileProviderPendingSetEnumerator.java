@@ -7,6 +7,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -22,6 +23,7 @@ public interface NSFileProviderPendingSetEnumerator extends NSFileProviderEnumer
      * This property is updated when the enumeration methods are called on the pending set enumerator. The value
      * is initially nil.
      */
+    @Nullable
     @Generated
     @Selector("domainVersion")
     NSFileProviderDomainVersion domainVersion();

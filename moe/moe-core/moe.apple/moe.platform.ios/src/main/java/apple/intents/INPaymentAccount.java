@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.3
@@ -48,6 +50,7 @@ public class INPaymentAccount extends NSObject implements NSCopying, NSSecureCod
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    @Nullable
     @Generated
     @Selector("accountNumber")
     public native String accountNumber();
@@ -69,38 +72,43 @@ public class INPaymentAccount extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("balance")
     public native INBalanceAmount balance();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -112,7 +120,7 @@ public class INPaymentAccount extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -125,7 +133,7 @@ public class INPaymentAccount extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("initWithCoder:")
-    public native INPaymentAccount initWithCoder(NSCoder coder);
+    public native INPaymentAccount initWithCoder(@NotNull NSCoder coder);
 
     /**
      * API-Since: 10.3
@@ -136,8 +144,9 @@ public class INPaymentAccount extends NSObject implements NSCopying, NSSecureCod
     @Deprecated
     @Generated
     @Selector("initWithNickname:number:accountType:organizationName:")
-    public native INPaymentAccount initWithNicknameNumberAccountTypeOrganizationName(INSpeakableString nickname,
-            String number, @NInt long accountType, INSpeakableString organizationName);
+    public native INPaymentAccount initWithNicknameNumberAccountTypeOrganizationName(
+            @NotNull INSpeakableString nickname, @Nullable String number, @NInt long accountType,
+            @Nullable INSpeakableString organizationName);
 
     /**
      * API-Since: 11.0
@@ -145,8 +154,9 @@ public class INPaymentAccount extends NSObject implements NSCopying, NSSecureCod
     @Generated
     @Selector("initWithNickname:number:accountType:organizationName:balance:secondaryBalance:")
     public native INPaymentAccount initWithNicknameNumberAccountTypeOrganizationNameBalanceSecondaryBalance(
-            INSpeakableString nickname, String number, @NInt long accountType, INSpeakableString organizationName,
-            INBalanceAmount balance, INBalanceAmount secondaryBalance);
+            @NotNull INSpeakableString nickname, @Nullable String number, @NInt long accountType,
+            @Nullable INSpeakableString organizationName, @Nullable INBalanceAmount balance,
+            @Nullable INBalanceAmount secondaryBalance);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -165,19 +175,22 @@ public class INPaymentAccount extends NSObject implements NSCopying, NSSecureCod
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native INPaymentAccount new_objc();
 
+    @Nullable
     @Generated
     @Selector("nickname")
     public native INSpeakableString nickname();
 
+    @Nullable
     @Generated
     @Selector("organizationName")
     public native INSpeakableString organizationName();
@@ -193,6 +206,7 @@ public class INPaymentAccount extends NSObject implements NSCopying, NSSecureCod
     /**
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("secondaryBalance")
     public native INBalanceAmount secondaryBalance();

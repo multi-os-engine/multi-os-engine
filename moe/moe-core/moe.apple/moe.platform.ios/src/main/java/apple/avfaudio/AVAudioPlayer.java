@@ -29,6 +29,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 2.2
@@ -63,7 +65,7 @@ public class AVAudioPlayer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * returns average power in decibels for a given channel
@@ -74,27 +76,31 @@ public class AVAudioPlayer extends NSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Array of AVAudioSessionChannelDescription objects
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("channelAssignments")
     public native NSArray<? extends AVAudioSessionChannelDescription> channelAssignments();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -110,6 +116,7 @@ public class AVAudioPlayer extends NSObject {
     /**
      * returns nil if object was not created with a data object
      */
+    @Nullable
     @Generated
     @Selector("data")
     public native NSData data();
@@ -121,6 +128,7 @@ public class AVAudioPlayer extends NSObject {
     /**
      * the delegate will be sent messages from the AVAudioPlayerDelegate protocol
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -161,6 +169,7 @@ public class AVAudioPlayer extends NSObject {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("format")
     public native AVAudioFormat format();
@@ -179,8 +188,8 @@ public class AVAudioPlayer extends NSObject {
      */
     @Generated
     @Selector("initWithContentsOfURL:error:")
-    public native AVAudioPlayer initWithContentsOfURLError(NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native AVAudioPlayer initWithContentsOfURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * The file type hint is a constant defined in AVMediaFormat.h whose value is a UTI for a file format. e.g.
@@ -193,21 +202,21 @@ public class AVAudioPlayer extends NSObject {
      */
     @Generated
     @Selector("initWithContentsOfURL:fileTypeHint:error:")
-    public native AVAudioPlayer initWithContentsOfURLFileTypeHintError(NSURL url, String utiString,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native AVAudioPlayer initWithContentsOfURLFileTypeHintError(@NotNull NSURL url, @Nullable String utiString,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("initWithData:error:")
-    public native AVAudioPlayer initWithDataError(NSData data,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native AVAudioPlayer initWithDataError(@NotNull NSData data,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * API-Since: 7.0
      */
     @Generated
     @Selector("initWithData:fileTypeHint:error:")
-    public native AVAudioPlayer initWithDataFileTypeHintError(NSData data, String utiString,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native AVAudioPlayer initWithDataFileTypeHintError(@NotNull NSData data, @Nullable String utiString,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -240,9 +249,10 @@ public class AVAudioPlayer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -340,7 +350,7 @@ public class AVAudioPlayer extends NSObject {
      */
     @Generated
     @Selector("setChannelAssignments:")
-    public native void setChannelAssignments(NSArray<? extends AVAudioSessionChannelDescription> value);
+    public native void setChannelAssignments(@Nullable NSArray<? extends AVAudioSessionChannelDescription> value);
 
     /**
      * If the sound is playing, currentTime is the offset into the sound of the current playback position.
@@ -355,13 +365,13 @@ public class AVAudioPlayer extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) AVAudioPlayerDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) AVAudioPlayerDelegate value);
 
     /**
      * the delegate will be sent messages from the AVAudioPlayerDelegate protocol
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) AVAudioPlayerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) AVAudioPlayerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -442,6 +452,7 @@ public class AVAudioPlayer extends NSObject {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Selector("settings")
     public native NSDictionary<String, ?> settings();
@@ -469,6 +480,7 @@ public class AVAudioPlayer extends NSObject {
     /**
      * returns nil if object was not created with a URL
      */
+    @Nullable
     @Generated
     @Selector("url")
     public native NSURL url();

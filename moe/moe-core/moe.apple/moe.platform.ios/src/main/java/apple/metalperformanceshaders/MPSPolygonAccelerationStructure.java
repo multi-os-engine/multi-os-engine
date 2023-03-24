@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An acceleration structure built over polygonal shapes
@@ -63,22 +65,25 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -104,6 +109,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
      */
+    @Nullable
     @Generated
     @Selector("indexBuffer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -137,25 +143,26 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSPolygonAccelerationStructure initWithCoder(NSCoder aDecoder);
+    public native MPSPolygonAccelerationStructure initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSPolygonAccelerationStructure initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSPolygonAccelerationStructure initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithCoder:group:")
-    public native MPSPolygonAccelerationStructure initWithCoderGroup(NSCoder aDecoder,
-            MPSAccelerationStructureGroup group);
+    public native MPSPolygonAccelerationStructure initWithCoderGroup(@NotNull NSCoder aDecoder,
+            @NotNull MPSAccelerationStructureGroup group);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSPolygonAccelerationStructure initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSPolygonAccelerationStructure initWithDevice(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithGroup:")
-    public native MPSPolygonAccelerationStructure initWithGroup(MPSAccelerationStructureGroup group);
+    public native MPSPolygonAccelerationStructure initWithGroup(@NotNull MPSAccelerationStructureGroup group);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -174,9 +181,10 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Mask buffer containing one uint32_t mask per polygon. May be nil. Otherwise, the mask
@@ -186,6 +194,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
      */
+    @Nullable
     @Generated
     @Selector("maskBuffer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -225,6 +234,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * be exactly one MPSPolygonBuffer. Use the argumentBuffersSupport property of the MTLDevice to
      * check for support.
      */
+    @Nullable
     @Generated
     @Selector("polygonBuffers")
     public native NSArray<? extends MPSPolygonBuffer> polygonBuffers();
@@ -269,7 +279,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      */
     @Generated
     @Selector("setIndexBuffer:")
-    public native void setIndexBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
+    public native void setIndexBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
      * Offset, in bytes, into the index buffer. Defaults to 0 bytes. Must be aligned to a
@@ -302,7 +312,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      */
     @Generated
     @Selector("setMaskBuffer:")
-    public native void setMaskBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
+    public native void setMaskBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
      * Offset, in bytes, into the mask buffer. Defaults to 0 bytes. Must be aligned to 4 bytes.
@@ -334,7 +344,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      */
     @Generated
     @Selector("setPolygonBuffers:")
-    public native void setPolygonBuffers(NSArray<? extends MPSPolygonBuffer> value);
+    public native void setPolygonBuffers(@Nullable NSArray<? extends MPSPolygonBuffer> value);
 
     /**
      * Number of polygons. Changes to this property require rebuilding the acceleration
@@ -382,7 +392,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      */
     @Generated
     @Selector("setVertexBuffer:")
-    public native void setVertexBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
+    public native void setVertexBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
      * Offset, in bytes, into the vertex buffer. Defaults to 0 bytes. Must be aligned to 4
@@ -449,6 +459,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
      */
+    @Nullable
     @Generated
     @Selector("vertexBuffer")
     @MappedReturn(ObjCObjectMapper.class)

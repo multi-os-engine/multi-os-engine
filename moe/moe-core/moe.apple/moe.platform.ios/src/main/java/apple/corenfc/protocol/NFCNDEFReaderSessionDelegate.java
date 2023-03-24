@@ -11,6 +11,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] NFCNDEFReaderSessionDelegate
@@ -46,7 +47,8 @@ public interface NFCNDEFReaderSessionDelegate {
      */
     @Generated
     @Selector("readerSession:didDetectNDEFs:")
-    void readerSessionDidDetectNDEFs(NFCNDEFReaderSession session, NSArray<? extends NFCNDEFMessage> messages);
+    void readerSessionDidDetectNDEFs(@NotNull NFCNDEFReaderSession session,
+            @NotNull NSArray<? extends NFCNDEFMessage> messages);
 
     /**
      * readerSession:didDetectTags:
@@ -63,7 +65,7 @@ public interface NFCNDEFReaderSessionDelegate {
     @Generated
     @IsOptional
     @Selector("readerSession:didDetectTags:")
-    default void readerSessionDidDetectTags(NFCNDEFReaderSession session, NSArray<?> tags) {
+    default void readerSessionDidDetectTags(@NotNull NFCNDEFReaderSession session, @NotNull NSArray<?> tags) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -80,7 +82,7 @@ public interface NFCNDEFReaderSessionDelegate {
      */
     @Generated
     @Selector("readerSession:didInvalidateWithError:")
-    void readerSessionDidInvalidateWithError(NFCNDEFReaderSession session, NSError error);
+    void readerSessionDidInvalidateWithError(@NotNull NFCNDEFReaderSession session, @NotNull NSError error);
 
     /**
      * readerSessionDidBecomeActive:
@@ -94,7 +96,7 @@ public interface NFCNDEFReaderSessionDelegate {
     @Generated
     @IsOptional
     @Selector("readerSessionDidBecomeActive:")
-    default void readerSessionDidBecomeActive(NFCNDEFReaderSession session) {
+    default void readerSessionDidBecomeActive(@NotNull NFCNDEFReaderSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

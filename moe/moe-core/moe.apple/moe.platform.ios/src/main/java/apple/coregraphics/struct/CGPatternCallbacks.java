@@ -27,6 +27,7 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -48,8 +49,9 @@ public final class CGPatternCallbacks extends StructObject {
     }
 
     @Generated
-    public CGPatternCallbacks(int version, @FunctionPtr(name = "call_drawPattern") Function_drawPattern drawPattern,
-            @FunctionPtr(name = "call_releaseInfo") Function_releaseInfo releaseInfo) {
+    public CGPatternCallbacks(int version,
+            @FunctionPtr(name = "call_drawPattern") @Nullable Function_drawPattern drawPattern,
+            @FunctionPtr(name = "call_releaseInfo") @Nullable Function_releaseInfo releaseInfo) {
         super(CGPatternCallbacks.class);
         setVersion(version);
         setDrawPattern(drawPattern);
@@ -64,6 +66,7 @@ public final class CGPatternCallbacks extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setVersion(int value);
 
+    @Nullable
     @Generated
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_drawPattern")
@@ -71,8 +74,9 @@ public final class CGPatternCallbacks extends StructObject {
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setDrawPattern(@FunctionPtr(name = "call_drawPattern") Function_drawPattern value);
+    public native void setDrawPattern(@Nullable @FunctionPtr(name = "call_drawPattern") Function_drawPattern value);
 
+    @Nullable
     @Generated
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call_releaseInfo")
@@ -80,19 +84,19 @@ public final class CGPatternCallbacks extends StructObject {
 
     @Generated
     @StructureField(order = 2, isGetter = false)
-    public native void setReleaseInfo(@FunctionPtr(name = "call_releaseInfo") Function_releaseInfo value);
+    public native void setReleaseInfo(@Nullable @FunctionPtr(name = "call_releaseInfo") Function_releaseInfo value);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_drawPattern {
         @Generated
-        void call_drawPattern(VoidPtr arg0, CGContextRef arg1);
+        void call_drawPattern(@Nullable VoidPtr arg0, @Nullable CGContextRef arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_releaseInfo {
         @Generated
-        void call_releaseInfo(VoidPtr arg0);
+        void call_releaseInfo(@Nullable VoidPtr arg0);
     }
 }

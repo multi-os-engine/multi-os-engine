@@ -26,6 +26,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVPictureInPictureControllerContentSource
@@ -70,6 +72,7 @@ public class AVPictureInPictureControllerContentSource extends NSObject {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("activeVideoCallContentViewController")
     public native AVPictureInPictureVideoCallViewController activeVideoCallContentViewController();
@@ -86,6 +89,7 @@ public class AVPictureInPictureControllerContentSource extends NSObject {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("activeVideoCallSourceView")
     public native UIView activeVideoCallSourceView();
@@ -102,22 +106,25 @@ public class AVPictureInPictureControllerContentSource extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -155,7 +162,7 @@ public class AVPictureInPictureControllerContentSource extends NSObject {
     @Generated
     @Selector("initWithActiveVideoCallSourceView:contentViewController:")
     public native AVPictureInPictureControllerContentSource initWithActiveVideoCallSourceViewContentViewController(
-            UIView sourceView, AVPictureInPictureVideoCallViewController contentViewController);
+            @NotNull UIView sourceView, @NotNull AVPictureInPictureVideoCallViewController contentViewController);
 
     /**
      * initWithPlayerLayer:
@@ -167,7 +174,7 @@ public class AVPictureInPictureControllerContentSource extends NSObject {
      */
     @Generated
     @Selector("initWithPlayerLayer:")
-    public native AVPictureInPictureControllerContentSource initWithPlayerLayer(AVPlayerLayer playerLayer);
+    public native AVPictureInPictureControllerContentSource initWithPlayerLayer(@NotNull AVPlayerLayer playerLayer);
 
     /**
      * initWithSampleBufferDisplayLayer:
@@ -183,8 +190,8 @@ public class AVPictureInPictureControllerContentSource extends NSObject {
     @Generated
     @Selector("initWithSampleBufferDisplayLayer:playbackDelegate:")
     public native AVPictureInPictureControllerContentSource initWithSampleBufferDisplayLayerPlaybackDelegate(
-            AVSampleBufferDisplayLayer sampleBufferDisplayLayer,
-            @Mapped(ObjCObjectMapper.class) AVPictureInPictureSampleBufferPlaybackDelegate playbackDelegate);
+            @NotNull AVSampleBufferDisplayLayer sampleBufferDisplayLayer,
+            @NotNull @Mapped(ObjCObjectMapper.class) AVPictureInPictureSampleBufferPlaybackDelegate playbackDelegate);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -203,9 +210,10 @@ public class AVPictureInPictureControllerContentSource extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -217,6 +225,7 @@ public class AVPictureInPictureControllerContentSource extends NSObject {
      * 
      * The receiver's player layer.
      */
+    @Nullable
     @Generated
     @Selector("playerLayer")
     public native AVPlayerLayer playerLayer();
@@ -234,6 +243,7 @@ public class AVPictureInPictureControllerContentSource extends NSObject {
      * 
      * The receiver's sample buffer display layer.
      */
+    @Nullable
     @Generated
     @Selector("sampleBufferDisplayLayer")
     public native AVSampleBufferDisplayLayer sampleBufferDisplayLayer();
@@ -243,6 +253,7 @@ public class AVPictureInPictureControllerContentSource extends NSObject {
      * 
      * The receiver's sample buffer playback delegate.
      */
+    @Nullable
     @Generated
     @Selector("sampleBufferPlaybackDelegate")
     @MappedReturn(ObjCObjectMapper.class)

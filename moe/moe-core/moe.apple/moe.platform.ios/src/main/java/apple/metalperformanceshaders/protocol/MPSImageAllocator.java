@@ -13,6 +13,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * A class that allocates new MPSImage or MPSTemporaryImage
@@ -104,8 +105,10 @@ public interface MPSImageAllocator extends NSSecureCoding {
      * @return A valid MPSImage or MPSTemporaryImage. It will be automatically released when the command buffer
      *         completes.
      */
+    @NotNull
     @Generated
     @Selector("imageForCommandBuffer:imageDescriptor:kernel:")
-    MPSImage imageForCommandBufferImageDescriptorKernel(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf,
-            MPSImageDescriptor descriptor, MPSKernel kernel);
+    MPSImage imageForCommandBufferImageDescriptorKernel(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NotNull MPSImageDescriptor descriptor,
+            @NotNull MPSKernel kernel);
 }

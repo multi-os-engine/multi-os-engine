@@ -60,6 +60,8 @@ import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
 import apple.corefoundation.struct.CGVector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -157,36 +159,43 @@ public final class UIKit {
     @CFunction
     public static native boolean UIOffsetEqualToOffset(@ByValue UIOffset offset1, @ByValue UIOffset offset2);
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringFromCGPoint(@ByValue CGPoint point);
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringFromCGVector(@ByValue CGVector vector);
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringFromCGSize(@ByValue CGSize size);
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringFromCGRect(@ByValue CGRect rect);
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringFromCGAffineTransform(@ByValue CGAffineTransform transform);
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringFromUIEdgeInsets(@ByValue UIEdgeInsets insets);
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
@@ -195,47 +204,49 @@ public final class UIKit {
     @Generated
     @CFunction
     @ByValue
-    public static native CGPoint CGPointFromString(@Mapped(ObjCStringMapper.class) String string);
+    public static native CGPoint CGPointFromString(@NotNull @Mapped(ObjCStringMapper.class) String string);
 
     @Generated
     @CFunction
     @ByValue
-    public static native CGVector CGVectorFromString(@Mapped(ObjCStringMapper.class) String string);
+    public static native CGVector CGVectorFromString(@NotNull @Mapped(ObjCStringMapper.class) String string);
 
     @Generated
     @CFunction
     @ByValue
-    public static native CGSize CGSizeFromString(@Mapped(ObjCStringMapper.class) String string);
+    public static native CGSize CGSizeFromString(@NotNull @Mapped(ObjCStringMapper.class) String string);
 
     @Generated
     @CFunction
     @ByValue
-    public static native CGRect CGRectFromString(@Mapped(ObjCStringMapper.class) String string);
+    public static native CGRect CGRectFromString(@NotNull @Mapped(ObjCStringMapper.class) String string);
 
     @Generated
     @CFunction
     @ByValue
-    public static native CGAffineTransform CGAffineTransformFromString(@Mapped(ObjCStringMapper.class) String string);
+    public static native CGAffineTransform CGAffineTransformFromString(
+            @NotNull @Mapped(ObjCStringMapper.class) String string);
 
     @Generated
     @CFunction
     @ByValue
-    public static native UIEdgeInsets UIEdgeInsetsFromString(@Mapped(ObjCStringMapper.class) String string);
+    public static native UIEdgeInsets UIEdgeInsetsFromString(@NotNull @Mapped(ObjCStringMapper.class) String string);
 
     @Generated
     @CFunction
     @ByValue
-    public static native UIOffset UIOffsetFromString(@Mapped(ObjCStringMapper.class) String string);
+    public static native UIOffset UIOffsetFromString(@NotNull @Mapped(ObjCStringMapper.class) String string);
 
     /**
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Variadic()
     @CFunction
     public static native NSDictionary<String, ?> _NSDictionaryOfVariableBindings(
-            @Mapped(ObjCStringMapper.class) String commaSeparatedKeysString,
-            @Mapped(ObjCObjectMapper.class) Object firstValue, Object... varargs);
+            @NotNull @Mapped(ObjCStringMapper.class) String commaSeparatedKeysString,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object firstValue, Object... varargs);
 
     /**
      * API-Since: 6.0
@@ -270,24 +281,27 @@ public final class UIKit {
      */
     @Generated
     @CFunction
-    public static native int UIApplicationMain(int argc, Ptr<BytePtr> argv,
-            @Mapped(ObjCStringMapper.class) String principalClassName,
-            @Mapped(ObjCStringMapper.class) String delegateClassName);
+    public static native int UIApplicationMain(int argc, @NotNull Ptr<BytePtr> argv,
+            @Nullable @Mapped(ObjCStringMapper.class) String principalClassName,
+            @Nullable @Mapped(ObjCStringMapper.class) String delegateClassName);
 
+    @Nullable
     @Generated
     @CFunction
-    public static native NSData UIImagePNGRepresentation(UIImage image);
+    public static native NSData UIImagePNGRepresentation(@NotNull UIImage image);
 
+    @Nullable
     @Generated
     @CFunction
-    public static native NSData UIImageJPEGRepresentation(UIImage image, @NFloat double compressionQuality);
+    public static native NSData UIImageJPEGRepresentation(@NotNull UIImage image, @NFloat double compressionQuality);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @CFunction
-    public static native void UIAccessibilityZoomFocusChanged(@NInt long type, @ByValue CGRect frame, UIView view);
+    public static native void UIAccessibilityZoomFocusChanged(@NInt long type, @ByValue CGRect frame,
+            @NotNull UIView view);
 
     /**
      * If your app uses multi-finger gestures that conflict with system Zoom gestures (by using three fingers),
@@ -308,7 +322,7 @@ public final class UIKit {
     @CFunction
     @NInt
     public static native long UIGuidedAccessRestrictionStateForIdentifier(
-            @Mapped(ObjCStringMapper.class) String restrictionIdentifier);
+            @NotNull @Mapped(ObjCStringMapper.class) String restrictionIdentifier);
 
     /**
      * The accessibilityFrame is expected to be in screen coordinates.
@@ -320,7 +334,8 @@ public final class UIKit {
     @Generated
     @CFunction
     @ByValue
-    public static native CGRect UIAccessibilityConvertFrameToScreenCoordinates(@ByValue CGRect rect, UIView view);
+    public static native CGRect UIAccessibilityConvertFrameToScreenCoordinates(@ByValue CGRect rect,
+            @NotNull UIView view);
 
     /**
      * The accessibilityPath is expected to be in screen coordinates.
@@ -329,9 +344,11 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native UIBezierPath UIAccessibilityConvertPathToScreenCoordinates(UIBezierPath path, UIView view);
+    public static native UIBezierPath UIAccessibilityConvertPathToScreenCoordinates(@NotNull UIBezierPath path,
+            @NotNull UIView view);
 
     /**
      * Returns the element that is currently focused by an assistive technology.
@@ -342,11 +359,12 @@ public final class UIKit {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @CFunction
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object UIAccessibilityFocusedElement(
-            @Mapped(ObjCStringMapper.class) String assistiveTechnologyIdentifier);
+            @Nullable @Mapped(ObjCStringMapper.class) String assistiveTechnologyIdentifier);
 
     /**
      * UIAccessibilityPostNotification
@@ -359,7 +377,7 @@ public final class UIKit {
     @Generated
     @CFunction
     public static native void UIAccessibilityPostNotification(int notification,
-            @Mapped(ObjCObjectMapper.class) Object argument);
+            @Nullable @Mapped(ObjCObjectMapper.class) Object argument);
 
     /**
      * Assistive Technology
@@ -514,7 +532,7 @@ public final class UIKit {
     @Generated
     @CFunction
     public static native void UIAccessibilityRequestGuidedAccessSession(boolean enable,
-            @ObjCBlock(name = "call_UIAccessibilityRequestGuidedAccessSession") Block_UIAccessibilityRequestGuidedAccessSession completionHandler);
+            @NotNull @ObjCBlock(name = "call_UIAccessibilityRequestGuidedAccessSession") Block_UIAccessibilityRequestGuidedAccessSession completionHandler);
 
     /**
      * Returns the current pairing status of MFi hearing aids
@@ -526,13 +544,14 @@ public final class UIKit {
     @NUInt
     public static native long UIAccessibilityHearingDevicePairedEar();
 
+    @Nullable
     @Generated
     @CFunction
     public static native CGContextRef UIGraphicsGetCurrentContext();
 
     @Generated
     @CFunction
-    public static native void UIGraphicsPushContext(CGContextRef context);
+    public static native void UIGraphicsPushContext(@NotNull CGContextRef context);
 
     @Generated
     @CFunction
@@ -574,6 +593,7 @@ public final class UIKit {
     public static native void UIGraphicsBeginImageContextWithOptions(@ByValue CGSize size, boolean opaque,
             @NFloat double scale);
 
+    @Nullable
     @Generated
     @CFunction
     public static native UIImage UIGraphicsGetImageFromCurrentImageContext();
@@ -589,16 +609,16 @@ public final class UIKit {
      */
     @Generated
     @CFunction
-    public static native boolean UIGraphicsBeginPDFContextToFile(@Mapped(ObjCStringMapper.class) String path,
-            @ByValue CGRect bounds, NSDictionary<?, ?> documentInfo);
+    public static native boolean UIGraphicsBeginPDFContextToFile(@NotNull @Mapped(ObjCStringMapper.class) String path,
+            @ByValue CGRect bounds, @Nullable NSDictionary<?, ?> documentInfo);
 
     /**
      * API-Since: 3.2
      */
     @Generated
     @CFunction
-    public static native void UIGraphicsBeginPDFContextToData(NSMutableData data, @ByValue CGRect bounds,
-            NSDictionary<?, ?> documentInfo);
+    public static native void UIGraphicsBeginPDFContextToData(@NotNull NSMutableData data, @ByValue CGRect bounds,
+            @Nullable NSDictionary<?, ?> documentInfo);
 
     /**
      * API-Since: 3.2
@@ -619,7 +639,8 @@ public final class UIKit {
      */
     @Generated
     @CFunction
-    public static native void UIGraphicsBeginPDFPageWithInfo(@ByValue CGRect bounds, NSDictionary<?, ?> pageInfo);
+    public static native void UIGraphicsBeginPDFPageWithInfo(@ByValue CGRect bounds,
+            @Nullable NSDictionary<?, ?> pageInfo);
 
     /**
      * API-Since: 3.2
@@ -634,23 +655,23 @@ public final class UIKit {
      */
     @Generated
     @CFunction
-    public static native void UIGraphicsSetPDFContextURLForRect(NSURL url, @ByValue CGRect rect);
+    public static native void UIGraphicsSetPDFContextURLForRect(@NotNull NSURL url, @ByValue CGRect rect);
 
     /**
      * API-Since: 3.2
      */
     @Generated
     @CFunction
-    public static native void UIGraphicsAddPDFContextDestinationAtPoint(@Mapped(ObjCStringMapper.class) String name,
-            @ByValue CGPoint point);
+    public static native void UIGraphicsAddPDFContextDestinationAtPoint(
+            @NotNull @Mapped(ObjCStringMapper.class) String name, @ByValue CGPoint point);
 
     /**
      * API-Since: 3.2
      */
     @Generated
     @CFunction
-    public static native void UIGraphicsSetPDFContextDestinationForRect(@Mapped(ObjCStringMapper.class) String name,
-            @ByValue CGRect rect);
+    public static native void UIGraphicsSetPDFContextDestinationForRect(
+            @NotNull @Mapped(ObjCStringMapper.class) String name, @ByValue CGRect rect);
 
     /**
      * Adds a photo to the saved photos album. The optional completionSelector should have the form:
@@ -658,8 +679,9 @@ public final class UIKit {
      */
     @Generated
     @CFunction
-    public static native void UIImageWriteToSavedPhotosAlbum(UIImage image,
-            @Mapped(ObjCObjectMapper.class) Object completionTarget, SEL completionSelector, VoidPtr contextInfo);
+    public static native void UIImageWriteToSavedPhotosAlbum(@NotNull UIImage image,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object completionTarget, @Nullable SEL completionSelector,
+            @Nullable VoidPtr contextInfo);
 
     /**
      * Is a specific video eligible to be saved to the saved photos album?
@@ -669,7 +691,7 @@ public final class UIKit {
     @Generated
     @CFunction
     public static native boolean UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(
-            @Mapped(ObjCStringMapper.class) String videoPath);
+            @NotNull @Mapped(ObjCStringMapper.class) String videoPath);
 
     /**
      * Adds a video to the saved photos album. The optional completionSelector should have the form:
@@ -679,8 +701,10 @@ public final class UIKit {
      */
     @Generated
     @CFunction
-    public static native void UISaveVideoAtPathToSavedPhotosAlbum(@Mapped(ObjCStringMapper.class) String videoPath,
-            @Mapped(ObjCObjectMapper.class) Object completionTarget, SEL completionSelector, VoidPtr contextInfo);
+    public static native void UISaveVideoAtPathToSavedPhotosAlbum(
+            @NotNull @Mapped(ObjCStringMapper.class) String videoPath,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object completionTarget, @Nullable SEL completionSelector,
+            @Nullable VoidPtr contextInfo);
 
     /**
      * API-Since: 9.0
@@ -706,6 +730,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -714,6 +739,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -722,6 +748,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -730,6 +757,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -738,6 +766,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -748,6 +777,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -756,6 +786,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -764,6 +795,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -772,6 +804,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -780,6 +813,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -790,6 +824,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -801,6 +836,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -812,6 +848,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -822,6 +859,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -833,6 +871,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -844,6 +883,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -854,6 +894,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -865,6 +906,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -876,6 +918,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -887,6 +930,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -899,6 +943,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -984,6 +1029,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -994,6 +1040,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1002,6 +1049,7 @@ public final class UIKit {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1010,6 +1058,7 @@ public final class UIKit {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1018,6 +1067,7 @@ public final class UIKit {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1026,6 +1076,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1034,6 +1085,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1042,6 +1094,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1050,6 +1103,7 @@ public final class UIKit {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1058,6 +1112,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1066,6 +1121,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1074,11 +1130,13 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIFontTextStyleCaption2();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1087,6 +1145,7 @@ public final class UIKit {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1095,6 +1154,7 @@ public final class UIKit {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1103,6 +1163,7 @@ public final class UIKit {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1123,6 +1184,7 @@ public final class UIKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1131,6 +1193,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1139,6 +1202,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1147,6 +1211,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1155,6 +1220,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1163,6 +1229,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1171,6 +1238,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1179,6 +1247,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1189,6 +1258,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1197,6 +1267,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1205,6 +1276,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1213,6 +1285,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1221,6 +1294,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1231,6 +1305,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1241,6 +1316,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1281,6 +1357,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1345,6 +1422,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1353,6 +1431,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1361,6 +1440,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1369,6 +1449,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1377,6 +1458,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1385,6 +1467,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1393,6 +1476,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1401,6 +1485,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1409,6 +1494,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1417,6 +1503,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1425,6 +1512,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1433,6 +1521,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1441,6 +1530,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1449,6 +1539,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1457,6 +1548,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1465,6 +1557,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1473,6 +1566,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1481,6 +1575,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1489,6 +1584,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1497,6 +1593,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1505,6 +1602,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1513,6 +1611,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1521,6 +1620,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1532,6 +1632,7 @@ public final class UIKit {
      * API-Since: 3.2
      * Deprecated-Since: 8.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1544,6 +1645,7 @@ public final class UIKit {
      * API-Since: 3.2
      * Deprecated-Since: 8.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1556,6 +1658,7 @@ public final class UIKit {
      * API-Since: 3.2
      * Deprecated-Since: 8.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1565,21 +1668,25 @@ public final class UIKit {
     /**
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextInputCurrentInputModeDidChangeNotification();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextFieldTextDidBeginEditingNotification();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextFieldTextDidEndEditingNotification();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1588,6 +1695,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1600,6 +1708,7 @@ public final class UIKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1637,6 +1746,7 @@ public final class UIKit {
     @CVariable()
     public static native double UIApplicationBackgroundFetchIntervalNever();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1647,6 +1757,7 @@ public final class UIKit {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1655,36 +1766,43 @@ public final class UIKit {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIApplicationWillEnterForegroundNotification();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIApplicationDidFinishLaunchingNotification();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIApplicationDidBecomeActiveNotification();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIApplicationWillResignActiveNotification();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIApplicationDidReceiveMemoryWarningNotification();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIApplicationWillTerminateNotification();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1697,6 +1815,7 @@ public final class UIKit {
      * Deprecated-Since: 13.0
      * Deprecated-Message: Use viewWillTransitionToSize:withTransitionCoordinator: instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1710,6 +1829,7 @@ public final class UIKit {
      * Deprecated-Since: 13.0
      * Deprecated-Message: Use viewWillTransitionToSize:withTransitionCoordinator: instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1723,6 +1843,7 @@ public final class UIKit {
      * Deprecated-Since: 13.0
      * Deprecated-Message: Use viewWillTransitionToSize:withTransitionCoordinator: instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1736,6 +1857,7 @@ public final class UIKit {
      * Deprecated-Since: 13.0
      * Deprecated-Message: Use viewWillTransitionToSize:withTransitionCoordinator: instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1749,6 +1871,7 @@ public final class UIKit {
      * Deprecated-Since: 13.0
      * Deprecated-Message: Use viewWillTransitionToSize:withTransitionCoordinator: instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1762,6 +1885,7 @@ public final class UIKit {
      * Deprecated-Since: 13.0
      * Deprecated-Message: Use viewWillTransitionToSize:withTransitionCoordinator: instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1771,6 +1895,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1779,6 +1904,7 @@ public final class UIKit {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1787,6 +1913,7 @@ public final class UIKit {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1797,6 +1924,7 @@ public final class UIKit {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1808,6 +1936,7 @@ public final class UIKit {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1818,6 +1947,7 @@ public final class UIKit {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1831,6 +1961,7 @@ public final class UIKit {
      * Deprecated-Message: Use UserNotifications Framework's -[UNUserNotificationCenterDelegate
      * didReceiveNotificationResponse:withCompletionHandler:]
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1844,6 +1975,7 @@ public final class UIKit {
      * Deprecated-Since: 16.0
      * Deprecated-Message: This dictionary key is no longer used.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1855,6 +1987,7 @@ public final class UIKit {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1865,6 +1998,7 @@ public final class UIKit {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1875,6 +2009,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1885,6 +2020,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1895,6 +2031,7 @@ public final class UIKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1905,6 +2042,7 @@ public final class UIKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1915,6 +2053,7 @@ public final class UIKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1926,6 +2065,7 @@ public final class UIKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1934,6 +2074,7 @@ public final class UIKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1945,6 +2086,7 @@ public final class UIKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1956,6 +2098,7 @@ public final class UIKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1966,6 +2109,7 @@ public final class UIKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1977,6 +2121,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1987,6 +2132,7 @@ public final class UIKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2000,6 +2146,7 @@ public final class UIKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2010,6 +2157,7 @@ public final class UIKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2020,6 +2168,7 @@ public final class UIKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2030,6 +2179,7 @@ public final class UIKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2040,6 +2190,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2050,6 +2201,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2063,6 +2215,7 @@ public final class UIKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2075,6 +2228,7 @@ public final class UIKit {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2285,6 +2439,7 @@ public final class UIKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2295,6 +2450,7 @@ public final class UIKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2305,6 +2461,7 @@ public final class UIKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2317,6 +2474,7 @@ public final class UIKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2327,6 +2485,7 @@ public final class UIKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2337,6 +2496,7 @@ public final class UIKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2347,6 +2507,7 @@ public final class UIKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2396,6 +2557,7 @@ public final class UIKit {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2406,6 +2568,7 @@ public final class UIKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2419,6 +2582,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2429,6 +2593,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2442,6 +2607,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2451,6 +2617,7 @@ public final class UIKit {
      * API-Since: 4.0
      * Deprecated-Since: 11.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2460,6 +2627,7 @@ public final class UIKit {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2468,6 +2636,7 @@ public final class UIKit {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2476,6 +2645,7 @@ public final class UIKit {
     /**
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2484,6 +2654,7 @@ public final class UIKit {
     /**
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2492,6 +2663,7 @@ public final class UIKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2500,6 +2672,7 @@ public final class UIKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2508,6 +2681,7 @@ public final class UIKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2516,6 +2690,7 @@ public final class UIKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2524,6 +2699,7 @@ public final class UIKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2532,6 +2708,7 @@ public final class UIKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2540,6 +2717,7 @@ public final class UIKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2548,6 +2726,7 @@ public final class UIKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2556,6 +2735,7 @@ public final class UIKit {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2564,6 +2744,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2572,6 +2753,7 @@ public final class UIKit {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2580,6 +2762,7 @@ public final class UIKit {
     /**
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2588,6 +2771,7 @@ public final class UIKit {
     /**
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2598,6 +2782,7 @@ public final class UIKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2606,6 +2791,7 @@ public final class UIKit {
     /**
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2614,6 +2800,7 @@ public final class UIKit {
     /**
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2622,6 +2809,7 @@ public final class UIKit {
     /**
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2630,6 +2818,7 @@ public final class UIKit {
     /**
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2638,6 +2827,7 @@ public final class UIKit {
     /**
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2646,6 +2836,7 @@ public final class UIKit {
     /**
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2654,6 +2845,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2662,6 +2854,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2670,6 +2863,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2678,6 +2872,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2686,6 +2881,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2694,6 +2890,7 @@ public final class UIKit {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2702,6 +2899,7 @@ public final class UIKit {
     /**
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2710,6 +2908,7 @@ public final class UIKit {
     /**
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2726,6 +2925,7 @@ public final class UIKit {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2734,6 +2934,7 @@ public final class UIKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2742,6 +2943,7 @@ public final class UIKit {
     /**
      * an NSString (UTI, i.e. kUTTypeImage)
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2750,6 +2952,7 @@ public final class UIKit {
     /**
      * a UIImage
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2758,6 +2961,7 @@ public final class UIKit {
     /**
      * a UIImage
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2766,6 +2970,7 @@ public final class UIKit {
     /**
      * an NSValue (CGRect)
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2774,6 +2979,7 @@ public final class UIKit {
     /**
      * an NSURL
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2786,6 +2992,7 @@ public final class UIKit {
      * Deprecated-Since: 11.0
      * Deprecated-Message: Will be removed in a future release, use PHPicker.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2797,6 +3004,7 @@ public final class UIKit {
      * 
      * API-Since: 4.1
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2807,6 +3015,7 @@ public final class UIKit {
      * 
      * API-Since: 9.1
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2817,6 +3026,7 @@ public final class UIKit {
      * Deprecated-Since: 10.0
      * Deprecated-Message: Use UserNotifications Framework's +[UNNotificationSound defaultSound]
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2828,6 +3038,7 @@ public final class UIKit {
      * Deprecated-Since: 10.0
      * Deprecated-Message: Use UserNotifications Framework's -[UNTextInputNotificationAction textInputButtonTitle]
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2839,6 +3050,7 @@ public final class UIKit {
      * Deprecated-Since: 10.0
      * Deprecated-Message: Use UserNotifications Framework's -[UNTextInputNotificationResponse userText]
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2850,6 +3062,7 @@ public final class UIKit {
      * Deprecated-Since: 16.0
      * Deprecated-Message: UIMenuController is deprecated. Use UIEditMenuInteraction instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2861,6 +3074,7 @@ public final class UIKit {
      * Deprecated-Since: 16.0
      * Deprecated-Message: UIMenuController is deprecated. Use UIEditMenuInteraction instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2872,6 +3086,7 @@ public final class UIKit {
      * Deprecated-Since: 16.0
      * Deprecated-Message: UIMenuController is deprecated. Use UIEditMenuInteraction instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2883,6 +3098,7 @@ public final class UIKit {
      * Deprecated-Since: 16.0
      * Deprecated-Message: UIMenuController is deprecated. Use UIEditMenuInteraction instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2894,6 +3110,7 @@ public final class UIKit {
      * Deprecated-Since: 16.0
      * Deprecated-Message: UIMenuController is deprecated. Use UIEditMenuInteraction instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2903,6 +3120,7 @@ public final class UIKit {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2912,6 +3130,7 @@ public final class UIKit {
      * API-Since: 2.0
      * Deprecated-Since: 3.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2925,6 +3144,7 @@ public final class UIKit {
      * Only valid for use with page view controllers with transition style
      * 'UIPageViewControllerTransitionStylePageCurl'.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2938,11 +3158,13 @@ public final class UIKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIPageViewControllerOptionInterPageSpacingKey();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2953,6 +3175,7 @@ public final class UIKit {
      * Deprecated-Since: 10.0
      * Deprecated-Message: The Find pasteboard is no longer available.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2964,6 +3187,7 @@ public final class UIKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2974,6 +3198,7 @@ public final class UIKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2982,21 +3207,25 @@ public final class UIKit {
     /**
      * Notification
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIPasteboardChangedNotification();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIPasteboardChangedTypesAddedKey();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIPasteboardChangedTypesRemovedKey();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3005,18 +3234,22 @@ public final class UIKit {
     /**
      * Types
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native NSArray<String> UIPasteboardTypeListString();
 
+    @NotNull
     @Generated
     @CVariable()
     public static native NSArray<String> UIPasteboardTypeListURL();
 
+    @NotNull
     @Generated
     @CVariable()
     public static native NSArray<String> UIPasteboardTypeListImage();
 
+    @NotNull
     @Generated
     @CVariable()
     public static native NSArray<String> UIPasteboardTypeListColor();
@@ -3028,11 +3261,13 @@ public final class UIKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIPasteboardTypeAutomatic();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3047,6 +3282,7 @@ public final class UIKit {
      * Deprecated-Message: Use UISceneDelegate or related notifications to be informed of connecting scenes from other
      * screens
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -3061,6 +3297,7 @@ public final class UIKit {
      * Deprecated-Message: Use UISceneDelegate or related notifications to be informed of disconnecting scenes from
      * other screens
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -3072,6 +3309,7 @@ public final class UIKit {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3080,6 +3318,7 @@ public final class UIKit {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3091,6 +3330,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3099,6 +3339,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3107,6 +3348,7 @@ public final class UIKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3115,6 +3357,7 @@ public final class UIKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3127,6 +3370,7 @@ public final class UIKit {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3144,6 +3388,7 @@ public final class UIKit {
     @NFloat
     public static native double UITableViewAutomaticDimension();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3160,16 +3405,19 @@ public final class UIKit {
     @NFloat
     public static native double UISplitViewControllerAutomaticDimension();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextViewTextDidBeginEditingNotification();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextViewTextDidChangeNotification();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3193,6 +3441,7 @@ public final class UIKit {
     /**
      * Posted when the window becomes visible with a nil userInfo dictionary.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3201,6 +3450,7 @@ public final class UIKit {
     /**
      * Posted when the window becomes hidden with a nil userInfo dictionary.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3212,6 +3462,7 @@ public final class UIKit {
      * becomes its scene's key window. For apps built against earlier SDKs, it will be posted when
      * the window becomes the application's key window.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3223,6 +3474,7 @@ public final class UIKit {
      * resigns key in its scene. For apps built against earlier SDKs, it will be posted when the window
      * resigns key in the application.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3234,21 +3486,25 @@ public final class UIKit {
      * Use the various UICoordinateSpace convertRect facilities to get the frame in the desired coordinate system.
      * Animation key/value pairs are only available for the "will" family of notification.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyboardWillShowNotification();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyboardDidShowNotification();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyboardWillHideNotification();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3259,6 +3515,7 @@ public final class UIKit {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3269,6 +3526,7 @@ public final class UIKit {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3279,6 +3537,7 @@ public final class UIKit {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3289,6 +3548,7 @@ public final class UIKit {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3299,6 +3559,7 @@ public final class UIKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3310,6 +3571,7 @@ public final class UIKit {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3318,6 +3580,7 @@ public final class UIKit {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3329,6 +3592,7 @@ public final class UIKit {
      * API-Since: 2.0
      * Deprecated-Since: 3.2
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -3339,6 +3603,7 @@ public final class UIKit {
      * API-Since: 2.0
      * Deprecated-Since: 3.2
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -3349,6 +3614,7 @@ public final class UIKit {
      * API-Since: 2.0
      * Deprecated-Since: 3.2
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -3360,6 +3626,7 @@ public final class UIKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3370,6 +3637,7 @@ public final class UIKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3380,6 +3648,7 @@ public final class UIKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3390,6 +3659,7 @@ public final class UIKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3400,6 +3670,7 @@ public final class UIKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3411,6 +3682,7 @@ public final class UIKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3421,6 +3693,7 @@ public final class UIKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3431,6 +3704,7 @@ public final class UIKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3441,6 +3715,7 @@ public final class UIKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3452,6 +3727,7 @@ public final class UIKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3462,6 +3738,7 @@ public final class UIKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3472,6 +3749,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3482,6 +3760,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3492,6 +3771,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3502,6 +3782,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3512,6 +3793,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3522,6 +3804,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3532,6 +3815,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3543,6 +3827,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3558,6 +3843,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3570,6 +3856,7 @@ public final class UIKit {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3578,6 +3865,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3588,6 +3876,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3596,6 +3885,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3604,6 +3894,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3612,6 +3903,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3622,6 +3914,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3632,6 +3925,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3645,6 +3939,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3658,6 +3953,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3670,6 +3966,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3680,6 +3977,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3690,6 +3988,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3700,6 +3999,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3710,6 +4010,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3720,6 +4021,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3732,6 +4034,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3742,6 +4045,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3752,6 +4056,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3763,6 +4068,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3775,6 +4081,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3785,6 +4092,7 @@ public final class UIKit {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3793,6 +4101,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3843,6 +4152,7 @@ public final class UIKit {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
@@ -3855,7 +4165,7 @@ public final class UIKit {
     @CFunction
     @ByValue
     public static native NSDirectionalEdgeInsets NSDirectionalEdgeInsetsFromString(
-            @Mapped(ObjCStringMapper.class) String string);
+            @NotNull @Mapped(ObjCStringMapper.class) String string);
 
     /**
      * API-Since: 11.0
@@ -3863,7 +4173,7 @@ public final class UIKit {
     @Generated
     @CFunction
     public static native boolean UIContentSizeCategoryIsAccessibilityCategory(
-            @Mapped(ObjCStringMapper.class) String category);
+            @NotNull @Mapped(ObjCStringMapper.class) String category);
 
     /**
      * API-Since: 11.0
@@ -3871,8 +4181,8 @@ public final class UIKit {
     @Generated
     @CFunction
     @NInt
-    public static native long UIContentSizeCategoryCompareToCategory(@Mapped(ObjCStringMapper.class) String lhs,
-            @Mapped(ObjCStringMapper.class) String rhs);
+    public static native long UIContentSizeCategoryCompareToCategory(
+            @NotNull @Mapped(ObjCStringMapper.class) String lhs, @NotNull @Mapped(ObjCStringMapper.class) String rhs);
 
     /**
      * Font text styles, semantic descriptions of the intended use for a font returned by +[UIFont
@@ -3880,6 +4190,7 @@ public final class UIKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3896,6 +4207,7 @@ public final class UIKit {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3904,6 +4216,7 @@ public final class UIKit {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3912,6 +4225,7 @@ public final class UIKit {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3920,6 +4234,7 @@ public final class UIKit {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3928,6 +4243,7 @@ public final class UIKit {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3936,6 +4252,7 @@ public final class UIKit {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3949,6 +4266,7 @@ public final class UIKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3960,6 +4278,7 @@ public final class UIKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3970,6 +4289,7 @@ public final class UIKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3981,6 +4301,7 @@ public final class UIKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3989,6 +4310,7 @@ public final class UIKit {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3997,6 +4319,7 @@ public final class UIKit {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4009,6 +4332,7 @@ public final class UIKit {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Will be removed in a future release, use PHPicker.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4020,6 +4344,7 @@ public final class UIKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4030,6 +4355,7 @@ public final class UIKit {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4039,6 +4365,7 @@ public final class UIKit {
      * @"DocumentType", NSString indicating a document type to be forced when loading the document, specified as one of
      * the NSDocumentTypeDocumentAttribute constants listed above
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4047,6 +4374,7 @@ public final class UIKit {
     /**
      * @"DefaultAttributes", for plain text only; NSDictionary containing attributes to be applied to plain files
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4056,6 +4384,7 @@ public final class UIKit {
      * @"CharacterEncoding", for plain text and HTML; NSNumber containing integer specifying NSStringEncoding to be used
      * to interpret the file
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4090,6 +4419,7 @@ public final class UIKit {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4111,13 +4441,13 @@ public final class UIKit {
     @Generated
     @CFunction
     public static native void UIGuidedAccessConfigureAccessibilityFeatures(@NUInt long features, boolean enabled,
-            @ObjCBlock(name = "call_UIGuidedAccessConfigureAccessibilityFeatures") Block_UIGuidedAccessConfigureAccessibilityFeatures completion);
+            @NotNull @ObjCBlock(name = "call_UIGuidedAccessConfigureAccessibilityFeatures") Block_UIGuidedAccessConfigureAccessibilityFeatures completion);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_UIGuidedAccessConfigureAccessibilityFeatures {
         @Generated
-        void call_UIGuidedAccessConfigureAccessibilityFeatures(boolean arg0, NSError arg1);
+        void call_UIGuidedAccessConfigureAccessibilityFeatures(boolean arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -4168,6 +4498,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4178,6 +4509,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4188,6 +4520,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4198,6 +4531,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4208,6 +4542,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4218,6 +4553,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4228,6 +4564,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4238,6 +4575,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4248,6 +4586,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4258,6 +4597,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4268,6 +4608,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4278,6 +4619,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4288,6 +4630,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4298,6 +4641,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4308,6 +4652,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4318,6 +4663,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4329,6 +4675,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4339,6 +4686,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4349,6 +4697,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4359,6 +4708,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4369,6 +4719,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4379,6 +4730,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4389,6 +4741,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4399,6 +4752,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4409,6 +4763,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4419,6 +4774,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4429,6 +4785,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4439,6 +4796,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4449,6 +4807,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4459,6 +4818,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4469,6 +4829,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4479,6 +4840,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4489,6 +4851,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4499,6 +4862,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4509,6 +4873,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4519,6 +4884,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4529,6 +4895,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4539,6 +4906,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4549,6 +4917,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4559,6 +4928,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4569,6 +4939,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4579,6 +4950,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4589,6 +4961,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4600,6 +4973,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4608,6 +4982,7 @@ public final class UIKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4616,6 +4991,7 @@ public final class UIKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4624,6 +5000,7 @@ public final class UIKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4632,6 +5009,7 @@ public final class UIKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4654,6 +5032,7 @@ public final class UIKit {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4662,6 +5041,7 @@ public final class UIKit {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4694,6 +5074,7 @@ public final class UIKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4702,6 +5083,7 @@ public final class UIKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4710,6 +5092,7 @@ public final class UIKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4718,6 +5101,7 @@ public final class UIKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4726,6 +5110,7 @@ public final class UIKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4734,6 +5119,7 @@ public final class UIKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4742,6 +5128,7 @@ public final class UIKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4752,6 +5139,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4763,6 +5151,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4771,6 +5160,7 @@ public final class UIKit {
     /**
      * API-Since: 12.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4779,6 +5169,7 @@ public final class UIKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4787,6 +5178,7 @@ public final class UIKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4795,6 +5187,7 @@ public final class UIKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4805,6 +5198,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4815,6 +5209,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4825,6 +5220,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4835,6 +5231,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4845,6 +5242,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4853,6 +5251,7 @@ public final class UIKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4868,6 +5267,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4882,6 +5282,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4897,6 +5298,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4910,6 +5312,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4925,6 +5328,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4947,6 +5351,7 @@ public final class UIKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4955,6 +5360,7 @@ public final class UIKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4963,6 +5369,7 @@ public final class UIKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4971,6 +5378,7 @@ public final class UIKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4979,6 +5387,7 @@ public final class UIKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4987,6 +5396,7 @@ public final class UIKit {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4997,6 +5407,7 @@ public final class UIKit {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5006,6 +5417,7 @@ public final class UIKit {
      * API-Since: 13.0
      * Deprecated-Since: 16.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -5028,6 +5440,7 @@ public final class UIKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5036,6 +5449,7 @@ public final class UIKit {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5044,6 +5458,7 @@ public final class UIKit {
     /**
      * API-Since: 13.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5052,6 +5467,7 @@ public final class UIKit {
     /**
      * API-Since: 13.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5060,6 +5476,7 @@ public final class UIKit {
     /**
      * API-Since: 13.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5068,6 +5485,7 @@ public final class UIKit {
     /**
      * API-Since: 13.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5076,6 +5494,7 @@ public final class UIKit {
     /**
      * API-Since: 13.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5084,6 +5503,7 @@ public final class UIKit {
     /**
      * API-Since: 13.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5092,6 +5512,7 @@ public final class UIKit {
     /**
      * API-Since: 13.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5100,6 +5521,7 @@ public final class UIKit {
     /**
      * API-Since: 13.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5108,6 +5530,7 @@ public final class UIKit {
     /**
      * API-Since: 13.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5116,6 +5539,7 @@ public final class UIKit {
     /**
      * API-Since: 13.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5124,6 +5548,7 @@ public final class UIKit {
     /**
      * API-Since: 13.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5132,6 +5557,7 @@ public final class UIKit {
     /**
      * API-Since: 13.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5140,6 +5566,7 @@ public final class UIKit {
     /**
      * API-Since: 13.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5148,6 +5575,7 @@ public final class UIKit {
     /**
      * API-Since: 13.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5176,18 +5604,20 @@ public final class UIKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CFunction
     @ObjCBlock(name = "call_UICellAccessoryPositionBeforeAccessoryOfClass_ret")
     public static native Block_UICellAccessoryPositionBeforeAccessoryOfClass_ret UICellAccessoryPositionBeforeAccessoryOfClass(
-            Class accessoryClass);
+            @NotNull Class accessoryClass);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_UICellAccessoryPositionBeforeAccessoryOfClass_ret {
         @Generated
         @NUInt
-        long call_UICellAccessoryPositionBeforeAccessoryOfClass_ret(NSArray<? extends UICellAccessory> accessories);
+        long call_UICellAccessoryPositionBeforeAccessoryOfClass_ret(
+                @NotNull NSArray<? extends UICellAccessory> accessories);
     }
 
     /**
@@ -5195,18 +5625,20 @@ public final class UIKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CFunction
     @ObjCBlock(name = "call_UICellAccessoryPositionAfterAccessoryOfClass_ret")
     public static native Block_UICellAccessoryPositionAfterAccessoryOfClass_ret UICellAccessoryPositionAfterAccessoryOfClass(
-            Class accessoryClass);
+            @NotNull Class accessoryClass);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_UICellAccessoryPositionAfterAccessoryOfClass_ret {
         @Generated
         @NUInt
-        long call_UICellAccessoryPositionAfterAccessoryOfClass_ret(NSArray<? extends UICellAccessory> accessories);
+        long call_UICellAccessoryPositionAfterAccessoryOfClass_ret(
+                @NotNull NSArray<? extends UICellAccessory> accessories);
     }
 
     /**
@@ -5214,6 +5646,7 @@ public final class UIKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5225,6 +5658,7 @@ public final class UIKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5236,6 +5670,7 @@ public final class UIKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5244,6 +5679,7 @@ public final class UIKit {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5252,6 +5688,7 @@ public final class UIKit {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5260,6 +5697,7 @@ public final class UIKit {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5293,6 +5731,7 @@ public final class UIKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5303,6 +5742,7 @@ public final class UIKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5313,6 +5753,7 @@ public final class UIKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5333,6 +5774,7 @@ public final class UIKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5341,6 +5783,7 @@ public final class UIKit {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5369,6 +5812,7 @@ public final class UIKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5377,6 +5821,7 @@ public final class UIKit {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5385,6 +5830,7 @@ public final class UIKit {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5393,6 +5839,7 @@ public final class UIKit {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5403,6 +5850,7 @@ public final class UIKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5413,6 +5861,7 @@ public final class UIKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5423,6 +5872,7 @@ public final class UIKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5433,6 +5883,7 @@ public final class UIKit {
      * 
      * API-Since: 14.5
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5443,6 +5894,7 @@ public final class UIKit {
      * 
      * API-Since: 14.5
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5453,6 +5905,7 @@ public final class UIKit {
      * 
      * API-Since: 14.5
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5487,6 +5940,7 @@ public final class UIKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5497,6 +5951,7 @@ public final class UIKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5507,6 +5962,7 @@ public final class UIKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5517,6 +5973,7 @@ public final class UIKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5527,6 +5984,7 @@ public final class UIKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5537,6 +5995,7 @@ public final class UIKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5547,6 +6006,7 @@ public final class UIKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5557,6 +6017,7 @@ public final class UIKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5567,6 +6028,7 @@ public final class UIKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5577,6 +6039,7 @@ public final class UIKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5587,6 +6050,7 @@ public final class UIKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5670,6 +6134,7 @@ public final class UIKit {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5717,6 +6182,7 @@ public final class UIKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5725,6 +6191,7 @@ public final class UIKit {
     /**
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5735,6 +6202,7 @@ public final class UIKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5746,6 +6214,7 @@ public final class UIKit {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5764,6 +6233,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5772,6 +6242,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5780,6 +6251,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5788,6 +6260,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5796,6 +6269,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5804,6 +6278,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5812,6 +6287,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5820,6 +6296,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5828,6 +6305,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5836,6 +6314,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5844,6 +6323,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5852,6 +6332,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5860,6 +6341,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5868,6 +6350,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5876,6 +6359,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5884,6 +6368,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5892,6 +6377,7 @@ public final class UIKit {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5900,6 +6386,7 @@ public final class UIKit {
     /**
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5908,6 +6395,7 @@ public final class UIKit {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5916,6 +6404,7 @@ public final class UIKit {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

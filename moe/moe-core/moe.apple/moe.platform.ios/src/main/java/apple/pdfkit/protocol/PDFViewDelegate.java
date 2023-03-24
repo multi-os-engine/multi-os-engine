@@ -11,6 +11,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("PDFKit")
@@ -30,7 +31,7 @@ public interface PDFViewDelegate {
     @Generated
     @IsOptional
     @Selector("PDFViewOpenPDF:forRemoteGoToAction:")
-    default void PDFViewOpenPDFForRemoteGoToAction(PDFView sender, PDFActionRemoteGoTo action) {
+    default void PDFViewOpenPDFForRemoteGoToAction(@NotNull PDFView sender, @NotNull PDFActionRemoteGoTo action) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -41,6 +42,7 @@ public interface PDFViewDelegate {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("PDFViewParentViewController")
@@ -57,7 +59,7 @@ public interface PDFViewDelegate {
     @Generated
     @IsOptional
     @Selector("PDFViewPerformFind:")
-    default void PDFViewPerformFind(PDFView sender) {
+    default void PDFViewPerformFind(@NotNull PDFView sender) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -72,7 +74,7 @@ public interface PDFViewDelegate {
     @Generated
     @IsOptional
     @Selector("PDFViewPerformGoToPage:")
-    default void PDFViewPerformGoToPage(PDFView sender) {
+    default void PDFViewPerformGoToPage(@NotNull PDFView sender) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -85,7 +87,7 @@ public interface PDFViewDelegate {
     @Generated
     @IsOptional
     @Selector("PDFViewWillClickOnLink:withURL:")
-    default void PDFViewWillClickOnLinkWithURL(PDFView sender, NSURL url) {
+    default void PDFViewWillClickOnLinkWithURL(@NotNull PDFView sender, @NotNull NSURL url) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

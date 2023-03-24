@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSMatrixVectorMultiplication
@@ -79,22 +81,25 @@ public class MPSMatrixVectorMultiplication extends MPSMatrixBinaryKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,8 +138,8 @@ public class MPSMatrixVectorMultiplication extends MPSMatrixBinaryKernel {
     @Generated
     @Selector("encodeToCommandBuffer:inputMatrix:inputVector:resultVector:")
     public native void encodeToCommandBufferInputMatrixInputVectorResultVector(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSMatrix inputMatrix,
-            MPSVector inputVector, MPSVector resultVector);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSMatrix inputMatrix,
+            @NotNull MPSVector inputVector, @NotNull MPSVector resultVector);
 
     @Generated
     @Selector("hash")
@@ -147,16 +152,16 @@ public class MPSMatrixVectorMultiplication extends MPSMatrixBinaryKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSMatrixVectorMultiplication initWithCoder(NSCoder aDecoder);
+    public native MPSMatrixVectorMultiplication initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSMatrixVectorMultiplication initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixVectorMultiplication initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSMatrixVectorMultiplication initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixVectorMultiplication initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Convenience initialization for a matrix-vector multiplication
@@ -177,7 +182,7 @@ public class MPSMatrixVectorMultiplication extends MPSMatrixBinaryKernel {
     @Generated
     @Selector("initWithDevice:rows:columns:")
     public native MPSMatrixVectorMultiplication initWithDeviceRowsColumns(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long rows, @NUInt long columns);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long rows, @NUInt long columns);
 
     /**
      * Initialize an MPSMatrixVectorMultiplication object on a device for a given size
@@ -208,8 +213,8 @@ public class MPSMatrixVectorMultiplication extends MPSMatrixBinaryKernel {
     @Generated
     @Selector("initWithDevice:transpose:rows:columns:alpha:beta:")
     public native MPSMatrixVectorMultiplication initWithDeviceTransposeRowsColumnsAlphaBeta(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, boolean transpose, @NUInt long rows, @NUInt long columns,
-            double alpha, double beta);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, boolean transpose, @NUInt long rows,
+            @NUInt long columns, double alpha, double beta);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -228,9 +233,10 @@ public class MPSMatrixVectorMultiplication extends MPSMatrixBinaryKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

@@ -6,6 +6,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] NFCReaderSession
@@ -30,6 +31,7 @@ public interface NFCReaderSession {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("alertMessage")
     String alertMessage();
@@ -73,7 +75,7 @@ public interface NFCReaderSession {
      */
     @Generated
     @Selector("invalidateSessionWithErrorMessage:")
-    void invalidateSessionWithErrorMessage(String errorMessage);
+    void invalidateSessionWithErrorMessage(@NotNull String errorMessage);
 
     /**
      * [@property] ready
@@ -102,5 +104,5 @@ public interface NFCReaderSession {
      */
     @Generated
     @Selector("setAlertMessage:")
-    void setAlertMessage(String value);
+    void setAlertMessage(@NotNull String value);
 }

@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CSCustomAttributeKey allows you to specify a custom attribute as well as various other properties of that attribute.
@@ -78,22 +80,25 @@ public class CSCustomAttributeKey extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,9 +133,10 @@ public class CSCustomAttributeKey extends NSObject implements NSCopying, NSSecur
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,15 +168,16 @@ public class CSCustomAttributeKey extends NSObject implements NSCopying, NSSecur
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -178,7 +185,7 @@ public class CSCustomAttributeKey extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("initWithCoder:")
-    public native CSCustomAttributeKey initWithCoder(NSCoder coder);
+    public native CSCustomAttributeKey initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Key names should be ASCII only, with no punctuation other than '_'.
@@ -187,12 +194,13 @@ public class CSCustomAttributeKey extends NSObject implements NSCopying, NSSecur
      */
     @Generated
     @Selector("initWithKeyName:")
-    public native CSCustomAttributeKey initWithKeyName(String keyName);
+    public native CSCustomAttributeKey initWithKeyName(@NotNull String keyName);
 
     @Generated
     @Selector("initWithKeyName:searchable:searchableByDefault:unique:multiValued:")
-    public native CSCustomAttributeKey initWithKeyNameSearchableSearchableByDefaultUniqueMultiValued(String keyName,
-            boolean searchable, boolean searchableByDefault, boolean unique, boolean multiValued);
+    public native CSCustomAttributeKey initWithKeyNameSearchableSearchableByDefaultUniqueMultiValued(
+            @NotNull String keyName, boolean searchable, boolean searchableByDefault, boolean unique,
+            boolean multiValued);
 
     /**
      * Is this attribute expecting multiple values to be associated with it, i.e. are values arrays? By default, NO
@@ -223,6 +231,7 @@ public class CSCustomAttributeKey extends NSObject implements NSCopying, NSSecur
     @Selector("isUnique")
     public native boolean isUnique();
 
+    @NotNull
     @Generated
     @Selector("keyName")
     public native String keyName();

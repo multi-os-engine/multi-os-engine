@@ -27,6 +27,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNBatchNormalizationState
@@ -70,8 +72,9 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("batchNormalization")
     public native MPSCNNBatchNormalization batchNormalization();
@@ -79,6 +82,7 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
     /**
      * Return an MTLBuffer object with the state's current beta values..
      */
+    @Nullable
     @Generated
     @Selector("beta")
     @MappedReturn(ObjCObjectMapper.class)
@@ -86,18 +90,21 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -113,6 +120,7 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
     /**
      * Return an MTLBuffer object with the state's current gamma values.
      */
+    @Nullable
     @Generated
     @Selector("gamma")
     @MappedReturn(ObjCObjectMapper.class)
@@ -123,6 +131,7 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
      * with respect to the bias terms. If a MPSCNNBatchNormalizationGradient kernel
      * has not successfully generated these values nil will be returned.
      */
+    @Nullable
     @Generated
     @Selector("gradientForBeta")
     @MappedReturn(ObjCObjectMapper.class)
@@ -133,6 +142,7 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
      * with respect to the scale factors. If a MPSCNNBatchNormalizationGradient kernel
      * has not successfully generated these values nil will be returned.
      */
+    @Nullable
     @Generated
     @Selector("gradientForGamma")
     @MappedReturn(ObjCObjectMapper.class)
@@ -150,25 +160,26 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
     @Generated
     @Selector("initWithDevice:bufferSize:")
     public native MPSCNNBatchNormalizationState initWithDeviceBufferSize(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long bufferSize);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long bufferSize);
 
     @Generated
     @Selector("initWithDevice:resourceList:")
     public native MPSCNNBatchNormalizationState initWithDeviceResourceList(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, MPSStateResourceList resourceList);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MPSStateResourceList resourceList);
 
     @Generated
     @Selector("initWithDevice:textureDescriptor:")
     public native MPSCNNBatchNormalizationState initWithDeviceTextureDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, MTLTextureDescriptor descriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MTLTextureDescriptor descriptor);
 
     @Generated
     @Selector("initWithResource:")
-    public native MPSCNNBatchNormalizationState initWithResource(@Mapped(ObjCObjectMapper.class) MTLResource resource);
+    public native MPSCNNBatchNormalizationState initWithResource(
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLResource resource);
 
     @Generated
     @Selector("initWithResources:")
-    public native MPSCNNBatchNormalizationState initWithResources(NSArray<?> resources);
+    public native MPSCNNBatchNormalizationState initWithResources(@Nullable NSArray<?> resources);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -187,13 +198,15 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Return an MTLBuffer object with the most recently computed batch mean values.
      */
+    @Nullable
     @Generated
     @Selector("mean")
     @MappedReturn(ObjCObjectMapper.class)
@@ -227,29 +240,35 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:")
     public static native MPSCNNBatchNormalizationState temporaryStateWithCommandBuffer(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:bufferSize:")
     public static native MPSCNNBatchNormalizationState temporaryStateWithCommandBufferBufferSize(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:resourceList:")
     public static native MPSCNNBatchNormalizationState temporaryStateWithCommandBufferResourceList(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSStateResourceList resourceList);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSStateResourceList resourceList);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:textureDescriptor:")
     public static native MPSCNNBatchNormalizationState temporaryStateWithCommandBufferTextureDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MTLTextureDescriptor descriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NotNull MTLTextureDescriptor descriptor);
 
     /**
      * Return an MTLBuffer object with the most recently computed batch variance values.
      */
+    @Nullable
     @Generated
     @Selector("variance")
     @MappedReturn(ObjCObjectMapper.class)

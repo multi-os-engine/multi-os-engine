@@ -47,6 +47,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Note that all sizes are in pixels
@@ -83,22 +85,25 @@ public class PHImageManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -110,6 +115,7 @@ public class PHImageManager extends NSObject {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("defaultManager")
     public static native PHImageManager defaultManager();
@@ -140,9 +146,10 @@ public class PHImageManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -188,8 +195,9 @@ public class PHImageManager extends NSObject {
      */
     @Generated
     @Selector("requestAVAssetForVideo:options:resultHandler:")
-    public native int requestAVAssetForVideoOptionsResultHandler(PHAsset asset, PHVideoRequestOptions options,
-            @ObjCBlock(name = "call_requestAVAssetForVideoOptionsResultHandler") Block_requestAVAssetForVideoOptionsResultHandler resultHandler);
+    public native int requestAVAssetForVideoOptionsResultHandler(@NotNull PHAsset asset,
+            @Nullable PHVideoRequestOptions options,
+            @NotNull @ObjCBlock(name = "call_requestAVAssetForVideoOptionsResultHandler") Block_requestAVAssetForVideoOptionsResultHandler resultHandler);
 
     /**
      * Export. The result handler is called on an arbitrary queue.
@@ -198,9 +206,9 @@ public class PHImageManager extends NSObject {
      */
     @Generated
     @Selector("requestExportSessionForVideo:options:exportPreset:resultHandler:")
-    public native int requestExportSessionForVideoOptionsExportPresetResultHandler(PHAsset asset,
-            PHVideoRequestOptions options, String exportPreset,
-            @ObjCBlock(name = "call_requestExportSessionForVideoOptionsExportPresetResultHandler") Block_requestExportSessionForVideoOptionsExportPresetResultHandler resultHandler);
+    public native int requestExportSessionForVideoOptionsExportPresetResultHandler(@NotNull PHAsset asset,
+            @Nullable PHVideoRequestOptions options, @NotNull String exportPreset,
+            @NotNull @ObjCBlock(name = "call_requestExportSessionForVideoOptionsExportPresetResultHandler") Block_requestExportSessionForVideoOptionsExportPresetResultHandler resultHandler);
 
     /**
      * Request largest represented image as data bytes for the specified asset.
@@ -221,8 +229,9 @@ public class PHImageManager extends NSObject {
     @Deprecated
     @Generated
     @Selector("requestImageDataForAsset:options:resultHandler:")
-    public native int requestImageDataForAssetOptionsResultHandler(PHAsset asset, PHImageRequestOptions options,
-            @ObjCBlock(name = "call_requestImageDataForAssetOptionsResultHandler") Block_requestImageDataForAssetOptionsResultHandler resultHandler);
+    public native int requestImageDataForAssetOptionsResultHandler(@NotNull PHAsset asset,
+            @Nullable PHImageRequestOptions options,
+            @NotNull @ObjCBlock(name = "call_requestImageDataForAssetOptionsResultHandler") Block_requestImageDataForAssetOptionsResultHandler resultHandler);
 
     /**
      * Request an image representation for the specified asset.
@@ -262,9 +271,9 @@ public class PHImageManager extends NSObject {
      */
     @Generated
     @Selector("requestImageForAsset:targetSize:contentMode:options:resultHandler:")
-    public native int requestImageForAssetTargetSizeContentModeOptionsResultHandler(PHAsset asset,
-            @ByValue CGSize targetSize, @NInt long contentMode, PHImageRequestOptions options,
-            @ObjCBlock(name = "call_requestImageForAssetTargetSizeContentModeOptionsResultHandler") Block_requestImageForAssetTargetSizeContentModeOptionsResultHandler resultHandler);
+    public native int requestImageForAssetTargetSizeContentModeOptionsResultHandler(@NotNull PHAsset asset,
+            @ByValue CGSize targetSize, @NInt long contentMode, @Nullable PHImageRequestOptions options,
+            @NotNull @ObjCBlock(name = "call_requestImageForAssetTargetSizeContentModeOptionsResultHandler") Block_requestImageForAssetTargetSizeContentModeOptionsResultHandler resultHandler);
 
     /**
      * Requests a live photo representation of the asset. With PHImageRequestOptionsDeliveryModeOpportunistic (or if no
@@ -276,9 +285,9 @@ public class PHImageManager extends NSObject {
      */
     @Generated
     @Selector("requestLivePhotoForAsset:targetSize:contentMode:options:resultHandler:")
-    public native int requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler(PHAsset asset,
-            @ByValue CGSize targetSize, @NInt long contentMode, PHLivePhotoRequestOptions options,
-            @ObjCBlock(name = "call_requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler") Block_requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler resultHandler);
+    public native int requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler(@NotNull PHAsset asset,
+            @ByValue CGSize targetSize, @NInt long contentMode, @Nullable PHLivePhotoRequestOptions options,
+            @NotNull @ObjCBlock(name = "call_requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler") Block_requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler resultHandler);
 
     /**
      * Playback only. The result handler is called on an arbitrary queue.
@@ -287,54 +296,56 @@ public class PHImageManager extends NSObject {
      */
     @Generated
     @Selector("requestPlayerItemForVideo:options:resultHandler:")
-    public native int requestPlayerItemForVideoOptionsResultHandler(PHAsset asset, PHVideoRequestOptions options,
-            @ObjCBlock(name = "call_requestPlayerItemForVideoOptionsResultHandler") Block_requestPlayerItemForVideoOptionsResultHandler resultHandler);
+    public native int requestPlayerItemForVideoOptionsResultHandler(@NotNull PHAsset asset,
+            @Nullable PHVideoRequestOptions options,
+            @NotNull @ObjCBlock(name = "call_requestPlayerItemForVideoOptionsResultHandler") Block_requestPlayerItemForVideoOptionsResultHandler resultHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestAVAssetForVideoOptionsResultHandler {
         @Generated
-        void call_requestAVAssetForVideoOptionsResultHandler(AVAsset asset, AVAudioMix audioMix,
-                NSDictionary<?, ?> info);
+        void call_requestAVAssetForVideoOptionsResultHandler(@Nullable AVAsset asset, @Nullable AVAudioMix audioMix,
+                @Nullable NSDictionary<?, ?> info);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestExportSessionForVideoOptionsExportPresetResultHandler {
         @Generated
-        void call_requestExportSessionForVideoOptionsExportPresetResultHandler(AVAssetExportSession exportSession,
-                NSDictionary<?, ?> info);
+        void call_requestExportSessionForVideoOptionsExportPresetResultHandler(
+                @Nullable AVAssetExportSession exportSession, @Nullable NSDictionary<?, ?> info);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestImageDataForAssetOptionsResultHandler {
         @Generated
-        void call_requestImageDataForAssetOptionsResultHandler(NSData imageData, String dataUTI, @NInt long orientation,
-                NSDictionary<?, ?> info);
+        void call_requestImageDataForAssetOptionsResultHandler(@Nullable NSData imageData, @Nullable String dataUTI,
+                @NInt long orientation, @Nullable NSDictionary<?, ?> info);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestImageForAssetTargetSizeContentModeOptionsResultHandler {
         @Generated
-        void call_requestImageForAssetTargetSizeContentModeOptionsResultHandler(UIImage result,
-                NSDictionary<?, ?> info);
+        void call_requestImageForAssetTargetSizeContentModeOptionsResultHandler(@Nullable UIImage result,
+                @Nullable NSDictionary<?, ?> info);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler {
         @Generated
-        void call_requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler(PHLivePhoto livePhoto,
-                NSDictionary<?, ?> info);
+        void call_requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler(@Nullable PHLivePhoto livePhoto,
+                @Nullable NSDictionary<?, ?> info);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestPlayerItemForVideoOptionsResultHandler {
         @Generated
-        void call_requestPlayerItemForVideoOptionsResultHandler(AVPlayerItem playerItem, NSDictionary<?, ?> info);
+        void call_requestPlayerItemForVideoOptionsResultHandler(@Nullable AVPlayerItem playerItem,
+                @Nullable NSDictionary<?, ?> info);
     }
 
     /**
@@ -356,15 +367,15 @@ public class PHImageManager extends NSObject {
      */
     @Generated
     @Selector("requestImageDataAndOrientationForAsset:options:resultHandler:")
-    public native int requestImageDataAndOrientationForAssetOptionsResultHandler(PHAsset asset,
-            PHImageRequestOptions options,
-            @ObjCBlock(name = "call_requestImageDataAndOrientationForAssetOptionsResultHandler") Block_requestImageDataAndOrientationForAssetOptionsResultHandler resultHandler);
+    public native int requestImageDataAndOrientationForAssetOptionsResultHandler(@NotNull PHAsset asset,
+            @Nullable PHImageRequestOptions options,
+            @NotNull @ObjCBlock(name = "call_requestImageDataAndOrientationForAssetOptionsResultHandler") Block_requestImageDataAndOrientationForAssetOptionsResultHandler resultHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestImageDataAndOrientationForAssetOptionsResultHandler {
         @Generated
-        void call_requestImageDataAndOrientationForAssetOptionsResultHandler(NSData imageData, String dataUTI,
-                int orientation, NSDictionary<?, ?> info);
+        void call_requestImageDataAndOrientationForAssetOptionsResultHandler(@Nullable NSData imageData,
+                @Nullable String dataUTI, int orientation, @Nullable NSDictionary<?, ?> info);
     }
 }

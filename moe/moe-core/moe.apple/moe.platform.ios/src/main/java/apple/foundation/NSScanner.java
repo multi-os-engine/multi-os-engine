@@ -43,6 +43,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -74,22 +76,25 @@ public class NSScanner extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,14 +129,16 @@ public class NSScanner extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("localizedScannerWithString:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object localizedScannerWithString(String string);
+    public static native Object localizedScannerWithString(@NotNull String string);
 
     @Generated
     @Owned
@@ -148,7 +155,7 @@ public class NSScanner extends NSObject implements NSCopying {
 
     @Generated
     @Selector("scannerWithString:")
-    public static native NSScanner scannerWithString(String string);
+    public static native NSScanner scannerWithString(@NotNull String string);
 
     @Generated
     @Selector("setVersion:")
@@ -167,15 +174,17 @@ public class NSScanner extends NSObject implements NSCopying {
     @Selector("caseSensitive")
     public native boolean caseSensitive();
 
+    @Nullable
     @Generated
     @Selector("charactersToBeSkipped")
     public native NSCharacterSet charactersToBeSkipped();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("init")
@@ -183,12 +192,13 @@ public class NSScanner extends NSObject implements NSCopying {
 
     @Generated
     @Selector("initWithString:")
-    public native NSScanner initWithString(String string);
+    public native NSScanner initWithString(@NotNull String string);
 
     @Generated
     @Selector("isAtEnd")
     public native boolean isAtEnd();
 
+    @Nullable
     @Generated
     @Selector("locale")
     @MappedReturn(ObjCObjectMapper.class)
@@ -196,20 +206,20 @@ public class NSScanner extends NSObject implements NSCopying {
 
     @Generated
     @Selector("scanCharactersFromSet:intoString:")
-    public native boolean scanCharactersFromSetIntoString(NSCharacterSet set,
-            @ReferenceInfo(type = NSString.class) Ptr<NSString> result);
+    public native boolean scanCharactersFromSetIntoString(@NotNull NSCharacterSet set,
+            @Nullable @ReferenceInfo(type = NSString.class) Ptr<NSString> result);
 
     @Generated
     @Selector("scanDecimal:")
-    public native boolean scanDecimal(VoidPtr dcm);
+    public native boolean scanDecimal(@Nullable VoidPtr dcm);
 
     @Generated
     @Selector("scanDouble:")
-    public native boolean scanDouble(DoublePtr result);
+    public native boolean scanDouble(@Nullable DoublePtr result);
 
     @Generated
     @Selector("scanFloat:")
-    public native boolean scanFloat(FloatPtr result);
+    public native boolean scanFloat(@Nullable FloatPtr result);
 
     /**
      * Corresponding to %a or %A formatting. Requires "0x" or "0X" prefix.
@@ -218,7 +228,7 @@ public class NSScanner extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("scanHexDouble:")
-    public native boolean scanHexDouble(DoublePtr result);
+    public native boolean scanHexDouble(@Nullable DoublePtr result);
 
     /**
      * Corresponding to %a or %A formatting. Requires "0x" or "0X" prefix.
@@ -227,14 +237,14 @@ public class NSScanner extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("scanHexFloat:")
-    public native boolean scanHexFloat(FloatPtr result);
+    public native boolean scanHexFloat(@Nullable FloatPtr result);
 
     /**
      * Optionally prefixed with "0x" or "0X"
      */
     @Generated
     @Selector("scanHexInt:")
-    public native boolean scanHexInt(IntPtr result);
+    public native boolean scanHexInt(@Nullable IntPtr result);
 
     /**
      * Optionally prefixed with "0x" or "0X"
@@ -243,21 +253,21 @@ public class NSScanner extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("scanHexLongLong:")
-    public native boolean scanHexLongLong(LongPtr result);
+    public native boolean scanHexLongLong(@Nullable LongPtr result);
 
     /**
      * On overflow, the below methods will return success and clamp
      */
     @Generated
     @Selector("scanInt:")
-    public native boolean scanInt(IntPtr result);
+    public native boolean scanInt(@Nullable IntPtr result);
 
     /**
      * API-Since: 2.0
      */
     @Generated
     @Selector("scanInteger:")
-    public native boolean scanInteger(NIntPtr result);
+    public native boolean scanInteger(@Nullable NIntPtr result);
 
     @Generated
     @Selector("scanLocation")
@@ -266,29 +276,29 @@ public class NSScanner extends NSObject implements NSCopying {
 
     @Generated
     @Selector("scanLongLong:")
-    public native boolean scanLongLong(LongPtr result);
+    public native boolean scanLongLong(@Nullable LongPtr result);
 
     @Generated
     @Selector("scanString:intoString:")
-    public native boolean scanStringIntoString(String string,
-            @ReferenceInfo(type = NSString.class) Ptr<NSString> result);
+    public native boolean scanStringIntoString(@NotNull String string,
+            @Nullable @ReferenceInfo(type = NSString.class) Ptr<NSString> result);
 
     /**
      * API-Since: 7.0
      */
     @Generated
     @Selector("scanUnsignedLongLong:")
-    public native boolean scanUnsignedLongLong(LongPtr result);
+    public native boolean scanUnsignedLongLong(@Nullable LongPtr result);
 
     @Generated
     @Selector("scanUpToCharactersFromSet:intoString:")
-    public native boolean scanUpToCharactersFromSetIntoString(NSCharacterSet set,
-            @ReferenceInfo(type = NSString.class) Ptr<NSString> result);
+    public native boolean scanUpToCharactersFromSetIntoString(@NotNull NSCharacterSet set,
+            @Nullable @ReferenceInfo(type = NSString.class) Ptr<NSString> result);
 
     @Generated
     @Selector("scanUpToString:intoString:")
-    public native boolean scanUpToStringIntoString(String string,
-            @ReferenceInfo(type = NSString.class) Ptr<NSString> result);
+    public native boolean scanUpToStringIntoString(@NotNull String string,
+            @Nullable @ReferenceInfo(type = NSString.class) Ptr<NSString> result);
 
     @Generated
     @Selector("setCaseSensitive:")
@@ -296,16 +306,17 @@ public class NSScanner extends NSObject implements NSCopying {
 
     @Generated
     @Selector("setCharactersToBeSkipped:")
-    public native void setCharactersToBeSkipped(NSCharacterSet value);
+    public native void setCharactersToBeSkipped(@Nullable NSCharacterSet value);
 
     @Generated
     @Selector("setLocale:")
-    public native void setLocale(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setLocale(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
     @Selector("setScanLocation:")
     public native void setScanLocation(@NUInt long value);
 
+    @NotNull
     @Generated
     @Selector("string")
     public native String string();

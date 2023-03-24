@@ -45,6 +45,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSTemporaryImage
@@ -176,22 +178,25 @@ public class MPSTemporaryImage extends MPSImage {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -226,9 +231,10 @@ public class MPSTemporaryImage extends MPSImage {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -257,8 +263,8 @@ public class MPSTemporaryImage extends MPSImage {
     @Generated
     @Selector("prefetchStorageWithCommandBuffer:imageDescriptorList:")
     public static native void prefetchStorageWithCommandBufferImageDescriptorList(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            NSArray<? extends MPSImageDescriptor> descriptorList);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull NSArray<? extends MPSImageDescriptor> descriptorList);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -290,7 +296,8 @@ public class MPSTemporaryImage extends MPSImage {
     @Generated
     @Selector("temporaryImageWithCommandBuffer:imageDescriptor:")
     public static native MPSTemporaryImage temporaryImageWithCommandBufferImageDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImageDescriptor imageDescriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSImageDescriptor imageDescriptor);
 
     /**
      * Low level interface for creating a MPSTemporaryImage using a MTLTextureDescriptor
@@ -314,7 +321,8 @@ public class MPSTemporaryImage extends MPSImage {
     @Generated
     @Selector("temporaryImageWithCommandBuffer:textureDescriptor:")
     public static native MPSTemporaryImage temporaryImageWithCommandBufferTextureDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MTLTextureDescriptor textureDescriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MTLTextureDescriptor textureDescriptor);
 
     @Generated
     @Selector("version")
@@ -327,13 +335,13 @@ public class MPSTemporaryImage extends MPSImage {
 
     @Generated
     @Selector("initWithDevice:imageDescriptor:")
-    public native MPSTemporaryImage initWithDeviceImageDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            MPSImageDescriptor imageDescriptor);
+    public native MPSTemporaryImage initWithDeviceImageDescriptor(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MPSImageDescriptor imageDescriptor);
 
     @Generated
     @Selector("initWithTexture:featureChannels:")
-    public native MPSTemporaryImage initWithTextureFeatureChannels(@Mapped(ObjCObjectMapper.class) MTLTexture texture,
-            @NUInt long featureChannels);
+    public native MPSTemporaryImage initWithTextureFeatureChannels(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture texture, @NUInt long featureChannels);
 
     /**
      * The number of times a temporary image may be read by a MPSCNNKernel
@@ -401,6 +409,7 @@ public class MPSTemporaryImage extends MPSImage {
     /**
      * Get a well known MPSImageAllocator that makes MPSTemporaryImages
      */
+    @NotNull
     @Generated
     @Selector("defaultAllocator")
     @MappedReturn(ObjCObjectMapper.class)
@@ -408,7 +417,7 @@ public class MPSTemporaryImage extends MPSImage {
 
     @Generated
     @Selector("initWithParentImage:sliceRange:featureChannels:")
-    public native MPSTemporaryImage initWithParentImageSliceRangeFeatureChannels(MPSImage parent,
+    public native MPSTemporaryImage initWithParentImageSliceRangeFeatureChannels(@NotNull MPSImage parent,
             @ByValue NSRange sliceRange, @NUInt long featureChannels);
 
     /**
@@ -436,6 +445,6 @@ public class MPSTemporaryImage extends MPSImage {
     @Generated
     @Selector("temporaryImageWithCommandBuffer:textureDescriptor:featureChannels:")
     public static native MPSTemporaryImage temporaryImageWithCommandBufferTextureDescriptorFeatureChannels(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MTLTextureDescriptor textureDescriptor,
-            @NUInt long featureChannels);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MTLTextureDescriptor textureDescriptor, @NUInt long featureChannels);
 }

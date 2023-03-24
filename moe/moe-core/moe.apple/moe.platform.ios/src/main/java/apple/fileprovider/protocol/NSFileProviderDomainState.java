@@ -8,6 +8,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 16.0
@@ -35,6 +36,7 @@ public interface NSFileProviderDomainState {
      * 
      * The system ignore any domain version that is smaller than the previously known version.
      */
+    @NotNull
     @Generated
     @Selector("domainVersion")
     NSFileProviderDomainVersion domainVersion();
@@ -52,6 +54,7 @@ public interface NSFileProviderDomainState {
      * The system expects the domainVersion to be updated when the value of the userInfo property
      * changes.
      */
+    @NotNull
     @Generated
     @Selector("userInfo")
     NSDictionary<?, ?> userInfo();

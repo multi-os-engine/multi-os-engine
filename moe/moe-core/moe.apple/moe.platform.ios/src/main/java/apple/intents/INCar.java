@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -63,30 +65,34 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * An identifier for the vehicles. Use this same value as the carIdentifier property of
      * INGetCarPowerLevelStatusResponse. Do not use the VIN (or the equivalent code) as the identifier.
      */
+    @NotNull
     @Generated
     @Selector("carIdentifier")
     public native String carIdentifier();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -94,15 +100,17 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Color of the vehicle.
      */
+    @Nullable
     @Generated
     @Selector("color")
     public native CGColorRef color();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -115,13 +123,14 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * A user-defined display name for the vehicle that is expected to be set in the OEM app.
      */
+    @Nullable
     @Generated
     @Selector("displayName")
     public native String displayName();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -131,6 +140,7 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * A data structure containing the bluetooth identifier and the iAP 2 identifier of the head unit of the vehicle.
      */
+    @Nullable
     @Generated
     @Selector("headUnit")
     public native INCarHeadUnit headUnit();
@@ -145,12 +155,13 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("initWithCarIdentifier:displayName:year:make:model:color:headUnit:supportedChargingConnectors:")
     public native INCar initWithCarIdentifierDisplayNameYearMakeModelColorHeadUnitSupportedChargingConnectors(
-            String carIdentifier, String displayName, String year, String make, String model, CGColorRef color,
-            INCarHeadUnit headUnit, NSArray<String> supportedChargingConnectors);
+            @NotNull String carIdentifier, @Nullable String displayName, @Nullable String year, @Nullable String make,
+            @Nullable String model, @Nullable CGColorRef color, @Nullable INCarHeadUnit headUnit,
+            @NotNull NSArray<String> supportedChargingConnectors);
 
     @Generated
     @Selector("initWithCoder:")
-    public native INCar initWithCoder(NSCoder coder);
+    public native INCar initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -169,13 +180,15 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Make of the vehicle. Should be set by the OEM app. This is later used by Maps to be shown to the user.
      */
+    @Nullable
     @Generated
     @Selector("make")
     public native String make();
@@ -183,13 +196,16 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Use this method to read the maximum power set for each charging connector type.
      */
+    @Nullable
     @Generated
     @Selector("maximumPowerForChargingConnectorType:")
-    public native NSMeasurement<NSUnitPower> maximumPowerForChargingConnectorType(String chargingConnectorType);
+    public native NSMeasurement<NSUnitPower> maximumPowerForChargingConnectorType(
+            @NotNull String chargingConnectorType);
 
     /**
      * Model name of the vehicle. Should be set by the OEM app. This is later used by Maps to be shown to the user.
      */
+    @Nullable
     @Generated
     @Selector("model")
     public native String model();
@@ -213,8 +229,8 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setMaximumPower:forChargingConnectorType:")
-    public native void setMaximumPowerForChargingConnectorType(NSMeasurement<NSUnitPower> power,
-            String chargingConnectorType);
+    public native void setMaximumPowerForChargingConnectorType(@NotNull NSMeasurement<NSUnitPower> power,
+            @NotNull String chargingConnectorType);
 
     @Generated
     @Selector("setVersion:")
@@ -227,6 +243,7 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * An array containing the supported charging connectors of a vehicle.
      */
+    @NotNull
     @Generated
     @Selector("supportedChargingConnectors")
     public native NSArray<String> supportedChargingConnectors();
@@ -249,6 +266,7 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Manufacturing year of the vehicle.
      */
+    @Nullable
     @Generated
     @Selector("year")
     public native String year();

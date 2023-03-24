@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -44,6 +46,7 @@ public interface UIAppearance {
      * This inherited behavior can conflict with the appearance proxy, and therefore tintColor is now disallowed with
      * the appearance proxy.
      */
+    @NotNull
     @Generated
     @Selector("appearance")
     @ProtocolClassMethod("appearance")
@@ -52,31 +55,34 @@ public interface UIAppearance {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:")
     @ProtocolClassMethod("appearanceForTraitCollection")
-    UIAppearance _appearanceForTraitCollection(UITraitCollection trait);
+    UIAppearance _appearanceForTraitCollection(@NotNull UITraitCollection trait);
 
     /**
      * API-Since: 8.0
      * Deprecated-Since: 9.0
      */
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    UIAppearance _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    UIAppearance _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    UIAppearance _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes);
+    UIAppearance _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(@NotNull UITraitCollection trait,
+            @NotNull NSArray<?> containerTypes);
 
     /**
      * To customize the appearances for instances of a class contained within an instance of a container class, or
@@ -98,19 +104,21 @@ public interface UIAppearance {
      * API-Since: 5.0
      * Deprecated-Since: 9.0
      */
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    UIAppearance _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
-            Object... varargs);
+    UIAppearance _appearanceWhenContainedIn(
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    UIAppearance _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    UIAppearance _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes);
 }

@@ -24,6 +24,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 10.0
@@ -42,7 +43,7 @@ public interface SKViewDelegate {
     @Generated
     @IsOptional
     @Selector("view:shouldRenderAtTime:")
-    default boolean viewShouldRenderAtTime(SKView view, double time) {
+    default boolean viewShouldRenderAtTime(@NotNull SKView view, double time) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

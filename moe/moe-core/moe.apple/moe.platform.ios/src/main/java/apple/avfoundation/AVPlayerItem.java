@@ -51,6 +51,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.avkit.AVInterstitialTimeRange;
 import apple.foundation.NSDictionary;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.0
@@ -85,22 +87,25 @@ public class AVPlayerItem extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,9 +140,10 @@ public class AVPlayerItem extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,7 +163,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("playerItemWithAsset:")
-    public static native AVPlayerItem playerItemWithAsset(AVAsset asset);
+    public static native AVPlayerItem playerItemWithAsset(@NotNull AVAsset asset);
 
     /**
      * playerItemWithAsset:automaticallyLoadedAssetKeys:
@@ -179,8 +185,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("playerItemWithAsset:automaticallyLoadedAssetKeys:")
-    public static native AVPlayerItem playerItemWithAssetAutomaticallyLoadedAssetKeys(AVAsset asset,
-            NSArray<String> automaticallyLoadedAssetKeys);
+    public static native AVPlayerItem playerItemWithAssetAutomaticallyLoadedAssetKeys(@NotNull AVAsset asset,
+            @Nullable NSArray<String> automaticallyLoadedAssetKeys);
 
     /**
      * playerItemWithURL:
@@ -194,7 +200,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("playerItemWithURL:")
-    public static native AVPlayerItem playerItemWithURL(NSURL URL);
+    public static native AVPlayerItem playerItemWithURL(@NotNull NSURL URL);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -232,6 +238,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * 
      *         API-Since: 4.3
      */
+    @Nullable
     @Generated
     @Selector("accessLog")
     public native AVPlayerItemAccessLog accessLog();
@@ -251,7 +258,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("addMediaDataCollector:")
-    public native void addMediaDataCollector(AVPlayerItemMediaDataCollector collector);
+    public native void addMediaDataCollector(@NotNull AVPlayerItemMediaDataCollector collector);
 
     /**
      * addOutput:
@@ -273,13 +280,14 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("addOutput:")
-    public native void addOutput(AVPlayerItemOutput output);
+    public native void addOutput(@NotNull AVPlayerItemOutput output);
 
     /**
      * [@property] asset
      * 
      * Accessor for underlying AVAsset.
      */
+    @NotNull
     @Generated
     @Selector("asset")
     public native AVAsset asset();
@@ -293,6 +301,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * Otherwise they will be ignored. (See AVAudioMix.h for the declaration of AVAudioMixInputParameters and
      * AVPlayerItem's asset property.)
      */
+    @Nullable
     @Generated
     @Selector("audioMix")
     public native AVAudioMix audioMix();
@@ -311,6 +320,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("audioTimePitchAlgorithm")
     public native String audioTimePitchAlgorithm();
@@ -328,6 +338,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("automaticallyLoadedAssetKeys")
     public native NSArray<String> automaticallyLoadedAssetKeys();
@@ -436,11 +447,12 @@ public class AVPlayerItem extends NSObject implements NSCopying {
     @Selector("cancelPendingSeeks")
     public native void cancelPendingSeeks();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * currentDate
@@ -449,6 +461,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * 
      * @return Returns the date of current playback, or nil if playback is not mapped to any date.
      */
+    @Nullable
     @Generated
     @Selector("currentDate")
     public native NSDate currentDate();
@@ -461,6 +474,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("currentMediaSelection")
     public native AVMediaSelection currentMediaSelection();
@@ -493,6 +507,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("customVideoCompositor")
     @MappedReturn(ObjCObjectMapper.class)
@@ -533,6 +548,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * played.
      * If the receiver's status is not AVPlayerItemStatusFailed, the value of this property is nil.
      */
+    @Nullable
     @Generated
     @Selector("error")
     public native NSError error();
@@ -549,6 +565,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * 
      *         API-Since: 4.3
      */
+    @Nullable
     @Generated
     @Selector("errorLog")
     public native AVPlayerItemErrorLog errorLog();
@@ -591,7 +608,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("initWithAsset:")
-    public native AVPlayerItem initWithAsset(AVAsset asset);
+    public native AVPlayerItem initWithAsset(@NotNull AVAsset asset);
 
     /**
      * initWithAsset:automaticallyLoadedAssetKeys:
@@ -614,8 +631,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("initWithAsset:automaticallyLoadedAssetKeys:")
-    public native AVPlayerItem initWithAssetAutomaticallyLoadedAssetKeys(AVAsset asset,
-            NSArray<String> automaticallyLoadedAssetKeys);
+    public native AVPlayerItem initWithAssetAutomaticallyLoadedAssetKeys(@NotNull AVAsset asset,
+            @Nullable NSArray<String> automaticallyLoadedAssetKeys);
 
     /**
      * initWithURL:
@@ -629,7 +646,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("initWithURL:")
-    public native AVPlayerItem initWithURL(NSURL URL);
+    public native AVPlayerItem initWithURL(@NotNull NSURL URL);
 
     /**
      * indicates that playback has consumed all buffered media and that playback will stall or end
@@ -675,6 +692,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * 
      * Returns an NSArray of NSValues containing CMTimeRanges.
      */
+    @NotNull
     @Generated
     @Selector("loadedTimeRanges")
     public native NSArray<? extends NSValue> loadedTimeRanges();
@@ -686,6 +704,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * 
      * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @Selector("mediaDataCollectors")
     public native NSArray<? extends AVPlayerItemMediaDataCollector> mediaDataCollectors();
@@ -697,6 +716,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("outputs")
     public native NSArray<? extends AVPlayerItemOutput> outputs();
@@ -771,7 +791,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("removeMediaDataCollector:")
-    public native void removeMediaDataCollector(AVPlayerItemMediaDataCollector collector);
+    public native void removeMediaDataCollector(@NotNull AVPlayerItemMediaDataCollector collector);
 
     /**
      * removeOutput:
@@ -785,7 +805,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("removeOutput:")
-    public native void removeOutput(AVPlayerItemOutput output);
+    public native void removeOutput(@NotNull AVPlayerItemOutput output);
 
     /**
      * [@property] reversePlaybackEndTime
@@ -828,7 +848,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
     @Deprecated
     @Generated
     @Selector("seekToDate:")
-    public native boolean seekToDate(NSDate date);
+    public native boolean seekToDate(@NotNull NSDate date);
 
     /**
      * seekToDate:completionHandler:
@@ -853,8 +873,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("seekToDate:completionHandler:")
-    public native boolean seekToDateCompletionHandler(NSDate date,
-            @ObjCBlock(name = "call_seekToDateCompletionHandler") Block_seekToDateCompletionHandler completionHandler);
+    public native boolean seekToDateCompletionHandler(@NotNull NSDate date,
+            @Nullable @ObjCBlock(name = "call_seekToDateCompletionHandler") Block_seekToDateCompletionHandler completionHandler);
 
     /**
      * seekToTime:
@@ -904,7 +924,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
     @Generated
     @Selector("seekToTime:completionHandler:")
     public native void seekToTimeCompletionHandler(@ByValue CMTime time,
-            @ObjCBlock(name = "call_seekToTimeCompletionHandler") Block_seekToTimeCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_seekToTimeCompletionHandler") Block_seekToTimeCompletionHandler completionHandler);
 
     /**
      * seekToTime:toleranceBefore:toleranceAfter:
@@ -974,7 +994,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
     @Selector("seekToTime:toleranceBefore:toleranceAfter:completionHandler:")
     public native void seekToTimeToleranceBeforeToleranceAfterCompletionHandler(@ByValue CMTime time,
             @ByValue CMTime toleranceBefore, @ByValue CMTime toleranceAfter,
-            @ObjCBlock(name = "call_seekToTimeToleranceBeforeToleranceAfterCompletionHandler") Block_seekToTimeToleranceBeforeToleranceAfterCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_seekToTimeToleranceBeforeToleranceAfterCompletionHandler") Block_seekToTimeToleranceBeforeToleranceAfterCompletionHandler completionHandler);
 
     /**
      * [@property] seekableTimeRanges
@@ -984,6 +1004,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * 
      * Returns an NSArray of NSValues containing CMTimeRanges.
      */
+    @NotNull
     @Generated
     @Selector("seekableTimeRanges")
     public native NSArray<? extends NSValue> seekableTimeRanges();
@@ -1042,8 +1063,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("selectMediaOption:inMediaSelectionGroup:")
-    public native void selectMediaOptionInMediaSelectionGroup(AVMediaSelectionOption mediaSelectionOption,
-            AVMediaSelectionGroup mediaSelectionGroup);
+    public native void selectMediaOptionInMediaSelectionGroup(@Nullable AVMediaSelectionOption mediaSelectionOption,
+            @NotNull AVMediaSelectionGroup mediaSelectionGroup);
 
     /**
      * selectMediaOptionAutomaticallyInMediaSelectionGroup:
@@ -1065,7 +1086,8 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("selectMediaOptionAutomaticallyInMediaSelectionGroup:")
-    public native void selectMediaOptionAutomaticallyInMediaSelectionGroup(AVMediaSelectionGroup mediaSelectionGroup);
+    public native void selectMediaOptionAutomaticallyInMediaSelectionGroup(
+            @NotNull AVMediaSelectionGroup mediaSelectionGroup);
 
     /**
      * selectedMediaOptionInMediaSelectionGroup:
@@ -1083,11 +1105,12 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * @param mediaSelectionGroup A media selection group obtained from the receiver's asset.
      * @return An instance of AVMediaSelectionOption that describes the currently selection option in the group.
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("selectedMediaOptionInMediaSelectionGroup:")
     public native AVMediaSelectionOption selectedMediaOptionInMediaSelectionGroup(
-            AVMediaSelectionGroup mediaSelectionGroup);
+            @NotNull AVMediaSelectionGroup mediaSelectionGroup);
 
     /**
      * [@property] audioMix
@@ -1100,7 +1123,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setAudioMix:")
-    public native void setAudioMix(AVAudioMix value);
+    public native void setAudioMix(@Nullable AVAudioMix value);
 
     /**
      * [@property] audioTimePitchAlgorithm
@@ -1118,7 +1141,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setAudioTimePitchAlgorithm:")
-    public native void setAudioTimePitchAlgorithm(String value);
+    public native void setAudioTimePitchAlgorithm(@NotNull String value);
 
     /**
      * [@property] canUseNetworkResourcesForLiveStreamingWhilePaused
@@ -1256,7 +1279,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setTextStyleRules:")
-    public native void setTextStyleRules(NSArray<? extends AVTextStyleRule> value);
+    public native void setTextStyleRules(@Nullable NSArray<? extends AVTextStyleRule> value);
 
     /**
      * [@property] videoComposition
@@ -1274,7 +1297,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setVideoComposition:")
-    public native void setVideoComposition(AVVideoComposition value);
+    public native void setVideoComposition(@Nullable AVVideoComposition value);
 
     /**
      * [@property] status
@@ -1323,6 +1346,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("textStyleRules")
     public native NSArray<? extends AVTextStyleRule> textStyleRules();
@@ -1338,6 +1362,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("timebase")
     public native CMTimebaseRef timebase();
@@ -1359,6 +1384,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * Deprecated-Since: 13.0
      * Deprecated-Message: Use AVPlayerItemMetadataOutput to obtain timed metadata
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("timedMetadata")
@@ -1375,6 +1401,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * observation to obtain
      * a valid array of tracks as soon as it becomes available.
      */
+    @NotNull
     @Generated
     @Selector("tracks")
     public native NSArray<? extends AVPlayerItemTrack> tracks();
@@ -1393,6 +1420,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("videoComposition")
     public native AVVideoComposition videoComposition();
@@ -1462,7 +1490,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setVideoApertureMode:")
-    public native void setVideoApertureMode(String value);
+    public native void setVideoApertureMode(@NotNull String value);
 
     /**
      * [@property] videoApertureMode
@@ -1473,6 +1501,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("videoApertureMode")
     public native String videoApertureMode();
@@ -1619,6 +1648,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * 
      * API-Since: 12.2
      */
+    @NotNull
     @Generated
     @Selector("externalMetadata")
     public native NSArray<? extends AVMetadataItem> externalMetadata();
@@ -1640,7 +1670,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setExternalMetadata:")
-    public native void setExternalMetadata(NSArray<? extends AVMetadataItem> value);
+    public native void setExternalMetadata(@NotNull NSArray<? extends AVMetadataItem> value);
 
     /**
      * [@property] allowedAudioSpatializationFormats
@@ -1787,6 +1817,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
     @Selector("automaticallyHandlesInterstitialEvents")
     public native boolean automaticallyHandlesInterstitialEvents();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copy")
@@ -1922,6 +1953,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("templatePlayerItem")
     public native AVPlayerItem templatePlayerItem();
@@ -1954,6 +1986,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("interstitialTimeRanges")
     public native NSArray<? extends AVInterstitialTimeRange> interstitialTimeRanges();
@@ -1964,6 +1997,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("nowPlayingInfo")
     public native NSDictionary<String, ?> nowPlayingInfo();
@@ -1976,5 +2010,5 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setNowPlayingInfo:")
-    public native void setNowPlayingInfo(NSDictionary<String, ?> value);
+    public native void setNowPlayingInfo(@Nullable NSDictionary<String, ?> value);
 }

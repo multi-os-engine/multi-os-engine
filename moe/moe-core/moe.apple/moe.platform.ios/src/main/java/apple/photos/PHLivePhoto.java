@@ -53,6 +53,8 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.1
@@ -87,7 +89,7 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding, 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Cancels the loading of a PHLivePhoto. The request's completion handler will be called.
@@ -100,18 +102,21 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding, 
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -146,9 +151,10 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding, 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,8 +176,9 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding, 
     @Generated
     @Selector("requestLivePhotoWithResourceFileURLs:placeholderImage:targetSize:contentMode:resultHandler:")
     public static native int requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler(
-            NSArray<? extends NSURL> fileURLs, UIImage image, @ByValue CGSize targetSize, @NInt long contentMode,
-            @ObjCBlock(name = "call_requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler") Block_requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler resultHandler);
+            @NotNull NSArray<? extends NSURL> fileURLs, @Nullable UIImage image, @ByValue CGSize targetSize,
+            @NInt long contentMode,
+            @NotNull @ObjCBlock(name = "call_requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler") Block_requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler resultHandler);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -198,15 +205,16 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding, 
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -214,7 +222,7 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding, 
 
     @Generated
     @Selector("initWithCoder:")
-    public native PHLivePhoto initWithCoder(NSCoder coder);
+    public native PHLivePhoto initWithCoder(@NotNull NSCoder coder);
 
     /**
      * The dimensions of the live photo measured in pixels.
@@ -237,25 +245,29 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding, 
     public interface Block_requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler {
         @Generated
         void call_requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler(
-                PHLivePhoto livePhoto, NSDictionary<?, ?> info);
+                @Nullable PHLivePhoto livePhoto, @NotNull NSDictionary<?, ?> info);
     }
 
+    @Nullable
     @Generated
     @Selector("objectWithItemProviderData:typeIdentifier:error:")
-    public static native PHLivePhoto objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public static native PHLivePhoto objectWithItemProviderDataTypeIdentifierError(@NotNull NSData data,
+            @NotNull String typeIdentifier, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    @Nullable
     @Generated
     @ProtocolClassMethod("objectWithItemProviderDataTypeIdentifierError")
-    public PHLivePhoto _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
+    public PHLivePhoto _objectWithItemProviderDataTypeIdentifierError(@NotNull NSData data,
+            @NotNull String typeIdentifier, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
         return objectWithItemProviderDataTypeIdentifierError(data, typeIdentifier, outError);
     }
 
+    @NotNull
     @Generated
     @Selector("readableTypeIdentifiersForItemProvider")
     public static native NSArray<String> readableTypeIdentifiersForItemProvider();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("readableTypeIdentifiersForItemProvider")
     public NSArray<String> _readableTypeIdentifiersForItemProvider() {

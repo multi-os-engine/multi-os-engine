@@ -46,6 +46,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A SpriteKit node that applies frame buffer effects to the rendered results of its child nodes. This is done
@@ -81,29 +83,32 @@ public class SKEffectNode extends SKNode implements SKWarpable {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -135,9 +140,10 @@ public class SKEffectNode extends SKNode implements SKWarpable {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -150,21 +156,25 @@ public class SKEffectNode extends SKNode implements SKWarpable {
 
     @Generated
     @Selector("nodeWithFileNamed:")
-    public static native SKEffectNode nodeWithFileNamed(String filename);
+    public static native SKEffectNode nodeWithFileNamed(@NotNull String filename);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodeBounds:")
-    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
+    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodePhysicsBodies:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodePhysicsBodies(
-            NSArray<? extends SKNode> nodes);
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromSpriteTextures:accuracy:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromSpriteTexturesAccuracy(
-            NSArray<? extends SKNode> sprites, float accuracy);
+            @NotNull NSArray<? extends SKNode> sprites, float accuracy);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -193,6 +203,7 @@ public class SKEffectNode extends SKNode implements SKWarpable {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("attributeValues")
     public native NSDictionary<String, ? extends SKAttributeValue> attributeValues();
@@ -214,6 +225,7 @@ public class SKEffectNode extends SKNode implements SKWarpable {
      * applied to all children of the SKEffectNode. If the filter is nil, the children of this node is flattened before
      * being drawn as long as the SKEffectNode is enabled.
      */
+    @Nullable
     @Generated
     @Selector("filter")
     public native CIFilter filter();
@@ -224,7 +236,7 @@ public class SKEffectNode extends SKNode implements SKWarpable {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKEffectNode initWithCoder(NSCoder aDecoder);
+    public native SKEffectNode initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * Optional dictionary of SKAttributeValues
@@ -234,7 +246,7 @@ public class SKEffectNode extends SKNode implements SKWarpable {
      */
     @Generated
     @Selector("setAttributeValues:")
-    public native void setAttributeValues(NSDictionary<String, ? extends SKAttributeValue> value);
+    public native void setAttributeValues(@NotNull NSDictionary<String, ? extends SKAttributeValue> value);
 
     /**
      * Sets the blend mode to use when composing the effect with the final framebuffer.
@@ -254,11 +266,11 @@ public class SKEffectNode extends SKNode implements SKWarpable {
      */
     @Generated
     @Selector("setFilter:")
-    public native void setFilter(CIFilter value);
+    public native void setFilter(@Nullable CIFilter value);
 
     @Generated
     @Selector("setShader:")
-    public native void setShader(SKShader value);
+    public native void setShader(@Nullable SKShader value);
 
     /**
      * Controls whether the filter's "inputCenter" (if it exists) should automatically be set to the center of the
@@ -300,12 +312,13 @@ public class SKEffectNode extends SKNode implements SKWarpable {
      */
     @Generated
     @Selector("setValue:forAttributeNamed:")
-    public native void setValueForAttributeNamed(SKAttributeValue value, String key);
+    public native void setValueForAttributeNamed(@NotNull SKAttributeValue value, @NotNull String key);
 
     @Generated
     @Selector("setWarpGeometry:")
-    public native void setWarpGeometry(SKWarpGeometry value);
+    public native void setWarpGeometry(@Nullable SKWarpGeometry value);
 
+    @Nullable
     @Generated
     @Selector("shader")
     public native SKShader shader();
@@ -349,18 +362,20 @@ public class SKEffectNode extends SKNode implements SKWarpable {
     /**
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("valueForAttributeNamed:")
-    public native SKAttributeValue valueForAttributeNamed(String key);
+    public native SKAttributeValue valueForAttributeNamed(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("warpGeometry")
     public native SKWarpGeometry warpGeometry();
 
     @Generated
     @Selector("nodeWithFileNamed:securelyWithClasses:andError:")
-    public static native SKEffectNode nodeWithFileNamedSecurelyWithClassesAndError(String filename,
-            NSSet<? extends Class> classes, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native SKEffectNode nodeWithFileNamedSecurelyWithClassesAndError(@NotNull String filename,
+            @NotNull NSSet<? extends Class> classes, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("supportsSecureCoding")

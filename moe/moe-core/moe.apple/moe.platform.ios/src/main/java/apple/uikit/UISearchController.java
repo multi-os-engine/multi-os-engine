@@ -48,6 +48,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -88,29 +90,32 @@ public class UISearchController extends UIViewController implements UIViewContro
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -142,9 +147,10 @@ public class UISearchController extends UIViewController implements UIViewContro
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -175,27 +181,31 @@ public class UISearchController extends UIViewController implements UIViewContro
     @Generated
     @Selector("animateTransition:")
     public native void animateTransition(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("animationControllerForDismissedController:")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIViewControllerAnimatedTransitioning animationControllerForDismissedController(
-            UIViewController dismissed);
+            @NotNull UIViewController dismissed);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("animationControllerForPresentedController:presentingController:sourceController:")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIViewControllerAnimatedTransitioning animationControllerForPresentedControllerPresentingControllerSourceController(
-            UIViewController presented, UIViewController presenting, UIViewController source);
+            @NotNull UIViewController presented, @NotNull UIViewController presenting,
+            @NotNull UIViewController source);
 
     @Generated
     @IsOptional
     @Selector("animationEnded:")
     public native void animationEnded(boolean transitionCompleted);
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -225,14 +235,15 @@ public class UISearchController extends UIViewController implements UIViewContro
 
     @Generated
     @Selector("initWithCoder:")
-    public native UISearchController initWithCoder(NSCoder coder);
+    public native UISearchController initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Creates a search controller without a results controller
      */
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native UISearchController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native UISearchController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * Pass nil if you wish to display search results in the same view that you are searching. This is not supported on
@@ -240,28 +251,32 @@ public class UISearchController extends UIViewController implements UIViewContro
      */
     @Generated
     @Selector("initWithSearchResultsController:")
-    public native UISearchController initWithSearchResultsController(UIViewController searchResultsController);
+    public native UISearchController initWithSearchResultsController(
+            @Nullable UIViewController searchResultsController);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("interactionControllerForDismissal:")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIViewControllerInteractiveTransitioning interactionControllerForDismissal(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerAnimatedTransitioning animator);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerAnimatedTransitioning animator);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("interactionControllerForPresentation:")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIViewControllerInteractiveTransitioning interactionControllerForPresentation(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerAnimatedTransitioning animator);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerAnimatedTransitioning animator);
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("interruptibleAnimatorForTransition:")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIViewImplicitlyAnimating interruptibleAnimatorForTransition(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
     /**
      * Setting this property to YES is a convenience method that performs a default presentation of the search
@@ -291,19 +306,23 @@ public class UISearchController extends UIViewController implements UIViewContro
     @Selector("obscuresBackgroundDuringPresentation")
     public native boolean obscuresBackgroundDuringPresentation();
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("presentationControllerForPresentedViewController:presentingViewController:sourceViewController:")
     public native UIPresentationController presentationControllerForPresentedViewControllerPresentingViewControllerSourceViewController(
-            UIViewController presented, UIViewController presenting, UIViewController source);
+            @NotNull UIViewController presented, @Nullable UIViewController presenting,
+            @NotNull UIViewController source);
 
     /**
      * You are free to become the search bar's delegate to monitor for text changes and button presses.
      */
+    @NotNull
     @Generated
     @Selector("searchBar")
     public native UISearchBar searchBar();
 
+    @Nullable
     @Generated
     @Selector("searchResultsController")
     public native UIViewController searchResultsController();
@@ -311,6 +330,7 @@ public class UISearchController extends UIViewController implements UIViewContro
     /**
      * The object responsible for updating the content of the searchResultsController.
      */
+    @Nullable
     @Generated
     @Selector("searchResultsUpdater")
     @MappedReturn(ObjCObjectMapper.class)
@@ -318,10 +338,10 @@ public class UISearchController extends UIViewController implements UIViewContro
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UISearchControllerDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UISearchControllerDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UISearchControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UISearchControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -365,13 +385,14 @@ public class UISearchController extends UIViewController implements UIViewContro
      */
     @Generated
     @Selector("setSearchResultsUpdater:")
-    public native void setSearchResultsUpdater_unsafe(@Mapped(ObjCObjectMapper.class) UISearchResultsUpdating value);
+    public native void setSearchResultsUpdater_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) UISearchResultsUpdating value);
 
     /**
      * The object responsible for updating the content of the searchResultsController.
      */
     @Generated
-    public void setSearchResultsUpdater(@Mapped(ObjCObjectMapper.class) UISearchResultsUpdating value) {
+    public void setSearchResultsUpdater(@Nullable @Mapped(ObjCObjectMapper.class) UISearchResultsUpdating value) {
         Object __old = searchResultsUpdater();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -385,7 +406,7 @@ public class UISearchController extends UIViewController implements UIViewContro
     @Generated
     @Selector("transitionDuration:")
     public native double transitionDuration(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
     /**
      * Default YES
@@ -542,6 +563,7 @@ public class UISearchController extends UIViewController implements UIViewContro
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("searchSuggestions")
     public native NSArray<?> searchSuggestions();
@@ -589,5 +611,5 @@ public class UISearchController extends UIViewController implements UIViewContro
      */
     @Generated
     @Selector("setSearchSuggestions:")
-    public native void setSearchSuggestions(NSArray<?> value);
+    public native void setSearchSuggestions(@Nullable NSArray<?> value);
 }

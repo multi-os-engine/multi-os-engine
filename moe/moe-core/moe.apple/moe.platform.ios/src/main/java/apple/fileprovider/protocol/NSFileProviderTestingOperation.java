@@ -9,6 +9,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An operation that can scheduled.
@@ -25,6 +26,7 @@ public interface NSFileProviderTestingOperation {
      * 
      * Returns the operation if it conforms to NSFileProviderTestingChildrenEnumeration, otherwise returns nil.
      */
+    @Nullable
     @Generated
     @Selector("asChildrenEnumeration")
     @MappedReturn(ObjCObjectMapper.class)
@@ -35,6 +37,7 @@ public interface NSFileProviderTestingOperation {
      * 
      * Returns the operation if it conforms to NSFileProviderTestingCollisionResolution, otherwise returns nil.
      */
+    @Nullable
     @Generated
     @Selector("asCollisionResolution")
     @MappedReturn(ObjCObjectMapper.class)
@@ -45,6 +48,7 @@ public interface NSFileProviderTestingOperation {
      * 
      * Returns the operation if it conforms to NSFileProviderTestingContentFetch, otherwise returns nil.
      */
+    @Nullable
     @Generated
     @Selector("asContentFetch")
     @MappedReturn(ObjCObjectMapper.class)
@@ -55,6 +59,7 @@ public interface NSFileProviderTestingOperation {
      * 
      * Returns the operation if it conforms to NSFileProviderTestingCreation, otherwise returns nil.
      */
+    @Nullable
     @Generated
     @Selector("asCreation")
     @MappedReturn(ObjCObjectMapper.class)
@@ -65,6 +70,7 @@ public interface NSFileProviderTestingOperation {
      * 
      * Returns the operation if it conforms to NSFileProviderTestingDeletion, otherwise returns nil.
      */
+    @Nullable
     @Generated
     @Selector("asDeletion")
     @MappedReturn(ObjCObjectMapper.class)
@@ -75,6 +81,7 @@ public interface NSFileProviderTestingOperation {
      * 
      * Returns the operation if it conforms to NSFileProviderTestingIngestion, otherwise returns nil.
      */
+    @Nullable
     @Generated
     @Selector("asIngestion")
     @MappedReturn(ObjCObjectMapper.class)
@@ -85,6 +92,7 @@ public interface NSFileProviderTestingOperation {
      * 
      * Returns the operation if it conforms to NSFileProviderTestingLookup, otherwise returns nil.
      */
+    @Nullable
     @Generated
     @Selector("asLookup")
     @MappedReturn(ObjCObjectMapper.class)
@@ -95,6 +103,7 @@ public interface NSFileProviderTestingOperation {
      * 
      * Returns the operation if it conforms to NSFileProviderTestingModification, otherwise returns nil.
      */
+    @Nullable
     @Generated
     @Selector("asModification")
     @MappedReturn(ObjCObjectMapper.class)

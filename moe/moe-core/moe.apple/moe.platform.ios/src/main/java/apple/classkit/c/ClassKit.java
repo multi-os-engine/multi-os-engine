@@ -8,6 +8,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("ClassKit")
@@ -101,6 +102,7 @@ public final class ClassKit {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -109,6 +111,7 @@ public final class ClassKit {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -117,6 +120,7 @@ public final class ClassKit {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -125,6 +129,7 @@ public final class ClassKit {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -133,6 +138,7 @@ public final class ClassKit {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -141,6 +147,7 @@ public final class ClassKit {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -149,6 +156,7 @@ public final class ClassKit {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -157,6 +165,7 @@ public final class ClassKit {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

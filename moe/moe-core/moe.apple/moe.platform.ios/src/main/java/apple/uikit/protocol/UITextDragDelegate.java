@@ -14,6 +14,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -31,11 +33,12 @@ public interface UITextDragDelegate {
      * (via textDraggableView:itemsForDrag:).
      * The text control will use its own previews for those items.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("textDraggableView:dragPreviewForLiftingItem:session:")
-    default UITargetedDragPreview textDraggableViewDragPreviewForLiftingItemSession(UIView textDraggableView,
-            UIDragItem item, @Mapped(ObjCObjectMapper.class) UIDragSession session) {
+    default UITargetedDragPreview textDraggableViewDragPreviewForLiftingItemSession(@NotNull UIView textDraggableView,
+            @NotNull UIDragItem item, @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -46,8 +49,8 @@ public interface UITextDragDelegate {
     @Generated
     @IsOptional
     @Selector("textDraggableView:dragSessionDidEnd:withOperation:")
-    default void textDraggableViewDragSessionDidEndWithOperation(UIView textDraggableView,
-            @Mapped(ObjCObjectMapper.class) UIDragSession session, @NUInt long operation) {
+    default void textDraggableViewDragSessionDidEndWithOperation(@NotNull UIView textDraggableView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession session, @NUInt long operation) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -59,8 +62,8 @@ public interface UITextDragDelegate {
     @Generated
     @IsOptional
     @Selector("textDraggableView:dragSessionWillBegin:")
-    default void textDraggableViewDragSessionWillBegin(UIView textDraggableView,
-            @Mapped(ObjCObjectMapper.class) UIDragSession session) {
+    default void textDraggableViewDragSessionWillBegin(@NotNull UIView textDraggableView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -75,11 +78,12 @@ public interface UITextDragDelegate {
      * is asked to provide more items to add to an existing session.
      * You can detect this by checking the `existingItems` in the drag request.
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("textDraggableView:itemsForDrag:")
-    default NSArray<? extends UIDragItem> textDraggableViewItemsForDrag(UIView textDraggableView,
-            @Mapped(ObjCObjectMapper.class) UITextDragRequest dragRequest) {
+    default NSArray<? extends UIDragItem> textDraggableViewItemsForDrag(@NotNull UIView textDraggableView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UITextDragRequest dragRequest) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -91,9 +95,9 @@ public interface UITextDragDelegate {
     @Generated
     @IsOptional
     @Selector("textDraggableView:willAnimateLiftWithAnimator:session:")
-    default void textDraggableViewWillAnimateLiftWithAnimatorSession(UIView textDraggableView,
-            @Mapped(ObjCObjectMapper.class) UIDragAnimating animator,
-            @Mapped(ObjCObjectMapper.class) UIDragSession session) {
+    default void textDraggableViewWillAnimateLiftWithAnimatorSession(@NotNull UIView textDraggableView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDragAnimating animator,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

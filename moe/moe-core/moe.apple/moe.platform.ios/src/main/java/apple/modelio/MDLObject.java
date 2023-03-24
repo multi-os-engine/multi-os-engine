@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MDLObject
@@ -86,22 +88,25 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -136,9 +141,10 @@ public class MDLObject extends NSObject implements MDLNamed {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -150,15 +156,15 @@ public class MDLObject extends NSObject implements MDLNamed {
      */
     @Generated
     @Selector("objectWithSCNNode:")
-    public static native MDLObject objectWithSCNNode(SCNNode scnNode);
+    public static native MDLObject objectWithSCNNode(@NotNull SCNNode scnNode);
 
     /**
      * API-Since: 10.0
      */
     @Generated
     @Selector("objectWithSCNNode:bufferAllocator:")
-    public static native MDLObject objectWithSCNNodeBufferAllocator(SCNNode scnNode,
-            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
+    public static native MDLObject objectWithSCNNodeBufferAllocator(@NotNull SCNNode scnNode,
+            @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -195,7 +201,7 @@ public class MDLObject extends NSObject implements MDLNamed {
      */
     @Generated
     @Selector("addChild:")
-    public native void addChild(MDLObject child);
+    public native void addChild(@NotNull MDLObject child);
 
     /**
      * [@property] children
@@ -206,6 +212,7 @@ public class MDLObject extends NSObject implements MDLNamed {
      * 
      * @see MDLObjectContainerComponent
      */
+    @NotNull
     @Generated
     @Selector("children")
     @MappedReturn(ObjCObjectMapper.class)
@@ -216,9 +223,10 @@ public class MDLObject extends NSObject implements MDLNamed {
      */
     @Generated
     @Selector("enumerateChildObjectsOfClass:root:usingBlock:stopPointer:")
-    public native void enumerateChildObjectsOfClassRootUsingBlockStopPointer(Class objectClass, MDLObject root,
-            @ObjCBlock(name = "call_enumerateChildObjectsOfClassRootUsingBlockStopPointer") Block_enumerateChildObjectsOfClassRootUsingBlockStopPointer block,
-            BoolPtr stopPointer);
+    public native void enumerateChildObjectsOfClassRootUsingBlockStopPointer(@NotNull Class objectClass,
+            @NotNull MDLObject root,
+            @NotNull @ObjCBlock(name = "call_enumerateChildObjectsOfClassRootUsingBlockStopPointer") Block_enumerateChildObjectsOfClassRootUsingBlockStopPointer block,
+            @NotNull BoolPtr stopPointer);
 
     /**
      * [@property] hidden
@@ -250,10 +258,12 @@ public class MDLObject extends NSObject implements MDLNamed {
      * the various items making up the chair would be found in the original
      * object.
      */
+    @Nullable
     @Generated
     @Selector("instance")
     public native MDLObject instance();
 
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -261,9 +271,10 @@ public class MDLObject extends NSObject implements MDLNamed {
     /**
      * Return the object at the specified path, or nil if none exists there
      */
+    @NotNull
     @Generated
     @Selector("objectAtPath:")
-    public native MDLObject objectAtPath(String path);
+    public native MDLObject objectAtPath(@NotNull String path);
 
     /**
      * [@property] parent
@@ -273,6 +284,7 @@ public class MDLObject extends NSObject implements MDLNamed {
      * Set to nil when you remove this from an object container inside the
      * parent object.
      */
+    @Nullable
     @Generated
     @Selector("parent")
     public native MDLObject parent();
@@ -288,6 +300,7 @@ public class MDLObject extends NSObject implements MDLNamed {
      * named. Any characters outside of [A-Z][a-z][0-9][:-_.] will be
      * forced to underscore.
      */
+    @NotNull
     @Generated
     @Selector("path")
     public native String path();
@@ -303,7 +316,7 @@ public class MDLObject extends NSObject implements MDLNamed {
      */
     @Generated
     @Selector("setChildren:")
-    public native void setChildren(@Mapped(ObjCObjectMapper.class) MDLObjectContainerComponent value);
+    public native void setChildren(@NotNull @Mapped(ObjCObjectMapper.class) MDLObjectContainerComponent value);
 
     /**
      * [@property] hidden
@@ -333,11 +346,11 @@ public class MDLObject extends NSObject implements MDLNamed {
      */
     @Generated
     @Selector("setInstance:")
-    public native void setInstance(MDLObject value);
+    public native void setInstance(@Nullable MDLObject value);
 
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@NotNull String value);
 
     /**
      * [@property] parent
@@ -349,7 +362,7 @@ public class MDLObject extends NSObject implements MDLNamed {
      */
     @Generated
     @Selector("setParent:")
-    public native void setParent_unsafe(MDLObject value);
+    public native void setParent_unsafe(@Nullable MDLObject value);
 
     /**
      * [@property] parent
@@ -360,7 +373,7 @@ public class MDLObject extends NSObject implements MDLNamed {
      * parent object.
      */
     @Generated
-    public void setParent(MDLObject value) {
+    public void setParent(@Nullable MDLObject value) {
         Object __old = parent();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -382,7 +395,7 @@ public class MDLObject extends NSObject implements MDLNamed {
      */
     @Generated
     @Selector("setTransform:")
-    public native void setTransform(@Mapped(ObjCObjectMapper.class) MDLTransformComponent value);
+    public native void setTransform(@Nullable @Mapped(ObjCObjectMapper.class) MDLTransformComponent value);
 
     /**
      * [@property] transform
@@ -393,6 +406,7 @@ public class MDLObject extends NSObject implements MDLNamed {
      * 
      * @see MDLTransformComponent
      */
+    @Nullable
     @Generated
     @Selector("transform")
     @MappedReturn(ObjCObjectMapper.class)
@@ -402,7 +416,8 @@ public class MDLObject extends NSObject implements MDLNamed {
     @Generated
     public interface Block_enumerateChildObjectsOfClassRootUsingBlockStopPointer {
         @Generated
-        void call_enumerateChildObjectsOfClassRootUsingBlockStopPointer(MDLObject object, BoolPtr stop);
+        void call_enumerateChildObjectsOfClassRootUsingBlockStopPointer(@NotNull MDLObject object,
+                @NotNull BoolPtr stop);
     }
 
     /**
@@ -410,6 +425,7 @@ public class MDLObject extends NSObject implements MDLNamed {
      * 
      * Allows applications to introspect the components on the objects.
      */
+    @NotNull
     @Generated
     @Selector("components")
     public native NSArray<?> components();

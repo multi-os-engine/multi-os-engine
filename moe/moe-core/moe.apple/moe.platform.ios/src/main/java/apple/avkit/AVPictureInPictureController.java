@@ -42,6 +42,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVPictureInPictureController
@@ -81,22 +83,25 @@ public class AVPictureInPictureController extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -142,9 +147,10 @@ public class AVPictureInPictureController extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -160,10 +166,11 @@ public class AVPictureInPictureController extends NSObject {
      *                        Traits that describe the image to retrieve, pass nil to use traits that describe the main
      *                        screen.
      */
+    @NotNull
     @Generated
     @Selector("pictureInPictureButtonStartImageCompatibleWithTraitCollection:")
     public static native UIImage pictureInPictureButtonStartImageCompatibleWithTraitCollection(
-            UITraitCollection traitCollection);
+            @Nullable UITraitCollection traitCollection);
 
     /**
      * pictureInPictureButtonStopImageCompatibleWithTraitCollection:
@@ -174,10 +181,11 @@ public class AVPictureInPictureController extends NSObject {
      *                        Traits that describe the image to retrieve, pass nil to use traits that describe the main
      *                        screen.
      */
+    @NotNull
     @Generated
     @Selector("pictureInPictureButtonStopImageCompatibleWithTraitCollection:")
     public static native UIImage pictureInPictureButtonStopImageCompatibleWithTraitCollection(
-            UITraitCollection traitCollection);
+            @Nullable UITraitCollection traitCollection);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -205,6 +213,7 @@ public class AVPictureInPictureController extends NSObject {
      * 
      * The receiver's delegate.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -224,7 +233,7 @@ public class AVPictureInPictureController extends NSObject {
      */
     @Generated
     @Selector("initWithPlayerLayer:")
-    public native AVPictureInPictureController initWithPlayerLayer(AVPlayerLayer playerLayer);
+    public native AVPictureInPictureController initWithPlayerLayer(@NotNull AVPlayerLayer playerLayer);
 
     /**
      * [@property] pictureInPictureActive
@@ -258,6 +267,7 @@ public class AVPictureInPictureController extends NSObject {
      * 
      * The receiver's player layer.
      */
+    @NotNull
     @Generated
     @Selector("playerLayer")
     public native AVPlayerLayer playerLayer();
@@ -269,7 +279,8 @@ public class AVPictureInPictureController extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) AVPictureInPictureControllerDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) AVPictureInPictureControllerDelegate value);
 
     /**
      * [@property] delegate
@@ -277,7 +288,7 @@ public class AVPictureInPictureController extends NSObject {
      * The receiver's delegate.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) AVPictureInPictureControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) AVPictureInPictureControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -325,6 +336,7 @@ public class AVPictureInPictureController extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("pictureInPictureButtonStartImage")
     public static native UIImage pictureInPictureButtonStartImage();
@@ -336,6 +348,7 @@ public class AVPictureInPictureController extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("pictureInPictureButtonStopImage")
     public static native UIImage pictureInPictureButtonStopImage();
@@ -403,6 +416,7 @@ public class AVPictureInPictureController extends NSObject {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("contentSource")
     public native AVPictureInPictureControllerContentSource contentSource();
@@ -420,7 +434,7 @@ public class AVPictureInPictureController extends NSObject {
     @Generated
     @Selector("initWithContentSource:")
     public native AVPictureInPictureController initWithContentSource(
-            AVPictureInPictureControllerContentSource contentSource);
+            @NotNull AVPictureInPictureControllerContentSource contentSource);
 
     /**
      * invalidatePlaybackState
@@ -447,5 +461,5 @@ public class AVPictureInPictureController extends NSObject {
      */
     @Generated
     @Selector("setContentSource:")
-    public native void setContentSource(AVPictureInPictureControllerContentSource value);
+    public native void setContentSource(@Nullable AVPictureInPictureControllerContentSource value);
 }

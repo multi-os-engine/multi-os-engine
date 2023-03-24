@@ -41,6 +41,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Mutable Data ***************
@@ -75,22 +77,25 @@ public class NSMutableData extends NSData {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,15 +106,15 @@ public class NSMutableData extends NSData {
 
     @Generated
     @Selector("dataWithBytes:length:")
-    public static native NSMutableData dataWithBytesLength(ConstVoidPtr bytes, @NUInt long length);
+    public static native NSMutableData dataWithBytesLength(@Nullable ConstVoidPtr bytes, @NUInt long length);
 
     @Generated
     @Selector("dataWithBytesNoCopy:length:")
-    public static native NSMutableData dataWithBytesNoCopyLength(VoidPtr bytes, @NUInt long length);
+    public static native NSMutableData dataWithBytesNoCopyLength(@NotNull VoidPtr bytes, @NUInt long length);
 
     @Generated
     @Selector("dataWithBytesNoCopy:length:freeWhenDone:")
-    public static native NSMutableData dataWithBytesNoCopyLengthFreeWhenDone(VoidPtr bytes, @NUInt long length,
+    public static native NSMutableData dataWithBytesNoCopyLengthFreeWhenDone(@NotNull VoidPtr bytes, @NUInt long length,
             boolean b);
 
     @Generated
@@ -118,30 +123,30 @@ public class NSMutableData extends NSData {
 
     @Generated
     @Selector("dataWithContentsOfFile:")
-    public static native NSMutableData dataWithContentsOfFile(String path);
+    public static native NSMutableData dataWithContentsOfFile(@NotNull String path);
 
     @Generated
     @Selector("dataWithContentsOfFile:options:error:")
-    public static native NSMutableData dataWithContentsOfFileOptionsError(String path, @NUInt long readOptionsMask,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
+    public static native NSMutableData dataWithContentsOfFileOptionsError(@NotNull String path,
+            @NUInt long readOptionsMask, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Deprecated
     @Selector("dataWithContentsOfMappedFile:")
-    public static native NSMutableData dataWithContentsOfMappedFile(String path);
+    public static native NSMutableData dataWithContentsOfMappedFile(@NotNull String path);
 
     @Generated
     @Selector("dataWithContentsOfURL:")
-    public static native NSMutableData dataWithContentsOfURL(NSURL url);
+    public static native NSMutableData dataWithContentsOfURL(@NotNull NSURL url);
 
     @Generated
     @Selector("dataWithContentsOfURL:options:error:")
-    public static native NSMutableData dataWithContentsOfURLOptionsError(NSURL url, @NUInt long readOptionsMask,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
+    public static native NSMutableData dataWithContentsOfURLOptionsError(@NotNull NSURL url,
+            @NUInt long readOptionsMask, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Selector("dataWithData:")
-    public static native NSMutableData dataWithData(NSData data);
+    public static native NSMutableData dataWithData(@NotNull NSData data);
 
     @Generated
     @Selector("dataWithLength:")
@@ -177,9 +182,10 @@ public class NSMutableData extends NSData {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -213,11 +219,11 @@ public class NSMutableData extends NSData {
 
     @Generated
     @Selector("appendBytes:length:")
-    public native void appendBytesLength(ConstVoidPtr bytes, @NUInt long length);
+    public native void appendBytesLength(@NotNull ConstVoidPtr bytes, @NUInt long length);
 
     @Generated
     @Selector("appendData:")
-    public native void appendData(NSData other);
+    public native void appendData(@NotNull NSData other);
 
     @Generated
     @Selector("increaseLengthBy:")
@@ -229,33 +235,34 @@ public class NSMutableData extends NSData {
 
     @Generated
     @Selector("initWithBase64EncodedData:options:")
-    public native NSMutableData initWithBase64EncodedDataOptions(NSData base64Data, @NUInt long options);
+    public native NSMutableData initWithBase64EncodedDataOptions(@NotNull NSData base64Data, @NUInt long options);
 
     @Generated
     @Selector("initWithBase64EncodedString:options:")
-    public native NSMutableData initWithBase64EncodedStringOptions(String base64String, @NUInt long options);
+    public native NSMutableData initWithBase64EncodedStringOptions(@NotNull String base64String, @NUInt long options);
 
     @Generated
     @Deprecated
     @Selector("initWithBase64Encoding:")
-    public native NSMutableData initWithBase64Encoding(String base64String);
+    public native NSMutableData initWithBase64Encoding(@NotNull String base64String);
 
     @Generated
     @Selector("initWithBytes:length:")
-    public native NSMutableData initWithBytesLength(ConstVoidPtr bytes, @NUInt long length);
+    public native NSMutableData initWithBytesLength(@Nullable ConstVoidPtr bytes, @NUInt long length);
 
     @Generated
     @Selector("initWithBytesNoCopy:length:")
-    public native NSMutableData initWithBytesNoCopyLength(VoidPtr bytes, @NUInt long length);
+    public native NSMutableData initWithBytesNoCopyLength(@NotNull VoidPtr bytes, @NUInt long length);
 
     @Generated
     @Selector("initWithBytesNoCopy:length:deallocator:")
-    public native NSMutableData initWithBytesNoCopyLengthDeallocator(VoidPtr bytes, @NUInt long length,
-            @ObjCBlock(name = "call_initWithBytesNoCopyLengthDeallocator") NSData.Block_initWithBytesNoCopyLengthDeallocator deallocator);
+    public native NSMutableData initWithBytesNoCopyLengthDeallocator(@NotNull VoidPtr bytes, @NUInt long length,
+            @Nullable @ObjCBlock(name = "call_initWithBytesNoCopyLengthDeallocator") NSData.Block_initWithBytesNoCopyLengthDeallocator deallocator);
 
     @Generated
     @Selector("initWithBytesNoCopy:length:freeWhenDone:")
-    public native NSMutableData initWithBytesNoCopyLengthFreeWhenDone(VoidPtr bytes, @NUInt long length, boolean b);
+    public native NSMutableData initWithBytesNoCopyLengthFreeWhenDone(@NotNull VoidPtr bytes, @NUInt long length,
+            boolean b);
 
     @Generated
     @Selector("initWithCapacity:")
@@ -263,34 +270,34 @@ public class NSMutableData extends NSData {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMutableData initWithCoder(NSCoder coder);
+    public native NSMutableData initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithContentsOfFile:")
-    public native NSMutableData initWithContentsOfFile(String path);
+    public native NSMutableData initWithContentsOfFile(@NotNull String path);
 
     @Generated
     @Selector("initWithContentsOfFile:options:error:")
-    public native NSMutableData initWithContentsOfFileOptionsError(String path, @NUInt long readOptionsMask,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
+    public native NSMutableData initWithContentsOfFileOptionsError(@NotNull String path, @NUInt long readOptionsMask,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Deprecated
     @Selector("initWithContentsOfMappedFile:")
-    public native NSMutableData initWithContentsOfMappedFile(String path);
+    public native NSMutableData initWithContentsOfMappedFile(@NotNull String path);
 
     @Generated
     @Selector("initWithContentsOfURL:")
-    public native NSMutableData initWithContentsOfURL(NSURL url);
+    public native NSMutableData initWithContentsOfURL(@NotNull NSURL url);
 
     @Generated
     @Selector("initWithContentsOfURL:options:error:")
-    public native NSMutableData initWithContentsOfURLOptionsError(NSURL url, @NUInt long readOptionsMask,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
+    public native NSMutableData initWithContentsOfURLOptionsError(@NotNull NSURL url, @NUInt long readOptionsMask,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Selector("initWithData:")
-    public native NSMutableData initWithData(NSData data);
+    public native NSMutableData initWithData(@NotNull NSData data);
 
     @Generated
     @Selector("initWithLength:")
@@ -301,18 +308,19 @@ public class NSMutableData extends NSData {
     @NUInt
     public native long length();
 
+    @NotNull
     @Generated
     @Selector("mutableBytes")
     public native VoidPtr mutableBytes();
 
     @Generated
     @Selector("replaceBytesInRange:withBytes:")
-    public native void replaceBytesInRangeWithBytes(@ByValue NSRange range, ConstVoidPtr bytes);
+    public native void replaceBytesInRangeWithBytes(@ByValue NSRange range, @NotNull ConstVoidPtr bytes);
 
     @Generated
     @Selector("replaceBytesInRange:withBytes:length:")
-    public native void replaceBytesInRangeWithBytesLength(@ByValue NSRange range, ConstVoidPtr replacementBytes,
-            @NUInt long replacementLength);
+    public native void replaceBytesInRangeWithBytesLength(@ByValue NSRange range,
+            @Nullable ConstVoidPtr replacementBytes, @NUInt long replacementLength);
 
     @Generated
     @Selector("resetBytesInRange:")
@@ -320,7 +328,7 @@ public class NSMutableData extends NSData {
 
     @Generated
     @Selector("setData:")
-    public native void setData(NSData data);
+    public native void setData(@NotNull NSData data);
 
     @Generated
     @Selector("setLength:")
@@ -338,7 +346,7 @@ public class NSMutableData extends NSData {
     @Generated
     @Selector("compressUsingAlgorithm:error:")
     public native boolean compressUsingAlgorithmError(@NInt long algorithm,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * These methods compress or decompress the receiver's contents in-place using the specified algorithm. If the
@@ -349,5 +357,5 @@ public class NSMutableData extends NSData {
     @Generated
     @Selector("decompressUsingAlgorithm:error:")
     public native boolean decompressUsingAlgorithmError(@NInt long algorithm,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

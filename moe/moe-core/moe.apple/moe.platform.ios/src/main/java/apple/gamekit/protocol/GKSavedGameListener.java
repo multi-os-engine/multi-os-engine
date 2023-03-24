@@ -26,6 +26,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 8.0
@@ -43,7 +44,7 @@ public interface GKSavedGameListener {
     @Generated
     @IsOptional
     @Selector("player:didModifySavedGame:")
-    default void playerDidModifySavedGame(GKPlayer player, GKSavedGame savedGame) {
+    default void playerDidModifySavedGame(@NotNull GKPlayer player, @NotNull GKSavedGame savedGame) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -58,7 +59,8 @@ public interface GKSavedGameListener {
     @Generated
     @IsOptional
     @Selector("player:hasConflictingSavedGames:")
-    default void playerHasConflictingSavedGames(GKPlayer player, NSArray<? extends GKSavedGame> savedGames) {
+    default void playerHasConflictingSavedGames(@NotNull GKPlayer player,
+            @NotNull NSArray<? extends GKSavedGame> savedGames) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

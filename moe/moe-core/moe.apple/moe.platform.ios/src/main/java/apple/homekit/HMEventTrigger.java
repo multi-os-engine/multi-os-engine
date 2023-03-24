@@ -41,6 +41,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Triggers based on events.
@@ -79,22 +81,25 @@ public class HMEventTrigger extends HMTrigger {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +134,10 @@ public class HMEventTrigger extends HMTrigger {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -145,10 +151,11 @@ public class HMEventTrigger extends HMTrigger {
      * 
      * @return Predicate object representing a condition to evaluate before executing the action set.
      */
+    @NotNull
     @Generated
     @Selector("predicateForEvaluatingTriggerOccurringAfterDateWithComponents:")
     public static native NSPredicate predicateForEvaluatingTriggerOccurringAfterDateWithComponents(
-            NSDateComponents dateComponents);
+            @NotNull NSDateComponents dateComponents);
 
     /**
      * Creates a predicate that will evaluate whether the event occurred after a significant event.
@@ -168,11 +175,12 @@ public class HMEventTrigger extends HMTrigger {
      *         Deprecated-Since: 11.0
      *         Deprecated-Message: Use predicateForEvaluatingTriggerOccurringAfterSignificantEvent: instead
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("predicateForEvaluatingTriggerOccurringAfterSignificantEvent:applyingOffset:")
     public static native NSPredicate predicateForEvaluatingTriggerOccurringAfterSignificantEventApplyingOffset(
-            String significantEvent, NSDateComponents offset);
+            @NotNull String significantEvent, @Nullable NSDateComponents offset);
 
     /**
      * Creates a predicate that will evaluate whether the event occurred before the time specified.
@@ -181,10 +189,11 @@ public class HMEventTrigger extends HMTrigger {
      * 
      * @return Predicate object representing a condition to evaluate before executing the action set.
      */
+    @NotNull
     @Generated
     @Selector("predicateForEvaluatingTriggerOccurringBeforeDateWithComponents:")
     public static native NSPredicate predicateForEvaluatingTriggerOccurringBeforeDateWithComponents(
-            NSDateComponents dateComponents);
+            @NotNull NSDateComponents dateComponents);
 
     /**
      * Creates a predicate that will evaluate whether the event occurred before a significant event.
@@ -204,11 +213,12 @@ public class HMEventTrigger extends HMTrigger {
      *         Deprecated-Since: 11.0
      *         Deprecated-Message: Use predicateForEvaluatingTriggerOccurringBeforeSignificantEvent: instead
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("predicateForEvaluatingTriggerOccurringBeforeSignificantEvent:applyingOffset:")
     public static native NSPredicate predicateForEvaluatingTriggerOccurringBeforeSignificantEventApplyingOffset(
-            String significantEvent, NSDateComponents offset);
+            @NotNull String significantEvent, @Nullable NSDateComponents offset);
 
     /**
      * Creates a predicate that will evaluate whether the event occurred at the time specified.
@@ -217,10 +227,11 @@ public class HMEventTrigger extends HMTrigger {
      * 
      * @return Predicate object representing a condition to evaluate before executing the action set.
      */
+    @NotNull
     @Generated
     @Selector("predicateForEvaluatingTriggerOccurringOnDateWithComponents:")
     public static native NSPredicate predicateForEvaluatingTriggerOccurringOnDateWithComponents(
-            NSDateComponents dateComponents);
+            @NotNull NSDateComponents dateComponents);
 
     /**
      * Creates a predicate that will evaluate whether a characteristic value is related to the specified value.
@@ -236,10 +247,12 @@ public class HMEventTrigger extends HMTrigger {
      * 
      * @return Predicate object representing a condition to evaluate before executing the action set.
      */
+    @NotNull
     @Generated
     @Selector("predicateForEvaluatingTriggerWithCharacteristic:relatedBy:toValue:")
     public static native NSPredicate predicateForEvaluatingTriggerWithCharacteristicRelatedByToValue(
-            HMCharacteristic characteristic, @NUInt long operatorType, @Mapped(ObjCObjectMapper.class) Object value);
+            @NotNull HMCharacteristic characteristic, @NUInt long operatorType,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -278,12 +291,13 @@ public class HMEventTrigger extends HMTrigger {
     @Deprecated
     @Generated
     @Selector("addEvent:completionHandler:")
-    public native void addEventCompletionHandler(HMEvent event,
-            @ObjCBlock(name = "call_addEventCompletionHandler") Block_addEventCompletionHandler completion);
+    public native void addEventCompletionHandler(@NotNull HMEvent event,
+            @NotNull @ObjCBlock(name = "call_addEventCompletionHandler") Block_addEventCompletionHandler completion);
 
     /**
      * The events associated with the trigger.
      */
+    @NotNull
     @Generated
     @Selector("events")
     public native NSArray<? extends HMEvent> events();
@@ -307,12 +321,13 @@ public class HMEventTrigger extends HMTrigger {
      */
     @Generated
     @Selector("initWithName:events:predicate:")
-    public native HMEventTrigger initWithNameEventsPredicate(String name, NSArray<? extends HMEvent> events,
-            NSPredicate predicate);
+    public native HMEventTrigger initWithNameEventsPredicate(@NotNull String name,
+            @NotNull NSArray<? extends HMEvent> events, @Nullable NSPredicate predicate);
 
     /**
      * The predicate to evaluate before executing the action sets associated with the trigger.
      */
+    @Nullable
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();
@@ -333,8 +348,8 @@ public class HMEventTrigger extends HMTrigger {
     @Deprecated
     @Generated
     @Selector("removeEvent:completionHandler:")
-    public native void removeEventCompletionHandler(HMEvent event,
-            @ObjCBlock(name = "call_removeEventCompletionHandler") Block_removeEventCompletionHandler completion);
+    public native void removeEventCompletionHandler(@NotNull HMEvent event,
+            @NotNull @ObjCBlock(name = "call_removeEventCompletionHandler") Block_removeEventCompletionHandler completion);
 
     /**
      * This method replaces the predicate used to evaluate execution of the action sets associated with the trigger.
@@ -347,28 +362,28 @@ public class HMEventTrigger extends HMTrigger {
      */
     @Generated
     @Selector("updatePredicate:completionHandler:")
-    public native void updatePredicateCompletionHandler(NSPredicate predicate,
-            @ObjCBlock(name = "call_updatePredicateCompletionHandler") Block_updatePredicateCompletionHandler completion);
+    public native void updatePredicateCompletionHandler(@Nullable NSPredicate predicate,
+            @NotNull @ObjCBlock(name = "call_updatePredicateCompletionHandler") Block_updatePredicateCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addEventCompletionHandler {
         @Generated
-        void call_addEventCompletionHandler(NSError error);
+        void call_addEventCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeEventCompletionHandler {
         @Generated
-        void call_removeEventCompletionHandler(NSError error);
+        void call_removeEventCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updatePredicateCompletionHandler {
         @Generated
-        void call_updatePredicateCompletionHandler(NSError error);
+        void call_updatePredicateCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -378,6 +393,7 @@ public class HMEventTrigger extends HMTrigger {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("endEvents")
     public native NSArray<? extends HMEvent> endEvents();
@@ -414,9 +430,9 @@ public class HMEventTrigger extends HMTrigger {
      */
     @Generated
     @Selector("initWithName:events:endEvents:recurrences:predicate:")
-    public native HMEventTrigger initWithNameEventsEndEventsRecurrencesPredicate(String name,
-            NSArray<? extends HMEvent> events, NSArray<? extends HMEvent> endEvents,
-            NSArray<? extends NSDateComponents> recurrences, NSPredicate predicate);
+    public native HMEventTrigger initWithNameEventsEndEventsRecurrencesPredicate(@NotNull String name,
+            @NotNull NSArray<? extends HMEvent> events, @Nullable NSArray<? extends HMEvent> endEvents,
+            @Nullable NSArray<? extends NSDateComponents> recurrences, @Nullable NSPredicate predicate);
 
     /**
      * Creates a predicate that will evaluate whether the event occurred after a significant event.
@@ -427,10 +443,11 @@ public class HMEventTrigger extends HMTrigger {
      * 
      *         API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForEvaluatingTriggerOccurringAfterSignificantEvent:")
     public static native NSPredicate predicateForEvaluatingTriggerOccurringAfterSignificantEvent(
-            HMSignificantTimeEvent significantEvent);
+            @NotNull HMSignificantTimeEvent significantEvent);
 
     /**
      * Creates a predicate that will evaluate whether the event occurred before a significant event.
@@ -441,10 +458,11 @@ public class HMEventTrigger extends HMTrigger {
      * 
      *         API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForEvaluatingTriggerOccurringBeforeSignificantEvent:")
     public static native NSPredicate predicateForEvaluatingTriggerOccurringBeforeSignificantEvent(
-            HMSignificantTimeEvent significantEvent);
+            @NotNull HMSignificantTimeEvent significantEvent);
 
     /**
      * Creates a predicate that will evaluate whether the event occurred between two times.
@@ -457,10 +475,11 @@ public class HMEventTrigger extends HMTrigger {
      * 
      *         API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForEvaluatingTriggerOccurringBetweenDateWithComponents:secondDateWithComponents:")
     public static native NSPredicate predicateForEvaluatingTriggerOccurringBetweenDateWithComponentsSecondDateWithComponents(
-            NSDateComponents firstDateComponents, NSDateComponents secondDateWithComponents);
+            @NotNull NSDateComponents firstDateComponents, @NotNull NSDateComponents secondDateWithComponents);
 
     /**
      * Creates a predicate that will evaluate whether the event occurred between two significant events.
@@ -473,10 +492,12 @@ public class HMEventTrigger extends HMTrigger {
      * 
      *         API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForEvaluatingTriggerOccurringBetweenSignificantEvent:secondSignificantEvent:")
     public static native NSPredicate predicateForEvaluatingTriggerOccurringBetweenSignificantEventSecondSignificantEvent(
-            HMSignificantTimeEvent firstSignificantEvent, HMSignificantTimeEvent secondSignificantEvent);
+            @NotNull HMSignificantTimeEvent firstSignificantEvent,
+            @NotNull HMSignificantTimeEvent secondSignificantEvent);
 
     /**
      * Creates a predicate that will evaluate based on the presence event.
@@ -487,15 +508,17 @@ public class HMEventTrigger extends HMTrigger {
      * 
      *         API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForEvaluatingTriggerWithPresence:")
-    public static native NSPredicate predicateForEvaluatingTriggerWithPresence(HMPresenceEvent presenceEvent);
+    public static native NSPredicate predicateForEvaluatingTriggerWithPresence(@NotNull HMPresenceEvent presenceEvent);
 
     /**
      * recurrences Specifies the recurrences for when the trigger is evaluated. This only supports days of the week.
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("recurrences")
     public native NSArray<? extends NSDateComponents> recurrences();
@@ -523,14 +546,14 @@ public class HMEventTrigger extends HMTrigger {
      */
     @Generated
     @Selector("updateEndEvents:completionHandler:")
-    public native void updateEndEventsCompletionHandler(NSArray<? extends HMEvent> endEvents,
-            @ObjCBlock(name = "call_updateEndEventsCompletionHandler") Block_updateEndEventsCompletionHandler completion);
+    public native void updateEndEventsCompletionHandler(@NotNull NSArray<? extends HMEvent> endEvents,
+            @NotNull @ObjCBlock(name = "call_updateEndEventsCompletionHandler") Block_updateEndEventsCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateEndEventsCompletionHandler {
         @Generated
-        void call_updateEndEventsCompletionHandler(NSError error);
+        void call_updateEndEventsCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -546,14 +569,14 @@ public class HMEventTrigger extends HMTrigger {
      */
     @Generated
     @Selector("updateEvents:completionHandler:")
-    public native void updateEventsCompletionHandler(NSArray<? extends HMEvent> events,
-            @ObjCBlock(name = "call_updateEventsCompletionHandler") Block_updateEventsCompletionHandler completion);
+    public native void updateEventsCompletionHandler(@NotNull NSArray<? extends HMEvent> events,
+            @NotNull @ObjCBlock(name = "call_updateEventsCompletionHandler") Block_updateEventsCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateEventsCompletionHandler {
         @Generated
-        void call_updateEventsCompletionHandler(NSError error);
+        void call_updateEventsCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -570,13 +593,13 @@ public class HMEventTrigger extends HMTrigger {
     @Generated
     @Selector("updateExecuteOnce:completionHandler:")
     public native void updateExecuteOnceCompletionHandler(boolean executeOnce,
-            @ObjCBlock(name = "call_updateExecuteOnceCompletionHandler") Block_updateExecuteOnceCompletionHandler completion);
+            @NotNull @ObjCBlock(name = "call_updateExecuteOnceCompletionHandler") Block_updateExecuteOnceCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateExecuteOnceCompletionHandler {
         @Generated
-        void call_updateExecuteOnceCompletionHandler(NSError error);
+        void call_updateExecuteOnceCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -592,13 +615,13 @@ public class HMEventTrigger extends HMTrigger {
      */
     @Generated
     @Selector("updateRecurrences:completionHandler:")
-    public native void updateRecurrencesCompletionHandler(NSArray<? extends NSDateComponents> recurrences,
-            @ObjCBlock(name = "call_updateRecurrencesCompletionHandler") Block_updateRecurrencesCompletionHandler completion);
+    public native void updateRecurrencesCompletionHandler(@Nullable NSArray<? extends NSDateComponents> recurrences,
+            @NotNull @ObjCBlock(name = "call_updateRecurrencesCompletionHandler") Block_updateRecurrencesCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateRecurrencesCompletionHandler {
         @Generated
-        void call_updateRecurrencesCompletionHandler(NSError error);
+        void call_updateRecurrencesCompletionHandler(@Nullable NSError error);
     }
 }

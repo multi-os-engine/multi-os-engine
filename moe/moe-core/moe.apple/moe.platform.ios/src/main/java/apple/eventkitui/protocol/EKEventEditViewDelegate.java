@@ -26,6 +26,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@enum] EKEventEditViewDelegate
@@ -52,7 +53,7 @@ public interface EKEventEditViewDelegate {
      */
     @Generated
     @Selector("eventEditViewController:didCompleteWithAction:")
-    void eventEditViewControllerDidCompleteWithAction(EKEventEditViewController controller, @NInt long action);
+    void eventEditViewControllerDidCompleteWithAction(@NotNull EKEventEditViewController controller, @NInt long action);
 
     /**
      * eventEditViewControllerDefaultCalendarForNewEvents:
@@ -65,10 +66,12 @@ public interface EKEventEditViewDelegate {
      * we set the calendar to a default. If this is not implemented by the delegate, the controller
      * will use the store's defaultCalendarForNewEvents.
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("eventEditViewControllerDefaultCalendarForNewEvents:")
-    default EKCalendar eventEditViewControllerDefaultCalendarForNewEvents(EKEventEditViewController controller) {
+    default EKCalendar eventEditViewControllerDefaultCalendarForNewEvents(
+            @NotNull EKEventEditViewController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAssetExportSession
@@ -105,6 +107,7 @@ public class AVAssetExportSession extends NSObject {
      * 
      * @return An NSArray containing an NSString for each of the available preset names.
      */
+    @NotNull
     @Generated
     @Selector("allExportPresets")
     public static native NSArray<String> allExportPresets();
@@ -121,22 +124,25 @@ public class AVAssetExportSession extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -174,8 +180,8 @@ public class AVAssetExportSession extends NSObject {
     @Generated
     @Selector("determineCompatibilityOfExportPreset:withAsset:outputFileType:completionHandler:")
     public static native void determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler(
-            String presetName, AVAsset asset, String outputFileType,
-            @ObjCBlock(name = "call_determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler") Block_determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler handler);
+            @NotNull String presetName, @NotNull AVAsset asset, @Nullable String outputFileType,
+            @NotNull @ObjCBlock(name = "call_determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler") Block_determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler handler);
 
     /**
      * exportPresetsCompatibleWithAsset:
@@ -202,10 +208,11 @@ public class AVAssetExportSession extends NSObject {
      *         API-Since: 4.0
      *         Deprecated-Since: 16.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("exportPresetsCompatibleWithAsset:")
-    public static native NSArray<String> exportPresetsCompatibleWithAsset(AVAsset asset);
+    public static native NSArray<String> exportPresetsCompatibleWithAsset(@NotNull AVAsset asset);
 
     /**
      * exportSessionWithAsset:presetName:
@@ -225,7 +232,8 @@ public class AVAssetExportSession extends NSObject {
      */
     @Generated
     @Selector("exportSessionWithAsset:presetName:")
-    public static native AVAssetExportSession exportSessionWithAssetPresetName(AVAsset asset, String presetName);
+    public static native AVAssetExportSession exportSessionWithAssetPresetName(@NotNull AVAsset asset,
+            @NotNull String presetName);
 
     @Generated
     @Selector("hash")
@@ -249,9 +257,10 @@ public class AVAssetExportSession extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -284,6 +293,7 @@ public class AVAssetExportSession extends NSObject {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @Selector("asset")
     public native AVAsset asset();
@@ -292,6 +302,7 @@ public class AVAssetExportSession extends NSObject {
      * Indicates whether non-default audio mixing is enabled for export and supplies the parameters for audio mixing.
      * Ignored when export preset is AVAssetExportPresetPassthrough.
      */
+    @Nullable
     @Generated
     @Selector("audioMix")
     public native AVAudioMix audioMix();
@@ -305,6 +316,7 @@ public class AVAssetExportSession extends NSObject {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("audioTimePitchAlgorithm")
     public native String audioTimePitchAlgorithm();
@@ -346,6 +358,7 @@ public class AVAssetExportSession extends NSObject {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("customVideoCompositor")
     @MappedReturn(ObjCObjectMapper.class)
@@ -369,7 +382,7 @@ public class AVAssetExportSession extends NSObject {
     @Generated
     @Selector("determineCompatibleFileTypesWithCompletionHandler:")
     public native void determineCompatibleFileTypesWithCompletionHandler(
-            @ObjCBlock(name = "call_determineCompatibleFileTypesWithCompletionHandler") Block_determineCompatibleFileTypesWithCompletionHandler handler);
+            @NotNull @ObjCBlock(name = "call_determineCompatibleFileTypesWithCompletionHandler") Block_determineCompatibleFileTypesWithCompletionHandler handler);
 
     /**
      * [@property] directoryForTemporaryFiles
@@ -390,6 +403,7 @@ public class AVAssetExportSession extends NSObject {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("directoryForTemporaryFiles")
     public native NSURL directoryForTemporaryFiles();
@@ -397,6 +411,7 @@ public class AVAssetExportSession extends NSObject {
     /**
      * describes the error that occured if the export status is AVAssetExportSessionStatusFailed
      */
+    @Nullable
     @Generated
     @Selector("error")
     public native NSError error();
@@ -439,7 +454,7 @@ public class AVAssetExportSession extends NSObject {
     @Generated
     @Selector("exportAsynchronouslyWithCompletionHandler:")
     public native void exportAsynchronouslyWithCompletionHandler(
-            @ObjCBlock(name = "call_exportAsynchronouslyWithCompletionHandler") Block_exportAsynchronouslyWithCompletionHandler handler);
+            @NotNull @ObjCBlock(name = "call_exportAsynchronouslyWithCompletionHandler") Block_exportAsynchronouslyWithCompletionHandler handler);
 
     /**
      * Indicates the file length that the output of the session should not exceed. Depending on the content of the
@@ -473,7 +488,7 @@ public class AVAssetExportSession extends NSObject {
      */
     @Generated
     @Selector("initWithAsset:presetName:")
-    public native AVAssetExportSession initWithAssetPresetName(AVAsset asset, String presetName);
+    public native AVAssetExportSession initWithAssetPresetName(@NotNull AVAsset asset, @NotNull String presetName);
 
     /**
      * Provides an estimate of the maximum duration of exported media that is possible given the source asset, the
@@ -495,6 +510,7 @@ public class AVAssetExportSession extends NSObject {
      * possible into
      * the appropriate metadata keyspace for the output file and written to the output.
      */
+    @Nullable
     @Generated
     @Selector("metadata")
     public native NSArray<? extends AVMetadataItem> metadata();
@@ -509,6 +525,7 @@ public class AVAssetExportSession extends NSObject {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("metadataItemFilter")
     public native AVMetadataItemFilter metadataItemFilter();
@@ -520,6 +537,7 @@ public class AVAssetExportSession extends NSObject {
      * Setting the value of this property to a file type that's not among the session's supported file types will result
      * in an NSInvalidArgumentException. See supportedFileTypes.
      */
+    @Nullable
     @Generated
     @Selector("outputFileType")
     public native String outputFileType();
@@ -529,6 +547,7 @@ public class AVAssetExportSession extends NSObject {
      * preferredFilenameExtension] to obtain an appropriate path extension for the outputFileType you have specified.
      * For more information, see <UniformTypeIdentifiers/UTType.h>.
      */
+    @Nullable
     @Generated
     @Selector("outputURL")
     public native NSURL outputURL();
@@ -536,6 +555,7 @@ public class AVAssetExportSession extends NSObject {
     /**
      * Indicates the name of the preset with which the AVExportSession was initialized
      */
+    @NotNull
     @Generated
     @Selector("presetName")
     public native String presetName();
@@ -554,7 +574,7 @@ public class AVAssetExportSession extends NSObject {
      */
     @Generated
     @Selector("setAudioMix:")
-    public native void setAudioMix(AVAudioMix value);
+    public native void setAudioMix(@Nullable AVAudioMix value);
 
     /**
      * Indicates the processing algorithm used to manage audio pitch for scaled audio edits.
@@ -567,7 +587,7 @@ public class AVAssetExportSession extends NSObject {
      */
     @Generated
     @Selector("setAudioTimePitchAlgorithm:")
-    public native void setAudioTimePitchAlgorithm(String value);
+    public native void setAudioTimePitchAlgorithm(@NotNull String value);
 
     /**
      * [@property] canPerformMultiplePassesOverSourceMediaData
@@ -611,7 +631,7 @@ public class AVAssetExportSession extends NSObject {
      */
     @Generated
     @Selector("setDirectoryForTemporaryFiles:")
-    public native void setDirectoryForTemporaryFiles(NSURL value);
+    public native void setDirectoryForTemporaryFiles(@Nullable NSURL value);
 
     /**
      * Indicates the file length that the output of the session should not exceed. Depending on the content of the
@@ -633,7 +653,7 @@ public class AVAssetExportSession extends NSObject {
      */
     @Generated
     @Selector("setMetadata:")
-    public native void setMetadata(NSArray<? extends AVMetadataItem> value);
+    public native void setMetadata(@Nullable NSArray<? extends AVMetadataItem> value);
 
     /**
      * Specifies a filter object to be used during export to determine which metadata items should be transferred from
@@ -647,7 +667,7 @@ public class AVAssetExportSession extends NSObject {
      */
     @Generated
     @Selector("setMetadataItemFilter:")
-    public native void setMetadataItemFilter(AVMetadataItemFilter value);
+    public native void setMetadataItemFilter(@Nullable AVMetadataItemFilter value);
 
     /**
      * Indicates the type of file to be written by the session.
@@ -658,7 +678,7 @@ public class AVAssetExportSession extends NSObject {
      */
     @Generated
     @Selector("setOutputFileType:")
-    public native void setOutputFileType(String value);
+    public native void setOutputFileType(@Nullable String value);
 
     /**
      * Indicates the URL of the export session's output. You may use [[UTType typeWithIdentifier:outputFileType]
@@ -667,7 +687,7 @@ public class AVAssetExportSession extends NSObject {
      */
     @Generated
     @Selector("setOutputURL:")
-    public native void setOutputURL(NSURL value);
+    public native void setOutputURL(@Nullable NSURL value);
 
     /**
      * indicates that the output file should be optimized for network use, e.g. that a QuickTime movie file should
@@ -691,7 +711,7 @@ public class AVAssetExportSession extends NSObject {
      */
     @Generated
     @Selector("setVideoComposition:")
-    public native void setVideoComposition(AVVideoComposition value);
+    public native void setVideoComposition(@Nullable AVVideoComposition value);
 
     /**
      * indicates that the output file should be optimized for network use, e.g. that a QuickTime movie file should
@@ -715,6 +735,7 @@ public class AVAssetExportSession extends NSObject {
      * file types. If you need to make that determination before initiating the export, use -
      * (void)determineCompatibleFileTypesWithCompletionHandler:(void (^)(NSArray *compatibleFileTypes))handler:.
      */
+    @NotNull
     @Generated
     @Selector("supportedFileTypes")
     public native NSArray<String> supportedFileTypes();
@@ -732,6 +753,7 @@ public class AVAssetExportSession extends NSObject {
      * Indicates whether video composition is enabled for export and supplies the instructions for video composition.
      * Ignored when export preset is AVAssetExportPresetPassthrough.
      */
+    @Nullable
     @Generated
     @Selector("videoComposition")
     public native AVVideoComposition videoComposition();
@@ -747,7 +769,7 @@ public class AVAssetExportSession extends NSObject {
     @Generated
     public interface Block_determineCompatibleFileTypesWithCompletionHandler {
         @Generated
-        void call_determineCompatibleFileTypesWithCompletionHandler(NSArray<String> compatibleFileTypes);
+        void call_determineCompatibleFileTypesWithCompletionHandler(@NotNull NSArray<String> compatibleFileTypes);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -775,13 +797,14 @@ public class AVAssetExportSession extends NSObject {
     @Generated
     @Selector("estimateMaximumDurationWithCompletionHandler:")
     public native void estimateMaximumDurationWithCompletionHandler(
-            @ObjCBlock(name = "call_estimateMaximumDurationWithCompletionHandler") Block_estimateMaximumDurationWithCompletionHandler handler);
+            @NotNull @ObjCBlock(name = "call_estimateMaximumDurationWithCompletionHandler") Block_estimateMaximumDurationWithCompletionHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_estimateMaximumDurationWithCompletionHandler {
         @Generated
-        void call_estimateMaximumDurationWithCompletionHandler(@ByValue CMTime estimatedMaximumDuration, NSError error);
+        void call_estimateMaximumDurationWithCompletionHandler(@ByValue CMTime estimatedMaximumDuration,
+                @Nullable NSError error);
     }
 
     /**
@@ -801,13 +824,14 @@ public class AVAssetExportSession extends NSObject {
     @Generated
     @Selector("estimateOutputFileLengthWithCompletionHandler:")
     public native void estimateOutputFileLengthWithCompletionHandler(
-            @ObjCBlock(name = "call_estimateOutputFileLengthWithCompletionHandler") Block_estimateOutputFileLengthWithCompletionHandler handler);
+            @NotNull @ObjCBlock(name = "call_estimateOutputFileLengthWithCompletionHandler") Block_estimateOutputFileLengthWithCompletionHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_estimateOutputFileLengthWithCompletionHandler {
         @Generated
-        void call_estimateOutputFileLengthWithCompletionHandler(long estimatedOutputFileLength, NSError error);
+        void call_estimateOutputFileLengthWithCompletionHandler(long estimatedOutputFileLength,
+                @Nullable NSError error);
     }
 
     /**

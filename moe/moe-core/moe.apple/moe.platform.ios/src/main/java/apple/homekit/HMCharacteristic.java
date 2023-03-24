@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Represent a characteristic on a service of an accessory.
@@ -78,22 +80,25 @@ public class HMCharacteristic extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,9 +133,10 @@ public class HMCharacteristic extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,6 +167,7 @@ public class HMCharacteristic extends NSObject {
     /**
      * The type of the characteristic, e.g. HMCharacteristicTypePowerState.
      */
+    @NotNull
     @Generated
     @Selector("characteristicType")
     public native String characteristicType();
@@ -178,7 +185,7 @@ public class HMCharacteristic extends NSObject {
     @Generated
     @Selector("enableNotification:completionHandler:")
     public native void enableNotificationCompletionHandler(boolean enable,
-            @ObjCBlock(name = "call_enableNotificationCompletionHandler") Block_enableNotificationCompletionHandler completion);
+            @NotNull @ObjCBlock(name = "call_enableNotificationCompletionHandler") Block_enableNotificationCompletionHandler completion);
 
     @Generated
     @Selector("init")
@@ -198,6 +205,7 @@ public class HMCharacteristic extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
@@ -205,6 +213,7 @@ public class HMCharacteristic extends NSObject {
     /**
      * Meta data associated with the characteristic.
      */
+    @Nullable
     @Generated
     @Selector("metadata")
     public native HMCharacteristicMetadata metadata();
@@ -215,6 +224,7 @@ public class HMCharacteristic extends NSObject {
      * This value corresponds to the properties associated with this characteristic.
      * The contents of the array are one or more HMCharacteristicProperty constants.
      */
+    @NotNull
     @Generated
     @Selector("properties")
     public native NSArray<String> properties();
@@ -230,11 +240,12 @@ public class HMCharacteristic extends NSObject {
     @Generated
     @Selector("readValueWithCompletionHandler:")
     public native void readValueWithCompletionHandler(
-            @ObjCBlock(name = "call_readValueWithCompletionHandler") Block_readValueWithCompletionHandler completion);
+            @NotNull @ObjCBlock(name = "call_readValueWithCompletionHandler") Block_readValueWithCompletionHandler completion);
 
     /**
      * Service that contains this characteristic.
      */
+    @Nullable
     @Generated
     @Selector("service")
     public native HMService service();
@@ -244,6 +255,7 @@ public class HMCharacteristic extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
@@ -259,8 +271,8 @@ public class HMCharacteristic extends NSObject {
      */
     @Generated
     @Selector("updateAuthorizationData:completionHandler:")
-    public native void updateAuthorizationDataCompletionHandler(NSData data,
-            @ObjCBlock(name = "call_updateAuthorizationDataCompletionHandler") Block_updateAuthorizationDataCompletionHandler completion);
+    public native void updateAuthorizationDataCompletionHandler(@Nullable NSData data,
+            @NotNull @ObjCBlock(name = "call_updateAuthorizationDataCompletionHandler") Block_updateAuthorizationDataCompletionHandler completion);
 
     /**
      * The value of the characteristic.
@@ -268,6 +280,7 @@ public class HMCharacteristic extends NSObject {
      * The value is a cached value that may have been updated as a result of prior
      * interaction with the accessory.
      */
+    @Nullable
     @Generated
     @Selector("value")
     @MappedReturn(ObjCObjectMapper.class)
@@ -289,34 +302,34 @@ public class HMCharacteristic extends NSObject {
      */
     @Generated
     @Selector("writeValue:completionHandler:")
-    public native void writeValueCompletionHandler(@Mapped(ObjCObjectMapper.class) Object value,
-            @ObjCBlock(name = "call_writeValueCompletionHandler") Block_writeValueCompletionHandler completion);
+    public native void writeValueCompletionHandler(@Nullable @Mapped(ObjCObjectMapper.class) Object value,
+            @NotNull @ObjCBlock(name = "call_writeValueCompletionHandler") Block_writeValueCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enableNotificationCompletionHandler {
         @Generated
-        void call_enableNotificationCompletionHandler(NSError error);
+        void call_enableNotificationCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_readValueWithCompletionHandler {
         @Generated
-        void call_readValueWithCompletionHandler(NSError error);
+        void call_readValueWithCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateAuthorizationDataCompletionHandler {
         @Generated
-        void call_updateAuthorizationDataCompletionHandler(NSError error);
+        void call_updateAuthorizationDataCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeValueCompletionHandler {
         @Generated
-        void call_writeValueCompletionHandler(NSError error);
+        void call_writeValueCompletionHandler(@Nullable NSError error);
     }
 }

@@ -28,6 +28,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVDepthData
@@ -94,7 +96,7 @@ public class AVDepthData extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] availableDepthDataTypes
@@ -104,6 +106,7 @@ public class AVDepthData extends NSObject {
      * This property presents the available pixel format types as an array of NSNumbers, each wrapping an OSType (CV
      * pixel format type).
      */
+    @NotNull
     @Generated
     @Selector("availableDepthDataTypes")
     public native NSArray<? extends NSNumber> availableDepthDataTypes();
@@ -116,24 +119,28 @@ public class AVDepthData extends NSObject {
      * See AVCameraCalibrationData for more information. This property may return nil if no camera calibration data is
      * available for the depth data.
      */
+    @Nullable
     @Generated
     @Selector("cameraCalibrationData")
     public native AVCameraCalibrationData cameraCalibrationData();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -170,6 +177,7 @@ public class AVDepthData extends NSObject {
      * @return
      *         An AVDepthData instance.
      */
+    @NotNull
     @Generated
     @Selector("depthDataByApplyingExifOrientation:")
     public native AVDepthData depthDataByApplyingExifOrientation(int exifOrientation);
@@ -187,6 +195,7 @@ public class AVDepthData extends NSObject {
      * @return
      *         An AVDepthData instance.
      */
+    @NotNull
     @Generated
     @Selector("depthDataByConvertingToDepthDataType:")
     public native AVDepthData depthDataByConvertingToDepthDataType(int depthDataType);
@@ -208,10 +217,11 @@ public class AVDepthData extends NSObject {
      * @return
      *         An AVDepthData instance, or nil if the pixel buffer is malformed.
      */
+    @Nullable
     @Generated
     @Selector("depthDataByReplacingDepthDataMapWithPixelBuffer:error:")
-    public native AVDepthData depthDataByReplacingDepthDataMapWithPixelBufferError(CVBufferRef pixelBuffer,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native AVDepthData depthDataByReplacingDepthDataMapWithPixelBufferError(@NotNull CVBufferRef pixelBuffer,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * depthDataFromDictionaryRepresentation:error:
@@ -234,8 +244,8 @@ public class AVDepthData extends NSObject {
     @Generated
     @Selector("depthDataFromDictionaryRepresentation:error:")
     public static native AVDepthData depthDataFromDictionaryRepresentationError(
-            NSDictionary<?, ?> imageSourceAuxDataInfoDictionary,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @NotNull NSDictionary<?, ?> imageSourceAuxDataInfoDictionary,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] depthDataMap
@@ -244,6 +254,7 @@ public class AVDepthData extends NSObject {
      * 
      * The depth data map's pixel format can be queried using the depthDataType property.
      */
+    @NotNull
     @Generated
     @Selector("depthDataMap")
     public native CVBufferRef depthDataMap();
@@ -292,10 +303,11 @@ public class AVDepthData extends NSObject {
      *         A dictionary of CGImageDestination compatible depth information, or nil if the auxDataType is
      *         unsupported.
      */
+    @Nullable
     @Generated
     @Selector("dictionaryRepresentationForAuxiliaryDataType:")
     public native NSDictionary<?, ?> dictionaryRepresentationForAuxiliaryDataType(
-            @ReferenceInfo(type = NSString.class) Ptr<NSString> outAuxDataType);
+            @Nullable @ReferenceInfo(type = NSString.class) Ptr<NSString> outAuxDataType);
 
     @Generated
     @Selector("hash")
@@ -339,9 +351,10 @@ public class AVDepthData extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

@@ -36,6 +36,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.0
@@ -70,22 +72,25 @@ public class NSCache<_KeyType, _ObjectType> extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,9 +125,10 @@ public class NSCache<_KeyType, _ObjectType> extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,6 +164,7 @@ public class NSCache<_KeyType, _ObjectType> extends NSObject {
     @NUInt
     public native long countLimit();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -171,14 +178,16 @@ public class NSCache<_KeyType, _ObjectType> extends NSObject {
     @Selector("init")
     public native NSCache<?, ?> init();
 
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
 
+    @Nullable
     @Generated
     @Selector("objectForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native _ObjectType objectForKey(@Mapped(ObjCObjectMapper.class) _KeyType key);
+    public native _ObjectType objectForKey(@NotNull @Mapped(ObjCObjectMapper.class) _KeyType key);
 
     @Generated
     @Selector("removeAllObjects")
@@ -186,7 +195,7 @@ public class NSCache<_KeyType, _ObjectType> extends NSObject {
 
     @Generated
     @Selector("removeObjectForKey:")
-    public native void removeObjectForKey(@Mapped(ObjCObjectMapper.class) _KeyType key);
+    public native void removeObjectForKey(@NotNull @Mapped(ObjCObjectMapper.class) _KeyType key);
 
     /**
      * limits are imprecise/not strict
@@ -197,10 +206,10 @@ public class NSCache<_KeyType, _ObjectType> extends NSObject {
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSCacheDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) NSCacheDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) NSCacheDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSCacheDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -217,20 +226,20 @@ public class NSCache<_KeyType, _ObjectType> extends NSObject {
 
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@NotNull String value);
 
     /**
      * 0 cost
      */
     @Generated
     @Selector("setObject:forKey:")
-    public native void setObjectForKey(@Mapped(ObjCObjectMapper.class) _ObjectType obj,
-            @Mapped(ObjCObjectMapper.class) _KeyType key);
+    public native void setObjectForKey(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType obj,
+            @NotNull @Mapped(ObjCObjectMapper.class) _KeyType key);
 
     @Generated
     @Selector("setObject:forKey:cost:")
-    public native void setObjectForKeyCost(@Mapped(ObjCObjectMapper.class) _ObjectType obj,
-            @Mapped(ObjCObjectMapper.class) _KeyType key, @NUInt long g);
+    public native void setObjectForKeyCost(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType obj,
+            @NotNull @Mapped(ObjCObjectMapper.class) _KeyType key, @NUInt long g);
 
     /**
      * limits are imprecise/not strict

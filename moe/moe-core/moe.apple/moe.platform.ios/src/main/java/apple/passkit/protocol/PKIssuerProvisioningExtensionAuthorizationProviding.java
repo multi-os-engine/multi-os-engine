@@ -8,6 +8,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -17,6 +18,7 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("PKIssuerProvisioningExtensionAuthorizationProviding")
 public interface PKIssuerProvisioningExtensionAuthorizationProviding {
+    @Nullable
     @Generated
     @Selector("completionHandler")
     @ObjCBlock(name = "call_completionHandler_ret")
@@ -31,7 +33,8 @@ public interface PKIssuerProvisioningExtensionAuthorizationProviding {
 
     @Generated
     @Selector("setCompletionHandler:")
-    void setCompletionHandler(@ObjCBlock(name = "call_setCompletionHandler") Block_setCompletionHandler value);
+    void setCompletionHandler(
+            @Nullable @ObjCBlock(name = "call_setCompletionHandler") Block_setCompletionHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated

@@ -28,6 +28,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * _______________________________________________________________________________________________________________
@@ -46,17 +48,18 @@ public interface UITableViewDataSource {
     @IsOptional
     @Selector("numberOfSectionsInTableView:")
     @NInt
-    default long numberOfSectionsInTableView(UITableView tableView) {
+    default long numberOfSectionsInTableView(@NotNull UITableView tableView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * return list of section titles to display in section index view (e.g. "ABCD...Z#")
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("sectionIndexTitlesForTableView:")
-    default NSArray<String> sectionIndexTitlesForTableView(UITableView tableView) {
+    default NSArray<String> sectionIndexTitlesForTableView(@NotNull UITableView tableView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -67,7 +70,7 @@ public interface UITableViewDataSource {
     @Generated
     @IsOptional
     @Selector("tableView:canEditRowAtIndexPath:")
-    default boolean tableViewCanEditRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+    default boolean tableViewCanEditRowAtIndexPath(@NotNull UITableView tableView, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,7 +81,7 @@ public interface UITableViewDataSource {
     @Generated
     @IsOptional
     @Selector("tableView:canMoveRowAtIndexPath:")
-    default boolean tableViewCanMoveRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+    default boolean tableViewCanMoveRowAtIndexPath(@NotNull UITableView tableView, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -88,9 +91,10 @@ public interface UITableViewDataSource {
      * Cell gets various attributes set automatically based on table (separators) and data source (accessory views,
      * editing controls)
      */
+    @NotNull
     @Generated
     @Selector("tableView:cellForRowAtIndexPath:")
-    UITableViewCell tableViewCellForRowAtIndexPath(UITableView tableView, NSIndexPath indexPath);
+    UITableViewCell tableViewCellForRowAtIndexPath(@NotNull UITableView tableView, @NotNull NSIndexPath indexPath);
 
     /**
      * After a row has the minus or plus button invoked (based on the UITableViewCellEditingStyle for the cell), the
@@ -100,8 +104,8 @@ public interface UITableViewDataSource {
     @Generated
     @IsOptional
     @Selector("tableView:commitEditingStyle:forRowAtIndexPath:")
-    default void tableViewCommitEditingStyleForRowAtIndexPath(UITableView tableView, @NInt long editingStyle,
-            NSIndexPath indexPath) {
+    default void tableViewCommitEditingStyleForRowAtIndexPath(@NotNull UITableView tableView, @NInt long editingStyle,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -111,15 +115,15 @@ public interface UITableViewDataSource {
     @Generated
     @IsOptional
     @Selector("tableView:moveRowAtIndexPath:toIndexPath:")
-    default void tableViewMoveRowAtIndexPathToIndexPath(UITableView tableView, NSIndexPath sourceIndexPath,
-            NSIndexPath destinationIndexPath) {
+    default void tableViewMoveRowAtIndexPathToIndexPath(@NotNull UITableView tableView,
+            @NotNull NSIndexPath sourceIndexPath, @NotNull NSIndexPath destinationIndexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @Selector("tableView:numberOfRowsInSection:")
     @NInt
-    long tableViewNumberOfRowsInSection(UITableView tableView, @NInt long section);
+    long tableViewNumberOfRowsInSection(@NotNull UITableView tableView, @NInt long section);
 
     /**
      * tell table which section corresponds to section title/index (e.g. "B",1))
@@ -128,24 +132,27 @@ public interface UITableViewDataSource {
     @IsOptional
     @Selector("tableView:sectionForSectionIndexTitle:atIndex:")
     @NInt
-    default long tableViewSectionForSectionIndexTitleAtIndex(UITableView tableView, String title, @NInt long index) {
+    default long tableViewSectionForSectionIndexTitleAtIndex(@NotNull UITableView tableView, @NotNull String title,
+            @NInt long index) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("tableView:titleForFooterInSection:")
-    default String tableViewTitleForFooterInSection(UITableView tableView, @NInt long section) {
+    default String tableViewTitleForFooterInSection(@NotNull UITableView tableView, @NInt long section) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * fixed font style. use custom view (UILabel) if you want something different
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("tableView:titleForHeaderInSection:")
-    default String tableViewTitleForHeaderInSection(UITableView tableView, @NInt long section) {
+    default String tableViewTitleForHeaderInSection(@NotNull UITableView tableView, @NInt long section) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

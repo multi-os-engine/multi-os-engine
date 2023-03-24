@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVPlayerItemErrorLogEvent
@@ -81,22 +83,25 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +136,10 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -169,15 +175,17 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
      * If nil is returned the URI is unknown. Corresponds to "uri".
      * This property is not observable.
      */
+    @Nullable
     @Generated
     @Selector("URI")
     public native String URI();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] date
@@ -187,6 +195,7 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
      * If nil is returned the date is unknown. Corresponds to "date".
      * This property is not observable.
      */
+    @Nullable
     @Generated
     @Selector("date")
     public native NSDate date();
@@ -199,6 +208,7 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
      * If nil is returned further information is not available. Corresponds to "comment".
      * This property is not observable.
      */
+    @Nullable
     @Generated
     @Selector("errorComment")
     public native String errorComment();
@@ -211,6 +221,7 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
      * Corresponds to "domain".
      * This property is not observable.
      */
+    @NotNull
     @Generated
     @Selector("errorDomain")
     public native String errorDomain();
@@ -240,6 +251,7 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
      * If nil is returned the GUID is unknown. Corresponds to "cs-guid".
      * This property is not observable.
      */
+    @Nullable
     @Generated
     @Selector("playbackSessionID")
     public native String playbackSessionID();
@@ -252,6 +264,7 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
      * If nil is returned the address is unknown. Can be either an IPv4 or IPv6 address. Corresponds to "s-ip".
      * This property is not observable.
      */
+    @Nullable
     @Generated
     @Selector("serverAddress")
     public native String serverAddress();

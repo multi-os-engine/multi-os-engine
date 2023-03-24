@@ -23,6 +23,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A label displaying a short string of text, typically a small number such as a count for the associated item.
@@ -66,22 +68,25 @@ public class UICellAccessoryLabel extends UICellAccessory {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -97,6 +102,7 @@ public class UICellAccessoryLabel extends UICellAccessory {
     /**
      * The font used for the label. Default is the preferred font for UIFontTextStyleBody.
      */
+    @NotNull
     @Generated
     @Selector("font")
     public native UIFont font();
@@ -112,14 +118,14 @@ public class UICellAccessoryLabel extends UICellAccessory {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UICellAccessoryLabel initWithCoder(NSCoder coder);
+    public native UICellAccessoryLabel initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Creates a new label accessory using the provided text.
      */
     @Generated
     @Selector("initWithText:")
-    public native UICellAccessoryLabel initWithText(String text);
+    public native UICellAccessoryLabel initWithText(@NotNull String text);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -138,9 +144,10 @@ public class UICellAccessoryLabel extends UICellAccessory {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,7 +174,7 @@ public class UICellAccessoryLabel extends UICellAccessory {
      */
     @Generated
     @Selector("setFont:")
-    public native void setFont(UIFont value);
+    public native void setFont(@NotNull UIFont value);
 
     @Generated
     @Selector("setVersion:")
@@ -187,6 +194,7 @@ public class UICellAccessoryLabel extends UICellAccessory {
         return supportsSecureCoding();
     }
 
+    @NotNull
     @Generated
     @Selector("text")
     public native String text();

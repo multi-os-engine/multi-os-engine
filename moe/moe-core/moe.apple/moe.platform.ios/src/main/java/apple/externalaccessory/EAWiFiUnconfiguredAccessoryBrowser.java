@@ -41,6 +41,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Interface for browsing unconfigured accessories
@@ -83,22 +85,25 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +138,10 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -182,14 +188,15 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
      */
     @Generated
     @Selector("configureAccessory:withConfigurationUIOnViewController:")
-    public native void configureAccessoryWithConfigurationUIOnViewController(EAWiFiUnconfiguredAccessory accessory,
-            UIViewController viewController);
+    public native void configureAccessoryWithConfigurationUIOnViewController(
+            @NotNull EAWiFiUnconfiguredAccessory accessory, @NotNull UIViewController viewController);
 
     /**
      * [@property] delegate
      * 
      * The delegate object that will receive the browser events.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -217,7 +224,8 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
     @Generated
     @Selector("initWithDelegate:queue:")
     public native EAWiFiUnconfiguredAccessoryBrowser initWithDelegateQueue(
-            @Mapped(ObjCObjectMapper.class) EAWiFiUnconfiguredAccessoryBrowserDelegate delegate, NSObject queue);
+            @Nullable @Mapped(ObjCObjectMapper.class) EAWiFiUnconfiguredAccessoryBrowserDelegate delegate,
+            @Nullable NSObject queue);
 
     /**
      * [@property] delegate
@@ -227,7 +235,7 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) EAWiFiUnconfiguredAccessoryBrowserDelegate value);
+            @Nullable @Mapped(ObjCObjectMapper.class) EAWiFiUnconfiguredAccessoryBrowserDelegate value);
 
     /**
      * [@property] delegate
@@ -235,7 +243,8 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
      * The delegate object that will receive the browser events.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) EAWiFiUnconfiguredAccessoryBrowserDelegate value) {
+    public void setDelegate(
+            @Nullable @Mapped(ObjCObjectMapper.class) EAWiFiUnconfiguredAccessoryBrowserDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -261,7 +270,7 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
      */
     @Generated
     @Selector("startSearchingForUnconfiguredAccessoriesMatchingPredicate:")
-    public native void startSearchingForUnconfiguredAccessoriesMatchingPredicate(NSPredicate predicate);
+    public native void startSearchingForUnconfiguredAccessoriesMatchingPredicate(@Nullable NSPredicate predicate);
 
     /**
      * Stop the search for unconfigured MFi Wireless Accessory Configuration accessories
@@ -279,6 +288,7 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
      * The set of discovered unconfigured accessories described by EAWiFiUnconfiguredAccessory objects.
      * This snapshot will only include objects matching the filter predicate defined when starting the search.
      */
+    @NotNull
     @Generated
     @Selector("unconfiguredAccessories")
     public native NSSet<? extends EAWiFiUnconfiguredAccessory> unconfiguredAccessories();

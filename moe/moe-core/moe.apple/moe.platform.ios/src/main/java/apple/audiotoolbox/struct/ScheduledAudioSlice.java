@@ -30,6 +30,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -59,6 +61,7 @@ public final class ScheduledAudioSlice extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setMTimeStamp(@ByValue AudioTimeStamp value);
 
+    @Nullable
     @Generated
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_mCompletionProc")
@@ -66,15 +69,17 @@ public final class ScheduledAudioSlice extends StructObject {
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setMCompletionProc(@FunctionPtr(name = "call_mCompletionProc") Function_mCompletionProc value);
+    public native void setMCompletionProc(
+            @Nullable @FunctionPtr(name = "call_mCompletionProc") Function_mCompletionProc value);
 
+    @NotNull
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native VoidPtr mCompletionProcUserData();
 
     @Generated
     @StructureField(order = 2, isGetter = false)
-    public native void setMCompletionProcUserData(VoidPtr value);
+    public native void setMCompletionProcUserData(@NotNull VoidPtr value);
 
     @Generated
     @StructureField(order = 3, isGetter = true)
@@ -101,6 +106,7 @@ public final class ScheduledAudioSlice extends StructObject {
     /**
      * for internal use
      */
+    @Nullable
     @Generated
     @StructureField(order = 5, isGetter = true)
     public native VoidPtr mReserved2();
@@ -110,7 +116,7 @@ public final class ScheduledAudioSlice extends StructObject {
      */
     @Generated
     @StructureField(order = 5, isGetter = false)
-    public native void setMReserved2(VoidPtr value);
+    public native void setMReserved2(@Nullable VoidPtr value);
 
     /**
      * must be consistent with byte count of mBufferList
@@ -129,6 +135,7 @@ public final class ScheduledAudioSlice extends StructObject {
     /**
      * must contain deinterleaved Float32
      */
+    @NotNull
     @Generated
     @StructureField(order = 7, isGetter = true)
     public native AudioBufferList mBufferList();
@@ -138,13 +145,13 @@ public final class ScheduledAudioSlice extends StructObject {
      */
     @Generated
     @StructureField(order = 7, isGetter = false)
-    public native void setMBufferList(AudioBufferList value);
+    public native void setMBufferList(@NotNull AudioBufferList value);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_mCompletionProc {
         @Generated
-        void call_mCompletionProc(VoidPtr arg0,
-                @UncertainArgument("Options: reference, array Fallback: reference") ScheduledAudioSlice arg1);
+        void call_mCompletionProc(@Nullable VoidPtr arg0,
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") ScheduledAudioSlice arg1);
     }
 }

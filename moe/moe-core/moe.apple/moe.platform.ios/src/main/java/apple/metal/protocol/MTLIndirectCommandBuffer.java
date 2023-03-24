@@ -12,6 +12,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.metal.struct.MTLResourceID;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 12.0
@@ -24,11 +25,13 @@ public interface MTLIndirectCommandBuffer extends MTLResource {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("indirectComputeCommandAtIndex:")
     @MappedReturn(ObjCObjectMapper.class)
     MTLIndirectComputeCommand indirectComputeCommandAtIndex(@NUInt long commandIndex);
 
+    @NotNull
     @Generated
     @Selector("indirectRenderCommandAtIndex:")
     @MappedReturn(ObjCObjectMapper.class)

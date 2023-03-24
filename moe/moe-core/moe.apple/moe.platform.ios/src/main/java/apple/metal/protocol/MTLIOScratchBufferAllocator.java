@@ -9,6 +9,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLIOScratchBufferAllocator
@@ -39,6 +40,7 @@ public interface MTLIOScratchBufferAllocator {
      * susequent commands will be able to use it, thus avoiding the need for an additional callback. Returning nil
      * from the function will result in the load command being skipped and the commandBuffer getting cancelled.
      */
+    @Nullable
     @Generated
     @Selector("newScratchBufferWithMinimumSize:")
     @MappedReturn(ObjCObjectMapper.class)

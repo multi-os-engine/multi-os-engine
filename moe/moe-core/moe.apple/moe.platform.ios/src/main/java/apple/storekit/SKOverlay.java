@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -58,22 +60,25 @@ public class SKOverlay extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -81,6 +86,7 @@ public class SKOverlay extends NSObject {
     /**
      * The overlay configuration.
      */
+    @NotNull
     @Generated
     @Selector("configuration")
     public native SKOverlayConfiguration configuration();
@@ -92,6 +98,7 @@ public class SKOverlay extends NSObject {
     /**
      * A delegate for overlay events.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -108,7 +115,7 @@ public class SKOverlay extends NSObject {
      */
     @Generated
     @Selector("dismissOverlayInScene:")
-    public static native void dismissOverlayInScene(UIWindowScene scene);
+    public static native void dismissOverlayInScene(@NotNull UIWindowScene scene);
 
     @Generated
     @Selector("hash")
@@ -126,7 +133,7 @@ public class SKOverlay extends NSObject {
      */
     @Generated
     @Selector("initWithConfiguration:")
-    public native SKOverlay initWithConfiguration(SKOverlayConfiguration configuration);
+    public native SKOverlay initWithConfiguration(@NotNull SKOverlayConfiguration configuration);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -145,9 +152,10 @@ public class SKOverlay extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,7 +169,7 @@ public class SKOverlay extends NSObject {
      */
     @Generated
     @Selector("presentInScene:")
-    public native void presentInScene(UIWindowScene scene);
+    public native void presentInScene(@NotNull UIWindowScene scene);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -176,13 +184,13 @@ public class SKOverlay extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SKOverlayDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) SKOverlayDelegate value);
 
     /**
      * A delegate for overlay events.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) SKOverlayDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SKOverlayDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

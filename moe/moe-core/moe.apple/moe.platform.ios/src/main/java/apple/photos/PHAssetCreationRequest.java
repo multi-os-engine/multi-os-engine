@@ -42,6 +42,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * PHAssetCreationRequest can only be created or used within a -[PHPhotoLibrary performChanges:] or -[PHPhotoLibrary
@@ -79,26 +81,29 @@ public class PHAssetCreationRequest extends PHAssetChangeRequest {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     @Generated
     @Selector("changeRequestForAsset:")
-    public static native PHAssetCreationRequest changeRequestForAsset(PHAsset asset);
+    public static native PHAssetCreationRequest changeRequestForAsset(@NotNull PHAsset asset);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -110,17 +115,20 @@ public class PHAssetCreationRequest extends PHAssetChangeRequest {
     @Selector("creationRequestForAsset")
     public static native PHAssetCreationRequest creationRequestForAsset();
 
+    @NotNull
     @Generated
     @Selector("creationRequestForAssetFromImage:")
-    public static native PHAssetCreationRequest creationRequestForAssetFromImage(UIImage image);
+    public static native PHAssetCreationRequest creationRequestForAssetFromImage(@NotNull UIImage image);
 
+    @Nullable
     @Generated
     @Selector("creationRequestForAssetFromImageAtFileURL:")
-    public static native PHAssetCreationRequest creationRequestForAssetFromImageAtFileURL(NSURL fileURL);
+    public static native PHAssetCreationRequest creationRequestForAssetFromImageAtFileURL(@NotNull NSURL fileURL);
 
+    @Nullable
     @Generated
     @Selector("creationRequestForAssetFromVideoAtFileURL:")
-    public static native PHAssetCreationRequest creationRequestForAssetFromVideoAtFileURL(NSURL fileURL);
+    public static native PHAssetCreationRequest creationRequestForAssetFromVideoAtFileURL(@NotNull NSURL fileURL);
 
     @Generated
     @Selector("debugDescription")
@@ -128,7 +136,7 @@ public class PHAssetCreationRequest extends PHAssetChangeRequest {
 
     @Generated
     @Selector("deleteAssets:")
-    public static native void deleteAssets(@Mapped(ObjCObjectMapper.class) NSFastEnumeration assets);
+    public static native void deleteAssets(@NotNull @Mapped(ObjCObjectMapper.class) NSFastEnumeration assets);
 
     @Generated
     @Selector("description")
@@ -156,9 +164,10 @@ public class PHAssetCreationRequest extends PHAssetChangeRequest {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -190,7 +199,7 @@ public class PHAssetCreationRequest extends PHAssetChangeRequest {
      */
     @Generated
     @Selector("supportsAssetResourceTypes:")
-    public static native boolean supportsAssetResourceTypes(NSArray<? extends NSNumber> types);
+    public static native boolean supportsAssetResourceTypes(@NotNull NSArray<? extends NSNumber> types);
 
     @Generated
     @Selector("version")
@@ -202,16 +211,16 @@ public class PHAssetCreationRequest extends PHAssetChangeRequest {
      */
     @Generated
     @Selector("addResourceWithType:data:options:")
-    public native void addResourceWithTypeDataOptions(@NInt long type, NSData data,
-            PHAssetResourceCreationOptions options);
+    public native void addResourceWithTypeDataOptions(@NInt long type, @NotNull NSData data,
+            @Nullable PHAssetResourceCreationOptions options);
 
     /**
      * API-Since: 9.0
      */
     @Generated
     @Selector("addResourceWithType:fileURL:options:")
-    public native void addResourceWithTypeFileURLOptions(@NInt long type, NSURL fileURL,
-            PHAssetResourceCreationOptions options);
+    public native void addResourceWithTypeFileURLOptions(@NInt long type, @NotNull NSURL fileURL,
+            @Nullable PHAssetResourceCreationOptions options);
 
     @Generated
     @Selector("init")

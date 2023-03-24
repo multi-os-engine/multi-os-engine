@@ -12,6 +12,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INSearchForMediaIntent. By implementing this protocol, a class can
@@ -45,8 +46,8 @@ public interface INSearchForMediaIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmSearchForMedia:completion:")
-    default void confirmSearchForMediaCompletion(INSearchForMediaIntent intent,
-            @ObjCBlock(name = "call_confirmSearchForMediaCompletion") Block_confirmSearchForMediaCompletion completion) {
+    default void confirmSearchForMediaCompletion(@NotNull INSearchForMediaIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmSearchForMediaCompletion") Block_confirmSearchForMediaCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -54,7 +55,7 @@ public interface INSearchForMediaIntentHandling {
     @Generated
     public interface Block_confirmSearchForMediaCompletion {
         @Generated
-        void call_confirmSearchForMediaCompletion(INSearchForMediaIntentResponse response);
+        void call_confirmSearchForMediaCompletion(@NotNull INSearchForMediaIntentResponse response);
     }
 
     /**
@@ -70,14 +71,14 @@ public interface INSearchForMediaIntentHandling {
      */
     @Generated
     @Selector("handleSearchForMedia:completion:")
-    void handleSearchForMediaCompletion(INSearchForMediaIntent intent,
-            @ObjCBlock(name = "call_handleSearchForMediaCompletion") Block_handleSearchForMediaCompletion completion);
+    void handleSearchForMediaCompletion(@NotNull INSearchForMediaIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleSearchForMediaCompletion") Block_handleSearchForMediaCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSearchForMediaCompletion {
         @Generated
-        void call_handleSearchForMediaCompletion(INSearchForMediaIntentResponse response);
+        void call_handleSearchForMediaCompletion(@NotNull INSearchForMediaIntentResponse response);
     }
 
     /**
@@ -94,8 +95,8 @@ public interface INSearchForMediaIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveMediaItemsForSearchForMedia:withCompletion:")
-    default void resolveMediaItemsForSearchForMediaWithCompletion(INSearchForMediaIntent intent,
-            @ObjCBlock(name = "call_resolveMediaItemsForSearchForMediaWithCompletion") Block_resolveMediaItemsForSearchForMediaWithCompletion completion) {
+    default void resolveMediaItemsForSearchForMediaWithCompletion(@NotNull INSearchForMediaIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveMediaItemsForSearchForMediaWithCompletion") Block_resolveMediaItemsForSearchForMediaWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,6 +105,6 @@ public interface INSearchForMediaIntentHandling {
     public interface Block_resolveMediaItemsForSearchForMediaWithCompletion {
         @Generated
         void call_resolveMediaItemsForSearchForMediaWithCompletion(
-                NSArray<? extends INSearchForMediaMediaItemResolutionResult> resolutionResults);
+                @NotNull NSArray<? extends INSearchForMediaMediaItemResolutionResult> resolutionResults);
     }
 }

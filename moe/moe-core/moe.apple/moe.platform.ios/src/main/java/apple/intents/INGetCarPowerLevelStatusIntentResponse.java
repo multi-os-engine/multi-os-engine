@@ -30,6 +30,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.3
@@ -64,26 +66,30 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @Nullable
     @Generated
     @Selector("chargePercentRemaining")
     public native NSNumber chargePercentRemaining();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -104,10 +110,12 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     /**
      * The distance that the car can travel on the remaining resources.
      */
+    @Nullable
     @Generated
     @Selector("distanceRemaining")
     public native NSMeasurement<NSUnitLength> distanceRemaining();
 
+    @Nullable
     @Generated
     @Selector("fuelPercentRemaining")
     public native NSNumber fuelPercentRemaining();
@@ -133,11 +141,11 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     @Generated
     @Selector("initWithCode:userActivity:")
     public native INGetCarPowerLevelStatusIntentResponse initWithCodeUserActivity(@NInt long code,
-            NSUserActivity userActivity);
+            @Nullable NSUserActivity userActivity);
 
     @Generated
     @Selector("initWithCoder:")
-    public native INGetCarPowerLevelStatusIntentResponse initWithCoder(NSCoder coder);
+    public native INGetCarPowerLevelStatusIntentResponse initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -156,9 +164,10 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -175,18 +184,18 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("setChargePercentRemaining:")
-    public native void setChargePercentRemaining(NSNumber value);
+    public native void setChargePercentRemaining(@Nullable NSNumber value);
 
     /**
      * The distance that the car can travel on the remaining resources.
      */
     @Generated
     @Selector("setDistanceRemaining:")
-    public native void setDistanceRemaining(NSMeasurement<NSUnitLength> value);
+    public native void setDistanceRemaining(@Nullable NSMeasurement<NSUnitLength> value);
 
     @Generated
     @Selector("setFuelPercentRemaining:")
-    public native void setFuelPercentRemaining(NSNumber value);
+    public native void setFuelPercentRemaining(@Nullable NSNumber value);
 
     @Generated
     @Selector("setVersion:")
@@ -214,6 +223,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     /**
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("charging")
     public native NSNumber charging();
@@ -221,6 +231,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     /**
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("minutesToFull")
     public native NSNumber minutesToFull();
@@ -230,14 +241,14 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      */
     @Generated
     @Selector("setCharging:")
-    public native void setCharging(NSNumber value);
+    public native void setCharging(@Nullable NSNumber value);
 
     /**
      * API-Since: 12.0
      */
     @Generated
     @Selector("setMinutesToFull:")
-    public native void setMinutesToFull(NSNumber value);
+    public native void setMinutesToFull(@Nullable NSNumber value);
 
     /**
      * The current connector being used to deliver charge to the vehicle’s battery. If isCharging is set, this property
@@ -245,6 +256,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("activeConnector")
     public native String activeConnector();
@@ -255,6 +267,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("carIdentifier")
     public native String carIdentifier();
@@ -268,6 +281,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("chargingFormulaArguments")
     public native NSDictionary<String, ?> chargingFormulaArguments();
@@ -281,6 +295,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("consumptionFormulaArguments")
     public native NSDictionary<String, ?> consumptionFormulaArguments();
@@ -291,6 +306,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("currentBatteryCapacity")
     public native NSMeasurement<NSUnitEnergy> currentBatteryCapacity();
@@ -301,6 +317,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("dateOfLastStateUpdate")
     public native NSDateComponents dateOfLastStateUpdate();
@@ -310,6 +327,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("distanceRemainingElectric")
     public native NSMeasurement<NSUnitLength> distanceRemainingElectric();
@@ -319,6 +337,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("distanceRemainingFuel")
     public native NSMeasurement<NSUnitLength> distanceRemainingFuel();
@@ -329,6 +348,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("maximumBatteryCapacity")
     public native NSMeasurement<NSUnitEnergy> maximumBatteryCapacity();
@@ -339,6 +359,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("maximumDistance")
     public native NSMeasurement<NSUnitLength> maximumDistance();
@@ -349,6 +370,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("maximumDistanceElectric")
     public native NSMeasurement<NSUnitLength> maximumDistanceElectric();
@@ -359,6 +381,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("maximumDistanceFuel")
     public native NSMeasurement<NSUnitLength> maximumDistanceFuel();
@@ -370,6 +393,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("minimumBatteryCapacity")
     public native NSMeasurement<NSUnitEnergy> minimumBatteryCapacity();
@@ -382,7 +406,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      */
     @Generated
     @Selector("setActiveConnector:")
-    public native void setActiveConnector(String value);
+    public native void setActiveConnector(@Nullable String value);
 
     /**
      * An identifier for the vehicles. Use this same value as the carIdentifier property of INCar. Do not use the VIN
@@ -392,7 +416,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      */
     @Generated
     @Selector("setCarIdentifier:")
-    public native void setCarIdentifier(String value);
+    public native void setCarIdentifier(@Nullable String value);
 
     /**
      * A dictionary mapping NSStrings to serializable objects (NSString, NSNumber, NSArray, NSDictionary, or NSNull)
@@ -405,7 +429,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      */
     @Generated
     @Selector("setChargingFormulaArguments:")
-    public native void setChargingFormulaArguments(NSDictionary<String, ?> value);
+    public native void setChargingFormulaArguments(@Nullable NSDictionary<String, ?> value);
 
     /**
      * A dictionary mapping NSStrings to serializable objects (NSString, NSNumber, NSArray, NSDictionary, or NSNull)
@@ -418,7 +442,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      */
     @Generated
     @Selector("setConsumptionFormulaArguments:")
-    public native void setConsumptionFormulaArguments(NSDictionary<String, ?> value);
+    public native void setConsumptionFormulaArguments(@Nullable NSDictionary<String, ?> value);
 
     /**
      * The current capacity of the battery. currentBatteryCapacity should be set such that maximumBatteryCapacity >=
@@ -428,7 +452,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      */
     @Generated
     @Selector("setCurrentBatteryCapacity:")
-    public native void setCurrentBatteryCapacity(NSMeasurement<NSUnitEnergy> value);
+    public native void setCurrentBatteryCapacity(@Nullable NSMeasurement<NSUnitEnergy> value);
 
     /**
      * A time stamp for an instance of the state of charge. This time stamp should ideally indicate when the actual
@@ -438,7 +462,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      */
     @Generated
     @Selector("setDateOfLastStateUpdate:")
-    public native void setDateOfLastStateUpdate(NSDateComponents value);
+    public native void setDateOfLastStateUpdate(@Nullable NSDateComponents value);
 
     /**
      * The maximum distance an electric vehicle can travel with the remaining charge.
@@ -447,7 +471,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      */
     @Generated
     @Selector("setDistanceRemainingElectric:")
-    public native void setDistanceRemainingElectric(NSMeasurement<NSUnitLength> value);
+    public native void setDistanceRemainingElectric(@Nullable NSMeasurement<NSUnitLength> value);
 
     /**
      * The maximum distance a vehicle can travel with the remaining fuel.
@@ -456,7 +480,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      */
     @Generated
     @Selector("setDistanceRemainingFuel:")
-    public native void setDistanceRemainingFuel(NSMeasurement<NSUnitLength> value);
+    public native void setDistanceRemainingFuel(@Nullable NSMeasurement<NSUnitLength> value);
 
     /**
      * The maximum rated capacity of the vehicle’s battery. maximumBatteryCapacity should be set such that
@@ -466,7 +490,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      */
     @Generated
     @Selector("setMaximumBatteryCapacity:")
-    public native void setMaximumBatteryCapacity(NSMeasurement<NSUnitEnergy> value);
+    public native void setMaximumBatteryCapacity(@Nullable NSMeasurement<NSUnitEnergy> value);
 
     /**
      * The maximum distance a vehicle can travel with full resources. As the vehicle drives, this value can change over
@@ -476,7 +500,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      */
     @Generated
     @Selector("setMaximumDistance:")
-    public native void setMaximumDistance(NSMeasurement<NSUnitLength> value);
+    public native void setMaximumDistance(@Nullable NSMeasurement<NSUnitLength> value);
 
     /**
      * The maximum distance an electric vehicle can travel on a full charge. This value can change overtime (and over
@@ -486,7 +510,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      */
     @Generated
     @Selector("setMaximumDistanceElectric:")
-    public native void setMaximumDistanceElectric(NSMeasurement<NSUnitLength> value);
+    public native void setMaximumDistanceElectric(@Nullable NSMeasurement<NSUnitLength> value);
 
     /**
      * The maximum distance a vehicle can travel with full resources. As the vehicle drives, this value can change over
@@ -496,7 +520,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      */
     @Generated
     @Selector("setMaximumDistanceFuel:")
-    public native void setMaximumDistanceFuel(NSMeasurement<NSUnitLength> value);
+    public native void setMaximumDistanceFuel(@Nullable NSMeasurement<NSUnitLength> value);
 
     /**
      * Minimum battery capacity. Used to display to the user as the minimum (not to be confused with the absolute 0 Wh).
@@ -507,5 +531,5 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      */
     @Generated
     @Selector("setMinimumBatteryCapacity:")
-    public native void setMinimumBatteryCapacity(NSMeasurement<NSUnitEnergy> value);
+    public native void setMinimumBatteryCapacity(@Nullable NSMeasurement<NSUnitEnergy> value);
 }

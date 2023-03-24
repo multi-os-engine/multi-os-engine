@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSLSTMDescriptor
@@ -113,17 +115,18 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * [@property] cellGateInputWeights
@@ -131,6 +134,7 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * Contains weights 'Wc_ij', bias 'bc_i' and neuron 'gc' from the LSTM formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("cellGateInputWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -144,6 +148,7 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * in the memory cell image/matrix.
      * If nil then assumed zero weights. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("cellGateMemoryWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -155,6 +160,7 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * Contains weights 'Uc_ij' from the LSTM formula.
      * If nil then assumed zero weights. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("cellGateRecurrentWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -187,10 +193,12 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     @Selector("cellToOutputNeuronType")
     public native int cellToOutputNeuronType();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -204,6 +212,7 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * 
      *         API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("createLSTMDescriptorWithInputFeatureChannels:outputFeatureChannels:")
     public static native MPSLSTMDescriptor createLSTMDescriptorWithInputFeatureChannelsOutputFeatureChannels(
@@ -223,6 +232,7 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * Contains weights 'Wf_ij', bias 'bf_i' and neuron 'gf' from the LSTM formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping).Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("forgetGateInputWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -236,6 +246,7 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * in the memory cell image/matrix.
      * If nil then assumed zero weights. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("forgetGateMemoryWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -247,6 +258,7 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * Contains weights 'Uf_ij' from the LSTM formula.
      * If nil then assumed zero weights. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("forgetGateRecurrentWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -267,6 +279,7 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * Contains weights 'Wi_ij', bias 'bi_i' and neuron 'gi' from the LSTM formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("inputGateInputWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -280,6 +293,7 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * in the memory cell image/matrix.
      * If nil then assumed zero weights. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("inputGateMemoryWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -291,6 +305,7 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * Contains weights 'Ui_ij' from the LSTM formula.
      * If nil then assumed zero weights. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("inputGateRecurrentWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -313,9 +328,10 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] memoryWeightsAreDiagonal
@@ -340,6 +356,7 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * Contains weights 'Wo_ij', bias 'bo_i' and neuron 'go' from the LSTM formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("outputGateInputWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -353,6 +370,7 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * in the memory cell image/matrix.
      * If nil then assumed zero weights. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("outputGateMemoryWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -364,6 +382,7 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      * Contains weights 'Uo_ij' from the LSTM formula.
      * If nil then assumed zero weights. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("outputGateRecurrentWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -385,7 +404,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      */
     @Generated
     @Selector("setCellGateInputWeights:")
-    public native void setCellGateInputWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setCellGateInputWeights(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
      * [@property] cellGateMemoryWeights
@@ -397,7 +417,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      */
     @Generated
     @Selector("setCellGateMemoryWeights:")
-    public native void setCellGateMemoryWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setCellGateMemoryWeights(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
      * [@property] cellGateRecurrentWeights
@@ -407,7 +428,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      */
     @Generated
     @Selector("setCellGateRecurrentWeights:")
-    public native void setCellGateRecurrentWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setCellGateRecurrentWeights(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
      * [@property] cellToOutputNeuronParamA
@@ -444,7 +466,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      */
     @Generated
     @Selector("setForgetGateInputWeights:")
-    public native void setForgetGateInputWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setForgetGateInputWeights(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
      * [@property] forgetGateMemoryWeights
@@ -456,7 +479,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      */
     @Generated
     @Selector("setForgetGateMemoryWeights:")
-    public native void setForgetGateMemoryWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setForgetGateMemoryWeights(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
      * [@property] forgetGateRecurrentWeights
@@ -466,7 +490,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      */
     @Generated
     @Selector("setForgetGateRecurrentWeights:")
-    public native void setForgetGateRecurrentWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setForgetGateRecurrentWeights(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
      * [@property] inputGateInputWeights
@@ -476,7 +501,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      */
     @Generated
     @Selector("setInputGateInputWeights:")
-    public native void setInputGateInputWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setInputGateInputWeights(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
      * [@property] inputGateMemoryWeights
@@ -488,7 +514,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      */
     @Generated
     @Selector("setInputGateMemoryWeights:")
-    public native void setInputGateMemoryWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setInputGateMemoryWeights(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
      * [@property] inputGateRecurrentWeights
@@ -498,7 +525,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      */
     @Generated
     @Selector("setInputGateRecurrentWeights:")
-    public native void setInputGateRecurrentWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setInputGateRecurrentWeights(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
      * [@property] memoryWeightsAreDiagonal
@@ -520,7 +548,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      */
     @Generated
     @Selector("setOutputGateInputWeights:")
-    public native void setOutputGateInputWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setOutputGateInputWeights(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
      * [@property] outputGateMemoryWeights
@@ -532,7 +561,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      */
     @Generated
     @Selector("setOutputGateMemoryWeights:")
-    public native void setOutputGateMemoryWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setOutputGateMemoryWeights(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
      * [@property] outputGateRecurrentWeights
@@ -542,7 +572,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      */
     @Generated
     @Selector("setOutputGateRecurrentWeights:")
-    public native void setOutputGateRecurrentWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setOutputGateRecurrentWeights(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     @Generated
     @Selector("setVersion:")

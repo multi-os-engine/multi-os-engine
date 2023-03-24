@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -59,35 +61,40 @@ public class NSTextListElement extends NSTextParagraph {
      * The contents intended to be displayed. Derived from contents/textList configured with the text list element's
      * position inside the tree. It is overriding its superclass implementation, NSTextParagraph.attributedString
      */
+    @NotNull
     @Generated
     @Selector("attributedString")
     public native NSAttributedString attributedString();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * NSTextListElement has children of the same type.
      */
+    @NotNull
     @Generated
     @Selector("childElements")
     public native NSArray<? extends NSTextListElement> childElements();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -95,6 +102,7 @@ public class NSTextListElement extends NSTextParagraph {
     /**
      * The text list element contents without markers and formatting.
      */
+    @Nullable
     @Generated
     @Selector("contents")
     public native NSAttributedString contents();
@@ -118,7 +126,7 @@ public class NSTextListElement extends NSTextParagraph {
 
     @Generated
     @Selector("initWithAttributedString:")
-    public native NSTextListElement initWithAttributedString(NSAttributedString attributedString);
+    public native NSTextListElement initWithAttributedString(@Nullable NSAttributedString attributedString);
 
     /**
      * Designated initializer. Initializes 2 types of NSTextListElement: a standard list item and nesting parent
@@ -129,12 +137,13 @@ public class NSTextListElement extends NSTextParagraph {
     @Generated
     @Selector("initWithParentElement:textList:contents:markerAttributes:childElements:")
     public native NSTextListElement initWithParentElementTextListContentsMarkerAttributesChildElements(
-            NSTextListElement parent, NSTextList textList, NSAttributedString contents,
-            NSDictionary<String, ?> markerAttributes, NSArray<? extends NSTextListElement> children);
+            @Nullable NSTextListElement parent, @NotNull NSTextList textList, @Nullable NSAttributedString contents,
+            @Nullable NSDictionary<String, ?> markerAttributes,
+            @Nullable NSArray<? extends NSTextListElement> children);
 
     @Generated
     @Selector("initWithTextContentManager:")
-    public native NSTextListElement initWithTextContentManager(NSTextContentManager textContentManager);
+    public native NSTextListElement initWithTextContentManager(@Nullable NSTextContentManager textContentManager);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -153,13 +162,15 @@ public class NSTextListElement extends NSTextParagraph {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Attributes defining the text formatting of marker string inside attributedString.
      */
+    @Nullable
     @Generated
     @Selector("markerAttributes")
     public native NSDictionary<String, ?> markerAttributes();
@@ -172,6 +183,7 @@ public class NSTextListElement extends NSTextParagraph {
     /**
      * NSTextListElement has the parent of the same type.
      */
+    @Nullable
     @Generated
     @Selector("parentElement")
     public native NSTextListElement parentElement();
@@ -192,6 +204,7 @@ public class NSTextListElement extends NSTextParagraph {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("textList")
     public native NSTextList textList();
@@ -204,7 +217,8 @@ public class NSTextListElement extends NSTextParagraph {
     @Generated
     @Selector("textListElementWithChildElements:textList:nestingLevel:")
     public static native NSTextListElement textListElementWithChildElementsTextListNestingLevel(
-            NSArray<? extends NSTextListElement> children, NSTextList textList, @NInt long nestingLevel);
+            @NotNull NSArray<? extends NSTextListElement> children, @NotNull NSTextList textList,
+            @NInt long nestingLevel);
 
     /**
      * Instantiates a standard text list.
@@ -212,8 +226,8 @@ public class NSTextListElement extends NSTextParagraph {
     @Generated
     @Selector("textListElementWithContents:markerAttributes:textList:childElements:")
     public static native NSTextListElement textListElementWithContentsMarkerAttributesTextListChildElements(
-            NSAttributedString contents, NSDictionary<String, ?> markerAttributes, NSTextList textList,
-            NSArray<? extends NSTextListElement> children);
+            @NotNull NSAttributedString contents, @Nullable NSDictionary<String, ?> markerAttributes,
+            @NotNull NSTextList textList, @Nullable NSArray<? extends NSTextListElement> children);
 
     @Generated
     @Selector("version")

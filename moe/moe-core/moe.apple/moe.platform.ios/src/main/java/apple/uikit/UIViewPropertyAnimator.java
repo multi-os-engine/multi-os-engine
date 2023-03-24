@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -79,22 +81,25 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +134,10 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,12 +168,13 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
      * animations defined by this call will be tracked by the outer
      * propertyAnimator.
      */
+    @NotNull
     @Generated
     @Selector("runningPropertyAnimatorWithDuration:delay:options:animations:completion:")
     public static native UIViewPropertyAnimator runningPropertyAnimatorWithDurationDelayOptionsAnimationsCompletion(
             double duration, double delay, @NUInt long options,
-            @ObjCBlock(name = "call_runningPropertyAnimatorWithDurationDelayOptionsAnimationsCompletion_3") Block_runningPropertyAnimatorWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_runningPropertyAnimatorWithDurationDelayOptionsAnimationsCompletion_4") Block_runningPropertyAnimatorWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_runningPropertyAnimatorWithDurationDelayOptionsAnimationsCompletion_3") Block_runningPropertyAnimatorWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_runningPropertyAnimatorWithDurationDelayOptionsAnimationsCompletion_4") Block_runningPropertyAnimatorWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("setVersion:")
@@ -185,29 +192,30 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
     @Generated
     @Selector("addAnimations:")
     public native void addAnimations(
-            @ObjCBlock(name = "call_addAnimations") UIViewImplicitlyAnimating.Block_addAnimations animation);
+            @NotNull @ObjCBlock(name = "call_addAnimations") UIViewImplicitlyAnimating.Block_addAnimations animation);
 
     @Generated
     @Selector("addAnimations:delayFactor:")
     public native void addAnimationsDelayFactor(
-            @ObjCBlock(name = "call_addAnimationsDelayFactor") UIViewImplicitlyAnimating.Block_addAnimationsDelayFactor animation,
+            @NotNull @ObjCBlock(name = "call_addAnimationsDelayFactor") UIViewImplicitlyAnimating.Block_addAnimationsDelayFactor animation,
             @NFloat double delayFactor);
 
     @Generated
     @Selector("addCompletion:")
     public native void addCompletion(
-            @ObjCBlock(name = "call_addCompletion") UIViewImplicitlyAnimating.Block_addCompletion completion);
+            @NotNull @ObjCBlock(name = "call_addCompletion") UIViewImplicitlyAnimating.Block_addCompletion completion);
 
     @Generated
     @Selector("continueAnimationWithTimingParameters:durationFactor:")
     public native void continueAnimationWithTimingParametersDurationFactor(
-            @Mapped(ObjCObjectMapper.class) UITimingCurveProvider parameters, @NFloat double durationFactor);
+            @Nullable @Mapped(ObjCObjectMapper.class) UITimingCurveProvider parameters, @NFloat double durationFactor);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Defaults to 0. This property is set when calling -[UIView startAnimationAfterDelay:].
@@ -237,7 +245,7 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
     @Selector("initWithDuration:controlPoint1:controlPoint2:animations:")
     public native UIViewPropertyAnimator initWithDurationControlPoint1ControlPoint2Animations(double duration,
             @ByValue CGPoint point1, @ByValue CGPoint point2,
-            @ObjCBlock(name = "call_initWithDurationControlPoint1ControlPoint2Animations") Block_initWithDurationControlPoint1ControlPoint2Animations animations);
+            @Nullable @ObjCBlock(name = "call_initWithDurationControlPoint1ControlPoint2Animations") Block_initWithDurationControlPoint1ControlPoint2Animations animations);
 
     /**
      * All convenience initializers return an animator which is not running.
@@ -245,17 +253,17 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
     @Generated
     @Selector("initWithDuration:curve:animations:")
     public native UIViewPropertyAnimator initWithDurationCurveAnimations(double duration, @NInt long curve,
-            @ObjCBlock(name = "call_initWithDurationCurveAnimations") Block_initWithDurationCurveAnimations animations);
+            @Nullable @ObjCBlock(name = "call_initWithDurationCurveAnimations") Block_initWithDurationCurveAnimations animations);
 
     @Generated
     @Selector("initWithDuration:dampingRatio:animations:")
     public native UIViewPropertyAnimator initWithDurationDampingRatioAnimations(double duration, @NFloat double ratio,
-            @ObjCBlock(name = "call_initWithDurationDampingRatioAnimations") Block_initWithDurationDampingRatioAnimations animations);
+            @Nullable @ObjCBlock(name = "call_initWithDurationDampingRatioAnimations") Block_initWithDurationDampingRatioAnimations animations);
 
     @Generated
     @Selector("initWithDuration:timingParameters:")
     public native UIViewPropertyAnimator initWithDurationTimingParameters(double duration,
-            @Mapped(ObjCObjectMapper.class) UITimingCurveProvider parameters);
+            @NotNull @Mapped(ObjCObjectMapper.class) UITimingCurveProvider parameters);
 
     /**
      * Defaults to YES. Raises if set on an active animator.
@@ -336,6 +344,7 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
     @Selector("stopAnimation:")
     public native void stopAnimation(boolean withoutFinishing);
 
+    @Nullable
     @Generated
     @Selector("timingParameters")
     @MappedReturn(ObjCObjectMapper.class)

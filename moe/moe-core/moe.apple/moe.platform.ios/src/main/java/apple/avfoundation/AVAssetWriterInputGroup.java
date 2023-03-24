@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAssetWriterInputGroup
@@ -105,26 +107,29 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
     @Generated
     @Selector("assetWriterInputGroupWithInputs:defaultInput:")
     public static native AVAssetWriterInputGroup assetWriterInputGroupWithInputsDefaultInput(
-            NSArray<? extends AVAssetWriterInput> inputs, AVAssetWriterInput defaultInput);
+            @NotNull NSArray<? extends AVAssetWriterInput> inputs, @Nullable AVAssetWriterInput defaultInput);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -159,39 +164,48 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("mediaSelectionOptionsFromArray:filteredAndSortedAccordingToPreferredLanguages:")
     public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayFilteredAndSortedAccordingToPreferredLanguages(
-            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSArray<String> preferredLanguages);
+            @NotNull NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions,
+            @NotNull NSArray<String> preferredLanguages);
 
+    @NotNull
     @Generated
     @Selector("mediaSelectionOptionsFromArray:withLocale:")
     public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayWithLocale(
-            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSLocale locale);
+            @NotNull NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, @NotNull NSLocale locale);
 
+    @NotNull
     @Generated
     @Selector("mediaSelectionOptionsFromArray:withMediaCharacteristics:")
     public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayWithMediaCharacteristics(
-            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSArray<String> mediaCharacteristics);
+            @NotNull NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions,
+            @NotNull NSArray<String> mediaCharacteristics);
 
+    @NotNull
     @Generated
     @Selector("mediaSelectionOptionsFromArray:withoutMediaCharacteristics:")
     public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayWithoutMediaCharacteristics(
-            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSArray<String> mediaCharacteristics);
+            @NotNull NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions,
+            @NotNull NSArray<String> mediaCharacteristics);
 
     @Generated
     @Owned
     @Selector("new")
     public static native AVAssetWriterInputGroup new_objc();
 
+    @NotNull
     @Generated
     @Selector("playableMediaSelectionOptionsFromArray:")
     public static native NSArray<? extends AVMediaSelectionOption> playableMediaSelectionOptionsFromArray(
-            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions);
+            @NotNull NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -221,6 +235,7 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
      * 
      * The value of this property is a concrete instance of AVAssetWriterInput.
      */
+    @Nullable
     @Generated
     @Selector("defaultInput")
     public native AVAssetWriterInput defaultInput();
@@ -246,8 +261,8 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
      */
     @Generated
     @Selector("initWithInputs:defaultInput:")
-    public native AVAssetWriterInputGroup initWithInputsDefaultInput(NSArray<? extends AVAssetWriterInput> inputs,
-            AVAssetWriterInput defaultInput);
+    public native AVAssetWriterInputGroup initWithInputsDefaultInput(
+            @NotNull NSArray<? extends AVAssetWriterInput> inputs, @Nullable AVAssetWriterInput defaultInput);
 
     /**
      * [@property] inputs
@@ -256,6 +271,7 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
      * 
      * The value of this property is an NSArray containing concrete instances of AVAssetWriterInput.
      */
+    @NotNull
     @Generated
     @Selector("inputs")
     public native NSArray<? extends AVAssetWriterInput> inputs();

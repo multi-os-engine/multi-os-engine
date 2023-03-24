@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEFilterDataProvider
@@ -77,22 +79,25 @@ public class NEFilterDataProvider extends NEFilterProvider {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +132,10 @@ public class NEFilterDataProvider extends NEFilterProvider {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,9 +174,10 @@ public class NEFilterDataProvider extends NEFilterProvider {
      * 
      *         API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("handleInboundDataCompleteForFlow:")
-    public native NEFilterDataVerdict handleInboundDataCompleteForFlow(NEFilterFlow flow);
+    public native NEFilterDataVerdict handleInboundDataCompleteForFlow(@NotNull NEFilterFlow flow);
 
     /**
      * handleInboundDataFromFlow:readBytesStartOffset:readBytes:
@@ -188,10 +195,11 @@ public class NEFilterDataProvider extends NEFilterProvider {
      * 
      *         API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("handleInboundDataFromFlow:readBytesStartOffset:readBytes:")
-    public native NEFilterDataVerdict handleInboundDataFromFlowReadBytesStartOffsetReadBytes(NEFilterFlow flow,
-            @NUInt long offset, NSData readBytes);
+    public native NEFilterDataVerdict handleInboundDataFromFlowReadBytesStartOffsetReadBytes(@NotNull NEFilterFlow flow,
+            @NUInt long offset, @NotNull NSData readBytes);
 
     /**
      * handleNewFlow:
@@ -205,9 +213,10 @@ public class NEFilterDataProvider extends NEFilterProvider {
      * 
      *         API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("handleNewFlow:")
-    public native NEFilterNewFlowVerdict handleNewFlow(NEFilterFlow flow);
+    public native NEFilterNewFlowVerdict handleNewFlow(@NotNull NEFilterFlow flow);
 
     /**
      * handleOutboundDataCompleteForFlow:
@@ -220,9 +229,10 @@ public class NEFilterDataProvider extends NEFilterProvider {
      * 
      *         API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("handleOutboundDataCompleteForFlow:")
-    public native NEFilterDataVerdict handleOutboundDataCompleteForFlow(NEFilterFlow flow);
+    public native NEFilterDataVerdict handleOutboundDataCompleteForFlow(@NotNull NEFilterFlow flow);
 
     /**
      * handleOutboundDataFromFlow:readBytesStartOffset:readBytes:
@@ -240,10 +250,11 @@ public class NEFilterDataProvider extends NEFilterProvider {
      * 
      *         API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("handleOutboundDataFromFlow:readBytesStartOffset:readBytes:")
-    public native NEFilterDataVerdict handleOutboundDataFromFlowReadBytesStartOffsetReadBytes(NEFilterFlow flow,
-            @NUInt long offset, NSData readBytes);
+    public native NEFilterDataVerdict handleOutboundDataFromFlowReadBytesStartOffsetReadBytes(
+            @NotNull NEFilterFlow flow, @NUInt long offset, @NotNull NSData readBytes);
 
     /**
      * handleRemediationForFlow:
@@ -256,9 +267,10 @@ public class NEFilterDataProvider extends NEFilterProvider {
      * 
      *         API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("handleRemediationForFlow:")
-    public native NEFilterRemediationVerdict handleRemediationForFlow(NEFilterFlow flow);
+    public native NEFilterRemediationVerdict handleRemediationForFlow(@NotNull NEFilterFlow flow);
 
     /**
      * handleRulesChanged

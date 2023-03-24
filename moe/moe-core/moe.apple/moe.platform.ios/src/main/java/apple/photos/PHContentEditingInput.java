@@ -42,6 +42,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -76,22 +78,25 @@ public class PHContentEditingInput extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +131,10 @@ public class PHContentEditingInput extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,6 +167,7 @@ public class PHContentEditingInput extends NSObject {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("adjustmentData")
     public native PHAdjustmentData adjustmentData();
@@ -168,6 +175,7 @@ public class PHContentEditingInput extends NSObject {
     /**
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("audiovisualAsset")
     public native AVAsset audiovisualAsset();
@@ -178,6 +186,7 @@ public class PHContentEditingInput extends NSObject {
      * API-Since: 8.0
      * Deprecated-Since: 9.0
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("avAsset")
@@ -186,6 +195,7 @@ public class PHContentEditingInput extends NSObject {
     /**
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("creationDate")
     public native NSDate creationDate();
@@ -195,6 +205,7 @@ public class PHContentEditingInput extends NSObject {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("displaySizeImage")
     public native UIImage displaySizeImage();
@@ -211,6 +222,7 @@ public class PHContentEditingInput extends NSObject {
     /**
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("fullSizeImageURL")
     public native NSURL fullSizeImageURL();
@@ -224,6 +236,7 @@ public class PHContentEditingInput extends NSObject {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("livePhoto")
     public native PHLivePhoto livePhoto();
@@ -231,6 +244,7 @@ public class PHContentEditingInput extends NSObject {
     /**
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("location")
     public native CLLocation location();
@@ -254,6 +268,7 @@ public class PHContentEditingInput extends NSObject {
     /**
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("uniformTypeIdentifier")
     public native String uniformTypeIdentifier();

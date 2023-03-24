@@ -12,6 +12,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -26,6 +28,7 @@ public interface UITextPasteItem {
      * be applied to plain strings when they are provided.
      * You can use these to make your own attributed string if you want.
      */
+    @NotNull
     @Generated
     @Selector("defaultAttributes")
     NSDictionary<String, ?> defaultAttributes();
@@ -34,6 +37,7 @@ public interface UITextPasteItem {
      * This is the NSItemProvider for the item being pasted or dropped.
      * You should set a result for this item using one of the methods below.
      */
+    @NotNull
     @Generated
     @Selector("itemProvider")
     NSItemProvider itemProvider();
@@ -42,6 +46,7 @@ public interface UITextPasteItem {
      * This is nil for normal pastes, but might be filled with the
      * UIDragItem's localObject for pastes from drops.
      */
+    @Nullable
     @Generated
     @Selector("localObject")
     @MappedReturn(ObjCObjectMapper.class)
@@ -52,14 +57,14 @@ public interface UITextPasteItem {
      */
     @Generated
     @Selector("setAttachmentResult:")
-    void setAttachmentResult(NSTextAttachment textAttachment);
+    void setAttachmentResult(@NotNull NSTextAttachment textAttachment);
 
     /**
      * provide an attributed representation result from this NSItemProvider's data
      */
     @Generated
     @Selector("setAttributedStringResult:")
-    void setAttributedStringResult(NSAttributedString string);
+    void setAttributedStringResult(@NotNull NSAttributedString string);
 
     /**
      * Use this to indicate that want the default transformation to happen.
@@ -84,5 +89,5 @@ public interface UITextPasteItem {
      */
     @Generated
     @Selector("setStringResult:")
-    void setStringResult(String string);
+    void setStringResult(@NotNull String string);
 }

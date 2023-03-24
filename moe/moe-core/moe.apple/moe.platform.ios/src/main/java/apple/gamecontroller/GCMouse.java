@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Mice are available to an application that links to GameController.framework. There are 2 ways to access mice
@@ -62,22 +64,25 @@ public class GCMouse extends NSObject implements GCDevice {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -88,6 +93,7 @@ public class GCMouse extends NSObject implements GCDevice {
      * @see GCMouseDidBecomeCurrentNotification
      * @see GCMouseDidStopBeingCurrentNotification
      */
+    @Nullable
     @Generated
     @Selector("current")
     public static native GCMouse current();
@@ -100,6 +106,7 @@ public class GCMouse extends NSObject implements GCDevice {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("handlerQueue")
     public native NSObject handlerQueue();
@@ -130,9 +137,10 @@ public class GCMouse extends NSObject implements GCDevice {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Get a list of mice currently attached to the system
@@ -140,6 +148,7 @@ public class GCMouse extends NSObject implements GCDevice {
      * @see GCMouseDidConnectNotification
      * @see GCMouseDidDisconnectNotification
      */
+    @NotNull
     @Generated
     @Selector("mice")
     public static native NSArray<? extends GCMouse> mice();
@@ -148,6 +157,7 @@ public class GCMouse extends NSObject implements GCDevice {
      * Unlike GCController GCMouse supports only one input profile
      * Profile contains mouse buttons, scroll wheel and pointer delta.
      */
+    @Nullable
     @Generated
     @Selector("mouseInput")
     public native GCMouseInput mouseInput();
@@ -157,11 +167,13 @@ public class GCMouse extends NSObject implements GCDevice {
     @Selector("new")
     public static native GCMouse new_objc();
 
+    @NotNull
     @Deprecated
     @Generated
     @Selector("physicalInputProfile")
     public native GCPhysicalInputProfile physicalInputProfile();
 
+    @NotNull
     @Generated
     @Selector("productCategory")
     public native String productCategory();
@@ -176,7 +188,7 @@ public class GCMouse extends NSObject implements GCDevice {
 
     @Generated
     @Selector("setHandlerQueue:")
-    public native void setHandlerQueue(NSObject value);
+    public native void setHandlerQueue(@NotNull NSObject value);
 
     @Generated
     @Selector("setVersion:")
@@ -186,6 +198,7 @@ public class GCMouse extends NSObject implements GCDevice {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Nullable
     @Generated
     @Selector("vendorName")
     public native String vendorName();

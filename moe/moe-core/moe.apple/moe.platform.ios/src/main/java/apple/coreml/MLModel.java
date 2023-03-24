@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLModel
@@ -69,22 +71,25 @@ public class MLModel extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -109,11 +114,12 @@ public class MLModel extends NSObject {
      * @param modelURL URL file path to .mlmodel file you wish to compile
      * @param error    Any errors are surfaced here
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("compileModelAtURL:error:")
-    public static native NSURL compileModelAtURLError(NSURL modelURL,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSURL compileModelAtURLError(@NotNull NSURL modelURL,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("debugDescription")
@@ -149,13 +155,15 @@ public class MLModel extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * A model holds a description of its required inputs and expected outputs.
      */
+    @NotNull
     @Generated
     @Selector("modelDescription")
     public native MLModelDescription modelDescription();
@@ -165,8 +173,8 @@ public class MLModel extends NSObject {
      */
     @Generated
     @Selector("modelWithContentsOfURL:error:")
-    public static native MLModel modelWithContentsOfURLError(NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native MLModel modelWithContentsOfURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Owned
@@ -176,21 +184,24 @@ public class MLModel extends NSObject {
     /**
      * All models can predict on a specific set of input features.
      */
+    @Nullable
     @Generated
     @Selector("predictionFromFeatures:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native MLFeatureProvider predictionFromFeaturesError(@Mapped(ObjCObjectMapper.class) MLFeatureProvider input,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native MLFeatureProvider predictionFromFeaturesError(
+            @NotNull @Mapped(ObjCObjectMapper.class) MLFeatureProvider input,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Prediction with explicit options
      */
+    @Nullable
     @Generated
     @Selector("predictionFromFeatures:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public native MLFeatureProvider predictionFromFeaturesOptionsError(
-            @Mapped(ObjCObjectMapper.class) MLFeatureProvider input, MLPredictionOptions options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull @Mapped(ObjCObjectMapper.class) MLFeatureProvider input, @NotNull MLPredictionOptions options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -218,6 +229,7 @@ public class MLModel extends NSObject {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Selector("configuration")
     public native MLModelConfiguration configuration();
@@ -229,42 +241,47 @@ public class MLModel extends NSObject {
      */
     @Generated
     @Selector("modelWithContentsOfURL:configuration:error:")
-    public static native MLModel modelWithContentsOfURLConfigurationError(NSURL url, MLModelConfiguration configuration,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native MLModel modelWithContentsOfURLConfigurationError(@NotNull NSURL url,
+            @NotNull MLModelConfiguration configuration,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Provides value for the given parameter. Returns nil on error.
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("parameterValueForKey:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object parameterValueForKeyError(MLParameterKey key,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native Object parameterValueForKeyError(@NotNull MLParameterKey key,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Batch prediction without explicit options
      * 
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("predictionsFromBatch:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native MLBatchProvider predictionsFromBatchError(@Mapped(ObjCObjectMapper.class) MLBatchProvider inputBatch,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native MLBatchProvider predictionsFromBatchError(
+            @NotNull @Mapped(ObjCObjectMapper.class) MLBatchProvider inputBatch,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Batch prediction with explicit options
      * 
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("predictionsFromBatch:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public native MLBatchProvider predictionsFromBatchOptionsError(
-            @Mapped(ObjCObjectMapper.class) MLBatchProvider inputBatch, MLPredictionOptions options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull @Mapped(ObjCObjectMapper.class) MLBatchProvider inputBatch, @NotNull MLPredictionOptions options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Construct a model asynchronously given the location of its on-disk representation and configuration.
@@ -281,15 +298,15 @@ public class MLModel extends NSObject {
      */
     @Generated
     @Selector("loadContentsOfURL:configuration:completionHandler:")
-    public static native void loadContentsOfURLConfigurationCompletionHandler(NSURL url,
-            MLModelConfiguration configuration,
-            @ObjCBlock(name = "call_loadContentsOfURLConfigurationCompletionHandler") Block_loadContentsOfURLConfigurationCompletionHandler handler);
+    public static native void loadContentsOfURLConfigurationCompletionHandler(@NotNull NSURL url,
+            @NotNull MLModelConfiguration configuration,
+            @NotNull @ObjCBlock(name = "call_loadContentsOfURLConfigurationCompletionHandler") Block_loadContentsOfURLConfigurationCompletionHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadContentsOfURLConfigurationCompletionHandler {
         @Generated
-        void call_loadContentsOfURLConfigurationCompletionHandler(MLModel model, NSError error);
+        void call_loadContentsOfURLConfigurationCompletionHandler(@Nullable MLModel model, @Nullable NSError error);
     }
 
     /**
@@ -311,14 +328,14 @@ public class MLModel extends NSObject {
      */
     @Generated
     @Selector("compileModelAtURL:completionHandler:")
-    public static native void compileModelAtURLCompletionHandler(NSURL modelURL,
-            @ObjCBlock(name = "call_compileModelAtURLCompletionHandler") Block_compileModelAtURLCompletionHandler handler);
+    public static native void compileModelAtURLCompletionHandler(@NotNull NSURL modelURL,
+            @NotNull @ObjCBlock(name = "call_compileModelAtURLCompletionHandler") Block_compileModelAtURLCompletionHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_compileModelAtURLCompletionHandler {
         @Generated
-        void call_compileModelAtURLCompletionHandler(NSURL compiledModelURL, NSError error);
+        void call_compileModelAtURLCompletionHandler(@Nullable NSURL compiledModelURL, @Nullable NSError error);
     }
 
     /**
@@ -333,14 +350,14 @@ public class MLModel extends NSObject {
      */
     @Generated
     @Selector("loadModelAsset:configuration:completionHandler:")
-    public static native void loadModelAssetConfigurationCompletionHandler(MLModelAsset asset,
-            MLModelConfiguration configuration,
-            @ObjCBlock(name = "call_loadModelAssetConfigurationCompletionHandler") Block_loadModelAssetConfigurationCompletionHandler handler);
+    public static native void loadModelAssetConfigurationCompletionHandler(@NotNull MLModelAsset asset,
+            @NotNull MLModelConfiguration configuration,
+            @NotNull @ObjCBlock(name = "call_loadModelAssetConfigurationCompletionHandler") Block_loadModelAssetConfigurationCompletionHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadModelAssetConfigurationCompletionHandler {
         @Generated
-        void call_loadModelAssetConfigurationCompletionHandler(MLModel model, NSError error);
+        void call_loadModelAssetConfigurationCompletionHandler(@Nullable MLModel model, @Nullable NSError error);
     }
 }

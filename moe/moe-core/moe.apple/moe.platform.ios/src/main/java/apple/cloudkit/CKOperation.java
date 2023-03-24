@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -73,22 +75,25 @@ public class CKOperation extends NSOperation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +128,10 @@ public class CKOperation extends NSOperation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,6 +174,7 @@ public class CKOperation extends NSOperation {
      * Deprecated-Since: 11.0
      * Deprecated-Message: Use CKOperationConfiguration
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("container")
@@ -205,6 +212,7 @@ public class CKOperation extends NSOperation {
      * 
      * API-Since: 9.3
      */
+    @Nullable
     @Generated
     @Selector("longLivedOperationWasPersistedBlock")
     @ObjCBlock(name = "call_longLivedOperationWasPersistedBlock_ret")
@@ -218,6 +226,7 @@ public class CKOperation extends NSOperation {
      * 
      * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @Selector("operationID")
     public native String operationID();
@@ -240,7 +249,7 @@ public class CKOperation extends NSOperation {
     @Deprecated
     @Generated
     @Selector("setContainer:")
-    public native void setContainer(CKContainer value);
+    public native void setContainer(@Nullable CKContainer value);
 
     /**
      * This callback is called after a long lived operation has begun running and is persisted.
@@ -253,7 +262,7 @@ public class CKOperation extends NSOperation {
     @Generated
     @Selector("setLongLivedOperationWasPersistedBlock:")
     public native void setLongLivedOperationWasPersistedBlock(
-            @ObjCBlock(name = "call_setLongLivedOperationWasPersistedBlock") Block_setLongLivedOperationWasPersistedBlock value);
+            @Nullable @ObjCBlock(name = "call_setLongLivedOperationWasPersistedBlock") Block_setLongLivedOperationWasPersistedBlock value);
 
     /**
      * API-Since: 10.0
@@ -326,6 +335,7 @@ public class CKOperation extends NSOperation {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("group")
     public native CKOperationGroup group();
@@ -349,5 +359,5 @@ public class CKOperation extends NSOperation {
      */
     @Generated
     @Selector("setGroup:")
-    public native void setGroup(CKOperationGroup value);
+    public native void setGroup(@Nullable CKOperationGroup value);
 }

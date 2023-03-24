@@ -20,6 +20,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Each NSXPCListener instance has a private serial queue. This queue is used when sending the delegate messages.
@@ -58,28 +60,32 @@ public class NSXPCListener extends NSObject {
      * Create an anonymous listener connection. Other processes may connect to this listener by passing this listener
      * object's endpoint to NSXPCConnection's -initWithListenerEndpoint: method.
      */
+    @NotNull
     @Generated
     @Selector("anonymousListener")
     public static native NSXPCListener anonymousListener();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -92,6 +98,7 @@ public class NSXPCListener extends NSObject {
      * The delegate for the connection listener. If no delegate is set, all new connections will be rejected. See the
      * protocol for more information on how to implement it.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -106,6 +113,7 @@ public class NSXPCListener extends NSObject {
      * create a new connection to this NSXPCListener. The NSXPCListenerEndpoint uniquely names this listener object
      * across connections.
      */
+    @NotNull
     @Generated
     @Selector("endpoint")
     public native NSXPCListenerEndpoint endpoint();
@@ -144,9 +152,10 @@ public class NSXPCListener extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -179,6 +188,7 @@ public class NSXPCListener extends NSObject {
      * to service the listener as appropriate. This makes it ideal for use in your main() function. For more info on
      * XPCServices, please refer to the developer documentation.
      */
+    @NotNull
     @Generated
     @Selector("serviceListener")
     public static native NSXPCListener serviceListener();
@@ -189,14 +199,14 @@ public class NSXPCListener extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSXPCListenerDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) NSXPCListenerDelegate value);
 
     /**
      * The delegate for the connection listener. If no delegate is set, all new connections will be rejected. See the
      * protocol for more information on how to implement it.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) NSXPCListenerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSXPCListenerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -76,27 +78,31 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     @Generated
     @Selector("categoryWithIdentifier:actions:intentIdentifiers:options:")
-    public static native UNNotificationCategory categoryWithIdentifierActionsIntentIdentifiersOptions(String identifier,
-            NSArray<? extends UNNotificationAction> actions, NSArray<String> intentIdentifiers, @NUInt long options);
+    public static native UNNotificationCategory categoryWithIdentifierActionsIntentIdentifiersOptions(
+            @NotNull String identifier, @NotNull NSArray<? extends UNNotificationAction> actions,
+            @NotNull NSArray<String> intentIdentifiers, @NUInt long options);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +137,10 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,24 +175,27 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
     /**
      * The UNNotificationActions in the order they will be displayed.
      */
+    @NotNull
     @Generated
     @Selector("actions")
     public native NSArray<? extends UNNotificationAction> actions();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * The unique identifier for this category. The UNNotificationCategory's actions will be displayed on notifications
      * when the UNNotificationCategory's identifier matches the UNNotificationRequest's categoryIdentifier.
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -196,12 +206,13 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNNotificationCategory initWithCoder(NSCoder coder);
+    public native UNNotificationCategory initWithCoder(@NotNull NSCoder coder);
 
     /**
      * The intents supported support for notifications of this category. See <Intents/INIntentIdentifiers.h> for
      * possible values.
      */
+    @NotNull
     @Generated
     @Selector("intentIdentifiers")
     public native NSArray<String> intentIdentifiers();
@@ -223,14 +234,16 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
     @Generated
     @Selector("categoryWithIdentifier:actions:intentIdentifiers:hiddenPreviewsBodyPlaceholder:options:")
     public static native UNNotificationCategory categoryWithIdentifierActionsIntentIdentifiersHiddenPreviewsBodyPlaceholderOptions(
-            String identifier, NSArray<? extends UNNotificationAction> actions, NSArray<String> intentIdentifiers,
-            String hiddenPreviewsBodyPlaceholder, @NUInt long options);
+            @NotNull String identifier, @NotNull NSArray<? extends UNNotificationAction> actions,
+            @NotNull NSArray<String> intentIdentifiers, @NotNull String hiddenPreviewsBodyPlaceholder,
+            @NUInt long options);
 
     /**
      * The format string that will replace the notification body if previews are hidden.
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("hiddenPreviewsBodyPlaceholder")
     public native String hiddenPreviewsBodyPlaceholder();
@@ -245,6 +258,7 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Selector("categorySummaryFormat")
     public native String categorySummaryFormat();
@@ -255,6 +269,7 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
     @Generated
     @Selector("categoryWithIdentifier:actions:intentIdentifiers:hiddenPreviewsBodyPlaceholder:categorySummaryFormat:options:")
     public static native UNNotificationCategory categoryWithIdentifierActionsIntentIdentifiersHiddenPreviewsBodyPlaceholderCategorySummaryFormatOptions(
-            String identifier, NSArray<? extends UNNotificationAction> actions, NSArray<String> intentIdentifiers,
-            String hiddenPreviewsBodyPlaceholder, String categorySummaryFormat, @NUInt long options);
+            @NotNull String identifier, @NotNull NSArray<? extends UNNotificationAction> actions,
+            @NotNull NSArray<String> intentIdentifiers, @Nullable String hiddenPreviewsBodyPlaceholder,
+            @Nullable String categorySummaryFormat, @NUInt long options);
 }

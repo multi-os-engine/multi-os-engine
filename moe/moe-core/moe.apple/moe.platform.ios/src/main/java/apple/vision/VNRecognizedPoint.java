@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * VNRecognizedPoint
@@ -66,22 +68,25 @@ public class VNRecognizedPoint extends VNDetectedPoint {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -97,7 +102,7 @@ public class VNRecognizedPoint extends VNDetectedPoint {
     @Deprecated
     @Generated
     @Selector("distanceBetweenPoint:point:")
-    public static native double distanceBetweenPointPoint(VNPoint point1, VNPoint point2);
+    public static native double distanceBetweenPointPoint(@NotNull VNPoint point1, @NotNull VNPoint point2);
 
     @Generated
     @Selector("hash")
@@ -110,6 +115,7 @@ public class VNRecognizedPoint extends VNDetectedPoint {
      * The string is defined by the model that recognized the point. Usually these are technical labels that are not
      * localized and not meant to be used directly to be presented to an end user in the UI.
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -120,7 +126,7 @@ public class VNRecognizedPoint extends VNDetectedPoint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNRecognizedPoint initWithCoder(NSCoder coder);
+    public native VNRecognizedPoint initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithLocation:")
@@ -147,18 +153,20 @@ public class VNRecognizedPoint extends VNDetectedPoint {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native VNRecognizedPoint new_objc();
 
+    @NotNull
     @Generated
     @Selector("pointByApplyingVector:toPoint:")
-    public static native VNPoint pointByApplyingVectorToPoint(VNVector vector, VNPoint point);
+    public static native VNPoint pointByApplyingVectorToPoint(@NotNull VNVector vector, @NotNull VNPoint point);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -191,6 +199,7 @@ public class VNRecognizedPoint extends VNDetectedPoint {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("zeroPoint")
     public static native VNPoint zeroPoint();

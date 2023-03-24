@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNConvolutionDescriptor
@@ -83,22 +85,25 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -117,12 +122,13 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      *         API-Since: 10.0
      *         Deprecated-Since: 11.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("cnnConvolutionDescriptorWithKernelWidth:kernelHeight:inputFeatureChannels:outputFeatureChannels:neuronFilter:")
     public static native MPSCNNConvolutionDescriptor cnnConvolutionDescriptorWithKernelWidthKernelHeightInputFeatureChannelsOutputFeatureChannelsNeuronFilter(
             @NUInt long kernelWidth, @NUInt long kernelHeight, @NUInt long inputFeatureChannels,
-            @NUInt long outputFeatureChannels, MPSCNNNeuron neuronFilter);
+            @NUInt long outputFeatureChannels, @Nullable MPSCNNNeuron neuronFilter);
 
     @Generated
     @Selector("debugDescription")
@@ -154,9 +160,10 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -184,11 +191,12 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] groups
@@ -257,6 +265,7 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      * API-Since: 10.0
      * Deprecated-Since: 11.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("neuron")
@@ -334,7 +343,7 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     @Deprecated
     @Generated
     @Selector("setNeuron:")
-    public native void setNeuron(MPSCNNNeuron value);
+    public native void setNeuron(@Nullable MPSCNNNeuron value);
 
     /**
      * [@property] outputFeatureChannels
@@ -394,6 +403,7 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      * 
      *         API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("cnnConvolutionDescriptorWithKernelWidth:kernelHeight:inputFeatureChannels:outputFeatureChannels:")
     public static native MPSCNNConvolutionDescriptor cnnConvolutionDescriptorWithKernelWidthKernelHeightInputFeatureChannelsOutputFeatureChannels(
@@ -438,11 +448,11 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(@NotNull NSCoder aCoder);
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNConvolutionDescriptor initWithCoder(NSCoder aDecoder);
+    public native MPSCNNConvolutionDescriptor initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB method
@@ -535,8 +545,9 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      */
     @Generated
     @Selector("setBatchNormalizationParametersForInferenceWithMean:variance:gamma:beta:epsilon:")
-    public native void setBatchNormalizationParametersForInferenceWithMeanVarianceGammaBetaEpsilon(ConstFloatPtr mean,
-            ConstFloatPtr variance, ConstFloatPtr gamma, ConstFloatPtr beta, float epsilon);
+    public native void setBatchNormalizationParametersForInferenceWithMeanVarianceGammaBetaEpsilon(
+            @Nullable ConstFloatPtr mean, @Nullable ConstFloatPtr variance, @Nullable ConstFloatPtr gamma,
+            @Nullable ConstFloatPtr beta, float epsilon);
 
     /**
      * [@property] dilationRateX
@@ -605,7 +616,7 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     @Deprecated
     @Generated
     @Selector("setNeuronToPReLUWithParametersA:")
-    public native void setNeuronToPReLUWithParametersA(NSData A);
+    public native void setNeuronToPReLUWithParametersA(@NotNull NSData A);
 
     /**
      * Adds a neuron activation function to convolution descriptor.
@@ -663,6 +674,7 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      * 
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @Selector("fusedNeuronDescriptor")
     public native MPSNNNeuronDescriptor fusedNeuronDescriptor();
@@ -687,5 +699,5 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      */
     @Generated
     @Selector("setFusedNeuronDescriptor:")
-    public native void setFusedNeuronDescriptor(MPSNNNeuronDescriptor value);
+    public native void setFusedNeuronDescriptor(@NotNull MPSNNNeuronDescriptor value);
 }

@@ -50,6 +50,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGAffineTransform;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.0
@@ -95,26 +97,29 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      */
     @Generated
     @Selector("assetWithURL:")
-    public static native AVAsset assetWithURL(NSURL URL);
+    public static native AVAsset assetWithURL(@NotNull NSURL URL);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -149,9 +154,10 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -184,6 +190,7 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * 
      * API-Since: 4.3
      */
+    @NotNull
     @Generated
     @Selector("availableChapterLocales")
     public native NSArray<? extends NSLocale> availableChapterLocales();
@@ -194,6 +201,7 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @Selector("availableMediaCharacteristicsWithMediaSelectionOptions")
     public native NSArray<String> availableMediaCharacteristicsWithMediaSelectionOptions();
@@ -202,6 +210,7 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * Provides an NSArray of NSStrings, each representing a metadata format that's available to the asset (e.g. ID3,
      * iTunes metadata, etc.). Metadata formats are defined in AVMetadataFormat.h.
      */
+    @NotNull
     @Generated
     @Selector("availableMetadataFormats")
     public native NSArray<String> availableMetadataFormats();
@@ -265,11 +274,12 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      *                           user's list of preferred languages.
      * @return An NSArray of AVTimedMetadataGroup.
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("chapterMetadataGroupsBestMatchingPreferredLanguages:")
     public native NSArray<? extends AVTimedMetadataGroup> chapterMetadataGroupsBestMatchingPreferredLanguages(
-            NSArray<String> preferredLanguages);
+            @NotNull NSArray<String> preferredLanguages);
 
     /**
      * chapterMetadataGroupsWithTitleLocale:containingItemsWithCommonKeys:
@@ -300,11 +310,12 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      *                   AVMetadataCommonKeyArtwork is the only supported key for now.
      * @return An NSArray of AVTimedMetadataGroup.
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("chapterMetadataGroupsWithTitleLocale:containingItemsWithCommonKeys:")
     public native NSArray<? extends AVTimedMetadataGroup> chapterMetadataGroupsWithTitleLocaleContainingItemsWithCommonKeys(
-            NSLocale locale, NSArray<String> commonKeys);
+            @NotNull NSLocale locale, @Nullable NSArray<String> commonKeys);
 
     /**
      * Provides access to an array of AVMetadataItems for each common metadata key for which a value is available; items
@@ -312,6 +323,7 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:] and according to identifier via
      * +[AVMetadataItem metadataItemsFromArray:filteredByIdentifier:].
      */
+    @NotNull
     @Generated
     @Selector("commonMetadata")
     public native NSArray<? extends AVMetadataItem> commonMetadata();
@@ -330,11 +342,12 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     @Selector("containsFragments")
     public native boolean containsFragments();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Indicates the creation date of the asset as an AVMetadataItem. May be nil. If a creation date has been stored by
@@ -344,6 +357,7 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * 
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("creationDate")
     public native AVMetadataItem creationDate();
@@ -443,12 +457,13 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     @Generated
     @Selector("loadValuesAsynchronouslyForKeys:completionHandler:")
-    public native void loadValuesAsynchronouslyForKeysCompletionHandler(NSArray<String> keys,
-            @ObjCBlock(name = "call_loadValuesAsynchronouslyForKeysCompletionHandler") AVAsynchronousKeyValueLoading.Block_loadValuesAsynchronouslyForKeysCompletionHandler handler);
+    public native void loadValuesAsynchronouslyForKeysCompletionHandler(@NotNull NSArray<String> keys,
+            @Nullable @ObjCBlock(name = "call_loadValuesAsynchronouslyForKeysCompletionHandler") AVAsynchronousKeyValueLoading.Block_loadValuesAsynchronouslyForKeysCompletionHandler handler);
 
     /**
      * Provides access to the lyrics of the asset suitable for the current locale.
      */
+    @Nullable
     @Generated
     @Selector("lyrics")
     public native String lyrics();
@@ -485,10 +500,11 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      *                            media.
      * @return An instance of AVMediaSelectionGroup. May be nil.
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("mediaSelectionGroupForMediaCharacteristic:")
-    public native AVMediaSelectionGroup mediaSelectionGroupForMediaCharacteristic(String mediaCharacteristic);
+    public native AVMediaSelectionGroup mediaSelectionGroupForMediaCharacteristic(@NotNull String mediaCharacteristic);
 
     /**
      * Provides access to an array of AVMetadataItems for all metadata identifiers for which a value is available; items
@@ -498,6 +514,7 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("metadata")
     public native NSArray<? extends AVMetadataItem> metadata();
@@ -520,10 +537,11 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      *               The metadata format for which items are requested.
      * @return An NSArray containing AVMetadataItems; may be empty if there is no metadata of the specified format.
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("metadataForFormat:")
-    public native NSArray<? extends AVMetadataItem> metadataForFormat(String format);
+    public native NSArray<? extends AVMetadataItem> metadataForFormat(@NotNull String format);
 
     /**
      * The following property is deprecated. Instead, use the naturalSize and preferredTransform, as appropriate, of the
@@ -565,6 +583,7 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("preferredMediaSelection")
     public native AVMediaSelection preferredMediaSelection();
@@ -619,7 +638,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     @Generated
     @Selector("statusOfValueForKey:error:")
     @NInt
-    public native long statusOfValueForKeyError(String key, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native long statusOfValueForKeyError(@NotNull String key,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] trackGroups
@@ -631,6 +651,7 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("trackGroups")
     public native NSArray<? extends AVAssetTrackGroup> trackGroups();
@@ -649,6 +670,7 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      *                The trackID of the requested AVAssetTrack.
      * @return An instance of AVAssetTrack; may be nil if no track of the specified trackID is available.
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("trackWithTrackID:")
@@ -659,6 +681,7 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * 
      * Provides the array of AVAssetTracks contained by the asset
      */
+    @NotNull
     @Generated
     @Selector("tracks")
     public native NSArray<? extends AVAssetTrack> tracks();
@@ -678,10 +701,11 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      *                            characteristics are defined in AVMediaFormat.h.)
      * @return An NSArray of AVAssetTracks; may be empty if no tracks with the specified characteristic are available.
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("tracksWithMediaCharacteristic:")
-    public native NSArray<? extends AVAssetTrack> tracksWithMediaCharacteristic(String mediaCharacteristic);
+    public native NSArray<? extends AVAssetTrack> tracksWithMediaCharacteristic(@NotNull String mediaCharacteristic);
 
     /**
      * tracksWithMediaType:
@@ -698,10 +722,11 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      *                  AVMediaFormat.h.)
      * @return An NSArray of AVAssetTracks; may be empty if no tracks of the specified media type are available.
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("tracksWithMediaType:")
-    public native NSArray<? extends AVAssetTrack> tracksWithMediaType(String mediaType);
+    public native NSArray<? extends AVAssetTrack> tracksWithMediaType(@NotNull String mediaType);
 
     /**
      * API-Since: 4.0
@@ -719,6 +744,7 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("allMediaSelections")
     public native NSArray<? extends AVMediaSelection> allMediaSelections();
@@ -750,13 +776,13 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     @Generated
     @Selector("findUnusedTrackIDWithCompletionHandler:")
     public native void findUnusedTrackIDWithCompletionHandler(
-            @ObjCBlock(name = "call_findUnusedTrackIDWithCompletionHandler") Block_findUnusedTrackIDWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_findUnusedTrackIDWithCompletionHandler") Block_findUnusedTrackIDWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_findUnusedTrackIDWithCompletionHandler {
         @Generated
-        void call_findUnusedTrackIDWithCompletionHandler(int arg0, NSError arg1);
+        void call_findUnusedTrackIDWithCompletionHandler(int arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -793,15 +819,15 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     @Generated
     @Selector("loadChapterMetadataGroupsBestMatchingPreferredLanguages:completionHandler:")
     public native void loadChapterMetadataGroupsBestMatchingPreferredLanguagesCompletionHandler(
-            NSArray<String> preferredLanguages,
-            @ObjCBlock(name = "call_loadChapterMetadataGroupsBestMatchingPreferredLanguagesCompletionHandler") Block_loadChapterMetadataGroupsBestMatchingPreferredLanguagesCompletionHandler completionHandler);
+            @NotNull NSArray<String> preferredLanguages,
+            @NotNull @ObjCBlock(name = "call_loadChapterMetadataGroupsBestMatchingPreferredLanguagesCompletionHandler") Block_loadChapterMetadataGroupsBestMatchingPreferredLanguagesCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadChapterMetadataGroupsBestMatchingPreferredLanguagesCompletionHandler {
         @Generated
         void call_loadChapterMetadataGroupsBestMatchingPreferredLanguagesCompletionHandler(
-                NSArray<? extends AVTimedMetadataGroup> arg0, NSError arg1);
+                @Nullable NSArray<? extends AVTimedMetadataGroup> arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -838,15 +864,15 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     @Generated
     @Selector("loadChapterMetadataGroupsWithTitleLocale:containingItemsWithCommonKeys:completionHandler:")
     public native void loadChapterMetadataGroupsWithTitleLocaleContainingItemsWithCommonKeysCompletionHandler(
-            NSLocale locale, NSArray<String> commonKeys,
-            @ObjCBlock(name = "call_loadChapterMetadataGroupsWithTitleLocaleContainingItemsWithCommonKeysCompletionHandler") Block_loadChapterMetadataGroupsWithTitleLocaleContainingItemsWithCommonKeysCompletionHandler completionHandler);
+            @NotNull NSLocale locale, @NotNull NSArray<String> commonKeys,
+            @NotNull @ObjCBlock(name = "call_loadChapterMetadataGroupsWithTitleLocaleContainingItemsWithCommonKeysCompletionHandler") Block_loadChapterMetadataGroupsWithTitleLocaleContainingItemsWithCommonKeysCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadChapterMetadataGroupsWithTitleLocaleContainingItemsWithCommonKeysCompletionHandler {
         @Generated
         void call_loadChapterMetadataGroupsWithTitleLocaleContainingItemsWithCommonKeysCompletionHandler(
-                NSArray<? extends AVTimedMetadataGroup> arg0, NSError arg1);
+                @Nullable NSArray<? extends AVTimedMetadataGroup> arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -881,15 +907,16 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      */
     @Generated
     @Selector("loadMediaSelectionGroupForMediaCharacteristic:completionHandler:")
-    public native void loadMediaSelectionGroupForMediaCharacteristicCompletionHandler(String mediaCharacteristic,
-            @ObjCBlock(name = "call_loadMediaSelectionGroupForMediaCharacteristicCompletionHandler") Block_loadMediaSelectionGroupForMediaCharacteristicCompletionHandler completionHandler);
+    public native void loadMediaSelectionGroupForMediaCharacteristicCompletionHandler(
+            @NotNull String mediaCharacteristic,
+            @NotNull @ObjCBlock(name = "call_loadMediaSelectionGroupForMediaCharacteristicCompletionHandler") Block_loadMediaSelectionGroupForMediaCharacteristicCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadMediaSelectionGroupForMediaCharacteristicCompletionHandler {
         @Generated
-        void call_loadMediaSelectionGroupForMediaCharacteristicCompletionHandler(AVMediaSelectionGroup arg0,
-                NSError arg1);
+        void call_loadMediaSelectionGroupForMediaCharacteristicCompletionHandler(@Nullable AVMediaSelectionGroup arg0,
+                @Nullable NSError arg1);
     }
 
     /**
@@ -911,14 +938,15 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      */
     @Generated
     @Selector("loadMetadataForFormat:completionHandler:")
-    public native void loadMetadataForFormatCompletionHandler(String format,
-            @ObjCBlock(name = "call_loadMetadataForFormatCompletionHandler") Block_loadMetadataForFormatCompletionHandler completionHandler);
+    public native void loadMetadataForFormatCompletionHandler(@NotNull String format,
+            @NotNull @ObjCBlock(name = "call_loadMetadataForFormatCompletionHandler") Block_loadMetadataForFormatCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadMetadataForFormatCompletionHandler {
         @Generated
-        void call_loadMetadataForFormatCompletionHandler(NSArray<? extends AVMetadataItem> arg0, NSError arg1);
+        void call_loadMetadataForFormatCompletionHandler(@Nullable NSArray<? extends AVMetadataItem> arg0,
+                @Nullable NSError arg1);
     }
 
     /**
@@ -937,13 +965,13 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     @Generated
     @Selector("loadTrackWithTrackID:completionHandler:")
     public native void loadTrackWithTrackIDCompletionHandler(int trackID,
-            @ObjCBlock(name = "call_loadTrackWithTrackIDCompletionHandler") Block_loadTrackWithTrackIDCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_loadTrackWithTrackIDCompletionHandler") Block_loadTrackWithTrackIDCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadTrackWithTrackIDCompletionHandler {
         @Generated
-        void call_loadTrackWithTrackIDCompletionHandler(AVAssetTrack arg0, NSError arg1);
+        void call_loadTrackWithTrackIDCompletionHandler(@Nullable AVAssetTrack arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -963,15 +991,15 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      */
     @Generated
     @Selector("loadTracksWithMediaCharacteristic:completionHandler:")
-    public native void loadTracksWithMediaCharacteristicCompletionHandler(String mediaCharacteristic,
-            @ObjCBlock(name = "call_loadTracksWithMediaCharacteristicCompletionHandler") Block_loadTracksWithMediaCharacteristicCompletionHandler completionHandler);
+    public native void loadTracksWithMediaCharacteristicCompletionHandler(@NotNull String mediaCharacteristic,
+            @NotNull @ObjCBlock(name = "call_loadTracksWithMediaCharacteristicCompletionHandler") Block_loadTracksWithMediaCharacteristicCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadTracksWithMediaCharacteristicCompletionHandler {
         @Generated
-        void call_loadTracksWithMediaCharacteristicCompletionHandler(NSArray<? extends AVAssetTrack> arg0,
-                NSError arg1);
+        void call_loadTracksWithMediaCharacteristicCompletionHandler(@Nullable NSArray<? extends AVAssetTrack> arg0,
+                @Nullable NSError arg1);
     }
 
     /**
@@ -990,13 +1018,14 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      */
     @Generated
     @Selector("loadTracksWithMediaType:completionHandler:")
-    public native void loadTracksWithMediaTypeCompletionHandler(String mediaType,
-            @ObjCBlock(name = "call_loadTracksWithMediaTypeCompletionHandler") Block_loadTracksWithMediaTypeCompletionHandler completionHandler);
+    public native void loadTracksWithMediaTypeCompletionHandler(@NotNull String mediaType,
+            @NotNull @ObjCBlock(name = "call_loadTracksWithMediaTypeCompletionHandler") Block_loadTracksWithMediaTypeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadTracksWithMediaTypeCompletionHandler {
         @Generated
-        void call_loadTracksWithMediaTypeCompletionHandler(NSArray<? extends AVAssetTrack> arg0, NSError arg1);
+        void call_loadTracksWithMediaTypeCompletionHandler(@Nullable NSArray<? extends AVAssetTrack> arg0,
+                @Nullable NSError arg1);
     }
 }

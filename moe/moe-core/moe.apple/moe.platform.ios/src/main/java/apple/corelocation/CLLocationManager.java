@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CLLocationManager
@@ -95,22 +97,25 @@ public class CLLocationManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -179,7 +184,7 @@ public class CLLocationManager extends NSObject {
      */
     @Generated
     @Selector("isMonitoringAvailableForClass:")
-    public static native boolean isMonitoringAvailableForClass(Class regionClass);
+    public static native boolean isMonitoringAvailableForClass(@NotNull Class regionClass);
 
     /**
      * isRangingAvailable
@@ -198,9 +203,10 @@ public class CLLocationManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * locationServicesEnabled
@@ -371,6 +377,7 @@ public class CLLocationManager extends NSObject {
     @Selector("allowsBackgroundLocationUpdates")
     public native boolean allowsBackgroundLocationUpdates();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -439,6 +446,7 @@ public class CLLocationManager extends NSObject {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("heading")
     public native CLHeading heading();
@@ -496,6 +504,7 @@ public class CLLocationManager extends NSObject {
      * Discussion:
      * The last location received. Will be nil until a location has been received.
      */
+    @Nullable
     @Generated
     @Selector("location")
     public native CLLocation location();
@@ -539,6 +548,7 @@ public class CLLocationManager extends NSObject {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Selector("monitoredRegions")
     public native NSSet<? extends CLRegion> monitoredRegions();
@@ -570,6 +580,7 @@ public class CLLocationManager extends NSObject {
      * Deprecated-Since: 6.0
      * Deprecated-Message: Set the purpose string in Info.plist using key NSLocationUsageDescription
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("purpose")
@@ -585,6 +596,7 @@ public class CLLocationManager extends NSObject {
      * Deprecated-Since: 13.0
      * Deprecated-Message: Use -rangedBeaconConstraints
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("rangedRegions")
@@ -673,7 +685,7 @@ public class CLLocationManager extends NSObject {
      */
     @Generated
     @Selector("requestStateForRegion:")
-    public native void requestStateForRegion(CLRegion region);
+    public native void requestStateForRegion(@NotNull CLRegion region);
 
     /**
      * requestWhenInUseAuthorization
@@ -760,10 +772,10 @@ public class CLLocationManager extends NSObject {
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CLLocationManagerDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) CLLocationManagerDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) CLLocationManagerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CLLocationManagerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -860,7 +872,7 @@ public class CLLocationManager extends NSObject {
     @Generated
     @Deprecated
     @Selector("setPurpose:")
-    public native void setPurpose(String value);
+    public native void setPurpose(@Nullable String value);
 
     /**
      * startMonitoringForRegion:
@@ -878,7 +890,7 @@ public class CLLocationManager extends NSObject {
      */
     @Generated
     @Selector("startMonitoringForRegion:")
-    public native void startMonitoringForRegion(CLRegion region);
+    public native void startMonitoringForRegion(@NotNull CLRegion region);
 
     /**
      * startMonitoringForRegion:desiredAccuracy:
@@ -904,7 +916,7 @@ public class CLLocationManager extends NSObject {
     @Generated
     @Deprecated
     @Selector("startMonitoringForRegion:desiredAccuracy:")
-    public native void startMonitoringForRegionDesiredAccuracy(CLRegion region, double accuracy);
+    public native void startMonitoringForRegionDesiredAccuracy(@NotNull CLRegion region, double accuracy);
 
     /**
      * startMonitoringSignificantLocationChanges
@@ -953,7 +965,7 @@ public class CLLocationManager extends NSObject {
     @Deprecated
     @Generated
     @Selector("startRangingBeaconsInRegion:")
-    public native void startRangingBeaconsInRegion(CLBeaconRegion region);
+    public native void startRangingBeaconsInRegion(@NotNull CLBeaconRegion region);
 
     /**
      * startUpdatingHeading
@@ -991,7 +1003,7 @@ public class CLLocationManager extends NSObject {
      */
     @Generated
     @Selector("stopMonitoringForRegion:")
-    public native void stopMonitoringForRegion(CLRegion region);
+    public native void stopMonitoringForRegion(@NotNull CLRegion region);
 
     /**
      * stopMonitoringSignificantLocationChanges
@@ -1035,7 +1047,7 @@ public class CLLocationManager extends NSObject {
     @Deprecated
     @Generated
     @Selector("stopRangingBeaconsInRegion:")
-    public native void stopRangingBeaconsInRegion(CLBeaconRegion region);
+    public native void stopRangingBeaconsInRegion(@NotNull CLBeaconRegion region);
 
     /**
      * stopUpdatingHeading
@@ -1115,6 +1127,7 @@ public class CLLocationManager extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("rangedBeaconConstraints")
     public native NSSet<? extends CLBeaconIdentityConstraint> rangedBeaconConstraints();
@@ -1131,7 +1144,7 @@ public class CLLocationManager extends NSObject {
      */
     @Generated
     @Selector("startRangingBeaconsSatisfyingConstraint:")
-    public native void startRangingBeaconsSatisfyingConstraint(CLBeaconIdentityConstraint constraint);
+    public native void startRangingBeaconsSatisfyingConstraint(@NotNull CLBeaconIdentityConstraint constraint);
 
     /**
      * stopRangingBeaconsSatisfyingConstraint:
@@ -1143,7 +1156,7 @@ public class CLLocationManager extends NSObject {
      */
     @Generated
     @Selector("stopRangingBeaconsSatisfyingConstraint:")
-    public native void stopRangingBeaconsSatisfyingConstraint(CLBeaconIdentityConstraint constraint);
+    public native void stopRangingBeaconsSatisfyingConstraint(@NotNull CLBeaconIdentityConstraint constraint);
 
     /**
      * accuracyAuthorization
@@ -1207,7 +1220,7 @@ public class CLLocationManager extends NSObject {
      */
     @Generated
     @Selector("requestTemporaryFullAccuracyAuthorizationWithPurposeKey:")
-    public native void requestTemporaryFullAccuracyAuthorizationWithPurposeKey(String purposeKey);
+    public native void requestTemporaryFullAccuracyAuthorizationWithPurposeKey(@NotNull String purposeKey);
 
     /**
      * requestTemporaryFullAccuracyAuthorizationWithPurposeKey:completion:
@@ -1263,14 +1276,14 @@ public class CLLocationManager extends NSObject {
      */
     @Generated
     @Selector("requestTemporaryFullAccuracyAuthorizationWithPurposeKey:completion:")
-    public native void requestTemporaryFullAccuracyAuthorizationWithPurposeKeyCompletion(String purposeKey,
-            @ObjCBlock(name = "call_requestTemporaryFullAccuracyAuthorizationWithPurposeKeyCompletion") Block_requestTemporaryFullAccuracyAuthorizationWithPurposeKeyCompletion completion);
+    public native void requestTemporaryFullAccuracyAuthorizationWithPurposeKeyCompletion(@NotNull String purposeKey,
+            @Nullable @ObjCBlock(name = "call_requestTemporaryFullAccuracyAuthorizationWithPurposeKeyCompletion") Block_requestTemporaryFullAccuracyAuthorizationWithPurposeKeyCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestTemporaryFullAccuracyAuthorizationWithPurposeKeyCompletion {
         @Generated
-        void call_requestTemporaryFullAccuracyAuthorizationWithPurposeKeyCompletion(NSError arg0);
+        void call_requestTemporaryFullAccuracyAuthorizationWithPurposeKeyCompletion(@Nullable NSError arg0);
     }
 
     /**
@@ -1286,13 +1299,13 @@ public class CLLocationManager extends NSObject {
     @Generated
     @Selector("startMonitoringLocationPushesWithCompletion:")
     public native void startMonitoringLocationPushesWithCompletion(
-            @ObjCBlock(name = "call_startMonitoringLocationPushesWithCompletion") Block_startMonitoringLocationPushesWithCompletion completion);
+            @Nullable @ObjCBlock(name = "call_startMonitoringLocationPushesWithCompletion") Block_startMonitoringLocationPushesWithCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startMonitoringLocationPushesWithCompletion {
         @Generated
-        void call_startMonitoringLocationPushesWithCompletion(NSData token, NSError arg1);
+        void call_startMonitoringLocationPushesWithCompletion(@Nullable NSData token, @Nullable NSError arg1);
     }
 
     /**

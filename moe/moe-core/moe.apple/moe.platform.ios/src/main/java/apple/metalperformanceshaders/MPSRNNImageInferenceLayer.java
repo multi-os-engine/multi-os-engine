@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSRNNImageInferenceLayer
@@ -80,7 +82,7 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] bidirectionalCombineMode
@@ -96,18 +98,21 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,11 +127,12 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
      *         nil if the device is not supported. Devices must be
      *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:device:")
-    public native MPSRNNImageInferenceLayer copyWithZoneDevice(VoidPtr zone,
-            @Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSRNNImageInferenceLayer copyWithZoneDevice(@Nullable VoidPtr zone,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     @Generated
     @Selector("debugDescription")
@@ -177,9 +183,10 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
     @Generated
     @Selector("encodeBidirectionalSequenceToCommandBuffer:sourceSequence:destinationForwardImages:destinationBackwardImages:")
     public native void encodeBidirectionalSequenceToCommandBufferSourceSequenceDestinationForwardImagesDestinationBackwardImages(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, NSArray<? extends MPSImage> sourceSequence,
-            NSArray<? extends MPSImage> destinationForwardImages,
-            NSArray<? extends MPSImage> destinationBackwardImages);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull NSArray<? extends MPSImage> sourceSequence,
+            @NotNull NSArray<? extends MPSImage> destinationForwardImages,
+            @Nullable NSArray<? extends MPSImage> destinationBackwardImages);
 
     /**
      * Encode an MPSRNNImageInferenceLayer kernel (stack) for a sequence of inputs into a command buffer.
@@ -236,9 +243,10 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
     @Generated
     @Selector("encodeSequenceToCommandBuffer:sourceImages:destinationImages:recurrentInputState:recurrentOutputStates:")
     public native void encodeSequenceToCommandBufferSourceImagesDestinationImagesRecurrentInputStateRecurrentOutputStates(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, NSArray<? extends MPSImage> sourceImages,
-            NSArray<? extends MPSImage> destinationImages, MPSRNNRecurrentImageState recurrentInputState,
-            NSMutableArray<MPSRNNRecurrentImageState> recurrentOutputStates);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull NSArray<? extends MPSImage> sourceImages, @NotNull NSArray<? extends MPSImage> destinationImages,
+            @Nullable MPSRNNRecurrentImageState recurrentInputState,
+            @Nullable NSMutableArray<MPSRNNRecurrentImageState> recurrentOutputStates);
 
     @Generated
     @Selector("hash")
@@ -251,7 +259,7 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSRNNImageInferenceLayer initWithCoder(NSCoder aDecoder);
+    public native MPSRNNImageInferenceLayer initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
@@ -266,12 +274,12 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSRNNImageInferenceLayer initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSRNNImageInferenceLayer initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSRNNImageInferenceLayer initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSRNNImageInferenceLayer initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initializes a convolutional RNN kernel
@@ -285,7 +293,7 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
     @Generated
     @Selector("initWithDevice:rnnDescriptor:")
     public native MPSRNNImageInferenceLayer initWithDeviceRnnDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, MPSRNNDescriptor rnnDescriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MPSRNNDescriptor rnnDescriptor);
 
     /**
      * Initializes a kernel that implements a stack of convolutional RNN layers
@@ -301,7 +309,8 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
     @Generated
     @Selector("initWithDevice:rnnDescriptors:")
     public native MPSRNNImageInferenceLayer initWithDeviceRnnDescriptors(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, NSArray<? extends MPSRNNDescriptor> rnnDescriptors);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull NSArray<? extends MPSRNNDescriptor> rnnDescriptors);
 
     /**
      * [@property] inputFeatureChannels
@@ -330,9 +339,10 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

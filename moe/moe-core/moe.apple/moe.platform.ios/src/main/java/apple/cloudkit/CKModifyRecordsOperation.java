@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -74,22 +76,25 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +129,10 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -171,6 +177,7 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * This property is kept by the server to identify the last known request from this client.
      * Multiple requests from the client with the same change token will be ignored by the server.
      */
+    @Nullable
     @Generated
     @Selector("clientChangeTokenData")
     public native NSData clientChangeTokenData();
@@ -181,8 +188,8 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
 
     @Generated
     @Selector("initWithRecordsToSave:recordIDsToDelete:")
-    public native CKModifyRecordsOperation initWithRecordsToSaveRecordIDsToDelete(NSArray<? extends CKRecord> records,
-            NSArray<? extends CKRecordID> recordIDs);
+    public native CKModifyRecordsOperation initWithRecordsToSaveRecordIDsToDelete(
+            @Nullable NSArray<? extends CKRecord> records, @Nullable NSArray<? extends CKRecordID> recordIDs);
 
     /**
      * This block is called when the operation completes.
@@ -196,6 +203,7 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * processing the side effects of those changes.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
+    @Nullable
     @Generated
     @Selector("modifyRecordsCompletionBlock")
     @ObjCBlock(name = "call_modifyRecordsCompletionBlock_ret")
@@ -210,6 +218,7 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * API-Since: 8.0
      * Deprecated-Since: 15.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("perRecordCompletionBlock")
@@ -224,15 +233,18 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * It is possible for progress to regress when a retry is automatically triggered.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
+    @Nullable
     @Generated
     @Selector("perRecordProgressBlock")
     @ObjCBlock(name = "call_perRecordProgressBlock_ret")
     public native Block_perRecordProgressBlock_ret perRecordProgressBlock();
 
+    @Nullable
     @Generated
     @Selector("recordIDsToDelete")
     public native NSArray<? extends CKRecordID> recordIDsToDelete();
 
+    @Nullable
     @Generated
     @Selector("recordsToSave")
     public native NSArray<? extends CKRecord> recordsToSave();
@@ -264,7 +276,7 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      */
     @Generated
     @Selector("setClientChangeTokenData:")
-    public native void setClientChangeTokenData(NSData value);
+    public native void setClientChangeTokenData(@Nullable NSData value);
 
     /**
      * This block is called when the operation completes.
@@ -281,7 +293,7 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
     @Generated
     @Selector("setModifyRecordsCompletionBlock:")
     public native void setModifyRecordsCompletionBlock(
-            @ObjCBlock(name = "call_setModifyRecordsCompletionBlock") Block_setModifyRecordsCompletionBlock value);
+            @Nullable @ObjCBlock(name = "call_setModifyRecordsCompletionBlock") Block_setModifyRecordsCompletionBlock value);
 
     /**
      * Called on success or failure for each record.
@@ -296,7 +308,7 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
     @Generated
     @Selector("setPerRecordCompletionBlock:")
     public native void setPerRecordCompletionBlock(
-            @ObjCBlock(name = "call_setPerRecordCompletionBlock") Block_setPerRecordCompletionBlock value);
+            @Nullable @ObjCBlock(name = "call_setPerRecordCompletionBlock") Block_setPerRecordCompletionBlock value);
 
     /**
      * Indicates the progress for each record.
@@ -309,15 +321,15 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
     @Generated
     @Selector("setPerRecordProgressBlock:")
     public native void setPerRecordProgressBlock(
-            @ObjCBlock(name = "call_setPerRecordProgressBlock") Block_setPerRecordProgressBlock value);
+            @Nullable @ObjCBlock(name = "call_setPerRecordProgressBlock") Block_setPerRecordProgressBlock value);
 
     @Generated
     @Selector("setRecordIDsToDelete:")
-    public native void setRecordIDsToDelete(NSArray<? extends CKRecordID> value);
+    public native void setRecordIDsToDelete(@Nullable NSArray<? extends CKRecordID> value);
 
     @Generated
     @Selector("setRecordsToSave:")
-    public native void setRecordsToSave(NSArray<? extends CKRecord> value);
+    public native void setRecordsToSave(@Nullable NSArray<? extends CKRecord> value);
 
     /**
      * The default value is @c CKRecordSaveIfServerRecordUnchanged.
@@ -330,44 +342,44 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
     @Generated
     public interface Block_modifyRecordsCompletionBlock_ret {
         @Generated
-        void call_modifyRecordsCompletionBlock_ret(NSArray<? extends CKRecord> arg0, NSArray<? extends CKRecordID> arg1,
-                NSError arg2);
+        void call_modifyRecordsCompletionBlock_ret(@Nullable NSArray<? extends CKRecord> arg0,
+                @Nullable NSArray<? extends CKRecordID> arg1, @Nullable NSError arg2);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_perRecordCompletionBlock_ret {
         @Generated
-        void call_perRecordCompletionBlock_ret(CKRecord arg0, NSError arg1);
+        void call_perRecordCompletionBlock_ret(@NotNull CKRecord arg0, @Nullable NSError arg1);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_perRecordProgressBlock_ret {
         @Generated
-        void call_perRecordProgressBlock_ret(CKRecord arg0, double arg1);
+        void call_perRecordProgressBlock_ret(@NotNull CKRecord arg0, double arg1);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setModifyRecordsCompletionBlock {
         @Generated
-        void call_setModifyRecordsCompletionBlock(NSArray<? extends CKRecord> arg0, NSArray<? extends CKRecordID> arg1,
-                NSError arg2);
+        void call_setModifyRecordsCompletionBlock(@Nullable NSArray<? extends CKRecord> arg0,
+                @Nullable NSArray<? extends CKRecordID> arg1, @Nullable NSError arg2);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setPerRecordCompletionBlock {
         @Generated
-        void call_setPerRecordCompletionBlock(CKRecord arg0, NSError arg1);
+        void call_setPerRecordCompletionBlock(@NotNull CKRecord arg0, @Nullable NSError arg1);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setPerRecordProgressBlock {
         @Generated
-        void call_setPerRecordProgressBlock(CKRecord arg0, double arg1);
+        void call_setPerRecordProgressBlock(@NotNull CKRecord arg0, double arg1);
     }
 
     /**
@@ -377,6 +389,7 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("perRecordDeleteBlock")
     @ObjCBlock(name = "call_perRecordDeleteBlock_ret")
@@ -386,7 +399,7 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
     @Generated
     public interface Block_perRecordDeleteBlock_ret {
         @Generated
-        void call_perRecordDeleteBlock_ret(CKRecordID arg0, NSError arg1);
+        void call_perRecordDeleteBlock_ret(@NotNull CKRecordID arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -399,6 +412,7 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("perRecordSaveBlock")
     @ObjCBlock(name = "call_perRecordSaveBlock_ret")
@@ -408,7 +422,7 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
     @Generated
     public interface Block_perRecordSaveBlock_ret {
         @Generated
-        void call_perRecordSaveBlock_ret(CKRecordID arg0, CKRecord arg1, NSError arg2);
+        void call_perRecordSaveBlock_ret(@NotNull CKRecordID arg0, @Nullable CKRecord arg1, @Nullable NSError arg2);
     }
 
     /**
@@ -421,13 +435,13 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
     @Generated
     @Selector("setPerRecordDeleteBlock:")
     public native void setPerRecordDeleteBlock(
-            @ObjCBlock(name = "call_setPerRecordDeleteBlock") Block_setPerRecordDeleteBlock value);
+            @Nullable @ObjCBlock(name = "call_setPerRecordDeleteBlock") Block_setPerRecordDeleteBlock value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setPerRecordDeleteBlock {
         @Generated
-        void call_setPerRecordDeleteBlock(CKRecordID arg0, NSError arg1);
+        void call_setPerRecordDeleteBlock(@NotNull CKRecordID arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -443,12 +457,12 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
     @Generated
     @Selector("setPerRecordSaveBlock:")
     public native void setPerRecordSaveBlock(
-            @ObjCBlock(name = "call_setPerRecordSaveBlock") Block_setPerRecordSaveBlock value);
+            @Nullable @ObjCBlock(name = "call_setPerRecordSaveBlock") Block_setPerRecordSaveBlock value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setPerRecordSaveBlock {
         @Generated
-        void call_setPerRecordSaveBlock(CKRecordID arg0, CKRecord arg1, NSError arg2);
+        void call_setPerRecordSaveBlock(@NotNull CKRecordID arg0, @Nullable CKRecord arg1, @Nullable NSError arg2);
     }
 }

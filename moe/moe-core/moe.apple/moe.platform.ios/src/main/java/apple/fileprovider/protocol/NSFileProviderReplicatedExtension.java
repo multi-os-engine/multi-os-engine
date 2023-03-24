@@ -17,6 +17,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * FileProvider extension for which the system replicates the content on disk.
@@ -214,20 +216,21 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
      * will call `cancel` on the progress. The extension is then expected to quickly call the completion
      * handler.
      */
+    @NotNull
     @Generated
     @Selector("createItemBasedOnTemplate:fields:contents:options:request:completionHandler:")
     NSProgress createItemBasedOnTemplateFieldsContentsOptionsRequestCompletionHandler(
-            @Mapped(ObjCObjectMapper.class) NSFileProviderItem itemTemplate, @NUInt long fields, NSURL url,
-            @NUInt long options, NSFileProviderRequest request,
-            @ObjCBlock(name = "call_createItemBasedOnTemplateFieldsContentsOptionsRequestCompletionHandler") Block_createItemBasedOnTemplateFieldsContentsOptionsRequestCompletionHandler completionHandler);
+            @NotNull @Mapped(ObjCObjectMapper.class) NSFileProviderItem itemTemplate, @NUInt long fields,
+            @Nullable NSURL url, @NUInt long options, @NotNull NSFileProviderRequest request,
+            @NotNull @ObjCBlock(name = "call_createItemBasedOnTemplateFieldsContentsOptionsRequestCompletionHandler") Block_createItemBasedOnTemplateFieldsContentsOptionsRequestCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_createItemBasedOnTemplateFieldsContentsOptionsRequestCompletionHandler {
         @Generated
         void call_createItemBasedOnTemplateFieldsContentsOptionsRequestCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object createdItem, @NUInt long stillPendingFields,
-                boolean shouldFetchContent, NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) Object createdItem, @NUInt long stillPendingFields,
+                boolean shouldFetchContent, @Nullable NSError error);
     }
 
     /**
@@ -312,17 +315,18 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
      * will call `cancel` on the progress. The extension is then expected to quickly call the completion
      * handler.
      */
+    @NotNull
     @Generated
     @Selector("deleteItemWithIdentifier:baseVersion:options:request:completionHandler:")
-    NSProgress deleteItemWithIdentifierBaseVersionOptionsRequestCompletionHandler(String identifier,
-            NSFileProviderItemVersion version, @NUInt long options, NSFileProviderRequest request,
-            @ObjCBlock(name = "call_deleteItemWithIdentifierBaseVersionOptionsRequestCompletionHandler") Block_deleteItemWithIdentifierBaseVersionOptionsRequestCompletionHandler completionHandler);
+    NSProgress deleteItemWithIdentifierBaseVersionOptionsRequestCompletionHandler(@NotNull String identifier,
+            @NotNull NSFileProviderItemVersion version, @NUInt long options, @NotNull NSFileProviderRequest request,
+            @NotNull @ObjCBlock(name = "call_deleteItemWithIdentifierBaseVersionOptionsRequestCompletionHandler") Block_deleteItemWithIdentifierBaseVersionOptionsRequestCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteItemWithIdentifierBaseVersionOptionsRequestCompletionHandler {
         @Generated
-        void call_deleteItemWithIdentifierBaseVersionOptionsRequestCompletionHandler(NSError arg0);
+        void call_deleteItemWithIdentifierBaseVersionOptionsRequestCompletionHandler(@Nullable NSError arg0);
     }
 
     /**
@@ -424,18 +428,19 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
      * will call `cancel` on the progress. The extension is then expected to quickly call the completion
      * handler.
      */
+    @NotNull
     @Generated
     @Selector("fetchContentsForItemWithIdentifier:version:request:completionHandler:")
-    NSProgress fetchContentsForItemWithIdentifierVersionRequestCompletionHandler(String itemIdentifier,
-            NSFileProviderItemVersion requestedVersion, NSFileProviderRequest request,
-            @ObjCBlock(name = "call_fetchContentsForItemWithIdentifierVersionRequestCompletionHandler") Block_fetchContentsForItemWithIdentifierVersionRequestCompletionHandler completionHandler);
+    NSProgress fetchContentsForItemWithIdentifierVersionRequestCompletionHandler(@NotNull String itemIdentifier,
+            @Nullable NSFileProviderItemVersion requestedVersion, @NotNull NSFileProviderRequest request,
+            @NotNull @ObjCBlock(name = "call_fetchContentsForItemWithIdentifierVersionRequestCompletionHandler") Block_fetchContentsForItemWithIdentifierVersionRequestCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchContentsForItemWithIdentifierVersionRequestCompletionHandler {
         @Generated
-        void call_fetchContentsForItemWithIdentifierVersionRequestCompletionHandler(NSURL fileContents,
-                @Mapped(ObjCObjectMapper.class) Object item, NSError error);
+        void call_fetchContentsForItemWithIdentifierVersionRequestCompletionHandler(@Nullable NSURL fileContents,
+                @Nullable @Mapped(ObjCObjectMapper.class) Object item, @Nullable NSError error);
     }
 
     /**
@@ -471,7 +476,7 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
     @IsOptional
     @Selector("importDidFinishWithCompletionHandler:")
     default void importDidFinishWithCompletionHandler(
-            @ObjCBlock(name = "call_importDidFinishWithCompletionHandler") Block_importDidFinishWithCompletionHandler completionHandler) {
+            @NotNull @ObjCBlock(name = "call_importDidFinishWithCompletionHandler") Block_importDidFinishWithCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -485,9 +490,10 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
     /**
      * Create a new instance of the replicated provider for the specified domain.
      */
+    @NotNull
     @Generated
     @Selector("initWithDomain:")
-    NSFileProviderReplicatedExtension initWithDomain(NSFileProviderDomain domain);
+    NSFileProviderReplicatedExtension initWithDomain(@NotNull NSFileProviderDomain domain);
 
     /**
      * Called before the instance is discarded.
@@ -544,16 +550,19 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
      * operation takes too much time. The extension is then expected to quickly call the completion
      * handler.
      */
+    @NotNull
     @Generated
     @Selector("itemForIdentifier:request:completionHandler:")
-    NSProgress itemForIdentifierRequestCompletionHandler(String identifier, NSFileProviderRequest request,
-            @ObjCBlock(name = "call_itemForIdentifierRequestCompletionHandler") Block_itemForIdentifierRequestCompletionHandler completionHandler);
+    NSProgress itemForIdentifierRequestCompletionHandler(@NotNull String identifier,
+            @NotNull NSFileProviderRequest request,
+            @NotNull @ObjCBlock(name = "call_itemForIdentifierRequestCompletionHandler") Block_itemForIdentifierRequestCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_itemForIdentifierRequestCompletionHandler {
         @Generated
-        void call_itemForIdentifierRequestCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0, NSError arg1);
+        void call_itemForIdentifierRequestCompletionHandler(@Nullable @Mapped(ObjCObjectMapper.class) Object arg0,
+                @Nullable NSError arg1);
     }
 
     /**
@@ -616,7 +625,7 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
     @IsOptional
     @Selector("materializedItemsDidChangeWithCompletionHandler:")
     default void materializedItemsDidChangeWithCompletionHandler(
-            @ObjCBlock(name = "call_materializedItemsDidChangeWithCompletionHandler") Block_materializedItemsDidChangeWithCompletionHandler completionHandler) {
+            @NotNull @ObjCBlock(name = "call_materializedItemsDidChangeWithCompletionHandler") Block_materializedItemsDidChangeWithCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -792,20 +801,22 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
      * will call `cancel` on the progress. The extension is then expected to quickly call the completion
      * handler.
      */
+    @NotNull
     @Generated
     @Selector("modifyItem:baseVersion:changedFields:contents:options:request:completionHandler:")
     NSProgress modifyItemBaseVersionChangedFieldsContentsOptionsRequestCompletionHandler(
-            @Mapped(ObjCObjectMapper.class) NSFileProviderItem item, NSFileProviderItemVersion version,
-            @NUInt long changedFields, NSURL newContents, @NUInt long options, NSFileProviderRequest request,
-            @ObjCBlock(name = "call_modifyItemBaseVersionChangedFieldsContentsOptionsRequestCompletionHandler") Block_modifyItemBaseVersionChangedFieldsContentsOptionsRequestCompletionHandler completionHandler);
+            @NotNull @Mapped(ObjCObjectMapper.class) NSFileProviderItem item,
+            @NotNull NSFileProviderItemVersion version, @NUInt long changedFields, @Nullable NSURL newContents,
+            @NUInt long options, @NotNull NSFileProviderRequest request,
+            @NotNull @ObjCBlock(name = "call_modifyItemBaseVersionChangedFieldsContentsOptionsRequestCompletionHandler") Block_modifyItemBaseVersionChangedFieldsContentsOptionsRequestCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_modifyItemBaseVersionChangedFieldsContentsOptionsRequestCompletionHandler {
         @Generated
         void call_modifyItemBaseVersionChangedFieldsContentsOptionsRequestCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object item, @NUInt long stillPendingFields, boolean shouldFetchContent,
-                NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) Object item, @NUInt long stillPendingFields,
+                boolean shouldFetchContent, @Nullable NSError error);
     }
 
     /**
@@ -861,7 +872,7 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
     @IsOptional
     @Selector("pendingItemsDidChangeWithCompletionHandler:")
     default void pendingItemsDidChangeWithCompletionHandler(
-            @ObjCBlock(name = "call_pendingItemsDidChangeWithCompletionHandler") Block_pendingItemsDidChangeWithCompletionHandler completionHandler) {
+            @NotNull @ObjCBlock(name = "call_pendingItemsDidChangeWithCompletionHandler") Block_pendingItemsDidChangeWithCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 

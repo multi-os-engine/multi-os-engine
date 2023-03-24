@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNPadNode
@@ -71,22 +73,25 @@ public class MPSNNPadNode extends MPSNNFilterNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,7 +135,7 @@ public class MPSNNPadNode extends MPSNNFilterNode {
      */
     @Generated
     @Selector("initWithSource:paddingSizeBefore:paddingSizeAfter:edgeMode:")
-    public native MPSNNPadNode initWithSourcePaddingSizeBeforePaddingSizeAfterEdgeMode(MPSNNImageNode source,
+    public native MPSNNPadNode initWithSourcePaddingSizeBeforePaddingSizeAfterEdgeMode(@NotNull MPSNNImageNode source,
             @ByValue MPSImageCoordinate paddingSizeBefore, @ByValue MPSImageCoordinate paddingSizeAfter,
             @NUInt long edgeMode);
 
@@ -151,9 +156,10 @@ public class MPSNNPadNode extends MPSNNFilterNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -173,9 +179,9 @@ public class MPSNNPadNode extends MPSNNFilterNode {
      */
     @Generated
     @Selector("nodeWithSource:paddingSizeBefore:paddingSizeAfter:edgeMode:")
-    public static native MPSNNPadNode nodeWithSourcePaddingSizeBeforePaddingSizeAfterEdgeMode(MPSNNImageNode source,
-            @ByValue MPSImageCoordinate paddingSizeBefore, @ByValue MPSImageCoordinate paddingSizeAfter,
-            @NUInt long edgeMode);
+    public static native MPSNNPadNode nodeWithSourcePaddingSizeBeforePaddingSizeAfterEdgeMode(
+            @NotNull MPSNNImageNode source, @ByValue MPSImageCoordinate paddingSizeBefore,
+            @ByValue MPSImageCoordinate paddingSizeAfter, @NUInt long edgeMode);
 
     @Generated
     @Selector("resolveClassMethod:")

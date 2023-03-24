@@ -46,6 +46,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.0
@@ -80,22 +82,25 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +135,10 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * API-Since: 3.0
@@ -140,11 +146,12 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
      * Deprecated-Message: Use -metadataForPersistentStoreOfType:URL:options:error: and pass in an options dictionary
      * matching addPersistentStoreWithType
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("metadataForPersistentStoreOfType:URL:error:")
-    public static native NSDictionary<String, ?> metadataForPersistentStoreOfTypeURLError(String storeType, NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSDictionary<String, ?> metadataForPersistentStoreOfTypeURLError(@Nullable String storeType,
+            @NotNull NSURL url, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Allows to access the metadata stored in a persistent store without warming up a CoreData stack; the guaranteed
@@ -153,10 +160,12 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("metadataForPersistentStoreOfType:URL:options:error:")
-    public static native NSDictionary<String, ?> metadataForPersistentStoreOfTypeURLOptionsError(String storeType,
-            NSURL url, NSDictionary<?, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSDictionary<String, ?> metadataForPersistentStoreOfTypeURLOptionsError(
+            @NotNull String storeType, @NotNull NSURL url, @Nullable NSDictionary<?, ?> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Owned
@@ -172,7 +181,7 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
      */
     @Generated
     @Selector("registerStoreClass:forStoreType:")
-    public static native void registerStoreClassForStoreType(Class storeClass, String storeType);
+    public static native void registerStoreClassForStoreType(@Nullable Class storeClass, @NotNull String storeType);
 
     /**
      * Returns a dictionary of the registered store types: the keys are the store type strings and the values are the
@@ -180,6 +189,7 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("registeredStoreTypes")
     public static native NSDictionary<String, ? extends NSValue> registeredStoreTypes();
@@ -197,8 +207,8 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @Deprecated
     @Generated
     @Selector("removeUbiquitousContentAndPersistentStoreAtURL:options:error:")
-    public static native boolean removeUbiquitousContentAndPersistentStoreAtURLOptionsError(NSURL storeURL,
-            NSDictionary<?, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native boolean removeUbiquitousContentAndPersistentStoreAtURLOptionsError(@NotNull NSURL storeURL,
+            @Nullable NSDictionary<?, ?> options, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -217,17 +227,18 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @Generated
     @Deprecated
     @Selector("setMetadata:forPersistentStoreOfType:URL:error:")
-    public static native boolean setMetadataForPersistentStoreOfTypeURLError(NSDictionary<String, ?> metadata,
-            String storeType, NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native boolean setMetadataForPersistentStoreOfTypeURLError(@Nullable NSDictionary<String, ?> metadata,
+            @Nullable String storeType, @NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 7.0
      */
     @Generated
     @Selector("setMetadata:forPersistentStoreOfType:URL:options:error:")
-    public static native boolean setMetadataForPersistentStoreOfTypeURLOptionsError(NSDictionary<String, ?> metadata,
-            String storeType, NSURL url, NSDictionary<?, ?> options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native boolean setMetadataForPersistentStoreOfTypeURLOptionsError(
+            @Nullable NSDictionary<String, ?> metadata, @NotNull String storeType, @NotNull NSURL url,
+            @Nullable NSDictionary<?, ?> options, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("setVersion:")
@@ -242,28 +253,31 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("URLForPersistentStore:")
-    public native NSURL URLForPersistentStore(NSPersistentStore store);
+    public native NSURL URLForPersistentStore(@NotNull NSPersistentStore store);
 
     /**
      * API-Since: 10.0
      */
     @Generated
     @Selector("addPersistentStoreWithDescription:completionHandler:")
-    public native void addPersistentStoreWithDescriptionCompletionHandler(NSPersistentStoreDescription storeDescription,
-            @ObjCBlock(name = "call_addPersistentStoreWithDescriptionCompletionHandler") Block_addPersistentStoreWithDescriptionCompletionHandler block);
+    public native void addPersistentStoreWithDescriptionCompletionHandler(
+            @NotNull NSPersistentStoreDescription storeDescription,
+            @NotNull @ObjCBlock(name = "call_addPersistentStoreWithDescriptionCompletionHandler") Block_addPersistentStoreWithDescriptionCompletionHandler block);
 
     /**
      * Adds the store at the specified URL (of the specified type) to the coordinator with the model configuration and
      * options. The configuration can be nil -- then it's the complete model; storeURL is usually the file location of
      * the database
      */
+    @Nullable
     @Generated
     @Selector("addPersistentStoreWithType:configuration:URL:options:error:")
-    public native NSPersistentStore addPersistentStoreWithTypeConfigurationURLOptionsError(String storeType,
-            String configuration, NSURL storeURL, NSDictionary<?, ?> options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSPersistentStore addPersistentStoreWithTypeConfigurationURLOptionsError(@NotNull String storeType,
+            @Nullable String configuration, @Nullable NSURL storeURL, @Nullable NSDictionary<?, ?> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * delete or truncate the target persistent store in accordance with the store class's requirements. It is important
@@ -275,8 +289,8 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
      */
     @Generated
     @Selector("destroyPersistentStoreAtURL:withType:options:error:")
-    public native boolean destroyPersistentStoreAtURLWithTypeOptionsError(NSURL url, String storeType,
-            NSDictionary<?, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean destroyPersistentStoreAtURLWithTypeOptionsError(@NotNull NSURL url, @NotNull String storeType,
+            @Nullable NSDictionary<?, ?> options, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Sends a request to all of the stores associated with this coordinator.
@@ -288,11 +302,12 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
      * 
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("executeRequest:withContext:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object executeRequestWithContextError(NSPersistentStoreRequest request,
-            NSManagedObjectContext context, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native Object executeRequestWithContextError(@NotNull NSPersistentStoreRequest request,
+            @NotNull NSManagedObjectContext context, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("init")
@@ -300,7 +315,7 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
 
     @Generated
     @Selector("initWithManagedObjectModel:")
-    public native NSPersistentStoreCoordinator initWithManagedObjectModel(NSManagedObjectModel model);
+    public native NSPersistentStoreCoordinator initWithManagedObjectModel(@NotNull NSManagedObjectModel model);
 
     @Generated
     @Deprecated
@@ -312,10 +327,12 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
      * matching store cannot be found (the URI representation contains a UUID of the store the ID is coming from, and
      * the coordinator can match it against the stores added to it)
      */
+    @Nullable
     @Generated
     @Selector("managedObjectIDForURIRepresentation:")
-    public native NSManagedObjectID managedObjectIDForURIRepresentation(NSURL url);
+    public native NSManagedObjectID managedObjectIDForURIRepresentation(@NotNull NSURL url);
 
+    @NotNull
     @Generated
     @Selector("managedObjectModel")
     public native NSManagedObjectModel managedObjectModel();
@@ -323,25 +340,29 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     /**
      * Returns the metadata currently stored or to-be-stored in the persistent store
      */
+    @NotNull
     @Generated
     @Selector("metadataForPersistentStore:")
-    public native NSDictionary<String, ?> metadataForPersistentStore(NSPersistentStore store);
+    public native NSDictionary<String, ?> metadataForPersistentStore(@NotNull NSPersistentStore store);
 
     /**
      * Used for save as - performance may vary depending on the type of old and new store; the old store is usually
      * removed from the coordinator by the migration operation, and therefore is no longer a useful reference after
      * invoking this method
      */
+    @Nullable
     @Generated
     @Selector("migratePersistentStore:toURL:options:withType:error:")
-    public native NSPersistentStore migratePersistentStoreToURLOptionsWithTypeError(NSPersistentStore store, NSURL URL,
-            NSDictionary<?, ?> options, String storeType, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSPersistentStore migratePersistentStoreToURLOptionsWithTypeError(@NotNull NSPersistentStore store,
+            @NotNull NSURL URL, @Nullable NSDictionary<?, ?> options, @NotNull String storeType,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * custom name for a coordinator. Coordinators will set the label on their queue
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -353,7 +374,7 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
      */
     @Generated
     @Selector("performBlock:")
-    public native void performBlock(@ObjCBlock(name = "call_performBlock") Block_performBlock block);
+    public native void performBlock(@NotNull @ObjCBlock(name = "call_performBlock") Block_performBlock block);
 
     /**
      * synchronously performs the block on the coordinator's queue. May safely be called reentrantly. Encapsulates an
@@ -364,20 +385,22 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @Generated
     @Selector("performBlockAndWait:")
     public native void performBlockAndWait(
-            @ObjCBlock(name = "call_performBlockAndWait") Block_performBlockAndWait block);
+            @NotNull @ObjCBlock(name = "call_performBlockAndWait") Block_performBlockAndWait block);
 
+    @Nullable
     @Generated
     @Selector("persistentStoreForURL:")
-    public native NSPersistentStore persistentStoreForURL(NSURL URL);
+    public native NSPersistentStore persistentStoreForURL(@NotNull NSURL URL);
 
+    @NotNull
     @Generated
     @Selector("persistentStores")
     public native NSArray<? extends NSPersistentStore> persistentStores();
 
     @Generated
     @Selector("removePersistentStore:error:")
-    public native boolean removePersistentStoreError(NSPersistentStore store,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean removePersistentStoreError(@NotNull NSPersistentStore store,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * copy or overwrite the target persistent store in accordance with the store class's requirements. It is important
@@ -389,9 +412,9 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @Generated
     @Selector("replacePersistentStoreAtURL:destinationOptions:withPersistentStoreFromURL:sourceOptions:storeType:error:")
     public native boolean replacePersistentStoreAtURLDestinationOptionsWithPersistentStoreFromURLSourceOptionsStoreTypeError(
-            NSURL destinationURL, NSDictionary<?, ?> destinationOptions, NSURL sourceURL,
-            NSDictionary<?, ?> sourceOptions, String storeType,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull NSURL destinationURL, @Nullable NSDictionary<?, ?> destinationOptions, @NotNull NSURL sourceURL,
+            @Nullable NSDictionary<?, ?> sourceOptions, @NotNull String storeType,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Sets the metadata stored in the persistent store during the next save operation executed on it; the store type
@@ -400,7 +423,8 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
      */
     @Generated
     @Selector("setMetadata:forPersistentStore:")
-    public native void setMetadataForPersistentStore(NSDictionary<String, ?> metadata, NSPersistentStore store);
+    public native void setMetadataForPersistentStore(@Nullable NSDictionary<String, ?> metadata,
+            @NotNull NSPersistentStore store);
 
     /**
      * custom name for a coordinator. Coordinators will set the label on their queue
@@ -409,7 +433,7 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
     /**
      * Sets the URL for the specified store in the coordinator. For atomic stores, this will alter the location to which
@@ -421,7 +445,7 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
      */
     @Generated
     @Selector("setURL:forPersistentStore:")
-    public native boolean setURLForPersistentStore(NSURL url, NSPersistentStore store);
+    public native boolean setURLForPersistentStore(@NotNull NSURL url, @NotNull NSPersistentStore store);
 
     /**
      * API-Since: 3.0
@@ -442,7 +466,8 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @Generated
     public interface Block_addPersistentStoreWithDescriptionCompletionHandler {
         @Generated
-        void call_addPersistentStoreWithDescriptionCompletionHandler(NSPersistentStoreDescription arg0, NSError arg1);
+        void call_addPersistentStoreWithDescriptionCompletionHandler(@NotNull NSPersistentStoreDescription arg0,
+                @Nullable NSError arg1);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -465,7 +490,8 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
      * 
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("currentPersistentHistoryTokenFromStores:")
-    public native NSPersistentHistoryToken currentPersistentHistoryTokenFromStores(NSArray<?> stores);
+    public native NSPersistentHistoryToken currentPersistentHistoryTokenFromStores(@Nullable NSArray<?> stores);
 }

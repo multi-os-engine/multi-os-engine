@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * HKContactsLensSpecification
@@ -64,40 +66,45 @@ public class HKContactsLensSpecification extends HKLensSpecification implements 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] baseCurve
      * 
      * The curvature of the back surface of the lens (measured in mm)
      */
+    @Nullable
     @Generated
     @Selector("baseCurve")
     public native HKQuantity baseCurve();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -112,13 +119,14 @@ public class HKContactsLensSpecification extends HKLensSpecification implements 
      * 
      * The width of the lens from edge to edge (measured in mm)
      */
+    @Nullable
     @Generated
     @Selector("diameter")
     public native HKQuantity diameter();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -131,7 +139,7 @@ public class HKContactsLensSpecification extends HKLensSpecification implements 
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKContactsLensSpecification initWithCoder(NSCoder coder);
+    public native HKContactsLensSpecification initWithCoder(@NotNull NSCoder coder);
 
     /**
      * initWithSphere:cylinder:axis:addPower:baseCurve:diameter
@@ -145,8 +153,9 @@ public class HKContactsLensSpecification extends HKLensSpecification implements 
      */
     @Generated
     @Selector("initWithSphere:cylinder:axis:addPower:baseCurve:diameter:")
-    public native HKContactsLensSpecification initWithSphereCylinderAxisAddPowerBaseCurveDiameter(HKQuantity sphere,
-            HKQuantity cylinder, HKQuantity axis, HKQuantity addPower, HKQuantity baseCurve, HKQuantity diameter);
+    public native HKContactsLensSpecification initWithSphereCylinderAxisAddPowerBaseCurveDiameter(
+            @NotNull HKQuantity sphere, @Nullable HKQuantity cylinder, @Nullable HKQuantity axis,
+            @Nullable HKQuantity addPower, @Nullable HKQuantity baseCurve, @Nullable HKQuantity diameter);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -165,9 +174,10 @@ public class HKContactsLensSpecification extends HKLensSpecification implements 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

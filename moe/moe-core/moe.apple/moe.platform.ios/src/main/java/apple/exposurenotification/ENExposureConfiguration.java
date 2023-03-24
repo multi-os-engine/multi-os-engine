@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * ===========================================================================================================================
@@ -75,6 +77,7 @@ public class ENExposureConfiguration extends NSObject {
      * Index |0 |1 |2
      * Variable |X |Y |Z
      */
+    @NotNull
     @Generated
     @Selector("attenuationDurationThresholds")
     public native NSArray<? extends NSNumber> attenuationDurationThresholds();
@@ -83,6 +86,7 @@ public class ENExposureConfiguration extends NSObject {
      * ---------------------------------------------------------------------------------------------------------------------------
      * Soon to be deprecated parameters. Use the parameters above instead.
      */
+    @NotNull
     @Generated
     @Selector("attenuationLevelValues")
     public native NSArray<? extends NSNumber> attenuationLevelValues();
@@ -93,26 +97,30 @@ public class ENExposureConfiguration extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("daysSinceLastExposureLevelValues")
     public native NSArray<? extends NSNumber> daysSinceLastExposureLevelValues();
@@ -139,6 +147,7 @@ public class ENExposureConfiguration extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("durationLevelValues")
     public native NSArray<? extends NSNumber> durationLevelValues();
@@ -169,6 +178,7 @@ public class ENExposureConfiguration extends NSObject {
      * 
      * API-Since: 12.5
      */
+    @Nullable
     @Generated
     @Selector("infectiousnessForDaysSinceOnsetOfSymptoms")
     public native NSDictionary<? extends NSNumber, ? extends NSNumber> infectiousnessForDaysSinceOnsetOfSymptoms();
@@ -210,9 +220,10 @@ public class ENExposureConfiguration extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * API-Since: 12.5
@@ -221,6 +232,7 @@ public class ENExposureConfiguration extends NSObject {
     @Selector("mediumDurationWeight")
     public native double mediumDurationWeight();
 
+    @Nullable
     @Generated
     @Selector("metadata")
     public native NSDictionary<?, ?> metadata();
@@ -312,7 +324,7 @@ public class ENExposureConfiguration extends NSObject {
      */
     @Generated
     @Selector("setAttenuationDurationThresholds:")
-    public native void setAttenuationDurationThresholds(NSArray<? extends NSNumber> value);
+    public native void setAttenuationDurationThresholds(@NotNull NSArray<? extends NSNumber> value);
 
     /**
      * ---------------------------------------------------------------------------------------------------------------------------
@@ -320,7 +332,7 @@ public class ENExposureConfiguration extends NSObject {
      */
     @Generated
     @Selector("setAttenuationLevelValues:")
-    public native void setAttenuationLevelValues(NSArray<? extends NSNumber> value);
+    public native void setAttenuationLevelValues(@NotNull NSArray<? extends NSNumber> value);
 
     @Generated
     @Selector("setAttenuationWeight:")
@@ -328,7 +340,7 @@ public class ENExposureConfiguration extends NSObject {
 
     @Generated
     @Selector("setDaysSinceLastExposureLevelValues:")
-    public native void setDaysSinceLastExposureLevelValues(NSArray<? extends NSNumber> value);
+    public native void setDaysSinceLastExposureLevelValues(@NotNull NSArray<? extends NSNumber> value);
 
     /**
      * Exclude exposures with daysSinceLastExposure > this value. Defaults to 0 (don't filter).
@@ -345,7 +357,7 @@ public class ENExposureConfiguration extends NSObject {
 
     @Generated
     @Selector("setDurationLevelValues:")
-    public native void setDurationLevelValues(NSArray<? extends NSNumber> value);
+    public native void setDurationLevelValues(@NotNull NSArray<? extends NSNumber> value);
 
     @Generated
     @Selector("setDurationWeight:")
@@ -371,7 +383,7 @@ public class ENExposureConfiguration extends NSObject {
     @Generated
     @Selector("setInfectiousnessForDaysSinceOnsetOfSymptoms:")
     public native void setInfectiousnessForDaysSinceOnsetOfSymptoms(
-            NSDictionary<? extends NSNumber, ? extends NSNumber> value);
+            @Nullable NSDictionary<? extends NSNumber, ? extends NSNumber> value);
 
     /**
      * API-Since: 12.5
@@ -398,7 +410,7 @@ public class ENExposureConfiguration extends NSObject {
 
     @Generated
     @Selector("setMetadata:")
-    public native void setMetadata(NSDictionary<?, ?> value);
+    public native void setMetadata(@Nullable NSDictionary<?, ?> value);
 
     @Generated
     @Selector("setMinimumRiskScore:")
@@ -468,7 +480,7 @@ public class ENExposureConfiguration extends NSObject {
 
     @Generated
     @Selector("setTransmissionRiskLevelValues:")
-    public native void setTransmissionRiskLevelValues(NSArray<? extends NSNumber> value);
+    public native void setTransmissionRiskLevelValues(@NotNull NSArray<? extends NSNumber> value);
 
     @Generated
     @Selector("setTransmissionRiskWeight:")
@@ -482,6 +494,7 @@ public class ENExposureConfiguration extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("transmissionRiskLevelValues")
     public native NSArray<? extends NSNumber> transmissionRiskLevelValues();

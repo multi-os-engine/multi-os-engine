@@ -24,6 +24,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 8.0
@@ -36,35 +37,35 @@ public interface SKSceneDelegate {
     @Generated
     @IsOptional
     @Selector("didApplyConstraintsForScene:")
-    default void didApplyConstraintsForScene(SKScene scene) {
+    default void didApplyConstraintsForScene(@NotNull SKScene scene) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("didEvaluateActionsForScene:")
-    default void didEvaluateActionsForScene(SKScene scene) {
+    default void didEvaluateActionsForScene(@NotNull SKScene scene) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("didFinishUpdateForScene:")
-    default void didFinishUpdateForScene(SKScene scene) {
+    default void didFinishUpdateForScene(@NotNull SKScene scene) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("didSimulatePhysicsForScene:")
-    default void didSimulatePhysicsForScene(SKScene scene) {
+    default void didSimulatePhysicsForScene(@NotNull SKScene scene) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("update:forScene:")
-    default void updateForScene(double currentTime, SKScene scene) {
+    default void updateForScene(double currentTime, @NotNull SKScene scene) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

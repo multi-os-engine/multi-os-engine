@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.0
@@ -77,22 +79,25 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +132,10 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -179,6 +185,7 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
      * If the background color is not specified the video compositor will use a default backgroundColor of opaque black.
      * If the rendered pixel buffer does not have alpha, the alpha value of the backgroundColor will be ignored.
      */
+    @Nullable
     @Generated
     @Selector("backgroundColor")
     public native CGColorRef backgroundColor();
@@ -197,7 +204,7 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVMutableVideoCompositionInstruction initWithCoder(NSCoder coder);
+    public native AVMutableVideoCompositionInstruction initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Provides an array of instances of AVVideoCompositionLayerInstruction that specify how video frames from source
@@ -208,6 +215,7 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
      * underneath, etc.
      * If this key is nil, the output will be a fill of the background color.
      */
+    @NotNull
     @Generated
     @Selector("layerInstructions")
     public native NSArray<? extends AVVideoCompositionLayerInstruction> layerInstructions();
@@ -220,7 +228,7 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
      */
     @Generated
     @Selector("setBackgroundColor:")
-    public native void setBackgroundColor(CGColorRef value);
+    public native void setBackgroundColor(@Nullable CGColorRef value);
 
     /**
      * If NO, indicates that post-processing should be skipped for the duration of this instruction. YES by default.
@@ -241,7 +249,7 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
      */
     @Generated
     @Selector("setLayerInstructions:")
-    public native void setLayerInstructions(NSArray<? extends AVVideoCompositionLayerInstruction> value);
+    public native void setLayerInstructions(@NotNull NSArray<? extends AVVideoCompositionLayerInstruction> value);
 
     /**
      * Indicates the timeRange during which the instruction is effective. Note requirements for the timeRanges of
@@ -275,6 +283,7 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("requiredSourceSampleDataTrackIDs")
     public native NSArray<? extends NSNumber> requiredSourceSampleDataTrackIDs();
@@ -290,5 +299,5 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
      */
     @Generated
     @Selector("setRequiredSourceSampleDataTrackIDs:")
-    public native void setRequiredSourceSampleDataTrackIDs(NSArray<? extends NSNumber> value);
+    public native void setRequiredSourceSampleDataTrackIDs(@NotNull NSArray<? extends NSNumber> value);
 }

@@ -51,6 +51,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSUnaryImageKernel
@@ -90,22 +92,25 @@ public class MPSUnaryImageKernel extends MPSKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -140,9 +145,10 @@ public class MPSUnaryImageKernel extends MPSKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -297,9 +303,9 @@ public class MPSUnaryImageKernel extends MPSKernel {
     @Generated
     @Selector("encodeToCommandBuffer:inPlaceTexture:fallbackCopyAllocator:")
     public native boolean encodeToCommandBufferInPlaceTextureFallbackCopyAllocator(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> texture,
-            @ObjCBlock(name = "call_encodeToCommandBufferInPlaceTextureFallbackCopyAllocator") Block_encodeToCommandBufferInPlaceTextureFallbackCopyAllocator copyAllocator);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> texture,
+            @Nullable @ObjCBlock(name = "call_encodeToCommandBufferInPlaceTextureFallbackCopyAllocator") Block_encodeToCommandBufferInPlaceTextureFallbackCopyAllocator copyAllocator);
 
     /**
      * Encode a MPSKernel into a command Buffer. The operation shall proceed out-of-place.
@@ -312,9 +318,9 @@ public class MPSUnaryImageKernel extends MPSKernel {
     @Generated
     @Selector("encodeToCommandBuffer:sourceTexture:destinationTexture:")
     public native void encodeToCommandBufferSourceTextureDestinationTexture(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture);
 
     @Generated
     @Selector("init")
@@ -330,7 +336,7 @@ public class MPSUnaryImageKernel extends MPSKernel {
      */
     @Generated
     @Selector("initWithDevice:")
-    public native MPSUnaryImageKernel initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSUnaryImageKernel initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * [@property] offset
@@ -429,10 +435,12 @@ public class MPSUnaryImageKernel extends MPSKernel {
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_encodeToCommandBufferInPlaceTextureFallbackCopyAllocator {
+        @NotNull
         @Generated
         @MappedReturn(ObjCObjectMapper.class)
-        Object call_encodeToCommandBufferInPlaceTextureFallbackCopyAllocator(MPSKernel arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, @Mapped(ObjCObjectMapper.class) Object arg2);
+        Object call_encodeToCommandBufferInPlaceTextureFallbackCopyAllocator(@NotNull MPSKernel arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object arg2);
     }
 
     /**
@@ -446,12 +454,12 @@ public class MPSUnaryImageKernel extends MPSKernel {
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:destinationImage:")
     public native void encodeToCommandBufferSourceImageDestinationImage(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
-            MPSImage destinationImage);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceImage,
+            @NotNull MPSImage destinationImage);
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSUnaryImageKernel initWithCoder(NSCoder aDecoder);
+    public native MPSUnaryImageKernel initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
@@ -470,8 +478,8 @@ public class MPSUnaryImageKernel extends MPSKernel {
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSUnaryImageKernel initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSUnaryImageKernel initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("supportsSecureCoding")

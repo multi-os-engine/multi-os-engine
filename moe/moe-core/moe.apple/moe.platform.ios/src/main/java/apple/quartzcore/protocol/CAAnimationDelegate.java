@@ -24,6 +24,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Delegate methods for CAAnimation.
@@ -39,7 +40,7 @@ public interface CAAnimationDelegate {
     @Generated
     @IsOptional
     @Selector("animationDidStart:")
-    default void animationDidStart(CAAnimation anim) {
+    default void animationDidStart(@NotNull CAAnimation anim) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -52,7 +53,7 @@ public interface CAAnimationDelegate {
     @Generated
     @IsOptional
     @Selector("animationDidStop:finished:")
-    default void animationDidStopFinished(CAAnimation anim, boolean flag) {
+    default void animationDidStopFinished(@NotNull CAAnimation anim, boolean flag) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

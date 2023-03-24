@@ -13,6 +13,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This is the object that gets created from the descriptor
@@ -29,6 +31,7 @@ public interface MTLFXTemporalScaler {
      * We don't care about the textures assigned except that they must
      * match the originally specified dimensions and pixel formats.
      */
+    @Nullable
     @Generated
     @Selector("colorTexture")
     @MappedReturn(ObjCObjectMapper.class)
@@ -50,6 +53,7 @@ public interface MTLFXTemporalScaler {
     @NUInt
     long colorTextureUsage();
 
+    @Nullable
     @Generated
     @Selector("depthTexture")
     @MappedReturn(ObjCObjectMapper.class)
@@ -70,7 +74,7 @@ public interface MTLFXTemporalScaler {
      */
     @Generated
     @Selector("encodeToCommandBuffer:")
-    void encodeToCommandBuffer(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
+    void encodeToCommandBuffer(@NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
 
     /**
      * Exposure properties
@@ -78,6 +82,7 @@ public interface MTLFXTemporalScaler {
      * the texel located at (0, 0) is used for exposure value. The value is used
      * to multiply the input color, use GPU to generate the exposure value.
      */
+    @Nullable
     @Generated
     @Selector("exposureTexture")
     @MappedReturn(ObjCObjectMapper.class)
@@ -86,6 +91,7 @@ public interface MTLFXTemporalScaler {
     /**
      * Property for synchronization when using untracked resources
      */
+    @Nullable
     @Generated
     @Selector("fence")
     @MappedReturn(ObjCObjectMapper.class)
@@ -141,6 +147,7 @@ public interface MTLFXTemporalScaler {
     @Selector("jitterOffsetY")
     float jitterOffsetY();
 
+    @Nullable
     @Generated
     @Selector("motionTexture")
     @MappedReturn(ObjCObjectMapper.class)
@@ -180,6 +187,7 @@ public interface MTLFXTemporalScaler {
     /**
      * outputTexture is required to have MTLStorageModePrivate for storageMode
      */
+    @Nullable
     @Generated
     @Selector("outputTexture")
     @MappedReturn(ObjCObjectMapper.class)
@@ -222,7 +230,7 @@ public interface MTLFXTemporalScaler {
      */
     @Generated
     @Selector("setColorTexture:")
-    void setColorTexture(@Mapped(ObjCObjectMapper.class) MTLTexture value);
+    void setColorTexture(@Nullable @Mapped(ObjCObjectMapper.class) MTLTexture value);
 
     /**
      * Set whether the depth buffer uses reversed depth or not. Defaults to YES.
@@ -233,7 +241,7 @@ public interface MTLFXTemporalScaler {
 
     @Generated
     @Selector("setDepthTexture:")
-    void setDepthTexture(@Mapped(ObjCObjectMapper.class) MTLTexture value);
+    void setDepthTexture(@Nullable @Mapped(ObjCObjectMapper.class) MTLTexture value);
 
     /**
      * Exposure properties
@@ -243,14 +251,14 @@ public interface MTLFXTemporalScaler {
      */
     @Generated
     @Selector("setExposureTexture:")
-    void setExposureTexture(@Mapped(ObjCObjectMapper.class) MTLTexture value);
+    void setExposureTexture(@Nullable @Mapped(ObjCObjectMapper.class) MTLTexture value);
 
     /**
      * Property for synchronization when using untracked resources
      */
     @Generated
     @Selector("setFence:")
-    void setFence(@Mapped(ObjCObjectMapper.class) MTLFence value);
+    void setFence(@Nullable @Mapped(ObjCObjectMapper.class) MTLFence value);
 
     @Generated
     @Selector("setInputContentHeight:")
@@ -277,7 +285,7 @@ public interface MTLFXTemporalScaler {
 
     @Generated
     @Selector("setMotionTexture:")
-    void setMotionTexture(@Mapped(ObjCObjectMapper.class) MTLTexture value);
+    void setMotionTexture(@Nullable @Mapped(ObjCObjectMapper.class) MTLTexture value);
 
     /**
      * Scale factor to be applied to motion vectors to convert to pixel/fragment
@@ -300,7 +308,7 @@ public interface MTLFXTemporalScaler {
      */
     @Generated
     @Selector("setOutputTexture:")
-    void setOutputTexture(@Mapped(ObjCObjectMapper.class) MTLTexture value);
+    void setOutputTexture(@Nullable @Mapped(ObjCObjectMapper.class) MTLTexture value);
 
     /**
      * If the input color is pre-multiplied by fixed value, set this value

@@ -7,6 +7,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * A data source for an ARSession
@@ -19,6 +20,7 @@ public interface ARSessionProviding {
     /**
      * To ensure session changes are detected, Swift classes should mark this property as `@objc` and `dynamic`
      */
+    @NotNull
     @Generated
     @Selector("session")
     ARSession session();

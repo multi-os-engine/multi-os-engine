@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Class to handle the loading and animation transition when opening or closing a document.
@@ -69,7 +71,7 @@ public class UIDocumentBrowserTransitionController extends NSObject implements U
     @Generated
     @Selector("animateTransition:")
     public native void animateTransition(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
     @Generated
     @IsOptional
@@ -78,22 +80,25 @@ public class UIDocumentBrowserTransitionController extends NSObject implements U
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,24 +133,27 @@ public class UIDocumentBrowserTransitionController extends NSObject implements U
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("interruptibleAnimatorForTransition:")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIViewImplicitlyAnimating interruptibleAnimatorForTransition(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * An optional progress can be displayed on the document thumbnail while the document is loading (during opening).
      */
+    @Nullable
     @Generated
     @Selector("loadingProgress")
     public native NSProgress loadingProgress();
@@ -168,7 +176,7 @@ public class UIDocumentBrowserTransitionController extends NSObject implements U
      */
     @Generated
     @Selector("setLoadingProgress:")
-    public native void setLoadingProgress(NSProgress value);
+    public native void setLoadingProgress(@Nullable NSProgress value);
 
     /**
      * This view will be used for the zoom transition from/to the document collection view.
@@ -179,7 +187,7 @@ public class UIDocumentBrowserTransitionController extends NSObject implements U
      */
     @Generated
     @Selector("setTargetView:")
-    public native void setTargetView_unsafe(UIView value);
+    public native void setTargetView_unsafe(@Nullable UIView value);
 
     /**
      * This view will be used for the zoom transition from/to the document collection view.
@@ -189,7 +197,7 @@ public class UIDocumentBrowserTransitionController extends NSObject implements U
      * controller's view
      */
     @Generated
-    public void setTargetView(UIView value) {
+    public void setTargetView(@Nullable UIView value) {
         Object __old = targetView();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -215,6 +223,7 @@ public class UIDocumentBrowserTransitionController extends NSObject implements U
      * If UIDocumentBrowserViewController is being presented, this view should be a subview of the presenting view
      * controller's view
      */
+    @Nullable
     @Generated
     @Selector("targetView")
     public native UIView targetView();
@@ -222,7 +231,7 @@ public class UIDocumentBrowserTransitionController extends NSObject implements U
     @Generated
     @Selector("transitionDuration:")
     public native double transitionDuration(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
     @Generated
     @Selector("version")

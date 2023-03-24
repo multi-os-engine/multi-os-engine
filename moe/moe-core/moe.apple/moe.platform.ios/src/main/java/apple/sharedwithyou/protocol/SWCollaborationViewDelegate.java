@@ -8,6 +8,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 16.0
@@ -20,21 +21,21 @@ public interface SWCollaborationViewDelegate {
     @Generated
     @IsOptional
     @Selector("collaborationViewDidDismissPopover:")
-    default void collaborationViewDidDismissPopover(SWCollaborationView collaborationView) {
+    default void collaborationViewDidDismissPopover(@NotNull SWCollaborationView collaborationView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("collaborationViewShouldPresentPopover:")
-    default boolean collaborationViewShouldPresentPopover(SWCollaborationView collaborationView) {
+    default boolean collaborationViewShouldPresentPopover(@NotNull SWCollaborationView collaborationView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("collaborationViewWillPresentPopover:")
-    default void collaborationViewWillPresentPopover(SWCollaborationView collaborationView) {
+    default void collaborationViewWillPresentPopover(@NotNull SWCollaborationView collaborationView) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

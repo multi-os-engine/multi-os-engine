@@ -25,12 +25,14 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKStrategist")
 public interface GKStrategist {
+    @Nullable
     @Generated
     @Selector("bestMoveForActivePlayer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -39,6 +41,7 @@ public interface GKStrategist {
     /**
      * The game model that we wish to select updates for.
      */
+    @Nullable
     @Generated
     @Selector("gameModel")
     @MappedReturn(ObjCObjectMapper.class)
@@ -49,6 +52,7 @@ public interface GKStrategist {
      * or when selecting a random move when randomMoveForPlayer is called. If set to nil, bestMoveForPlayer
      * and randomMoveForPlayer will simply return the first best move available.
      */
+    @Nullable
     @Generated
     @Selector("randomSource")
     @MappedReturn(ObjCObjectMapper.class)
@@ -59,7 +63,7 @@ public interface GKStrategist {
      */
     @Generated
     @Selector("setGameModel:")
-    void setGameModel(@Mapped(ObjCObjectMapper.class) GKGameModel value);
+    void setGameModel(@Nullable @Mapped(ObjCObjectMapper.class) GKGameModel value);
 
     /**
      * A random source to use when breaking ties between equally-strong moves when calling bestMoveForPlayer
@@ -68,5 +72,5 @@ public interface GKStrategist {
      */
     @Generated
     @Selector("setRandomSource:")
-    void setRandomSource(@Mapped(ObjCObjectMapper.class) GKRandom value);
+    void setRandomSource(@Nullable @Mapped(ObjCObjectMapper.class) GKRandom value);
 }

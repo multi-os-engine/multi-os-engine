@@ -23,6 +23,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * VNFaceLandmarks2D
@@ -55,6 +57,7 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
     /**
      * allPoints the region containing all face landmark points.
      */
+    @Nullable
     @Generated
     @Selector("allPoints")
     public native VNFaceLandmarkRegion2D allPoints();
@@ -71,22 +74,25 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,6 +108,7 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
     /**
      * faceContour the region containing the points that describe the face contour from cheek over chin to cheek.
      */
+    @Nullable
     @Generated
     @Selector("faceContour")
     public native VNFaceLandmarkRegion2D faceContour();
@@ -118,6 +125,7 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
     /**
      * innerLips the region containing the points describing the outline of the space between the of the lips.
      */
+    @Nullable
     @Generated
     @Selector("innerLips")
     public native VNFaceLandmarkRegion2D innerLips();
@@ -139,13 +147,15 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * leftEye the region containing the points describing the outline of the left eye.
      */
+    @Nullable
     @Generated
     @Selector("leftEye")
     public native VNFaceLandmarkRegion2D leftEye();
@@ -153,6 +163,7 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
     /**
      * leftEyebrow the region containing the points describing the trace of the left eyebrow.
      */
+    @Nullable
     @Generated
     @Selector("leftEyebrow")
     public native VNFaceLandmarkRegion2D leftEyebrow();
@@ -161,6 +172,7 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
      * leftPupil the region containing the point where the left pupil is located. This value may be inaccurate if
      * the face isBlinking.
      */
+    @Nullable
     @Generated
     @Selector("leftPupil")
     public native VNFaceLandmarkRegion2D leftPupil();
@@ -168,6 +180,7 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
     /**
      * medianLine the region containing the points describing the trace of the center line of the face.
      */
+    @Nullable
     @Generated
     @Selector("medianLine")
     public native VNFaceLandmarkRegion2D medianLine();
@@ -180,6 +193,7 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
     /**
      * nose the region containing the points describing the outline of the nose.
      */
+    @Nullable
     @Generated
     @Selector("nose")
     public native VNFaceLandmarkRegion2D nose();
@@ -187,6 +201,7 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
     /**
      * noseCrest the region containing the points describing the trace of the center crest of the nose.
      */
+    @Nullable
     @Generated
     @Selector("noseCrest")
     public native VNFaceLandmarkRegion2D noseCrest();
@@ -194,6 +209,7 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
     /**
      * outer lips the region containing the points describing the outline of the outside of the lips.
      */
+    @Nullable
     @Generated
     @Selector("outerLips")
     public native VNFaceLandmarkRegion2D outerLips();
@@ -209,6 +225,7 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
     /**
      * rightEye the region containing the points describing the outline of the right eye.
      */
+    @Nullable
     @Generated
     @Selector("rightEye")
     public native VNFaceLandmarkRegion2D rightEye();
@@ -216,6 +233,7 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
     /**
      * rightEyebrow the region containing the points describing the trace of the right eyebrow.
      */
+    @Nullable
     @Generated
     @Selector("rightEyebrow")
     public native VNFaceLandmarkRegion2D rightEyebrow();
@@ -224,6 +242,7 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
      * rightPupil the region containing the point where the right pupil is located. This value may be inaccurate if
      * the face isBlinking.
      */
+    @Nullable
     @Generated
     @Selector("rightPupil")
     public native VNFaceLandmarkRegion2D rightPupil();
@@ -243,7 +262,7 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNFaceLandmarks2D initWithCoder(NSCoder coder);
+    public native VNFaceLandmarks2D initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("supportsSecureCoding")

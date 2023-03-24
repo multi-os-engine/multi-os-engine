@@ -41,6 +41,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * _______________________________________________________________________________________________________________
@@ -54,17 +56,19 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     /**
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("indexPathForPreferredFocusedViewInTableView:")
-    default NSIndexPath indexPathForPreferredFocusedViewInTableView(UITableView tableView) {
+    default NSIndexPath indexPathForPreferredFocusedViewInTableView(@NotNull UITableView tableView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("tableView:accessoryButtonTappedForRowWithIndexPath:")
-    default void tableViewAccessoryButtonTappedForRowWithIndexPath(UITableView tableView, NSIndexPath indexPath) {
+    default void tableViewAccessoryButtonTappedForRowWithIndexPath(@NotNull UITableView tableView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,7 +83,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Deprecated
     @Selector("tableView:accessoryTypeForRowWithIndexPath:")
     @NInt
-    default long tableViewAccessoryTypeForRowWithIndexPath(UITableView tableView, NSIndexPath indexPath) {
+    default long tableViewAccessoryTypeForRowWithIndexPath(@NotNull UITableView tableView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -91,7 +96,7 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:canFocusRowAtIndexPath:")
-    default boolean tableViewCanFocusRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+    default boolean tableViewCanFocusRowAtIndexPath(@NotNull UITableView tableView, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -103,8 +108,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:canPerformAction:forRowAtIndexPath:withSender:")
-    default boolean tableViewCanPerformActionForRowAtIndexPathWithSender(UITableView tableView, SEL action,
-            NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) Object sender) {
+    default boolean tableViewCanPerformActionForRowAtIndexPathWithSender(@NotNull UITableView tableView,
+            @NotNull SEL action, @NotNull NSIndexPath indexPath,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object sender) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -114,7 +120,7 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:didDeselectRowAtIndexPath:")
-    default void tableViewDidDeselectRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+    default void tableViewDidDeselectRowAtIndexPath(@NotNull UITableView tableView, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -124,8 +130,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:didEndDisplayingCell:forRowAtIndexPath:")
-    default void tableViewDidEndDisplayingCellForRowAtIndexPath(UITableView tableView, UITableViewCell cell,
-            NSIndexPath indexPath) {
+    default void tableViewDidEndDisplayingCellForRowAtIndexPath(@NotNull UITableView tableView,
+            @NotNull UITableViewCell cell, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -135,7 +141,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:didEndDisplayingFooterView:forSection:")
-    default void tableViewDidEndDisplayingFooterViewForSection(UITableView tableView, UIView view, @NInt long section) {
+    default void tableViewDidEndDisplayingFooterViewForSection(@NotNull UITableView tableView, @NotNull UIView view,
+            @NInt long section) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -145,14 +152,15 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:didEndDisplayingHeaderView:forSection:")
-    default void tableViewDidEndDisplayingHeaderViewForSection(UITableView tableView, UIView view, @NInt long section) {
+    default void tableViewDidEndDisplayingHeaderViewForSection(@NotNull UITableView tableView, @NotNull UIView view,
+            @NInt long section) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("tableView:didEndEditingRowAtIndexPath:")
-    default void tableViewDidEndEditingRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+    default void tableViewDidEndEditingRowAtIndexPath(@NotNull UITableView tableView, @Nullable NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -162,7 +170,7 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:didHighlightRowAtIndexPath:")
-    default void tableViewDidHighlightRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+    default void tableViewDidHighlightRowAtIndexPath(@NotNull UITableView tableView, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -172,7 +180,7 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:didSelectRowAtIndexPath:")
-    default void tableViewDidSelectRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+    default void tableViewDidSelectRowAtIndexPath(@NotNull UITableView tableView, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -182,7 +190,7 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:didUnhighlightRowAtIndexPath:")
-    default void tableViewDidUnhighlightRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+    default void tableViewDidUnhighlightRowAtIndexPath(@NotNull UITableView tableView, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -192,8 +200,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:didUpdateFocusInContext:withAnimationCoordinator:")
-    default void tableViewDidUpdateFocusInContextWithAnimationCoordinator(UITableView tableView,
-            UITableViewFocusUpdateContext context, UIFocusAnimationCoordinator coordinator) {
+    default void tableViewDidUpdateFocusInContextWithAnimationCoordinator(@NotNull UITableView tableView,
+            @NotNull UITableViewFocusUpdateContext context, @NotNull UIFocusAnimationCoordinator coordinator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -203,12 +211,13 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
      * API-Since: 8.0
      * Deprecated-Since: 13.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @IsOptional
     @Selector("tableView:editActionsForRowAtIndexPath:")
-    default NSArray<? extends UITableViewRowAction> tableViewEditActionsForRowAtIndexPath(UITableView tableView,
-            NSIndexPath indexPath) {
+    default NSArray<? extends UITableViewRowAction> tableViewEditActionsForRowAtIndexPath(
+            @NotNull UITableView tableView, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -221,7 +230,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @IsOptional
     @Selector("tableView:editingStyleForRowAtIndexPath:")
     @NInt
-    default long tableViewEditingStyleForRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+    default long tableViewEditingStyleForRowAtIndexPath(@NotNull UITableView tableView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -232,7 +242,7 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @IsOptional
     @Selector("tableView:estimatedHeightForFooterInSection:")
     @NFloat
-    default double tableViewEstimatedHeightForFooterInSection(UITableView tableView, @NInt long section) {
+    default double tableViewEstimatedHeightForFooterInSection(@NotNull UITableView tableView, @NInt long section) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -243,7 +253,7 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @IsOptional
     @Selector("tableView:estimatedHeightForHeaderInSection:")
     @NFloat
-    default double tableViewEstimatedHeightForHeaderInSection(UITableView tableView, @NInt long section) {
+    default double tableViewEstimatedHeightForHeaderInSection(@NotNull UITableView tableView, @NInt long section) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -259,7 +269,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @IsOptional
     @Selector("tableView:estimatedHeightForRowAtIndexPath:")
     @NFloat
-    default double tableViewEstimatedHeightForRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+    default double tableViewEstimatedHeightForRowAtIndexPath(@NotNull UITableView tableView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -267,7 +278,7 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @IsOptional
     @Selector("tableView:heightForFooterInSection:")
     @NFloat
-    default double tableViewHeightForFooterInSection(UITableView tableView, @NInt long section) {
+    default double tableViewHeightForFooterInSection(@NotNull UITableView tableView, @NInt long section) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -275,7 +286,7 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @IsOptional
     @Selector("tableView:heightForHeaderInSection:")
     @NFloat
-    default double tableViewHeightForHeaderInSection(UITableView tableView, @NInt long section) {
+    default double tableViewHeightForHeaderInSection(@NotNull UITableView tableView, @NInt long section) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -286,7 +297,7 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @IsOptional
     @Selector("tableView:heightForRowAtIndexPath:")
     @NFloat
-    default double tableViewHeightForRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+    default double tableViewHeightForRowAtIndexPath(@NotNull UITableView tableView, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -297,7 +308,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @IsOptional
     @Selector("tableView:indentationLevelForRowAtIndexPath:")
     @NInt
-    default long tableViewIndentationLevelForRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+    default long tableViewIndentationLevelForRowAtIndexPath(@NotNull UITableView tableView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -309,8 +321,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:performAction:forRowAtIndexPath:withSender:")
-    default void tableViewPerformActionForRowAtIndexPathWithSender(UITableView tableView, SEL action,
-            NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) Object sender) {
+    default void tableViewPerformActionForRowAtIndexPathWithSender(@NotNull UITableView tableView, @NotNull SEL action,
+            @NotNull NSIndexPath indexPath, @Nullable @Mapped(ObjCObjectMapper.class) Object sender) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -324,7 +336,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:shouldHighlightRowAtIndexPath:")
-    default boolean tableViewShouldHighlightRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+    default boolean tableViewShouldHighlightRowAtIndexPath(@NotNull UITableView tableView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -335,7 +348,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:shouldIndentWhileEditingRowAtIndexPath:")
-    default boolean tableViewShouldIndentWhileEditingRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+    default boolean tableViewShouldIndentWhileEditingRowAtIndexPath(@NotNull UITableView tableView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -349,7 +363,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:shouldShowMenuForRowAtIndexPath:")
-    default boolean tableViewShouldShowMenuForRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+    default boolean tableViewShouldShowMenuForRowAtIndexPath(@NotNull UITableView tableView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -359,49 +374,55 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:shouldUpdateFocusInContext:")
-    default boolean tableViewShouldUpdateFocusInContext(UITableView tableView, UITableViewFocusUpdateContext context) {
+    default boolean tableViewShouldUpdateFocusInContext(@NotNull UITableView tableView,
+            @NotNull UITableViewFocusUpdateContext context) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Allows customization of the target row for a particular row as it is being moved/reordered
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("tableView:targetIndexPathForMoveFromRowAtIndexPath:toProposedIndexPath:")
-    default NSIndexPath tableViewTargetIndexPathForMoveFromRowAtIndexPathToProposedIndexPath(UITableView tableView,
-            NSIndexPath sourceIndexPath, NSIndexPath proposedDestinationIndexPath) {
+    default NSIndexPath tableViewTargetIndexPathForMoveFromRowAtIndexPathToProposedIndexPath(
+            @NotNull UITableView tableView, @NotNull NSIndexPath sourceIndexPath,
+            @NotNull NSIndexPath proposedDestinationIndexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * API-Since: 3.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("tableView:titleForDeleteConfirmationButtonForRowAtIndexPath:")
-    default String tableViewTitleForDeleteConfirmationButtonForRowAtIndexPath(UITableView tableView,
-            NSIndexPath indexPath) {
+    default String tableViewTitleForDeleteConfirmationButtonForRowAtIndexPath(@NotNull UITableView tableView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * custom view for footer. will be adjusted to default or specified footer height
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("tableView:viewForFooterInSection:")
-    default UIView tableViewViewForFooterInSection(UITableView tableView, @NInt long section) {
+    default UIView tableViewViewForFooterInSection(@NotNull UITableView tableView, @NInt long section) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * custom view for header. will be adjusted to default or specified header height
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("tableView:viewForHeaderInSection:")
-    default UIView tableViewViewForHeaderInSection(UITableView tableView, @NInt long section) {
+    default UIView tableViewViewForHeaderInSection(@NotNull UITableView tableView, @NInt long section) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -412,17 +433,20 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:willBeginEditingRowAtIndexPath:")
-    default void tableViewWillBeginEditingRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+    default void tableViewWillBeginEditingRowAtIndexPath(@NotNull UITableView tableView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * API-Since: 3.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("tableView:willDeselectRowAtIndexPath:")
-    default NSIndexPath tableViewWillDeselectRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+    default NSIndexPath tableViewWillDeselectRowAtIndexPath(@NotNull UITableView tableView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -432,8 +456,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:willDisplayCell:forRowAtIndexPath:")
-    default void tableViewWillDisplayCellForRowAtIndexPath(UITableView tableView, UITableViewCell cell,
-            NSIndexPath indexPath) {
+    default void tableViewWillDisplayCellForRowAtIndexPath(@NotNull UITableView tableView,
+            @NotNull UITableViewCell cell, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -443,7 +467,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:willDisplayFooterView:forSection:")
-    default void tableViewWillDisplayFooterViewForSection(UITableView tableView, UIView view, @NInt long section) {
+    default void tableViewWillDisplayFooterViewForSection(@NotNull UITableView tableView, @NotNull UIView view,
+            @NInt long section) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -453,17 +478,20 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:willDisplayHeaderView:forSection:")
-    default void tableViewWillDisplayHeaderViewForSection(UITableView tableView, UIView view, @NInt long section) {
+    default void tableViewWillDisplayHeaderViewForSection(@NotNull UITableView tableView, @NotNull UIView view,
+            @NInt long section) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Called before the user changes the selection. Return a new indexPath, or nil, to change the proposed selection.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("tableView:willSelectRowAtIndexPath:")
-    default NSIndexPath tableViewWillSelectRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+    default NSIndexPath tableViewWillSelectRowAtIndexPath(@NotNull UITableView tableView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -474,11 +502,12 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("tableView:leadingSwipeActionsConfigurationForRowAtIndexPath:")
     default UISwipeActionsConfiguration tableViewLeadingSwipeActionsConfigurationForRowAtIndexPath(
-            UITableView tableView, NSIndexPath indexPath) {
+            @NotNull UITableView tableView, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -493,19 +522,21 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:shouldSpringLoadRowAtIndexPath:withContext:")
-    default boolean tableViewShouldSpringLoadRowAtIndexPathWithContext(UITableView tableView, NSIndexPath indexPath,
-            @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionContext context) {
+    default boolean tableViewShouldSpringLoadRowAtIndexPathWithContext(@NotNull UITableView tableView,
+            @NotNull NSIndexPath indexPath,
+            @NotNull @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionContext context) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("tableView:trailingSwipeActionsConfigurationForRowAtIndexPath:")
     default UISwipeActionsConfiguration tableViewTrailingSwipeActionsConfigurationForRowAtIndexPath(
-            UITableView tableView, NSIndexPath indexPath) {
+            @NotNull UITableView tableView, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -526,11 +557,12 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
      * 
      *         API-Since: 13.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("tableView:contextMenuConfigurationForRowAtIndexPath:point:")
-    default UIContextMenuConfiguration tableViewContextMenuConfigurationForRowAtIndexPathPoint(UITableView tableView,
-            NSIndexPath indexPath, @ByValue CGPoint point) {
+    default UIContextMenuConfiguration tableViewContextMenuConfigurationForRowAtIndexPathPoint(
+            @NotNull UITableView tableView, @NotNull NSIndexPath indexPath, @ByValue CGPoint point) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -547,8 +579,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:didBeginMultipleSelectionInteractionAtIndexPath:")
-    default void tableViewDidBeginMultipleSelectionInteractionAtIndexPath(UITableView tableView,
-            NSIndexPath indexPath) {
+    default void tableViewDidBeginMultipleSelectionInteractionAtIndexPath(@NotNull UITableView tableView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -562,11 +594,12 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
      * 
      *                      API-Since: 13.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("tableView:previewForDismissingContextMenuWithConfiguration:")
-    default UITargetedPreview tableViewPreviewForDismissingContextMenuWithConfiguration(UITableView tableView,
-            UIContextMenuConfiguration configuration) {
+    default UITargetedPreview tableViewPreviewForDismissingContextMenuWithConfiguration(@NotNull UITableView tableView,
+            @NotNull UIContextMenuConfiguration configuration) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -579,11 +612,12 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
      * 
      *                      API-Since: 13.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("tableView:previewForHighlightingContextMenuWithConfiguration:")
-    default UITargetedPreview tableViewPreviewForHighlightingContextMenuWithConfiguration(UITableView tableView,
-            UIContextMenuConfiguration configuration) {
+    default UITargetedPreview tableViewPreviewForHighlightingContextMenuWithConfiguration(
+            @NotNull UITableView tableView, @NotNull UIContextMenuConfiguration configuration) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -606,8 +640,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:shouldBeginMultipleSelectionInteractionAtIndexPath:")
-    default boolean tableViewShouldBeginMultipleSelectionInteractionAtIndexPath(UITableView tableView,
-            NSIndexPath indexPath) {
+    default boolean tableViewShouldBeginMultipleSelectionInteractionAtIndexPath(@NotNull UITableView tableView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -623,9 +657,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:willPerformPreviewActionForMenuWithConfiguration:animator:")
-    default void tableViewWillPerformPreviewActionForMenuWithConfigurationAnimator(UITableView tableView,
-            UIContextMenuConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator) {
+    default void tableViewWillPerformPreviewActionForMenuWithConfigurationAnimator(@NotNull UITableView tableView,
+            @NotNull UIContextMenuConfiguration configuration,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -641,7 +675,7 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableViewDidEndMultipleSelectionInteraction:")
-    default void tableViewDidEndMultipleSelectionInteraction(UITableView tableView) {
+    default void tableViewDidEndMultipleSelectionInteraction(@NotNull UITableView tableView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -657,9 +691,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:willDisplayContextMenuWithConfiguration:animator:")
-    default void tableViewWillDisplayContextMenuWithConfigurationAnimator(UITableView tableView,
-            UIContextMenuConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator) {
+    default void tableViewWillDisplayContextMenuWithConfigurationAnimator(@NotNull UITableView tableView,
+            @NotNull UIContextMenuConfiguration configuration,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -675,9 +709,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:willEndContextMenuInteractionWithConfiguration:animator:")
-    default void tableViewWillEndContextMenuInteractionWithConfigurationAnimator(UITableView tableView,
-            UIContextMenuConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator) {
+    default void tableViewWillEndContextMenuInteractionWithConfigurationAnimator(@NotNull UITableView tableView,
+            @NotNull UIContextMenuConfiguration configuration,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -691,7 +725,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:selectionFollowsFocusForRowAtIndexPath:")
-    default boolean tableViewSelectionFollowsFocusForRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+    default boolean tableViewSelectionFollowsFocusForRowAtIndexPath(@NotNull UITableView tableView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -711,7 +746,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:canPerformPrimaryActionForRowAtIndexPath:")
-    default boolean tableViewCanPerformPrimaryActionForRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+    default boolean tableViewCanPerformPrimaryActionForRowAtIndexPath(@NotNull UITableView tableView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -737,7 +773,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:performPrimaryActionForRowAtIndexPath:")
-    default void tableViewPerformPrimaryActionForRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+    default void tableViewPerformPrimaryActionForRowAtIndexPath(@NotNull UITableView tableView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

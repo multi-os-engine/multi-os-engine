@@ -51,6 +51,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSBinaryImageKernel
@@ -90,22 +92,25 @@ public class MPSBinaryImageKernel extends MPSKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -140,9 +145,10 @@ public class MPSBinaryImageKernel extends MPSKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -239,10 +245,10 @@ public class MPSBinaryImageKernel extends MPSKernel {
     @Generated
     @Selector("encodeToCommandBuffer:inPlacePrimaryTexture:secondaryTexture:fallbackCopyAllocator:")
     public native boolean encodeToCommandBufferInPlacePrimaryTextureSecondaryTextureFallbackCopyAllocator(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> inPlacePrimaryTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture secondaryTexture,
-            @ObjCBlock(name = "call_encodeToCommandBufferInPlacePrimaryTextureSecondaryTextureFallbackCopyAllocator") Block_encodeToCommandBufferInPlacePrimaryTextureSecondaryTextureFallbackCopyAllocator copyAllocator);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> inPlacePrimaryTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture secondaryTexture,
+            @Nullable @ObjCBlock(name = "call_encodeToCommandBufferInPlacePrimaryTextureSecondaryTextureFallbackCopyAllocator") Block_encodeToCommandBufferInPlacePrimaryTextureSecondaryTextureFallbackCopyAllocator copyAllocator);
 
     /**
      * This method attempts to apply the MPSKernel in place on a texture.
@@ -297,10 +303,10 @@ public class MPSBinaryImageKernel extends MPSKernel {
     @Generated
     @Selector("encodeToCommandBuffer:primaryTexture:inPlaceSecondaryTexture:fallbackCopyAllocator:")
     public native boolean encodeToCommandBufferPrimaryTextureInPlaceSecondaryTextureFallbackCopyAllocator(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture primaryTexture,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> inPlaceSecondaryTexture,
-            @ObjCBlock(name = "call_encodeToCommandBufferPrimaryTextureInPlaceSecondaryTextureFallbackCopyAllocator") Block_encodeToCommandBufferPrimaryTextureInPlaceSecondaryTextureFallbackCopyAllocator copyAllocator);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture primaryTexture,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> inPlaceSecondaryTexture,
+            @Nullable @ObjCBlock(name = "call_encodeToCommandBufferPrimaryTextureInPlaceSecondaryTextureFallbackCopyAllocator") Block_encodeToCommandBufferPrimaryTextureInPlaceSecondaryTextureFallbackCopyAllocator copyAllocator);
 
     /**
      * Encode a MPSKernel into a command Buffer. The operation shall proceed out-of-place.
@@ -314,10 +320,10 @@ public class MPSBinaryImageKernel extends MPSKernel {
     @Generated
     @Selector("encodeToCommandBuffer:primaryTexture:secondaryTexture:destinationTexture:")
     public native void encodeToCommandBufferPrimaryTextureSecondaryTextureDestinationTexture(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture primaryTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture secondaryTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture primaryTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture secondaryTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture);
 
     @Generated
     @Selector("init")
@@ -333,7 +339,7 @@ public class MPSBinaryImageKernel extends MPSKernel {
      */
     @Generated
     @Selector("initWithDevice:")
-    public native MPSBinaryImageKernel initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSBinaryImageKernel initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * [@property] primaryEdgeMode
@@ -547,19 +553,23 @@ public class MPSBinaryImageKernel extends MPSKernel {
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_encodeToCommandBufferInPlacePrimaryTextureSecondaryTextureFallbackCopyAllocator {
+        @NotNull
         @Generated
         @MappedReturn(ObjCObjectMapper.class)
-        Object call_encodeToCommandBufferInPlacePrimaryTextureSecondaryTextureFallbackCopyAllocator(MPSKernel arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, @Mapped(ObjCObjectMapper.class) Object arg2);
+        Object call_encodeToCommandBufferInPlacePrimaryTextureSecondaryTextureFallbackCopyAllocator(
+                @NotNull MPSKernel arg0, @NotNull @Mapped(ObjCObjectMapper.class) Object arg1,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object arg2);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_encodeToCommandBufferPrimaryTextureInPlaceSecondaryTextureFallbackCopyAllocator {
+        @NotNull
         @Generated
         @MappedReturn(ObjCObjectMapper.class)
-        Object call_encodeToCommandBufferPrimaryTextureInPlaceSecondaryTextureFallbackCopyAllocator(MPSKernel arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, @Mapped(ObjCObjectMapper.class) Object arg2);
+        Object call_encodeToCommandBufferPrimaryTextureInPlaceSecondaryTextureFallbackCopyAllocator(
+                @NotNull MPSKernel arg0, @NotNull @Mapped(ObjCObjectMapper.class) Object arg1,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object arg2);
     }
 
     /**
@@ -574,12 +584,12 @@ public class MPSBinaryImageKernel extends MPSKernel {
     @Generated
     @Selector("encodeToCommandBuffer:primaryImage:secondaryImage:destinationImage:")
     public native void encodeToCommandBufferPrimaryImageSecondaryImageDestinationImage(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage primaryImage,
-            MPSImage secondaryImage, MPSImage destinationImage);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage primaryImage,
+            @NotNull MPSImage secondaryImage, @NotNull MPSImage destinationImage);
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSBinaryImageKernel initWithCoder(NSCoder aDecoder);
+    public native MPSBinaryImageKernel initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
@@ -598,8 +608,8 @@ public class MPSBinaryImageKernel extends MPSKernel {
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSBinaryImageKernel initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSBinaryImageKernel initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("supportsSecureCoding")

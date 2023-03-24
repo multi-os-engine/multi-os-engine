@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -78,28 +80,32 @@ public class INPaymentMethod extends NSObject implements NSCopying, NSSecureCodi
      * This payment method represents Apple Pay. Its .type will be INPaymentMethodTypeApplePay. The .name,
      * .identificationHint and .icon properties are not significant for this type of payment method.
      */
+    @NotNull
     @Generated
     @Selector("applePayPaymentMethod")
     public static native INPaymentMethod applePayPaymentMethod();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,9 +140,10 @@ public class INPaymentMethod extends NSObject implements NSCopying, NSSecureCodi
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,20 +175,23 @@ public class INPaymentMethod extends NSObject implements NSCopying, NSSecureCodi
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    @Nullable
     @Generated
     @Selector("icon")
     public native INImage icon();
 
+    @Nullable
     @Generated
     @Selector("identificationHint")
     public native String identificationHint();
@@ -192,13 +202,14 @@ public class INPaymentMethod extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("initWithCoder:")
-    public native INPaymentMethod initWithCoder(NSCoder coder);
+    public native INPaymentMethod initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithType:name:identificationHint:icon:")
-    public native INPaymentMethod initWithTypeNameIdentificationHintIcon(@NInt long type, String name,
-            String identificationHint, INImage icon);
+    public native INPaymentMethod initWithTypeNameIdentificationHintIcon(@NInt long type, @Nullable String name,
+            @Nullable String identificationHint, @Nullable INImage icon);
 
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();

@@ -23,6 +23,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -57,22 +59,25 @@ public class UIContextMenuConfiguration extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -89,13 +94,14 @@ public class UIContextMenuConfiguration extends NSObject {
     @Generated
     @Selector("configurationWithIdentifier:previewProvider:actionProvider:")
     public static native UIContextMenuConfiguration configurationWithIdentifierPreviewProviderActionProvider(
-            @Mapped(ObjCObjectMapper.class) Object identifier,
-            @ObjCBlock(name = "call_configurationWithIdentifierPreviewProviderActionProvider_1") Block_configurationWithIdentifierPreviewProviderActionProvider_1 previewProvider,
-            @ObjCBlock(name = "call_configurationWithIdentifierPreviewProviderActionProvider_2") Block_configurationWithIdentifierPreviewProviderActionProvider_2 actionProvider);
+            @Nullable @Mapped(ObjCObjectMapper.class) Object identifier,
+            @Nullable @ObjCBlock(name = "call_configurationWithIdentifierPreviewProviderActionProvider_1") Block_configurationWithIdentifierPreviewProviderActionProvider_1 previewProvider,
+            @Nullable @ObjCBlock(name = "call_configurationWithIdentifierPreviewProviderActionProvider_2") Block_configurationWithIdentifierPreviewProviderActionProvider_2 actionProvider);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_configurationWithIdentifierPreviewProviderActionProvider_1 {
+        @Nullable
         @Generated
         UIViewController call_configurationWithIdentifierPreviewProviderActionProvider_1();
     }
@@ -103,9 +109,10 @@ public class UIContextMenuConfiguration extends NSObject {
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_configurationWithIdentifierPreviewProviderActionProvider_2 {
+        @Nullable
         @Generated
         UIMenu call_configurationWithIdentifierPreviewProviderActionProvider_2(
-                NSArray<? extends UIMenuElement> suggestedActions);
+                @NotNull NSArray<? extends UIMenuElement> suggestedActions);
     }
 
     @Generated
@@ -125,6 +132,7 @@ public class UIContextMenuConfiguration extends NSObject {
      * This configuration's identifier. When representing multiple items in your app, this identifier
      * corresponds to the primary item (i.e. the one with which the user interacted when invoking the menu).
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     @MappedReturn(ObjCObjectMapper.class)
@@ -151,9 +159,10 @@ public class UIContextMenuConfiguration extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -208,6 +217,7 @@ public class UIContextMenuConfiguration extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("secondaryItemIdentifiers")
     public native NSSet<?> secondaryItemIdentifiers();
@@ -239,5 +249,5 @@ public class UIContextMenuConfiguration extends NSObject {
      */
     @Generated
     @Selector("setSecondaryItemIdentifiers:")
-    public native void setSecondaryItemIdentifiers(NSSet<?> value);
+    public native void setSecondaryItemIdentifiers(@NotNull NSSet<?> value);
 }

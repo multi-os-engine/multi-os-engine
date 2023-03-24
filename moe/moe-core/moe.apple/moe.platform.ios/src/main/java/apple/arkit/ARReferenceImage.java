@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A reference image to be detected in the scene.
@@ -65,22 +67,25 @@ public class ARReferenceImage extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -111,7 +116,7 @@ public class ARReferenceImage extends NSObject {
      */
     @Generated
     @Selector("initWithCGImage:orientation:physicalWidth:")
-    public native ARReferenceImage initWithCGImageOrientationPhysicalWidth(CGImageRef image, int orientation,
+    public native ARReferenceImage initWithCGImageOrientationPhysicalWidth(@NotNull CGImageRef image, int orientation,
             @NFloat double physicalWidth);
 
     /**
@@ -123,8 +128,8 @@ public class ARReferenceImage extends NSObject {
      */
     @Generated
     @Selector("initWithPixelBuffer:orientation:physicalWidth:")
-    public native ARReferenceImage initWithPixelBufferOrientationPhysicalWidth(CVBufferRef pixelBuffer, int orientation,
-            @NFloat double physicalWidth);
+    public native ARReferenceImage initWithPixelBufferOrientationPhysicalWidth(@NotNull CVBufferRef pixelBuffer,
+            int orientation, @NFloat double physicalWidth);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -143,13 +148,15 @@ public class ARReferenceImage extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * An optional name used to identify the image.
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -174,10 +181,11 @@ public class ARReferenceImage extends NSObject {
      * @param bundle The bundle containing the image file or asset catalog. Specify nil to search the app’s main bundle.
      * @return The set of reference images or nil on error.
      */
+    @Nullable
     @Generated
     @Selector("referenceImagesInGroupNamed:bundle:")
-    public static native NSSet<? extends ARReferenceImage> referenceImagesInGroupNamedBundle(String name,
-            NSBundle bundle);
+    public static native NSSet<? extends ARReferenceImage> referenceImagesInGroupNamedBundle(@NotNull String name,
+            @Nullable NSBundle bundle);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -196,6 +204,7 @@ public class ARReferenceImage extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("resourceGroupName")
     public native String resourceGroupName();
@@ -205,7 +214,7 @@ public class ARReferenceImage extends NSObject {
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
     @Generated
     @Selector("setVersion:")
@@ -232,13 +241,13 @@ public class ARReferenceImage extends NSObject {
     @Generated
     @Selector("validateWithCompletionHandler:")
     public native void validateWithCompletionHandler(
-            @ObjCBlock(name = "call_validateWithCompletionHandler") Block_validateWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_validateWithCompletionHandler") Block_validateWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_validateWithCompletionHandler {
         @Generated
-        void call_validateWithCompletionHandler(NSError error);
+        void call_validateWithCompletionHandler(@Nullable NSError error);
     }
 
     @Generated

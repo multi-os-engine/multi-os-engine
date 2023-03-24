@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCustomRoutingController
@@ -73,28 +75,32 @@ public class AVCustomRoutingController extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("authorizedRoutes")
     public native NSArray<? extends AVCustomDeviceRoute> authorizedRoutes();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,6 +112,7 @@ public class AVCustomRoutingController extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("customActionItems")
     public native NSArray<? extends AVCustomRoutingActionItem> customActionItems();
@@ -121,6 +128,7 @@ public class AVCustomRoutingController extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -163,7 +171,7 @@ public class AVCustomRoutingController extends NSObject {
      */
     @Generated
     @Selector("invalidateAuthorizationForRoute:")
-    public native void invalidateAuthorizationForRoute(AVCustomDeviceRoute route);
+    public native void invalidateAuthorizationForRoute(@NotNull AVCustomDeviceRoute route);
 
     /**
      * isRouteActive:
@@ -175,15 +183,16 @@ public class AVCustomRoutingController extends NSObject {
      */
     @Generated
     @Selector("isRouteActive:")
-    public native boolean isRouteActive(AVCustomDeviceRoute route);
+    public native boolean isRouteActive(@NotNull AVCustomDeviceRoute route);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] knownRouteIPs
@@ -192,6 +201,7 @@ public class AVCustomRoutingController extends NSObject {
      * 
      * API-Since: 16.1
      */
+    @NotNull
     @Generated
     @Selector("knownRouteIPs")
     public native NSArray<? extends AVCustomRoutingPartialIP> knownRouteIPs();
@@ -222,7 +232,7 @@ public class AVCustomRoutingController extends NSObject {
      */
     @Generated
     @Selector("setActive:forRoute:")
-    public native void setActiveForRoute(boolean active, AVCustomDeviceRoute route);
+    public native void setActiveForRoute(boolean active, @NotNull AVCustomDeviceRoute route);
 
     /**
      * [@property] customActionItems
@@ -233,7 +243,7 @@ public class AVCustomRoutingController extends NSObject {
      */
     @Generated
     @Selector("setCustomActionItems:")
-    public native void setCustomActionItems(NSArray<? extends AVCustomRoutingActionItem> value);
+    public native void setCustomActionItems(@NotNull NSArray<? extends AVCustomRoutingActionItem> value);
 
     /**
      * [@property] delegate
@@ -244,7 +254,8 @@ public class AVCustomRoutingController extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) AVCustomRoutingControllerDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) AVCustomRoutingControllerDelegate value);
 
     /**
      * [@property] delegate
@@ -254,7 +265,7 @@ public class AVCustomRoutingController extends NSObject {
      * API-Since: 16.0
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) AVCustomRoutingControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) AVCustomRoutingControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -274,7 +285,7 @@ public class AVCustomRoutingController extends NSObject {
      */
     @Generated
     @Selector("setKnownRouteIPs:")
-    public native void setKnownRouteIPs(NSArray<? extends AVCustomRoutingPartialIP> value);
+    public native void setKnownRouteIPs(@NotNull NSArray<? extends AVCustomRoutingPartialIP> value);
 
     @Generated
     @Selector("setVersion:")

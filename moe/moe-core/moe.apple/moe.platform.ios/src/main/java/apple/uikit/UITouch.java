@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGVector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 2.0
@@ -77,22 +79,25 @@ public class UITouch extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +132,10 @@ public class UITouch extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -178,7 +184,7 @@ public class UITouch extends NSObject {
     @Generated
     @Selector("azimuthAngleInView:")
     @NFloat
-    public native double azimuthAngleInView(UIView view);
+    public native double azimuthAngleInView(@Nullable UIView view);
 
     /**
      * A unit vector that points in the direction of the azimuth angle. Valid only for stylus touch types.
@@ -189,7 +195,7 @@ public class UITouch extends NSObject {
     @Generated
     @Selector("azimuthUnitVectorInView:")
     @ByValue
-    public native CGVector azimuthUnitVectorInView(UIView view);
+    public native CGVector azimuthUnitVectorInView(@Nullable UIView view);
 
     /**
      * A set of properties that has estimated values
@@ -220,6 +226,7 @@ public class UITouch extends NSObject {
      * 
      * API-Since: 9.1
      */
+    @Nullable
     @Generated
     @Selector("estimationUpdateIndex")
     public native NSNumber estimationUpdateIndex();
@@ -237,6 +244,7 @@ public class UITouch extends NSObject {
     /**
      * API-Since: 3.2
      */
+    @Nullable
     @Generated
     @Selector("gestureRecognizers")
     public native NSArray<? extends UIGestureRecognizer> gestureRecognizers();
@@ -248,12 +256,12 @@ public class UITouch extends NSObject {
     @Generated
     @Selector("locationInNode:")
     @ByValue
-    public native CGPoint locationInNode(SKNode node);
+    public native CGPoint locationInNode(@NotNull SKNode node);
 
     @Generated
     @Selector("locationInView:")
     @ByValue
-    public native CGPoint locationInView(UIView view);
+    public native CGPoint locationInView(@Nullable UIView view);
 
     /**
      * majorRadius and majorRadiusTolerance are in points
@@ -299,7 +307,7 @@ public class UITouch extends NSObject {
     @Generated
     @Selector("preciseLocationInView:")
     @ByValue
-    public native CGPoint preciseLocationInView(UIView view);
+    public native CGPoint preciseLocationInView(@Nullable UIView view);
 
     /**
      * API-Since: 9.1
@@ -307,17 +315,17 @@ public class UITouch extends NSObject {
     @Generated
     @Selector("precisePreviousLocationInView:")
     @ByValue
-    public native CGPoint precisePreviousLocationInView(UIView view);
+    public native CGPoint precisePreviousLocationInView(@Nullable UIView view);
 
     @Generated
     @Selector("previousLocationInNode:")
     @ByValue
-    public native CGPoint previousLocationInNode(SKNode node);
+    public native CGPoint previousLocationInNode(@NotNull SKNode node);
 
     @Generated
     @Selector("previousLocationInView:")
     @ByValue
-    public native CGPoint previousLocationInView(UIView view);
+    public native CGPoint previousLocationInView(@Nullable UIView view);
 
     /**
      * touch down within a certain point within a certain amount of time
@@ -339,10 +347,12 @@ public class UITouch extends NSObject {
     @NInt
     public native long type();
 
+    @Nullable
     @Generated
     @Selector("view")
     public native UIView view();
 
+    @Nullable
     @Generated
     @Selector("window")
     public native UIWindow window();

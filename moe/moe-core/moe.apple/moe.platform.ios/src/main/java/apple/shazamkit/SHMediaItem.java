@@ -30,6 +30,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@c] SHMediaItem represents metadata associated with a @c SHSignature
@@ -77,6 +79,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
      * The Apple Music ID
      * [@note] This may be fetched using the key @c SHMediaItemAppleMusicID
      */
+    @Nullable
     @Generated
     @Selector("appleMusicID")
     public native String appleMusicID();
@@ -85,6 +88,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
      * The Apple Music URL
      * [@note] This may be fetched using the key @c SHMediaItemAppleMusicURL
      */
+    @Nullable
     @Generated
     @Selector("appleMusicURL")
     public native NSURL appleMusicURL();
@@ -93,6 +97,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
      * The Artist
      * [@note] This may be fetched using the key @c SHMediaItemArtist
      */
+    @Nullable
     @Generated
     @Selector("artist")
     public native String artist();
@@ -101,37 +106,42 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
      * The Artwork URL
      * [@note] This may be fetched using the key @c SHMediaItemArtworkURL
      */
+    @Nullable
     @Generated
     @Selector("artworkURL")
     public native NSURL artworkURL();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -143,7 +153,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Whether this object represents explicit material
@@ -160,14 +170,14 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("fetchMediaItemWithShazamID:completionHandler:")
-    public static native void fetchMediaItemWithShazamIDCompletionHandler(String shazamID,
-            @ObjCBlock(name = "call_fetchMediaItemWithShazamIDCompletionHandler") Block_fetchMediaItemWithShazamIDCompletionHandler completionHandler);
+    public static native void fetchMediaItemWithShazamIDCompletionHandler(@NotNull String shazamID,
+            @NotNull @ObjCBlock(name = "call_fetchMediaItemWithShazamIDCompletionHandler") Block_fetchMediaItemWithShazamIDCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchMediaItemWithShazamIDCompletionHandler {
         @Generated
-        void call_fetchMediaItemWithShazamIDCompletionHandler(SHMediaItem mediaItem, NSError error);
+        void call_fetchMediaItemWithShazamIDCompletionHandler(@Nullable SHMediaItem mediaItem, @Nullable NSError error);
     }
 
     /**
@@ -176,6 +186,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
      * 
      * An array of strings representing the genres of the media item. Will return an empty array if there are no genres.
      */
+    @NotNull
     @Generated
     @Selector("genres")
     public native NSArray<String> genres();
@@ -191,7 +202,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SHMediaItem initWithCoder(NSCoder coder);
+    public native SHMediaItem initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -214,13 +225,15 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
      * The International Standard Recording Code
      * [@note] This may be fetched using the key @c SHMediaItemISRC
      */
+    @Nullable
     @Generated
     @Selector("isrc")
     public native String isrc();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Construct a new instance with the provided dictionary
@@ -231,7 +244,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("mediaItemWithProperties:")
-    public static native SHMediaItem mediaItemWithProperties(NSDictionary<String, ?> properties);
+    public static native SHMediaItem mediaItemWithProperties(@NotNull NSDictionary<String, ?> properties);
 
     @Generated
     @Owned
@@ -243,10 +256,11 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
      * 
      * @param key The `SHMediaItemProperty` or custom key for a value
      */
+    @NotNull
     @Generated
     @Selector("objectForKeyedSubscript:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object objectForKeyedSubscript(String key);
+    public native Object objectForKeyedSubscript(@NotNull String key);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -264,6 +278,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
      * The Shazam Media ID
      * [@note] This may be fetched using the key @c SHMediaItemShazamID
      */
+    @Nullable
     @Generated
     @Selector("shazamID")
     public native String shazamID();
@@ -272,6 +287,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
      * The Subtitle
      * [@note] This may be fetched using the key @c SHMediaItemSubtitle
      */
+    @Nullable
     @Generated
     @Selector("subtitle")
     public native String subtitle();
@@ -294,6 +310,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
      * The Title
      * [@note] This may be fetched using the key @c SHMediaItemTitle
      */
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();
@@ -303,10 +320,11 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
      * 
      * @param property The `SHMediaItemProperty` for a value
      */
+    @NotNull
     @Generated
     @Selector("valueForProperty:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object valueForProperty(String property);
+    public native Object valueForProperty(@NotNull String property);
 
     @Generated
     @Selector("version")
@@ -317,6 +335,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
      * The VideoURL
      * [@note] This may be fetched using the key @c SHMediaItemVideoURL
      */
+    @Nullable
     @Generated
     @Selector("videoURL")
     public native NSURL videoURL();
@@ -327,6 +346,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
      * The URL will point to a page that displays the current object in its entirety
      * [@note] This may be fetched using the key @c SHMediaItemWebURL
      */
+    @Nullable
     @Generated
     @Selector("webURL")
     public native NSURL webURL();
@@ -337,6 +357,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("frequencySkewRanges")
     public native NSArray<? extends SHRange> frequencySkewRanges();
@@ -346,6 +367,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("timeRanges")
     public native NSArray<? extends SHRange> timeRanges();

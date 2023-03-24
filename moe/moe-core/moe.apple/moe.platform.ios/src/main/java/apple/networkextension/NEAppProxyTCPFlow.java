@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEAppProxyTCPFlow
@@ -83,22 +85,25 @@ public class NEAppProxyTCPFlow extends NEAppProxyFlow {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +138,10 @@ public class NEAppProxyTCPFlow extends NEAppProxyFlow {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -184,7 +190,7 @@ public class NEAppProxyTCPFlow extends NEAppProxyFlow {
     @Generated
     @Selector("readDataWithCompletionHandler:")
     public native void readDataWithCompletionHandler(
-            @ObjCBlock(name = "call_readDataWithCompletionHandler") Block_readDataWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_readDataWithCompletionHandler") Block_readDataWithCompletionHandler completionHandler);
 
     /**
      * [@property] remoteEndpoint
@@ -193,6 +199,7 @@ public class NEAppProxyTCPFlow extends NEAppProxyFlow {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("remoteEndpoint")
     public native NWEndpoint remoteEndpoint();
@@ -212,20 +219,20 @@ public class NEAppProxyTCPFlow extends NEAppProxyFlow {
      */
     @Generated
     @Selector("writeData:withCompletionHandler:")
-    public native void writeDataWithCompletionHandler(NSData data,
-            @ObjCBlock(name = "call_writeDataWithCompletionHandler") Block_writeDataWithCompletionHandler completionHandler);
+    public native void writeDataWithCompletionHandler(@NotNull NSData data,
+            @NotNull @ObjCBlock(name = "call_writeDataWithCompletionHandler") Block_writeDataWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_readDataWithCompletionHandler {
         @Generated
-        void call_readDataWithCompletionHandler(NSData data, NSError error);
+        void call_readDataWithCompletionHandler(@Nullable NSData data, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeDataWithCompletionHandler {
         @Generated
-        void call_writeDataWithCompletionHandler(NSError error);
+        void call_writeDataWithCompletionHandler(@Nullable NSError error);
     }
 }

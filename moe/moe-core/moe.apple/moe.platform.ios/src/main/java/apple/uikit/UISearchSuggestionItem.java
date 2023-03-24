@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A concrete container for search suggestion string and optional image and associated information for providing
@@ -61,22 +63,25 @@ public class UISearchSuggestionItem extends NSObject implements UISearchSuggesti
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -94,6 +99,7 @@ public class UISearchSuggestionItem extends NSObject implements UISearchSuggesti
     @NUInt
     public static native long hash_static();
 
+    @Nullable
     @Generated
     @Selector("iconImage")
     public native UIImage iconImage();
@@ -109,7 +115,7 @@ public class UISearchSuggestionItem extends NSObject implements UISearchSuggesti
      */
     @Generated
     @Selector("initWithLocalizedAttributedSuggestion:")
-    public native UISearchSuggestionItem initWithLocalizedAttributedSuggestion(NSAttributedString suggestion);
+    public native UISearchSuggestionItem initWithLocalizedAttributedSuggestion(@NotNull NSAttributedString suggestion);
 
     /**
      * API-Since: 16.0
@@ -117,7 +123,7 @@ public class UISearchSuggestionItem extends NSObject implements UISearchSuggesti
     @Generated
     @Selector("initWithLocalizedAttributedSuggestion:localizedDescription:")
     public native UISearchSuggestionItem initWithLocalizedAttributedSuggestionLocalizedDescription(
-            NSAttributedString suggestion, String description);
+            @NotNull NSAttributedString suggestion, @Nullable String description);
 
     /**
      * API-Since: 16.0
@@ -125,22 +131,22 @@ public class UISearchSuggestionItem extends NSObject implements UISearchSuggesti
     @Generated
     @Selector("initWithLocalizedAttributedSuggestion:localizedDescription:iconImage:")
     public native UISearchSuggestionItem initWithLocalizedAttributedSuggestionLocalizedDescriptionIconImage(
-            NSAttributedString suggestion, String description, UIImage iconImage);
+            @NotNull NSAttributedString suggestion, @Nullable String description, @Nullable UIImage iconImage);
 
     /**
      * Initializes a search suggestion object with a specified search suggestion string.
      */
     @Generated
     @Selector("initWithLocalizedSuggestion:")
-    public native UISearchSuggestionItem initWithLocalizedSuggestion(String suggestion);
+    public native UISearchSuggestionItem initWithLocalizedSuggestion(@NotNull String suggestion);
 
     /**
      * Initializes a search suggestion object with a specified search suggestion string and a description string.
      */
     @Generated
     @Selector("initWithLocalizedSuggestion:localizedDescription:")
-    public native UISearchSuggestionItem initWithLocalizedSuggestionLocalizedDescription(String suggestion,
-            String description);
+    public native UISearchSuggestionItem initWithLocalizedSuggestionLocalizedDescription(@NotNull String suggestion,
+            @Nullable String description);
 
     /**
      * Initializes a search suggestion object with a specified search suggestion string, a description string, and a
@@ -148,8 +154,8 @@ public class UISearchSuggestionItem extends NSObject implements UISearchSuggesti
      */
     @Generated
     @Selector("initWithLocalizedSuggestion:localizedDescription:iconImage:")
-    public native UISearchSuggestionItem initWithLocalizedSuggestionLocalizedDescriptionIconImage(String suggestion,
-            String description, UIImage iconImage);
+    public native UISearchSuggestionItem initWithLocalizedSuggestionLocalizedDescriptionIconImage(
+            @NotNull String suggestion, @Nullable String description, @Nullable UIImage iconImage);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -168,18 +174,22 @@ public class UISearchSuggestionItem extends NSObject implements UISearchSuggesti
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("localizedAttributedSuggestion")
     public native NSAttributedString localizedAttributedSuggestion();
 
+    @Nullable
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
 
+    @Nullable
     @Generated
     @Selector("localizedSuggestion")
     public native String localizedSuggestion();
@@ -189,6 +199,7 @@ public class UISearchSuggestionItem extends NSObject implements UISearchSuggesti
     @Selector("new")
     public static native UISearchSuggestionItem new_objc();
 
+    @Nullable
     @Generated
     @Selector("representedObject")
     @MappedReturn(ObjCObjectMapper.class)
@@ -204,7 +215,7 @@ public class UISearchSuggestionItem extends NSObject implements UISearchSuggesti
 
     @Generated
     @Selector("setRepresentedObject:")
-    public native void setRepresentedObject(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setRepresentedObject(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
     @Selector("setVersion:")
@@ -215,50 +226,56 @@ public class UISearchSuggestionItem extends NSObject implements UISearchSuggesti
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("suggestionWithLocalizedAttributedSuggestion:")
     public static native UISearchSuggestionItem suggestionWithLocalizedAttributedSuggestion(
-            NSAttributedString suggestion);
+            @NotNull NSAttributedString suggestion);
 
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("suggestionWithLocalizedAttributedSuggestion:descriptionString:")
     public static native UISearchSuggestionItem suggestionWithLocalizedAttributedSuggestionDescriptionString(
-            NSAttributedString suggestion, String description);
+            @NotNull NSAttributedString suggestion, @Nullable String description);
 
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("suggestionWithLocalizedAttributedSuggestion:descriptionString:iconImage:")
     public static native UISearchSuggestionItem suggestionWithLocalizedAttributedSuggestionDescriptionStringIconImage(
-            NSAttributedString suggestion, String description, UIImage iconImage);
+            @NotNull NSAttributedString suggestion, @Nullable String description, @Nullable UIImage iconImage);
 
     /**
      * Returns a new search suggestion object with a specified suggestion string.
      */
+    @NotNull
     @Generated
     @Selector("suggestionWithLocalizedSuggestion:")
-    public static native UISearchSuggestionItem suggestionWithLocalizedSuggestion(String suggestion);
+    public static native UISearchSuggestionItem suggestionWithLocalizedSuggestion(@NotNull String suggestion);
 
     /**
      * Returns a new search suggestion object with a specified suggestion string and a description string.
      */
+    @NotNull
     @Generated
     @Selector("suggestionWithLocalizedSuggestion:descriptionString:")
-    public static native UISearchSuggestionItem suggestionWithLocalizedSuggestionDescriptionString(String suggestion,
-            String description);
+    public static native UISearchSuggestionItem suggestionWithLocalizedSuggestionDescriptionString(
+            @NotNull String suggestion, @Nullable String description);
 
     /**
      * Returns a new search suggestion object with a specified suggestion string, description string, and a search icon
      * image.
      */
+    @NotNull
     @Generated
     @Selector("suggestionWithLocalizedSuggestion:descriptionString:iconImage:")
     public static native UISearchSuggestionItem suggestionWithLocalizedSuggestionDescriptionStringIconImage(
-            String suggestion, String description, UIImage iconImage);
+            @NotNull String suggestion, @Nullable String description, @Nullable UIImage iconImage);
 
     @Generated
     @Selector("superclass")

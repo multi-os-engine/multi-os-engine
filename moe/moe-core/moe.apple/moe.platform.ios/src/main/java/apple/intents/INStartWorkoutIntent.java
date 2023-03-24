@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -74,22 +76,25 @@ public class INStartWorkoutIntent extends INIntent {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +129,10 @@ public class INStartWorkoutIntent extends INIntent {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,6 +164,7 @@ public class INStartWorkoutIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("goalValue")
     public native NSNumber goalValue();
@@ -168,7 +175,7 @@ public class INStartWorkoutIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INStartWorkoutIntent initWithCoder(NSCoder coder);
+    public native INStartWorkoutIntent initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Designated initializer. The `workoutName` can use `INWorkoutNameIdentifier` as its `identifier` parameter.
@@ -176,9 +183,10 @@ public class INStartWorkoutIntent extends INIntent {
     @Generated
     @Selector("initWithWorkoutName:goalValue:workoutGoalUnitType:workoutLocationType:isOpenEnded:")
     public native INStartWorkoutIntent initWithWorkoutNameGoalValueWorkoutGoalUnitTypeWorkoutLocationTypeIsOpenEnded(
-            INSpeakableString workoutName, NSNumber goalValue, @NInt long workoutGoalUnitType,
-            @NInt long workoutLocationType, NSNumber isOpenEnded);
+            @Nullable INSpeakableString workoutName, @Nullable NSNumber goalValue, @NInt long workoutGoalUnitType,
+            @NInt long workoutLocationType, @Nullable NSNumber isOpenEnded);
 
+    @Nullable
     @Generated
     @Selector("isOpenEnded")
     public native NSNumber isOpenEnded();
@@ -199,6 +207,7 @@ public class INStartWorkoutIntent extends INIntent {
     @NInt
     public native long workoutLocationType();
 
+    @Nullable
     @Generated
     @Selector("workoutName")
     public native INSpeakableString workoutName();

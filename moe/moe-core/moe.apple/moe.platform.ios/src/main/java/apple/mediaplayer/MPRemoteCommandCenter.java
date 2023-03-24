@@ -37,6 +37,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 7.1
@@ -71,22 +73,25 @@ public class MPRemoteCommandCenter extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,9 +126,10 @@ public class MPRemoteCommandCenter extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -142,6 +148,7 @@ public class MPRemoteCommandCenter extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("sharedCommandCenter")
     public static native MPRemoteCommandCenter sharedCommandCenter();
@@ -155,6 +162,7 @@ public class MPRemoteCommandCenter extends NSObject {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("bookmarkCommand")
     public native MPFeedbackCommand bookmarkCommand();
@@ -162,18 +170,22 @@ public class MPRemoteCommandCenter extends NSObject {
     /**
      * API-Since: 9.1
      */
+    @NotNull
     @Generated
     @Selector("changePlaybackPositionCommand")
     public native MPChangePlaybackPositionCommand changePlaybackPositionCommand();
 
+    @NotNull
     @Generated
     @Selector("changePlaybackRateCommand")
     public native MPChangePlaybackRateCommand changePlaybackRateCommand();
 
+    @NotNull
     @Generated
     @Selector("changeRepeatModeCommand")
     public native MPChangeRepeatModeCommand changeRepeatModeCommand();
 
+    @NotNull
     @Generated
     @Selector("changeShuffleModeCommand")
     public native MPChangeShuffleModeCommand changeShuffleModeCommand();
@@ -181,10 +193,12 @@ public class MPRemoteCommandCenter extends NSObject {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("disableLanguageOptionCommand")
     public native MPRemoteCommand disableLanguageOptionCommand();
 
+    @NotNull
     @Generated
     @Selector("dislikeCommand")
     public native MPFeedbackCommand dislikeCommand();
@@ -192,6 +206,7 @@ public class MPRemoteCommandCenter extends NSObject {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("enableLanguageOptionCommand")
     public native MPRemoteCommand enableLanguageOptionCommand();
@@ -206,6 +221,7 @@ public class MPRemoteCommandCenter extends NSObject {
      * additional context about these actions with the localizedTitle property in
      * MPFeedbackCommand.
      */
+    @NotNull
     @Generated
     @Selector("likeCommand")
     public native MPFeedbackCommand likeCommand();
@@ -213,6 +229,7 @@ public class MPRemoteCommandCenter extends NSObject {
     /**
      * Previous/Next Track Commands
      */
+    @NotNull
     @Generated
     @Selector("nextTrackCommand")
     public native MPRemoteCommand nextTrackCommand();
@@ -220,14 +237,17 @@ public class MPRemoteCommandCenter extends NSObject {
     /**
      * Playback Commands
      */
+    @NotNull
     @Generated
     @Selector("pauseCommand")
     public native MPRemoteCommand pauseCommand();
 
+    @NotNull
     @Generated
     @Selector("playCommand")
     public native MPRemoteCommand playCommand();
 
+    @NotNull
     @Generated
     @Selector("previousTrackCommand")
     public native MPRemoteCommand previousTrackCommand();
@@ -235,10 +255,12 @@ public class MPRemoteCommandCenter extends NSObject {
     /**
      * Rating Command
      */
+    @NotNull
     @Generated
     @Selector("ratingCommand")
     public native MPRatingCommand ratingCommand();
 
+    @NotNull
     @Generated
     @Selector("seekBackwardCommand")
     public native MPRemoteCommand seekBackwardCommand();
@@ -246,10 +268,12 @@ public class MPRemoteCommandCenter extends NSObject {
     /**
      * Seek Commands
      */
+    @NotNull
     @Generated
     @Selector("seekForwardCommand")
     public native MPRemoteCommand seekForwardCommand();
 
+    @NotNull
     @Generated
     @Selector("skipBackwardCommand")
     public native MPSkipIntervalCommand skipBackwardCommand();
@@ -257,14 +281,17 @@ public class MPRemoteCommandCenter extends NSObject {
     /**
      * Skip Interval Commands
      */
+    @NotNull
     @Generated
     @Selector("skipForwardCommand")
     public native MPSkipIntervalCommand skipForwardCommand();
 
+    @NotNull
     @Generated
     @Selector("stopCommand")
     public native MPRemoteCommand stopCommand();
 
+    @NotNull
     @Generated
     @Selector("togglePlayPauseCommand")
     public native MPRemoteCommand togglePlayPauseCommand();

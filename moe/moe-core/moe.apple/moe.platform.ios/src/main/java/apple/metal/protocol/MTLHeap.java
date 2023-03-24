@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.metal.MTLAccelerationStructureDescriptor;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLHeap
@@ -56,6 +58,7 @@ public interface MTLHeap {
      * 
      * The device this heap was created against. This heap can only be used with this device.
      */
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -66,6 +69,7 @@ public interface MTLHeap {
      * 
      * A string to help identify this heap.
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();
@@ -92,6 +96,7 @@ public interface MTLHeap {
      * 
      * @return The buffer or nil if heap is full.
      */
+    @Nullable
     @Generated
     @Selector("newBufferWithLength:options:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -107,10 +112,11 @@ public interface MTLHeap {
      * 
      * @return The texture or nil if heap is full.
      */
+    @Nullable
     @Generated
     @Selector("newTextureWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
-    MTLTexture newTextureWithDescriptor(MTLTextureDescriptor desc);
+    MTLTexture newTextureWithDescriptor(@NotNull MTLTextureDescriptor desc);
 
     /**
      * [@property] label
@@ -119,7 +125,7 @@ public interface MTLHeap {
      */
     @Generated
     @Selector("setLabel:")
-    void setLabel(String value);
+    void setLabel(@Nullable String value);
 
     /**
      * setPurgeabilityState:
@@ -214,6 +220,7 @@ public interface MTLHeap {
      * 
      *         API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("newBufferWithLength:options:offset:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -237,10 +244,11 @@ public interface MTLHeap {
      * 
      *         API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("newTextureWithDescriptor:offset:")
     @MappedReturn(ObjCObjectMapper.class)
-    MTLTexture newTextureWithDescriptorOffset(MTLTextureDescriptor descriptor, @NUInt long offset);
+    MTLTexture newTextureWithDescriptorOffset(@NotNull MTLTextureDescriptor descriptor, @NUInt long offset);
 
     /**
      * [@property] resourceOptions
@@ -282,10 +290,12 @@ public interface MTLHeap {
      * 
      *         API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("newAccelerationStructureWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
-    MTLAccelerationStructure newAccelerationStructureWithDescriptor(MTLAccelerationStructureDescriptor descriptor);
+    MTLAccelerationStructure newAccelerationStructureWithDescriptor(
+            @NotNull MTLAccelerationStructureDescriptor descriptor);
 
     /**
      * newAccelerationStructureWithDescriptor:offset:
@@ -306,11 +316,12 @@ public interface MTLHeap {
      * 
      *         API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("newAccelerationStructureWithDescriptor:offset:")
     @MappedReturn(ObjCObjectMapper.class)
-    MTLAccelerationStructure newAccelerationStructureWithDescriptorOffset(MTLAccelerationStructureDescriptor descriptor,
-            @NUInt long offset);
+    MTLAccelerationStructure newAccelerationStructureWithDescriptorOffset(
+            @NotNull MTLAccelerationStructureDescriptor descriptor, @NUInt long offset);
 
     /**
      * newAccelerationStructureWithSize:
@@ -323,6 +334,7 @@ public interface MTLHeap {
      * 
      *         API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("newAccelerationStructureWithSize:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -346,6 +358,7 @@ public interface MTLHeap {
      * 
      *         API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("newAccelerationStructureWithSize:offset:")
     @MappedReturn(ObjCObjectMapper.class)

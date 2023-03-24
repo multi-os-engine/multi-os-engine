@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCInferenceGraph
@@ -59,7 +61,7 @@ public class MLCInferenceGraph extends MLCGraph {
      */
     @Generated
     @Selector("addInputs:")
-    public native boolean addInputs(NSDictionary<String, ? extends MLCTensor> inputs);
+    public native boolean addInputs(@NotNull NSDictionary<String, ? extends MLCTensor> inputs);
 
     /**
      * Add the list of inputs to the inference graph
@@ -76,9 +78,9 @@ public class MLCInferenceGraph extends MLCGraph {
      */
     @Generated
     @Selector("addInputs:lossLabels:lossLabelWeights:")
-    public native boolean addInputsLossLabelsLossLabelWeights(NSDictionary<String, ? extends MLCTensor> inputs,
-            NSDictionary<String, ? extends MLCTensor> lossLabels,
-            NSDictionary<String, ? extends MLCTensor> lossLabelWeights);
+    public native boolean addInputsLossLabelsLossLabelWeights(@NotNull NSDictionary<String, ? extends MLCTensor> inputs,
+            @Nullable NSDictionary<String, ? extends MLCTensor> lossLabels,
+            @Nullable NSDictionary<String, ? extends MLCTensor> lossLabelWeights);
 
     /**
      * Add the list of outputs to the inference graph
@@ -88,7 +90,7 @@ public class MLCInferenceGraph extends MLCGraph {
      */
     @Generated
     @Selector("addOutputs:")
-    public native boolean addOutputs(NSDictionary<String, ? extends MLCTensor> outputs);
+    public native boolean addOutputs(@NotNull NSDictionary<String, ? extends MLCTensor> outputs);
 
     @Generated
     @Owned
@@ -102,22 +104,25 @@ public class MLCInferenceGraph extends MLCGraph {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,7 +136,7 @@ public class MLCInferenceGraph extends MLCGraph {
      */
     @Generated
     @Selector("compileWithOptions:device:")
-    public native boolean compileWithOptionsDevice(long options, MLCDevice device);
+    public native boolean compileWithOptionsDevice(long options, @NotNull MLCDevice device);
 
     /**
      * Compile the inference graph for a device.
@@ -149,9 +154,9 @@ public class MLCInferenceGraph extends MLCGraph {
      */
     @Generated
     @Selector("compileWithOptions:device:inputTensors:inputTensorsData:")
-    public native boolean compileWithOptionsDeviceInputTensorsInputTensorsData(long options, MLCDevice device,
-            NSDictionary<String, ? extends MLCTensor> inputTensors,
-            NSDictionary<String, ? extends MLCTensorData> inputTensorsData);
+    public native boolean compileWithOptionsDeviceInputTensorsInputTensorsData(long options, @NotNull MLCDevice device,
+            @Nullable NSDictionary<String, ? extends MLCTensor> inputTensors,
+            @Nullable NSDictionary<String, ? extends MLCTensorData> inputTensorsData);
 
     @Generated
     @Selector("debugDescription")
@@ -192,15 +197,15 @@ public class MLCInferenceGraph extends MLCGraph {
     @Generated
     @Selector("executeWithInputsData:batchSize:options:completionHandler:")
     public native boolean executeWithInputsDataBatchSizeOptionsCompletionHandler(
-            NSDictionary<String, ? extends MLCTensorData> inputsData, @NUInt long batchSize, long options,
-            @ObjCBlock(name = "call_executeWithInputsDataBatchSizeOptionsCompletionHandler") Block_executeWithInputsDataBatchSizeOptionsCompletionHandler completionHandler);
+            @NotNull NSDictionary<String, ? extends MLCTensorData> inputsData, @NUInt long batchSize, long options,
+            @Nullable @ObjCBlock(name = "call_executeWithInputsDataBatchSizeOptionsCompletionHandler") Block_executeWithInputsDataBatchSizeOptionsCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_executeWithInputsDataBatchSizeOptionsCompletionHandler {
         @Generated
-        void call_executeWithInputsDataBatchSizeOptionsCompletionHandler(MLCTensor resultTensor, NSError error,
-                double executionTime);
+        void call_executeWithInputsDataBatchSizeOptionsCompletionHandler(@Nullable MLCTensor resultTensor,
+                @Nullable NSError error, double executionTime);
     }
 
     /**
@@ -224,17 +229,18 @@ public class MLCInferenceGraph extends MLCGraph {
     @Generated
     @Selector("executeWithInputsData:lossLabelsData:lossLabelWeightsData:batchSize:options:completionHandler:")
     public native boolean executeWithInputsDataLossLabelsDataLossLabelWeightsDataBatchSizeOptionsCompletionHandler(
-            NSDictionary<String, ? extends MLCTensorData> inputsData,
-            NSDictionary<String, ? extends MLCTensorData> lossLabelsData,
-            NSDictionary<String, ? extends MLCTensorData> lossLabelWeightsData, @NUInt long batchSize, long options,
-            @ObjCBlock(name = "call_executeWithInputsDataLossLabelsDataLossLabelWeightsDataBatchSizeOptionsCompletionHandler") Block_executeWithInputsDataLossLabelsDataLossLabelWeightsDataBatchSizeOptionsCompletionHandler completionHandler);
+            @NotNull NSDictionary<String, ? extends MLCTensorData> inputsData,
+            @Nullable NSDictionary<String, ? extends MLCTensorData> lossLabelsData,
+            @Nullable NSDictionary<String, ? extends MLCTensorData> lossLabelWeightsData, @NUInt long batchSize,
+            long options,
+            @Nullable @ObjCBlock(name = "call_executeWithInputsDataLossLabelsDataLossLabelWeightsDataBatchSizeOptionsCompletionHandler") Block_executeWithInputsDataLossLabelsDataLossLabelWeightsDataBatchSizeOptionsCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_executeWithInputsDataLossLabelsDataLossLabelWeightsDataBatchSizeOptionsCompletionHandler {
         @Generated
         void call_executeWithInputsDataLossLabelsDataLossLabelWeightsDataBatchSizeOptionsCompletionHandler(
-                MLCTensor resultTensor, NSError error, double executionTime);
+                @Nullable MLCTensor resultTensor, @Nullable NSError error, double executionTime);
     }
 
     /**
@@ -259,18 +265,18 @@ public class MLCInferenceGraph extends MLCGraph {
     @Generated
     @Selector("executeWithInputsData:lossLabelsData:lossLabelWeightsData:outputsData:batchSize:options:completionHandler:")
     public native boolean executeWithInputsDataLossLabelsDataLossLabelWeightsDataOutputsDataBatchSizeOptionsCompletionHandler(
-            NSDictionary<String, ? extends MLCTensorData> inputsData,
-            NSDictionary<String, ? extends MLCTensorData> lossLabelsData,
-            NSDictionary<String, ? extends MLCTensorData> lossLabelWeightsData,
-            NSDictionary<String, ? extends MLCTensorData> outputsData, @NUInt long batchSize, long options,
-            @ObjCBlock(name = "call_executeWithInputsDataLossLabelsDataLossLabelWeightsDataOutputsDataBatchSizeOptionsCompletionHandler") Block_executeWithInputsDataLossLabelsDataLossLabelWeightsDataOutputsDataBatchSizeOptionsCompletionHandler completionHandler);
+            @NotNull NSDictionary<String, ? extends MLCTensorData> inputsData,
+            @Nullable NSDictionary<String, ? extends MLCTensorData> lossLabelsData,
+            @Nullable NSDictionary<String, ? extends MLCTensorData> lossLabelWeightsData,
+            @Nullable NSDictionary<String, ? extends MLCTensorData> outputsData, @NUInt long batchSize, long options,
+            @Nullable @ObjCBlock(name = "call_executeWithInputsDataLossLabelsDataLossLabelWeightsDataOutputsDataBatchSizeOptionsCompletionHandler") Block_executeWithInputsDataLossLabelsDataLossLabelWeightsDataOutputsDataBatchSizeOptionsCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_executeWithInputsDataLossLabelsDataLossLabelWeightsDataOutputsDataBatchSizeOptionsCompletionHandler {
         @Generated
         void call_executeWithInputsDataLossLabelsDataLossLabelWeightsDataOutputsDataBatchSizeOptionsCompletionHandler(
-                MLCTensor resultTensor, NSError error, double executionTime);
+                @Nullable MLCTensor resultTensor, @Nullable NSError error, double executionTime);
     }
 
     /**
@@ -293,16 +299,16 @@ public class MLCInferenceGraph extends MLCGraph {
     @Generated
     @Selector("executeWithInputsData:outputsData:batchSize:options:completionHandler:")
     public native boolean executeWithInputsDataOutputsDataBatchSizeOptionsCompletionHandler(
-            NSDictionary<String, ? extends MLCTensorData> inputsData,
-            NSDictionary<String, ? extends MLCTensorData> outputsData, @NUInt long batchSize, long options,
-            @ObjCBlock(name = "call_executeWithInputsDataOutputsDataBatchSizeOptionsCompletionHandler") Block_executeWithInputsDataOutputsDataBatchSizeOptionsCompletionHandler completionHandler);
+            @NotNull NSDictionary<String, ? extends MLCTensorData> inputsData,
+            @Nullable NSDictionary<String, ? extends MLCTensorData> outputsData, @NUInt long batchSize, long options,
+            @Nullable @ObjCBlock(name = "call_executeWithInputsDataOutputsDataBatchSizeOptionsCompletionHandler") Block_executeWithInputsDataOutputsDataBatchSizeOptionsCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_executeWithInputsDataOutputsDataBatchSizeOptionsCompletionHandler {
         @Generated
-        void call_executeWithInputsDataOutputsDataBatchSizeOptionsCompletionHandler(MLCTensor resultTensor,
-                NSError error, double executionTime);
+        void call_executeWithInputsDataOutputsDataBatchSizeOptionsCompletionHandler(@Nullable MLCTensor resultTensor,
+                @Nullable NSError error, double executionTime);
     }
 
     @Generated
@@ -317,7 +323,7 @@ public class MLCInferenceGraph extends MLCGraph {
      */
     @Generated
     @Selector("graphWithGraphObjects:")
-    public static native MLCInferenceGraph graphWithGraphObjects(NSArray<? extends MLCGraph> graphObjects);
+    public static native MLCInferenceGraph graphWithGraphObjects(@NotNull NSArray<? extends MLCGraph> graphObjects);
 
     @Generated
     @Selector("hash")
@@ -345,9 +351,10 @@ public class MLCInferenceGraph extends MLCGraph {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Link mutiple inference graphs
@@ -360,7 +367,7 @@ public class MLCInferenceGraph extends MLCGraph {
      */
     @Generated
     @Selector("linkWithGraphs:")
-    public native boolean linkWithGraphs(NSArray<? extends MLCInferenceGraph> graphs);
+    public native boolean linkWithGraphs(@NotNull NSArray<? extends MLCInferenceGraph> graphs);
 
     @Generated
     @Owned

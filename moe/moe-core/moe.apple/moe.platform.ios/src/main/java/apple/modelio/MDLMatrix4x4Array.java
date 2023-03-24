@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -57,22 +59,25 @@ public class MDLMatrix4x4Array extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -81,11 +86,12 @@ public class MDLMatrix4x4Array extends NSObject implements NSCopying {
     @Selector("clear")
     public native void clear();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -103,12 +109,12 @@ public class MDLMatrix4x4Array extends NSObject implements NSCopying {
     @Generated
     @Selector("getDouble4x4Array:maxCount:")
     @NUInt
-    public native long getDouble4x4ArrayMaxCount(VoidPtr valuesArray, @NUInt long maxCount);
+    public native long getDouble4x4ArrayMaxCount(@NotNull VoidPtr valuesArray, @NUInt long maxCount);
 
     @Generated
     @Selector("getFloat4x4Array:maxCount:")
     @NUInt
-    public native long getFloat4x4ArrayMaxCount(VoidPtr valuesArray, @NUInt long maxCount);
+    public native long getFloat4x4ArrayMaxCount(@NotNull VoidPtr valuesArray, @NUInt long maxCount);
 
     @Generated
     @Selector("hash")
@@ -140,9 +146,10 @@ public class MDLMatrix4x4Array extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,11 +171,11 @@ public class MDLMatrix4x4Array extends NSObject implements NSCopying {
 
     @Generated
     @Selector("setDouble4x4Array:count:")
-    public native void setDouble4x4ArrayCount(VoidPtr valuesArray, @NUInt long count);
+    public native void setDouble4x4ArrayCount(@NotNull VoidPtr valuesArray, @NUInt long count);
 
     @Generated
     @Selector("setFloat4x4Array:count:")
-    public native void setFloat4x4ArrayCount(VoidPtr valuesArray, @NUInt long count);
+    public native void setFloat4x4ArrayCount(@NotNull VoidPtr valuesArray, @NUInt long count);
 
     @Generated
     @Selector("setVersion:")

@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEFilterProviderConfiguration
@@ -83,22 +85,25 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +138,10 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,15 +173,16 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] filterBrowsers
@@ -210,6 +217,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("identityReference")
     public native NSData identityReference();
@@ -220,7 +228,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEFilterProviderConfiguration initWithCoder(NSCoder coder);
+    public native NEFilterProviderConfiguration initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] organization
@@ -229,6 +237,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("organization")
     public native String organization();
@@ -240,6 +249,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("passwordReference")
     public native NSData passwordReference();
@@ -251,6 +261,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("serverAddress")
     public native String serverAddress();
@@ -290,7 +301,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
      */
     @Generated
     @Selector("setIdentityReference:")
-    public native void setIdentityReference(NSData value);
+    public native void setIdentityReference(@Nullable NSData value);
 
     /**
      * [@property] organization
@@ -301,7 +312,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
      */
     @Generated
     @Selector("setOrganization:")
-    public native void setOrganization(String value);
+    public native void setOrganization(@Nullable String value);
 
     /**
      * [@property] passwordReference
@@ -312,7 +323,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
      */
     @Generated
     @Selector("setPasswordReference:")
-    public native void setPasswordReference(NSData value);
+    public native void setPasswordReference(@Nullable NSData value);
 
     /**
      * [@property] serverAddress
@@ -323,7 +334,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
      */
     @Generated
     @Selector("setServerAddress:")
-    public native void setServerAddress(String value);
+    public native void setServerAddress(@Nullable String value);
 
     /**
      * [@property] username
@@ -334,7 +345,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
      */
     @Generated
     @Selector("setUsername:")
-    public native void setUsername(String value);
+    public native void setUsername(@Nullable String value);
 
     /**
      * [@property] vendorConfiguration
@@ -345,7 +356,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
      */
     @Generated
     @Selector("setVendorConfiguration:")
-    public native void setVendorConfiguration(NSDictionary<String, ?> value);
+    public native void setVendorConfiguration(@Nullable NSDictionary<String, ?> value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -360,6 +371,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("username")
     public native String username();
@@ -371,6 +383,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("vendorConfiguration")
     public native NSDictionary<String, ?> vendorConfiguration();

@@ -34,6 +34,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("QuickLook")
@@ -51,8 +53,9 @@ public interface QLPreviewControllerDelegate {
     @IsOptional
     @Selector("previewController:frameForPreviewItem:inSourceView:")
     @ByValue
-    default CGRect previewControllerFrameForPreviewItemInSourceView(QLPreviewController controller,
-            @Mapped(ObjCObjectMapper.class) QLPreviewItem item, @ReferenceInfo(type = UIView.class) Ptr<UIView> view) {
+    default CGRect previewControllerFrameForPreviewItemInSourceView(@NotNull QLPreviewController controller,
+            @NotNull @Mapped(ObjCObjectMapper.class) QLPreviewItem item,
+            @NotNull @ReferenceInfo(type = UIView.class) Ptr<UIView> view) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -66,8 +69,8 @@ public interface QLPreviewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("previewController:shouldOpenURL:forPreviewItem:")
-    default boolean previewControllerShouldOpenURLForPreviewItem(QLPreviewController controller, NSURL url,
-            @Mapped(ObjCObjectMapper.class) QLPreviewItem item) {
+    default boolean previewControllerShouldOpenURLForPreviewItem(@NotNull QLPreviewController controller,
+            @NotNull NSURL url, @NotNull @Mapped(ObjCObjectMapper.class) QLPreviewItem item) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -81,11 +84,12 @@ public interface QLPreviewControllerDelegate {
      * @param contentRect The rect within the image that actually represents the content of the document. For example,
      *                    for icons the actual rect is generally smaller than the icon itself.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("previewController:transitionImageForPreviewItem:contentRect:")
-    default UIImage previewControllerTransitionImageForPreviewItemContentRect(QLPreviewController controller,
-            @Mapped(ObjCObjectMapper.class) QLPreviewItem item, CGRect contentRect) {
+    default UIImage previewControllerTransitionImageForPreviewItemContentRect(@NotNull QLPreviewController controller,
+            @NotNull @Mapped(ObjCObjectMapper.class) QLPreviewItem item, @NotNull CGRect contentRect) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -97,11 +101,12 @@ public interface QLPreviewControllerDelegate {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("previewController:transitionViewForPreviewItem:")
-    default UIView previewControllerTransitionViewForPreviewItem(QLPreviewController controller,
-            @Mapped(ObjCObjectMapper.class) QLPreviewItem item) {
+    default UIView previewControllerTransitionViewForPreviewItem(@NotNull QLPreviewController controller,
+            @NotNull @Mapped(ObjCObjectMapper.class) QLPreviewItem item) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -111,7 +116,7 @@ public interface QLPreviewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("previewControllerDidDismiss:")
-    default void previewControllerDidDismiss(QLPreviewController controller) {
+    default void previewControllerDidDismiss(@NotNull QLPreviewController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -121,7 +126,7 @@ public interface QLPreviewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("previewControllerWillDismiss:")
-    default void previewControllerWillDismiss(QLPreviewController controller) {
+    default void previewControllerWillDismiss(@NotNull QLPreviewController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -148,8 +153,8 @@ public interface QLPreviewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("previewController:didSaveEditedCopyOfPreviewItem:atURL:")
-    default void previewControllerDidSaveEditedCopyOfPreviewItemAtURL(QLPreviewController controller,
-            @Mapped(ObjCObjectMapper.class) QLPreviewItem previewItem, NSURL modifiedContentsURL) {
+    default void previewControllerDidSaveEditedCopyOfPreviewItemAtURL(@NotNull QLPreviewController controller,
+            @NotNull @Mapped(ObjCObjectMapper.class) QLPreviewItem previewItem, @NotNull NSURL modifiedContentsURL) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -165,8 +170,8 @@ public interface QLPreviewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("previewController:didUpdateContentsOfPreviewItem:")
-    default void previewControllerDidUpdateContentsOfPreviewItem(QLPreviewController controller,
-            @Mapped(ObjCObjectMapper.class) QLPreviewItem previewItem) {
+    default void previewControllerDidUpdateContentsOfPreviewItem(@NotNull QLPreviewController controller,
+            @NotNull @Mapped(ObjCObjectMapper.class) QLPreviewItem previewItem) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -192,8 +197,8 @@ public interface QLPreviewControllerDelegate {
     @IsOptional
     @Selector("previewController:editingModeForPreviewItem:")
     @NInt
-    default long previewControllerEditingModeForPreviewItem(QLPreviewController controller,
-            @Mapped(ObjCObjectMapper.class) QLPreviewItem previewItem) {
+    default long previewControllerEditingModeForPreviewItem(@NotNull QLPreviewController controller,
+            @NotNull @Mapped(ObjCObjectMapper.class) QLPreviewItem previewItem) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

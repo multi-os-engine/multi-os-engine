@@ -23,6 +23,7 @@ import org.moe.natj.c.ann.StructureField;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -44,20 +45,22 @@ public final class AudioUnitConnection extends StructObject {
     }
 
     @Generated
-    public AudioUnitConnection(AudioComponentInstance sourceAudioUnit, int sourceOutputNumber, int destInputNumber) {
+    public AudioUnitConnection(@Nullable AudioComponentInstance sourceAudioUnit, int sourceOutputNumber,
+            int destInputNumber) {
         super(AudioUnitConnection.class);
         setSourceAudioUnit(sourceAudioUnit);
         setSourceOutputNumber(sourceOutputNumber);
         setDestInputNumber(destInputNumber);
     }
 
+    @Nullable
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native AudioComponentInstance sourceAudioUnit();
 
     @Generated
     @StructureField(order = 0, isGetter = false)
-    public native void setSourceAudioUnit(AudioComponentInstance value);
+    public native void setSourceAudioUnit(@Nullable AudioComponentInstance value);
 
     @Generated
     @StructureField(order = 1, isGetter = true)

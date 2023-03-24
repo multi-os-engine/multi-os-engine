@@ -11,6 +11,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A class conforming to the WKScriptMessageHandlerWithReply protocol provides a
@@ -85,15 +87,15 @@ public interface WKScriptMessageHandlerWithReply {
      */
     @Generated
     @Selector("userContentController:didReceiveScriptMessage:replyHandler:")
-    void userContentControllerDidReceiveScriptMessageReplyHandler(WKUserContentController userContentController,
-            WKScriptMessage message,
-            @ObjCBlock(name = "call_userContentControllerDidReceiveScriptMessageReplyHandler") Block_userContentControllerDidReceiveScriptMessageReplyHandler replyHandler);
+    void userContentControllerDidReceiveScriptMessageReplyHandler(
+            @NotNull WKUserContentController userContentController, @NotNull WKScriptMessage message,
+            @NotNull @ObjCBlock(name = "call_userContentControllerDidReceiveScriptMessageReplyHandler") Block_userContentControllerDidReceiveScriptMessageReplyHandler replyHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_userContentControllerDidReceiveScriptMessageReplyHandler {
         @Generated
-        void call_userContentControllerDidReceiveScriptMessageReplyHandler(@Mapped(ObjCObjectMapper.class) Object reply,
-                String errorMessage);
+        void call_userContentControllerDidReceiveScriptMessageReplyHandler(
+                @Nullable @Mapped(ObjCObjectMapper.class) Object reply, @Nullable String errorMessage);
     }
 }

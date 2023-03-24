@@ -27,6 +27,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.0
@@ -43,11 +45,12 @@ public interface SFSafariViewControllerDelegate {
      * @param title the title of the web page.
      * @return Returns an array of UIActivity instances that will be appended to UIActivityViewController.
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("safariViewController:activityItemsForURL:title:")
     default NSArray<? extends UIActivity> safariViewControllerActivityItemsForURLTitle(
-            SFSafariViewController controller, NSURL URL, String title) {
+            @NotNull SFSafariViewController controller, @NotNull NSURL URL, @Nullable String title) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -62,7 +65,7 @@ public interface SFSafariViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("safariViewController:didCompleteInitialLoad:")
-    default void safariViewControllerDidCompleteInitialLoad(SFSafariViewController controller,
+    default void safariViewControllerDidCompleteInitialLoad(@NotNull SFSafariViewController controller,
             boolean didLoadSuccessfully) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -74,7 +77,7 @@ public interface SFSafariViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("safariViewControllerDidFinish:")
-    default void safariViewControllerDidFinish(SFSafariViewController controller) {
+    default void safariViewControllerDidFinish(@NotNull SFSafariViewController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -91,11 +94,12 @@ public interface SFSafariViewControllerDelegate {
      * 
      *         API-Since: 11.0
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("safariViewController:excludedActivityTypesForURL:title:")
-    default NSArray<String> safariViewControllerExcludedActivityTypesForURLTitle(SFSafariViewController controller,
-            NSURL URL, String title) {
+    default NSArray<String> safariViewControllerExcludedActivityTypesForURLTitle(
+            @NotNull SFSafariViewController controller, @NotNull NSURL URL, @Nullable String title) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -112,7 +116,8 @@ public interface SFSafariViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("safariViewController:initialLoadDidRedirectToURL:")
-    default void safariViewControllerInitialLoadDidRedirectToURL(SFSafariViewController controller, NSURL URL) {
+    default void safariViewControllerInitialLoadDidRedirectToURL(@NotNull SFSafariViewController controller,
+            @NotNull NSURL URL) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -124,7 +129,7 @@ public interface SFSafariViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("safariViewControllerWillOpenInBrowser:")
-    default void safariViewControllerWillOpenInBrowser(SFSafariViewController controller) {
+    default void safariViewControllerWillOpenInBrowser(@NotNull SFSafariViewController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

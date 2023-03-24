@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 2.0
@@ -75,22 +77,25 @@ public class NSNetService extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,9 +106,11 @@ public class NSNetService extends NSObject {
      * this method will return nil. For applications linked on or after Mac OS X 10.5, this method will throw an
      * NSInvalidArgumentException if it is passed nil as the argument.
      */
+    @NotNull
     @Generated
     @Selector("dataFromTXTRecordDictionary:")
-    public static native NSData dataFromTXTRecordDictionary(NSDictionary<String, ? extends NSData> txtDictionary);
+    public static native NSData dataFromTXTRecordDictionary(
+            @NotNull NSDictionary<String, ? extends NSData> txtDictionary);
 
     @Generated
     @Selector("debugDescription")
@@ -119,9 +126,10 @@ public class NSNetService extends NSObject {
      * be converted into an appropriate NSDictionary, this method will return nil. For applications linked on or after
      * Mac OS X 10.5, this method will throw an NSInvalidException if it is passed nil as the argument.
      */
+    @NotNull
     @Generated
     @Selector("dictionaryFromTXTRecordData:")
-    public static native NSDictionary<String, ? extends NSData> dictionaryFromTXTRecordData(NSData txtData);
+    public static native NSDictionary<String, ? extends NSData> dictionaryFromTXTRecordData(@NotNull NSData txtData);
 
     @Generated
     @Selector("hash")
@@ -145,9 +153,10 @@ public class NSNetService extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -180,6 +189,7 @@ public class NSNetService extends NSObject {
      * -netService:didUpdateTXTRecordData: has not been called, this will return nil. It is permitted to have a
      * zero-length TXT record.
      */
+    @Nullable
     @Generated
     @Selector("TXTRecordData")
     public native NSData TXTRecordData();
@@ -189,6 +199,7 @@ public class NSNetService extends NSObject {
      * sockaddr suitable for use with connect(2). In the event that no addresses are resolved for the service or the
      * service has not yet been resolved, an empty NSArray is returned.
      */
+    @Nullable
     @Generated
     @Selector("addresses")
     public native NSArray<? extends NSData> addresses();
@@ -196,6 +207,7 @@ public class NSNetService extends NSObject {
     /**
      * Set a delegate to receive publish, resolve, or monitor events.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -204,6 +216,7 @@ public class NSNetService extends NSObject {
     /**
      * Returns the domain of the discovered or published service.
      */
+    @NotNull
     @Generated
     @Selector("domain")
     public native String domain();
@@ -217,13 +230,14 @@ public class NSNetService extends NSObject {
     @Generated
     @Selector("getInputStream:outputStream:")
     public native boolean getInputStreamOutputStream(
-            @ReferenceInfo(type = NSInputStream.class) Ptr<NSInputStream> inputStream,
-            @ReferenceInfo(type = NSOutputStream.class) Ptr<NSOutputStream> outputStream);
+            @Nullable @ReferenceInfo(type = NSInputStream.class) Ptr<NSInputStream> inputStream,
+            @Nullable @ReferenceInfo(type = NSOutputStream.class) Ptr<NSOutputStream> outputStream);
 
     /**
      * Returns the DNS host name of the computer hosting the discovered or published service. If a successful resolve
      * has not yet occurred, this method will return nil.
      */
+    @Nullable
     @Generated
     @Selector("hostName")
     public native String hostName();
@@ -253,7 +267,8 @@ public class NSNetService extends NSObject {
      */
     @Generated
     @Selector("initWithDomain:type:name:")
-    public native NSNetService initWithDomainTypeName(String domain, String type, String name);
+    public native NSNetService initWithDomainTypeName(@NotNull String domain, @NotNull String type,
+            @NotNull String name);
 
     /**
      * This is the initializer for publishing. You should use this initializer if you are going to announce the
@@ -262,11 +277,13 @@ public class NSNetService extends NSObject {
      */
     @Generated
     @Selector("initWithDomain:type:name:port:")
-    public native NSNetService initWithDomainTypeNamePort(String domain, String type, String name, int port);
+    public native NSNetService initWithDomainTypeNamePort(@NotNull String domain, @NotNull String type,
+            @NotNull String name, int port);
 
     /**
      * Returns the name of the discovered or published service.
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -308,7 +325,7 @@ public class NSNetService extends NSObject {
 
     @Generated
     @Selector("removeFromRunLoop:forMode:")
-    public native void removeFromRunLoopForMode(NSRunLoop aRunLoop, String mode);
+    public native void removeFromRunLoopForMode(@NotNull NSRunLoop aRunLoop, @NotNull String mode);
 
     /**
      * Attempts to determine at least one address for the NSNetService instance. For applications linked on or after Mac
@@ -342,20 +359,20 @@ public class NSNetService extends NSObject {
      */
     @Generated
     @Selector("scheduleInRunLoop:forMode:")
-    public native void scheduleInRunLoopForMode(NSRunLoop aRunLoop, String mode);
+    public native void scheduleInRunLoopForMode(@NotNull NSRunLoop aRunLoop, @NotNull String mode);
 
     /**
      * Set a delegate to receive publish, resolve, or monitor events.
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSNetServiceDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) NSNetServiceDelegate value);
 
     /**
      * Set a delegate to receive publish, resolve, or monitor events.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) NSNetServiceDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSNetServiceDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -382,7 +399,7 @@ public class NSNetService extends NSObject {
      */
     @Generated
     @Selector("setTXTRecordData:")
-    public native boolean setTXTRecordData(NSData recordData);
+    public native boolean setTXTRecordData(@Nullable NSData recordData);
 
     /**
      * Starts monitoring the NSNetService instance for events. In Mac OS X 10.4 Tiger, monitored NSNetService instances
@@ -410,6 +427,7 @@ public class NSNetService extends NSObject {
     /**
      * Returns the type of the discovered or published service.
      */
+    @NotNull
     @Generated
     @Selector("type")
     public native String type();

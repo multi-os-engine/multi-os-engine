@@ -33,6 +33,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CHHapticEngine
@@ -71,17 +73,18 @@ public class CHHapticEngine extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * capabilitiesForHardware
@@ -90,15 +93,18 @@ public class CHHapticEngine extends NSObject {
      * 
      * Detailed description on the capability protocol is in CHHapticDeviceCapability.h.
      */
+    @NotNull
     @Generated
     @Selector("capabilitiesForHardware")
     @MappedReturn(ObjCObjectMapper.class)
     public static native CHHapticDeviceCapability capabilitiesForHardware();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -111,11 +117,12 @@ public class CHHapticEngine extends NSObject {
      * @param pattern
      *                The pattern to be played.
      */
+    @Nullable
     @Generated
     @Selector("createAdvancedPlayerWithPattern:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native CHHapticAdvancedPatternPlayer createAdvancedPlayerWithPatternError(CHHapticPattern pattern,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native CHHapticAdvancedPatternPlayer createAdvancedPlayerWithPatternError(@NotNull CHHapticPattern pattern,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * createPlayerWithPattern:error
@@ -125,11 +132,12 @@ public class CHHapticEngine extends NSObject {
      * @param pattern
      *                The pattern to be played.
      */
+    @Nullable
     @Generated
     @Selector("createPlayerWithPattern:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native CHHapticPatternPlayer createPlayerWithPatternError(CHHapticPattern pattern,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native CHHapticPatternPlayer createPlayerWithPatternError(@NotNull CHHapticPattern pattern,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] currentTime
@@ -172,7 +180,7 @@ public class CHHapticEngine extends NSObject {
      */
     @Generated
     @Selector("initAndReturnError:")
-    public native CHHapticEngine initAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native CHHapticEngine initAndReturnError(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * initWithAudioSession:error
@@ -192,8 +200,8 @@ public class CHHapticEngine extends NSObject {
      */
     @Generated
     @Selector("initWithAudioSession:error:")
-    public native CHHapticEngine initWithAudioSessionError(AVAudioSession audioSession,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native CHHapticEngine initWithAudioSessionError(@Nullable AVAudioSession audioSession,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -250,9 +258,10 @@ public class CHHapticEngine extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -276,14 +285,14 @@ public class CHHapticEngine extends NSObject {
     @Generated
     @Selector("notifyWhenPlayersFinished:")
     public native void notifyWhenPlayersFinished(
-            @ObjCBlock(name = "call_notifyWhenPlayersFinished") Block_notifyWhenPlayersFinished finishedHandler);
+            @NotNull @ObjCBlock(name = "call_notifyWhenPlayersFinished") Block_notifyWhenPlayersFinished finishedHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_notifyWhenPlayersFinished {
         @Generated
         @NInt
-        long call_notifyWhenPlayersFinished(NSError error);
+        long call_notifyWhenPlayersFinished(@Nullable NSError error);
     }
 
     /**
@@ -301,8 +310,8 @@ public class CHHapticEngine extends NSObject {
      */
     @Generated
     @Selector("playPatternFromData:error:")
-    public native boolean playPatternFromDataError(NSData data,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean playPatternFromDataError(@NotNull NSData data,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * playPatternFromURL:error
@@ -319,8 +328,8 @@ public class CHHapticEngine extends NSObject {
      */
     @Generated
     @Selector("playPatternFromURL:error:")
-    public native boolean playPatternFromURLError(NSURL fileURL,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean playPatternFromURLError(@NotNull NSURL fileURL,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] playsHapticsOnly
@@ -350,8 +359,8 @@ public class CHHapticEngine extends NSObject {
     @Generated
     @Selector("registerAudioResource:options:error:")
     @NUInt
-    public native long registerAudioResourceOptionsError(NSURL resourceURL, NSDictionary<?, ?> options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native long registerAudioResourceOptionsError(@NotNull NSURL resourceURL,
+            @NotNull NSDictionary<?, ?> options, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] resetHandler
@@ -363,6 +372,7 @@ public class CHHapticEngine extends NSObject {
      * In general, callbacks arrive on a non-main thread and it is the client's responsibility to handle
      * it in a thread-safe manner.
      */
+    @NotNull
     @Generated
     @Selector("resetHandler")
     @ObjCBlock(name = "call_resetHandler_ret")
@@ -445,7 +455,7 @@ public class CHHapticEngine extends NSObject {
      */
     @Generated
     @Selector("setResetHandler:")
-    public native void setResetHandler(@ObjCBlock(name = "call_setResetHandler") Block_setResetHandler value);
+    public native void setResetHandler(@NotNull @ObjCBlock(name = "call_setResetHandler") Block_setResetHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -466,7 +476,8 @@ public class CHHapticEngine extends NSObject {
      */
     @Generated
     @Selector("setStoppedHandler:")
-    public native void setStoppedHandler(@ObjCBlock(name = "call_setStoppedHandler") Block_setStoppedHandler value);
+    public native void setStoppedHandler(
+            @NotNull @ObjCBlock(name = "call_setStoppedHandler") Block_setStoppedHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -488,7 +499,7 @@ public class CHHapticEngine extends NSObject {
      */
     @Generated
     @Selector("startAndReturnError:")
-    public native boolean startAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean startAndReturnError(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * startWithCompletionHandler:
@@ -500,13 +511,13 @@ public class CHHapticEngine extends NSObject {
     @Generated
     @Selector("startWithCompletionHandler:")
     public native void startWithCompletionHandler(
-            @ObjCBlock(name = "call_startWithCompletionHandler") Block_startWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_startWithCompletionHandler") Block_startWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startWithCompletionHandler {
         @Generated
-        void call_startWithCompletionHandler(NSError error);
+        void call_startWithCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -519,13 +530,13 @@ public class CHHapticEngine extends NSObject {
     @Generated
     @Selector("stopWithCompletionHandler:")
     public native void stopWithCompletionHandler(
-            @ObjCBlock(name = "call_stopWithCompletionHandler") Block_stopWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_stopWithCompletionHandler") Block_stopWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_stopWithCompletionHandler {
         @Generated
-        void call_stopWithCompletionHandler(NSError error);
+        void call_stopWithCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -538,6 +549,7 @@ public class CHHapticEngine extends NSObject {
      * In general, callbacks arrive on a non-main thread and it is the client's responsibility to handle
      * it in a thread-safe manner.
      */
+    @NotNull
     @Generated
     @Selector("stoppedHandler")
     @ObjCBlock(name = "call_stoppedHandler_ret")
@@ -567,7 +579,7 @@ public class CHHapticEngine extends NSObject {
     @Generated
     @Selector("unregisterAudioResource:error:")
     public native boolean unregisterAudioResourceError(@NUInt long resourceID,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("version")

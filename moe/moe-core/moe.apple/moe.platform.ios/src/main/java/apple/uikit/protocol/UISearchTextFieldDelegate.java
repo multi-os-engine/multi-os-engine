@@ -12,6 +12,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -29,11 +30,12 @@ public interface UISearchTextFieldDelegate extends UITextFieldDelegate {
      * This method will only be called if either of the field’s allowsCopyingTokens or allowsDeletingTokens properties
      * is true.
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("searchTextField:itemProviderForCopyingToken:")
-    default NSItemProvider searchTextFieldItemProviderForCopyingToken(UISearchTextField searchTextField,
-            UISearchToken token) {
+    default NSItemProvider searchTextFieldItemProviderForCopyingToken(@NotNull UISearchTextField searchTextField,
+            @NotNull UISearchToken token) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -45,8 +47,8 @@ public interface UISearchTextFieldDelegate extends UITextFieldDelegate {
     @Generated
     @IsOptional
     @Selector("searchTextField:didSelectSuggestion:")
-    default void searchTextFieldDidSelectSuggestion(UISearchTextField searchTextField,
-            @Mapped(ObjCObjectMapper.class) UISearchSuggestion suggestion) {
+    default void searchTextFieldDidSelectSuggestion(@NotNull UISearchTextField searchTextField,
+            @NotNull @Mapped(ObjCObjectMapper.class) UISearchSuggestion suggestion) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

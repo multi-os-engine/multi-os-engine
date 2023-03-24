@@ -23,6 +23,7 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ptr.ConstVoidPtr;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Structure()
@@ -44,7 +45,7 @@ public final class AUPresetEvent extends StructObject {
     }
 
     @Generated
-    public AUPresetEvent(int scope, int element, ConstVoidPtr preset) {
+    public AUPresetEvent(int scope, int element, @NotNull ConstVoidPtr preset) {
         super(AUPresetEvent.class);
         setScope(scope);
         setElement(element);
@@ -67,11 +68,12 @@ public final class AUPresetEvent extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setElement(int value);
 
+    @NotNull
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native ConstVoidPtr preset();
 
     @Generated
     @StructureField(order = 2, isGetter = false)
-    public native void setPreset(ConstVoidPtr value);
+    public native void setPreset(@NotNull ConstVoidPtr value);
 }

@@ -25,6 +25,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Provide a custom status string when VoiceOver scrolls with accessibilityScroll:
@@ -37,10 +39,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIScrollViewAccessibilityDelegate")
 public interface UIScrollViewAccessibilityDelegate extends UIScrollViewDelegate {
+    @Nullable
     @Generated
     @IsOptional
     @Selector("accessibilityScrollStatusForScrollView:")
-    default String accessibilityScrollStatusForScrollView(UIScrollView scrollView) {
+    default String accessibilityScrollStatusForScrollView(@NotNull UIScrollView scrollView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -50,10 +53,11 @@ public interface UIScrollViewAccessibilityDelegate extends UIScrollViewDelegate 
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("accessibilityAttributedScrollStatusForScrollView:")
-    default NSAttributedString accessibilityAttributedScrollStatusForScrollView(UIScrollView scrollView) {
+    default NSAttributedString accessibilityAttributedScrollStatusForScrollView(@NotNull UIScrollView scrollView) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

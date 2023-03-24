@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A user interface for selecting a PKTool.
@@ -59,7 +61,7 @@ public class PKToolPicker extends NSObject {
      */
     @Generated
     @Selector("addObserver:")
-    public native void addObserver(@Mapped(ObjCObjectMapper.class) PKToolPickerObserver observer);
+    public native void addObserver(@NotNull @Mapped(ObjCObjectMapper.class) PKToolPickerObserver observer);
 
     @Generated
     @Owned
@@ -73,22 +75,25 @@ public class PKToolPicker extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,7 +129,7 @@ public class PKToolPicker extends NSObject {
     @Generated
     @Selector("frameObscuredInView:")
     @ByValue
-    public native CGRect frameObscuredInView(UIView view);
+    public native CGRect frameObscuredInView(@NotNull UIView view);
 
     @Generated
     @Selector("hash")
@@ -174,9 +179,10 @@ public class PKToolPicker extends NSObject {
     @Selector("isVisible")
     public native boolean isVisible();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -199,7 +205,7 @@ public class PKToolPicker extends NSObject {
      */
     @Generated
     @Selector("removeObserver:")
-    public native void removeObserver(@Mapped(ObjCObjectMapper.class) PKToolPickerObserver observer);
+    public native void removeObserver(@NotNull @Mapped(ObjCObjectMapper.class) PKToolPickerObserver observer);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -212,6 +218,7 @@ public class PKToolPicker extends NSObject {
     /**
      * The currently selected tool.
      */
+    @NotNull
     @Generated
     @Selector("selectedTool")
     public native PKTool selectedTool();
@@ -250,7 +257,7 @@ public class PKToolPicker extends NSObject {
      */
     @Generated
     @Selector("setSelectedTool:")
-    public native void setSelectedTool(PKTool value);
+    public native void setSelectedTool(@NotNull PKTool value);
 
     @Generated
     @Selector("setVersion:")
@@ -264,7 +271,7 @@ public class PKToolPicker extends NSObject {
      */
     @Generated
     @Selector("setVisible:forFirstResponder:")
-    public native void setVisibleForFirstResponder(boolean visible, UIResponder responder);
+    public native void setVisibleForFirstResponder(boolean visible, @NotNull UIResponder responder);
 
     /**
      * Returns the shared `PKToolPicker` instance for a window.
@@ -274,10 +281,11 @@ public class PKToolPicker extends NSObject {
      * Deprecated-Since: 14.0
      * Deprecated-Message: Create individual instances instead.
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("sharedToolPickerForWindow:")
-    public static native PKToolPicker sharedToolPickerForWindow(UIWindow window);
+    public static native PKToolPicker sharedToolPickerForWindow(@NotNull UIWindow window);
 
     @Generated
     @Selector("superclass")
@@ -306,7 +314,7 @@ public class PKToolPicker extends NSObject {
      */
     @Generated
     @Selector("setStateAutosaveName:")
-    public native void setStateAutosaveName(String value);
+    public native void setStateAutosaveName(@Nullable String value);
 
     /**
      * If this is true the tool picker will show UI that allows the default drawing policy to be changed.
@@ -324,6 +332,7 @@ public class PKToolPicker extends NSObject {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("stateAutosaveName")
     public native String stateAutosaveName();

@@ -13,6 +13,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -43,8 +45,8 @@ public interface UITextSearching {
     @Generated
     @Selector("compareFoundRange:toRange:inDocument:")
     @NInt
-    long compareFoundRangeToRangeInDocument(UITextRange foundRange, UITextRange toRange,
-            @Mapped(ObjCObjectMapper.class) Object document);
+    long compareFoundRangeToRangeInDocument(@NotNull UITextRange foundRange, @NotNull UITextRange toRange,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object document);
 
     /**
      * Returns the visible ordering from `fromDocument` to `toDocument`. If your document identifiers
@@ -54,8 +56,8 @@ public interface UITextSearching {
     @IsOptional
     @Selector("compareOrderFromDocument:toDocument:")
     @NInt
-    default long compareOrderFromDocumentToDocument(@Mapped(ObjCObjectMapper.class) Object fromDocument,
-            @Mapped(ObjCObjectMapper.class) Object toDocument) {
+    default long compareOrderFromDocumentToDocument(@NotNull @Mapped(ObjCObjectMapper.class) Object fromDocument,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object toDocument) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -71,8 +73,8 @@ public interface UITextSearching {
      */
     @Generated
     @Selector("decorateFoundTextRange:inDocument:usingStyle:")
-    void decorateFoundTextRangeInDocumentUsingStyle(UITextRange range, @Mapped(ObjCObjectMapper.class) Object document,
-            @NInt long style);
+    void decorateFoundTextRangeInDocumentUsingStyle(@NotNull UITextRange range,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object document, @NInt long style);
 
     /**
      * Perform a text search (across all available searchable documents) using @c string. When results are found,
@@ -85,8 +87,9 @@ public interface UITextSearching {
      */
     @Generated
     @Selector("performTextSearchWithQueryString:usingOptions:resultAggregator:")
-    void performTextSearchWithQueryStringUsingOptionsResultAggregator(String string, UITextSearchOptions options,
-            @Mapped(ObjCObjectMapper.class) UITextSearchAggregator aggregator);
+    void performTextSearchWithQueryStringUsingOptionsResultAggregator(@NotNull String string,
+            @NotNull UITextSearchOptions options,
+            @NotNull @Mapped(ObjCObjectMapper.class) UITextSearchAggregator aggregator);
 
     /**
      * When replacing all occurrences at once, this method is called instead of the one above.
@@ -98,8 +101,8 @@ public interface UITextSearching {
     @Generated
     @IsOptional
     @Selector("replaceAllOccurrencesOfQueryString:usingOptions:withText:")
-    default void replaceAllOccurrencesOfQueryStringUsingOptionsWithText(String queryString, UITextSearchOptions options,
-            String replacementText) {
+    default void replaceAllOccurrencesOfQueryStringUsingOptionsWithText(@NotNull String queryString,
+            @NotNull UITextSearchOptions options, @NotNull String replacementText) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -115,8 +118,8 @@ public interface UITextSearching {
     @Generated
     @IsOptional
     @Selector("replaceFoundTextInRange:inDocument:withText:")
-    default void replaceFoundTextInRangeInDocumentWithText(UITextRange range,
-            @Mapped(ObjCObjectMapper.class) Object document, String replacementText) {
+    default void replaceFoundTextInRangeInDocumentWithText(@NotNull UITextRange range,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object document, @NotNull String replacementText) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -130,13 +133,15 @@ public interface UITextSearching {
     @Generated
     @IsOptional
     @Selector("scrollRangeToVisible:inDocument:")
-    default void scrollRangeToVisibleInDocument(UITextRange range, @Mapped(ObjCObjectMapper.class) Object document) {
+    default void scrollRangeToVisibleInDocument(@NotNull UITextRange range,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object document) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Overlap from UITextInput: Returns the currently selected text range, if applicable. Nil otherwise.
      */
+    @Nullable
     @Generated
     @Selector("selectedTextRange")
     UITextRange selectedTextRange();
@@ -144,6 +149,7 @@ public interface UITextSearching {
     /**
      * Returns the current search document, if applicable. Nil otherwise.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("selectedTextSearchDocument")
@@ -164,8 +170,8 @@ public interface UITextSearching {
     @Generated
     @IsOptional
     @Selector("shouldReplaceFoundTextInRange:inDocument:withText:")
-    default boolean shouldReplaceFoundTextInRangeInDocumentWithText(UITextRange range,
-            @Mapped(ObjCObjectMapper.class) Object document, String replacementText) {
+    default boolean shouldReplaceFoundTextInRangeInDocumentWithText(@NotNull UITextRange range,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object document, @NotNull String replacementText) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -186,8 +192,8 @@ public interface UITextSearching {
     @Generated
     @IsOptional
     @Selector("willHighlightFoundTextRange:inDocument:")
-    default void willHighlightFoundTextRangeInDocument(UITextRange range,
-            @Mapped(ObjCObjectMapper.class) Object document) {
+    default void willHighlightFoundTextRangeInDocument(@NotNull UITextRange range,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object document) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

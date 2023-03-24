@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * HKHealthStore
@@ -83,22 +85,25 @@ public class HKHealthStore extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -146,9 +151,10 @@ public class HKHealthStore extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -189,8 +195,9 @@ public class HKHealthStore extends NSObject {
      */
     @Generated
     @Selector("addSamples:toWorkout:completion:")
-    public native void addSamplesToWorkoutCompletion(NSArray<? extends HKSample> samples, HKWorkout workout,
-            @ObjCBlock(name = "call_addSamplesToWorkoutCompletion") Block_addSamplesToWorkoutCompletion completion);
+    public native void addSamplesToWorkoutCompletion(@NotNull NSArray<? extends HKSample> samples,
+            @NotNull HKWorkout workout,
+            @NotNull @ObjCBlock(name = "call_addSamplesToWorkoutCompletion") Block_addSamplesToWorkoutCompletion completion);
 
     /**
      * authorizationStatusForType:
@@ -200,7 +207,7 @@ public class HKHealthStore extends NSObject {
     @Generated
     @Selector("authorizationStatusForType:")
     @NInt
-    public native long authorizationStatusForType(HKObjectType type);
+    public native long authorizationStatusForType(@NotNull HKObjectType type);
 
     /**
      * biologicalSexWithError:
@@ -210,9 +217,11 @@ public class HKHealthStore extends NSObject {
      * Before calling this method, the application should request authorization to access objects with the
      * HKCharacteristicType identified by HKCharacteristicTypeIdentifierBiologicalSex.
      */
+    @Nullable
     @Generated
     @Selector("biologicalSexWithError:")
-    public native HKBiologicalSexObject biologicalSexWithError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native HKBiologicalSexObject biologicalSexWithError(
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * bloodTypeWithError:
@@ -222,9 +231,11 @@ public class HKHealthStore extends NSObject {
      * Before calling this method, the application should request authorization to access objects with the
      * HKCharacteristicType identified by HKCharacteristicTypeIdentifierBloodType.
      */
+    @Nullable
     @Generated
     @Selector("bloodTypeWithError:")
-    public native HKBloodTypeObject bloodTypeWithError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native HKBloodTypeObject bloodTypeWithError(
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * dateOfBirthComponentsWithError:
@@ -236,19 +247,21 @@ public class HKHealthStore extends NSObject {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("dateOfBirthComponentsWithError:")
     public native NSDateComponents dateOfBirthComponentsWithError(
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 8.0
      * Deprecated-Since: 10.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("dateOfBirthWithError:")
-    public native NSDate dateOfBirthWithError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSDate dateOfBirthWithError(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * deleteObject:withCompletion:
@@ -259,8 +272,8 @@ public class HKHealthStore extends NSObject {
      */
     @Generated
     @Selector("deleteObject:withCompletion:")
-    public native void deleteObjectWithCompletion(HKObject object,
-            @ObjCBlock(name = "call_deleteObjectWithCompletion") Block_deleteObjectWithCompletion completion);
+    public native void deleteObjectWithCompletion(@NotNull HKObject object,
+            @NotNull @ObjCBlock(name = "call_deleteObjectWithCompletion") Block_deleteObjectWithCompletion completion);
 
     /**
      * deleteObjects:withCompletion:
@@ -274,8 +287,8 @@ public class HKHealthStore extends NSObject {
      */
     @Generated
     @Selector("deleteObjects:withCompletion:")
-    public native void deleteObjectsWithCompletion(NSArray<? extends HKObject> objects,
-            @ObjCBlock(name = "call_deleteObjectsWithCompletion") Block_deleteObjectsWithCompletion completion);
+    public native void deleteObjectsWithCompletion(@NotNull NSArray<? extends HKObject> objects,
+            @NotNull @ObjCBlock(name = "call_deleteObjectsWithCompletion") Block_deleteObjectsWithCompletion completion);
 
     /**
      * deleteObjectsOfType:predicate:withCompletion:
@@ -289,18 +302,19 @@ public class HKHealthStore extends NSObject {
      */
     @Generated
     @Selector("deleteObjectsOfType:predicate:withCompletion:")
-    public native void deleteObjectsOfTypePredicateWithCompletion(HKObjectType objectType, NSPredicate predicate,
-            @ObjCBlock(name = "call_deleteObjectsOfTypePredicateWithCompletion") Block_deleteObjectsOfTypePredicateWithCompletion completion);
+    public native void deleteObjectsOfTypePredicateWithCompletion(@NotNull HKObjectType objectType,
+            @NotNull NSPredicate predicate,
+            @NotNull @ObjCBlock(name = "call_deleteObjectsOfTypePredicateWithCompletion") Block_deleteObjectsOfTypePredicateWithCompletion completion);
 
     @Generated
     @Selector("disableAllBackgroundDeliveryWithCompletion:")
     public native void disableAllBackgroundDeliveryWithCompletion(
-            @ObjCBlock(name = "call_disableAllBackgroundDeliveryWithCompletion") Block_disableAllBackgroundDeliveryWithCompletion completion);
+            @NotNull @ObjCBlock(name = "call_disableAllBackgroundDeliveryWithCompletion") Block_disableAllBackgroundDeliveryWithCompletion completion);
 
     @Generated
     @Selector("disableBackgroundDeliveryForType:withCompletion:")
-    public native void disableBackgroundDeliveryForTypeWithCompletion(HKObjectType type,
-            @ObjCBlock(name = "call_disableBackgroundDeliveryForTypeWithCompletion") Block_disableBackgroundDeliveryForTypeWithCompletion completion);
+    public native void disableBackgroundDeliveryForTypeWithCompletion(@NotNull HKObjectType type,
+            @NotNull @ObjCBlock(name = "call_disableBackgroundDeliveryForTypeWithCompletion") Block_disableBackgroundDeliveryForTypeWithCompletion completion);
 
     /**
      * earliestPermittedSampleDate
@@ -312,6 +326,7 @@ public class HKHealthStore extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("earliestPermittedSampleDate")
     public native NSDate earliestPermittedSampleDate();
@@ -329,8 +344,9 @@ public class HKHealthStore extends NSObject {
      */
     @Generated
     @Selector("enableBackgroundDeliveryForType:frequency:withCompletion:")
-    public native void enableBackgroundDeliveryForTypeFrequencyWithCompletion(HKObjectType type, @NInt long frequency,
-            @ObjCBlock(name = "call_enableBackgroundDeliveryForTypeFrequencyWithCompletion") Block_enableBackgroundDeliveryForTypeFrequencyWithCompletion completion);
+    public native void enableBackgroundDeliveryForTypeFrequencyWithCompletion(@NotNull HKObjectType type,
+            @NInt long frequency,
+            @NotNull @ObjCBlock(name = "call_enableBackgroundDeliveryForTypeFrequencyWithCompletion") Block_enableBackgroundDeliveryForTypeFrequencyWithCompletion completion);
 
     /**
      * executeQuery:
@@ -350,7 +366,7 @@ public class HKHealthStore extends NSObject {
      */
     @Generated
     @Selector("executeQuery:")
-    public native void executeQuery(HKQuery query);
+    public native void executeQuery(@NotNull HKQuery query);
 
     /**
      * fitzpatrickSkinTypeWithError:
@@ -362,10 +378,11 @@ public class HKHealthStore extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("fitzpatrickSkinTypeWithError:")
     public native HKFitzpatrickSkinTypeObject fitzpatrickSkinTypeWithError(
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * handleAuthorizationForExtensionWithCompletion:
@@ -386,7 +403,7 @@ public class HKHealthStore extends NSObject {
     @Generated
     @Selector("handleAuthorizationForExtensionWithCompletion:")
     public native void handleAuthorizationForExtensionWithCompletion(
-            @ObjCBlock(name = "call_handleAuthorizationForExtensionWithCompletion") Block_handleAuthorizationForExtensionWithCompletion completion);
+            @NotNull @ObjCBlock(name = "call_handleAuthorizationForExtensionWithCompletion") Block_handleAuthorizationForExtensionWithCompletion completion);
 
     @Generated
     @Selector("init")
@@ -412,8 +429,8 @@ public class HKHealthStore extends NSObject {
      */
     @Generated
     @Selector("preferredUnitsForQuantityTypes:completion:")
-    public native void preferredUnitsForQuantityTypesCompletion(NSSet<? extends HKQuantityType> quantityTypes,
-            @ObjCBlock(name = "call_preferredUnitsForQuantityTypesCompletion") Block_preferredUnitsForQuantityTypesCompletion completion);
+    public native void preferredUnitsForQuantityTypesCompletion(@NotNull NSSet<? extends HKQuantityType> quantityTypes,
+            @NotNull @ObjCBlock(name = "call_preferredUnitsForQuantityTypesCompletion") Block_preferredUnitsForQuantityTypesCompletion completion);
 
     /**
      * requestAuthorizationToShareTypes:readTypes:completion:
@@ -436,9 +453,9 @@ public class HKHealthStore extends NSObject {
      */
     @Generated
     @Selector("requestAuthorizationToShareTypes:readTypes:completion:")
-    public native void requestAuthorizationToShareTypesReadTypesCompletion(NSSet<? extends HKSampleType> typesToShare,
-            NSSet<? extends HKObjectType> typesToRead,
-            @ObjCBlock(name = "call_requestAuthorizationToShareTypesReadTypesCompletion") Block_requestAuthorizationToShareTypesReadTypesCompletion completion);
+    public native void requestAuthorizationToShareTypesReadTypesCompletion(
+            @Nullable NSSet<? extends HKSampleType> typesToShare, @Nullable NSSet<? extends HKObjectType> typesToRead,
+            @NotNull @ObjCBlock(name = "call_requestAuthorizationToShareTypesReadTypesCompletion") Block_requestAuthorizationToShareTypesReadTypesCompletion completion);
 
     /**
      * saveObject:withCompletion:
@@ -460,8 +477,8 @@ public class HKHealthStore extends NSObject {
      */
     @Generated
     @Selector("saveObject:withCompletion:")
-    public native void saveObjectWithCompletion(HKObject object,
-            @ObjCBlock(name = "call_saveObjectWithCompletion") Block_saveObjectWithCompletion completion);
+    public native void saveObjectWithCompletion(@NotNull HKObject object,
+            @NotNull @ObjCBlock(name = "call_saveObjectWithCompletion") Block_saveObjectWithCompletion completion);
 
     /**
      * saveObjects:withCompletion:
@@ -472,8 +489,8 @@ public class HKHealthStore extends NSObject {
      */
     @Generated
     @Selector("saveObjects:withCompletion:")
-    public native void saveObjectsWithCompletion(NSArray<? extends HKObject> objects,
-            @ObjCBlock(name = "call_saveObjectsWithCompletion") Block_saveObjectsWithCompletion completion);
+    public native void saveObjectsWithCompletion(@NotNull NSArray<? extends HKObject> objects,
+            @NotNull @ObjCBlock(name = "call_saveObjectsWithCompletion") Block_saveObjectsWithCompletion completion);
 
     /**
      * splitTotalEnergy:startDate:endDate:resultsHandler:
@@ -492,9 +509,9 @@ public class HKHealthStore extends NSObject {
     @Deprecated
     @Generated
     @Selector("splitTotalEnergy:startDate:endDate:resultsHandler:")
-    public native void splitTotalEnergyStartDateEndDateResultsHandler(HKQuantity totalEnergy, NSDate startDate,
-            NSDate endDate,
-            @ObjCBlock(name = "call_splitTotalEnergyStartDateEndDateResultsHandler") Block_splitTotalEnergyStartDateEndDateResultsHandler resultsHandler);
+    public native void splitTotalEnergyStartDateEndDateResultsHandler(@NotNull HKQuantity totalEnergy,
+            @NotNull NSDate startDate, @NotNull NSDate endDate,
+            @NotNull @ObjCBlock(name = "call_splitTotalEnergyStartDateEndDateResultsHandler") Block_splitTotalEnergyStartDateEndDateResultsHandler resultsHandler);
 
     /**
      * startWatchAppWithWorkoutConfiguration:completion:
@@ -510,8 +527,9 @@ public class HKHealthStore extends NSObject {
      */
     @Generated
     @Selector("startWatchAppWithWorkoutConfiguration:completion:")
-    public native void startWatchAppWithWorkoutConfigurationCompletion(HKWorkoutConfiguration workoutConfiguration,
-            @ObjCBlock(name = "call_startWatchAppWithWorkoutConfigurationCompletion") Block_startWatchAppWithWorkoutConfigurationCompletion completion);
+    public native void startWatchAppWithWorkoutConfigurationCompletion(
+            @NotNull HKWorkoutConfiguration workoutConfiguration,
+            @NotNull @ObjCBlock(name = "call_startWatchAppWithWorkoutConfigurationCompletion") Block_startWatchAppWithWorkoutConfigurationCompletion completion);
 
     /**
      * stopQuery:
@@ -523,7 +541,7 @@ public class HKHealthStore extends NSObject {
      */
     @Generated
     @Selector("stopQuery:")
-    public native void stopQuery(HKQuery query);
+    public native void stopQuery(@NotNull HKQuery query);
 
     /**
      * wheelchairUseWithError:
@@ -535,29 +553,31 @@ public class HKHealthStore extends NSObject {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("wheelchairUseWithError:")
-    public native HKWheelchairUseObject wheelchairUseWithError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native HKWheelchairUseObject wheelchairUseWithError(
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addSamplesToWorkoutCompletion {
         @Generated
-        void call_addSamplesToWorkoutCompletion(boolean success, NSError error);
+        void call_addSamplesToWorkoutCompletion(boolean success, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteObjectWithCompletion {
         @Generated
-        void call_deleteObjectWithCompletion(boolean success, NSError error);
+        void call_deleteObjectWithCompletion(boolean success, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteObjectsWithCompletion {
         @Generated
-        void call_deleteObjectsWithCompletion(boolean success, NSError error);
+        void call_deleteObjectsWithCompletion(boolean success, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -565,35 +585,35 @@ public class HKHealthStore extends NSObject {
     public interface Block_deleteObjectsOfTypePredicateWithCompletion {
         @Generated
         void call_deleteObjectsOfTypePredicateWithCompletion(boolean success, @NUInt long deletedObjectCount,
-                NSError error);
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_disableAllBackgroundDeliveryWithCompletion {
         @Generated
-        void call_disableAllBackgroundDeliveryWithCompletion(boolean success, NSError error);
+        void call_disableAllBackgroundDeliveryWithCompletion(boolean success, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_disableBackgroundDeliveryForTypeWithCompletion {
         @Generated
-        void call_disableBackgroundDeliveryForTypeWithCompletion(boolean success, NSError error);
+        void call_disableBackgroundDeliveryForTypeWithCompletion(boolean success, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enableBackgroundDeliveryForTypeFrequencyWithCompletion {
         @Generated
-        void call_enableBackgroundDeliveryForTypeFrequencyWithCompletion(boolean success, NSError error);
+        void call_enableBackgroundDeliveryForTypeFrequencyWithCompletion(boolean success, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleAuthorizationForExtensionWithCompletion {
         @Generated
-        void call_handleAuthorizationForExtensionWithCompletion(boolean success, NSError error);
+        void call_handleAuthorizationForExtensionWithCompletion(boolean success, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -601,43 +621,44 @@ public class HKHealthStore extends NSObject {
     public interface Block_preferredUnitsForQuantityTypesCompletion {
         @Generated
         void call_preferredUnitsForQuantityTypesCompletion(
-                NSDictionary<? extends HKQuantityType, ? extends HKUnit> preferredUnits, NSError error);
+                @NotNull NSDictionary<? extends HKQuantityType, ? extends HKUnit> preferredUnits,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestAuthorizationToShareTypesReadTypesCompletion {
         @Generated
-        void call_requestAuthorizationToShareTypesReadTypesCompletion(boolean success, NSError error);
+        void call_requestAuthorizationToShareTypesReadTypesCompletion(boolean success, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveObjectWithCompletion {
         @Generated
-        void call_saveObjectWithCompletion(boolean success, NSError error);
+        void call_saveObjectWithCompletion(boolean success, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveObjectsWithCompletion {
         @Generated
-        void call_saveObjectsWithCompletion(boolean success, NSError error);
+        void call_saveObjectsWithCompletion(boolean success, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_splitTotalEnergyStartDateEndDateResultsHandler {
         @Generated
-        void call_splitTotalEnergyStartDateEndDateResultsHandler(HKQuantity restingEnergy, HKQuantity activeEnergy,
-                NSError error);
+        void call_splitTotalEnergyStartDateEndDateResultsHandler(@Nullable HKQuantity restingEnergy,
+                @Nullable HKQuantity activeEnergy, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startWatchAppWithWorkoutConfigurationCompletion {
         @Generated
-        void call_startWatchAppWithWorkoutConfigurationCompletion(boolean success, NSError error);
+        void call_startWatchAppWithWorkoutConfigurationCompletion(boolean success, @Nullable NSError error);
     }
 
     /**
@@ -655,15 +676,15 @@ public class HKHealthStore extends NSObject {
     @Generated
     @Selector("getRequestStatusForAuthorizationToShareTypes:readTypes:completion:")
     public native void getRequestStatusForAuthorizationToShareTypesReadTypesCompletion(
-            NSSet<? extends HKSampleType> typesToShare, NSSet<? extends HKObjectType> typesToRead,
-            @ObjCBlock(name = "call_getRequestStatusForAuthorizationToShareTypesReadTypesCompletion") Block_getRequestStatusForAuthorizationToShareTypesReadTypesCompletion completion);
+            @NotNull NSSet<? extends HKSampleType> typesToShare, @NotNull NSSet<? extends HKObjectType> typesToRead,
+            @NotNull @ObjCBlock(name = "call_getRequestStatusForAuthorizationToShareTypesReadTypesCompletion") Block_getRequestStatusForAuthorizationToShareTypesReadTypesCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getRequestStatusForAuthorizationToShareTypesReadTypesCompletion {
         @Generated
         void call_getRequestStatusForAuthorizationToShareTypesReadTypesCompletion(@NInt long requestStatus,
-                NSError error);
+                @Nullable NSError error);
     }
 
     /**
@@ -692,10 +713,11 @@ public class HKHealthStore extends NSObject {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("activityMoveModeWithError:")
     public native HKActivityMoveModeObject activityMoveModeWithError(
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * recalibrateEstimatesForSampleType:atDate:completion:
@@ -710,14 +732,15 @@ public class HKHealthStore extends NSObject {
      */
     @Generated
     @Selector("recalibrateEstimatesForSampleType:atDate:completion:")
-    public native void recalibrateEstimatesForSampleTypeAtDateCompletion(HKSampleType sampleType, NSDate date,
-            @ObjCBlock(name = "call_recalibrateEstimatesForSampleTypeAtDateCompletion") Block_recalibrateEstimatesForSampleTypeAtDateCompletion completion);
+    public native void recalibrateEstimatesForSampleTypeAtDateCompletion(@NotNull HKSampleType sampleType,
+            @NotNull NSDate date,
+            @NotNull @ObjCBlock(name = "call_recalibrateEstimatesForSampleTypeAtDateCompletion") Block_recalibrateEstimatesForSampleTypeAtDateCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_recalibrateEstimatesForSampleTypeAtDateCompletion {
         @Generated
-        void call_recalibrateEstimatesForSampleTypeAtDateCompletion(boolean success, NSError error);
+        void call_recalibrateEstimatesForSampleTypeAtDateCompletion(boolean success, @Nullable NSError error);
     }
 
     /**
@@ -738,14 +761,14 @@ public class HKHealthStore extends NSObject {
      */
     @Generated
     @Selector("requestPerObjectReadAuthorizationForType:predicate:completion:")
-    public native void requestPerObjectReadAuthorizationForTypePredicateCompletion(HKObjectType objectType,
-            NSPredicate predicate,
-            @ObjCBlock(name = "call_requestPerObjectReadAuthorizationForTypePredicateCompletion") Block_requestPerObjectReadAuthorizationForTypePredicateCompletion completion);
+    public native void requestPerObjectReadAuthorizationForTypePredicateCompletion(@NotNull HKObjectType objectType,
+            @Nullable NSPredicate predicate,
+            @NotNull @ObjCBlock(name = "call_requestPerObjectReadAuthorizationForTypePredicateCompletion") Block_requestPerObjectReadAuthorizationForTypePredicateCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestPerObjectReadAuthorizationForTypePredicateCompletion {
         @Generated
-        void call_requestPerObjectReadAuthorizationForTypePredicateCompletion(boolean success, NSError error);
+        void call_requestPerObjectReadAuthorizationForTypePredicateCompletion(boolean success, @Nullable NSError error);
     }
 }

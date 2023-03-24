@@ -48,6 +48,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Accessing fetched results (fetches objects from the backing store in chunks on demand rather than all at once)
@@ -85,22 +87,25 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,9 +140,10 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,13 +176,14 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
      */
     @Generated
     @Selector("containsObject:")
-    public native boolean containsObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
+    public native boolean containsObject(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * API-Since: 8.0
@@ -189,8 +196,8 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")
     @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
+    public native long countByEnumeratingWithStateObjectsCount(@NotNull VoidPtr state,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
     /**
      * API-Since: 8.0
@@ -205,8 +212,8 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
      */
     @Generated
     @Selector("enumerateObjectsAtIndexes:options:usingBlock:")
-    public native void enumerateObjectsAtIndexesOptionsUsingBlock(NSIndexSet s, @NUInt long opts,
-            @ObjCBlock(name = "call_enumerateObjectsAtIndexesOptionsUsingBlock") Block_enumerateObjectsAtIndexesOptionsUsingBlock block);
+    public native void enumerateObjectsAtIndexesOptionsUsingBlock(@NotNull NSIndexSet s, @NUInt long opts,
+            @NotNull @ObjCBlock(name = "call_enumerateObjectsAtIndexesOptionsUsingBlock") Block_enumerateObjectsAtIndexesOptionsUsingBlock block);
 
     /**
      * API-Since: 8.0
@@ -214,7 +221,7 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
     @Generated
     @Selector("enumerateObjectsUsingBlock:")
     public native void enumerateObjectsUsingBlock(
-            @ObjCBlock(name = "call_enumerateObjectsUsingBlock") Block_enumerateObjectsUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateObjectsUsingBlock") Block_enumerateObjectsUsingBlock block);
 
     /**
      * API-Since: 8.0
@@ -222,11 +229,12 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
     @Generated
     @Selector("enumerateObjectsWithOptions:usingBlock:")
     public native void enumerateObjectsWithOptionsUsingBlock(@NUInt long opts,
-            @ObjCBlock(name = "call_enumerateObjectsWithOptionsUsingBlock") Block_enumerateObjectsWithOptionsUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateObjectsWithOptionsUsingBlock") Block_enumerateObjectsWithOptionsUsingBlock block);
 
     /**
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("firstObject")
     @MappedReturn(ObjCObjectMapper.class)
@@ -238,7 +246,7 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
     @Generated
     @Selector("indexOfObject:")
     @NUInt
-    public native long indexOfObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
+    public native long indexOfObject(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
     /**
      * API-Since: 8.0
@@ -246,7 +254,7 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
     @Generated
     @Selector("indexOfObject:inRange:")
     @NUInt
-    public native long indexOfObjectInRange(@Mapped(ObjCObjectMapper.class) _ObjectType anObject,
+    public native long indexOfObjectInRange(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType anObject,
             @ByValue NSRange range);
 
     @Generated
@@ -256,6 +264,7 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
     /**
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("lastObject")
     @MappedReturn(ObjCObjectMapper.class)
@@ -264,6 +273,7 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("objectAtIndex:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -272,6 +282,7 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("objectAtIndexedSubscript:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -280,30 +291,32 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("objectsAtIndexes:")
-    public native NSArray<_ObjectType> objectsAtIndexes(NSIndexSet indexes);
+    public native NSArray<_ObjectType> objectsAtIndexes(@NotNull NSIndexSet indexes);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateObjectsAtIndexesOptionsUsingBlock {
         @Generated
-        void call_enumerateObjectsAtIndexesOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object obj,
-                @NUInt long idx, BoolPtr stop);
+        void call_enumerateObjectsAtIndexesOptionsUsingBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object obj,
+                @NUInt long idx, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateObjectsUsingBlock {
         @Generated
-        void call_enumerateObjectsUsingBlock(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx, BoolPtr stop);
+        void call_enumerateObjectsUsingBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
+                @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateObjectsWithOptionsUsingBlock {
         @Generated
-        void call_enumerateObjectsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
-                BoolPtr stop);
+        void call_enumerateObjectsWithOptionsUsingBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object obj,
+                @NUInt long idx, @NotNull BoolPtr stop);
     }
 }

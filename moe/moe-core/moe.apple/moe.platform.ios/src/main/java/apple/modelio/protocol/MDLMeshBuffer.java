@@ -28,6 +28,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] MDLMeshBuffer
@@ -52,6 +53,7 @@ public interface MDLMeshBuffer extends NSCopying {
      * This allcoator used for copy and relayout operations (such as when
      * a new vertex descriptor is applied to a vertex buffer)
      */
+    @NotNull
     @Generated
     @Selector("allocator")
     @MappedReturn(ObjCObjectMapper.class)
@@ -70,7 +72,7 @@ public interface MDLMeshBuffer extends NSCopying {
      */
     @Generated
     @Selector("fillData:offset:")
-    void fillDataOffset(NSData data, @NUInt long offset);
+    void fillDataOffset(@NotNull NSData data, @NUInt long offset);
 
     /**
      * [@property] length
@@ -95,6 +97,7 @@ public interface MDLMeshBuffer extends NSCopying {
      * 
      * @return An MDLMeshBufferMap object to read or modify a buffer's memory
      */
+    @NotNull
     @Generated
     @Selector("map")
     MDLMeshBufferMap map();
@@ -118,6 +121,7 @@ public interface MDLMeshBuffer extends NSCopying {
      * when a new vertex descriptor is applied to a vertex buffer). If
      * the default zone is used this will be nil.
      */
+    @NotNull
     @Generated
     @Selector("zone")
     @MappedReturn(ObjCObjectMapper.class)

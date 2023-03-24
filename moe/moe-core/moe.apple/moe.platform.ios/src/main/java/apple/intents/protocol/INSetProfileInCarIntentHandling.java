@@ -30,6 +30,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INSetProfileInCarIntent. By implementing this protocol, a class can
@@ -66,8 +67,8 @@ public interface INSetProfileInCarIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmSetProfileInCar:completion:")
-    default void confirmSetProfileInCarCompletion(INSetProfileInCarIntent intent,
-            @ObjCBlock(name = "call_confirmSetProfileInCarCompletion") Block_confirmSetProfileInCarCompletion completion) {
+    default void confirmSetProfileInCarCompletion(@NotNull INSetProfileInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmSetProfileInCarCompletion") Block_confirmSetProfileInCarCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -84,8 +85,8 @@ public interface INSetProfileInCarIntentHandling {
      */
     @Generated
     @Selector("handleSetProfileInCar:completion:")
-    void handleSetProfileInCarCompletion(INSetProfileInCarIntent intent,
-            @ObjCBlock(name = "call_handleSetProfileInCarCompletion") Block_handleSetProfileInCarCompletion completion);
+    void handleSetProfileInCarCompletion(@NotNull INSetProfileInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleSetProfileInCarCompletion") Block_handleSetProfileInCarCompletion completion);
 
     /**
      * API-Since: 10.0
@@ -96,8 +97,8 @@ public interface INSetProfileInCarIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveDefaultProfileForSetProfileInCar:withCompletion:")
-    default void resolveDefaultProfileForSetProfileInCarWithCompletion(INSetProfileInCarIntent intent,
-            @ObjCBlock(name = "call_resolveDefaultProfileForSetProfileInCarWithCompletion") Block_resolveDefaultProfileForSetProfileInCarWithCompletion completion) {
+    default void resolveDefaultProfileForSetProfileInCarWithCompletion(@NotNull INSetProfileInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveDefaultProfileForSetProfileInCarWithCompletion") Block_resolveDefaultProfileForSetProfileInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -107,8 +108,8 @@ public interface INSetProfileInCarIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveProfileNameForSetProfileInCar:withCompletion:")
-    default void resolveProfileNameForSetProfileInCarWithCompletion(INSetProfileInCarIntent intent,
-            @ObjCBlock(name = "call_resolveProfileNameForSetProfileInCarWithCompletion") Block_resolveProfileNameForSetProfileInCarWithCompletion completion) {
+    default void resolveProfileNameForSetProfileInCarWithCompletion(@NotNull INSetProfileInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveProfileNameForSetProfileInCarWithCompletion") Block_resolveProfileNameForSetProfileInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -126,8 +127,8 @@ public interface INSetProfileInCarIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveProfileNumberForSetProfileInCar:withCompletion:")
-    default void resolveProfileNumberForSetProfileInCarWithCompletion(INSetProfileInCarIntent intent,
-            @ObjCBlock(name = "call_resolveProfileNumberForSetProfileInCarWithCompletion") Block_resolveProfileNumberForSetProfileInCarWithCompletion completion) {
+    default void resolveProfileNumberForSetProfileInCarWithCompletion(@NotNull INSetProfileInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveProfileNumberForSetProfileInCarWithCompletion") Block_resolveProfileNumberForSetProfileInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -135,35 +136,38 @@ public interface INSetProfileInCarIntentHandling {
     @Generated
     public interface Block_confirmSetProfileInCarCompletion {
         @Generated
-        void call_confirmSetProfileInCarCompletion(INSetProfileInCarIntentResponse response);
+        void call_confirmSetProfileInCarCompletion(@NotNull INSetProfileInCarIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSetProfileInCarCompletion {
         @Generated
-        void call_handleSetProfileInCarCompletion(INSetProfileInCarIntentResponse response);
+        void call_handleSetProfileInCarCompletion(@NotNull INSetProfileInCarIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveDefaultProfileForSetProfileInCarWithCompletion {
         @Generated
-        void call_resolveDefaultProfileForSetProfileInCarWithCompletion(INBooleanResolutionResult resolutionResult);
+        void call_resolveDefaultProfileForSetProfileInCarWithCompletion(
+                @NotNull INBooleanResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveProfileNameForSetProfileInCarWithCompletion {
         @Generated
-        void call_resolveProfileNameForSetProfileInCarWithCompletion(INStringResolutionResult resolutionResult);
+        void call_resolveProfileNameForSetProfileInCarWithCompletion(
+                @NotNull INStringResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveProfileNumberForSetProfileInCarWithCompletion {
         @Generated
-        void call_resolveProfileNumberForSetProfileInCarWithCompletion(INIntegerResolutionResult resolutionResult);
+        void call_resolveProfileNumberForSetProfileInCarWithCompletion(
+                @NotNull INIntegerResolutionResult resolutionResult);
     }
 
     /**
@@ -172,8 +176,8 @@ public interface INSetProfileInCarIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveCarNameForSetProfileInCar:withCompletion:")
-    default void resolveCarNameForSetProfileInCarWithCompletion(INSetProfileInCarIntent intent,
-            @ObjCBlock(name = "call_resolveCarNameForSetProfileInCarWithCompletion") Block_resolveCarNameForSetProfileInCarWithCompletion completion) {
+    default void resolveCarNameForSetProfileInCarWithCompletion(@NotNull INSetProfileInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveCarNameForSetProfileInCarWithCompletion") Block_resolveCarNameForSetProfileInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -181,6 +185,7 @@ public interface INSetProfileInCarIntentHandling {
     @Generated
     public interface Block_resolveCarNameForSetProfileInCarWithCompletion {
         @Generated
-        void call_resolveCarNameForSetProfileInCarWithCompletion(INSpeakableStringResolutionResult resolutionResult);
+        void call_resolveCarNameForSetProfileInCarWithCompletion(
+                @NotNull INSpeakableStringResolutionResult resolutionResult);
     }
 }

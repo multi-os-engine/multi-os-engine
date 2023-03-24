@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.2
@@ -78,22 +80,25 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,17 +132,19 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     /**
      * use file to determine UTI. assumes file is complete
      */
+    @NotNull
     @Generated
     @Selector("interactionControllerWithURL:")
-    public static native UIDocumentInteractionController interactionControllerWithURL(NSURL url);
+    public static native UIDocumentInteractionController interactionControllerWithURL(@NotNull NSURL url);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,6 +175,7 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     /**
      * default is nil. if set, updates UTI, icon and name
      */
+    @Nullable
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -176,6 +184,7 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
      * determined from name if set, URL otherwise, override if the name or URL uses a custom scheme and the UTI can't be
      * determined automatically
      */
+    @Nullable
     @Generated
     @Selector("UTI")
     public native String UTI();
@@ -184,29 +193,31 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     @IsOptional
     @Deprecated
     @Selector("actionSheet:clickedButtonAtIndex:")
-    public native void actionSheetClickedButtonAtIndex(UIActionSheet actionSheet, @NInt long buttonIndex);
+    public native void actionSheetClickedButtonAtIndex(@NotNull UIActionSheet actionSheet, @NInt long buttonIndex);
 
     @Generated
     @IsOptional
     @Deprecated
     @Selector("actionSheet:didDismissWithButtonIndex:")
-    public native void actionSheetDidDismissWithButtonIndex(UIActionSheet actionSheet, @NInt long buttonIndex);
+    public native void actionSheetDidDismissWithButtonIndex(@NotNull UIActionSheet actionSheet, @NInt long buttonIndex);
 
     @Generated
     @IsOptional
     @Deprecated
     @Selector("actionSheet:willDismissWithButtonIndex:")
-    public native void actionSheetWillDismissWithButtonIndex(UIActionSheet actionSheet, @NInt long buttonIndex);
+    public native void actionSheetWillDismissWithButtonIndex(@NotNull UIActionSheet actionSheet,
+            @NInt long buttonIndex);
 
     @Generated
     @IsOptional
     @Deprecated
     @Selector("actionSheetCancel:")
-    public native void actionSheetCancel(UIActionSheet actionSheet);
+    public native void actionSheetCancel(@NotNull UIActionSheet actionSheet);
 
     /**
      * additional plist information for application to pass to receiver (must be a plist object). default is nil.
      */
+    @Nullable
     @Generated
     @Selector("annotation")
     @MappedReturn(ObjCObjectMapper.class)
@@ -215,6 +226,7 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     /**
      * default is nil
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -224,7 +236,7 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     @IsOptional
     @Deprecated
     @Selector("didPresentActionSheet:")
-    public native void didPresentActionSheet(UIActionSheet actionSheet);
+    public native void didPresentActionSheet(@NotNull UIActionSheet actionSheet);
 
     /**
      * Dismiss any visible menus.
@@ -245,6 +257,7 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
      * These gesture recognizers should only be installed on your view when the file has been copied locally and is
      * present at URL.
      */
+    @NotNull
     @Generated
     @Selector("gestureRecognizers")
     public native NSArray<? extends UIGestureRecognizer> gestureRecognizers();
@@ -253,6 +266,7 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
      * determined from name if set, URL otherwise. will return a generic document icon if an icon cannot be determined.
      * returns an array of icons sorted from smallest to largest.
      */
+    @NotNull
     @Generated
     @Selector("icons")
     public native NSArray<? extends UIImage> icons();
@@ -264,13 +278,14 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     /**
      * determined from URL, override if the URL uses a custom scheme and the name can't be determined automatically
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
 
     @Generated
     @Selector("presentOpenInMenuFromBarButtonItem:animated:")
-    public native boolean presentOpenInMenuFromBarButtonItemAnimated(UIBarButtonItem item, boolean animated);
+    public native boolean presentOpenInMenuFromBarButtonItemAnimated(@NotNull UIBarButtonItem item, boolean animated);
 
     /**
      * Presents a menu allowing the user to open the document in another application. The menu
@@ -279,11 +294,12 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
      */
     @Generated
     @Selector("presentOpenInMenuFromRect:inView:animated:")
-    public native boolean presentOpenInMenuFromRectInViewAnimated(@ByValue CGRect rect, UIView view, boolean animated);
+    public native boolean presentOpenInMenuFromRectInViewAnimated(@ByValue CGRect rect, @NotNull UIView view,
+            boolean animated);
 
     @Generated
     @Selector("presentOptionsMenuFromBarButtonItem:animated:")
-    public native boolean presentOptionsMenuFromBarButtonItemAnimated(UIBarButtonItem item, boolean animated);
+    public native boolean presentOptionsMenuFromBarButtonItemAnimated(@NotNull UIBarButtonItem item, boolean animated);
 
     /**
      * This is the default method you should call to give your users the option to quick look, open, or copy the
@@ -296,7 +312,8 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
      */
     @Generated
     @Selector("presentOptionsMenuFromRect:inView:animated:")
-    public native boolean presentOptionsMenuFromRectInViewAnimated(@ByValue CGRect rect, UIView view, boolean animated);
+    public native boolean presentOptionsMenuFromRectInViewAnimated(@ByValue CGRect rect, @NotNull UIView view,
+            boolean animated);
 
     /**
      * Bypasses the menu and opens the full screen preview window for the item at URL. Returns NO if the item could not
@@ -313,7 +330,7 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
      */
     @Generated
     @Selector("setAnnotation:")
-    public native void setAnnotation(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setAnnotation(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * default is nil
@@ -321,13 +338,13 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) UIDocumentInteractionControllerDelegate value);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIDocumentInteractionControllerDelegate value);
 
     /**
      * default is nil
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UIDocumentInteractionControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIDocumentInteractionControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -343,14 +360,14 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
     /**
      * default is nil. if set, updates UTI, icon and name
      */
     @Generated
     @Selector("setURL:")
-    public native void setURL(NSURL value);
+    public native void setURL(@Nullable NSURL value);
 
     /**
      * determined from name if set, URL otherwise, override if the name or URL uses a custom scheme and the UTI can't be
@@ -358,11 +375,11 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
      */
     @Generated
     @Selector("setUTI:")
-    public native void setUTI(String value);
+    public native void setUTI(@Nullable String value);
 
     @Generated
     @IsOptional
     @Deprecated
     @Selector("willPresentActionSheet:")
-    public native void willPresentActionSheet(UIActionSheet actionSheet);
+    public native void willPresentActionSheet(@NotNull UIActionSheet actionSheet);
 }

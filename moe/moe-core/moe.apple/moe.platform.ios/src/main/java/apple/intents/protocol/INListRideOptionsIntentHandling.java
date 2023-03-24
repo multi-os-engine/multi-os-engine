@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INListRideOptionsIntent. By implementing this protocol, a class can
@@ -60,8 +61,8 @@ public interface INListRideOptionsIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmListRideOptions:completion:")
-    default void confirmListRideOptionsCompletion(INListRideOptionsIntent intent,
-            @ObjCBlock(name = "call_confirmListRideOptionsCompletion") Block_confirmListRideOptionsCompletion completion) {
+    default void confirmListRideOptionsCompletion(@NotNull INListRideOptionsIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmListRideOptionsCompletion") Block_confirmListRideOptionsCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,14 +79,14 @@ public interface INListRideOptionsIntentHandling {
      */
     @Generated
     @Selector("handleListRideOptions:completion:")
-    void handleListRideOptionsCompletion(INListRideOptionsIntent intent,
-            @ObjCBlock(name = "call_handleListRideOptionsCompletion") Block_handleListRideOptionsCompletion completion);
+    void handleListRideOptionsCompletion(@NotNull INListRideOptionsIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleListRideOptionsCompletion") Block_handleListRideOptionsCompletion completion);
 
     @Generated
     @IsOptional
     @Selector("resolveDropOffLocationForListRideOptions:withCompletion:")
-    default void resolveDropOffLocationForListRideOptionsWithCompletion(INListRideOptionsIntent intent,
-            @ObjCBlock(name = "call_resolveDropOffLocationForListRideOptionsWithCompletion") Block_resolveDropOffLocationForListRideOptionsWithCompletion completion) {
+    default void resolveDropOffLocationForListRideOptionsWithCompletion(@NotNull INListRideOptionsIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveDropOffLocationForListRideOptionsWithCompletion") Block_resolveDropOffLocationForListRideOptionsWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -103,8 +104,8 @@ public interface INListRideOptionsIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolvePickupLocationForListRideOptions:withCompletion:")
-    default void resolvePickupLocationForListRideOptionsWithCompletion(INListRideOptionsIntent intent,
-            @ObjCBlock(name = "call_resolvePickupLocationForListRideOptionsWithCompletion") Block_resolvePickupLocationForListRideOptionsWithCompletion completion) {
+    default void resolvePickupLocationForListRideOptionsWithCompletion(@NotNull INListRideOptionsIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolvePickupLocationForListRideOptionsWithCompletion") Block_resolvePickupLocationForListRideOptionsWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -112,27 +113,29 @@ public interface INListRideOptionsIntentHandling {
     @Generated
     public interface Block_confirmListRideOptionsCompletion {
         @Generated
-        void call_confirmListRideOptionsCompletion(INListRideOptionsIntentResponse response);
+        void call_confirmListRideOptionsCompletion(@NotNull INListRideOptionsIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleListRideOptionsCompletion {
         @Generated
-        void call_handleListRideOptionsCompletion(INListRideOptionsIntentResponse response);
+        void call_handleListRideOptionsCompletion(@NotNull INListRideOptionsIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveDropOffLocationForListRideOptionsWithCompletion {
         @Generated
-        void call_resolveDropOffLocationForListRideOptionsWithCompletion(INPlacemarkResolutionResult resolutionResult);
+        void call_resolveDropOffLocationForListRideOptionsWithCompletion(
+                @NotNull INPlacemarkResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolvePickupLocationForListRideOptionsWithCompletion {
         @Generated
-        void call_resolvePickupLocationForListRideOptionsWithCompletion(INPlacemarkResolutionResult resolutionResult);
+        void call_resolvePickupLocationForListRideOptionsWithCompletion(
+                @NotNull INPlacemarkResolutionResult resolutionResult);
     }
 }

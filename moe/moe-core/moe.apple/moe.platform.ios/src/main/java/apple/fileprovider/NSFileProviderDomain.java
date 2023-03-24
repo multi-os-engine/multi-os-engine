@@ -22,6 +22,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.foundation.NSData;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * File provider domain.
@@ -75,22 +77,25 @@ public class NSFileProviderDomain extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,6 +111,7 @@ public class NSFileProviderDomain extends NSObject {
     /**
      * The display name shown by the system to represent this domain.
      */
+    @NotNull
     @Generated
     @Selector("displayName")
     public native String displayName();
@@ -118,6 +124,7 @@ public class NSFileProviderDomain extends NSObject {
     /**
      * The identifier - as provided by the file provider extension.
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -145,8 +152,8 @@ public class NSFileProviderDomain extends NSObject {
      */
     @Generated
     @Selector("initWithIdentifier:displayName:pathRelativeToDocumentStorage:")
-    public native NSFileProviderDomain initWithIdentifierDisplayNamePathRelativeToDocumentStorage(String identifier,
-            String displayName, String pathRelativeToDocumentStorage);
+    public native NSFileProviderDomain initWithIdentifierDisplayNamePathRelativeToDocumentStorage(
+            @NotNull String identifier, @NotNull String displayName, @NotNull String pathRelativeToDocumentStorage);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -165,9 +172,10 @@ public class NSFileProviderDomain extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -180,6 +188,7 @@ public class NSFileProviderDomain extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("pathRelativeToDocumentStorage")
     public native String pathRelativeToDocumentStorage();
@@ -226,6 +235,7 @@ public class NSFileProviderDomain extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("backingStoreIdentity")
     public native NSData backingStoreIdentity();
@@ -259,7 +269,8 @@ public class NSFileProviderDomain extends NSObject {
      */
     @Generated
     @Selector("initWithIdentifier:displayName:")
-    public native NSFileProviderDomain initWithIdentifierDisplayName(String identifier, String displayName);
+    public native NSFileProviderDomain initWithIdentifierDisplayName(@NotNull String identifier,
+            @NotNull String displayName);
 
     /**
      * If the domain is a replicated domain.

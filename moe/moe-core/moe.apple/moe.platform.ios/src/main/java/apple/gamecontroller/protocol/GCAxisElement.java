@@ -8,6 +8,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -21,6 +23,7 @@ public interface GCAxisElement extends GCPhysicalInputElement {
      * The input reporting the value of the axis as the position between a lower and
      * upper bound, if available.
      */
+    @Nullable
     @Generated
     @Selector("absoluteInput")
     @MappedReturn(ObjCObjectMapper.class)
@@ -35,6 +38,7 @@ public interface GCAxisElement extends GCPhysicalInputElement {
      * dials may also only report a value indicating which direction the dial was
      * turned.
      */
+    @NotNull
     @Generated
     @Selector("relativeInput")
     @MappedReturn(ObjCObjectMapper.class)

@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This object is vended to your application's UISceneDelegate when it is asked to open a URL
@@ -60,6 +62,7 @@ public class UISceneOpenURLOptions extends NSObject {
      * A property-list typed object corresponding to what the originating application passed in
      * UIDocumentInteractionController's annotation property
      */
+    @Nullable
     @Generated
     @Selector("annotation")
     @MappedReturn(ObjCObjectMapper.class)
@@ -67,22 +70,25 @@ public class UISceneOpenURLOptions extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,9 +127,10 @@ public class UISceneOpenURLOptions extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -153,6 +160,7 @@ public class UISceneOpenURLOptions extends NSObject {
      * A NSString containing the bundle ID of the originating application.
      * non-nil if the originating application and this application share the same team identifier.
      */
+    @Nullable
     @Generated
     @Selector("sourceApplication")
     public native String sourceApplication();
@@ -171,6 +179,7 @@ public class UISceneOpenURLOptions extends NSObject {
      * 
      * API-Since: 14.5
      */
+    @Nullable
     @Generated
     @Selector("eventAttribution")
     public native UIEventAttribution eventAttribution();

@@ -9,6 +9,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * This operation causes the system to resolve a collision by rename a colliding item.
@@ -29,6 +30,7 @@ public interface NSFileProviderTestingCollisionResolution extends NSFileProvider
     /**
      * The state of the item.
      */
+    @NotNull
     @Generated
     @Selector("renamedItem")
     @MappedReturn(ObjCObjectMapper.class)

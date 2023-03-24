@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -74,22 +76,25 @@ public class NSFileManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,6 +106,7 @@ public class NSFileManager extends NSObject {
     /**
      * Returns the default singleton instance.
      */
+    @NotNull
     @Generated
     @Selector("defaultManager")
     public static native NSFileManager defaultManager();
@@ -131,9 +137,10 @@ public class NSFileManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -171,10 +178,12 @@ public class NSFileManager extends NSObject {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("URLForDirectory:inDomain:appropriateForURL:create:error:")
     public native NSURL URLForDirectoryInDomainAppropriateForURLCreateError(@NUInt long directory, @NUInt long domain,
-            NSURL url, boolean shouldCreate, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable NSURL url, boolean shouldCreate,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Returns a URL that can be shared with other users to allow them download a copy of the specified ubiquitous item.
@@ -183,11 +192,12 @@ public class NSFileManager extends NSObject {
      * 
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("URLForPublishingUbiquitousItemAtURL:expirationDate:error:")
-    public native NSURL URLForPublishingUbiquitousItemAtURLExpirationDateError(NSURL url,
-            @ReferenceInfo(type = NSDate.class) Ptr<NSDate> outDate,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSURL URLForPublishingUbiquitousItemAtURLExpirationDateError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSDate.class) Ptr<NSDate> outDate,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Returns a file URL for the root of the ubiquity container directory corresponding to the supplied container ID.
@@ -195,9 +205,10 @@ public class NSFileManager extends NSObject {
      * 
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("URLForUbiquityContainerIdentifier:")
-    public native NSURL URLForUbiquityContainerIdentifier(String containerIdentifier);
+    public native NSURL URLForUbiquityContainerIdentifier(@Nullable String containerIdentifier);
 
     /**
      * -URLsForDirectory:inDomains: is analogous to NSSearchPathForDirectoriesInDomains(), but returns an array of NSURL
@@ -206,6 +217,7 @@ public class NSFileManager extends NSObject {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Selector("URLsForDirectory:inDomains:")
     public native NSArray<? extends NSURL> URLsForDirectoryInDomains(@NUInt long directory, @NUInt long domainMask);
@@ -219,10 +231,11 @@ public class NSFileManager extends NSObject {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @Selector("attributesOfFileSystemForPath:error:")
-    public native NSDictionary<String, ?> attributesOfFileSystemForPathError(String path,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSDictionary<String, ?> attributesOfFileSystemForPathError(@NotNull String path,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * attributesOfItemAtPath:error: returns an NSDictionary of key/value pairs containing the attributes of the item
@@ -233,14 +246,15 @@ public class NSFileManager extends NSObject {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @Selector("attributesOfItemAtPath:error:")
-    public native NSDictionary<String, ?> attributesOfItemAtPathError(String path,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSDictionary<String, ?> attributesOfItemAtPathError(@NotNull String path,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("changeCurrentDirectoryPath:")
-    public native boolean changeCurrentDirectoryPath(String path);
+    public native boolean changeCurrentDirectoryPath(@NotNull String path);
 
     /**
      * API-Since: 2.0
@@ -250,34 +264,37 @@ public class NSFileManager extends NSObject {
     @Generated
     @Deprecated
     @Selector("changeFileAttributes:atPath:")
-    public native boolean changeFileAttributesAtPath(NSDictionary<?, ?> attributes, String path);
+    public native boolean changeFileAttributesAtPath(@NotNull NSDictionary<?, ?> attributes, @NotNull String path);
 
     /**
      * componentsToDisplayForPath: returns an NSArray of display names for the path provided. Localization will occur as
      * in displayNameAtPath: above. This array cannot and should not be reassembled into an usable filesystem path for
      * any kind of access.
      */
+    @Nullable
     @Generated
     @Selector("componentsToDisplayForPath:")
-    public native NSArray<String> componentsToDisplayForPath(String path);
+    public native NSArray<String> componentsToDisplayForPath(@NotNull String path);
 
     /**
      * Available for OS X in 10.8.3.
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("containerURLForSecurityApplicationGroupIdentifier:")
-    public native NSURL containerURLForSecurityApplicationGroupIdentifier(String groupIdentifier);
+    public native NSURL containerURLForSecurityApplicationGroupIdentifier(@NotNull String groupIdentifier);
 
     /**
      * These methods are provided here for compatibility. The corresponding methods on NSData which return NSErrors
      * should be regarded as the primary method of creating a file from an NSData or retrieving the contents of a file
      * as an NSData.
      */
+    @Nullable
     @Generated
     @Selector("contentsAtPath:")
-    public native NSData contentsAtPath(String path);
+    public native NSData contentsAtPath(@NotNull String path);
 
     /**
      * -contentsEqualAtPath:andPath: does not take into account data stored in the resource fork or filesystem extended
@@ -285,7 +302,7 @@ public class NSFileManager extends NSObject {
      */
     @Generated
     @Selector("contentsEqualAtPath:andPath:")
-    public native boolean contentsEqualAtPathAndPath(String path1, String path2);
+    public native boolean contentsEqualAtPathAndPath(@NotNull String path1, @NotNull String path2);
 
     /**
      * contentsOfDirectoryAtPath:error: returns an NSArray of NSStrings representing the filenames of the items in the
@@ -296,10 +313,11 @@ public class NSFileManager extends NSObject {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @Selector("contentsOfDirectoryAtPath:error:")
-    public native NSArray<String> contentsOfDirectoryAtPathError(String path,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSArray<String> contentsOfDirectoryAtPathError(@NotNull String path,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * -contentsOfDirectoryAtURL:includingPropertiesForKeys:options:error: returns an NSArray of NSURLs identifying the
@@ -318,10 +336,12 @@ public class NSFileManager extends NSObject {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("contentsOfDirectoryAtURL:includingPropertiesForKeys:options:error:")
-    public native NSArray<? extends NSURL> contentsOfDirectoryAtURLIncludingPropertiesForKeysOptionsError(NSURL url,
-            NSArray<String> keys, @NUInt long mask, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSArray<? extends NSURL> contentsOfDirectoryAtURLIncludingPropertiesForKeysOptionsError(
+            @NotNull NSURL url, @Nullable NSArray<String> keys, @NUInt long mask,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * These methods replace their non-error returning counterparts below. See the NSFileManagerDelegate protocol below
@@ -331,8 +351,8 @@ public class NSFileManager extends NSObject {
      */
     @Generated
     @Selector("copyItemAtPath:toPath:error:")
-    public native boolean copyItemAtPathToPathError(String srcPath, String dstPath,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean copyItemAtPathToPathError(@NotNull String srcPath, @NotNull String dstPath,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * These methods are URL-taking equivalents of the four methods above. Their delegate methods are defined in the
@@ -342,8 +362,8 @@ public class NSFileManager extends NSObject {
      */
     @Generated
     @Selector("copyItemAtURL:toURL:error:")
-    public native boolean copyItemAtURLToURLError(NSURL srcURL, NSURL dstURL,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean copyItemAtURLToURLError(@NotNull NSURL srcURL, @NotNull NSURL dstURL,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 2.0
@@ -353,7 +373,7 @@ public class NSFileManager extends NSObject {
     @Generated
     @Deprecated
     @Selector("createDirectoryAtPath:attributes:")
-    public native boolean createDirectoryAtPathAttributes(String path, NSDictionary<?, ?> attributes);
+    public native boolean createDirectoryAtPathAttributes(@NotNull String path, @NotNull NSDictionary<?, ?> attributes);
 
     /**
      * createDirectoryAtPath:withIntermediateDirectories:attributes:error: creates a directory at the specified path. If
@@ -370,9 +390,9 @@ public class NSFileManager extends NSObject {
      */
     @Generated
     @Selector("createDirectoryAtPath:withIntermediateDirectories:attributes:error:")
-    public native boolean createDirectoryAtPathWithIntermediateDirectoriesAttributesError(String path,
-            boolean createIntermediates, NSDictionary<String, ?> attributes,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean createDirectoryAtPathWithIntermediateDirectoriesAttributesError(@NotNull String path,
+            boolean createIntermediates, @Nullable NSDictionary<String, ?> attributes,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * createDirectoryAtURL:withIntermediateDirectories:attributes:error: creates a directory at the specified URL. If
@@ -387,13 +407,14 @@ public class NSFileManager extends NSObject {
      */
     @Generated
     @Selector("createDirectoryAtURL:withIntermediateDirectories:attributes:error:")
-    public native boolean createDirectoryAtURLWithIntermediateDirectoriesAttributesError(NSURL url,
-            boolean createIntermediates, NSDictionary<String, ?> attributes,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean createDirectoryAtURLWithIntermediateDirectoriesAttributesError(@NotNull NSURL url,
+            boolean createIntermediates, @Nullable NSDictionary<String, ?> attributes,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("createFileAtPath:contents:attributes:")
-    public native boolean createFileAtPathContentsAttributes(String path, NSData data, NSDictionary<String, ?> attr);
+    public native boolean createFileAtPathContentsAttributes(@NotNull String path, @Nullable NSData data,
+            @Nullable NSDictionary<String, ?> attr);
 
     /**
      * API-Since: 2.0
@@ -403,7 +424,7 @@ public class NSFileManager extends NSObject {
     @Generated
     @Deprecated
     @Selector("createSymbolicLinkAtPath:pathContent:")
-    public native boolean createSymbolicLinkAtPathPathContent(String path, String otherpath);
+    public native boolean createSymbolicLinkAtPathPathContent(@NotNull String path, @NotNull String otherpath);
 
     /**
      * createSymbolicLinkAtPath:withDestination:error: returns YES if the symbolic link that point at 'destPath' was
@@ -417,8 +438,8 @@ public class NSFileManager extends NSObject {
      */
     @Generated
     @Selector("createSymbolicLinkAtPath:withDestinationPath:error:")
-    public native boolean createSymbolicLinkAtPathWithDestinationPathError(String path, String destPath,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean createSymbolicLinkAtPathWithDestinationPathError(@NotNull String path,
+            @NotNull String destPath, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * createSymbolicLinkAtURL:withDestinationURL:error: returns YES if the symbolic link that point at 'destURL' was
@@ -431,14 +452,15 @@ public class NSFileManager extends NSObject {
      */
     @Generated
     @Selector("createSymbolicLinkAtURL:withDestinationURL:error:")
-    public native boolean createSymbolicLinkAtURLWithDestinationURLError(NSURL url, NSURL destURL,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean createSymbolicLinkAtURLWithDestinationURLError(@NotNull NSURL url, @NotNull NSURL destURL,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Process working directory management. Despite the fact that these are instance methods on NSFileManager, these
      * methods report and change (respectively) the working directory for the entire process. Developers are cautioned
      * that doing so is fraught with peril.
      */
+    @NotNull
     @Generated
     @Selector("currentDirectoryPath")
     public native String currentDirectoryPath();
@@ -451,6 +473,7 @@ public class NSFileManager extends NSObject {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -465,38 +488,42 @@ public class NSFileManager extends NSObject {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @Selector("destinationOfSymbolicLinkAtPath:error:")
-    public native String destinationOfSymbolicLinkAtPathError(String path,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native String destinationOfSymbolicLinkAtPathError(@NotNull String path,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 2.0
      * Deprecated-Since: 2.0
      * Deprecated-Message: Use -contentsOfDirectoryAtPath:error: instead
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("directoryContentsAtPath:")
-    public native NSArray<?> directoryContentsAtPath(String path);
+    public native NSArray<?> directoryContentsAtPath(@NotNull String path);
 
     /**
      * displayNameAtPath: returns an NSString suitable for presentation to the user. For directories which have
      * localization information, this will return the appropriate localized string. This string is not suitable for
      * passing to anything that must interact with the filesystem.
      */
+    @NotNull
     @Generated
     @Selector("displayNameAtPath:")
-    public native String displayNameAtPath(String path);
+    public native String displayNameAtPath(@NotNull String path);
 
     /**
      * enumeratorAtPath: returns an NSDirectoryEnumerator rooted at the provided path. If the enumerator cannot be
      * created, this returns NULL. Because NSDirectoryEnumerator is a subclass of NSEnumerator, the returned object can
      * be used in the for...in construct.
      */
+    @Nullable
     @Generated
     @Selector("enumeratorAtPath:")
-    public native NSDirectoryEnumerator<String> enumeratorAtPath(String path);
+    public native NSDirectoryEnumerator<String> enumeratorAtPath(@NotNull String path);
 
     /**
      * enumeratorAtURL:includingPropertiesForKeys:options:errorHandler: returns an NSDirectoryEnumerator rooted at the
@@ -512,11 +539,12 @@ public class NSFileManager extends NSObject {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("enumeratorAtURL:includingPropertiesForKeys:options:errorHandler:")
-    public native NSDirectoryEnumerator<NSURL> enumeratorAtURLIncludingPropertiesForKeysOptionsErrorHandler(NSURL url,
-            NSArray<String> keys, @NUInt long mask,
-            @ObjCBlock(name = "call_enumeratorAtURLIncludingPropertiesForKeysOptionsErrorHandler") Block_enumeratorAtURLIncludingPropertiesForKeysOptionsErrorHandler handler);
+    public native NSDirectoryEnumerator<NSURL> enumeratorAtURLIncludingPropertiesForKeysOptionsErrorHandler(
+            @NotNull NSURL url, @Nullable NSArray<String> keys, @NUInt long mask,
+            @Nullable @ObjCBlock(name = "call_enumeratorAtURLIncludingPropertiesForKeysOptionsErrorHandler") Block_enumeratorAtURLIncludingPropertiesForKeysOptionsErrorHandler handler);
 
     /**
      * Removes the local instance of the ubiquitous item at the given URL. Returns YES if removal was successful, NO
@@ -526,8 +554,8 @@ public class NSFileManager extends NSObject {
      */
     @Generated
     @Selector("evictUbiquitousItemAtURL:error:")
-    public native boolean evictUbiquitousItemAtURLError(NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean evictUbiquitousItemAtURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * The following methods are deprecated on Mac OS X 10.5. Their URL-based and/or error-returning replacements are
@@ -537,10 +565,11 @@ public class NSFileManager extends NSObject {
      * Deprecated-Since: 2.0
      * Deprecated-Message: Use -attributesOfItemAtPath:error: instead
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("fileAttributesAtPath:traverseLink:")
-    public native NSDictionary<?, ?> fileAttributesAtPathTraverseLink(String path, boolean yorn);
+    public native NSDictionary<?, ?> fileAttributesAtPathTraverseLink(@NotNull String path, boolean yorn);
 
     /**
      * The following methods are of limited utility. Attempting to predicate behavior based on the current state of the
@@ -550,30 +579,32 @@ public class NSFileManager extends NSObject {
      */
     @Generated
     @Selector("fileExistsAtPath:")
-    public native boolean fileExistsAtPath(String path);
+    public native boolean fileExistsAtPath(@NotNull String path);
 
     @Generated
     @Selector("fileExistsAtPath:isDirectory:")
-    public native boolean fileExistsAtPathIsDirectory(String path, BoolPtr isDirectory);
+    public native boolean fileExistsAtPathIsDirectory(@NotNull String path, @Nullable BoolPtr isDirectory);
 
     /**
      * API-Since: 2.0
      * Deprecated-Since: 2.0
      * Deprecated-Message: Use -attributesOfFileSystemForPath:error: instead
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("fileSystemAttributesAtPath:")
-    public native NSDictionary<?, ?> fileSystemAttributesAtPath(String path);
+    public native NSDictionary<?, ?> fileSystemAttributesAtPath(@NotNull String path);
 
     /**
      * fileSystemRepresentationWithPath: returns an array of characters suitable for passing to lower-level POSIX style
      * APIs. The string is provided in the representation most appropriate for the filesystem in question.
      */
+    @NotNull
     @Generated
     @Selector("fileSystemRepresentationWithPath:")
     @MappedReturn(CStringMapper.class)
-    public native String fileSystemRepresentationWithPath(String path);
+    public native String fileSystemRepresentationWithPath(@NotNull String path);
 
     /**
      * Similar to -[NSFileManager getRelationship:ofDirectoryAtURL:toItemAtURL:error:], except that the directory is
@@ -586,9 +617,9 @@ public class NSFileManager extends NSObject {
      */
     @Generated
     @Selector("getRelationship:ofDirectory:inDomain:toItemAtURL:error:")
-    public native boolean getRelationshipOfDirectoryInDomainToItemAtURLError(NIntPtr outRelationship,
-            @NUInt long directory, @NUInt long domainMask, NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean getRelationshipOfDirectoryInDomainToItemAtURLError(@NotNull NIntPtr outRelationship,
+            @NUInt long directory, @NUInt long domainMask, @NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Sets 'outRelationship' to NSURLRelationshipContains if the directory at 'directoryURL' directly or indirectly
@@ -602,8 +633,9 @@ public class NSFileManager extends NSObject {
      */
     @Generated
     @Selector("getRelationship:ofDirectoryAtURL:toItemAtURL:error:")
-    public native boolean getRelationshipOfDirectoryAtURLToItemAtURLError(NIntPtr outRelationship, NSURL directoryURL,
-            NSURL otherURL, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean getRelationshipOfDirectoryAtURLToItemAtURLError(@NotNull NIntPtr outRelationship,
+            @NotNull NSURL directoryURL, @NotNull NSURL otherURL,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("init")
@@ -611,15 +643,15 @@ public class NSFileManager extends NSObject {
 
     @Generated
     @Selector("isDeletableFileAtPath:")
-    public native boolean isDeletableFileAtPath(String path);
+    public native boolean isDeletableFileAtPath(@NotNull String path);
 
     @Generated
     @Selector("isExecutableFileAtPath:")
-    public native boolean isExecutableFileAtPath(String path);
+    public native boolean isExecutableFileAtPath(@NotNull String path);
 
     @Generated
     @Selector("isReadableFileAtPath:")
-    public native boolean isReadableFileAtPath(String path);
+    public native boolean isReadableFileAtPath(@NotNull String path);
 
     /**
      * Returns YES if the item for the specified URL is ubiquitous, NO otherwise.
@@ -628,27 +660,27 @@ public class NSFileManager extends NSObject {
      */
     @Generated
     @Selector("isUbiquitousItemAtURL:")
-    public native boolean isUbiquitousItemAtURL(NSURL url);
+    public native boolean isUbiquitousItemAtURL(@NotNull NSURL url);
 
     @Generated
     @Selector("isWritableFileAtPath:")
-    public native boolean isWritableFileAtPath(String path);
+    public native boolean isWritableFileAtPath(@NotNull String path);
 
     /**
      * API-Since: 2.0
      */
     @Generated
     @Selector("linkItemAtPath:toPath:error:")
-    public native boolean linkItemAtPathToPathError(String srcPath, String dstPath,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean linkItemAtPathToPathError(@NotNull String srcPath, @NotNull String dstPath,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @Selector("linkItemAtURL:toURL:error:")
-    public native boolean linkItemAtURLToURLError(NSURL srcURL, NSURL dstURL,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean linkItemAtURLToURLError(@NotNull NSURL srcURL, @NotNull NSURL dstURL,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * -mountedVolumeURLsIncludingResourceValuesForKeys:options: returns an NSArray of NSURLs locating the mounted
@@ -656,50 +688,54 @@ public class NSFileManager extends NSObject {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("mountedVolumeURLsIncludingResourceValuesForKeys:options:")
     public native NSArray<? extends NSURL> mountedVolumeURLsIncludingResourceValuesForKeysOptions(
-            NSArray<String> propertyKeys, @NUInt long options);
+            @Nullable NSArray<String> propertyKeys, @NUInt long options);
 
     /**
      * API-Since: 2.0
      */
     @Generated
     @Selector("moveItemAtPath:toPath:error:")
-    public native boolean moveItemAtPathToPathError(String srcPath, String dstPath,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean moveItemAtPathToPathError(@NotNull String srcPath, @NotNull String dstPath,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @Selector("moveItemAtURL:toURL:error:")
-    public native boolean moveItemAtURLToURLError(NSURL srcURL, NSURL dstURL,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean moveItemAtURLToURLError(@NotNull NSURL srcURL, @NotNull NSURL dstURL,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 2.0
      * Deprecated-Since: 2.0
      * Deprecated-Message: Use -destinationOfSymbolicLinkAtPath:error:
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("pathContentOfSymbolicLinkAtPath:")
-    public native String pathContentOfSymbolicLinkAtPath(String path);
+    public native String pathContentOfSymbolicLinkAtPath(@NotNull String path);
 
     /**
      * API-Since: 2.0
      */
     @Generated
     @Selector("removeItemAtPath:error:")
-    public native boolean removeItemAtPathError(String path, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean removeItemAtPathError(@NotNull String path,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @Selector("removeItemAtURL:error:")
-    public native boolean removeItemAtURLError(NSURL URL, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean removeItemAtURLError(@NotNull NSURL URL,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * -replaceItemAtURL:withItemAtURL:backupItemName:options:resultingItemURL:error: is for developers who wish to
@@ -722,10 +758,10 @@ public class NSFileManager extends NSObject {
      */
     @Generated
     @Selector("replaceItemAtURL:withItemAtURL:backupItemName:options:resultingItemURL:error:")
-    public native boolean replaceItemAtURLWithItemAtURLBackupItemNameOptionsResultingItemURLError(NSURL originalItemURL,
-            NSURL newItemURL, String backupItemName, @NUInt long options,
-            @ReferenceInfo(type = NSURL.class) Ptr<NSURL> resultingURL,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean replaceItemAtURLWithItemAtURLBackupItemNameOptionsResultingItemURLError(
+            @NotNull NSURL originalItemURL, @NotNull NSURL newItemURL, @Nullable String backupItemName,
+            @NUInt long options, @Nullable @ReferenceInfo(type = NSURL.class) Ptr<NSURL> resultingURL,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * setAttributes:ofItemAtPath:error: returns YES when the attributes specified in the 'attributes' dictionary are
@@ -738,8 +774,8 @@ public class NSFileManager extends NSObject {
      */
     @Generated
     @Selector("setAttributes:ofItemAtPath:error:")
-    public native boolean setAttributesOfItemAtPathError(NSDictionary<String, ?> attributes, String path,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean setAttributesOfItemAtPathError(@NotNull NSDictionary<String, ?> attributes,
+            @NotNull String path, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Instances of NSFileManager may now have delegates. Each instance has one delegate, and the delegate is not
@@ -751,7 +787,7 @@ public class NSFileManager extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSFileManagerDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) NSFileManagerDelegate value);
 
     /**
      * Instances of NSFileManager may now have delegates. Each instance has one delegate, and the delegate is not
@@ -762,7 +798,7 @@ public class NSFileManager extends NSObject {
      * API-Since: 2.0
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) NSFileManagerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSFileManagerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -782,8 +818,8 @@ public class NSFileManager extends NSObject {
      */
     @Generated
     @Selector("setUbiquitous:itemAtURL:destinationURL:error:")
-    public native boolean setUbiquitousItemAtURLDestinationURLError(boolean flag, NSURL url, NSURL destinationURL,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean setUbiquitousItemAtURLDestinationURLError(boolean flag, @NotNull NSURL url,
+            @NotNull NSURL destinationURL, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Start downloading a local instance of the specified ubiquitous item, if necessary. Returns YES if the download
@@ -793,24 +829,26 @@ public class NSFileManager extends NSObject {
      */
     @Generated
     @Selector("startDownloadingUbiquitousItemAtURL:error:")
-    public native boolean startDownloadingUbiquitousItemAtURLError(NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean startDownloadingUbiquitousItemAtURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * stringWithFileSystemRepresentation:length: returns an NSString created from an array of bytes that are in the
      * filesystem representation.
      */
+    @NotNull
     @Generated
     @Selector("stringWithFileSystemRepresentation:length:")
-    public native String stringWithFileSystemRepresentationLength(ConstBytePtr str, @NUInt long len);
+    public native String stringWithFileSystemRepresentationLength(@NotNull ConstBytePtr str, @NUInt long len);
 
     /**
      * subpathsAtPath: returns an NSArray of all contents and subpaths recursively from the provided path. This may be
      * very expensive to compute for deep filesystem hierarchies, and should probably be avoided.
      */
+    @Nullable
     @Generated
     @Selector("subpathsAtPath:")
-    public native NSArray<String> subpathsAtPath(String path);
+    public native NSArray<String> subpathsAtPath(@NotNull String path);
 
     /**
      * subpathsOfDirectoryAtPath:error: returns an NSArray of NSStrings representing the filenames of the items in the
@@ -822,14 +860,16 @@ public class NSFileManager extends NSObject {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @Selector("subpathsOfDirectoryAtPath:error:")
-    public native NSArray<String> subpathsOfDirectoryAtPathError(String path,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSArray<String> subpathsOfDirectoryAtPathError(@NotNull String path,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("temporaryDirectory")
     public native NSURL temporaryDirectory();
@@ -845,6 +885,7 @@ public class NSFileManager extends NSObject {
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("ubiquityIdentityToken")
     @MappedReturn(ObjCObjectMapper.class)
@@ -854,7 +895,8 @@ public class NSFileManager extends NSObject {
     @Generated
     public interface Block_enumeratorAtURLIncludingPropertiesForKeysOptionsErrorHandler {
         @Generated
-        boolean call_enumeratorAtURLIncludingPropertiesForKeysOptionsErrorHandler(NSURL url, NSError error);
+        boolean call_enumeratorAtURLIncludingPropertiesForKeysOptionsErrorHandler(@NotNull NSURL url,
+                @NotNull NSError error);
     }
 
     /**
@@ -870,15 +912,15 @@ public class NSFileManager extends NSObject {
      */
     @Generated
     @Selector("getFileProviderServicesForItemAtURL:completionHandler:")
-    public native void getFileProviderServicesForItemAtURLCompletionHandler(NSURL url,
-            @ObjCBlock(name = "call_getFileProviderServicesForItemAtURLCompletionHandler") Block_getFileProviderServicesForItemAtURLCompletionHandler completionHandler);
+    public native void getFileProviderServicesForItemAtURLCompletionHandler(@NotNull NSURL url,
+            @NotNull @ObjCBlock(name = "call_getFileProviderServicesForItemAtURLCompletionHandler") Block_getFileProviderServicesForItemAtURLCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getFileProviderServicesForItemAtURLCompletionHandler {
         @Generated
         void call_getFileProviderServicesForItemAtURLCompletionHandler(
-                NSDictionary<String, ? extends NSFileProviderService> services, NSError error);
+                @Nullable NSDictionary<String, ? extends NSFileProviderService> services, @Nullable NSError error);
     }
 
     /**
@@ -894,7 +936,7 @@ public class NSFileManager extends NSObject {
      */
     @Generated
     @Selector("trashItemAtURL:resultingItemURL:error:")
-    public native boolean trashItemAtURLResultingItemURLError(NSURL url,
-            @ReferenceInfo(type = NSURL.class) Ptr<NSURL> outResultingURL,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean trashItemAtURLResultingItemURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSURL.class) Ptr<NSURL> outResultingURL,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

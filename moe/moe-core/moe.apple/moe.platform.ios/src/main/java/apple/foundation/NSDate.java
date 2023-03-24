@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -70,22 +72,25 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,7 +101,7 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
 
     @Generated
     @Selector("dateWithTimeInterval:sinceDate:")
-    public static native NSDate dateWithTimeIntervalSinceDate(double secsToBeAdded, NSDate date);
+    public static native NSDate dateWithTimeIntervalSinceDate(double secsToBeAdded, @NotNull NSDate date);
 
     @Generated
     @Selector("dateWithTimeIntervalSince1970:")
@@ -114,10 +119,12 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @NotNull
     @Generated
     @Selector("distantFuture")
     public static native NSDate distantFuture();
 
+    @NotNull
     @Generated
     @Selector("distantPast")
     public static native NSDate distantPast();
@@ -144,9 +151,10 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -187,6 +195,7 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
      * Deprecated-Since: 4.0
      * Deprecated-Message: Use dateByAddingTimeInterval instead
      */
+    @NotNull
     @Generated
     @Deprecated
     @Selector("addTimeInterval:")
@@ -196,36 +205,41 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
     @Generated
     @Selector("compare:")
     @NInt
-    public native long compare(NSDate other);
+    public native long compare(@NotNull NSDate other);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @Selector("dateByAddingTimeInterval:")
     public native NSDate dateByAddingTimeInterval(double ti);
 
+    @NotNull
     @Generated
     @Selector("description")
     public native String description();
 
+    @NotNull
     @Generated
     @Selector("descriptionWithLocale:")
-    public native String descriptionWithLocale(@Mapped(ObjCObjectMapper.class) Object locale);
+    public native String descriptionWithLocale(@Nullable @Mapped(ObjCObjectMapper.class) Object locale);
 
+    @NotNull
     @Generated
     @Selector("earlierDate:")
-    public native NSDate earlierDate(NSDate anotherDate);
+    public native NSDate earlierDate(@NotNull NSDate anotherDate);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -233,11 +247,11 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSDate initWithCoder(NSCoder coder);
+    public native NSDate initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithTimeInterval:sinceDate:")
-    public native NSDate initWithTimeIntervalSinceDate(double secsToBeAdded, NSDate date);
+    public native NSDate initWithTimeIntervalSinceDate(double secsToBeAdded, @NotNull NSDate date);
 
     @Generated
     @Selector("initWithTimeIntervalSince1970:")
@@ -253,11 +267,12 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
 
     @Generated
     @Selector("isEqualToDate:")
-    public native boolean isEqualToDate(NSDate otherDate);
+    public native boolean isEqualToDate(@NotNull NSDate otherDate);
 
+    @NotNull
     @Generated
     @Selector("laterDate:")
-    public native NSDate laterDate(NSDate anotherDate);
+    public native NSDate laterDate(@NotNull NSDate anotherDate);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -271,7 +286,7 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
 
     @Generated
     @Selector("timeIntervalSinceDate:")
-    public native double timeIntervalSinceDate(NSDate anotherDate);
+    public native double timeIntervalSinceDate(@NotNull NSDate anotherDate);
 
     @Generated
     @Selector("timeIntervalSinceNow")
@@ -284,6 +299,7 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("now")
     public static native NSDate now();

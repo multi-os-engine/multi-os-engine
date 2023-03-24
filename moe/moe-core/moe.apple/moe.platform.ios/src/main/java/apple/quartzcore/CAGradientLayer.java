@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.0
@@ -79,22 +81,25 @@ public class CAGradientLayer extends CALayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -103,15 +108,17 @@ public class CAGradientLayer extends CALayer {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("defaultActionForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native CAAction defaultActionForKey(String event);
+    public static native CAAction defaultActionForKey(@NotNull String event);
 
+    @Nullable
     @Generated
     @Selector("defaultValueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultValueForKey(String key);
+    public static native Object defaultValueForKey(@NotNull String key);
 
     @Generated
     @Selector("description")
@@ -139,9 +146,10 @@ public class CAGradientLayer extends CALayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Selector("layer")
@@ -149,7 +157,7 @@ public class CAGradientLayer extends CALayer {
 
     @Generated
     @Selector("needsDisplayForKey:")
-    public static native boolean needsDisplayForKey(String key);
+    public static native boolean needsDisplayForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -181,6 +189,7 @@ public class CAGradientLayer extends CALayer {
      * The array of CGColorRef objects defining the color of each gradient
      * stop. Defaults to nil. Animatable.
      */
+    @Nullable
     @Generated
     @Selector("colors")
     public native NSArray<?> colors();
@@ -196,11 +205,11 @@ public class CAGradientLayer extends CALayer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAGradientLayer initWithCoder(NSCoder coder);
+    public native CAGradientLayer initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
-    public native CAGradientLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
+    public native CAGradientLayer initWithLayer(@NotNull @Mapped(ObjCObjectMapper.class) Object layer);
 
     /**
      * An optional array of NSNumber objects defining the location of each
@@ -210,6 +219,7 @@ public class CAGradientLayer extends CALayer {
      * the colors are mapped to the output colorspace before being
      * interpolated. Defaults to nil. Animatable.
      */
+    @Nullable
     @Generated
     @Selector("locations")
     public native NSArray<? extends NSNumber> locations();
@@ -220,7 +230,7 @@ public class CAGradientLayer extends CALayer {
      */
     @Generated
     @Selector("setColors:")
-    public native void setColors(NSArray<?> value);
+    public native void setColors(@Nullable NSArray<?> value);
 
     @Generated
     @Selector("setEndPoint:")
@@ -236,7 +246,7 @@ public class CAGradientLayer extends CALayer {
      */
     @Generated
     @Selector("setLocations:")
-    public native void setLocations(NSArray<? extends NSNumber> value);
+    public native void setLocations(@Nullable NSArray<? extends NSNumber> value);
 
     /**
      * The start and end points of the gradient when drawn into the layer's
@@ -257,7 +267,7 @@ public class CAGradientLayer extends CALayer {
      */
     @Generated
     @Selector("setType:")
-    public native void setType(String value);
+    public native void setType(@NotNull String value);
 
     /**
      * The start and end points of the gradient when drawn into the layer's
@@ -277,6 +287,7 @@ public class CAGradientLayer extends CALayer {
      * The kind of gradient that will be drawn. Currently, the only allowed
      * values are `axial' (the default value), `radial', and `conic'.
      */
+    @NotNull
     @Generated
     @Selector("type")
     public native String type();
@@ -294,5 +305,5 @@ public class CAGradientLayer extends CALayer {
     @Generated
     @Selector("cornerCurveExpansionFactor:")
     @NFloat
-    public static native double cornerCurveExpansionFactor(String curve);
+    public static native double cornerCurveExpansionFactor(@NotNull String curve);
 }

@@ -18,6 +18,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MPSCNNConvolutionDataSource
@@ -64,6 +66,7 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
      * 
      * Note: bias terms are always float, even when the weights are not.
      */
+    @Nullable
     @Generated
     @Selector("biasTerms")
     FloatPtr biasTerms();
@@ -92,6 +95,7 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
      * 
      * @return A MPSCNNConvolutionDescriptor that describes the kernel housed by this object.
      */
+    @NotNull
     @Generated
     @Selector("descriptor")
     MPSCNNConvolutionDescriptor descriptor();
@@ -101,6 +105,7 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
      * 
      * Overridden by a MPSCNNConvolutionNode.label if it is non-nil.
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();
@@ -129,6 +134,7 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
     /**
      * A pointer to a 256 entry lookup table containing the values to use for the weight range [0,255]
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("lookupTableForUInt8Kernel")
@@ -167,6 +173,7 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
      * with each 32 sub input feature channel index specified in machine byte order, so that for example
      * the 13th feature channel bit can be extracted using bitmask = (1U << 13).
      */
+    @NotNull
     @Generated
     @Selector("weights")
     VoidPtr weights();
@@ -182,12 +189,13 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Owned
     @IsOptional
     @Selector("copyWithZone:device:")
-    default MPSCNNConvolutionDataSource copyWithZoneDevice(VoidPtr zone,
-            @Mapped(ObjCObjectMapper.class) MTLDevice device) {
+    default MPSCNNConvolutionDataSource copyWithZoneDevice(@Nullable VoidPtr zone,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLDevice device) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -209,12 +217,14 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
      * 
      *         API-Since: 11.3
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("updateWithCommandBuffer:gradientState:sourceState:")
     default MPSCNNConvolutionWeightsAndBiasesState updateWithCommandBufferGradientStateSourceState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNConvolutionGradientState gradientState, MPSCNNConvolutionWeightsAndBiasesState sourceState) {
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNConvolutionGradientState gradientState,
+            @NotNull MPSCNNConvolutionWeightsAndBiasesState sourceState) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -242,8 +252,8 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
     @Generated
     @IsOptional
     @Selector("updateWithGradientState:sourceState:")
-    default boolean updateWithGradientStateSourceState(MPSCNNConvolutionGradientState gradientState,
-            MPSCNNConvolutionWeightsAndBiasesState sourceState) {
+    default boolean updateWithGradientStateSourceState(@NotNull MPSCNNConvolutionGradientState gradientState,
+            @NotNull MPSCNNConvolutionWeightsAndBiasesState sourceState) {
         throw new java.lang.UnsupportedOperationException();
     }
 

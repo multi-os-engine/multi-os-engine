@@ -49,6 +49,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 6.0
@@ -89,29 +91,32 @@ public class UICollectionViewController extends UIViewController implements UICo
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -143,9 +148,10 @@ public class UICollectionViewController extends UIViewController implements UICo
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -188,165 +194,184 @@ public class UICollectionViewController extends UIViewController implements UICo
     @Generated
     @IsOptional
     @Selector("collectionView:canFocusItemAtIndexPath:")
-    public native boolean collectionViewCanFocusItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+    public native boolean collectionViewCanFocusItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath);
 
     @Generated
     @IsOptional
     @Selector("collectionView:canMoveItemAtIndexPath:")
-    public native boolean collectionViewCanMoveItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+    public native boolean collectionViewCanMoveItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath);
 
     @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:canPerformAction:forItemAtIndexPath:withSender:")
-    public native boolean collectionViewCanPerformActionForItemAtIndexPathWithSender(UICollectionView collectionView,
-            SEL action, NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) Object sender);
+    public native boolean collectionViewCanPerformActionForItemAtIndexPathWithSender(
+            @NotNull UICollectionView collectionView, @NotNull SEL action, @NotNull NSIndexPath indexPath,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object sender);
 
+    @NotNull
     @Generated
     @Selector("collectionView:cellForItemAtIndexPath:")
-    public native UICollectionViewCell collectionViewCellForItemAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath);
+    public native UICollectionViewCell collectionViewCellForItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath);
 
     @Generated
     @IsOptional
     @Selector("collectionView:didDeselectItemAtIndexPath:")
-    public native void collectionViewDidDeselectItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+    public native void collectionViewDidDeselectItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath);
 
     @Generated
     @IsOptional
     @Selector("collectionView:didEndDisplayingCell:forItemAtIndexPath:")
-    public native void collectionViewDidEndDisplayingCellForItemAtIndexPath(UICollectionView collectionView,
-            UICollectionViewCell cell, NSIndexPath indexPath);
+    public native void collectionViewDidEndDisplayingCellForItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull UICollectionViewCell cell, @NotNull NSIndexPath indexPath);
 
     @Generated
     @IsOptional
     @Selector("collectionView:didEndDisplayingSupplementaryView:forElementOfKind:atIndexPath:")
     public native void collectionViewDidEndDisplayingSupplementaryViewForElementOfKindAtIndexPath(
-            UICollectionView collectionView, UICollectionReusableView view, String elementKind, NSIndexPath indexPath);
+            @NotNull UICollectionView collectionView, @NotNull UICollectionReusableView view,
+            @NotNull String elementKind, @NotNull NSIndexPath indexPath);
 
     @Generated
     @IsOptional
     @Selector("collectionView:didHighlightItemAtIndexPath:")
-    public native void collectionViewDidHighlightItemAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath);
+    public native void collectionViewDidHighlightItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath);
 
     @Generated
     @IsOptional
     @Selector("collectionView:didSelectItemAtIndexPath:")
-    public native void collectionViewDidSelectItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+    public native void collectionViewDidSelectItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath);
 
     @Generated
     @IsOptional
     @Selector("collectionView:didUnhighlightItemAtIndexPath:")
-    public native void collectionViewDidUnhighlightItemAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath);
+    public native void collectionViewDidUnhighlightItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath);
 
     @Generated
     @IsOptional
     @Selector("collectionView:didUpdateFocusInContext:withAnimationCoordinator:")
-    public native void collectionViewDidUpdateFocusInContextWithAnimationCoordinator(UICollectionView collectionView,
-            UICollectionViewFocusUpdateContext context, UIFocusAnimationCoordinator coordinator);
+    public native void collectionViewDidUpdateFocusInContextWithAnimationCoordinator(
+            @NotNull UICollectionView collectionView, @NotNull UICollectionViewFocusUpdateContext context,
+            @NotNull UIFocusAnimationCoordinator coordinator);
 
     @Generated
     @IsOptional
     @Selector("collectionView:moveItemAtIndexPath:toIndexPath:")
-    public native void collectionViewMoveItemAtIndexPathToIndexPath(UICollectionView collectionView,
-            NSIndexPath sourceIndexPath, NSIndexPath destinationIndexPath);
+    public native void collectionViewMoveItemAtIndexPathToIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath sourceIndexPath, @NotNull NSIndexPath destinationIndexPath);
 
     @Generated
     @Selector("collectionView:numberOfItemsInSection:")
     @NInt
-    public native long collectionViewNumberOfItemsInSection(UICollectionView collectionView, @NInt long section);
+    public native long collectionViewNumberOfItemsInSection(@NotNull UICollectionView collectionView,
+            @NInt long section);
 
     @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:performAction:forItemAtIndexPath:withSender:")
-    public native void collectionViewPerformActionForItemAtIndexPathWithSender(UICollectionView collectionView,
-            SEL action, NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) Object sender);
+    public native void collectionViewPerformActionForItemAtIndexPathWithSender(@NotNull UICollectionView collectionView,
+            @NotNull SEL action, @NotNull NSIndexPath indexPath,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object sender);
 
     @Generated
     @IsOptional
     @Selector("collectionView:shouldDeselectItemAtIndexPath:")
-    public native boolean collectionViewShouldDeselectItemAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath);
+    public native boolean collectionViewShouldDeselectItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath);
 
     @Generated
     @IsOptional
     @Selector("collectionView:shouldHighlightItemAtIndexPath:")
-    public native boolean collectionViewShouldHighlightItemAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath);
+    public native boolean collectionViewShouldHighlightItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath);
 
     @Generated
     @IsOptional
     @Selector("collectionView:shouldSelectItemAtIndexPath:")
-    public native boolean collectionViewShouldSelectItemAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath);
+    public native boolean collectionViewShouldSelectItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath);
 
     @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:shouldShowMenuForItemAtIndexPath:")
-    public native boolean collectionViewShouldShowMenuForItemAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath);
+    public native boolean collectionViewShouldShowMenuForItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath);
 
     @Generated
     @IsOptional
     @Selector("collectionView:shouldUpdateFocusInContext:")
-    public native boolean collectionViewShouldUpdateFocusInContext(UICollectionView collectionView,
-            UICollectionViewFocusUpdateContext context);
+    public native boolean collectionViewShouldUpdateFocusInContext(@NotNull UICollectionView collectionView,
+            @NotNull UICollectionViewFocusUpdateContext context);
 
     @Generated
     @IsOptional
     @Selector("collectionView:targetContentOffsetForProposedContentOffset:")
     @ByValue
-    public native CGPoint collectionViewTargetContentOffsetForProposedContentOffset(UICollectionView collectionView,
-            @ByValue CGPoint proposedContentOffset);
+    public native CGPoint collectionViewTargetContentOffsetForProposedContentOffset(
+            @NotNull UICollectionView collectionView, @ByValue CGPoint proposedContentOffset);
 
+    @NotNull
     @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:targetIndexPathForMoveFromItemAtIndexPath:toProposedIndexPath:")
     public native NSIndexPath collectionViewTargetIndexPathForMoveFromItemAtIndexPathToProposedIndexPath(
-            UICollectionView collectionView, NSIndexPath currentIndexPath, NSIndexPath proposedIndexPath);
+            @NotNull UICollectionView collectionView, @NotNull NSIndexPath currentIndexPath,
+            @NotNull NSIndexPath proposedIndexPath);
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("collectionView:transitionLayoutForOldLayout:newLayout:")
     public native UICollectionViewTransitionLayout collectionViewTransitionLayoutForOldLayoutNewLayout(
-            UICollectionView collectionView, UICollectionViewLayout fromLayout, UICollectionViewLayout toLayout);
+            @NotNull UICollectionView collectionView, @NotNull UICollectionViewLayout fromLayout,
+            @NotNull UICollectionViewLayout toLayout);
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("collectionView:viewForSupplementaryElementOfKind:atIndexPath:")
     public native UICollectionReusableView collectionViewViewForSupplementaryElementOfKindAtIndexPath(
-            UICollectionView collectionView, String kind, NSIndexPath indexPath);
+            @NotNull UICollectionView collectionView, @NotNull String kind, @NotNull NSIndexPath indexPath);
 
     @Generated
     @IsOptional
     @Selector("collectionView:willDisplayCell:forItemAtIndexPath:")
-    public native void collectionViewWillDisplayCellForItemAtIndexPath(UICollectionView collectionView,
-            UICollectionViewCell cell, NSIndexPath indexPath);
+    public native void collectionViewWillDisplayCellForItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull UICollectionViewCell cell, @NotNull NSIndexPath indexPath);
 
     @Generated
     @IsOptional
     @Selector("collectionView:willDisplaySupplementaryView:forElementKind:atIndexPath:")
     public native void collectionViewWillDisplaySupplementaryViewForElementKindAtIndexPath(
-            UICollectionView collectionView, UICollectionReusableView view, String elementKind, NSIndexPath indexPath);
+            @NotNull UICollectionView collectionView, @NotNull UICollectionReusableView view,
+            @NotNull String elementKind, @NotNull NSIndexPath indexPath);
 
     /**
      * The layout object is needed when defining interactive layout to layout transitions.
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("collectionViewLayout")
     public native UICollectionViewLayout collectionViewLayout();
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("indexPathForPreferredFocusedViewInCollectionView:")
-    public native NSIndexPath indexPathForPreferredFocusedViewInCollectionView(UICollectionView collectionView);
+    public native NSIndexPath indexPathForPreferredFocusedViewInCollectionView(
+            @NotNull UICollectionView collectionView);
 
     @Generated
     @Selector("init")
@@ -354,15 +379,16 @@ public class UICollectionViewController extends UIViewController implements UICo
 
     @Generated
     @Selector("initWithCoder:")
-    public native UICollectionViewController initWithCoder(NSCoder coder);
+    public native UICollectionViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithCollectionViewLayout:")
-    public native UICollectionViewController initWithCollectionViewLayout(UICollectionViewLayout layout);
+    public native UICollectionViewController initWithCollectionViewLayout(@NotNull UICollectionViewLayout layout);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native UICollectionViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native UICollectionViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * Defaults to YES, and if YES, a system standard reordering gesture is used to drive collection view reordering
@@ -377,69 +403,69 @@ public class UICollectionViewController extends UIViewController implements UICo
     @IsOptional
     @Selector("numberOfSectionsInCollectionView:")
     @NInt
-    public native long numberOfSectionsInCollectionView(UICollectionView collectionView);
+    public native long numberOfSectionsInCollectionView(@NotNull UICollectionView collectionView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewDidEndDecelerating:")
-    public native void scrollViewDidEndDecelerating(UIScrollView scrollView);
+    public native void scrollViewDidEndDecelerating(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewDidEndDragging:willDecelerate:")
-    public native void scrollViewDidEndDraggingWillDecelerate(UIScrollView scrollView, boolean decelerate);
+    public native void scrollViewDidEndDraggingWillDecelerate(@NotNull UIScrollView scrollView, boolean decelerate);
 
     @Generated
     @IsOptional
     @Selector("scrollViewDidEndScrollingAnimation:")
-    public native void scrollViewDidEndScrollingAnimation(UIScrollView scrollView);
+    public native void scrollViewDidEndScrollingAnimation(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewDidEndZooming:withView:atScale:")
-    public native void scrollViewDidEndZoomingWithViewAtScale(UIScrollView scrollView, UIView view,
+    public native void scrollViewDidEndZoomingWithViewAtScale(@NotNull UIScrollView scrollView, @Nullable UIView view,
             @NFloat double scale);
 
     @Generated
     @IsOptional
     @Selector("scrollViewDidScroll:")
-    public native void scrollViewDidScroll(UIScrollView scrollView);
+    public native void scrollViewDidScroll(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewDidScrollToTop:")
-    public native void scrollViewDidScrollToTop(UIScrollView scrollView);
+    public native void scrollViewDidScrollToTop(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewDidZoom:")
-    public native void scrollViewDidZoom(UIScrollView scrollView);
+    public native void scrollViewDidZoom(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewShouldScrollToTop:")
-    public native boolean scrollViewShouldScrollToTop(UIScrollView scrollView);
+    public native boolean scrollViewShouldScrollToTop(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewWillBeginDecelerating:")
-    public native void scrollViewWillBeginDecelerating(UIScrollView scrollView);
+    public native void scrollViewWillBeginDecelerating(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewWillBeginDragging:")
-    public native void scrollViewWillBeginDragging(UIScrollView scrollView);
+    public native void scrollViewWillBeginDragging(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewWillBeginZooming:withView:")
-    public native void scrollViewWillBeginZoomingWithView(UIScrollView scrollView, UIView view);
+    public native void scrollViewWillBeginZoomingWithView(@NotNull UIScrollView scrollView, @Nullable UIView view);
 
     @Generated
     @IsOptional
     @Selector("scrollViewWillEndDragging:withVelocity:targetContentOffset:")
-    public native void scrollViewWillEndDraggingWithVelocityTargetContentOffset(UIScrollView scrollView,
-            @ByValue CGPoint velocity, CGPoint targetContentOffset);
+    public native void scrollViewWillEndDraggingWithVelocityTargetContentOffset(@NotNull UIScrollView scrollView,
+            @ByValue CGPoint velocity, @NotNull CGPoint targetContentOffset);
 
     /**
      * Defaults to YES, and if YES, any selection is cleared in viewWillAppear:
@@ -488,143 +514,159 @@ public class UICollectionViewController extends UIViewController implements UICo
     @Selector("useLayoutToLayoutNavigationTransitions")
     public native boolean useLayoutToLayoutNavigationTransitions();
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("viewForZoomingInScrollView:")
-    public native UIView viewForZoomingInScrollView(UIScrollView scrollView);
+    public native UIView viewForZoomingInScrollView(@NotNull UIScrollView scrollView);
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("collectionView:indexPathForIndexTitle:atIndex:")
-    public native NSIndexPath collectionViewIndexPathForIndexTitleAtIndex(UICollectionView collectionView, String title,
-            @NInt long index);
+    public native NSIndexPath collectionViewIndexPathForIndexTitleAtIndex(@NotNull UICollectionView collectionView,
+            @NotNull String title, @NInt long index);
 
     @Generated
     @IsOptional
     @Selector("collectionView:shouldSpringLoadItemAtIndexPath:withContext:")
-    public native boolean collectionViewShouldSpringLoadItemAtIndexPathWithContext(UICollectionView collectionView,
-            NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionContext context);
+    public native boolean collectionViewShouldSpringLoadItemAtIndexPathWithContext(
+            @NotNull UICollectionView collectionView, @NotNull NSIndexPath indexPath,
+            @NotNull @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionContext context);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("indexTitlesForCollectionView:")
-    public native NSArray<String> indexTitlesForCollectionView(UICollectionView collectionView);
+    public native NSArray<String> indexTitlesForCollectionView(@NotNull UICollectionView collectionView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewDidChangeAdjustedContentInset:")
-    public native void scrollViewDidChangeAdjustedContentInset(UIScrollView scrollView);
+    public native void scrollViewDidChangeAdjustedContentInset(@NotNull UIScrollView scrollView);
 
+    @Nullable
     @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:contextMenuConfigurationForItemAtIndexPath:point:")
     public native UIContextMenuConfiguration collectionViewContextMenuConfigurationForItemAtIndexPathPoint(
-            UICollectionView collectionView, NSIndexPath indexPath, @ByValue CGPoint point);
+            @NotNull UICollectionView collectionView, @NotNull NSIndexPath indexPath, @ByValue CGPoint point);
 
     @Generated
     @IsOptional
     @Selector("collectionView:didBeginMultipleSelectionInteractionAtIndexPath:")
-    public native void collectionViewDidBeginMultipleSelectionInteractionAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath);
+    public native void collectionViewDidBeginMultipleSelectionInteractionAtIndexPath(
+            @NotNull UICollectionView collectionView, @NotNull NSIndexPath indexPath);
 
+    @Nullable
     @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:previewForDismissingContextMenuWithConfiguration:")
     public native UITargetedPreview collectionViewPreviewForDismissingContextMenuWithConfiguration(
-            UICollectionView collectionView, UIContextMenuConfiguration configuration);
+            @NotNull UICollectionView collectionView, @NotNull UIContextMenuConfiguration configuration);
 
+    @Nullable
     @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:previewForHighlightingContextMenuWithConfiguration:")
     public native UITargetedPreview collectionViewPreviewForHighlightingContextMenuWithConfiguration(
-            UICollectionView collectionView, UIContextMenuConfiguration configuration);
+            @NotNull UICollectionView collectionView, @NotNull UIContextMenuConfiguration configuration);
 
     @Generated
     @IsOptional
     @Selector("collectionView:shouldBeginMultipleSelectionInteractionAtIndexPath:")
     public native boolean collectionViewShouldBeginMultipleSelectionInteractionAtIndexPath(
-            UICollectionView collectionView, NSIndexPath indexPath);
+            @NotNull UICollectionView collectionView, @NotNull NSIndexPath indexPath);
 
     @Generated
     @IsOptional
     @Selector("collectionView:willPerformPreviewActionForMenuWithConfiguration:animator:")
     public native void collectionViewWillPerformPreviewActionForMenuWithConfigurationAnimator(
-            UICollectionView collectionView, UIContextMenuConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator);
+            @NotNull UICollectionView collectionView, @NotNull UIContextMenuConfiguration configuration,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator);
 
     @Generated
     @IsOptional
     @Selector("collectionViewDidEndMultipleSelectionInteraction:")
-    public native void collectionViewDidEndMultipleSelectionInteraction(UICollectionView collectionView);
+    public native void collectionViewDidEndMultipleSelectionInteraction(@NotNull UICollectionView collectionView);
 
     @Generated
     @IsOptional
     @Selector("collectionView:canEditItemAtIndexPath:")
-    public native boolean collectionViewCanEditItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+    public native boolean collectionViewCanEditItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath);
 
     @Generated
     @IsOptional
     @Selector("collectionView:willDisplayContextMenuWithConfiguration:animator:")
-    public native void collectionViewWillDisplayContextMenuWithConfigurationAnimator(UICollectionView collectionView,
-            UIContextMenuConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator);
+    public native void collectionViewWillDisplayContextMenuWithConfigurationAnimator(
+            @NotNull UICollectionView collectionView, @NotNull UIContextMenuConfiguration configuration,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator);
 
     @Generated
     @IsOptional
     @Selector("collectionView:willEndContextMenuInteractionWithConfiguration:animator:")
     public native void collectionViewWillEndContextMenuInteractionWithConfigurationAnimator(
-            UICollectionView collectionView, UIContextMenuConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator);
+            @NotNull UICollectionView collectionView, @NotNull UIContextMenuConfiguration configuration,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("collectionView:sceneActivationConfigurationForItemAtIndexPath:point:")
     public native UIWindowSceneActivationConfiguration collectionViewSceneActivationConfigurationForItemAtIndexPathPoint(
-            UICollectionView collectionView, NSIndexPath indexPath, @ByValue CGPoint point);
+            @NotNull UICollectionView collectionView, @NotNull NSIndexPath indexPath, @ByValue CGPoint point);
 
     @Generated
     @IsOptional
     @Selector("collectionView:selectionFollowsFocusForItemAtIndexPath:")
-    public native boolean collectionViewSelectionFollowsFocusForItemAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath);
+    public native boolean collectionViewSelectionFollowsFocusForItemAtIndexPath(
+            @NotNull UICollectionView collectionView, @NotNull NSIndexPath indexPath);
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("collectionView:targetIndexPathForMoveOfItemFromOriginalIndexPath:atCurrentIndexPath:toProposedIndexPath:")
     public native NSIndexPath collectionViewTargetIndexPathForMoveOfItemFromOriginalIndexPathAtCurrentIndexPathToProposedIndexPath(
-            UICollectionView collectionView, NSIndexPath originalIndexPath, NSIndexPath currentIndexPath,
-            NSIndexPath proposedIndexPath);
+            @NotNull UICollectionView collectionView, @NotNull NSIndexPath originalIndexPath,
+            @NotNull NSIndexPath currentIndexPath, @NotNull NSIndexPath proposedIndexPath);
 
     @Generated
     @IsOptional
     @Selector("collectionView:canPerformPrimaryActionForItemAtIndexPath:")
-    public native boolean collectionViewCanPerformPrimaryActionForItemAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath);
+    public native boolean collectionViewCanPerformPrimaryActionForItemAtIndexPath(
+            @NotNull UICollectionView collectionView, @NotNull NSIndexPath indexPath);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("collectionView:contextMenuConfiguration:dismissalPreviewForItemAtIndexPath:")
     public native UITargetedPreview collectionViewContextMenuConfigurationDismissalPreviewForItemAtIndexPath(
-            UICollectionView collectionView, UIContextMenuConfiguration configuration, NSIndexPath indexPath);
+            @NotNull UICollectionView collectionView, @NotNull UIContextMenuConfiguration configuration,
+            @NotNull NSIndexPath indexPath);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("collectionView:contextMenuConfiguration:highlightPreviewForItemAtIndexPath:")
     public native UITargetedPreview collectionViewContextMenuConfigurationHighlightPreviewForItemAtIndexPath(
-            UICollectionView collectionView, UIContextMenuConfiguration configuration, NSIndexPath indexPath);
+            @NotNull UICollectionView collectionView, @NotNull UIContextMenuConfiguration configuration,
+            @NotNull NSIndexPath indexPath);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("collectionView:contextMenuConfigurationForItemsAtIndexPaths:point:")
     public native UIContextMenuConfiguration collectionViewContextMenuConfigurationForItemsAtIndexPathsPoint(
-            UICollectionView collectionView, NSArray<? extends NSIndexPath> indexPaths, @ByValue CGPoint point);
+            @NotNull UICollectionView collectionView, @NotNull NSArray<? extends NSIndexPath> indexPaths,
+            @ByValue CGPoint point);
 
     @Generated
     @IsOptional
     @Selector("collectionView:performPrimaryActionForItemAtIndexPath:")
-    public native void collectionViewPerformPrimaryActionForItemAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath);
+    public native void collectionViewPerformPrimaryActionForItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath);
 }

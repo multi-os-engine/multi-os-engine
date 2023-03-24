@@ -23,6 +23,7 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure(alignment = 4)
@@ -44,7 +45,7 @@ public final class AURenderEventHeader extends StructObject {
     }
 
     @Generated
-    public AURenderEventHeader(VoidPtr next, long eventSampleTime, byte eventType, byte reserved) {
+    public AURenderEventHeader(@Nullable VoidPtr next, long eventSampleTime, byte eventType, byte reserved) {
         super(AURenderEventHeader.class);
         setNext(next);
         setEventSampleTime(eventSampleTime);
@@ -55,6 +56,7 @@ public final class AURenderEventHeader extends StructObject {
     /**
      * !< The next event in a linked list of events.
      */
+    @Nullable
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native VoidPtr next();
@@ -64,7 +66,7 @@ public final class AURenderEventHeader extends StructObject {
      */
     @Generated
     @StructureField(order = 0, isGetter = false)
-    public native void setNext(VoidPtr value);
+    public native void setNext(@Nullable VoidPtr value);
 
     /**
      * !< The sample time at which the event is scheduled to occur.

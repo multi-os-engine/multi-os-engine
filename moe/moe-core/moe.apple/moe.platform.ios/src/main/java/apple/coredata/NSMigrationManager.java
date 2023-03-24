@@ -42,6 +42,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.0
@@ -76,22 +78,25 @@ public class NSMigrationManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +131,10 @@ public class NSMigrationManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,8 +172,9 @@ public class NSMigrationManager extends NSObject {
      */
     @Generated
     @Selector("associateSourceInstance:withDestinationInstance:forEntityMapping:")
-    public native void associateSourceInstanceWithDestinationInstanceForEntityMapping(NSManagedObject sourceInstance,
-            NSManagedObject destinationInstance, NSEntityMapping entityMapping);
+    public native void associateSourceInstanceWithDestinationInstanceForEntityMapping(
+            @NotNull NSManagedObject sourceInstance, @NotNull NSManagedObject destinationInstance,
+            @NotNull NSEntityMapping entityMapping);
 
     /**
      * Cancels the migration with the specified error. Calling this method causes
@@ -176,34 +183,39 @@ public class NSMigrationManager extends NSObject {
      */
     @Generated
     @Selector("cancelMigrationWithError:")
-    public native void cancelMigrationWithError(NSError error);
+    public native void cancelMigrationWithError(@NotNull NSError error);
 
     /**
      * Observable property that can be used to determine progress of the migration process. Returns the current entity
      * mapping being processed. Each entity is processed a total of three times (instance creation, relationship
      * creation, validation)
      */
+    @NotNull
     @Generated
     @Selector("currentEntityMapping")
     public native NSEntityMapping currentEntityMapping();
 
+    @NotNull
     @Generated
     @Selector("destinationContext")
     public native NSManagedObjectContext destinationContext();
 
+    @Nullable
     @Generated
     @Selector("destinationEntityForEntityMapping:")
-    public native NSEntityDescription destinationEntityForEntityMapping(NSEntityMapping mEntity);
+    public native NSEntityDescription destinationEntityForEntityMapping(@NotNull NSEntityMapping mEntity);
 
     /**
      * Returns the managed object instances created in the destination store for the given entity mapping for the
      * specified source instances.
      */
+    @NotNull
     @Generated
     @Selector("destinationInstancesForEntityMappingNamed:sourceInstances:")
     public native NSArray<? extends NSManagedObject> destinationInstancesForEntityMappingNamedSourceInstances(
-            String mappingName, NSArray<? extends NSManagedObject> sourceInstances);
+            @NotNull String mappingName, @Nullable NSArray<? extends NSManagedObject> sourceInstances);
 
+    @NotNull
     @Generated
     @Selector("destinationModel")
     public native NSManagedObjectModel destinationModel();
@@ -219,12 +231,13 @@ public class NSMigrationManager extends NSObject {
      */
     @Generated
     @Selector("initWithSourceModel:destinationModel:")
-    public native NSMigrationManager initWithSourceModelDestinationModel(NSManagedObjectModel sourceModel,
-            NSManagedObjectModel destinationModel);
+    public native NSMigrationManager initWithSourceModelDestinationModel(@NotNull NSManagedObjectModel sourceModel,
+            @NotNull NSManagedObjectModel destinationModel);
 
     /**
      * Accessors for the mapping model, source model, and destination model
      */
+    @NotNull
     @Generated
     @Selector("mappingModel")
     public native NSMappingModel mappingModel();
@@ -239,8 +252,9 @@ public class NSMigrationManager extends NSObject {
     @Generated
     @Selector("migrateStoreFromURL:type:options:withMappingModel:toDestinationURL:destinationType:destinationOptions:error:")
     public native boolean migrateStoreFromURLTypeOptionsWithMappingModelToDestinationURLDestinationTypeDestinationOptionsError(
-            NSURL sourceURL, String sStoreType, NSDictionary<?, ?> sOptions, NSMappingModel mappings, NSURL dURL,
-            String dStoreType, NSDictionary<?, ?> dOptions, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull NSURL sourceURL, @NotNull String sStoreType, @Nullable NSDictionary<?, ?> sOptions,
+            @Nullable NSMappingModel mappings, @NotNull NSURL dURL, @NotNull String dStoreType,
+            @Nullable NSDictionary<?, ?> dOptions, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Observable property that can be used to determine progress of the migration process. Returns the percentage
@@ -262,7 +276,7 @@ public class NSMigrationManager extends NSObject {
      */
     @Generated
     @Selector("setUserInfo:")
-    public native void setUserInfo(NSDictionary<?, ?> value);
+    public native void setUserInfo(@Nullable NSDictionary<?, ?> value);
 
     /**
      * Tries to use a store specific migration manager to perform the store migration, note that a store specific
@@ -281,6 +295,7 @@ public class NSMigrationManager extends NSObject {
      * created lazily, as part of the initialization of two Core Data stacks (one for reading, the other for writing
      * data.)
      */
+    @NotNull
     @Generated
     @Selector("sourceContext")
     public native NSManagedObjectContext sourceContext();
@@ -290,19 +305,22 @@ public class NSMigrationManager extends NSObject {
      * (Entity mappings do not store the actual description objects, but rather the name and version information of the
      * entity.)
      */
+    @Nullable
     @Generated
     @Selector("sourceEntityForEntityMapping:")
-    public native NSEntityDescription sourceEntityForEntityMapping(NSEntityMapping mEntity);
+    public native NSEntityDescription sourceEntityForEntityMapping(@NotNull NSEntityMapping mEntity);
 
     /**
      * Returns the managed object instances in the source store used to create the specified destination instances for
      * the given entity mapping.
      */
+    @NotNull
     @Generated
     @Selector("sourceInstancesForEntityMappingNamed:destinationInstances:")
     public native NSArray<? extends NSManagedObject> sourceInstancesForEntityMappingNamedDestinationInstances(
-            String mappingName, NSArray<? extends NSManagedObject> destinationInstances);
+            @NotNull String mappingName, @Nullable NSArray<? extends NSManagedObject> destinationInstances);
 
+    @NotNull
     @Generated
     @Selector("sourceModel")
     public native NSManagedObjectModel sourceModel();
@@ -310,6 +328,7 @@ public class NSMigrationManager extends NSObject {
     /**
      * Returns/sets the user info for the migration manager
      */
+    @Nullable
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();

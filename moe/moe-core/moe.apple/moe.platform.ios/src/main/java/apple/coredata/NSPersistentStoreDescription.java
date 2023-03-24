@@ -41,6 +41,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An instance of NSPersistentStoreDescription encapsulates all information needed to describe a persistent store.
@@ -77,22 +79,25 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +132,10 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -138,7 +144,7 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
 
     @Generated
     @Selector("persistentStoreDescriptionWithURL:")
-    public static native NSPersistentStoreDescription persistentStoreDescriptionWithURL(NSURL URL);
+    public static native NSPersistentStoreDescription persistentStoreDescriptionWithURL(@NotNull NSURL URL);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -161,19 +167,22 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
+    @Nullable
     @Generated
     @Selector("configuration")
     public native String configuration();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("init")
@@ -185,7 +194,7 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
      */
     @Generated
     @Selector("initWithURL:")
-    public native NSPersistentStoreDescription initWithURL(NSURL url);
+    public native NSPersistentStoreDescription initWithURL(@NotNull NSURL url);
 
     /**
      * Store options
@@ -201,17 +210,18 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
     @Selector("setReadOnly:")
     public native void setReadOnly(boolean value);
 
+    @NotNull
     @Generated
     @Selector("options")
     public native NSDictionary<String, ? extends NSObject> options();
 
     @Generated
     @Selector("setConfiguration:")
-    public native void setConfiguration(String value);
+    public native void setConfiguration(@Nullable String value);
 
     @Generated
     @Selector("setOption:forKey:")
-    public native void setOptionForKey(NSObject option, String key);
+    public native void setOptionForKey(@Nullable NSObject option, @NotNull String key);
 
     /**
      * addPersistentStore-time behaviours
@@ -234,15 +244,15 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
 
     @Generated
     @Selector("setType:")
-    public native void setType(String value);
+    public native void setType(@NotNull String value);
 
     @Generated
     @Selector("setURL:")
-    public native void setURL(NSURL value);
+    public native void setURL(@Nullable NSURL value);
 
     @Generated
     @Selector("setValue:forPragmaNamed:")
-    public native void setValueForPragmaNamed(NSObject value, String name);
+    public native void setValueForPragmaNamed(@Nullable NSObject value, @NotNull String name);
 
     /**
      * addPersistentStore-time behaviours
@@ -259,6 +269,7 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
     @Selector("shouldMigrateStoreAutomatically")
     public native boolean shouldMigrateStoreAutomatically();
 
+    @NotNull
     @Generated
     @Selector("sqlitePragmas")
     public native NSDictionary<String, ? extends NSObject> sqlitePragmas();
@@ -267,6 +278,7 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
     @Selector("timeout")
     public native double timeout();
 
+    @NotNull
     @Generated
     @Selector("type")
     public native String type();
@@ -277,6 +289,7 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("cloudKitContainerOptions")
     public native NSPersistentCloudKitContainerOptions cloudKitContainerOptions();
@@ -289,5 +302,5 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
      */
     @Generated
     @Selector("setCloudKitContainerOptions:")
-    public native void setCloudKitContainerOptions(NSPersistentCloudKitContainerOptions value);
+    public native void setCloudKitContainerOptions(@Nullable NSPersistentCloudKitContainerOptions value);
 }

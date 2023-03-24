@@ -104,6 +104,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.opaque.DNSServiceAttributeRef;
 import org.moe.natj.general.ptr.ConstDoublePtr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Runtime(CRuntime.class)
@@ -182,10 +184,11 @@ public final class Globals {
      * 
      *         API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    public static native String sel_getName(SEL sel);
+    public static native String sel_getName(@NotNull SEL sel);
 
     /**
      * Registers a method with the Objective-C runtime system, maps the method
@@ -201,10 +204,11 @@ public final class Globals {
      * 
      * @return A pointer of type SEL specifying the selector for the named method.
      */
+    @NotNull
     @Generated
     @CFunction
     public static native SEL sel_registerName(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String str);
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String str);
 
     /**
      * Returns the class name of a given object.
@@ -215,10 +219,11 @@ public final class Globals {
      * 
      *         API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    public static native String object_getClassName(@Mapped(ObjCObjectMapper.class) Object obj);
+    public static native String object_getClassName(@Nullable @Mapped(ObjCObjectMapper.class) Object obj);
 
     /**
      * Identifies a selector as being valid or invalid.
@@ -234,7 +239,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native boolean sel_isMapped(SEL sel);
+    public static native boolean sel_isMapped(@NotNull SEL sel);
 
     /**
      * Registers a method name with the Objective-C runtime system.
@@ -250,10 +255,11 @@ public final class Globals {
      * 
      * @return A pointer of type SEL specifying the selector for the named method.
      */
+    @NotNull
     @Generated
     @CFunction
     public static native SEL sel_getUid(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String str);
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String str);
 
     /**
      * API-Since: 8.0
@@ -1255,12 +1261,12 @@ public final class Globals {
     @Generated
     @CFunction
     public static native long dispatch_walltime(
-            @UncertainArgument("Options: reference, array Fallback: reference") timespec when, long delta);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") timespec when, long delta);
 
     @Generated
     @Inline
     @CFunction
-    public static native void _dispatch_object_validate(NSObject object);
+    public static native void _dispatch_object_validate(@NotNull NSObject object);
 
     /**
      * [@function] dispatch_retain
@@ -1278,7 +1284,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_retain(NSObject object);
+    public static native void dispatch_retain(@NotNull NSObject object);
 
     /**
      * [@function] dispatch_release
@@ -1298,7 +1304,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_release(NSObject object);
+    public static native void dispatch_release(@NotNull NSObject object);
 
     /**
      * [@function] dispatch_get_context
@@ -1313,9 +1319,10 @@ public final class Globals {
      * 
      *         API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native VoidPtr dispatch_get_context(NSObject object);
+    public static native VoidPtr dispatch_get_context(@NotNull NSObject object);
 
     /**
      * [@function] dispatch_set_context
@@ -1333,7 +1340,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_set_context(NSObject object, VoidPtr context);
+    public static native void dispatch_set_context(@NotNull NSObject object, @Nullable VoidPtr context);
 
     /**
      * [@function] dispatch_set_finalizer_f
@@ -1358,8 +1365,8 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_set_finalizer_f(NSObject object,
-            @FunctionPtr(name = "call_dispatch_set_finalizer_f") Function_dispatch_set_finalizer_f finalizer);
+    public static native void dispatch_set_finalizer_f(@NotNull NSObject object,
+            @Nullable @FunctionPtr(name = "call_dispatch_set_finalizer_f") Function_dispatch_set_finalizer_f finalizer);
 
     /**
      * [@function] dispatch_activate
@@ -1385,7 +1392,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_activate(NSObject object);
+    public static native void dispatch_activate(@NotNull NSObject object);
 
     /**
      * [@function] dispatch_suspend
@@ -1407,7 +1414,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_suspend(NSObject object);
+    public static native void dispatch_suspend(@NotNull NSObject object);
 
     /**
      * [@function] dispatch_resume
@@ -1435,7 +1442,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_resume(NSObject object);
+    public static native void dispatch_resume(@NotNull NSObject object);
 
     /**
      * [@function] dispatch_debug
@@ -1465,8 +1472,8 @@ public final class Globals {
     @Variadic()
     @Deprecated
     @CFunction
-    public static native void dispatch_debug(NSObject object,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String message,
+    public static native void dispatch_debug(@NotNull NSObject object,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String message,
             Object... varargs);
 
     /**
@@ -1477,8 +1484,8 @@ public final class Globals {
     @Generated
     @Deprecated
     @CFunction
-    public static native void dispatch_debugv(NSObject object,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String message,
+    public static native void dispatch_debugv(@NotNull NSObject object,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String message,
             BytePtr ap);
 
     /**
@@ -1522,8 +1529,8 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_async(NSObject queue,
-            @ObjCBlock(name = "call_dispatch_async") Block_dispatch_async block);
+    public static native void dispatch_async(@NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_dispatch_async") Block_dispatch_async block);
 
     /**
      * [@function] dispatch_async_f
@@ -1551,16 +1558,16 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_async_f(NSObject queue, VoidPtr context,
-            @FunctionPtr(name = "call_dispatch_async_f") Function_dispatch_async_f work);
+    public static native void dispatch_async_f(@NotNull NSObject queue, @Nullable VoidPtr context,
+            @NotNull @FunctionPtr(name = "call_dispatch_async_f") Function_dispatch_async_f work);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void dispatch_sync(NSObject queue,
-            @ObjCBlock(name = "call_dispatch_sync") Block_dispatch_sync block);
+    public static native void dispatch_sync(@NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_dispatch_sync") Block_dispatch_sync block);
 
     /**
      * [@function] dispatch_sync_f
@@ -1586,16 +1593,16 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_sync_f(NSObject queue, VoidPtr context,
-            @FunctionPtr(name = "call_dispatch_sync_f") Function_dispatch_sync_f work);
+    public static native void dispatch_sync_f(@NotNull NSObject queue, @Nullable VoidPtr context,
+            @NotNull @FunctionPtr(name = "call_dispatch_sync_f") Function_dispatch_sync_f work);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void dispatch_apply(@NUInt long iterations, NSObject queue,
-            @ObjCBlock(name = "call_dispatch_apply") Block_dispatch_apply block);
+    public static native void dispatch_apply(@NUInt long iterations, @Nullable NSObject queue,
+            @NotNull @ObjCBlock(name = "call_dispatch_apply") Block_dispatch_apply block);
 
     /**
      * [@function] dispatch_apply_f
@@ -1626,8 +1633,9 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_apply_f(@NUInt long iterations, NSObject queue, VoidPtr context,
-            @FunctionPtr(name = "call_dispatch_apply_f") Function_dispatch_apply_f work);
+    public static native void dispatch_apply_f(@NUInt long iterations, @Nullable NSObject queue,
+            @Nullable VoidPtr context,
+            @NotNull @FunctionPtr(name = "call_dispatch_apply_f") Function_dispatch_apply_f work);
 
     /**
      * [@function] dispatch_get_current_queue
@@ -1660,6 +1668,7 @@ public final class Globals {
      *         Deprecated-Since: 6.0
      *         Deprecated-Message: unsupported interface
      */
+    @NotNull
     @Generated
     @Deprecated
     @CFunction
@@ -1687,6 +1696,7 @@ public final class Globals {
      *         Returns the main queue. This queue is created automatically on behalf of
      *         the main thread before main() is called.
      */
+    @NotNull
     @Generated
     @Inline
     @CFunction
@@ -1729,6 +1739,7 @@ public final class Globals {
      * 
      *         API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject dispatch_get_global_queue(@NInt long identifier, @NUInt long flags);
@@ -1762,9 +1773,10 @@ public final class Globals {
      * 
      *         API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject dispatch_queue_attr_make_initially_inactive(NSObject attr);
+    public static native NSObject dispatch_queue_attr_make_initially_inactive(@Nullable NSObject attr);
 
     /**
      * [@function] dispatch_queue_attr_make_with_autorelease_frequency
@@ -1803,9 +1815,10 @@ public final class Globals {
      * 
      *         API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject dispatch_queue_attr_make_with_autorelease_frequency(NSObject attr,
+    public static native NSObject dispatch_queue_attr_make_with_autorelease_frequency(@Nullable NSObject attr,
             @NUInt long frequency);
 
     /**
@@ -1865,9 +1878,10 @@ public final class Globals {
      * 
      *         API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject dispatch_queue_attr_make_with_qos_class(NSObject attr, int qos_class,
+    public static native NSObject dispatch_queue_attr_make_with_qos_class(@Nullable NSObject attr, int qos_class,
             int relative_priority);
 
     /**
@@ -1920,11 +1934,12 @@ public final class Globals {
      * 
      *         API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject dispatch_queue_create_with_target(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label,
-            NSObject attr, NSObject target);
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label,
+            @Nullable NSObject attr, @Nullable NSObject target);
 
     /**
      * [@function] dispatch_queue_create
@@ -1971,11 +1986,12 @@ public final class Globals {
      * 
      *         API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject dispatch_queue_create(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label,
-            NSObject attr);
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label,
+            @Nullable NSObject attr);
 
     /**
      * [@function] dispatch_queue_get_label
@@ -1994,10 +2010,11 @@ public final class Globals {
      * 
      *         API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    public static native String dispatch_queue_get_label(NSObject queue);
+    public static native String dispatch_queue_get_label(@Nullable NSObject queue);
 
     /**
      * [@function] dispatch_queue_get_qos_class
@@ -2035,7 +2052,8 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native int dispatch_queue_get_qos_class(NSObject queue, IntPtr relative_priority_ptr);
+    public static native int dispatch_queue_get_qos_class(@NotNull NSObject queue,
+            @Nullable IntPtr relative_priority_ptr);
 
     /**
      * [@function] dispatch_set_target_queue
@@ -2100,7 +2118,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_set_target_queue(NSObject object, NSObject queue);
+    public static native void dispatch_set_target_queue(@NotNull NSObject object, @Nullable NSObject queue);
 
     /**
      * [@function] dispatch_main
@@ -2124,8 +2142,8 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_after(long when, NSObject queue,
-            @ObjCBlock(name = "call_dispatch_after") Block_dispatch_after block);
+    public static native void dispatch_after(long when, @NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_dispatch_after") Block_dispatch_after block);
 
     /**
      * [@function] dispatch_after_f
@@ -2154,16 +2172,16 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_after_f(long when, NSObject queue, VoidPtr context,
-            @FunctionPtr(name = "call_dispatch_after_f") Function_dispatch_after_f work);
+    public static native void dispatch_after_f(long when, @NotNull NSObject queue, @Nullable VoidPtr context,
+            @NotNull @FunctionPtr(name = "call_dispatch_after_f") Function_dispatch_after_f work);
 
     /**
      * API-Since: 4.3
      */
     @Generated
     @CFunction
-    public static native void dispatch_barrier_async(NSObject queue,
-            @ObjCBlock(name = "call_dispatch_barrier_async") Block_dispatch_barrier_async block);
+    public static native void dispatch_barrier_async(@NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_dispatch_barrier_async") Block_dispatch_barrier_async block);
 
     /**
      * [@function] dispatch_barrier_async_f
@@ -2196,16 +2214,16 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_barrier_async_f(NSObject queue, VoidPtr context,
-            @FunctionPtr(name = "call_dispatch_barrier_async_f") Function_dispatch_barrier_async_f work);
+    public static native void dispatch_barrier_async_f(@NotNull NSObject queue, @Nullable VoidPtr context,
+            @NotNull @FunctionPtr(name = "call_dispatch_barrier_async_f") Function_dispatch_barrier_async_f work);
 
     /**
      * API-Since: 4.3
      */
     @Generated
     @CFunction
-    public static native void dispatch_barrier_sync(NSObject queue,
-            @ObjCBlock(name = "call_dispatch_barrier_sync") Block_dispatch_barrier_sync block);
+    public static native void dispatch_barrier_sync(@NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_dispatch_barrier_sync") Block_dispatch_barrier_sync block);
 
     /**
      * [@function] dispatch_barrier_sync_f
@@ -2234,8 +2252,8 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_barrier_sync_f(NSObject queue, VoidPtr context,
-            @FunctionPtr(name = "call_dispatch_barrier_sync_f") Function_dispatch_barrier_sync_f work);
+    public static native void dispatch_barrier_sync_f(@NotNull NSObject queue, @Nullable VoidPtr context,
+            @NotNull @FunctionPtr(name = "call_dispatch_barrier_sync_f") Function_dispatch_barrier_sync_f work);
 
     /**
      * [@function] dispatch_queue_set_specific
@@ -2268,8 +2286,9 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_queue_set_specific(NSObject queue, ConstVoidPtr key, VoidPtr context,
-            @FunctionPtr(name = "call_dispatch_queue_set_specific") Function_dispatch_queue_set_specific destructor);
+    public static native void dispatch_queue_set_specific(@NotNull NSObject queue, @NotNull ConstVoidPtr key,
+            @Nullable VoidPtr context,
+            @Nullable @FunctionPtr(name = "call_dispatch_queue_set_specific") Function_dispatch_queue_set_specific destructor);
 
     /**
      * [@function] dispatch_queue_get_specific
@@ -2294,9 +2313,10 @@ public final class Globals {
      * 
      *         API-Since: 5.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native VoidPtr dispatch_queue_get_specific(NSObject queue, ConstVoidPtr key);
+    public static native VoidPtr dispatch_queue_get_specific(@NotNull NSObject queue, @NotNull ConstVoidPtr key);
 
     /**
      * [@function] dispatch_get_specific
@@ -2319,9 +2339,10 @@ public final class Globals {
      * 
      *         API-Since: 5.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native VoidPtr dispatch_get_specific(ConstVoidPtr key);
+    public static native VoidPtr dispatch_get_specific(@NotNull ConstVoidPtr key);
 
     /**
      * [@function] dispatch_assert_queue
@@ -2364,7 +2385,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_assert_queue(NSObject queue);
+    public static native void dispatch_assert_queue(@NotNull NSObject queue);
 
     /**
      * [@function] dispatch_assert_queue_barrier
@@ -2388,7 +2409,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_assert_queue_barrier(NSObject queue);
+    public static native void dispatch_assert_queue_barrier(@NotNull NSObject queue);
 
     /**
      * [@function] dispatch_assert_queue_not
@@ -2410,7 +2431,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_assert_queue_not(NSObject queue);
+    public static native void dispatch_assert_queue_not(@NotNull NSObject queue);
 
     /**
      * [@function] dispatch_block_create
@@ -2462,11 +2483,12 @@ public final class Globals {
      * 
      *         API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CFunction
     @ObjCBlock(name = "call_dispatch_block_create_ret")
     public static native Block_dispatch_block_create_ret dispatch_block_create(@NUInt long flags,
-            @ObjCBlock(name = "call_dispatch_block_create") Block_dispatch_block_create block);
+            @NotNull @ObjCBlock(name = "call_dispatch_block_create") Block_dispatch_block_create block);
 
     /**
      * [@function] dispatch_block_create_with_qos_class
@@ -2534,12 +2556,13 @@ public final class Globals {
      * 
      *         API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CFunction
     @ObjCBlock(name = "call_dispatch_block_create_with_qos_class_ret")
     public static native Block_dispatch_block_create_with_qos_class_ret dispatch_block_create_with_qos_class(
             @NUInt long flags, int qos_class, int relative_priority,
-            @ObjCBlock(name = "call_dispatch_block_create_with_qos_class") Block_dispatch_block_create_with_qos_class block);
+            @NotNull @ObjCBlock(name = "call_dispatch_block_create_with_qos_class") Block_dispatch_block_create_with_qos_class block);
 
     /**
      * [@function] dispatch_block_perform
@@ -2569,7 +2592,7 @@ public final class Globals {
     @Generated
     @CFunction
     public static native void dispatch_block_perform(@NUInt long flags,
-            @ObjCBlock(name = "call_dispatch_block_perform") Block_dispatch_block_perform block);
+            @NotNull @ObjCBlock(name = "call_dispatch_block_perform") Block_dispatch_block_perform block);
 
     /**
      * [@function] dispatch_block_wait
@@ -2620,7 +2643,7 @@ public final class Globals {
     @CFunction
     @NInt
     public static native long dispatch_block_wait(
-            @ObjCBlock(name = "call_dispatch_block_wait") Block_dispatch_block_wait block, long timeout);
+            @NotNull @ObjCBlock(name = "call_dispatch_block_wait") Block_dispatch_block_wait block, long timeout);
 
     /**
      * [@function] dispatch_block_notify
@@ -2661,8 +2684,9 @@ public final class Globals {
     @Generated
     @CFunction
     public static native void dispatch_block_notify(
-            @ObjCBlock(name = "call_dispatch_block_notify_0") Block_dispatch_block_notify_0 block, NSObject queue,
-            @ObjCBlock(name = "call_dispatch_block_notify_2") Block_dispatch_block_notify_2 notification_block);
+            @NotNull @ObjCBlock(name = "call_dispatch_block_notify_0") Block_dispatch_block_notify_0 block,
+            @NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_dispatch_block_notify_2") Block_dispatch_block_notify_2 notification_block);
 
     /**
      * [@function] dispatch_block_cancel
@@ -2693,7 +2717,7 @@ public final class Globals {
     @Generated
     @CFunction
     public static native void dispatch_block_cancel(
-            @ObjCBlock(name = "call_dispatch_block_cancel") Block_dispatch_block_cancel block);
+            @NotNull @ObjCBlock(name = "call_dispatch_block_cancel") Block_dispatch_block_cancel block);
 
     /**
      * [@function] dispatch_block_testcancel
@@ -2714,7 +2738,7 @@ public final class Globals {
     @CFunction
     @NInt
     public static native long dispatch_block_testcancel(
-            @ObjCBlock(name = "call_dispatch_block_testcancel") Block_dispatch_block_testcancel block);
+            @NotNull @ObjCBlock(name = "call_dispatch_block_testcancel") Block_dispatch_block_testcancel block);
 
     /**
      * Routine: mach_msg_overwrite
@@ -2817,18 +2841,19 @@ public final class Globals {
      * 
      *         API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject dispatch_source_create(dispatch_source_type_t type, @NUInt long handle,
-            @NUInt long mask, NSObject queue);
+    public static native NSObject dispatch_source_create(@NotNull dispatch_source_type_t type, @NUInt long handle,
+            @NUInt long mask, @Nullable NSObject queue);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void dispatch_source_set_event_handler(NSObject source,
-            @ObjCBlock(name = "call_dispatch_source_set_event_handler") Block_dispatch_source_set_event_handler handler);
+    public static native void dispatch_source_set_event_handler(@NotNull NSObject source,
+            @Nullable @ObjCBlock(name = "call_dispatch_source_set_event_handler") Block_dispatch_source_set_event_handler handler);
 
     /**
      * [@function] dispatch_source_set_event_handler_f
@@ -2848,16 +2873,16 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_source_set_event_handler_f(NSObject source,
-            @FunctionPtr(name = "call_dispatch_source_set_event_handler_f") Function_dispatch_source_set_event_handler_f handler);
+    public static native void dispatch_source_set_event_handler_f(@NotNull NSObject source,
+            @Nullable @FunctionPtr(name = "call_dispatch_source_set_event_handler_f") Function_dispatch_source_set_event_handler_f handler);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void dispatch_source_set_cancel_handler(NSObject source,
-            @ObjCBlock(name = "call_dispatch_source_set_cancel_handler") Block_dispatch_source_set_cancel_handler handler);
+    public static native void dispatch_source_set_cancel_handler(@NotNull NSObject source,
+            @Nullable @ObjCBlock(name = "call_dispatch_source_set_cancel_handler") Block_dispatch_source_set_cancel_handler handler);
 
     /**
      * [@function] dispatch_source_set_cancel_handler_f
@@ -2879,8 +2904,8 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_source_set_cancel_handler_f(NSObject source,
-            @FunctionPtr(name = "call_dispatch_source_set_cancel_handler_f") Function_dispatch_source_set_cancel_handler_f handler);
+    public static native void dispatch_source_set_cancel_handler_f(@NotNull NSObject source,
+            @Nullable @FunctionPtr(name = "call_dispatch_source_set_cancel_handler_f") Function_dispatch_source_set_cancel_handler_f handler);
 
     /**
      * [@function] dispatch_source_cancel
@@ -2906,7 +2931,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_source_cancel(NSObject source);
+    public static native void dispatch_source_cancel(@NotNull NSObject source);
 
     /**
      * [@function] dispatch_source_testcancel
@@ -2925,7 +2950,7 @@ public final class Globals {
     @Generated
     @CFunction
     @NInt
-    public static native long dispatch_source_testcancel(NSObject source);
+    public static native long dispatch_source_testcancel(@NotNull NSObject source);
 
     /**
      * [@function] dispatch_source_get_handle
@@ -2957,7 +2982,7 @@ public final class Globals {
     @Generated
     @CFunction
     @NUInt
-    public static native long dispatch_source_get_handle(NSObject source);
+    public static native long dispatch_source_get_handle(@NotNull NSObject source);
 
     /**
      * [@function] dispatch_source_get_mask
@@ -2989,7 +3014,7 @@ public final class Globals {
     @Generated
     @CFunction
     @NUInt
-    public static native long dispatch_source_get_mask(NSObject source);
+    public static native long dispatch_source_get_mask(@NotNull NSObject source);
 
     /**
      * [@function] dispatch_source_get_data
@@ -3027,7 +3052,7 @@ public final class Globals {
     @Generated
     @CFunction
     @NUInt
-    public static native long dispatch_source_get_data(NSObject source);
+    public static native long dispatch_source_get_data(@NotNull NSObject source);
 
     /**
      * [@function] dispatch_source_merge_data
@@ -3048,7 +3073,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_source_merge_data(NSObject source, @NUInt long value);
+    public static native void dispatch_source_merge_data(@NotNull NSObject source, @NUInt long value);
 
     /**
      * [@function] dispatch_source_set_timer
@@ -3100,15 +3125,16 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_source_set_timer(NSObject source, long start, long interval, long leeway);
+    public static native void dispatch_source_set_timer(@NotNull NSObject source, long start, long interval,
+            long leeway);
 
     /**
      * API-Since: 4.3
      */
     @Generated
     @CFunction
-    public static native void dispatch_source_set_registration_handler(NSObject source,
-            @ObjCBlock(name = "call_dispatch_source_set_registration_handler") Block_dispatch_source_set_registration_handler handler);
+    public static native void dispatch_source_set_registration_handler(@NotNull NSObject source,
+            @Nullable @ObjCBlock(name = "call_dispatch_source_set_registration_handler") Block_dispatch_source_set_registration_handler handler);
 
     /**
      * [@function] dispatch_source_set_registration_handler_f
@@ -3130,8 +3156,8 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_source_set_registration_handler_f(NSObject source,
-            @FunctionPtr(name = "call_dispatch_source_set_registration_handler_f") Function_dispatch_source_set_registration_handler_f handler);
+    public static native void dispatch_source_set_registration_handler_f(@NotNull NSObject source,
+            @Nullable @FunctionPtr(name = "call_dispatch_source_set_registration_handler_f") Function_dispatch_source_set_registration_handler_f handler);
 
     /**
      * [@function] dispatch_group_create
@@ -3147,6 +3173,7 @@ public final class Globals {
      * 
      *         API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject dispatch_group_create();
@@ -3156,8 +3183,8 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_group_async(NSObject group, NSObject queue,
-            @ObjCBlock(name = "call_dispatch_group_async") Block_dispatch_group_async block);
+    public static native void dispatch_group_async(@NotNull NSObject group, @NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_dispatch_group_async") Block_dispatch_group_async block);
 
     /**
      * [@function] dispatch_group_async_f
@@ -3187,8 +3214,9 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_group_async_f(NSObject group, NSObject queue, VoidPtr context,
-            @FunctionPtr(name = "call_dispatch_group_async_f") Function_dispatch_group_async_f work);
+    public static native void dispatch_group_async_f(@NotNull NSObject group, @NotNull NSObject queue,
+            @Nullable VoidPtr context,
+            @NotNull @FunctionPtr(name = "call_dispatch_group_async_f") Function_dispatch_group_async_f work);
 
     /**
      * [@function] dispatch_group_wait
@@ -3227,15 +3255,15 @@ public final class Globals {
     @Generated
     @CFunction
     @NInt
-    public static native long dispatch_group_wait(NSObject group, long timeout);
+    public static native long dispatch_group_wait(@NotNull NSObject group, long timeout);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void dispatch_group_notify(NSObject group, NSObject queue,
-            @ObjCBlock(name = "call_dispatch_group_notify") Block_dispatch_group_notify block);
+    public static native void dispatch_group_notify(@NotNull NSObject group, @NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_dispatch_group_notify") Block_dispatch_group_notify block);
 
     /**
      * [@function] dispatch_group_notify_f
@@ -3261,8 +3289,9 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_group_notify_f(NSObject group, NSObject queue, VoidPtr context,
-            @FunctionPtr(name = "call_dispatch_group_notify_f") Function_dispatch_group_notify_f work);
+    public static native void dispatch_group_notify_f(@NotNull NSObject group, @NotNull NSObject queue,
+            @Nullable VoidPtr context,
+            @NotNull @FunctionPtr(name = "call_dispatch_group_notify_f") Function_dispatch_group_notify_f work);
 
     /**
      * [@function] dispatch_group_enter
@@ -3281,7 +3310,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_group_enter(NSObject group);
+    public static native void dispatch_group_enter(@NotNull NSObject group);
 
     /**
      * [@function] dispatch_group_leave
@@ -3299,7 +3328,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_group_leave(NSObject group);
+    public static native void dispatch_group_leave(@NotNull NSObject group);
 
     /**
      * [@function] dispatch_semaphore_create
@@ -3320,6 +3349,7 @@ public final class Globals {
      * 
      *         API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject dispatch_semaphore_create(@NInt long value);
@@ -3349,7 +3379,7 @@ public final class Globals {
     @Generated
     @CFunction
     @NInt
-    public static native long dispatch_semaphore_wait(NSObject dsema, long timeout);
+    public static native long dispatch_semaphore_wait(@NotNull NSObject dsema, long timeout);
 
     /**
      * [@function] dispatch_semaphore_signal
@@ -3371,35 +3401,35 @@ public final class Globals {
     @Generated
     @CFunction
     @NInt
-    public static native long dispatch_semaphore_signal(NSObject dsema);
+    public static native long dispatch_semaphore_signal(@NotNull NSObject dsema);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void dispatch_once(NIntPtr predicate,
-            @ObjCBlock(name = "call_dispatch_once") Block_dispatch_once block);
+    public static native void dispatch_once(@NotNull NIntPtr predicate,
+            @NotNull @ObjCBlock(name = "call_dispatch_once") Block_dispatch_once block);
 
     @Generated
     @Inline
     @CFunction
-    public static native void _dispatch_once(NIntPtr predicate,
-            @ObjCBlock(name = "call__dispatch_once") Block__dispatch_once block);
+    public static native void _dispatch_once(@NotNull NIntPtr predicate,
+            @NotNull @ObjCBlock(name = "call__dispatch_once") Block__dispatch_once block);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void dispatch_once_f(NIntPtr predicate, VoidPtr context,
-            @FunctionPtr(name = "call_dispatch_once_f") Function_dispatch_once_f function);
+    public static native void dispatch_once_f(@NotNull NIntPtr predicate, @Nullable VoidPtr context,
+            @NotNull @FunctionPtr(name = "call_dispatch_once_f") Function_dispatch_once_f function);
 
     @Generated
     @Inline
     @CFunction
-    public static native void _dispatch_once_f(NIntPtr predicate, VoidPtr context,
-            @FunctionPtr(name = "call__dispatch_once_f") Function__dispatch_once_f function);
+    public static native void _dispatch_once_f(@NotNull NIntPtr predicate, @Nullable VoidPtr context,
+            @NotNull @FunctionPtr(name = "call__dispatch_once_f") Function__dispatch_once_f function);
 
     /**
      * [@function] dispatch_data_create
@@ -3424,10 +3454,12 @@ public final class Globals {
      * 
      *         API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject dispatch_data_create(ConstVoidPtr buffer, @NUInt long size, NSObject queue,
-            @ObjCBlock(name = "call_dispatch_data_create") Block_dispatch_data_create destructor);
+    public static native NSObject dispatch_data_create(@NotNull ConstVoidPtr buffer, @NUInt long size,
+            @Nullable NSObject queue,
+            @Nullable @ObjCBlock(name = "call_dispatch_data_create") Block_dispatch_data_create destructor);
 
     /**
      * [@function] dispatch_data_get_size
@@ -3442,7 +3474,7 @@ public final class Globals {
     @Generated
     @CFunction
     @NUInt
-    public static native long dispatch_data_get_size(NSObject data);
+    public static native long dispatch_data_get_size(@NotNull NSObject data);
 
     /**
      * [@function] dispatch_data_create_map
@@ -3465,10 +3497,11 @@ public final class Globals {
      * 
      *         API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject dispatch_data_create_map(NSObject data, Ptr<ConstVoidPtr> buffer_ptr,
-            NUIntPtr size_ptr);
+    public static native NSObject dispatch_data_create_map(@NotNull NSObject data,
+            @Nullable Ptr<ConstVoidPtr> buffer_ptr, @Nullable NUIntPtr size_ptr);
 
     /**
      * [@function] dispatch_data_create_concat
@@ -3487,9 +3520,10 @@ public final class Globals {
      * 
      *         API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject dispatch_data_create_concat(NSObject data1, NSObject data2);
+    public static native NSObject dispatch_data_create_concat(@NotNull NSObject data1, @NotNull NSObject data2);
 
     /**
      * [@function] dispatch_data_create_subrange
@@ -3508,9 +3542,11 @@ public final class Globals {
      * 
      *         API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject dispatch_data_create_subrange(NSObject data, @NUInt long offset, @NUInt long length);
+    public static native NSObject dispatch_data_create_subrange(@NotNull NSObject data, @NUInt long offset,
+            @NUInt long length);
 
     /**
      * [@function] dispatch_data_apply
@@ -3536,8 +3572,8 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native boolean dispatch_data_apply(NSObject data,
-            @ObjCBlock(name = "call_dispatch_data_apply") Block_dispatch_data_apply applier);
+    public static native boolean dispatch_data_apply(@NotNull NSObject data,
+            @NotNull @ObjCBlock(name = "call_dispatch_data_apply") Block_dispatch_data_apply applier);
 
     /**
      * [@function] dispatch_data_copy_region
@@ -3555,9 +3591,11 @@ public final class Globals {
      * 
      *         API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject dispatch_data_copy_region(NSObject data, @NUInt long location, NUIntPtr offset_ptr);
+    public static native NSObject dispatch_data_copy_region(@NotNull NSObject data, @NUInt long location,
+            @NotNull NUIntPtr offset_ptr);
 
     /**
      * [@function] dispatch_read
@@ -3603,8 +3641,8 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_read(int fd, @NUInt long length, NSObject queue,
-            @ObjCBlock(name = "call_dispatch_read") Block_dispatch_read handler);
+    public static native void dispatch_read(int fd, @NUInt long length, @NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_dispatch_read") Block_dispatch_read handler);
 
     /**
      * [@function] dispatch_write
@@ -3640,8 +3678,8 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_write(int fd, NSObject data, NSObject queue,
-            @ObjCBlock(name = "call_dispatch_write") Block_dispatch_write handler);
+    public static native void dispatch_write(int fd, @NotNull NSObject data, @NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_dispatch_write") Block_dispatch_write handler);
 
     /**
      * [@function] dispatch_io_create
@@ -3670,10 +3708,11 @@ public final class Globals {
      * 
      *         API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject dispatch_io_create(@NUInt long type, int fd, NSObject queue,
-            @ObjCBlock(name = "call_dispatch_io_create") Block_dispatch_io_create cleanup_handler);
+    public static native NSObject dispatch_io_create(@NUInt long type, int fd, @NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_dispatch_io_create") Block_dispatch_io_create cleanup_handler);
 
     /**
      * [@function] dispatch_io_create_with_path
@@ -3704,12 +3743,13 @@ public final class Globals {
      * 
      *         API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject dispatch_io_create_with_path(@NUInt long type,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String path, int oflag,
-            char mode, NSObject queue,
-            @ObjCBlock(name = "call_dispatch_io_create_with_path") Block_dispatch_io_create_with_path cleanup_handler);
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String path,
+            int oflag, char mode, @NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_dispatch_io_create_with_path") Block_dispatch_io_create_with_path cleanup_handler);
 
     /**
      * [@function] dispatch_io_create_with_io
@@ -3744,10 +3784,12 @@ public final class Globals {
      * 
      *         API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject dispatch_io_create_with_io(@NUInt long type, NSObject io, NSObject queue,
-            @ObjCBlock(name = "call_dispatch_io_create_with_io") Block_dispatch_io_create_with_io cleanup_handler);
+    public static native NSObject dispatch_io_create_with_io(@NUInt long type, @NotNull NSObject io,
+            @NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_dispatch_io_create_with_io") Block_dispatch_io_create_with_io cleanup_handler);
 
     /**
      * [@function] dispatch_io_read
@@ -3795,8 +3837,9 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_io_read(NSObject channel, long offset, @NUInt long length, NSObject queue,
-            @ObjCBlock(name = "call_dispatch_io_read") Block_dispatch_io_read io_handler);
+    public static native void dispatch_io_read(@NotNull NSObject channel, long offset, @NUInt long length,
+            @NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_dispatch_io_read") Block_dispatch_io_read io_handler);
 
     /**
      * [@function] dispatch_io_write
@@ -3845,8 +3888,9 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_io_write(NSObject channel, long offset, NSObject data, NSObject queue,
-            @ObjCBlock(name = "call_dispatch_io_write") Block_dispatch_io_write io_handler);
+    public static native void dispatch_io_write(@NotNull NSObject channel, long offset, @NotNull NSObject data,
+            @NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_dispatch_io_write") Block_dispatch_io_write io_handler);
 
     /**
      * [@function] dispatch_io_close
@@ -3869,7 +3913,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_io_close(NSObject channel, @NUInt long flags);
+    public static native void dispatch_io_close(@NotNull NSObject channel, @NUInt long flags);
 
     /**
      * [@function] dispatch_io_barrier
@@ -3896,8 +3940,8 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_io_barrier(NSObject channel,
-            @ObjCBlock(name = "call_dispatch_io_barrier") Block_dispatch_io_barrier barrier);
+    public static native void dispatch_io_barrier(@NotNull NSObject channel,
+            @NotNull @ObjCBlock(name = "call_dispatch_io_barrier") Block_dispatch_io_barrier barrier);
 
     /**
      * [@function] dispatch_io_get_descriptor
@@ -3917,7 +3961,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native int dispatch_io_get_descriptor(NSObject channel);
+    public static native int dispatch_io_get_descriptor(@NotNull NSObject channel);
 
     /**
      * [@function] dispatch_io_set_high_water
@@ -3939,7 +3983,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_io_set_high_water(NSObject channel, @NUInt long high_water);
+    public static native void dispatch_io_set_high_water(@NotNull NSObject channel, @NUInt long high_water);
 
     /**
      * [@function] dispatch_io_set_low_water
@@ -3971,7 +4015,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_io_set_low_water(NSObject channel, @NUInt long low_water);
+    public static native void dispatch_io_set_low_water(@NotNull NSObject channel, @NUInt long low_water);
 
     /**
      * [@function] dispatch_io_set_interval
@@ -3999,7 +4043,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_io_set_interval(NSObject channel, long interval, @NUInt long flags);
+    public static native void dispatch_io_set_interval(@NotNull NSObject channel, long interval, @NUInt long flags);
 
     @Generated
     @CFunction
@@ -4944,11 +4988,12 @@ public final class Globals {
     @CFunction
     public static native int raise(int arg1);
 
+    @Nullable
     @Generated
     @CFunction
     @FunctionPtr(name = "call_bsd_signal_ret")
     public static native Function_bsd_signal_ret bsd_signal(int arg1,
-            @FunctionPtr(name = "call_bsd_signal") Function_bsd_signal arg2);
+            @Nullable @FunctionPtr(name = "call_bsd_signal") Function_bsd_signal arg2);
 
     @Generated
     @CFunction
@@ -5025,10 +5070,12 @@ public final class Globals {
     @CFunction
     public static native int sigrelse(int arg1);
 
+    @Nullable
     @Generated
     @CFunction
     @FunctionPtr(name = "call_sigset_ret")
-    public static native Function_sigset_ret sigset(int arg1, @FunctionPtr(name = "call_sigset") Function_sigset arg2);
+    public static native Function_sigset_ret sigset(int arg1,
+            @Nullable @FunctionPtr(name = "call_sigset") Function_sigset arg2);
 
     @Generated
     @CFunction
@@ -5523,10 +5570,11 @@ public final class Globals {
     @Generated
     @CFunction
     @UncertainReturn("Options: reference, array Fallback: reference")
-    public static native FILE funopen(ConstVoidPtr arg1, @FunctionPtr(name = "call_funopen_1") Function_funopen_1 arg2,
-            @FunctionPtr(name = "call_funopen_2") Function_funopen_2 arg3,
-            @FunctionPtr(name = "call_funopen_3") Function_funopen_3 arg4,
-            @FunctionPtr(name = "call_funopen_4") Function_funopen_4 arg5);
+    public static native FILE funopen(ConstVoidPtr arg1,
+            @Nullable @FunctionPtr(name = "call_funopen_1") Function_funopen_1 arg2,
+            @Nullable @FunctionPtr(name = "call_funopen_2") Function_funopen_2 arg3,
+            @Nullable @FunctionPtr(name = "call_funopen_3") Function_funopen_3 arg4,
+            @Nullable @FunctionPtr(name = "call_funopen_4") Function_funopen_4 arg5);
 
     @Generated
     @Variadic()
@@ -5627,7 +5675,7 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native int atexit(@FunctionPtr(name = "call_atexit") Function_atexit arg1);
+    public static native int atexit(@NotNull @FunctionPtr(name = "call_atexit") Function_atexit arg1);
 
     @Generated
     @CFunction
@@ -5653,7 +5701,7 @@ public final class Globals {
     @Generated
     @CFunction
     public static native VoidPtr bsearch(ConstVoidPtr __key, ConstVoidPtr __base, @NUInt long __nel,
-            @NUInt long __width, @FunctionPtr(name = "call_bsearch") Function_bsearch __compar);
+            @NUInt long __width, @NotNull @FunctionPtr(name = "call_bsearch") Function_bsearch __compar);
 
     @Generated
     @CFunction
@@ -5741,7 +5789,7 @@ public final class Globals {
     @Generated
     @CFunction
     public static native void qsort(VoidPtr __base, @NUInt long __nel, @NUInt long __width,
-            @FunctionPtr(name = "call_qsort") Function_qsort __compar);
+            @NotNull @FunctionPtr(name = "call_qsort") Function_qsort __compar);
 
     @Generated
     @CFunction
@@ -5942,7 +5990,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native int atexit_b(@ObjCBlock(name = "call_atexit_b") Block_atexit_b arg1);
+    public static native int atexit_b(@NotNull @ObjCBlock(name = "call_atexit_b") Block_atexit_b arg1);
 
     /**
      * API-Since: 3.2
@@ -5950,7 +5998,7 @@ public final class Globals {
     @Generated
     @CFunction
     public static native VoidPtr bsearch_b(ConstVoidPtr __key, ConstVoidPtr __base, @NUInt long __nel,
-            @NUInt long __width, @ObjCBlock(name = "call_bsearch_b") Block_bsearch_b __compar);
+            @NUInt long __width, @NotNull @ObjCBlock(name = "call_bsearch_b") Block_bsearch_b __compar);
 
     /**
      * getcap(3) functions
@@ -6040,7 +6088,7 @@ public final class Globals {
     @Generated
     @CFunction
     public static native int heapsort(VoidPtr __base, @NUInt long __nel, @NUInt long __width,
-            @FunctionPtr(name = "call_heapsort") Function_heapsort __compar);
+            @NotNull @FunctionPtr(name = "call_heapsort") Function_heapsort __compar);
 
     /**
      * API-Since: 3.2
@@ -6048,12 +6096,12 @@ public final class Globals {
     @Generated
     @CFunction
     public static native int heapsort_b(VoidPtr __base, @NUInt long __nel, @NUInt long __width,
-            @ObjCBlock(name = "call_heapsort_b") Block_heapsort_b __compar);
+            @NotNull @ObjCBlock(name = "call_heapsort_b") Block_heapsort_b __compar);
 
     @Generated
     @CFunction
     public static native int mergesort(VoidPtr __base, @NUInt long __nel, @NUInt long __width,
-            @FunctionPtr(name = "call_mergesort") Function_mergesort __compar);
+            @NotNull @FunctionPtr(name = "call_mergesort") Function_mergesort __compar);
 
     /**
      * API-Since: 3.2
@@ -6061,7 +6109,7 @@ public final class Globals {
     @Generated
     @CFunction
     public static native int mergesort_b(VoidPtr __base, @NUInt long __nel, @NUInt long __width,
-            @ObjCBlock(name = "call_mergesort_b") Block_mergesort_b __compar);
+            @NotNull @ObjCBlock(name = "call_mergesort_b") Block_mergesort_b __compar);
 
     /**
      * API-Since: 3.2
@@ -6069,7 +6117,7 @@ public final class Globals {
     @Generated
     @CFunction
     public static native void psort(VoidPtr __base, @NUInt long __nel, @NUInt long __width,
-            @FunctionPtr(name = "call_psort") Function_psort __compar);
+            @NotNull @FunctionPtr(name = "call_psort") Function_psort __compar);
 
     /**
      * API-Since: 3.2
@@ -6077,7 +6125,7 @@ public final class Globals {
     @Generated
     @CFunction
     public static native void psort_b(VoidPtr __base, @NUInt long __nel, @NUInt long __width,
-            @ObjCBlock(name = "call_psort_b") Block_psort_b __compar);
+            @NotNull @ObjCBlock(name = "call_psort_b") Block_psort_b __compar);
 
     /**
      * API-Since: 3.2
@@ -6085,7 +6133,7 @@ public final class Globals {
     @Generated
     @CFunction
     public static native void psort_r(VoidPtr __base, @NUInt long __nel, @NUInt long __width, VoidPtr arg4,
-            @FunctionPtr(name = "call_psort_r") Function_psort_r __compar);
+            @NotNull @FunctionPtr(name = "call_psort_r") Function_psort_r __compar);
 
     /**
      * API-Since: 3.2
@@ -6093,12 +6141,12 @@ public final class Globals {
     @Generated
     @CFunction
     public static native void qsort_b(VoidPtr __base, @NUInt long __nel, @NUInt long __width,
-            @ObjCBlock(name = "call_qsort_b") Block_qsort_b __compar);
+            @NotNull @ObjCBlock(name = "call_qsort_b") Block_qsort_b __compar);
 
     @Generated
     @CFunction
     public static native void qsort_r(VoidPtr __base, @NUInt long __nel, @NUInt long __width, VoidPtr arg4,
-            @FunctionPtr(name = "call_qsort_r") Function_qsort_r __compar);
+            @NotNull @FunctionPtr(name = "call_qsort_r") Function_qsort_r __compar);
 
     @Generated
     @CFunction
@@ -6946,7 +6994,7 @@ public final class Globals {
     @Generated
     @CFunction
     public static native void os_unfair_lock_lock(
-            @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
 
     /**
      * [@function] os_unfair_lock_trylock
@@ -6972,7 +7020,7 @@ public final class Globals {
     @Generated
     @CFunction
     public static native boolean os_unfair_lock_trylock(
-            @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
 
     /**
      * [@function] os_unfair_lock_unlock
@@ -6987,7 +7035,7 @@ public final class Globals {
     @Generated
     @CFunction
     public static native void os_unfair_lock_unlock(
-            @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
 
     @Generated
     @CFunction
@@ -7390,7 +7438,7 @@ public final class Globals {
     @Generated
     public interface Function_dispatch_set_finalizer_f {
         @Generated
-        void call_dispatch_set_finalizer_f(VoidPtr arg0);
+        void call_dispatch_set_finalizer_f(@Nullable VoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
@@ -7404,7 +7452,7 @@ public final class Globals {
     @Generated
     public interface Function_dispatch_async_f {
         @Generated
-        void call_dispatch_async_f(VoidPtr arg0);
+        void call_dispatch_async_f(@Nullable VoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
@@ -7418,7 +7466,7 @@ public final class Globals {
     @Generated
     public interface Function_dispatch_sync_f {
         @Generated
-        void call_dispatch_sync_f(VoidPtr arg0);
+        void call_dispatch_sync_f(@Nullable VoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
@@ -7432,7 +7480,7 @@ public final class Globals {
     @Generated
     public interface Function_dispatch_apply_f {
         @Generated
-        void call_dispatch_apply_f(VoidPtr arg0, @NUInt long arg1);
+        void call_dispatch_apply_f(@Nullable VoidPtr arg0, @NUInt long arg1);
     }
 
     @Runtime(CRuntime.class)
@@ -7446,7 +7494,7 @@ public final class Globals {
     @Generated
     public interface Function_dispatch_after_f {
         @Generated
-        void call_dispatch_after_f(VoidPtr arg0);
+        void call_dispatch_after_f(@Nullable VoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
@@ -7460,7 +7508,7 @@ public final class Globals {
     @Generated
     public interface Function_dispatch_barrier_async_f {
         @Generated
-        void call_dispatch_barrier_async_f(VoidPtr arg0);
+        void call_dispatch_barrier_async_f(@Nullable VoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
@@ -7474,14 +7522,14 @@ public final class Globals {
     @Generated
     public interface Function_dispatch_barrier_sync_f {
         @Generated
-        void call_dispatch_barrier_sync_f(VoidPtr arg0);
+        void call_dispatch_barrier_sync_f(@Nullable VoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_dispatch_queue_set_specific {
         @Generated
-        void call_dispatch_queue_set_specific(VoidPtr arg0);
+        void call_dispatch_queue_set_specific(@Nullable VoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
@@ -7579,7 +7627,7 @@ public final class Globals {
     @Generated
     public interface Function_dispatch_source_set_event_handler_f {
         @Generated
-        void call_dispatch_source_set_event_handler_f(VoidPtr arg0);
+        void call_dispatch_source_set_event_handler_f(@Nullable VoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
@@ -7593,7 +7641,7 @@ public final class Globals {
     @Generated
     public interface Function_dispatch_source_set_cancel_handler_f {
         @Generated
-        void call_dispatch_source_set_cancel_handler_f(VoidPtr arg0);
+        void call_dispatch_source_set_cancel_handler_f(@Nullable VoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
@@ -7607,7 +7655,7 @@ public final class Globals {
     @Generated
     public interface Function_dispatch_source_set_registration_handler_f {
         @Generated
-        void call_dispatch_source_set_registration_handler_f(VoidPtr arg0);
+        void call_dispatch_source_set_registration_handler_f(@Nullable VoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
@@ -7621,7 +7669,7 @@ public final class Globals {
     @Generated
     public interface Function_dispatch_group_async_f {
         @Generated
-        void call_dispatch_group_async_f(VoidPtr arg0);
+        void call_dispatch_group_async_f(@Nullable VoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
@@ -7635,7 +7683,7 @@ public final class Globals {
     @Generated
     public interface Function_dispatch_group_notify_f {
         @Generated
-        void call_dispatch_group_notify_f(VoidPtr arg0);
+        void call_dispatch_group_notify_f(@Nullable VoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
@@ -7656,14 +7704,14 @@ public final class Globals {
     @Generated
     public interface Function_dispatch_once_f {
         @Generated
-        void call_dispatch_once_f(VoidPtr arg0);
+        void call_dispatch_once_f(@Nullable VoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function__dispatch_once_f {
         @Generated
-        void call__dispatch_once_f(VoidPtr arg0);
+        void call__dispatch_once_f(@Nullable VoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
@@ -7677,21 +7725,22 @@ public final class Globals {
     @Generated
     public interface Block_dispatch_data_apply {
         @Generated
-        boolean call_dispatch_data_apply(NSObject region, @NUInt long offset, ConstVoidPtr buffer, @NUInt long size);
+        boolean call_dispatch_data_apply(@NotNull NSObject region, @NUInt long offset, @NotNull ConstVoidPtr buffer,
+                @NUInt long size);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_dispatch_read {
         @Generated
-        void call_dispatch_read(NSObject arg0, int arg1);
+        void call_dispatch_read(@NotNull NSObject arg0, int arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_dispatch_write {
         @Generated
-        void call_dispatch_write(NSObject arg0, int arg1);
+        void call_dispatch_write(@Nullable NSObject arg0, int arg1);
     }
 
     @Runtime(CRuntime.class)
@@ -7719,14 +7768,14 @@ public final class Globals {
     @Generated
     public interface Block_dispatch_io_read {
         @Generated
-        void call_dispatch_io_read(boolean done, NSObject data, int error);
+        void call_dispatch_io_read(boolean done, @Nullable NSObject data, int error);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_dispatch_io_write {
         @Generated
-        void call_dispatch_io_write(boolean done, NSObject data, int error);
+        void call_dispatch_io_write(boolean done, @Nullable NSObject data, int error);
     }
 
     @Runtime(CRuntime.class)
@@ -8993,15 +9042,16 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_set_qos_class_floor(NSObject object, int qos_class, int relative_priority);
+    public static native void dispatch_set_qos_class_floor(@NotNull NSObject object, int qos_class,
+            int relative_priority);
 
     /**
      * API-Since: 12.0
      */
     @Generated
     @CFunction
-    public static native void dispatch_async_and_wait(NSObject queue,
-            @ObjCBlock(name = "call_dispatch_async_and_wait") Block_dispatch_async_and_wait block);
+    public static native void dispatch_async_and_wait(@NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_dispatch_async_and_wait") Block_dispatch_async_and_wait block);
 
     @Runtime(CRuntime.class)
     @Generated
@@ -9034,14 +9084,14 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_async_and_wait_f(NSObject queue, VoidPtr context,
-            @FunctionPtr(name = "call_dispatch_async_and_wait_f") Function_dispatch_async_and_wait_f work);
+    public static native void dispatch_async_and_wait_f(@NotNull NSObject queue, @Nullable VoidPtr context,
+            @NotNull @FunctionPtr(name = "call_dispatch_async_and_wait_f") Function_dispatch_async_and_wait_f work);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_dispatch_async_and_wait_f {
         @Generated
-        void call_dispatch_async_and_wait_f(VoidPtr arg0);
+        void call_dispatch_async_and_wait_f(@Nullable VoidPtr arg0);
     }
 
     /**
@@ -9049,8 +9099,8 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_barrier_async_and_wait(NSObject queue,
-            @ObjCBlock(name = "call_dispatch_barrier_async_and_wait") Block_dispatch_barrier_async_and_wait block);
+    public static native void dispatch_barrier_async_and_wait(@NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_dispatch_barrier_async_and_wait") Block_dispatch_barrier_async_and_wait block);
 
     @Runtime(CRuntime.class)
     @Generated
@@ -9087,14 +9137,14 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_barrier_async_and_wait_f(NSObject queue, VoidPtr context,
-            @FunctionPtr(name = "call_dispatch_barrier_async_and_wait_f") Function_dispatch_barrier_async_and_wait_f work);
+    public static native void dispatch_barrier_async_and_wait_f(@NotNull NSObject queue, @Nullable VoidPtr context,
+            @NotNull @FunctionPtr(name = "call_dispatch_barrier_async_and_wait_f") Function_dispatch_barrier_async_and_wait_f work);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_dispatch_barrier_async_and_wait_f {
         @Generated
-        void call_dispatch_barrier_async_and_wait_f(VoidPtr arg0);
+        void call_dispatch_barrier_async_and_wait_f(@Nullable VoidPtr arg0);
     }
 
     /**
@@ -9110,10 +9160,11 @@ public final class Globals {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject dispatch_workloop_create(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label);
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label);
 
     /**
      * [@function] dispatch_workloop_create_inactive
@@ -9135,10 +9186,11 @@ public final class Globals {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject dispatch_workloop_create_inactive(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label);
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label);
 
     /**
      * [@function] dispatch_workloop_set_autorelease_frequency
@@ -9162,7 +9214,8 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_workloop_set_autorelease_frequency(NSObject workloop, @NUInt long frequency);
+    public static native void dispatch_workloop_set_autorelease_frequency(@NotNull NSObject workloop,
+            @NUInt long frequency);
 
     /**
      * API-Since: 11.3
@@ -9696,7 +9749,7 @@ public final class Globals {
     @Generated
     @CFunction
     public static native void os_unfair_lock_assert_owner(
-            @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
 
     /**
      * [@function] os_unfair_lock_assert_not_owner
@@ -9718,7 +9771,7 @@ public final class Globals {
     @Generated
     @CFunction
     public static native void os_unfair_lock_assert_not_owner(
-            @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
 
     /**
      * Get value of service property.
@@ -11190,7 +11243,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native long os_signpost_id_make_with_pointer(NSObject log, ConstVoidPtr ptr);
+    public static native long os_signpost_id_make_with_pointer(@NotNull NSObject log, @Nullable ConstVoidPtr ptr);
 
     /**
      * [@function] os_signpost_id_generate
@@ -11212,7 +11265,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native long os_signpost_id_generate(NSObject log);
+    public static native long os_signpost_id_generate(@NotNull NSObject log);
 
     /**
      * [@function] os_signpost_enabled
@@ -11234,17 +11287,18 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native boolean os_signpost_enabled(NSObject log);
+    public static native boolean os_signpost_enabled(@NotNull NSObject log);
 
     /**
      * API-Since: 12.0
      */
     @Generated
     @CFunction
-    public static native void _os_signpost_emit_with_name_impl(VoidPtr dso, NSObject log, byte type, long spid,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String format,
-            BytePtr buf, int size);
+    public static native void _os_signpost_emit_with_name_impl(@NotNull VoidPtr dso, @NotNull NSObject log, byte type,
+            long spid,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String format,
+            @NotNull BytePtr buf, int size);
 
     /**
      * API-Since: 14.0
@@ -11288,9 +11342,10 @@ public final class Globals {
      * @return A pointer to any extra bytes allocated with \e obj. If \e obj was
      *         not allocated with any extra bytes, then dereferencing the returned pointer is undefined.
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native VoidPtr object_getIndexedIvars(@Mapped(ObjCObjectMapper.class) Object obj);
+    public static native VoidPtr object_getIndexedIvars(@Nullable @Mapped(ObjCObjectMapper.class) Object obj);
 
     /**
      * API-Since: 13.0
@@ -11333,11 +11388,12 @@ public final class Globals {
      * 
      *             API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native OS_os_workgroup os_workgroup_create_with_workgroup(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
-            OS_os_workgroup wg);
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+            @NotNull OS_os_workgroup wg);
 
     /**
      * [@function] os_workgroup_join
@@ -11363,8 +11419,8 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native int os_workgroup_join(OS_os_workgroup wg,
-            @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_join_token_opaque_s token_out);
+    public static native int os_workgroup_join(@NotNull OS_os_workgroup wg,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_join_token_opaque_s token_out);
 
     /**
      * [@function] os_workgroup_leave
@@ -11389,8 +11445,8 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void os_workgroup_leave(OS_os_workgroup wg,
-            @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_join_token_opaque_s token);
+    public static native void os_workgroup_leave(@NotNull OS_os_workgroup wg,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_join_token_opaque_s token);
 
     /**
      * [@function] os_workgroup_set_working_arena
@@ -11424,14 +11480,15 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native int os_workgroup_set_working_arena(OS_os_workgroup wg, VoidPtr arena, int max_workers,
-            @FunctionPtr(name = "call_os_workgroup_set_working_arena") Function_os_workgroup_set_working_arena destructor);
+    public static native int os_workgroup_set_working_arena(@NotNull OS_os_workgroup wg, @Nullable VoidPtr arena,
+            int max_workers,
+            @NotNull @FunctionPtr(name = "call_os_workgroup_set_working_arena") Function_os_workgroup_set_working_arena destructor);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_os_workgroup_set_working_arena {
         @Generated
-        void call_os_workgroup_set_working_arena(VoidPtr arg0);
+        void call_os_workgroup_set_working_arena(@Nullable VoidPtr arg0);
     }
 
     /**
@@ -11459,9 +11516,11 @@ public final class Globals {
      * 
      *                  API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native VoidPtr os_workgroup_get_working_arena(OS_os_workgroup wg, IntPtr index_out);
+    public static native VoidPtr os_workgroup_get_working_arena(@NotNull OS_os_workgroup wg,
+            @Nullable IntPtr index_out);
 
     /**
      * [@function] os_workgroup_cancel
@@ -11488,7 +11547,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void os_workgroup_cancel(OS_os_workgroup wg);
+    public static native void os_workgroup_cancel(@NotNull OS_os_workgroup wg);
 
     /**
      * [@function] os_workgroup_testcancel
@@ -11500,7 +11559,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native boolean os_workgroup_testcancel(OS_os_workgroup wg);
+    public static native boolean os_workgroup_testcancel(@NotNull OS_os_workgroup wg);
 
     /**
      * [@function] os_workgroup_max_parallel_threads
@@ -11525,7 +11584,8 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native int os_workgroup_max_parallel_threads(OS_os_workgroup wg, os_workgroup_mpt_attr_t attr);
+    public static native int os_workgroup_max_parallel_threads(@NotNull OS_os_workgroup wg,
+            @Nullable os_workgroup_mpt_attr_t attr);
 
     /**
      * [@function] os_workgroup_interval_start
@@ -11561,8 +11621,8 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native int os_workgroup_interval_start(OS_os_workgroup wg, long start, long deadline,
-            @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_interval_data_opaque_s data);
+    public static native int os_workgroup_interval_start(@NotNull OS_os_workgroup wg, long start, long deadline,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_interval_data_opaque_s data);
 
     /**
      * [@function] os_workgroup_interval_update
@@ -11590,8 +11650,8 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native int os_workgroup_interval_update(OS_os_workgroup wg, long deadline,
-            @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_interval_data_opaque_s data);
+    public static native int os_workgroup_interval_update(@NotNull OS_os_workgroup wg, long deadline,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_interval_data_opaque_s data);
 
     /**
      * [@function] os_workgroup_interval_finish
@@ -11615,8 +11675,8 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native int os_workgroup_interval_finish(OS_os_workgroup wg,
-            @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_interval_data_opaque_s data);
+    public static native int os_workgroup_interval_finish(@NotNull OS_os_workgroup wg,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_interval_data_opaque_s data);
 
     /**
      * [@function] os_workgroup_parallel_create
@@ -11638,11 +11698,12 @@ public final class Globals {
      * 
      *             API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native OS_os_workgroup os_workgroup_parallel_create(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
-            @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_attr_opaque_s attr);
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_attr_opaque_s attr);
 
     /**
      * [@function] dispatch_workloop_set_os_workgroup
@@ -11668,7 +11729,8 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void dispatch_workloop_set_os_workgroup(NSObject workloop, OS_os_workgroup workgroup);
+    public static native void dispatch_workloop_set_os_workgroup(@NotNull NSObject workloop,
+            @NotNull OS_os_workgroup workgroup);
 
     /**
      * List definitions after function declarations, or Reiser cpp gets upset.
@@ -11698,8 +11760,8 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void _os_activity_label_useraction(VoidPtr dso,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name);
+    public static native void _os_activity_label_useraction(@NotNull VoidPtr dso,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name);
 
     /**
      * [@function] _os_activity_initiate
@@ -11710,9 +11772,10 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void _os_activity_initiate(VoidPtr dso,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String description,
-            int flags, @ObjCBlock(name = "call__os_activity_initiate") Block__os_activity_initiate activity_block);
+    public static native void _os_activity_initiate(@NotNull VoidPtr dso,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String description,
+            int flags,
+            @NotNull @ObjCBlock(name = "call__os_activity_initiate") Block__os_activity_initiate activity_block);
 
     @Runtime(CRuntime.class)
     @Generated
@@ -11730,16 +11793,16 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native void _os_activity_initiate_f(VoidPtr dso,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String description,
-            int flags, VoidPtr context,
-            @FunctionPtr(name = "call__os_activity_initiate_f") Function__os_activity_initiate_f function);
+    public static native void _os_activity_initiate_f(@NotNull VoidPtr dso,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String description,
+            int flags, @NotNull VoidPtr context,
+            @NotNull @FunctionPtr(name = "call__os_activity_initiate_f") Function__os_activity_initiate_f function);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function__os_activity_initiate_f {
         @Generated
-        void call__os_activity_initiate_f(VoidPtr arg0);
+        void call__os_activity_initiate_f(@Nullable VoidPtr arg0);
     }
 
     /**
@@ -11769,7 +11832,7 @@ public final class Globals {
     @Deprecated
     @Generated
     @CFunction
-    public static native int os_activity_get_active(LongPtr entries, IntPtr count);
+    public static native int os_activity_get_active(@NotNull LongPtr entries, @NotNull IntPtr count);
 
     /**
      * [@function] os_activity_get_identifier
@@ -11788,7 +11851,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native long os_activity_get_identifier(long activity, LongPtr parent_id);
+    public static native long os_activity_get_identifier(long activity, @Nullable LongPtr parent_id);
 
     /**
      * [@function] _os_activity_start
@@ -11803,8 +11866,8 @@ public final class Globals {
     @Deprecated
     @Generated
     @CFunction
-    public static native long _os_activity_start(VoidPtr dso,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String description,
+    public static native long _os_activity_start(@NotNull VoidPtr dso,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String description,
             int flags);
 
     /**
@@ -11834,8 +11897,8 @@ public final class Globals {
     @Deprecated
     @Generated
     @CFunction
-    public static native void _os_activity_set_breadcrumb(VoidPtr dso,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name);
+    public static native void _os_activity_set_breadcrumb(@NotNull VoidPtr dso,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name);
 
     /**
      * API-Since: 16.0
@@ -11881,12 +11944,14 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native int DNSServiceUpdateRecordWithAttribute(DNSServiceRef sdRef, DNSRecordRef recordRef, int flags,
-            char rdlen, ConstVoidPtr rdata, int ttl, DNSServiceAttributeRef attr);
+    public static native int DNSServiceUpdateRecordWithAttribute(@Nullable DNSServiceRef sdRef,
+            @Nullable DNSRecordRef recordRef, int flags, char rdlen, @Nullable ConstVoidPtr rdata, int ttl,
+            @Nullable DNSServiceAttributeRef attr);
 
     /**
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native DNSServiceAttributeRef DNSServiceAttributeCreate();
@@ -11896,32 +11961,33 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native int DNSServiceAttributeSetAAAAPolicy(DNSServiceAttributeRef attr, int policy);
+    public static native int DNSServiceAttributeSetAAAAPolicy(@NotNull DNSServiceAttributeRef attr, int policy);
 
     /**
      * API-Since: 16.0
      */
     @Generated
     @CFunction
-    public static native int DNSServiceAttributeSetTimestamp(DNSServiceAttributeRef attr, int timestamp);
+    public static native int DNSServiceAttributeSetTimestamp(@NotNull DNSServiceAttributeRef attr, int timestamp);
 
     /**
      * API-Since: 16.0
      */
     @Generated
     @CFunction
-    public static native void DNSServiceAttributeDeallocate(DNSServiceAttributeRef attr);
+    public static native void DNSServiceAttributeDeallocate(@NotNull DNSServiceAttributeRef attr);
 
     /**
      * API-Since: 16.0
      */
     @Generated
     @CFunction
-    public static native int DNSServiceQueryRecordWithAttribute(Ptr<DNSServiceRef> sdRef, int flags, int ifindex,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name, char rrtype,
-            char rrclass, VoidPtr attr,
-            @FunctionPtr(name = "call_DNSServiceQueryRecordWithAttribute") Function_DNSServiceQueryRecordWithAttribute callback,
-            VoidPtr context);
+    public static native int DNSServiceQueryRecordWithAttribute(@Nullable Ptr<DNSServiceRef> sdRef, int flags,
+            int ifindex,
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+            char rrtype, char rrclass, @Nullable VoidPtr attr,
+            @Nullable @FunctionPtr(name = "call_DNSServiceQueryRecordWithAttribute") Function_DNSServiceQueryRecordWithAttribute callback,
+            @Nullable VoidPtr context);
 
     @Runtime(CRuntime.class)
     @Generated
@@ -11937,14 +12003,16 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native int DNSServiceRegisterWithAttribute(Ptr<DNSServiceRef> sdRef, int flags, int interfaceIndex,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String regtype,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String domain,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String host,
-            char portInNetworkByteOrder, char txtLen, ConstVoidPtr txtRecord, DNSServiceAttributeRef attr,
-            @FunctionPtr(name = "call_DNSServiceRegisterWithAttribute") Function_DNSServiceRegisterWithAttribute callBack,
-            VoidPtr context);
+    public static native int DNSServiceRegisterWithAttribute(@Nullable Ptr<DNSServiceRef> sdRef, int flags,
+            int interfaceIndex,
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String regtype,
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String domain,
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String host,
+            char portInNetworkByteOrder, char txtLen, @Nullable ConstVoidPtr txtRecord,
+            @Nullable DNSServiceAttributeRef attr,
+            @Nullable @FunctionPtr(name = "call_DNSServiceRegisterWithAttribute") Function_DNSServiceRegisterWithAttribute callBack,
+            @Nullable VoidPtr context);
 
     @Runtime(CRuntime.class)
     @Generated
@@ -11962,12 +12030,13 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native int DNSServiceRegisterRecordWithAttribute(DNSServiceRef sdRef, Ptr<DNSRecordRef> recordRef,
-            int flags, int interfaceIndex,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String fullname,
-            char rrtype, char rrclass, char rdlen, ConstVoidPtr rdata, int ttl, DNSServiceAttributeRef attr,
-            @FunctionPtr(name = "call_DNSServiceRegisterRecordWithAttribute") Function_DNSServiceRegisterRecordWithAttribute callBack,
-            VoidPtr context);
+    public static native int DNSServiceRegisterRecordWithAttribute(@Nullable DNSServiceRef sdRef,
+            @Nullable Ptr<DNSRecordRef> recordRef, int flags, int interfaceIndex,
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String fullname,
+            char rrtype, char rrclass, char rdlen, @Nullable ConstVoidPtr rdata, int ttl,
+            @Nullable DNSServiceAttributeRef attr,
+            @Nullable @FunctionPtr(name = "call_DNSServiceRegisterRecordWithAttribute") Function_DNSServiceRegisterRecordWithAttribute callBack,
+            @Nullable VoidPtr context);
 
     @Runtime(CRuntime.class)
     @Generated
@@ -11982,7 +12051,7 @@ public final class Globals {
      */
     @Generated
     @CFunction
-    public static native int DNSServiceSendQueuedRequests(DNSServiceRef sdRef);
+    public static native int DNSServiceSendQueuedRequests(@Nullable DNSServiceRef sdRef);
 
     @Generated public static final double __DARWIN_ONLY_64_BIT_INO_T = 1.0;
     @Generated public static final double __DARWIN_ONLY_UNIX_CONFORMANCE = 1.0;

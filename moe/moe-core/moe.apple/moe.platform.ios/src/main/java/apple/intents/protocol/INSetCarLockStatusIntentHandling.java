@@ -12,6 +12,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INSetCarLockStatusIntent. By implementing this protocol, a class can
@@ -45,8 +46,8 @@ public interface INSetCarLockStatusIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmSetCarLockStatus:completion:")
-    default void confirmSetCarLockStatusCompletion(INSetCarLockStatusIntent intent,
-            @ObjCBlock(name = "call_confirmSetCarLockStatusCompletion") Block_confirmSetCarLockStatusCompletion completion) {
+    default void confirmSetCarLockStatusCompletion(@NotNull INSetCarLockStatusIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmSetCarLockStatusCompletion") Block_confirmSetCarLockStatusCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -54,7 +55,7 @@ public interface INSetCarLockStatusIntentHandling {
     @Generated
     public interface Block_confirmSetCarLockStatusCompletion {
         @Generated
-        void call_confirmSetCarLockStatusCompletion(INSetCarLockStatusIntentResponse response);
+        void call_confirmSetCarLockStatusCompletion(@NotNull INSetCarLockStatusIntentResponse response);
     }
 
     /**
@@ -70,21 +71,21 @@ public interface INSetCarLockStatusIntentHandling {
      */
     @Generated
     @Selector("handleSetCarLockStatus:completion:")
-    void handleSetCarLockStatusCompletion(INSetCarLockStatusIntent intent,
-            @ObjCBlock(name = "call_handleSetCarLockStatusCompletion") Block_handleSetCarLockStatusCompletion completion);
+    void handleSetCarLockStatusCompletion(@NotNull INSetCarLockStatusIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleSetCarLockStatusCompletion") Block_handleSetCarLockStatusCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSetCarLockStatusCompletion {
         @Generated
-        void call_handleSetCarLockStatusCompletion(INSetCarLockStatusIntentResponse response);
+        void call_handleSetCarLockStatusCompletion(@NotNull INSetCarLockStatusIntentResponse response);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveCarNameForSetCarLockStatus:withCompletion:")
-    default void resolveCarNameForSetCarLockStatusWithCompletion(INSetCarLockStatusIntent intent,
-            @ObjCBlock(name = "call_resolveCarNameForSetCarLockStatusWithCompletion") Block_resolveCarNameForSetCarLockStatusWithCompletion completion) {
+    default void resolveCarNameForSetCarLockStatusWithCompletion(@NotNull INSetCarLockStatusIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveCarNameForSetCarLockStatusWithCompletion") Block_resolveCarNameForSetCarLockStatusWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -92,7 +93,8 @@ public interface INSetCarLockStatusIntentHandling {
     @Generated
     public interface Block_resolveCarNameForSetCarLockStatusWithCompletion {
         @Generated
-        void call_resolveCarNameForSetCarLockStatusWithCompletion(INSpeakableStringResolutionResult resolutionResult);
+        void call_resolveCarNameForSetCarLockStatusWithCompletion(
+                @NotNull INSpeakableStringResolutionResult resolutionResult);
     }
 
     /**
@@ -109,8 +111,8 @@ public interface INSetCarLockStatusIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveLockedForSetCarLockStatus:withCompletion:")
-    default void resolveLockedForSetCarLockStatusWithCompletion(INSetCarLockStatusIntent intent,
-            @ObjCBlock(name = "call_resolveLockedForSetCarLockStatusWithCompletion") Block_resolveLockedForSetCarLockStatusWithCompletion completion) {
+    default void resolveLockedForSetCarLockStatusWithCompletion(@NotNull INSetCarLockStatusIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveLockedForSetCarLockStatusWithCompletion") Block_resolveLockedForSetCarLockStatusWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -118,6 +120,6 @@ public interface INSetCarLockStatusIntentHandling {
     @Generated
     public interface Block_resolveLockedForSetCarLockStatusWithCompletion {
         @Generated
-        void call_resolveLockedForSetCarLockStatusWithCompletion(INBooleanResolutionResult resolutionResult);
+        void call_resolveLockedForSetCarLockStatusWithCompletion(@NotNull INBooleanResolutionResult resolutionResult);
     }
 }

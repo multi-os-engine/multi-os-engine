@@ -25,6 +25,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -59,31 +61,35 @@ public class MDLAnimationBindComponent extends NSObject implements NSCopying, MD
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -119,6 +125,7 @@ public class MDLAnimationBindComponent extends NSObject implements NSCopying, MD
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @Nullable
     @Generated
     @Selector("jointAnimation")
     @MappedReturn(ObjCObjectMapper.class)
@@ -127,13 +134,15 @@ public class MDLAnimationBindComponent extends NSObject implements NSCopying, MD
     /**
      * optional. If set, jointIndices vertex buffers index into this list of joints.
      */
+    @Nullable
     @Generated
     @Selector("jointPaths")
     public native NSArray<String> jointPaths();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -150,23 +159,24 @@ public class MDLAnimationBindComponent extends NSObject implements NSCopying, MD
 
     @Generated
     @Selector("setJointAnimation:")
-    public native void setJointAnimation(@Mapped(ObjCObjectMapper.class) MDLJointAnimation value);
+    public native void setJointAnimation(@Nullable @Mapped(ObjCObjectMapper.class) MDLJointAnimation value);
 
     /**
      * optional. If set, jointIndices vertex buffers index into this list of joints.
      */
     @Generated
     @Selector("setJointPaths:")
-    public native void setJointPaths(NSArray<String> value);
+    public native void setJointPaths(@Nullable NSArray<String> value);
 
     @Generated
     @Selector("setSkeleton:")
-    public native void setSkeleton(MDLSkeleton value);
+    public native void setSkeleton(@Nullable MDLSkeleton value);
 
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @Nullable
     @Generated
     @Selector("skeleton")
     public native MDLSkeleton skeleton();

@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * A VSAccountManager instance coordinates access to a subscriber's account.
@@ -46,7 +47,8 @@ public interface VSAccountManagerDelegate {
      */
     @Generated
     @Selector("accountManager:dismissViewController:")
-    void accountManagerDismissViewController(VSAccountManager accountManager, UIViewController viewController);
+    void accountManagerDismissViewController(@NotNull VSAccountManager accountManager,
+            @NotNull UIViewController viewController);
 
     /**
      * Called when the account manager needs user interaction to complete a request.
@@ -58,7 +60,8 @@ public interface VSAccountManagerDelegate {
      */
     @Generated
     @Selector("accountManager:presentViewController:")
-    void accountManagerPresentViewController(VSAccountManager accountManager, UIViewController viewController);
+    void accountManagerPresentViewController(@NotNull VSAccountManager accountManager,
+            @NotNull UIViewController viewController);
 
     /**
      * This method can be used to temporarily refrain from authenticating with an
@@ -75,8 +78,8 @@ public interface VSAccountManagerDelegate {
     @Generated
     @IsOptional
     @Selector("accountManager:shouldAuthenticateAccountProviderWithIdentifier:")
-    default boolean accountManagerShouldAuthenticateAccountProviderWithIdentifier(VSAccountManager accountManager,
-            String accountProviderIdentifier) {
+    default boolean accountManagerShouldAuthenticateAccountProviderWithIdentifier(
+            @NotNull VSAccountManager accountManager, @NotNull String accountProviderIdentifier) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

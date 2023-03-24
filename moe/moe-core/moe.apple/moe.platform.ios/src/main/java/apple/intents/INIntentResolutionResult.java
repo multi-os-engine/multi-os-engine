@@ -37,6 +37,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -71,22 +73,25 @@ public class INIntentResolutionResult extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,13 +126,15 @@ public class INIntentResolutionResult extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * This result is to tell Siri that the user must provide a non-nil value for this parameter in order to continue
      */
+    @NotNull
     @Generated
     @Selector("needsValue")
     public static native INIntentResolutionResult needsValue();
@@ -141,6 +148,7 @@ public class INIntentResolutionResult extends NSObject {
      * This result is to tell Siri to continue regardless of whether the user has provided a value for this parameter or
      * not
      */
+    @NotNull
     @Generated
     @Selector("notRequired")
     public static native INIntentResolutionResult notRequired();
@@ -164,6 +172,7 @@ public class INIntentResolutionResult extends NSObject {
     /**
      * This result is for informing Siri that this value is unsupported
      */
+    @NotNull
     @Generated
     @Selector("unsupported")
     public static native INIntentResolutionResult unsupported();
@@ -180,14 +189,16 @@ public class INIntentResolutionResult extends NSObject {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
     public static native INIntentResolutionResult confirmationRequiredWithItemToConfirmForReason(
-            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INIntentResolutionResult unsupportedWithReason(@NInt long reason);

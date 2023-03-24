@@ -29,6 +29,7 @@ import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure(alignment = 2)
@@ -72,6 +73,7 @@ public final class CFNetServiceClientContext extends StructObject {
      * An arbitrary pointer to client-defined data, which can be
      * associated with the service/browser and is passed to the callbacks.
      */
+    @Nullable
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native VoidPtr info();
@@ -82,7 +84,7 @@ public final class CFNetServiceClientContext extends StructObject {
      */
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setInfo(VoidPtr value);
+    public native void setInfo(@Nullable VoidPtr value);
 
     /**
      * The callback used to add a retain for the service/browser on the
@@ -92,6 +94,7 @@ public final class CFNetServiceClientContext extends StructObject {
      * service/browser, almost always just the pointer passed as the
      * parameter.
      */
+    @Nullable
     @Generated
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call_retain")
@@ -107,12 +110,13 @@ public final class CFNetServiceClientContext extends StructObject {
      */
     @Generated
     @StructureField(order = 2, isGetter = false)
-    public native void setRetain(@FunctionPtr(name = "call_retain") Function_retain value);
+    public native void setRetain(@Nullable @FunctionPtr(name = "call_retain") Function_retain value);
 
     /**
      * The callback used to remove a retain previously added for the
      * service/browser on the info pointer.
      */
+    @Nullable
     @Generated
     @StructureField(order = 3, isGetter = true)
     @FunctionPtr(name = "call_release")
@@ -124,7 +128,7 @@ public final class CFNetServiceClientContext extends StructObject {
      */
     @Generated
     @StructureField(order = 3, isGetter = false)
-    public native void setRelease(@FunctionPtr(name = "call_release") Function_release value);
+    public native void setRelease(@Nullable @FunctionPtr(name = "call_release") Function_release value);
 
     /**
      * The callback used to create a descriptive string representation of
@@ -132,6 +136,7 @@ public final class CFNetServiceClientContext extends StructObject {
      * debugging purposes. This is used by the CFCopyDescription()
      * function.
      */
+    @Nullable
     @Generated
     @StructureField(order = 4, isGetter = true)
     @FunctionPtr(name = "call_copyDescription")
@@ -145,7 +150,8 @@ public final class CFNetServiceClientContext extends StructObject {
      */
     @Generated
     @StructureField(order = 4, isGetter = false)
-    public native void setCopyDescription(@FunctionPtr(name = "call_copyDescription") Function_copyDescription value);
+    public native void setCopyDescription(
+            @Nullable @FunctionPtr(name = "call_copyDescription") Function_copyDescription value);
 
     @Runtime(CRuntime.class)
     @Generated

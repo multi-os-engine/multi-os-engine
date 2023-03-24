@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVMIDIPlayer
@@ -65,22 +67,25 @@ public class AVMIDIPlayer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,8 +139,8 @@ public class AVMIDIPlayer extends NSObject {
      */
     @Generated
     @Selector("initWithContentsOfURL:soundBankURL:error:")
-    public native AVMIDIPlayer initWithContentsOfURLSoundBankURLError(NSURL inURL, NSURL bankURL,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native AVMIDIPlayer initWithContentsOfURLSoundBankURLError(@NotNull NSURL inURL, @Nullable NSURL bankURL,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * initWithData:soundBankURL:error:
@@ -148,8 +153,8 @@ public class AVMIDIPlayer extends NSObject {
      */
     @Generated
     @Selector("initWithData:soundBankURL:error:")
-    public native AVMIDIPlayer initWithDataSoundBankURLError(NSData data, NSURL bankURL,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native AVMIDIPlayer initWithDataSoundBankURLError(@NotNull NSData data, @Nullable NSURL bankURL,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -177,9 +182,10 @@ public class AVMIDIPlayer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -193,7 +199,7 @@ public class AVMIDIPlayer extends NSObject {
      */
     @Generated
     @Selector("play:")
-    public native void play(@ObjCBlock(name = "call_play") Block_play completionHandler);
+    public native void play(@Nullable @ObjCBlock(name = "call_play") Block_play completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated

@@ -25,6 +25,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -47,34 +49,41 @@ public class MDLTransformStack extends NSObject implements NSCopying, MDLTransfo
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    @NotNull
     @Generated
     @Selector("addMatrixOp:inverse:")
-    public native MDLTransformMatrixOp addMatrixOpInverse(String animatedValueName, boolean inverse);
+    public native MDLTransformMatrixOp addMatrixOpInverse(@NotNull String animatedValueName, boolean inverse);
 
+    @NotNull
     @Generated
     @Selector("addRotateOp:order:inverse:")
-    public native MDLTransformRotateOp addRotateOpOrderInverse(String animatedValueName, @NUInt long order,
+    public native MDLTransformRotateOp addRotateOpOrderInverse(@NotNull String animatedValueName, @NUInt long order,
             boolean inverse);
 
+    @NotNull
     @Generated
     @Selector("addRotateXOp:inverse:")
-    public native MDLTransformRotateXOp addRotateXOpInverse(String animatedValueName, boolean inverse);
+    public native MDLTransformRotateXOp addRotateXOpInverse(@NotNull String animatedValueName, boolean inverse);
 
+    @NotNull
     @Generated
     @Selector("addRotateYOp:inverse:")
-    public native MDLTransformRotateYOp addRotateYOpInverse(String animatedValueName, boolean inverse);
+    public native MDLTransformRotateYOp addRotateYOpInverse(@NotNull String animatedValueName, boolean inverse);
 
+    @NotNull
     @Generated
     @Selector("addRotateZOp:inverse:")
-    public native MDLTransformRotateZOp addRotateZOpInverse(String animatedValueName, boolean inverse);
+    public native MDLTransformRotateZOp addRotateZOpInverse(@NotNull String animatedValueName, boolean inverse);
 
+    @NotNull
     @Generated
     @Selector("addScaleOp:inverse:")
-    public native MDLTransformScaleOp addScaleOpInverse(String animatedValueName, boolean inverse);
+    public native MDLTransformScaleOp addScaleOpInverse(@NotNull String animatedValueName, boolean inverse);
 
+    @NotNull
     @Generated
     @Selector("addTranslateOp:inverse:")
-    public native MDLTransformTranslateOp addTranslateOpInverse(String animatedValueName, boolean inverse);
+    public native MDLTransformTranslateOp addTranslateOpInverse(@NotNull String animatedValueName, boolean inverse);
 
     @Generated
     @Owned
@@ -86,37 +95,42 @@ public class MDLTransformStack extends NSObject implements NSCopying, MDLTransfo
     @Selector("allocWithZone:")
     public static native MDLTransformStack allocWithZone(VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("animatedValueWithName:")
-    public native MDLAnimatedValue animatedValueWithName(String name);
+    public native MDLAnimatedValue animatedValueWithName(@NotNull String name);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("count")
@@ -157,10 +171,12 @@ public class MDLTransformStack extends NSObject implements NSCopying, MDLTransfo
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("keyTimes")
     public native NSArray<? extends NSNumber> keyTimes();
@@ -202,6 +218,7 @@ public class MDLTransformStack extends NSObject implements NSCopying, MDLTransfo
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("transformOps")
     public native NSArray<?> transformOps();
@@ -211,7 +228,8 @@ public class MDLTransformStack extends NSObject implements NSCopying, MDLTransfo
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("addOrientOp:inverse:")
-    public native MDLTransformOrientOp addOrientOpInverse(String animatedValueName, boolean inverse);
+    public native MDLTransformOrientOp addOrientOpInverse(@NotNull String animatedValueName, boolean inverse);
 }

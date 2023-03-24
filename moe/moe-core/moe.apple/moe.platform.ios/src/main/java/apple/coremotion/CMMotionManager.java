@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CMMotionManager
@@ -79,7 +81,7 @@ public class CMMotionManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * availableAttitudeReferenceFrames
@@ -96,18 +98,21 @@ public class CMMotionManager extends NSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -142,9 +147,10 @@ public class CMMotionManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -178,6 +184,7 @@ public class CMMotionManager extends NSObject {
      * Discussion:
      * Returns the latest sample of accelerometer data, or nil if none is available.
      */
+    @Nullable
     @Generated
     @Selector("accelerometerData")
     public native CMAccelerometerData accelerometerData();
@@ -222,6 +229,7 @@ public class CMMotionManager extends NSObject {
      * Discussion:
      * Returns the latest sample of device motion data, or nil if none is available.
      */
+    @Nullable
     @Generated
     @Selector("deviceMotion")
     public native CMDeviceMotion deviceMotion();
@@ -249,6 +257,7 @@ public class CMMotionManager extends NSObject {
      * Discussion:
      * Returns the latest sample of gyro data, or nil if none is available.
      */
+    @Nullable
     @Generated
     @Selector("gyroData")
     public native CMGyroData gyroData();
@@ -368,6 +377,7 @@ public class CMMotionManager extends NSObject {
      * 
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("magnetometerData")
     public native CMMagnetometerData magnetometerData();
@@ -512,8 +522,8 @@ public class CMMotionManager extends NSObject {
      */
     @Generated
     @Selector("startAccelerometerUpdatesToQueue:withHandler:")
-    public native void startAccelerometerUpdatesToQueueWithHandler(NSOperationQueue queue,
-            @ObjCBlock(name = "call_startAccelerometerUpdatesToQueueWithHandler") Block_startAccelerometerUpdatesToQueueWithHandler handler);
+    public native void startAccelerometerUpdatesToQueueWithHandler(@NotNull NSOperationQueue queue,
+            @NotNull @ObjCBlock(name = "call_startAccelerometerUpdatesToQueueWithHandler") Block_startAccelerometerUpdatesToQueueWithHandler handler);
 
     /**
      * startDeviceMotionUpdates
@@ -537,8 +547,8 @@ public class CMMotionManager extends NSObject {
      */
     @Generated
     @Selector("startDeviceMotionUpdatesToQueue:withHandler:")
-    public native void startDeviceMotionUpdatesToQueueWithHandler(NSOperationQueue queue,
-            @ObjCBlock(name = "call_startDeviceMotionUpdatesToQueueWithHandler") Block_startDeviceMotionUpdatesToQueueWithHandler handler);
+    public native void startDeviceMotionUpdatesToQueueWithHandler(@NotNull NSOperationQueue queue,
+            @NotNull @ObjCBlock(name = "call_startDeviceMotionUpdatesToQueueWithHandler") Block_startDeviceMotionUpdatesToQueueWithHandler handler);
 
     /**
      * startDeviceMotionUpdatesUsingReferenceFrame:
@@ -568,8 +578,8 @@ public class CMMotionManager extends NSObject {
     @Generated
     @Selector("startDeviceMotionUpdatesUsingReferenceFrame:toQueue:withHandler:")
     public native void startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler(@NUInt long referenceFrame,
-            NSOperationQueue queue,
-            @ObjCBlock(name = "call_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler") Block_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler handler);
+            @NotNull NSOperationQueue queue,
+            @NotNull @ObjCBlock(name = "call_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler") Block_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler handler);
 
     /**
      * startGyroUpdates
@@ -592,8 +602,8 @@ public class CMMotionManager extends NSObject {
      */
     @Generated
     @Selector("startGyroUpdatesToQueue:withHandler:")
-    public native void startGyroUpdatesToQueueWithHandler(NSOperationQueue queue,
-            @ObjCBlock(name = "call_startGyroUpdatesToQueueWithHandler") Block_startGyroUpdatesToQueueWithHandler handler);
+    public native void startGyroUpdatesToQueueWithHandler(@NotNull NSOperationQueue queue,
+            @NotNull @ObjCBlock(name = "call_startGyroUpdatesToQueueWithHandler") Block_startGyroUpdatesToQueueWithHandler handler);
 
     /**
      * startMagnetometerUpdates
@@ -618,8 +628,8 @@ public class CMMotionManager extends NSObject {
      */
     @Generated
     @Selector("startMagnetometerUpdatesToQueue:withHandler:")
-    public native void startMagnetometerUpdatesToQueueWithHandler(NSOperationQueue queue,
-            @ObjCBlock(name = "call_startMagnetometerUpdatesToQueueWithHandler") Block_startMagnetometerUpdatesToQueueWithHandler handler);
+    public native void startMagnetometerUpdatesToQueueWithHandler(@NotNull NSOperationQueue queue,
+            @NotNull @ObjCBlock(name = "call_startMagnetometerUpdatesToQueueWithHandler") Block_startMagnetometerUpdatesToQueueWithHandler handler);
 
     /**
      * stopAccelerometerUpdates
@@ -667,34 +677,37 @@ public class CMMotionManager extends NSObject {
     @Generated
     public interface Block_startAccelerometerUpdatesToQueueWithHandler {
         @Generated
-        void call_startAccelerometerUpdatesToQueueWithHandler(CMAccelerometerData accelerometerData, NSError error);
+        void call_startAccelerometerUpdatesToQueueWithHandler(@Nullable CMAccelerometerData accelerometerData,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startDeviceMotionUpdatesToQueueWithHandler {
         @Generated
-        void call_startDeviceMotionUpdatesToQueueWithHandler(CMDeviceMotion motion, NSError error);
+        void call_startDeviceMotionUpdatesToQueueWithHandler(@Nullable CMDeviceMotion motion, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler {
         @Generated
-        void call_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler(CMDeviceMotion motion, NSError error);
+        void call_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler(@Nullable CMDeviceMotion motion,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startGyroUpdatesToQueueWithHandler {
         @Generated
-        void call_startGyroUpdatesToQueueWithHandler(CMGyroData gyroData, NSError error);
+        void call_startGyroUpdatesToQueueWithHandler(@Nullable CMGyroData gyroData, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startMagnetometerUpdatesToQueueWithHandler {
         @Generated
-        void call_startMagnetometerUpdatesToQueueWithHandler(CMMagnetometerData magnetometerData, NSError error);
+        void call_startMagnetometerUpdatesToQueueWithHandler(@Nullable CMMagnetometerData magnetometerData,
+                @Nullable NSError error);
     }
 }

@@ -46,6 +46,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MCBrowserViewController
@@ -116,29 +118,32 @@ public class MCBrowserViewController extends UIViewController implements MCNearb
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -170,9 +175,10 @@ public class MCBrowserViewController extends UIViewController implements MCNearb
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -200,6 +206,7 @@ public class MCBrowserViewController extends UIViewController implements MCNearb
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("browser")
     public native MCNearbyServiceBrowser browser();
@@ -207,17 +214,19 @@ public class MCBrowserViewController extends UIViewController implements MCNearb
     @Generated
     @IsOptional
     @Selector("browser:didNotStartBrowsingForPeers:")
-    public native void browserDidNotStartBrowsingForPeers(MCNearbyServiceBrowser browser, NSError error);
+    public native void browserDidNotStartBrowsingForPeers(@NotNull MCNearbyServiceBrowser browser,
+            @NotNull NSError error);
 
     @Generated
     @Selector("browser:foundPeer:withDiscoveryInfo:")
-    public native void browserFoundPeerWithDiscoveryInfo(MCNearbyServiceBrowser browser, MCPeerID peerID,
-            NSDictionary<String, String> info);
+    public native void browserFoundPeerWithDiscoveryInfo(@NotNull MCNearbyServiceBrowser browser,
+            @NotNull MCPeerID peerID, @Nullable NSDictionary<String, String> info);
 
     @Generated
     @Selector("browser:lostPeer:")
-    public native void browserLostPeer(MCNearbyServiceBrowser browser, MCPeerID peerID);
+    public native void browserLostPeer(@NotNull MCNearbyServiceBrowser browser, @NotNull MCPeerID peerID);
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -232,22 +241,25 @@ public class MCBrowserViewController extends UIViewController implements MCNearb
      */
     @Generated
     @Selector("initWithBrowser:session:")
-    public native MCBrowserViewController initWithBrowserSession(MCNearbyServiceBrowser browser, MCSession session);
+    public native MCBrowserViewController initWithBrowserSession(@NotNull MCNearbyServiceBrowser browser,
+            @NotNull MCSession session);
 
     @Generated
     @Selector("initWithCoder:")
-    public native MCBrowserViewController initWithCoder(NSCoder coder);
+    public native MCBrowserViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native MCBrowserViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native MCBrowserViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * Create a browser view controller with a service type and a session.
      */
     @Generated
     @Selector("initWithServiceType:session:")
-    public native MCBrowserViewController initWithServiceTypeSession(String serviceType, MCSession session);
+    public native MCBrowserViewController initWithServiceTypeSession(@NotNull String serviceType,
+            @NotNull MCSession session);
 
     /**
      * The maximum number of peers the session should expect.
@@ -265,16 +277,18 @@ public class MCBrowserViewController extends UIViewController implements MCNearb
     @NUInt
     public native long minimumNumberOfPeers();
 
+    @NotNull
     @Generated
     @Selector("session")
     public native MCSession session();
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MCBrowserViewControllerDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) MCBrowserViewControllerDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) MCBrowserViewControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) MCBrowserViewControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

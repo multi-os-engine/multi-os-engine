@@ -7,6 +7,7 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ptr.ConstVoidPtr;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -28,7 +29,7 @@ public final class AudioCodecMagicCookieInfo extends StructObject {
     }
 
     @Generated
-    public AudioCodecMagicCookieInfo(int mMagicCookieSize, ConstVoidPtr mMagicCookie) {
+    public AudioCodecMagicCookieInfo(int mMagicCookieSize, @Nullable ConstVoidPtr mMagicCookie) {
         super(AudioCodecMagicCookieInfo.class);
         setMMagicCookieSize(mMagicCookieSize);
         setMMagicCookie(mMagicCookie);
@@ -42,11 +43,12 @@ public final class AudioCodecMagicCookieInfo extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setMMagicCookieSize(int value);
 
+    @Nullable
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native ConstVoidPtr mMagicCookie();
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setMMagicCookie(ConstVoidPtr value);
+    public native void setMMagicCookie(@Nullable ConstVoidPtr value);
 }

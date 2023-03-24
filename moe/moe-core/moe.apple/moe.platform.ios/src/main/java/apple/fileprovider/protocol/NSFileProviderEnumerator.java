@@ -11,6 +11,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -45,7 +47,7 @@ public interface NSFileProviderEnumerator {
     @IsOptional
     @Selector("currentSyncAnchorWithCompletionHandler:")
     default void currentSyncAnchorWithCompletionHandler(
-            @ObjCBlock(name = "call_currentSyncAnchorWithCompletionHandler") Block_currentSyncAnchorWithCompletionHandler completionHandler) {
+            @NotNull @ObjCBlock(name = "call_currentSyncAnchorWithCompletionHandler") Block_currentSyncAnchorWithCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -53,7 +55,7 @@ public interface NSFileProviderEnumerator {
     @Generated
     public interface Block_currentSyncAnchorWithCompletionHandler {
         @Generated
-        void call_currentSyncAnchorWithCompletionHandler(NSData currentAnchor);
+        void call_currentSyncAnchorWithCompletionHandler(@Nullable NSData currentAnchor);
     }
 
     /**
@@ -90,7 +92,8 @@ public interface NSFileProviderEnumerator {
     @IsOptional
     @Selector("enumerateChangesForObserver:fromSyncAnchor:")
     default void enumerateChangesForObserverFromSyncAnchor(
-            @Mapped(ObjCObjectMapper.class) NSFileProviderChangeObserver observer, NSData syncAnchor) {
+            @NotNull @Mapped(ObjCObjectMapper.class) NSFileProviderChangeObserver observer,
+            @NotNull NSData syncAnchor) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -123,7 +126,7 @@ public interface NSFileProviderEnumerator {
     @Generated
     @Selector("enumerateItemsForObserver:startingAtPage:")
     void enumerateItemsForObserverStartingAtPage(
-            @Mapped(ObjCObjectMapper.class) NSFileProviderEnumerationObserver observer, NSData page);
+            @NotNull @Mapped(ObjCObjectMapper.class) NSFileProviderEnumerationObserver observer, @NotNull NSData page);
 
     @Generated
     @Selector("invalidate")

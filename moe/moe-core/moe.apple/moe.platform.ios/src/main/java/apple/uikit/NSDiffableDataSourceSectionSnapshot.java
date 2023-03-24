@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -60,7 +62,7 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
      */
     @Generated
     @Selector("appendItems:")
-    public native void appendItems(NSArray<_ItemIdentifierType> items);
+    public native void appendItems(@NotNull NSArray<_ItemIdentifierType> items);
 
     /**
      * append items into parent (creating a new Parent+Child relationship if not present; appends to existing children
@@ -68,27 +70,30 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
      */
     @Generated
     @Selector("appendItems:intoParentItem:")
-    public native void appendItemsIntoParentItem(NSArray<_ItemIdentifierType> items,
-            @Mapped(ObjCObjectMapper.class) _ItemIdentifierType parentItem);
+    public native void appendItemsIntoParentItem(@NotNull NSArray<_ItemIdentifierType> items,
+            @Nullable @Mapped(ObjCObjectMapper.class) _ItemIdentifierType parentItem);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -98,17 +103,18 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
      */
     @Generated
     @Selector("collapseItems:")
-    public native void collapseItems(NSArray<_ItemIdentifierType> items);
+    public native void collapseItems(@NotNull NSArray<_ItemIdentifierType> items);
 
     @Generated
     @Selector("containsItem:")
-    public native boolean containsItem(@Mapped(ObjCObjectMapper.class) _ItemIdentifierType item);
+    public native boolean containsItem(@NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType item);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -123,7 +129,7 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
      */
     @Generated
     @Selector("deleteItems:")
-    public native void deleteItems(NSArray<_ItemIdentifierType> items);
+    public native void deleteItems(@NotNull NSArray<_ItemIdentifierType> items);
 
     @Generated
     @Selector("description")
@@ -134,8 +140,9 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
      */
     @Generated
     @Selector("expandItems:")
-    public native void expandItems(NSArray<_ItemIdentifierType> items);
+    public native void expandItems(@NotNull NSArray<_ItemIdentifierType> items);
 
+    @NotNull
     @Generated
     @Selector("expandedItems")
     public native NSArray<_ItemIdentifierType> expandedItems();
@@ -148,7 +155,7 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     @Generated
     @Selector("indexOfItem:")
     @NInt
-    public native long indexOfItem(@Mapped(ObjCObjectMapper.class) _ItemIdentifierType item);
+    public native long indexOfItem(@NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType item);
 
     /**
      * creates an empty snapshot
@@ -198,8 +205,8 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
      */
     @Generated
     @Selector("insertItems:afterItem:")
-    public native void insertItemsAfterItem(NSArray<_ItemIdentifierType> items,
-            @Mapped(ObjCObjectMapper.class) _ItemIdentifierType afterIdentifier);
+    public native void insertItemsAfterItem(@NotNull NSArray<_ItemIdentifierType> items,
+            @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType afterIdentifier);
 
     /**
      * Insert Before will always match the level of the destination item.
@@ -240,23 +247,25 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
      */
     @Generated
     @Selector("insertItems:beforeItem:")
-    public native void insertItemsBeforeItem(NSArray<_ItemIdentifierType> items,
-            @Mapped(ObjCObjectMapper.class) _ItemIdentifierType beforeIdentifier);
+    public native void insertItemsBeforeItem(@NotNull NSArray<_ItemIdentifierType> items,
+            @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType beforeIdentifier);
 
+    @NotNull
     @Generated
     @Selector("insertSnapshot:afterItem:")
     @MappedReturn(ObjCObjectMapper.class)
     public native _ItemIdentifierType insertSnapshotAfterItem(
-            NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> snapshot,
-            @Mapped(ObjCObjectMapper.class) _ItemIdentifierType item);
+            @NotNull NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> snapshot,
+            @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType item);
 
     /**
      * insert a subtree -- represented by a snapshot -- before/after a destination item
      */
     @Generated
     @Selector("insertSnapshot:beforeItem:")
-    public native void insertSnapshotBeforeItem(NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> snapshot,
-            @Mapped(ObjCObjectMapper.class) _ItemIdentifierType item);
+    public native void insertSnapshotBeforeItem(
+            @NotNull NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> snapshot,
+            @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType item);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -276,7 +285,7 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
      */
     @Generated
     @Selector("isExpanded:")
-    public native boolean isExpanded(@Mapped(ObjCObjectMapper.class) _ItemIdentifierType item);
+    public native boolean isExpanded(@NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType item);
 
     @Generated
     @Selector("isSubclassOfClass:")
@@ -284,15 +293,17 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
 
     @Generated
     @Selector("isVisible:")
-    public native boolean isVisible(@Mapped(ObjCObjectMapper.class) _ItemIdentifierType item);
+    public native boolean isVisible(@NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType item);
 
+    @NotNull
     @Generated
     @Selector("items")
     public native NSArray<_ItemIdentifierType> items();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * NSNotFound if not present
@@ -300,7 +311,7 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     @Generated
     @Selector("levelOfItem:")
     @NInt
-    public native long levelOfItem(@Mapped(ObjCObjectMapper.class) _ItemIdentifierType item);
+    public native long levelOfItem(@NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType item);
 
     @Generated
     @Owned
@@ -310,16 +321,18 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     /**
      * nil == root node
      */
+    @Nullable
     @Generated
     @Selector("parentOfChildItem:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native _ItemIdentifierType parentOfChildItem(@Mapped(ObjCObjectMapper.class) _ItemIdentifierType childItem);
+    public native _ItemIdentifierType parentOfChildItem(
+            @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType childItem);
 
     @Generated
     @Selector("replaceChildrenOfParentItem:withSnapshot:")
     public native void replaceChildrenOfParentItemWithSnapshot(
-            @Mapped(ObjCObjectMapper.class) _ItemIdentifierType parentItem,
-            NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> snapshot);
+            @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType parentItem,
+            @NotNull NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> snapshot);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -329,6 +342,7 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @NotNull
     @Generated
     @Selector("rootItems")
     public native NSArray<_ItemIdentifierType> rootItems();
@@ -340,15 +354,17 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     /**
      * snapshot will not include parentItem
      */
+    @NotNull
     @Generated
     @Selector("snapshotOfParentItem:")
     public native NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> snapshotOfParentItem(
-            @Mapped(ObjCObjectMapper.class) _ItemIdentifierType parentItem);
+            @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType parentItem);
 
+    @NotNull
     @Generated
     @Selector("snapshotOfParentItem:includingParentItem:")
     public native NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> snapshotOfParentItemIncludingParentItem(
-            @Mapped(ObjCObjectMapper.class) _ItemIdentifierType parentItem, boolean includingParentItem);
+            @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType parentItem, boolean includingParentItem);
 
     @Generated
     @Selector("superclass")
@@ -359,6 +375,7 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("visibleItems")
     public native NSArray<_ItemIdentifierType> visibleItems();
@@ -370,6 +387,7 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
      * + == expanded
      * - == collapsed
      */
+    @NotNull
     @Generated
     @Selector("visualDescription")
     public native String visualDescription();

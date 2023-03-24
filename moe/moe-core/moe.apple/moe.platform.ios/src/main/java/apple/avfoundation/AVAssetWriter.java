@@ -48,6 +48,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAssetWriter
@@ -116,27 +118,30 @@ public class AVAssetWriter extends NSObject {
      */
     @Generated
     @Selector("assetWriterWithURL:fileType:error:")
-    public static native AVAssetWriter assetWriterWithURLFileTypeError(NSURL outputURL, String outputFileType,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public static native AVAssetWriter assetWriterWithURLFileTypeError(@NotNull NSURL outputURL,
+            @NotNull String outputFileType, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -171,9 +176,10 @@ public class AVAssetWriter extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -225,7 +231,7 @@ public class AVAssetWriter extends NSObject {
      */
     @Generated
     @Selector("addInput:")
-    public native void addInput(AVAssetWriterInput input);
+    public native void addInput(@NotNull AVAssetWriterInput input);
 
     /**
      * addInputGroup:
@@ -246,7 +252,7 @@ public class AVAssetWriter extends NSObject {
      */
     @Generated
     @Selector("addInputGroup:")
-    public native void addInputGroup(AVAssetWriterInputGroup inputGroup);
+    public native void addInputGroup(@NotNull AVAssetWriterInputGroup inputGroup);
 
     /**
      * [@property] availableMediaTypes
@@ -255,6 +261,7 @@ public class AVAssetWriter extends NSObject {
      * 
      * Some media types may not be accepted within the file format with which an AVAssetWriter was initialized.
      */
+    @NotNull
     @Generated
     @Selector("availableMediaTypes")
     public native NSArray<String> availableMediaTypes();
@@ -274,7 +281,7 @@ public class AVAssetWriter extends NSObject {
      */
     @Generated
     @Selector("canAddInput:")
-    public native boolean canAddInput(AVAssetWriterInput input);
+    public native boolean canAddInput(@NotNull AVAssetWriterInput input);
 
     /**
      * canAddInputGroup:
@@ -300,7 +307,7 @@ public class AVAssetWriter extends NSObject {
      */
     @Generated
     @Selector("canAddInputGroup:")
-    public native boolean canAddInputGroup(AVAssetWriterInputGroup inputGroup);
+    public native boolean canAddInputGroup(@NotNull AVAssetWriterInputGroup inputGroup);
 
     /**
      * canApplyOutputSettings:forMediaType:
@@ -324,7 +331,8 @@ public class AVAssetWriter extends NSObject {
      */
     @Generated
     @Selector("canApplyOutputSettings:forMediaType:")
-    public native boolean canApplyOutputSettingsForMediaType(NSDictionary<String, ?> outputSettings, String mediaType);
+    public native boolean canApplyOutputSettingsForMediaType(@Nullable NSDictionary<String, ?> outputSettings,
+            @NotNull String mediaType);
 
     /**
      * cancelWriting
@@ -362,6 +370,7 @@ public class AVAssetWriter extends NSObject {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("directoryForTemporaryFiles")
     public native NSURL directoryForTemporaryFiles();
@@ -409,6 +418,7 @@ public class AVAssetWriter extends NSObject {
      * its output file. If the receiver's status is not AVAssetWriterStatusFailed, the value of this property is nil.
      * This property is thread safe.
      */
+    @Nullable
     @Generated
     @Selector("error")
     public native NSError error();
@@ -465,7 +475,7 @@ public class AVAssetWriter extends NSObject {
     @Generated
     @Selector("finishWritingWithCompletionHandler:")
     public native void finishWritingWithCompletionHandler(
-            @ObjCBlock(name = "call_finishWritingWithCompletionHandler") Block_finishWritingWithCompletionHandler handler);
+            @NotNull @ObjCBlock(name = "call_finishWritingWithCompletionHandler") Block_finishWritingWithCompletionHandler handler);
 
     @Generated
     @Selector("init")
@@ -492,8 +502,8 @@ public class AVAssetWriter extends NSObject {
      */
     @Generated
     @Selector("initWithURL:fileType:error:")
-    public native AVAssetWriter initWithURLFileTypeError(NSURL outputURL, String outputFileType,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native AVAssetWriter initWithURLFileTypeError(@NotNull NSURL outputURL, @NotNull String outputFileType,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] inputGroups
@@ -505,6 +515,7 @@ public class AVAssetWriter extends NSObject {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("inputGroups")
     public native NSArray<? extends AVAssetWriterInputGroup> inputGroups();
@@ -517,6 +528,7 @@ public class AVAssetWriter extends NSObject {
      * The value of this property is an NSArray containing concrete instances of AVAssetWriterInput. Inputs can be added
      * to the receiver using the addInput: method.
      */
+    @NotNull
     @Generated
     @Selector("inputs")
     public native NSArray<? extends AVAssetWriterInput> inputs();
@@ -531,6 +543,7 @@ public class AVAssetWriter extends NSObject {
      * 
      * This property cannot be set after writing has started.
      */
+    @NotNull
     @Generated
     @Selector("metadata")
     public native NSArray<? extends AVMetadataItem> metadata();
@@ -572,6 +585,7 @@ public class AVAssetWriter extends NSObject {
      * 
      * The UTI of the file format of the file for which the instance of AVAssetWriter was initialized for writing.
      */
+    @NotNull
     @Generated
     @Selector("outputFileType")
     public native String outputFileType();
@@ -584,6 +598,7 @@ public class AVAssetWriter extends NSObject {
      * You may use [[UTType typeWithIdentifier:outputFileType] preferredFilenameExtension] to obtain an appropriate path
      * extension for the outputFileType you have specified. For more information, see <UniformTypeIdentifiers/UTType.h>.
      */
+    @NotNull
     @Generated
     @Selector("outputURL")
     public native NSURL outputURL();
@@ -628,7 +643,7 @@ public class AVAssetWriter extends NSObject {
      */
     @Generated
     @Selector("setDirectoryForTemporaryFiles:")
-    public native void setDirectoryForTemporaryFiles(NSURL value);
+    public native void setDirectoryForTemporaryFiles(@Nullable NSURL value);
 
     /**
      * [@property] metadata
@@ -642,7 +657,7 @@ public class AVAssetWriter extends NSObject {
      */
     @Generated
     @Selector("setMetadata:")
-    public native void setMetadata(NSArray<? extends AVMetadataItem> value);
+    public native void setMetadata(@NotNull NSArray<? extends AVMetadataItem> value);
 
     /**
      * [@property] movieFragmentInterval
@@ -811,6 +826,7 @@ public class AVAssetWriter extends NSObject {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -855,7 +871,7 @@ public class AVAssetWriter extends NSObject {
      */
     @Generated
     @Selector("initWithContentType:")
-    public native AVAssetWriter initWithContentType(UTType outputContentType);
+    public native AVAssetWriter initWithContentType(@NotNull UTType outputContentType);
 
     /**
      * [@property] initialMovieFragmentSequenceNumber
@@ -916,6 +932,7 @@ public class AVAssetWriter extends NSObject {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("outputFileTypeProfile")
     public native String outputFileTypeProfile();
@@ -969,7 +986,7 @@ public class AVAssetWriter extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) AVAssetWriterDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) AVAssetWriterDelegate value);
 
     /**
      * [@property] delegate
@@ -981,7 +998,7 @@ public class AVAssetWriter extends NSObject {
      * API-Since: 14.0
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) AVAssetWriterDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) AVAssetWriterDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -1051,7 +1068,7 @@ public class AVAssetWriter extends NSObject {
      */
     @Generated
     @Selector("setOutputFileTypeProfile:")
-    public native void setOutputFileTypeProfile(String value);
+    public native void setOutputFileTypeProfile(@Nullable String value);
 
     /**
      * [@property] preferredOutputSegmentInterval

@@ -11,6 +11,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import apple.foundation.NSArray;
 import apple.foundation.NSValue;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] AVPlayerPlaybackCoordinatorDelegate
@@ -33,11 +34,12 @@ public interface AVPlayerPlaybackCoordinatorDelegate {
      * e.g., because one participant is using a local cache and the other a remote URL.
      * If the method is not implemented, the coordinator will derive the identifier from the item's asset.
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("playbackCoordinator:identifierForPlayerItem:")
-    default String playbackCoordinatorIdentifierForPlayerItem(AVPlayerPlaybackCoordinator coordinator,
-            AVPlayerItem playerItem) {
+    default String playbackCoordinatorIdentifierForPlayerItem(@NotNull AVPlayerPlaybackCoordinator coordinator,
+            @NotNull AVPlayerItem playerItem) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -65,11 +67,12 @@ public interface AVPlayerPlaybackCoordinatorDelegate {
      * 
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("playbackCoordinator:interstitialTimeRangesForPlayerItem:")
     default NSArray<? extends NSValue> playbackCoordinatorInterstitialTimeRangesForPlayerItem(
-            AVPlayerPlaybackCoordinator coordinator, AVPlayerItem playerItem) {
+            @NotNull AVPlayerPlaybackCoordinator coordinator, @NotNull AVPlayerItem playerItem) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

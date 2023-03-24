@@ -34,6 +34,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] AVAssetDownloadDelegate
@@ -68,8 +69,8 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:assetDownloadTask:didFinishDownloadingToURL:")
-    default void URLSessionAssetDownloadTaskDidFinishDownloadingToURL(NSURLSession session,
-            AVAssetDownloadTask assetDownloadTask, NSURL location) {
+    default void URLSessionAssetDownloadTaskDidFinishDownloadingToURL(@NotNull NSURLSession session,
+            @NotNull AVAssetDownloadTask assetDownloadTask, @NotNull NSURL location) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -98,8 +99,9 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
     @IsOptional
     @Selector("URLSession:assetDownloadTask:didLoadTimeRange:totalTimeRangesLoaded:timeRangeExpectedToLoad:")
     default void URLSessionAssetDownloadTaskDidLoadTimeRangeTotalTimeRangesLoadedTimeRangeExpectedToLoad(
-            NSURLSession session, AVAssetDownloadTask assetDownloadTask, @ByValue CMTimeRange timeRange,
-            NSArray<? extends NSValue> loadedTimeRanges, @ByValue CMTimeRange timeRangeExpectedToLoad) {
+            @NotNull NSURLSession session, @NotNull AVAssetDownloadTask assetDownloadTask,
+            @ByValue CMTimeRange timeRange, @NotNull NSArray<? extends NSValue> loadedTimeRanges,
+            @ByValue CMTimeRange timeRangeExpectedToLoad) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -122,8 +124,8 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:assetDownloadTask:didResolveMediaSelection:")
-    default void URLSessionAssetDownloadTaskDidResolveMediaSelection(NSURLSession session,
-            AVAssetDownloadTask assetDownloadTask, AVMediaSelection resolvedMediaSelection) {
+    default void URLSessionAssetDownloadTaskDidResolveMediaSelection(@NotNull NSURLSession session,
+            @NotNull AVAssetDownloadTask assetDownloadTask, @NotNull AVMediaSelection resolvedMediaSelection) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -144,8 +146,9 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:aggregateAssetDownloadTask:didCompleteForMediaSelection:")
-    default void URLSessionAggregateAssetDownloadTaskDidCompleteForMediaSelection(NSURLSession session,
-            AVAggregateAssetDownloadTask aggregateAssetDownloadTask, AVMediaSelection mediaSelection) {
+    default void URLSessionAggregateAssetDownloadTaskDidCompleteForMediaSelection(@NotNull NSURLSession session,
+            @NotNull AVAggregateAssetDownloadTask aggregateAssetDownloadTask,
+            @NotNull AVMediaSelection mediaSelection) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -176,9 +179,9 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
     @IsOptional
     @Selector("URLSession:aggregateAssetDownloadTask:didLoadTimeRange:totalTimeRangesLoaded:timeRangeExpectedToLoad:forMediaSelection:")
     default void URLSessionAggregateAssetDownloadTaskDidLoadTimeRangeTotalTimeRangesLoadedTimeRangeExpectedToLoadForMediaSelection(
-            NSURLSession session, AVAggregateAssetDownloadTask aggregateAssetDownloadTask,
-            @ByValue CMTimeRange timeRange, NSArray<? extends NSValue> loadedTimeRanges,
-            @ByValue CMTimeRange timeRangeExpectedToLoad, AVMediaSelection mediaSelection) {
+            @NotNull NSURLSession session, @NotNull AVAggregateAssetDownloadTask aggregateAssetDownloadTask,
+            @ByValue CMTimeRange timeRange, @NotNull NSArray<? extends NSValue> loadedTimeRanges,
+            @ByValue CMTimeRange timeRangeExpectedToLoad, @NotNull AVMediaSelection mediaSelection) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -202,8 +205,8 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:aggregateAssetDownloadTask:willDownloadToURL:")
-    default void URLSessionAggregateAssetDownloadTaskWillDownloadToURL(NSURLSession session,
-            AVAggregateAssetDownloadTask aggregateAssetDownloadTask, NSURL location) {
+    default void URLSessionAggregateAssetDownloadTaskWillDownloadToURL(@NotNull NSURLSession session,
+            @NotNull AVAggregateAssetDownloadTask aggregateAssetDownloadTask, @NotNull NSURL location) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -224,8 +227,8 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:assetDownloadTask:willDownloadVariants:")
-    default void URLSessionAssetDownloadTaskWillDownloadVariants(NSURLSession session,
-            AVAssetDownloadTask assetDownloadTask, NSArray<? extends AVAssetVariant> variants) {
+    default void URLSessionAssetDownloadTaskWillDownloadVariants(@NotNull NSURLSession session,
+            @NotNull AVAssetDownloadTask assetDownloadTask, @NotNull NSArray<? extends AVAssetVariant> variants) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

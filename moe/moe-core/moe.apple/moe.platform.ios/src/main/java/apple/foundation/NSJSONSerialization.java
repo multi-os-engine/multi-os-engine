@@ -37,6 +37,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A class for converting JSON to Foundation objects and converting Foundation objects to JSON.
@@ -73,21 +75,23 @@ public class NSJSONSerialization extends NSObject {
      * UTF-32LE, UTF-32BE. The data may or may not have a BOM. The most efficient encoding to use for parsing is UTF-8,
      * so if you have a choice in encoding the data passed to this method, use UTF-8.
      */
+    @Nullable
     @Generated
     @Selector("JSONObjectWithData:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object JSONObjectWithDataOptionsError(NSData data, @NUInt long opt,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native Object JSONObjectWithDataOptionsError(@NotNull NSData data, @NUInt long opt,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Create a JSON object from JSON data stream. The stream should be opened and configured. All other behavior of
      * this method is the same as the JSONObjectWithData:options:error: method.
      */
+    @Nullable
     @Generated
     @Selector("JSONObjectWithStream:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object JSONObjectWithStreamOptionsError(NSInputStream stream, @NUInt long opt,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native Object JSONObjectWithStreamOptionsError(@NotNull NSInputStream stream, @NUInt long opt,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -105,22 +109,25 @@ public class NSJSONSerialization extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -132,10 +139,11 @@ public class NSJSONSerialization extends NSObject {
      * occurs, the error parameter will be set and the return value will be nil. The resulting data is a encoded in
      * UTF-8.
      */
+    @Nullable
     @Generated
     @Selector("dataWithJSONObject:options:error:")
-    public static native NSData dataWithJSONObjectOptionsError(@Mapped(ObjCObjectMapper.class) Object obj,
-            @NUInt long opt, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSData dataWithJSONObjectOptionsError(@NotNull @Mapped(ObjCObjectMapper.class) Object obj,
+            @NUInt long opt, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("debugDescription")
@@ -179,11 +187,12 @@ public class NSJSONSerialization extends NSObject {
      */
     @Generated
     @Selector("isValidJSONObject:")
-    public static native boolean isValidJSONObject(@Mapped(ObjCObjectMapper.class) Object obj);
+    public static native boolean isValidJSONObject(@NotNull @Mapped(ObjCObjectMapper.class) Object obj);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -219,8 +228,9 @@ public class NSJSONSerialization extends NSObject {
     @Generated
     @Selector("writeJSONObject:toStream:options:error:")
     @NInt
-    public static native long writeJSONObjectToStreamOptionsError(@Mapped(ObjCObjectMapper.class) Object obj,
-            NSOutputStream stream, @NUInt long opt, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native long writeJSONObjectToStreamOptionsError(@NotNull @Mapped(ObjCObjectMapper.class) Object obj,
+            @NotNull NSOutputStream stream, @NUInt long opt,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("init")
