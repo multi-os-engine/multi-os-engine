@@ -57,7 +57,8 @@ ext {
     external.libimobiledevice.jnipath = file("${external.libimobiledevice.root}/build/macos")
 }
 for (target in [[name: 'macos', outputs: ["${external.libimobiledevice.root}/build/macos/libimobiledevice.dylib"]],
-                [name: 'windows', outputs: ["${external.libimobiledevice.root}/build/windows/x86_64-w64-mingw32/libimobiledevice.dll"]]]) {
+                [name: 'windows', outputs: ["${external.libimobiledevice.root}/build/windows/x86_64-w64-mingw32/libimobiledevice.dll"]],
+                [name: 'linux', outputs: ["${external.libimobiledevice.root}/build/linux/libimobiledevice.so"]]]) {
     external.libimobiledevice[target.name] = target.outputs.collect { file(it) }
 
     task("prebuild_libimobiledevice_${target.name}", type: Exec) {
@@ -86,6 +87,7 @@ for (target in [[name: 'ios', outputs: ["${external.natj.root}/natj-ios/build/xc
                                         "${external.natj.root}/natj-ios/build/xcode/Release-iphonesimulator/libnatj.a"]],
                 [name: 'mac', outputs: ["${external.natj.root}/natj-mac/build/xcode/Release/libnatj.dylib"]],
                 [name: 'win', outputs: ["${external.natj.root}/natj-win/build/Release-Win64/natj.dll"]],
+                [name: 'linux', outputs: ["${external.natj.root}/natj-linux/build/Release/libnatj.so"]],
                 [name: 'api', outputs: [external.natj.jar.absolutePath], task: 'jar']]) {
     external.natj[target.name] = target.outputs.collect { file(it) }
 
