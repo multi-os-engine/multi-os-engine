@@ -23,11 +23,14 @@ apply plugin: 'java'
 sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
 
-if (!rootProject.hasProperty('moe.tools.sdk.win_only')) {
+if (!rootProject.hasProperty('moe.tools.sdk.exclude_mac')) {
     tasks.classes.dependsOn ':ext_natj_mac'
 }
-if (!rootProject.hasProperty('moe.tools.sdk.mac_only')) {
+if (!rootProject.hasProperty('moe.tools.sdk.exclude_win')) {
     tasks.classes.dependsOn ':ext_natj_win'
+}
+if (!rootProject.hasProperty('moe.tools.sdk.exclude_linux')) {
+    tasks.classes.dependsOn ':ext_natj_linux'
 }
 tasks.classes.dependsOn ':ext_natj_api'
 
