@@ -32,6 +32,10 @@ limitations under the License.
 #include <dlfcn.h>
 #endif
 
+#ifdef __linux__
+#include <functional>
+#endif
+
 #include <mutex>
 #include <vector>
 
@@ -405,6 +409,18 @@ JNIEXPORT jstring JNICALL
  */
 JNIEXPORT jboolean JNICALL
     Java_org_moe_natj_general_NatJ_loadFramework(JNIEnv* env,
+                                                            jclass clazz,
+                                                            jstring path);
+
+/**
+ * On macos symbols are by default loaded with "RTLD_GLOBAL", on linux with "RTLD_LOCAL".
+ * This leads to the error, that NatJ can't find the symbols of librarys loaded with "System.load".
+ * This is the workaround.
+ *
+ * @param path path to library to load
+ * */
+JNIEXPORT jboolean JNICALL
+    Java_org_moe_natj_general_NatJ_loadGlobalLinux(JNIEnv* env,
                                                             jclass clazz,
                                                             jstring path);
 }

@@ -577,7 +577,7 @@ jstring JNICALL Java_org_moe_natj_general_NatJ_getPlatformName(JNIEnv* env,
 
 jstring JNICALL Java_org_moe_natj_general_NatJ_getSimulatorFrameworkPath(JNIEnv* env,
                                                                          jclass clazz) {
-  
+
 #ifdef __APPLE__
 #if TARGET_OS_SIMULATOR
   Dl_info di;
@@ -608,6 +608,20 @@ jboolean JNICALL Java_org_moe_natj_general_NatJ_loadFramework(JNIEnv* env,
 #else
   // This loader should be used only for loading
   // frameworks and only for Darwin systems
+  return false;
+#endif
+}
+
+jboolean JNICALL Java_org_moe_natj_general_NatJ_loadGlobalLinux(JNIEnv* env,
+                                                                 jclass clazz,
+                                                                 jstring path) {
+#ifdef __linux__
+  const char* cPath = env->GetStringUTFChars(path, NULL);
+  void* hdl = dlopen(cPath, RTLD_LAZY | RTLD_GLOBAL);
+  env->ReleaseStringUTFChars(path, cPath);
+  return hdl != NULL;
+#else
+  // This loader should be used only for linux
   return false;
 #endif
 }
