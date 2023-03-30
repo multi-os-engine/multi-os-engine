@@ -73,8 +73,9 @@ This requires debug builds of the frameworks, for more information on how to cre
 
 By default the SDK contains tools executables for running on both Windows and macOS. To limit the SDK to contain tools for one single paltform we provide the following properties:
 
-- `moe.tools.sdk.win_only`: build and pack SDK tools for Windows only.
-- `moe.tools.sdk.mac_only`: build and pack SDK tools for macOS only.
+- `moe.tools.sdk.exclude_mac`: don't build and pack SDK tools for mac.
+- `moe.tools.sdk.exclude_win`: don't build and pack SDK tools for windows.
+- `moe.tools.sdk.exclude_linux`: don't build and pack SDK tools for linux.
 
 ## Notes
 
