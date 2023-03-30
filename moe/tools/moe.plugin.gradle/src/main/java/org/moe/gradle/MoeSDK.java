@@ -371,6 +371,7 @@ public class MoeSDK {
             validate(FIL, path, "tools/ios-device.jar");
             validate(FIL, path, "tools/java8support.jar");
             validate(DIR, path, "tools/macosx");
+            validate(DIR, path, "tools/linux/x86_64");
             validate(FIL, path, "tools/preloaded-classes");
             validate(FIL, path, "tools/proguard-full.cfg");
             validate(FIL, path, "tools/proguard.cfg");
