@@ -5,7 +5,7 @@ export CFLAGS="--sysroot=${SYSROOT}"
 export LDFLAGS="--sysroot=${SYSROOT} -L${SYSROOT}/usr/lib"
 
 export LIBFFI_STATIC=$MOE_PREBUILTS_DIR/external/libffi/build/linux/x86_64/lib64/libffi.a
-export LIBFFI_HEADER=$MOE_PREBUILTS_DIR/external/libffi/build/linux/x86_64/lib/libffi-3.99999/include
+export LIBFFI_HEADER=$MOE_PREBUILTS_DIR/external/libffi/build/linux/x86_64/include
 
 export CONFIGURATION=$1
 
