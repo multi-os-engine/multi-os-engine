@@ -18,9 +18,7 @@ package org.moe.prebuilts;
 
 import org.gradle.api.GradleException;
 import org.gradle.api.file.CopySpec;
-import org.gradle.api.tasks.Input;
-import org.gradle.api.tasks.InputDirectory;
-import org.gradle.api.tasks.OutputDirectory;
+import org.gradle.api.tasks.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -57,6 +55,7 @@ public class Prebuild extends BaseTask {
         return getProject().getRootProject().file(sourcePath + "/build/" + targetName);
     }
 
+    @Input
     public String getSourcePath() {
         return sourcePath;
     }
@@ -65,6 +64,7 @@ public class Prebuild extends BaseTask {
         this.sourcePath = sourcePath;
     }
 
+    @Input
     public int getRamdiskSizeMB() {
         return ramdiskSizeMB;
     }
@@ -91,6 +91,8 @@ public class Prebuild extends BaseTask {
         this.targetName = targetName;
     }
 
+    // TODO: 13.06.2023 This is bad, since it won't rerun the task if it changes
+    @Internal
     public CopySpec getPreBuildCopySpec() {
         return preBuildCopySpec;
     }
