@@ -24,9 +24,9 @@ sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
 
 dependencies {
-    testCompile 'junit:junit:[4,)'
-    compile rootProject
-    testCompile files(System.getProperty("java.home") + "/../lib/tools.jar")
+    testImplementation 'junit:junit:[4,)'
+    implementation rootProject
+    testImplementation files(System.getProperty("java.home") + "/../lib/tools.jar")
 }
 
 task processTestsClasses(type: JavaExec) {

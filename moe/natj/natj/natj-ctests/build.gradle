@@ -24,8 +24,8 @@ sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
 
 dependencies {
-    testCompile 'junit:junit:[4,)'
-    testCompile rootProject
+    testImplementation 'junit:junit:[4,)'
+    testImplementation rootProject
 }
 
 tasks.withType(Test) {
@@ -46,7 +46,7 @@ task ansibleTestWinPrepare(type: Tar) {
     dependsOn ":natj-win:build_TestClassesC_${nativeConfiguration}_Win64"
     // dependsOn ":natj-win:build_TestClassesC_${nativeConfiguration}_Win32"
 
-    archiveName = "win-test.tar"
+    archiveBaseName = "win-test"
     into('classes') {
         from 'build/classes/test'
     }

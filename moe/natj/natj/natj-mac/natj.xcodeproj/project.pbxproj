@@ -1505,6 +1505,7 @@
 				HEADER_SEARCH_PATHS = "\"$(MOE_PREBUILTS_DIR)/external/libffi/build/macos/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include\"";
 				LD_DYLIB_INSTALL_NAME = "@rpath/libnatj.dylib";
 				LIBRARY_SEARCH_PATHS = "\"$(MOE_PREBUILTS_DIR)/external/libffi/build/macos/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MOE_PREBUILTS_DIR = "$(SRCROOT)/../../../../prebuilts";
 				OTHER_LDFLAGS = "-lffi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1520,6 +1521,7 @@
 				HEADER_SEARCH_PATHS = "\"$(MOE_PREBUILTS_DIR)/external/libffi/build/macos/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include\"";
 				LD_DYLIB_INSTALL_NAME = "@rpath/libnatj.dylib";
 				LIBRARY_SEARCH_PATHS = "\"$(MOE_PREBUILTS_DIR)/external/libffi/build/macos/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MOE_PREBUILTS_DIR = "$(SRCROOT)/../../../../prebuilts";
 				OTHER_LDFLAGS = "-lffi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
