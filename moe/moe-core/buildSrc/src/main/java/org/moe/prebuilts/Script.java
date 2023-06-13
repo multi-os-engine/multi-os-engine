@@ -17,6 +17,9 @@ limitations under the License.
 package org.moe.prebuilts;
 
 import org.gradle.api.GradleException;
+import org.gradle.api.tasks.Input;
+import org.gradle.api.tasks.Internal;
+import org.gradle.api.tasks.Optional;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -77,6 +80,7 @@ public class Script extends BaseTask {
         this.tempWorkDir = tempWorkDir;
     }
 
+    @Internal
     public File getWorkDir() {
         if (tempWorkDir == null) {
             throw new GradleException("workDir is not set");
@@ -84,6 +88,8 @@ public class Script extends BaseTask {
         return getProject().file(tempWorkDir);
     }
 
+    @Input
+    @Optional
     public String getFailureMessage() {
         return failureMessage;
     }

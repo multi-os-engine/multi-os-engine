@@ -38,11 +38,11 @@ configurations {
 }
 
 dependencies {
-    compile group: 'junit', name: 'junit', version: '4.12'
+    implementation group: 'junit', name: 'junit', version: '4.12'
     included group: 'junit', name: 'junit', version: '4.12'
 
-    compile files(rootProject.external.natj.jar)
-    compile project(':moe.apple:moe.platform.ios')
+    implementation files(rootProject.external.natj.jar)
+    implementation project(':moe.apple:moe.platform.ios')
 }
 
 tasks.javadoc {
@@ -52,19 +52,19 @@ tasks.javadoc {
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
-    baseName 'moe-ios-junit'
-    classifier = 'javadoc'
+    archiveBaseName = 'moe-ios-junit'
+    archiveClassifier = 'javadoc'
     from javadoc.destinationDir
 }
 
 task sourceJar(type: Jar) {
-    baseName 'moe-ios-junit'
-    classifier = 'sources'
+    archiveBaseName = 'moe-ios-junit'
+    archiveClassifier = 'sources'
     from sourceSets.main.allSource
 }
 
 jar {
-    baseName 'moe-ios-junit'
+    archiveBaseName = 'moe-ios-junit'
     from { configurations.included.collect { it.isDirectory() ? it : zipTree(it) } }
     exclude 'META-INF/*.SF'
 }

@@ -219,22 +219,23 @@ task jarjaredCoreBaseJar(dependsOn: compileCoreJava) {
 }
 
 task coreJar(type: Jar, dependsOn: jarjaredCoreBaseJar) {
-    baseName 'moe-core'
+    archiveBaseName = 'moe-core'
 
     from zipTree(jarjaredCoreBaseJar.outputs.files[0])
     from { [rootProject.file('LICENSE'), rootProject.file('NOTICE')] }
-    destinationDir file('build/libs/core')
+    getDestinationDirectory().set(file('build/libs/core'))
     from(file('../eula/LICENSE.TXT')) { into 'META-INF' }
     includeEmptyDirs false
 }
 
 task coreSourcesJar(type: Jar, dependsOn: compileCoreJava) {
-    baseName 'moe-core'
-    classifier 'sources'
+    dependsOn ':moe.apple:moe.core.java:generateConscryptFiles', ':moe.apple:moe.core.java:copyICUDataFiles'
+    archiveBaseName = 'moe-core'
+    archiveClassifier = 'sources'
 
     from rootProject.file('LICENSE'), rootProject.file('NOTICE')
     from sourceSets.core.allJava
-    destinationDir file('build/libs/core')
+    getDestinationDirectory().set(file('build/libs/core'))
     from(file('../eula/LICENSE.TXT')) { into 'META-INF' }
     includeEmptyDirs false
 }
@@ -246,6 +247,7 @@ def javaDocTitle = "moe.ios.core API"
  ******************************************************************************/
 
 task coreJavadoc(type: Javadoc) {
+    dependsOn ':moe.apple:moe.core.java:generateConscryptFiles', ':moe.apple:moe.core.java:copyICUDataFiles'
     title = javaDocTitle
     source sourceSets.core.allJava
     destinationDir = file('build/docs/coreJavadoc')
@@ -257,24 +259,26 @@ task coreJavadoc(type: Javadoc) {
 }
 
 task coreJavadocJar(type: Jar, dependsOn: coreJavadoc) {
-    baseName 'moe-core'
-    classifier 'javadoc'
+    archiveBaseName = 'moe-core'
+    archiveClassifier = 'javadoc'
 
     from coreJavadoc.destinationDir
     from { [rootProject.file('LICENSE'), rootProject.file('NOTICE')] }
-    destinationDir file('build/libs/core')
+    getDestinationDirectory().set(file('build/libs/core'))
     from(file('../eula/LICENSE.TXT')) { into 'META-INF' }
 }
 
 task coreCertificatesZip(type: Zip) {
-    baseName 'moe-core'
-    classifier 'certificates'
+    archiveBaseName = 'moe-core'
+    archiveClassifier = 'certificates'
 
     into('.') {
         from files("${android_path}/system/ca-certificates/files")
     }
-    destinationDir file('build/libs/core')
+    getDestinationDirectory().set(file('build/libs/core'))
 }
+
+processCoreResources.dependsOn(':moe.apple:moe.core.java:copyICUDataFiles')
 
 artifacts {
     archives coreJar
