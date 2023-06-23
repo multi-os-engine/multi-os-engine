@@ -47,8 +47,13 @@ object ClassValidator {
     private inline fun processClass(reader: ClassReader, chain: (ClassVisitor) -> ClassVisitor): ByteArray {
         val writer = ClassWriter(ClassWriter.COMPUTE_MAXS)
 
-        val header = chain(writer)
-        reader.accept(header, 0)
+        if (reader.className.startsWith("java/")) {
+            // We don't want to process classes from java.*
+            reader.accept(writer, 0)
+        } else {
+            val header = chain(writer)
+            reader.accept(header, 0)
+        }
 
         return writer.toByteArray()
     }
