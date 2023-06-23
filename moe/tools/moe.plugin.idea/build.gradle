@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 plugins {
-    id "org.jetbrains.intellij" version "1.7.0"
+    id "org.jetbrains.intellij" version "1.14.1"
     id "org.jetbrains.kotlin.jvm"
 }
 
@@ -50,16 +50,16 @@ publishPlugin {
 }
 
 dependencies {
-    compile project(':moe.tools.common')
-    compile project(':moe.document.pbxproj')
-    compile project(':moe.generator.project')
-    compile project(':moe.tools.natjgen')
-    compile project(':moe.plugin.common')
+    implementation project(':moe.tools.common')
+    implementation project(':moe.document.pbxproj')
+    implementation project(':moe.generator.project')
+    implementation project(':moe.tools.natjgen')
+    implementation project(':moe.plugin.common')
 
     implementation "org.jetbrains.kotlin:kotlin-reflect"
 
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.+'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.+'
 }
 
 publishing {
