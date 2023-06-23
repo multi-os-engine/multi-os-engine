@@ -1,0 +1,20 @@
+def createTask(configuration) {
+    tasks.create("build_natj_${configuration}_linux", Exec) {
+        inputs.dir("../src/")
+        outputs.file("build/${configuration}/libnatj.so")
+        dependsOn ":prebuild_libffi_linux"
+
+        environment 'MOE_PREBUILTS_DIR', file('../../../../prebuilts').absolutePath
+        environment 'BUILD_DIR', buildDir.absolutePath
+
+        executable 'sh'
+        args 'build_linux.sh'
+        args "${configuration}"
+    }
+}
+
+// Create build task
+task build {
+    dependsOn createTask("Release")
+    dependsOn createTask("Debug")
+}

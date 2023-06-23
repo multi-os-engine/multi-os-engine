@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-for (target in ['ios', 'macos', 'windows', 'ndk']) {
+for (target in ['ios', 'macos', 'windows', 'ndk', 'linux']) {
     task("prebuild_libffi_$target", type: Exec) {
         workingDir '../../../prebuilts'
         executable './gradlew'
@@ -48,7 +48,7 @@ sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
 
 dependencies {
-    testCompile 'junit:junit:[4,)'
+    testImplementation 'junit:junit:[4,)'
 }
 
 tasks.withType(Test) {
@@ -72,7 +72,7 @@ test {
 }
 
 task sourcesJar(type: Jar) {
-    classifier = 'sources'
+    archiveClassifier = 'sources'
     from sourceSets.main.allSource
 }
 

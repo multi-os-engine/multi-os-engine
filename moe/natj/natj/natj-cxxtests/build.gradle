@@ -24,10 +24,10 @@ sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
 
 dependencies {
-    testCompile 'junit:junit:[4,)'
-    testCompile rootProject
-    testCompile project(':natj-processor')
-    testCompile project(':natj-cxxtests:dyntype')
+    testImplementation 'junit:junit:[4,)'
+    testImplementation rootProject
+    testImplementation project(':natj-processor')
+    testImplementation project(':natj-cxxtests:dyntype')
 }
 
 task processCxxTests(type: JavaExec) {
@@ -84,7 +84,7 @@ task ansibleTestWinPrepare(type: Tar) {
     dependsOn ":natj-win:build_TestClassesCxx_${nativeConfiguration}_Win64"
     // dependsOn ":natj-win:build_TestClassesCxx_${nativeConfiguration}_Win32"
 
-    archiveName = "win-test.tar"
+    archiveBaseName = "win-test"
     into('classes') {
         from 'build/classes/processedCxxTest'
     }

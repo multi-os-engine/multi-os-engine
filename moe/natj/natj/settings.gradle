@@ -19,6 +19,7 @@ include ':natj-ios'
 include ':natj-mac'
 include ':natj-win'
 include ':natj-ndk'
+include ':natj-linux'
 
 // Launguage support
 include ':natj-processor'

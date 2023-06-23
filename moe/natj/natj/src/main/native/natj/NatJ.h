@@ -32,6 +32,10 @@ limitations under the License.
 #include <dlfcn.h>
 #endif
 
+#ifdef __linux__
+#include <functional>
+#endif
+
 #include <mutex>
 #include <vector>
 
@@ -182,11 +186,14 @@ limitations under the License.
  * If ObjCRuntime is disabled, this does nothing.
  */
 #ifdef __APPLE__
-#define HANDLE_JAVA_EXCEPTION(env)                      \
-  jthrowable JAVA_EXC = env->ExceptionOccurred();       \
-  if (JAVA_EXC) {                                       \
-    JAVA_EXC = (jthrowable)env->NewGlobalRef(JAVA_EXC); \
-    env->ExceptionClear();                              \
+#define HANDLE_JAVA_EXCEPTION(env)                          \
+  jthrowable JAVA_EXC = NULL;                               \
+  if (hasObjCRuntimeBeenInitialized()) {                    \
+       JAVA_EXC = env->ExceptionOccurred();                 \
+      if (JAVA_EXC) {                                       \
+        JAVA_EXC = (jthrowable)env->NewGlobalRef(JAVA_EXC); \
+        env->ExceptionClear();                              \
+      }                                                     \
   }
 #else
 #define HANDLE_JAVA_EXCEPTION(env) jthrowable JAVA_EXC = NULL
@@ -404,6 +411,18 @@ JNIEXPORT jboolean JNICALL
     Java_org_moe_natj_general_NatJ_loadFramework(JNIEnv* env,
                                                             jclass clazz,
                                                             jstring path);
+
+/**
+ * On macos symbols are by default loaded with "RTLD_GLOBAL", on linux with "RTLD_LOCAL".
+ * This leads to the error, that NatJ can't find the symbols of librarys loaded with "System.load".
+ * This is the workaround.
+ *
+ * @param path path to library to load
+ * */
+JNIEXPORT jboolean JNICALL
+    Java_org_moe_natj_general_NatJ_loadGlobalLinux(JNIEnv* env,
+                                                            jclass clazz,
+                                                            jstring path);
 }
 
 extern jclass gObjectClass;
@@ -508,7 +527,6 @@ extern jmethodID gIsDefaultMethodMethod;
 extern jmethodID gGetReturnTypeMethod;
 extern jmethodID gGetParameterTypesMethod;
 extern jmethodID gGetMethodNameMethod;
-extern jmethodID gGetLibraryMethod;
 extern jmethodID gLookUpLibraryStaticMethod;
 extern jmethodID gGetMethodDeclaringClassMethod;
 extern jmethodID gGetStructFieldOrderMethod;
