@@ -45,6 +45,11 @@ public class NativeUtil {
      * Constant for Mac OS X.
      */
     public static final String OS_NAME_WINDOWS = "Windows";
+
+    /**
+     * Constant for Linux.
+     */
+    public static final String OS_NAME_LINUX = "Linux";
     /**
      * Constant for x86_64 arch.
      */

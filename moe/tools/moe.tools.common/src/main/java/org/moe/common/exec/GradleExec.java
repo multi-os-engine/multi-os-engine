@@ -35,7 +35,7 @@ public class GradleExec extends AbstractExec {
     static private String gradlew;
 
     static {
-        if (OsUtils.isMac()) {
+        if (OsUtils.isMac() || OsUtils.isLinux()) {
             gradlew = "gradlew";
         } else if (OsUtils.isWindows()) {
             gradlew = "gradlew.bat";

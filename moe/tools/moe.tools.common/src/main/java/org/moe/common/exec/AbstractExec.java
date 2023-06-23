@@ -131,7 +131,7 @@ public abstract class AbstractExec {
         if (exec == null) {
             throw new IOException("exec is null");
         }
-        if (OsUtils.isMac()) {
+        if (OsUtils.isMac() || OsUtils.isLinux()) {
             try {
                 File execFile = new File(exec);
                 if (execFile.exists() && !execFile.canExecute()) {

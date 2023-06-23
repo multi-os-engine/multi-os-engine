@@ -51,6 +51,15 @@ public class OsUtils {
     }
 
     /**
+     * Tells whether or not the host is Linux or not.
+     *
+     * @return True if the host is Linux
+     */
+    public static boolean isLinux() {
+        return getOsName().startsWith("Linux");
+    }
+
+    /**
      * Returns the name and version of the host OS.
      *
      * @return name and version of the host OS
