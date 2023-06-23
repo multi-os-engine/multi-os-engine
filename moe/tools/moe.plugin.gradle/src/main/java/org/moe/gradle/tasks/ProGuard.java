@@ -71,6 +71,10 @@ public class ProGuard extends AbstractBaseTask {
     private static final String CONVENTION_MINIFY_ENABLED = "minifyEnabled";
     private static final String CONVENTION_OBFUSCATION_ENABLED = "obfuscationEnabled";
 
+    private static final String CONVENTION_SERIALIZATION_SUPPORT = "serializationSupport";
+
+    private static final String MOE_PROGUARD_INJARS_PROPERTY = "moe.proguard.injars";
+
     @Nullable
     private Object proGuardJar;
 
@@ -226,6 +230,19 @@ public class ProGuard extends AbstractBaseTask {
     }
 
     @Nullable
+    private Boolean serializationSupport;
+
+    @IgnoreUnused
+    public void setSerializationSupport(Boolean serializationSupport) {
+        this.serializationSupport = serializationSupport;
+    }
+
+    @Input
+    public boolean isSerializationSupport() {
+        return getOrConvention(serializationSupport, CONVENTION_SERIALIZATION_SUPPORT);
+    }
+
+    @Nullable
     private Object mappingFile;
 
     @OutputFile
@@ -312,6 +329,22 @@ public class ProGuard extends AbstractBaseTask {
         @NotNull final File baseCfgFile = getBaseCfgFile();
         startSection(conf, "Appending from " + baseCfgFile);
         conf.append(FileUtils.read(baseCfgFile));
+
+        if (isSerializationSupport()) {
+            startSection(conf, "Serialization support");
+            conf.append(
+                "-keepnames class * implements java.io.Serializable\n" +
+                "-keepclassmembers class * implements java.io.Serializable {\n" +
+                "    static final long serialVersionUID;\n" +
+                "    private static final java.io.ObjectStreamField[] serialPersistentFields;\n" +
+                "    !static !transient <fields>;\n" +
+                "    private void writeObject(java.io.ObjectOutputStream);\n" +
+                "    private void readObject(java.io.ObjectInputStream);\n" +
+                "    java.lang.Object writeReplace();\n" +
+                "    java.lang.Object readResolve();\n" +
+                "}"
+            );
+        }
 
         startSection(conf, "Shrinking & obfuscation flags");
         if (!isCustomisedBaseConfig()) {
@@ -470,5 +503,6 @@ public class ProGuard extends AbstractBaseTask {
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "ProGuard.log"));
         addConvention(CONVENTION_MINIFY_ENABLED, ext.proguard::isMinifyEnabled);
         addConvention(CONVENTION_OBFUSCATION_ENABLED, ext.proguard::isObfuscationEnabled);
+        addConvention(CONVENTION_SERIALIZATION_SUPPORT, ext.proguard::isSerializationSupport);
     }
 }

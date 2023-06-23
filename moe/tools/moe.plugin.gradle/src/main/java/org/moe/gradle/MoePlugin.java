@@ -22,6 +22,7 @@ import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
+import org.gradle.api.plugins.JavaPlugin;
 import org.gradle.internal.reflect.Instantiator;
 import org.gradle.tooling.provider.model.ToolingModelBuilderRegistry;
 import org.moe.gradle.anns.NotNull;
@@ -45,6 +46,7 @@ import org.moe.gradle.tasks.XcodeBuild;
 import org.moe.gradle.tasks.XcodeInternal;
 import org.moe.gradle.tasks.XcodeProvider;
 import org.moe.gradle.utils.Arch;
+import org.moe.gradle.utils.FileUtils;
 import org.moe.gradle.utils.PropertiesUtil;
 import org.moe.gradle.utils.Require;
 import org.moe.tools.substrate.GraalVM;
@@ -147,6 +149,14 @@ public class MoePlugin extends AbstractMoePlugin {
 
         // Add common MOE dependencies
         installCommonDependencies();
+
+        // Install java 8 support jars to fix lambda compilation
+        project.getDependencies().add(JavaPlugin.IMPLEMENTATION_CONFIGURATION_NAME,
+            FileUtils.getNameAsArtifact(getSDK().getJava8SupportJar(), getSDK().sdkVersion)
+        );
+
+        project.getDependencies().add(JavaPlugin.TEST_IMPLEMENTATION_CONFIGURATION_NAME,
+            FileUtils.getNameAsArtifact(getSDK().getJava8SupportJar(), getSDK().sdkVersion));
 
         // Install rules
         addRule(ProGuard.class, "Creates a ProGuarded jar.",

@@ -25,6 +25,7 @@ public class ProGuardOptions {
     private int level = LEVEL_ALL;
     private boolean minifyEnabled = true;
     private boolean obfuscationEnabled = false;
+    private boolean serializationSupport = false;
     @NotNull
     @org.jetbrains.annotations.NotNull
     private Set<String> excludeFiles = new LinkedHashSet<>();
@@ -88,6 +89,15 @@ public class ProGuardOptions {
     @IgnoreUnused
     public void setObfuscationEnabled(boolean obfuscationEnabled) {
         this.obfuscationEnabled = obfuscationEnabled;
+    }
+
+    public boolean isSerializationSupport() {
+        return serializationSupport;
+    }
+
+    @IgnoreUnused
+    public void setSerializationSupport(boolean serializationSupport) {
+        this.serializationSupport = serializationSupport;
     }
 
     @NotNull

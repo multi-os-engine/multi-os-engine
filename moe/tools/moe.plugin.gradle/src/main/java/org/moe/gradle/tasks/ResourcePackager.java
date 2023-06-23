@@ -91,8 +91,8 @@ public class ResourcePackager {
         resourcePackagerTask.setDescription("Generates application file (sourceset: " + sourceSet.getName() + ", mode: " + mode.name + ").");
 
         // Update settings
-        resourcePackagerTask.setDestinationDir(project.file(project.getBuildDir().toPath().resolve(out).toFile()));
-        resourcePackagerTask.setArchiveName("resource.jar");
+        resourcePackagerTask.getDestinationDirectory().set(project.file(project.getBuildDir().toPath().resolve(out).toFile()));
+        resourcePackagerTask.getArchiveBaseName().set("application");
         resourcePackagerTask.exclude("**/*.class");
 
         Action<Project> configureTask = _project -> {

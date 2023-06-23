@@ -61,16 +61,16 @@ configurations {
 }
 
 dependencies {
-    compile gradleApi()
+    implementation gradleApi()
 
-    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
-    compile group: 'commons-io', name: 'commons-io', version: '2.4'
-    compile group: 'com.jcraft', name: 'jsch', version: '0.1.53'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
+    implementation group: 'commons-io', name: 'commons-io', version: '2.4'
+    implementation group: 'com.jcraft', name: 'jsch', version: '0.1.53'
 
-    compile group: 'org.ow2.asm', name: 'asm', version: '9.1'
-    compile group: 'com.google.code.gson', name: 'gson', version: '2.7'
+    implementation group: 'org.ow2.asm', name: 'asm', version: '9.1'
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.7'
 
-    compile group: 'com.googlecode.plist', name: 'dd-plist', version: '1.19'
+    implementation group: 'com.googlecode.plist', name: 'dd-plist', version: '1.19'
 
     included project(':moe.tools.common')
     included project(':moe.document.pbxproj')
@@ -78,8 +78,8 @@ dependencies {
     included project(':moe.tools.substrate')
     included project(':moe.tools.classvalidator')
 
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    testCompile gradleTestKit()
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    testImplementation gradleTestKit()
 }
 
 // Add transitive dependencies into current project so they will be included into the pom file
@@ -98,7 +98,7 @@ topDeps.each {topDep ->
                 if (artifact.classifier) {
                     dep['classifier'] = artifact.classifier
                 }
-                dependencies.compile(dep) {
+                dependencies.implementation(dep) {
                     transitive = true
                 }
             }
@@ -109,12 +109,12 @@ topDeps.each {topDep ->
 tasks.test.dependsOn ':moe-sdk:devsdk'
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
+    archiveClassifier = 'javadoc'
     from javadoc.destinationDir
 }
 
 task sourceJar(type: Jar) {
-    classifier = 'sources'
+    archiveClassifier = 'sources'
     from sourceSets.main.allSource
 }
 
@@ -200,7 +200,7 @@ task createClasspathManifest {
 
 // Add the classpath file to the test runtime classpath
 dependencies {
-    testRuntime files(createClasspathManifest)
+    testRuntimeOnly files(createClasspathManifest)
 }
 
 compileKotlin {

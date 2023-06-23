@@ -180,6 +180,9 @@ moe {
         // whether code obfuscation is enabled. Ignored when `baseCfgFile` is specified. Default to `false`
         obfuscationEnabled = false
 
+        // whether serialization support is enabled. Ignored when `baseCfgFile` is specified. Default to `false`
+        serializationSupport = false
+      
         // exclude files from `-injars` config that will be processed by proguard
         excludeFiles = [
                 'META-INF/*.SF',
@@ -548,12 +551,14 @@ This task invokes `xcodebuild` and creates the application.
 
 ### Remote Build Properties
 
-- `remoteBuild` resources directories
+- `resources` resources directories
+- `excludes` directories and files to exclude on upload (does not apply to the resources)
 
 ```groovy
 moe {
     remoteBuild {
         resources = [ file("../android/assets") ]
+        excludes = [ file(".gitignore") ]
      }
 }
 ```

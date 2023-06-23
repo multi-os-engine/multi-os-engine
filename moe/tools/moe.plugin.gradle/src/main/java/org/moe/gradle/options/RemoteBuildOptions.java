@@ -12,6 +12,9 @@ public class RemoteBuildOptions {
     private List<File> resources;
 
     @Nullable
+    private List<File> excludes;
+
+    @Nullable
     public List<File> getResources() {
         return resources;
     }
@@ -19,5 +22,14 @@ public class RemoteBuildOptions {
     @IgnoreUnused
     public void setResources(@Nullable List<File> assets) {
         this.resources = assets;
+    }
+
+    @Nullable
+    public List<File> getExcludes() {
+        return excludes;
+    }
+
+    public void setExcludes(@Nullable List<File> excludes) {
+        this.excludes = excludes;
     }
 }

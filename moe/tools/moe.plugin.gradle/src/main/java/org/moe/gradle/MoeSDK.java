@@ -370,6 +370,7 @@ public class MoeSDK {
 
             validate(FIL, path, "tools/ios-device.jar");
             validate(DIR, path, "tools/macosx");
+            validate(DIR, path, "tools/linux/x86_64");
             validate(FIL, path, "tools/jni-config-base.json");
             validate(FIL, path, "tools/reflection-config-base.json");
             validate(FIL, path, "tools/proguard-full.cfg");

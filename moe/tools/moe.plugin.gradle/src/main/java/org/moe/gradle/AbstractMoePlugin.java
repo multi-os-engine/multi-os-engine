@@ -381,6 +381,8 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
         }
         project.getDependencies().add(JavaPlugin.TEST_IMPLEMENTATION_CONFIGURATION_NAME,
             FileUtils.getNameAsArtifact(getSDK().getiOSJUnitJar(), getSDK().sdkVersion));
+
+        project.getDependencies().add(JavaPlugin.COMPILE_ONLY_CONFIGURATION_NAME, "org.jetbrains:annotations:23.0.0");
     }
 
     abstract protected void checkRemoteServer(AbstractBaseTask task);
