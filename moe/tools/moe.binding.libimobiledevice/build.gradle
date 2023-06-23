@@ -18,7 +18,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-apply plugin: 'java'
+apply plugin: 'java-library'
 
 sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
@@ -35,5 +35,5 @@ if (!rootProject.hasProperty('moe.tools.sdk.exclude_linux')) {
 tasks.classes.dependsOn ':ext_natj_api'
 
 dependencies {
-    compile files(rootProject.external.natj.jar)
+    api files(rootProject.external.natj.jar)
 }
