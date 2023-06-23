@@ -20,14 +20,18 @@ sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
 
 dependencies {
-    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.+'
-    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.+'
-    compile project(':moe.tools.common')
-    compile project(':moe.protocol.gdbremote')
-    compile project(':moe.binding.libimobiledevice')
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.+'
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.+'
+    implementation project(':moe.tools.common')
+    implementation project(':moe.protocol.gdbremote')
+    implementation project(':moe.binding.libimobiledevice')
 }
 
 jar {
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
     manifest { attributes 'Main-Class': 'org.moe.ios.device.launcher.Main' }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
+
+// TODO Figure out, why this can't be removed?
+tasks.jar.dependsOn(':moe.binding.libimobiledevice:jar')
