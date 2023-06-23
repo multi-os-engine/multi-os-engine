@@ -108,7 +108,7 @@ open class Desugar : AbstractBaseTask() {
 
         composeConfigurationFile()
         javaexec { spec ->
-            spec.main = "-jar"
+            spec.mainClass.set("-jar")
             spec.args(getProGuardJar().absolutePath, "@" + getComposedCfgFile().absolutePath)
         }
     }
